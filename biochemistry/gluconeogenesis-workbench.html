@@ -1,0 +1,1429 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gluconeogenesis Workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600;700&display=swap">
+<style>
+/* Layout: same lab-bench column as DNA Workbench. Masthead carries the glycolytic pathway "tape" with its three bypasses;
+   blue always means the glycolytic direction, caramel always means gluconeogenesis; green = mitochondrion, violet = ER. */
+:root{
+  --paper:#F1F2F7; --panel:#FFFFFF; --sunk:#E8E9F1; --ink:#171927; --muted:#565B75; --line:#D5D8E5;
+  --accent:#B0500C; --accent-ink:#FFFFFF; --accent-soft:#FBE9DA;
+  --gly:#2A62CF; --gly-soft:#E1E9FA; --mito:#1C8460; --mito-soft:#DDF1E8; --er:#7448BE; --er-soft:#ECE3F8;
+  --good:#15855A; --bad:#C23A33; --warn:#966100;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10111B; --panel:#191B2A; --sunk:#232638; --ink:#E7E8F3; --muted:#A1A5C0; --line:#2F3249;
+    --accent:#F4A35E; --accent-ink:#2A1404; --accent-soft:#3A2617;
+    --gly:#7BA8FF; --gly-soft:#1D2A47; --mito:#4FCB97; --mito-soft:#163428; --er:#B99BF3; --er-soft:#2A2244;
+    --good:#3FCF8B; --bad:#FF6F66; --warn:#F0B648;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10111B; --panel:#191B2A; --sunk:#232638; --ink:#E7E8F3; --muted:#A1A5C0; --line:#2F3249;
+  --accent:#F4A35E; --accent-ink:#2A1404; --accent-soft:#3A2617;
+  --gly:#7BA8FF; --gly-soft:#1D2A47; --mito:#4FCB97; --mito-soft:#163428; --er:#B99BF3; --er-soft:#2A2244;
+  --good:#3FCF8B; --bad:#FF6F66; --warn:#F0B648;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 72px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-0.012em}
+p{margin:0}
+b,strong{font-weight:700}
+.eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.mono{font-family:var(--f-mono)}
+.muted{color:var(--muted)}
+.nt.A{color:var(--a)} .nt.T{color:var(--t)} .nt.G{color:var(--g)} .nt.C{color:var(--c)} .nt.U{color:var(--t)} .nt.W{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* masthead */
+.mast h1{font-size:clamp(40px,6.4vw,66px);font-weight:800;line-height:1}
+.mast h1 .dash{display:inline-block;width:.55em;height:.13em;margin:0 .06em .2em;vertical-align:middle;background:linear-gradient(var(--accent),var(--accent)) top/100% 35% no-repeat,linear-gradient(var(--muted),var(--muted)) bottom/100% 35% no-repeat}
+.mast .sub{max-width:64ch;color:var(--muted);margin-top:12px;font-size:17px}
+.tape-wrap{margin-top:22px;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:14px 16px 12px}
+.tape-label{font-size:14px;font-weight:700}
+.tape{display:flex;gap:4px;overflow-x:auto;padding:10px 0 8px;scrollbar-width:thin}
+.codon{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;min-width:3.5em;padding:5px 4px 4px;border-radius:8px;background:var(--sunk)}
+.codon .cseq{font-family:var(--f-mono);font-size:14.5px;font-weight:600;letter-spacing:.02em}
+.codon .caa{font-size:11.5px;color:var(--muted);line-height:1.2}
+.codon .cnum{font-family:var(--f-mono);font-size:10px;color:var(--muted)}
+.codon.hot{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.codon.hot .caa{color:var(--accent);font-weight:700}
+.tape-note{font-size:14px;color:var(--muted);max-width:90ch}
+
+/* rail */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin:24px -20px 0;padding:10px 20px 10px;border-bottom:1px solid var(--line);display:flex;gap:18px;overflow-x:auto;scrollbar-width:thin}
+.rail-group{display:flex;flex-direction:column;gap:5px;flex:0 0 auto}
+.rail-label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.rail-btns{display:flex;gap:6px}
+.rail button{font:700 14px var(--f-body);padding:6px 12px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);display:inline-flex;gap:7px;align-items:center;white-space:nowrap;cursor:pointer}
+.rail button:hover{border-color:var(--accent)}
+.rail button .n{font-family:var(--f-mono);font-size:11px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--sunk);color:var(--muted)}
+.rail button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.rail button.on .n{background:color-mix(in srgb,var(--accent-ink) 20%,transparent);color:inherit}
+
+/* station scaffold */
+.station{padding-top:28px}
+.st-head{display:flex;gap:14px;align-items:flex-end;margin-bottom:8px}
+.st-num{font-family:var(--f-display);font-weight:800;font-size:58px;line-height:.82;color:var(--accent)}
+.station h2{font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1.05}
+.lead{max-width:70ch;margin:8px 0 18px;font-size:17px}
+.bench{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.bench + .bench{margin-top:16px}
+.bench-title{font-size:20px;font-weight:800;margin-bottom:4px}
+.after{display:grid;gap:22px;margin-top:24px}
+@media (min-width:880px){.after{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}}
+.ideas h3,.check h3{font-size:20px;font-weight:800}
+.ideas ul{padding-left:1.15em;margin:10px 0 0}
+.ideas li{margin:7px 0;max-width:62ch}
+.ideas li::marker{color:var(--accent)}
+.next-row{margin-top:26px;display:flex;justify-content:flex-end}
+.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);max-width:90ch}
+
+/* check questions */
+.qcard{border-top:1px solid var(--line);padding:13px 0}
+.qcard:first-of-type{margin-top:8px}
+.qq{margin:0 0 9px;font-weight:700}
+.qopts{display:flex;flex-wrap:wrap;gap:7px}
+.qopt{font:inherit;font-size:15px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;text-align:left}
+.qopt:hover:not(:disabled){border-color:var(--accent)}
+.qopt:disabled{cursor:default}
+.qopt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 14%,var(--panel));color:var(--ink)}
+.qopt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--panel));color:var(--muted)}
+.qfb{margin-top:9px;font-size:15px;max-width:68ch}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+
+/* shared controls */
+.btn{font:700 14px var(--f-body);padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row-btns{display:flex;flex-wrap:wrap;gap:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:700 14px var(--f-body);padding:7px 13px;border:0;background:var(--panel);color:var(--ink);cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.slider{display:grid;gap:3px}
+.slider .sl-top{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted)}
+.slider output{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+.field{display:flex;flex-direction:column;gap:5px;font-size:14px;color:var(--muted)}
+.text-in{font:15px var(--f-mono);padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%;min-width:0;letter-spacing:.04em}
+.toggle{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer}
+.toggle input{accent-color:var(--accent);width:16px;height:16px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
+.stat{background:var(--sunk);border-radius:10px;padding:9px 12px}
+.stat .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:var(--f-display);font-size:25px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .v small{font-size:14px;font-weight:600;color:var(--muted)}
+.hint{font-size:13.5px;color:var(--muted);margin-top:8px}
+.chip{display:inline-block;font:700 10.5px var(--f-mono);letter-spacing:.07em;text-transform:uppercase;padding:3px 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:2px}
+.chip.good{background:color-mix(in srgb,var(--good) 17%,transparent);color:var(--good)}
+.chip.bad{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+.chip.warn{background:color-mix(in srgb,var(--warn) 17%,transparent);color:var(--warn)}
+.note{background:var(--sunk);border-radius:10px;padding:10px 13px;font-size:15px}
+.note + .note{margin-top:8px}
+.scroll-x{overflow-x:auto;min-width:0}
+table.tbl{border-collapse:collapse;width:100%;font-size:14px}
+.tbl th,.tbl td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font-weight:700;color:var(--muted);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.tbl td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.tbl .on{background:var(--accent-soft)}
+.svg-fill{width:100%;height:auto;display:block}
+.grid2{display:grid;gap:18px}
+@media (min-width:860px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.stack{display:grid;gap:14px;align-content:start;min-width:0}
+
+/* sequence grids (PCR, CRISPR) */
+.sgrid{display:grid;width:max-content;font-family:var(--f-mono);font-size:14px;--cw:11.5px;row-gap:1px}
+.sgrid .rl{font-size:10px;color:var(--muted);white-space:nowrap;height:14px;line-height:14px}
+.sgrid .end{font-size:11px;color:var(--muted);text-align:center}
+.sgrid .c{text-align:center;height:21px;line-height:21px;font-weight:600;border-radius:2px}
+.sgrid .c.dim{opacity:.38}
+.seq-scroll{overflow-x:auto;padding:6px 2px 10px;min-width:0}
+
+
+.gly{color:var(--gly)} .gng{color:var(--accent)}
+sub,sup{line-height:0}
+
+/* masthead pathway tape */
+.ptape{display:flex;align-items:center;gap:0;overflow-x:auto;padding:12px 0 8px;scrollbar-width:thin}
+.met{flex:0 0 auto;background:var(--sunk);border-radius:9px;padding:6px 9px;text-align:center;min-width:4.4em}
+.met b{display:block;font-family:var(--f-mono);font-size:13.5px;font-weight:700}
+.met span{display:block;font-size:11px;color:var(--muted);line-height:1.2;white-space:nowrap}
+.met.end{background:var(--accent-soft)}
+.link{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:34px;font:700 13px var(--f-mono);line-height:1.15}
+.link .d{color:var(--gly)} .link .u{color:var(--accent)}
+.link.irr{width:auto;padding:0 6px;gap:3px}
+.link.irr .d,.link.irr .u{font:700 10.5px var(--f-body);white-space:nowrap;padding:2px 6px;border-radius:6px}
+.link.irr .d{background:var(--gly-soft)}
+.link.irr .u{background:var(--accent-soft)}
+
+/* 1 pathway map */
+.pm{display:grid;gap:18px}
+@media (min-width:900px){.pm{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
+.pmap{width:100%;height:auto;display:block}
+.pmap text{font-family:var(--f-body)}
+.pmap .node rect{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.pmap .node text{fill:var(--ink);font-size:13.5px;font-weight:700}
+.pmap .node.side rect{fill:var(--accent-soft);stroke:var(--accent)}
+.pmap .step{cursor:pointer}
+.pmap .step .hit{fill:transparent}
+.pmap .step:hover .lab,.pmap .step:focus .lab{text-decoration:underline}
+.pmap .step:focus{outline:none}
+.pmap .step:focus-visible .hit{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:3 3}
+.pmap .lab{font-size:12.5px;font-weight:700}
+.pmap .co{font-size:11px;fill:var(--muted)}
+.pmap .dimmed{opacity:.16}
+.pmap .sel .lab{fill:var(--ink)}
+.pmap .sel .hit{fill:color-mix(in srgb,var(--ink) 7%,transparent)}
+.info{display:grid;gap:10px;align-content:start}
+.info h3{font-size:22px;font-weight:800}
+.rxn{font-size:15px;background:var(--sunk);border-radius:10px;padding:10px 12px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:14.5px}
+.kv dt{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.kv dd{margin:0}
+.chip.gly{background:var(--gly-soft);color:var(--gly)}
+.chip.gng{background:var(--accent-soft);color:var(--accent)}
+.chip.both{background:var(--sunk);color:var(--ink)}
+.chip.mito{background:var(--mito-soft);color:var(--mito)}
+.chip.er{background:var(--er-soft);color:var(--er)}
+
+/* 2 free energy */
+.fe-chart text{font-family:var(--f-body);fill:var(--muted);font-size:11.5px}
+.calc{display:grid;gap:12px}
+.calc-grid{display:grid;gap:16px;margin-top:16px}
+@media (min-width:880px){.calc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:600 13px var(--f-body);padding:5px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.presets button.on{border-color:var(--accent);background:var(--accent-soft)}
+.num-in{font:600 16px var(--f-mono);padding:7px 10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:9em}
+.eq{font-family:var(--f-mono);font-size:14px}
+.big{font-family:var(--f-display);font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+
+/* 3 compartments */
+.cmp{display:grid;gap:18px}
+@media (min-width:920px){.cmp{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}}
+.cell text{font-family:var(--f-body)}
+.cell .nd rect{fill:var(--panel);stroke:var(--line);stroke-width:1.4}
+.cell .nd text{font-size:13px;font-weight:700;fill:var(--ink)}
+.cell .ar{transition:opacity .25s}
+.cell .ar text{font-size:11px;fill:var(--muted)}
+.cell .ar.off{opacity:.08}
+.cell .ar.todo{opacity:.35}
+.cell .ar.now text{fill:var(--ink);font-weight:700}
+.steplist{counter-reset:s;display:grid;gap:4px;padding:0;margin:0;list-style:none;font-size:14px}
+.steplist li{padding:5px 8px;border-radius:8px;color:var(--muted);cursor:pointer}
+.steplist li::before{counter-increment:s;content:counter(s) ". ";font-family:var(--f-mono);font-size:12px}
+.steplist li.now{background:var(--accent-soft);color:var(--ink);font-weight:700}
+.steplist li.done{color:var(--ink)}
+
+/* 4 sorter */
+.sort{display:grid;gap:18px}
+@media (min-width:920px){.sort{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.pcard{background:var(--sunk);border:1px solid transparent;border-radius:12px;padding:10px 12px;display:grid;gap:7px;align-content:start}
+.pcard h4{margin:0;font:800 16px var(--f-display)}
+.pcard .src{font-size:12.5px;color:var(--muted)}
+.pcard .acts{display:flex;gap:6px;flex-wrap:wrap}
+.pcard .acts button{font:700 12.5px var(--f-body);padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.pcard .acts button:hover{border-color:var(--accent)}
+.pcard.right{border-color:var(--good)}
+.pcard.wrong{border-color:var(--bad)}
+.pcard .why{font-size:13.5px}
+.emap{display:grid;gap:4px}
+.erow{background:var(--sunk);border-radius:10px;padding:8px 11px;display:grid;gap:6px}
+.erow .en{font-weight:800;font-size:14.5px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.erow .en small{font-weight:400;font-size:12px;color:var(--muted)}
+.erow.dead{background:color-mix(in srgb,var(--bad) 8%,var(--sunk))}
+.erow .chips{display:flex;flex-wrap:wrap;gap:4px}
+.erow .chips span{font:600 12px var(--f-body);padding:2px 7px;border-radius:6px;background:var(--panel);color:var(--muted);border:1px dashed var(--line)}
+.erow .chips span.lit{border:1px solid var(--accent);color:var(--ink);background:var(--accent-soft)}
+.erow.dead .chips span.lit{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--panel))}
+.earrow{text-align:center;font-size:12px;color:var(--accent);font-weight:700;line-height:1.1}
+.earrow.dn{color:var(--muted)}
+
+/* 5 ledger */
+.led-tbl td.num{text-align:right}
+.led-tbl td.neg{color:var(--bad);font-weight:700}
+.led-tbl td.pos{color:var(--good);font-weight:700}
+.led-tbl tr.hide{display:none}
+.led-tbl tfoot td{font-weight:800;border-top:2px solid var(--ink)}
+
+/* 6 regulation */
+.rg{display:grid;gap:18px}
+@media (min-width:900px){.rg{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.cyc text{font-family:var(--f-body)}
+.cyc .met-t{font-size:14px;font-weight:800;fill:var(--ink)}
+.cyc .enz{font-size:12.5px;font-weight:700}
+.cyc .eff{font-size:11.5px}
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:7.5em minmax(0,1fr) 3em;gap:8px;align-items:center;font-size:13.5px}
+.bar-row .trk{height:12px;border-radius:6px;background:var(--sunk);overflow:hidden}
+.bar-row .fill{height:100%;border-radius:6px;transition:width .3s}
+.bar-row .pct{font-family:var(--f-mono);font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* 7 fed vs fasted */
+.fd{display:grid;gap:18px}
+@media (min-width:920px){.fd{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+.chain{display:grid;gap:6px}
+.lnk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;background:var(--sunk);border-radius:10px;padding:8px 11px;border:1px solid transparent;transition:border-color .25s,background-color .25s}
+.lnk .nm{font-weight:700;font-size:14.5px}
+.lnk .ds{grid-column:1 / -1;font-size:13px;color:var(--muted)}
+.lnk.on{border-color:var(--accent);background:var(--accent-soft)}
+.lnk.gl{border-color:var(--gly);background:var(--gly-soft)}
+.down{text-align:center;color:var(--muted);font-size:13px;line-height:1}
+.branch{display:grid;gap:8px}
+@media (min-width:640px){.branch{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* 8 cycles */
+.cy{display:grid;gap:18px}
+@media (min-width:900px){.cy{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+.organs text{font-family:var(--f-body)}
+.organs .org{font:800 17px var(--f-display);fill:var(--ink)}
+.organs .mt{font-size:12.5px;font-weight:700;fill:var(--ink)}
+.organs .sm{font-size:11.5px;fill:var(--muted)}
+
+/* 9 casebook */
+.cases{display:grid;gap:18px}
+.case{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:12px;min-width:0}
+.case-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;justify-content:space-between}
+.case h3{font-size:22px;font-weight:800}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.case-body{display:grid;gap:16px}
+@media (min-width:860px){.case-body.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">Biochemistry I · Carbohydrate metabolism</p>
+  <h1>Gluconeogenesis Workbench</h1>
+  <p class="sub">Making glucose from noncarbohydrate precursors. Seven steps of glycolysis simply run backward; three can't, and each needs its own bypass. Nine stations take the pathway apart: its route, its cost, its control, and what happens when it fails.</p>
+  <div class="tape-wrap">
+    <p class="tape-label">The thread: glycolysis read in both directions</p>
+    <div class="ptape" id="ptape" aria-label="Glycolytic intermediates with the three bypass steps"></div>
+    <p class="tape-note"><span class="gly">Blue</span> is the glycolytic direction and <span class="gng">caramel</span> is gluconeogenesis, on every station. Below the aldolase step everything happens twice per glucose.</p>
+  </div>
+</header>
+
+<nav class="rail" id="rail" aria-label="Stations">
+  <div class="rail-group"><span class="rail-label">The pathway</span><div class="rail-btns">
+    <button type="button" data-tab="map"><span class="n">1</span>Pathway map</button>
+    <button type="button" data-tab="energy"><span class="n">2</span>Why bypass?</button>
+    <button type="button" data-tab="cell"><span class="n">3</span>Compartments</button>
+  </div></div>
+  <div class="rail-group"><span class="rail-label">Fuel &amp; cost</span><div class="rail-btns">
+    <button type="button" data-tab="sources"><span class="n">4</span>Precursors</button>
+    <button type="button" data-tab="ledger"><span class="n">5</span>Energy ledger</button>
+  </div></div>
+  <div class="rail-group"><span class="rail-label">Control</span><div class="rail-btns">
+    <button type="button" data-tab="reg"><span class="n">6</span>Reciprocal regulation</button>
+    <button type="button" data-tab="fast"><span class="n">7</span>Fed vs fasted</button>
+    <button type="button" data-tab="cycles"><span class="n">8</span>Cori cycle</button>
+  </div></div>
+  <div class="rail-group"><span class="rail-label">Apply it</span><div class="rail-btns">
+    <button type="button" data-tab="cases"><span class="n">9</span>Casebook</button>
+  </div></div>
+</nav>
+
+<main>
+<!-- 1 MAP -->
+<section class="station" data-station="map" hidden>
+  <div class="st-head"><span class="st-num">1</span><div><p class="eyebrow">The pathway</p><h2>Pathway map</h2></div></div>
+  <p class="lead">Gluconeogenesis turns two pyruvate into one glucose. It shares seven reversible enzymes with glycolysis and replaces the three irreversible ones: pyruvate kinase, phosphofructokinase-1 and hexokinase. Click any step to see its enzyme, location and free-energy change.</p>
+  <div class="bench pm">
+    <div class="stack">
+      <div class="seg" role="group" aria-label="Show direction" id="pm-dir">
+        <button type="button" data-d="both" class="on">Both pathways</button><button type="button" data-d="gly">Glycolysis</button><button type="button" data-d="gng">Gluconeogenesis</button>
+      </div>
+      <div class="scroll-x"><svg id="pm-svg" class="pmap" viewBox="0 0 640 860" style="min-width:540px" role="group" aria-label="Glycolysis and gluconeogenesis pathway map"></svg></div>
+    </div>
+    <div class="info" id="pm-info" aria-live="polite"></div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Gluconeogenesis happens mainly in the liver, with smaller contributions from the renal cortex and the small intestine.</li>
+      <li>Glycolysis and gluconeogenesis share seven near-equilibrium steps. The three steps with large negative ΔG are replaced by different enzymes.</li>
+      <li>Bypass 1 (pyruvate → PEP) uses pyruvate carboxylase and PEP carboxykinase. Bypass 2 is fructose 1,6-bisphosphatase. Bypass 3 is glucose 6-phosphatase.</li>
+      <li>Because the bypass enzymes differ from the glycolytic ones, the two pathways can be regulated independently.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-map"></div></div>
+  </div>
+</section>
+
+<!-- 2 ENERGY -->
+<section class="station" data-station="energy" hidden>
+  <div class="st-head"><span class="st-num">2</span><div><p class="eyebrow">The pathway</p><h2>Why bypass?</h2></div></div>
+  <p class="lead">A reaction can run backward only if its ΔG in the cell is close to zero. Seven glycolytic steps are near equilibrium. Three are not, and running them in reverse would be strongly uphill. Switch between the three views to see the problem and the fix.</p>
+  <div class="bench">
+    <div class="seg" role="group" aria-label="Free-energy view" id="fe-mode">
+      <button type="button" data-m="gly" class="on">Glycolysis</button><button type="button" data-m="rev">Glycolysis run backward</button><button type="button" data-m="gng">Gluconeogenesis</button>
+    </div>
+    <div class="scroll-x" style="margin-top:12px"><svg id="fe-svg" class="fe-chart" viewBox="0 0 720 340" style="min-width:600px;width:100%;height:auto;display:block" role="img" aria-label="Free-energy change of each step"></svg></div>
+    <p id="fe-note" class="note" style="margin-top:10px"></p>
+    <div class="calc-grid">
+      <div class="calc blk">
+        <h3>From ΔG′° to K′<sub>eq</sub></h3>
+        <div class="presets" id="kq-pre"></div>
+        <label class="field" for="kq-in">ΔG′° (kJ/mol)<input id="kq-in" class="num-in" type="number" step="0.1" value="31.4"></label>
+        <p class="eq">K′<sub>eq</sub> = e<sup>−ΔG′°/RT</sup>, R = 8.315 J/mol·K, T = 298 K</p>
+        <div><span class="big" id="kq-out"></span></div>
+        <p id="kq-txt" class="hint" style="margin:0"></p>
+      </div>
+      <div class="calc blk">
+        <h3>ΔG in the cell</h3>
+        <div class="presets" id="dg-pre"></div>
+        <p class="eq" id="dg-eq"></p>
+        <div id="dg-sl" class="stack" style="gap:10px"></div>
+        <div class="stat-row" id="dg-stats"></div>
+        <p class="hint" style="margin:0">ΔG = ΔG′° + RT ln Q at 37 °C. Concentrations are example values; drag them to see how far ΔG moves.</p>
+      </div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>ΔG′° tells you the direction under standard conditions; the actual ΔG, set by concentrations, decides the direction in the cell.</li>
+      <li>Aldolase has ΔG′° = +23.8 kJ/mol yet runs both ways, because product concentrations keep its ΔG near zero.</li>
+      <li>Hexokinase, PFK-1 and pyruvate kinase have large negative ΔG in the cell. Reversing them would need ΔG of the same size, uphill.</li>
+      <li>The bypasses make each reverse step favorable by spending ATP or GTP (bypass 1) or by simple hydrolysis of a phosphate ester (bypasses 2 and 3).</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-energy"></div></div>
+  </div>
+</section>
+
+<!-- 3 COMPARTMENTS -->
+<section class="station" data-station="cell" hidden>
+  <div class="st-head"><span class="st-num">3</span><div><p class="eyebrow">The pathway</p><h2>Compartments</h2></div></div>
+  <p class="lead">Gluconeogenesis crosses three compartments: the mitochondrial matrix, the cytosol and the lumen of the endoplasmic reticulum. The route out of the mitochondrion depends on the starting material, because the cytosol must get the NADH it needs for the glyceraldehyde 3-phosphate dehydrogenase step. Step through both routes.</p>
+  <div class="bench cmp">
+    <div class="stack">
+      <div class="seg" role="group" aria-label="Starting material" id="cm-route">
+        <button type="button" data-r="pyr" class="on">From alanine (pyruvate)</button><button type="button" data-r="lac">From lactate</button>
+      </div>
+      <div class="scroll-x"><svg id="cm-svg" class="cell" viewBox="0 0 720 450" style="min-width:560px;width:100%;height:auto;display:block" role="img" aria-label="Liver cell with mitochondrion, cytosol and endoplasmic reticulum"></svg></div>
+    </div>
+    <div class="stack">
+      <div class="row-btns"><button type="button" class="btn" id="cm-prev">← Back</button><button type="button" class="btn primary" id="cm-next">Next step →</button></div>
+      <div class="note" id="cm-txt" aria-live="polite"></div>
+      <ol class="steplist" id="cm-list"></ol>
+      <div class="note" id="cm-nadh"></div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Pyruvate carboxylase is mitochondrial, so pyruvate must enter the matrix first.</li>
+      <li>Oxaloacetate can't cross the inner mitochondrial membrane. It leaves as malate (pyruvate route) or after conversion to PEP (lactate route).</li>
+      <li>Exporting malate also exports reducing equivalents: cytosolic malate dehydrogenase makes the NADH that the GAPDH step consumes.</li>
+      <li>The last step happens in the ER lumen of liver and kidney cells. Muscle and brain have no glucose 6-phosphatase, so they can't release glucose.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-cell"></div></div>
+  </div>
+</section>
+
+<!-- 4 PRECURSORS -->
+<section class="station" data-station="sources" hidden>
+  <div class="st-head"><span class="st-num">4</span><div><p class="eyebrow">Fuel &amp; cost</p><h2>What can become glucose?</h2></div></div>
+  <p class="lead">A precursor can feed gluconeogenesis only if its carbons arrive as pyruvate, a citric acid cycle intermediate, or a triose phosphate. Decide for each molecule, then check where it enters.</p>
+  <div class="bench sort">
+    <div class="stack">
+      <div class="stat-row" id="so-score"></div>
+      <div class="cards" id="so-cards"></div>
+    </div>
+    <div class="stack">
+      <p class="bench-title" style="font-size:16px;margin:0">Where they enter</p><div id="so-map" class="emap"></div><p class="hint" style="margin:0">Each answer fills in its spot on this map.</p>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>The main precursors in animals are lactate, glucogenic amino acids (especially alanine) and glycerol from triacylglycerols.</li>
+      <li>Acetyl-CoA can't give net glucose in animals: the pyruvate dehydrogenase reaction is irreversible, and the two carbons that enter the citric acid cycle leave as two CO₂.</li>
+      <li>So even-chain fatty acids can't be converted to glucose. Odd-chain fatty acids give a little, through propionyl-CoA → succinyl-CoA.</li>
+      <li>Leucine and lysine are the only amino acids that are exclusively ketogenic.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-sources"></div></div>
+  </div>
+</section>
+
+<!-- 5 LEDGER -->
+<section class="station" data-station="ledger" hidden>
+  <div class="st-head"><span class="st-num">5</span><div><p class="eyebrow">Fuel &amp; cost</p><h2>Energy ledger</h2></div></div>
+  <p class="lead">Making glucose costs more than glycolysis returns. Pick a starting material and step through the pathway, keeping track of ATP, GTP and NADH for one glucose.</p>
+  <div class="bench grid2">
+    <div class="stack">
+      <div class="seg" role="group" aria-label="Starting material" id="lg-start">
+        <button type="button" data-s="pyr" class="on">2 Pyruvate</button><button type="button" data-s="lac">2 Lactate</button><button type="button" data-s="gol">2 Glycerol</button>
+      </div>
+      <div class="scroll-x"><table class="tbl led-tbl" id="lg-tbl"></table></div>
+      <div class="row-btns"><button type="button" class="btn primary" id="lg-next">Next step</button><button type="button" class="btn" id="lg-all">Show all</button><button type="button" class="btn" id="lg-reset">Reset</button></div>
+    </div>
+    <div class="stack">
+      <div class="stat-row" id="lg-stats"></div>
+      <div class="note" id="lg-eq"></div>
+      <div class="note" id="lg-cmp"></div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>From pyruvate: 4 ATP, 2 GTP and 2 NADH per glucose. Glycolysis to pyruvate yields only 2 ATP and 2 NADH.</li>
+      <li>The extra cost is what makes gluconeogenesis irreversible in the cell, just as glycolysis is.</li>
+      <li>Starting from lactate, lactate dehydrogenase supplies the NADH, so no net NADH is needed.</li>
+      <li>Glycerol enters at dihydroxyacetone phosphate, above bypass 1 and the phosphoglycerate kinase step, so it skips the costly part of the pathway.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-ledger"></div></div>
+  </div>
+</section>
+
+<!-- 6 REGULATION -->
+<section class="station" data-station="reg" hidden>
+  <div class="st-head"><span class="st-num">6</span><div><p class="eyebrow">Control</p><h2>Reciprocal regulation</h2></div></div>
+  <p class="lead">If PFK-1 and FBPase-1 (or pyruvate kinase and the pyruvate → PEP bypass) were fully active at once, the cell would cycle substrate around and burn ATP as heat. Allosteric effectors turn one enzyme up as they turn its partner down. Move the effectors and watch the net flux.</p>
+  <div class="bench rg">
+    <div class="stack">
+      <svg id="rg-svg" class="cyc" viewBox="-90 0 660 470" style="width:100%;height:auto;display:block" role="img" aria-label="Two substrate cycles with enzyme activities"></svg>
+    </div>
+    <div class="stack">
+      <div class="presets" id="rg-pre"></div>
+      <div class="slider"><div class="sl-top"><label for="rg-f26">Fructose 2,6-bisphosphate</label><output id="rg-f26-o"></output></div><input type="range" id="rg-f26" min="0" max="100" value="50"></div>
+      <div class="slider"><div class="sl-top"><label for="rg-amp">AMP (low energy charge)</label><output id="rg-amp-o"></output></div><input type="range" id="rg-amp" min="0" max="100" value="20"></div>
+      <div class="slider"><div class="sl-top"><label for="rg-cit">Citrate</label><output id="rg-cit-o"></output></div><input type="range" id="rg-cit" min="0" max="100" value="30"></div>
+      <div class="slider"><div class="sl-top"><label for="rg-acc">Acetyl-CoA</label><output id="rg-acc-o"></output></div><input type="range" id="rg-acc" min="0" max="100" value="30"></div>
+      <label class="toggle"><input type="checkbox" id="rg-pk"> Pyruvate kinase L phosphorylated by PKA (glucagon)</label>
+      <div class="bars" id="rg-bars"></div>
+      <div class="note" id="rg-txt"></div>
+      <p class="hint" style="margin:0">A qualitative model: activities are relative (0–100%) and respond in the directions Lehninger describes.</p>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Fructose 2,6-bisphosphate activates PFK-1 and inhibits FBPase-1. It is the liver's main switch between the two pathways.</li>
+      <li>AMP activates PFK-1 and inhibits FBPase-1; ATP and citrate inhibit PFK-1.</li>
+      <li>Acetyl-CoA activates pyruvate carboxylase and inhibits pyruvate dehydrogenase, sending pyruvate toward glucose when fatty acids are being oxidized.</li>
+      <li>Substrate cycles that run a little in both directions make the net flux more sensitive to effectors, at the price of some ATP turned to heat.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-reg"></div></div>
+  </div>
+</section>
+
+<!-- 7 FED VS FASTED -->
+<section class="station" data-station="fast" hidden>
+  <div class="st-head"><span class="st-num">7</span><div><p class="eyebrow">Control</p><h2>Fed vs fasted</h2></div></div>
+  <p class="lead">Hormones set the liver's direction. After a meal, insulin favors glycolysis and glycogen storage. Between meals, glucagon makes the liver a glucose exporter, first from glycogen and then increasingly by gluconeogenesis. Drag the clock through a fast.</p>
+  <div class="bench fd">
+    <div class="stack">
+      <div class="slider"><div class="sl-top"><label for="fd-h">Hours since the last meal</label><output id="fd-h-o"></output></div><input type="range" id="fd-h" min="0" max="48" step="1" value="1"></div>
+      <svg id="fd-svg" class="svg-fill chart" viewBox="0 0 520 300" role="img" aria-label="Sources of blood glucose during a fast"></svg>
+      <div class="stat-row" id="fd-stats"></div>
+      <p class="hint" style="margin:0">Schematic shares of the glucose entering the blood, based on the classic picture of a fasting human. Blood glucose itself stays close to 4–5 mM throughout.</p>
+    </div>
+    <div class="stack">
+      <div class="seg" role="group" aria-label="State" id="fd-state"><button type="button" data-s="fed" class="on">Fed: insulin</button><button type="button" data-s="fast">Fasted: glucagon</button></div>
+      <div class="chain" id="fd-chain"></div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Glucagon raises cAMP and activates protein kinase A (PKA) in the liver.</li>
+      <li>PKA phosphorylates the bifunctional enzyme PFK-2/FBPase-2, switching it to its phosphatase form, so [F2,6BP] falls: PFK-1 slows and FBPase-1 is released.</li>
+      <li>PKA also inactivates pyruvate kinase L, and glucagon (through CREB) increases transcription of the PEPCK and glucose 6-phosphatase genes. Insulin does the opposite.</li>
+      <li>Liver glycogen covers the first hours of a fast. Within about a day it is largely used up and gluconeogenesis supplies most of the glucose.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-fast"></div></div>
+  </div>
+</section>
+
+<!-- 8 CYCLES -->
+<section class="station" data-station="cycles" hidden>
+  <div class="st-head"><span class="st-num">8</span><div><p class="eyebrow">Control</p><h2>Cori and glucose–alanine cycles</h2></div></div>
+  <p class="lead">Muscle and liver share the work. Muscle runs glycolysis fast and exports lactate or alanine; the liver turns them back into glucose and returns it through the blood. The muscle gains ATP quickly, and the liver pays to rebuild the glucose.</p>
+  <div class="bench cy">
+    <div class="stack">
+      <div class="seg" role="group" aria-label="Cycle" id="cy-mode"><button type="button" data-m="cori" class="on">Cori cycle</button><button type="button" data-m="ala">Glucose–alanine cycle</button></div>
+      <svg id="cy-svg" class="organs" viewBox="0 0 640 330" style="width:100%;height:auto;display:block" role="img" aria-label="Muscle and liver exchanging metabolites through the blood"></svg>
+    </div>
+    <div class="stack">
+      <div class="slider"><div class="sl-top"><label for="cy-g">Glucose used by muscle in the cycle</label><output id="cy-g-o"></output></div><input type="range" id="cy-g" min="5" max="100" step="5" value="30"></div>
+      <div class="stat-row" id="cy-stats"></div>
+      <div class="note" id="cy-txt"></div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>In vigorous exercise, muscle glycolysis outruns oxidative metabolism and lactate dehydrogenase regenerates NAD⁺; lactate goes to the liver.</li>
+      <li>Per glucose, muscle gains 2 ATP and the liver spends 6 high-energy phosphates (4 ATP + 2 GTP): the cycle costs the body 4 per turn.</li>
+      <li>In the glucose–alanine cycle, muscle transaminates pyruvate to alanine, which carries amino groups to the liver for urea synthesis.</li>
+      <li>The liver's carbon skeleton becomes glucose again, so muscle protein breakdown and glucose supply are linked during fasting.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-cycles"></div></div>
+  </div>
+</section>
+
+<!-- 9 CASEBOOK -->
+<section class="station" data-station="cases" hidden>
+  <div class="st-head"><span class="st-num">9</span><div><p class="eyebrow">Apply it</p><h2>Applications casebook</h2></div></div>
+  <p class="lead">Five short cases. The tags show which stations each one draws on.</p>
+  <div class="cases" id="cases"></div>
+</section>
+</main>
+
+<p class="foot">Enzyme names and free-energy values follow Lehninger <i>Principles of Biochemistry</i>. Concentrations in the ΔG calculator, the regulation model and the fasting curves are illustrative.</p>
+</div>
+<script>
+'use strict';
+/* ---------- helpers ---------- */
+const $ = (q, r = document) => r.querySelector(q);
+const $$ = (q, r = document) => Array.from(r.querySelectorAll(q));
+const SVGNS = 'http://www.w3.org/2000/svg';
+const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function setAttrs(e, attrs) {
+  if (!attrs) return;
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.setAttribute('class', v);
+    else if (k === 'html') e.innerHTML = v;
+    else if (k === 'text') e.textContent = v;
+    else if (k === 'style' && typeof v === 'object') Object.assign(e.style, v);
+    else if (k.startsWith('on') && typeof v === 'function') e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+}
+function append(e, kids) { for (const k of kids.flat()) { if (k == null || k === false) continue; e.append(k.nodeType ? k : document.createTextNode(String(k))); } }
+function h(tag, attrs, ...kids) { const e = document.createElement(tag); setAttrs(e, attrs); append(e, kids); return e; }
+function sv(tag, attrs, ...kids) { const e = document.createElementNS(SVGNS, tag); setAttrs(e, attrs); append(e, kids); return e; }
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+function hexRgb(hx) {
+  hx = (hx || '#000000').replace('#', '');
+  if (hx.length === 3) hx = hx.split('').map(c => c + c).join('');
+  const n = parseInt(hx, 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function mix(fg, bg, t) { const a = hexRgb(fg), b = hexRgb(bg); return `rgb(${a.map((v, i) => Math.round(b[i] + (v - b[i]) * t)).join(',')})`; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const fmt = (v, d = 1) => Number(v).toFixed(d);
+const SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '-': '⁻' };
+function sci(x) {
+  if (x < 1e4) return Math.round(x).toLocaleString('en-US');
+  const e = Math.floor(Math.log10(x)); const m = x / Math.pow(10, e);
+  return `${m.toFixed(1)} × 10${String(e).split('').map(c => SUP[c]).join('')}`;
+}
+
+/* ---------- stations ---------- */
+const STATIONS = ['map', 'energy', 'cell', 'sources', 'ledger', 'reg', 'fast', 'cycles', 'cases'];
+const TITLES = { map: 'Pathway map', energy: 'Why bypass?', cell: 'Compartments', sources: 'What can become glucose?', ledger: 'Energy ledger', reg: 'Reciprocal regulation', fast: 'Fed vs fasted', cycles: 'Cori and glucose–alanine cycles', cases: 'Applications casebook' };
+const INIT = {}, ONSHOW = {}, ONHIDE = {};
+const inited = new Set();
+let current = null;
+function showStation(id, scroll) {
+  if (!STATIONS.includes(id)) id = 'map';
+  if (current && current !== id && ONHIDE[current]) ONHIDE[current]();
+  current = id;
+  $$('.station').forEach(sec => { sec.hidden = sec.dataset.station !== id; });
+  $$('.rail button').forEach(b => { const on = b.dataset.tab === id; b.classList.toggle('on', on); if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  if (!inited.has(id) && INIT[id]) { inited.add(id); try { INIT[id](); } catch (e) { console.error(e); } }
+  if (ONSHOW[id]) ONSHOW[id]();
+  try { localStorage.setItem('gng-workbench-tab', id); } catch (e) { /* storage unavailable */ }
+  try { history.replaceState(null, '', '#' + id); } catch (e) { /* ignore */ }
+  const btn = $(`.rail button[data-tab="${id}"]`);
+  if (btn && btn.scrollIntoView) { try { btn.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) { /* ignore */ } }
+  if (scroll) { const r = $('#rail'); window.scrollTo({ top: Math.max(0, r.offsetTop - 4), behavior: REDUCED ? 'auto' : 'smooth' }); }
+}
+
+/* ---------- check questions ---------- */
+const QUIZ = {};
+function renderQuiz(id) {
+  const box = $('#q-' + id); if (!box || !QUIZ[id]) return;
+  QUIZ[id].forEach((item, qi) => {
+    const fb = h('p', { class: 'qfb', hidden: true });
+    const opts = h('div', { class: 'qopts' });
+    item.o.forEach((txt, oi) => {
+      const b = h('button', { type: 'button', class: 'qopt' }, txt);
+      b.addEventListener('click', () => {
+        if (oi === item.a) {
+          b.classList.add('right');
+          $$('.qopt', opts).forEach(x => { x.disabled = true; });
+          fb.hidden = false; fb.replaceChildren(h('span', { class: 'ok' }, 'Correct. '), item.why);
+        } else {
+          b.classList.add('wrong'); b.disabled = true;
+          fb.hidden = false; fb.replaceChildren(h('span', { class: 'no' }, 'Not quite. '), item.hint || 'Try another answer.');
+        }
+      });
+      opts.append(b);
+    });
+    box.append(h('div', { class: 'qcard' }, h('p', { class: 'qq' }, `${qi + 1}. ${item.q}`), opts, fb));
+  });
+}
+
+
+/* ---------- masthead tape ---------- */
+(function tape() {
+  const t = $('#ptape');
+  const M = (a, n, cls) => h('div', { class: 'met' + (cls ? ' ' + cls : '') }, h('b', null, a), h('span', null, n));
+  const R = () => h('div', { class: 'link', 'aria-hidden': 'true' }, h('span', { class: 'd' }, '→'), h('span', { class: 'u' }, '←'));
+  const I = (d, u) => h('div', { class: 'link irr' }, h('span', { class: 'd' }, d + ' →'), h('span', { class: 'u' }, '← ' + u));
+  t.append(M('Glc', 'glucose', 'end'), I('hexokinase', 'glucose 6-phosphatase'), M('G6P', 'glucose 6-P'), R(), M('F6P', 'fructose 6-P'),
+    I('PFK-1', 'FBPase-1'), M('F1,6BP', 'fructose 1,6-bisP'), R(), M('GAP', 'triose phosphates'), R(), M('1,3BPG', '1,3-bisP-glycerate'),
+    R(), M('3PG', '3-P-glycerate'), R(), M('2PG', '2-P-glycerate'), R(), M('PEP', 'phosphoenolpyruvate'),
+    I('pyruvate kinase', 'PC + PEPCK'), M('Pyr', 'pyruvate', 'end'));
+})();
+
+/* ================= shared step data ================= */
+const RT298 = 8.315 * 298 / 1000, RT310 = 8.315 * 310 / 1000;
+const STEPS = {
+  hk: { name: 'Hexokinase', dir: 'gly', no: 'Glycolysis step 1', rxn: 'Glucose + ATP → glucose 6-phosphate + ADP', dg0: -16.7, dg: -33.4, loc: 'Cytosol', note: 'Irreversible in the cell. Liver uses the isozyme hexokinase IV (glucokinase). Gluconeogenesis bypasses this step with glucose 6-phosphatase.' },
+  pgi: { name: 'Phosphohexose isomerase', dir: 'both', no: 'Glycolysis step 2', rxn: 'Glucose 6-phosphate ⇌ fructose 6-phosphate', dg0: 1.7, loc: 'Cytosol', note: 'Near equilibrium in the cell, so it serves both pathways.' },
+  pfk: { name: 'Phosphofructokinase-1 (PFK-1)', dir: 'gly', no: 'Glycolysis step 3', rxn: 'Fructose 6-phosphate + ATP → fructose 1,6-bisphosphate + ADP', dg0: -14.2, dg: -22.2, loc: 'Cytosol', note: 'The committed step of glycolysis. Activated by AMP, ADP and fructose 2,6-bisphosphate; inhibited by ATP and citrate. Bypassed by FBPase-1.' },
+  ald: { name: 'Aldolase and triose phosphate isomerase', dir: 'both', no: 'Glycolysis steps 4 and 5', rxn: 'Fructose 1,6-bisphosphate ⇌ dihydroxyacetone phosphate + glyceraldehyde 3-phosphate; DHAP ⇌ glyceraldehyde 3-phosphate', dg0: 23.8, dg0b: 7.5, loc: 'Cytosol', note: 'Aldolase is uphill under standard conditions (ΔG′° = +23.8 kJ/mol) but near equilibrium in the cell, because its products are kept at low concentration. Triose phosphate isomerase: ΔG′° = +7.5 kJ/mol.' },
+  gapdh: { name: 'Glyceraldehyde 3-phosphate dehydrogenase', dir: 'both', no: 'Glycolysis step 6', rxn: 'Glyceraldehyde 3-phosphate + Pi + NAD⁺ ⇌ 1,3-bisphosphoglycerate + NADH + H⁺', dg0: 6.3, loc: 'Cytosol', note: 'Run in reverse during gluconeogenesis, it consumes NADH. That is why the cytosol needs a supply of NADH (station 3).' },
+  pgk: { name: 'Phosphoglycerate kinase', dir: 'both', no: 'Glycolysis step 7', rxn: '1,3-Bisphosphoglycerate + ADP ⇌ 3-phosphoglycerate + ATP', dg0: -18.5, loc: 'Cytosol', note: 'Reversible in the cell despite its negative ΔG′°. In gluconeogenesis it consumes one ATP per 3-phosphoglycerate.' },
+  pgm: { name: 'Phosphoglycerate mutase', dir: 'both', no: 'Glycolysis step 8', rxn: '3-Phosphoglycerate ⇌ 2-phosphoglycerate', dg0: 4.4, loc: 'Cytosol', note: 'Near equilibrium; serves both pathways.' },
+  eno: { name: 'Enolase', dir: 'both', no: 'Glycolysis step 9', rxn: '2-Phosphoglycerate ⇌ phosphoenolpyruvate + H₂O', dg0: 7.5, loc: 'Cytosol', note: 'Near equilibrium; serves both pathways.' },
+  pk: { name: 'Pyruvate kinase', dir: 'gly', no: 'Glycolysis step 10', rxn: 'Phosphoenolpyruvate + ADP → pyruvate + ATP', dg0: -31.4, dg: -16.7, loc: 'Cytosol', note: 'The liver isozyme (L) is inhibited by ATP, acetyl-CoA, long-chain fatty acids and alanine, activated by fructose 1,6-bisphosphate, and inactivated by PKA phosphorylation when glucagon is high.' },
+  pc: { name: 'Pyruvate carboxylase', dir: 'gng', no: 'Bypass 1, first half', rxn: 'Pyruvate + HCO₃⁻ + ATP → oxaloacetate + ADP + Pi', loc: 'Mitochondrial matrix', locChip: 'mito', note: 'Biotin carries the activated CO₂. Acetyl-CoA is a required positive effector, so the enzyme is most active when fatty acids are being oxidized.', bypass: true },
+  pepck: { name: 'PEP carboxykinase (PEPCK)', dir: 'gng', no: 'Bypass 1, second half', rxn: 'Oxaloacetate + GTP ⇌ phosphoenolpyruvate + CO₂ + GDP', loc: 'Mitochondria and cytosol (both, in humans)', locChip: 'mito', note: 'Requires Mg²⁺. The CO₂ released is the same one pyruvate carboxylase added. Glucagon and cortisol increase transcription of its gene; insulin decreases it.', bypass: true },
+  fbp: { name: 'Fructose 1,6-bisphosphatase (FBPase-1)', dir: 'gng', no: 'Bypass 2', rxn: 'Fructose 1,6-bisphosphate + H₂O → fructose 6-phosphate + Pi', dg0: -16.3, loc: 'Cytosol', note: 'Mg²⁺-dependent hydrolysis; no ATP is made. Inhibited by AMP and by fructose 2,6-bisphosphate.' },
+  g6p: { name: 'Glucose 6-phosphatase', dir: 'gng', no: 'Bypass 3', rxn: 'Glucose 6-phosphate + H₂O → glucose + Pi', dg0: -13.8, loc: 'Lumen of the endoplasmic reticulum (liver, kidney)', locChip: 'er', note: 'Glucose 6-phosphate enters the ER on a transporter (T1); glucose and Pi leave on their own transporters. Muscle and brain lack this enzyme and can’t release free glucose.' }
+};
+const DIRCHIP = { gly: ['gly', 'Glycolysis only'], gng: ['gng', 'Gluconeogenesis only'], both: ['both', 'Both pathways'] };
+
+/* ================= 1 · PATHWAY MAP ================= */
+INIT.map = function () {
+  const svg = $('#pm-svg');
+  let dir = 'both', sel = 'pc';
+  const X = 300, W = 200, H = 34;
+  const N = {
+    glc: [40, 'Glucose'], g6p: [125, 'Glucose 6-phosphate'], f6p: [210, 'Fructose 6-phosphate'], f16: [295, 'Fructose 1,6-bisphosphate'],
+    tri: [385, 'Glyceraldehyde 3-P ⇌ DHAP'], bpg: [470, '1,3-Bisphosphoglycerate'], pg3: [545, '3-Phosphoglycerate'], pg2: [620, '2-Phosphoglycerate'],
+    pep: [705, 'Phosphoenolpyruvate'], pyr: [810, 'Pyruvate']
+  };
+  const top = k => N[k][0] - H / 2, bot = k => N[k][0] + H / 2;
+  const groups = {};
+  const mk = (id, label) => { const g = sv('g', { class: 'step', tabindex: 0, role: 'button', 'aria-label': `${STEPS[id].name}: show details`, 'data-id': id }); groups[id] = g; return g; };
+  const arrowHead = (id, col) => { const m = sv('marker', { id, viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }); m.append(sv('path', { d: 'M0,0 L10,5 L0,10 z', fill: col })); return m; };
+  const defs = sv('defs'); defs.append(arrowHead('ah-gly', 'var(--gly)'), arrowHead('ah-gng', 'var(--accent)')); svg.append(defs);
+  // compartments
+  svg.append(sv('rect', { x: 412, y: 14, width: 222, height: 142, rx: 22, fill: 'var(--er-soft)', stroke: 'var(--er)', 'stroke-width': 1.2 }));
+  svg.append(sv('text', { x: 622, y: 146, 'text-anchor': 'end', style: 'font-size:11.5px;fill:var(--er);font-weight:700' }, 'ER lumen'));
+  svg.append(sv('rect', { x: 412, y: 735, width: 222, height: 118, rx: 22, fill: 'var(--mito-soft)', stroke: 'var(--mito)', 'stroke-width': 1.2 }));
+  svg.append(sv('text', { x: 622, y: 845, 'text-anchor': 'end', style: 'font-size:11.5px;fill:var(--mito);font-weight:700' }, 'mitochondrion'));
+  // ×2 bracket
+  svg.append(sv('path', { d: `M26,${top('tri')} L18,${top('tri')} L18,${bot('pyr')} L26,${bot('pyr')}`, fill: 'none', stroke: 'var(--muted)', 'stroke-width': 1.4 }));
+  svg.append(sv('text', { x: 12, y: (N.tri[0] + N.pyr[0]) / 2, transform: `rotate(-90 12 ${(N.tri[0] + N.pyr[0]) / 2})`, 'text-anchor': 'middle', style: 'font-size:11.5px;fill:var(--muted)' }, '× 2 per glucose'));
+  // reversible steps
+  const rev = (id, a, b, lab, co) => {
+    const g = mk(id), y1 = bot(a) + 3, y2 = top(b) - 3, ym = (y1 + y2) / 2;
+    g.append(sv('rect', { class: 'hit', x: 270, y: y1, width: 300, height: y2 - y1, rx: 6 }));
+    g.append(sv('line', { class: 'dn', x1: X - 12, y1, x2: X - 12, y2, stroke: 'var(--gly)', 'stroke-width': 2.4, 'marker-end': 'url(#ah-gly)' }));
+    g.append(sv('line', { class: 'up', x1: X + 12, y1: y2, x2: X + 12, y2: y1, stroke: 'var(--accent)', 'stroke-width': 2.4, 'marker-end': 'url(#ah-gng)' }));
+    g.append(sv('text', { class: 'lab', x: X + 26, y: ym + (co ? -2 : 4), fill: 'var(--ink)' }, lab));
+    if (co) g.append(sv('text', { class: 'co', x: X + 26, y: ym + 12 }, co));
+    svg.append(g);
+  };
+  rev('pgi', 'g6p', 'f6p', 'Phosphohexose isomerase');
+  rev('ald', 'f16', 'tri', 'Aldolase · triose P isomerase');
+  rev('gapdh', 'tri', 'bpg', 'GAPDH', 'NAD⁺ ⇌ NADH');
+  rev('pgk', 'bpg', 'pg3', 'Phosphoglycerate kinase', 'ADP ⇌ ATP');
+  rev('pgm', 'pg3', 'pg2', 'Phosphoglycerate mutase');
+  rev('eno', 'pg2', 'pep', 'Enolase', 'H₂O');
+  // irreversible glycolytic steps (left)
+  const left = (id, a, b, lab, co) => {
+    const g = mk(id), y1 = N[a][0] + 6, y2 = N[b][0] - 6, x0 = X - W / 2;
+    g.append(sv('rect', { class: 'hit', x: 28, y: y1 - 6, width: x0 - 28, height: y2 - y1 + 12, rx: 6 }));
+    g.append(sv('path', { d: `M${x0 - 2},${y1} C${x0 - 52},${y1} ${x0 - 52},${y2} ${x0 - 6},${y2}`, fill: 'none', stroke: 'var(--gly)', 'stroke-width': 2.6, 'marker-end': 'url(#ah-gly)' }));
+    g.append(sv('text', { class: 'lab', x: x0 - 56, y: (y1 + y2) / 2 - 2, 'text-anchor': 'end', fill: 'var(--gly)' }, lab));
+    g.append(sv('text', { class: 'co', x: x0 - 56, y: (y1 + y2) / 2 + 12, 'text-anchor': 'end' }, co));
+    svg.append(g);
+  };
+  left('hk', 'glc', 'g6p', 'Hexokinase', 'ATP → ADP');
+  left('pfk', 'f6p', 'f16', 'PFK-1', 'ATP → ADP');
+  left('pk', 'pep', 'pyr', 'Pyruvate kinase', 'ADP → ATP');
+  // bypasses (right)
+  const right = (id, a, b, lab, co) => {
+    const g = mk(id), y1 = N[a][0] - 6, y2 = N[b][0] + 6, x0 = X + W / 2;   // from lower node a up to upper node b
+    g.append(sv('rect', { class: 'hit', x: x0, y: y2 - 6, width: 230, height: y1 - y2 + 12, rx: 6 }));
+    g.append(sv('path', { d: `M${x0 + 2},${y1} C${x0 + 52},${y1} ${x0 + 52},${y2} ${x0 + 6},${y2}`, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.6, 'marker-end': 'url(#ah-gng)' }));
+    g.append(sv('text', { class: 'lab', x: x0 + 58, y: (y1 + y2) / 2 - 2, fill: 'var(--accent)' }, lab));
+    g.append(sv('text', { class: 'co', x: x0 + 58, y: (y1 + y2) / 2 + 12 }, co));
+    svg.append(g);
+  };
+  right('g6p', 'g6p', 'glc', 'Glucose 6-phosphatase', 'H₂O → Pi');
+  right('fbp', 'f16', 'f6p', 'FBPase-1', 'H₂O → Pi');
+  // bypass 1 via oxaloacetate
+  const OX = 530, OY = 757;
+  const gpc = mk('pc');
+  gpc.append(sv('rect', { class: 'hit', x: 400, y: 766, width: 234, height: 64, rx: 6 }));
+  gpc.append(sv('path', { d: `M402,${N.pyr[0] - 4} C450,${N.pyr[0] - 4} 470,${OY + 30} ${OX - 40},${OY + 18}`, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.6, 'marker-end': 'url(#ah-gng)' }));
+  gpc.append(sv('text', { class: 'lab', x: 470, y: 812, fill: 'var(--accent)' }, 'Pyruvate carboxylase'));
+  gpc.append(sv('text', { class: 'co', x: 470, y: 826 }, 'ATP, HCO₃⁻, biotin'));
+  svg.append(gpc);
+  const gpe = mk('pepck');
+  gpe.append(sv('rect', { class: 'hit', x: 400, y: 690, width: 234, height: 50, rx: 6 }));
+  gpe.append(sv('path', { d: `M${OX - 40},${OY - 18} C470,${OY - 30} 450,${N.pep[0] + 4} 406,${N.pep[0] + 4}`, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.6, 'marker-end': 'url(#ah-gng)' }));
+  gpe.append(sv('text', { class: 'lab', x: 470, y: 704, fill: 'var(--accent)' }, 'PEP carboxykinase'));
+  gpe.append(sv('text', { class: 'co', x: 470, y: 718 }, 'GTP → GDP + CO₂'));
+  svg.append(gpe);
+  // nodes on top
+  Object.entries(N).forEach(([k, [y, t]]) => {
+    const g = sv('g', { class: 'node' }); g.append(sv('rect', { x: X - W / 2, y: y - H / 2, width: W, height: H, rx: 9 }), sv('text', { x: X, y: y + 5, 'text-anchor': 'middle' }, t)); svg.append(g);
+  });
+  const go = sv('g', { class: 'node side' }); go.append(sv('rect', { x: OX - 62, y: OY - 15, width: 124, height: 30, rx: 9 }), sv('text', { x: OX, y: OY + 5, 'text-anchor': 'middle' }, 'Oxaloacetate')); svg.append(go);
+
+  function info() {
+    const s = STEPS[sel], box = $('#pm-info'); const [dc, dl] = DIRCHIP[s.dir];
+    const rows = [['Role', s.no], ['Location', s.loc]];
+    if (s.dg0 != null) rows.push(['ΔG′°', `${s.dg0 > 0 ? '+' : ''}${s.dg0} kJ/mol${s.dir === 'both' ? ' (glycolytic direction)' : ''}`]);
+    if (s.dg != null) rows.push(['ΔG in the cell', `${s.dg} kJ/mol (erythrocytes)`]);
+    else if (s.dir === 'both') rows.push(['ΔG in the cell', 'close to zero, so it runs either way']);
+    if (s.bypass) rows.push(['Bypass 1 overall', 'Pyruvate → PEP: ΔG′° = +0.9 kJ/mol; ΔG ≈ −25 kJ/mol in the cell']);
+    box.replaceChildren(
+      h('div', { class: 'tags' }, h('span', { class: 'chip ' + dc }, dl), s.locChip ? h('span', { class: 'chip ' + s.locChip }, s.locChip === 'mito' ? 'Mitochondria' : 'ER') : null),
+      h('h3', null, s.name),
+      h('div', { class: 'rxn' }, s.rxn),
+      h('dl', { class: 'kv' }, rows.flatMap(([k, v]) => [h('dt', null, k), h('dd', null, v)])),
+      h('p', { style: 'font-size:15px' }, s.note),
+      h('p', { class: 'hint', style: 'margin:0' }, 'Click another step on the map to compare.'));
+  }
+  function paint() {
+    Object.entries(groups).forEach(([id, g]) => {
+      const s = STEPS[id];
+      g.classList.toggle('sel', id === sel);
+      g.setAttribute('aria-pressed', id === sel ? 'true' : 'false');
+      const off = (dir === 'gly' && s.dir === 'gng') || (dir === 'gng' && s.dir === 'gly');
+      g.classList.toggle('dimmed', off);
+      const dn = $('.dn', g), up = $('.up', g);
+      if (dn) dn.classList.toggle('dimmed', dir === 'gng');
+      if (up) up.classList.toggle('dimmed', dir === 'gly');
+    });
+  }
+  Object.entries(groups).forEach(([id, g]) => {
+    const pick = () => { sel = id; paint(); info(); };
+    g.addEventListener('click', pick);
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+  });
+  $$('#pm-dir button').forEach(b => b.addEventListener('click', () => { dir = b.dataset.d; $$('#pm-dir button').forEach(x => x.classList.toggle('on', x === b)); paint(); }));
+  paint(); info();
+};
+
+/* ================= 2 · WHY BYPASS? ================= */
+INIT.energy = function () {
+  const svg = $('#fe-svg');
+  const LAB = ['HK', 'PGI', 'PFK-1', 'Aldolase', 'TPI', 'GAPDH', 'PGK', 'PGM', 'Enolase', 'PK'];
+  const DG0 = [-16.7, 1.7, -14.2, 23.8, 7.5, 6.3, -18.5, 4.4, 7.5, -31.4];
+  const CELL = { 0: -33.4, 2: -22.2, 9: -16.7 };
+  const BYP = { 0: { lab: 'G6Pase', dg0: -13.8 }, 2: { lab: 'FBPase-1', dg0: -16.3 }, 9: { lab: 'PC + PEPCK', dg0: 0.9, dg: -25 } };
+  let mode = 'gly';
+  const x0 = 64, sp = 64.5, y0 = 165, k = 3.5;
+  const cx = i => x0 + sp / 2 + i * sp, yv = v => y0 - v * k;
+  function draw() {
+    svg.replaceChildren();
+    [-40, -20, 0, 20, 40].forEach(v => { svg.append(sv('line', { x1: x0 - 6, x2: 712, y1: yv(v), y2: yv(v), stroke: 'var(--line)', 'stroke-dasharray': v ? '2 4' : null, 'stroke-width': v ? 1 : 1.5 })); svg.append(sv('text', { x: x0 - 10, y: yv(v) + 4, 'text-anchor': 'end' }, (v > 0 ? '+' : '') + v)); });
+    svg.append(sv('text', { x: 14, y: y0, transform: `rotate(-90 14 ${y0})`, 'text-anchor': 'middle' }, 'kJ/mol'));
+    svg.append(sv('text', { x: 712, y: 18, 'text-anchor': 'end' }, mode === 'gly' ? 'reads left → right' : 'reads right → left'));
+    for (let i = 0; i < 10; i++) {
+      const by = mode === 'gng' && BYP[i];
+      const col = mode === 'gly' ? 'var(--gly)' : mode === 'gng' ? 'var(--accent)' : (CELL[i] != null ? 'var(--bad)' : 'var(--muted)');
+      const sgn = mode === 'gly' ? 1 : -1;
+      const g0 = by ? by.dg0 : sgn * DG0[i];
+      const gc = by ? by.dg : (CELL[i] != null ? sgn * CELL[i] : null);
+      const c = cx(i);
+      // standard bar (hollow)
+      const yA = yv(Math.max(g0, 0)), hA = Math.abs(g0) * k;
+      svg.append(sv('rect', { x: c - 25, y: yA, width: 22, height: Math.max(hA, 1.5), fill: `color-mix(in srgb, ${col} 14%, transparent)`, stroke: col, 'stroke-width': 1.5 }));
+      svg.append(sv('text', { x: c - 14, y: g0 >= 0 ? yA - 5 : yv(g0) + 13, 'text-anchor': 'middle', style: 'font-size:10.5px' }, (g0 > 0 ? '+' : '') + g0));
+      // cellular
+      if (gc != null) {
+        const yB = yv(Math.max(gc, 0)), hB = Math.abs(gc) * k;
+        svg.append(sv('rect', { x: c + 3, y: yB, width: 22, height: hB, fill: col }));
+        svg.append(sv('text', { x: c + 14, y: gc >= 0 ? yB - 5 : yv(gc) + 13, 'text-anchor': 'middle', style: `font-size:10.5px;font-weight:700;fill:${col}` }, (gc > 0 ? '+' : '') + gc));
+      } else if (!by) {
+        svg.append(sv('path', { d: `M${c + 14},${y0 - 5} l5,5 l-5,5 l-5,-5 z`, fill: 'var(--muted)' }));
+        svg.append(sv('text', { x: c + 14, y: y0 + 19, 'text-anchor': 'middle', style: 'font-size:10.5px' }, '≈0'));
+      }
+      if (mode === 'rev' && CELL[i] != null) svg.append(sv('text', { x: c, y: yv(sgn * CELL[i]) - 18, 'text-anchor': 'middle', style: 'font-size:11px;font-weight:800;fill:var(--bad)' }, 'uphill'));
+      svg.append(sv('text', { x: c, y: 318, 'text-anchor': 'middle', style: `font-size:11.5px;font-weight:700;fill:${by ? 'var(--accent)' : 'var(--ink)'}` }, by ? by.lab : LAB[i]));
+      svg.append(sv('text', { x: c, y: 333, 'text-anchor': 'middle', style: 'font-size:10px' }, by ? 'bypass' : `step ${i + 1}`));
+    }
+    // legend
+    const lg = sv('g', { transform: 'translate(70,16)' });
+    lg.append(sv('rect', { x: 0, y: -9, width: 12, height: 10, fill: 'none', stroke: 'var(--muted)', 'stroke-width': 1.5 }), sv('text', { x: 18, y: 0 }, 'ΔG′° (standard)'));
+    lg.append(sv('rect', { x: 130, y: -9, width: 12, height: 10, fill: 'var(--muted)' }), sv('text', { x: 148, y: 0 }, 'ΔG in the cell'));
+    lg.append(sv('path', { d: 'M270,-9 l5,5 l-5,5 l-5,-5 z', fill: 'var(--muted)' }), sv('text', { x: 282, y: 0 }, 'near equilibrium'));
+    svg.append(lg);
+    const NOTE = {
+      gly: ['Glycolysis. ', 'Seven steps sit near equilibrium in the cell (◆). Hexokinase, PFK-1 and pyruvate kinase have large negative ΔG and pull the pathway forward. Cellular values are Lehninger’s for erythrocytes.'],
+      rev: ['Glycolysis run backward. ', 'The near-equilibrium steps reverse easily, but the three irreversible steps would now be uphill by 16–33 kJ/mol. The pathway can’t run this way.'],
+      gng: ['Gluconeogenesis. ', 'Glucose 6-phosphatase and FBPase-1 are simple hydrolyses with negative ΔG′°. Pyruvate → PEP needs two enzymes, one ATP and one GTP: ΔG′° is only +0.9 kJ/mol, and in the cell ΔG is about −25 kJ/mol.']
+    };
+    $('#fe-note').replaceChildren(h('b', null, NOTE[mode][0]), NOTE[mode][1]);
+  }
+  $$('#fe-mode button').forEach(b => b.addEventListener('click', () => { mode = b.dataset.m; $$('#fe-mode button').forEach(x => x.classList.toggle('on', x === b)); draw(); }));
+  draw();
+
+  // K'eq calculator
+  const KP = [['Pyruvate kinase, reversed', 31.4], ['Aldolase', 23.8], ['Bypass 1 (pyruvate → PEP)', 0.9], ['FBPase-1', -16.3], ['Glucose 6-phosphatase', -13.8]];
+  const kin = $('#kq-in'), kpre = $('#kq-pre');
+  KP.forEach(([n, v]) => { const b = h('button', { type: 'button' }, `${n}: ${v > 0 ? '+' : ''}${v}`); b.addEventListener('click', () => { kin.value = v; $$('button', kpre).forEach(x => x.classList.toggle('on', x === b)); kq(); }); kpre.append(b); });
+  function kq() {
+    const v = parseFloat(kin.value);
+    if (!isFinite(v)) { $('#kq-out').textContent = '—'; $('#kq-txt').textContent = 'Enter a number.'; return; }
+    const K = Math.exp(-v / RT298);
+    const ex = Math.floor(Math.log10(K)), sup = String(ex).split('').map(c => SUP[c]).join('');
+    $('#kq-out').textContent = 'K′eq = ' + (K >= 0.01 && K < 1e4 ? K.toPrecision(3) : `${(K / Math.pow(10, ex)).toFixed(2)} × 10${sup}`);
+    $('#kq-txt').textContent = K < 1 ? `At equilibrium the ratio [products]/[reactants] is only ${K < 0.001 ? 'about ' + $('#kq-out').textContent.replace('K′eq = ', '') : K.toPrecision(2)}. To run forward, the cell must keep products far below that, or couple the step to ATP hydrolysis.` : `At equilibrium products outnumber reactants by about ${K >= 1e4 ? K.toExponential(1) : Math.round(K).toLocaleString('en-US')} to 1, so the step runs forward easily.`;
+  }
+  kin.addEventListener('input', () => { $$('button', kpre).forEach(x => x.classList.remove('on')); kq(); });
+  $$('button', kpre)[0].classList.add('on'); kq();
+
+  // ΔG in the cell calculator
+  const DP = {
+    ald: { n: 'Aldolase', dg0: 23.8, eq: 'F1,6BP ⇌ DHAP + GAP', s: [['F1,6BP', 0.031]], p: [['DHAP', 0.138], ['GAP', 0.0185]] },
+    fbp: { n: 'FBPase-1', dg0: -16.3, eq: 'F1,6BP + H₂O → F6P + Pi', s: [['F1,6BP', 0.031]], p: [['F6P', 0.014], ['Pi', 1.0]] },
+    g6p: { n: 'Glucose 6-phosphatase', dg0: -13.8, eq: 'G6P + H₂O → glucose + Pi', s: [['G6P', 0.083]], p: [['glucose', 5.0], ['Pi', 1.0]] }
+  };
+  let cur = 'ald'; const conc = {};
+  const dpre = $('#dg-pre');
+  Object.entries(DP).forEach(([id, d]) => { const b = h('button', { type: 'button', class: id === cur ? 'on' : '' }, `${d.n} (ΔG′° ${d.dg0 > 0 ? '+' : ''}${d.dg0})`); b.addEventListener('click', () => { cur = id; $$('button', dpre).forEach(x => x.classList.toggle('on', x === b)); build(); }); dpre.append(b); });
+  const fmtC = mm => mm >= 1 ? mm.toFixed(2) + ' mM' : mm >= 0.01 ? (mm * 1000).toFixed(0) + ' µM' : (mm * 1000).toFixed(1) + ' µM';
+  function build() {
+    const d = DP[cur], box = $('#dg-sl'); box.replaceChildren();
+    $('#dg-eq').textContent = `${d.eq}   ·   Q = ${d.p.map(x => '[' + x[0] + ']').join('')} / ${d.s.map(x => '[' + x[0] + ']').join('')}`;
+    [...d.s, ...d.p].forEach(([nm, v]) => {
+      conc[nm] = v;
+      const id = 'dg-' + cur + '-' + nm.replace(/[^a-z0-9]/gi, '');
+      const out = h('output', { for: id }, fmtC(v));
+      const inp = h('input', { type: 'range', id, min: -3, max: 1.3, step: 0.05, value: Math.log10(v).toFixed(2) });
+      inp.addEventListener('input', () => { conc[nm] = Math.pow(10, +inp.value); out.textContent = fmtC(conc[nm]); calc(); });
+      box.append(h('div', { class: 'slider' }, h('div', { class: 'sl-top' }, h('label', { for: id }, '[' + nm + ']'), out), inp));
+    });
+    calc();
+  }
+  function calc() {
+    const d = DP[cur];
+    const Q = d.p.reduce((a, [n]) => a * conc[n] / 1000, 1) / d.s.reduce((a, [n]) => a * conc[n] / 1000, 1);
+    const rtl = RT310 * Math.log(Q), dg = d.dg0 + rtl;
+    const chip = Math.abs(dg) < 3 ? h('span', { class: 'chip warn' }, 'near equilibrium') : dg < 0 ? h('span', { class: 'chip good' }, 'runs forward') : h('span', { class: 'chip bad' }, 'runs backward');
+    $('#dg-stats').replaceChildren(
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Q (M)'), h('div', { class: 'v', style: 'font-size:18px' }, Q.toExponential(1))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'RT ln Q'), h('div', { class: 'v' }, fmt(rtl, 1), h('small', null, ' kJ'))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'ΔG'), h('div', { class: 'v' }, fmt(dg, 1), h('small', null, ' kJ/mol')), chip));
+  }
+  build();
+};
+
+/* ================= 3 · COMPARTMENTS ================= */
+INIT.cell = function () {
+  const svg = $('#cm-svg');
+  let route = 'pyr', i = 0;
+  const NODES = {
+    src: [80, 62, 'Alanine'], pyr_c: [80, 170, 'Pyruvate'], pyr_m: [80, 290, 'Pyruvate'], oaa_m: [200, 290, 'Oxaloacetate'],
+    pep_m: [318, 290, 'PEP'], mal_m: [200, 392, 'Malate'], mal_c: [480, 392, 'Malate'], oaa_c: [480, 318, 'Oxaloacetate'],
+    pep_c: [480, 245, 'PEP'], g6p_c: [300, 140, 'Glucose 6-P'], glc_er: [512, 70, 'Glucose'], glc_out: [664, 70, 'Glucose']
+  };
+  const ARROWS = {
+    src: ['src', 'pyr_c', [92, 120, 'start'], 'aminotransferase'],
+    pyrin: ['pyr_c', 'pyr_m', [92, 236, 'start'], 'pyruvate carrier'],
+    pc: ['pyr_m', 'oaa_m', [140, 272, 'middle'], 'pyruvate carboxylase'],
+    mdhm: ['oaa_m', 'mal_m', [210, 346, 'start'], 'malate DH, −NADH'],
+    malout: ['mal_m', 'mal_c', [340, 383, 'middle'], 'malate–α-KG transporter'],
+    mdhc: ['mal_c', 'oaa_c', [492, 360, 'start'], 'malate DH, +NADH'],
+    pepckc: ['oaa_c', 'pep_c', [492, 286, 'start'], 'PEPCK (GTP)'],
+    pepckm: ['oaa_m', 'pep_m', [262, 268, 'middle'], 'PEPCK (GTP)'],
+    pepout: ['pep_m', 'pep_c', [392, 290, 'start'], 'PEP transporter'],
+    up: ['pep_c', 'g6p_c', [338, 205, 'end'], 'reverse glycolysis + FBPase-1'],
+    g6pase: ['g6p_c', 'glc_er', [392, 86, 'end'], 'glucose 6-phosphatase'],
+    out: ['glc_er', 'glc_out', [588, 60, 'middle'], 'GLUT2']
+  };
+  const ROUTES = {
+    pyr: { src: 'Alanine', srcLab: 'alanine aminotransferase', steps: ['src', 'pyrin', 'pc', 'mdhm', 'malout', 'mdhc', 'pepckc', 'up', 'g6pase', 'out'], skip: ['pep_m'] },
+    lac: { src: 'Lactate', srcLab: 'lactate DH (makes NADH)', steps: ['src', 'pyrin', 'pc', 'pepckm', 'pepout', 'up', 'g6pase', 'out'], skip: ['mal_m', 'mal_c', 'oaa_c'] }
+  };
+  const TXT = {
+    src_pyr: ['Alanine aminotransferase', 'Alanine + α-ketoglutarate → pyruvate + glutamate. The amino group goes on toward the urea cycle.'],
+    src_lac: ['Lactate dehydrogenase', 'Lactate + NAD⁺ → pyruvate + NADH + H⁺. This NADH stays in the cytosol, ready for the GAPDH step.'],
+    pyrin: ['Into the mitochondrion', 'Pyruvate crosses the inner membrane on the mitochondrial pyruvate carrier.'],
+    pc: ['Pyruvate carboxylase', 'Pyruvate + HCO₃⁻ + ATP → oxaloacetate + ADP + Pi. Biotin carries the CO₂; acetyl-CoA must be bound for full activity.'],
+    mdhm: ['Mitochondrial malate dehydrogenase', 'Oxaloacetate + NADH + H⁺ → malate + NAD⁺. There is no transporter for oxaloacetate, so it leaves as malate.'],
+    malout: ['Malate leaves', 'Malate crosses the inner membrane on the malate–α-ketoglutarate transporter.'],
+    mdhc: ['Cytosolic malate dehydrogenase', 'Malate + NAD⁺ → oxaloacetate + NADH + H⁺. The reducing equivalents made it out of the mitochondrion with the carbon.'],
+    pepckc: ['Cytosolic PEP carboxykinase', 'Oxaloacetate + GTP → PEP + CO₂ + GDP.'],
+    pepckm: ['Mitochondrial PEP carboxykinase', 'Oxaloacetate + GTP → PEP + CO₂ + GDP, inside the matrix. No reducing equivalents need to leave: lactate dehydrogenase already made cytosolic NADH.'],
+    pepout: ['PEP leaves', 'PEP crosses the inner membrane on an anion transporter.'],
+    up: ['Back up the shared steps', 'PEP → 2-phosphoglycerate → 3-phosphoglycerate → 1,3-bisphosphoglycerate (ATP used) → glyceraldehyde 3-phosphate (NADH used) → fructose 1,6-bisphosphate → fructose 6-phosphate (FBPase-1) → glucose 6-phosphate. All in the cytosol.'],
+    g6pase: ['Glucose 6-phosphatase', 'Glucose 6-phosphate enters the ER lumen on a transporter, and glucose 6-phosphatase hydrolyzes it to glucose + Pi.'],
+    out: ['To the blood', 'Glucose returns to the cytosol and leaves the hepatocyte through GLUT2.']
+  };
+  const NADH = {
+    pyr: 'Cytosolic NADH comes from malate: the malate route carries reducing equivalents out of the mitochondrion along with the carbons. This is the route used when the starting material is pyruvate or alanine.',
+    lac: 'Cytosolic NADH comes from lactate dehydrogenase, so oxaloacetate can be converted to PEP right in the matrix. The cytosol already has the NADH it needs.'
+  };
+  const defs = sv('defs');
+  [['cm-ah', 'var(--accent)'], ['cm-ahm', 'var(--muted)']].forEach(([id, c]) => { const m = sv('marker', { id, viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }); m.append(sv('path', { d: 'M0,0 L10,5 L0,10 z', fill: c })); defs.append(m); });
+  svg.append(defs);
+  svg.append(sv('rect', { x: 6, y: 6, width: 600, height: 438, rx: 28, fill: 'var(--panel)', stroke: 'var(--line)', 'stroke-width': 2 }));
+  svg.append(sv('text', { x: 26, y: 30, style: 'font-size:12px;font-weight:700;fill:var(--muted)' }, 'hepatocyte cytosol'));
+  svg.append(sv('rect', { x: 612, y: 6, width: 102, height: 438, rx: 14, fill: 'var(--sunk)' }));
+  svg.append(sv('text', { x: 663, y: 430, 'text-anchor': 'middle', style: 'font-size:12px;font-weight:700;fill:var(--muted)' }, 'blood'));
+  svg.append(sv('rect', { x: 24, y: 238, width: 352, height: 192, rx: 70, fill: 'var(--mito-soft)', stroke: 'var(--mito)', 'stroke-width': 1.5 }));
+  svg.append(sv('text', { x: 200, y: 424, 'text-anchor': 'middle', style: 'font-size:12px;font-weight:700;fill:var(--mito)' }, 'mitochondrial matrix'));
+  svg.append(sv('rect', { x: 424, y: 22, width: 174, height: 100, rx: 26, fill: 'var(--er-soft)', stroke: 'var(--er)', 'stroke-width': 1.5 }));
+  svg.append(sv('text', { x: 586, y: 112, 'text-anchor': 'end', style: 'font-size:12px;font-weight:700;fill:var(--er)' }, 'ER lumen'));
+  const box = k => { const [x, y, t] = NODES[k]; const w = Math.max(54, t.length * 7.6 + 18); return { x, y, w, h: 28 }; };
+  const edge = (a, b, pad) => { const dx = b.x - a.x, dy = b.y - a.y; const t = Math.min(Math.abs(dx) > 0.01 ? (a.w / 2) / Math.abs(dx) : 1e9, Math.abs(dy) > 0.01 ? (a.h / 2) / Math.abs(dy) : 1e9); const L = Math.hypot(dx, dy); return { x: a.x + dx * t + dx / L * pad, y: a.y + dy * t + dy / L * pad }; };
+  const arEls = {};
+  Object.entries(ARROWS).forEach(([id, [a, b, [lx, ly, an], lab]]) => {
+    const A = box(a), B = box(b), p = edge(A, B, 3), q = edge(B, A, 5);
+    const g = sv('g', { class: 'ar' });
+    const ln = sv('line', { x1: p.x, y1: p.y, x2: q.x, y2: q.y, stroke: 'var(--muted)', 'stroke-width': 2.2, 'marker-end': 'url(#cm-ahm)' });
+    const tx = sv('text', { x: lx, y: ly, 'text-anchor': an }, lab);
+    g.append(ln, tx); svg.append(g); arEls[id] = { g, ln, tx };
+  });
+  const ndEls = {};
+  Object.keys(NODES).forEach(k => {
+    const b = box(k); const g = sv('g', { class: 'nd' });
+    const t = sv('text', { x: b.x, y: b.y + 4.5, 'text-anchor': 'middle' }, NODES[k][2]);
+    g.append(sv('rect', { x: b.x - b.w / 2, y: b.y - b.h / 2, width: b.w, height: b.h, rx: 8 }), t); svg.append(g); ndEls[k] = { g, t };
+  });
+  function paint() {
+    const R = ROUTES[route];
+    ndEls.src.t.textContent = R.src;
+    arEls.src.tx.textContent = R.srcLab;
+    Object.entries(arEls).forEach(([id, e]) => {
+      const k = R.steps.indexOf(id);
+      e.g.classList.remove('off', 'todo', 'now');
+      if (k < 0) e.g.classList.add('off');
+      else if (k > i) e.g.classList.add('todo');
+      else if (k === i) e.g.classList.add('now');
+      const on = k >= 0 && k <= i;
+      e.ln.setAttribute('stroke', on ? 'var(--accent)' : 'var(--muted)');
+      e.ln.setAttribute('marker-end', on ? 'url(#cm-ah)' : 'url(#cm-ahm)');
+      e.ln.setAttribute('stroke-width', k === i ? 3.4 : 2.2);
+    });
+    Object.entries(ndEls).forEach(([k, e]) => { e.g.style.opacity = R.skip.includes(k) ? 0.18 : 1; });
+    const id = R.steps[i], key = id === 'src' ? 'src_' + route : id, [tt, tx] = TXT[key];
+    $('#cm-txt').replaceChildren(h('span', { class: 'chip' }, `Step ${i + 1} of ${R.steps.length}`), ' ', h('b', null, tt), h('br'), tx);
+    const ol = $('#cm-list'); ol.replaceChildren();
+    R.steps.forEach((s, k) => { const li = h('li', { class: k === i ? 'now' : k < i ? 'done' : '', tabindex: 0 }, TXT[s === 'src' ? 'src_' + route : s][0]); const go = () => { i = k; paint(); }; li.addEventListener('click', go); li.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }); ol.append(li); });
+    $('#cm-prev').disabled = i === 0; $('#cm-next').disabled = i === R.steps.length - 1;
+    $('#cm-nadh').replaceChildren(h('b', null, 'Where the cytosolic NADH comes from: '), NADH[route]);
+  }
+  $$('#cm-route button').forEach(b => b.addEventListener('click', () => { route = b.dataset.r; i = 0; $$('#cm-route button').forEach(x => x.classList.toggle('on', x === b)); paint(); }));
+  $('#cm-prev').addEventListener('click', () => { if (i > 0) { i--; paint(); } });
+  $('#cm-next').addEventListener('click', () => { if (i < ROUTES[route].steps.length - 1) { i++; paint(); } });
+  paint();
+};
+
+/* ================= 4 · PRECURSORS ================= */
+INIT.sources = function () {
+  const ITEMS = [
+    { id: 'lac', n: 'Lactate', src: 'from working muscle and red blood cells', yes: true, at: 'pyr', why: 'Lactate dehydrogenase turns it into pyruvate. It is a major source of new glucose, especially after exercise (Cori cycle).' },
+    { id: 'pal', n: 'Palmitate', src: 'an even-chain (C16) fatty acid', yes: false, at: 'acoa', why: 'β-Oxidation gives 8 acetyl-CoA. Each acetyl group’s two carbons are matched by two CO₂ lost in the citric acid cycle, so no net oxaloacetate is made.' },
+    { id: 'ala', n: 'Alanine', src: 'released by muscle protein breakdown', yes: true, at: 'pyr', why: 'Transamination gives pyruvate. This is the glucose–alanine cycle.' },
+    { id: 'leu', n: 'Leucine', src: 'a branched-chain amino acid', yes: false, at: 'acoa', why: 'Exclusively ketogenic: its carbons end up as acetyl-CoA and acetoacetate.' },
+    { id: 'gol', n: 'Glycerol', src: 'from triacylglycerol breakdown in adipose tissue', yes: true, at: 'tri', why: 'In the liver, glycerol kinase and glycerol 3-phosphate dehydrogenase convert it to dihydroxyacetone phosphate.' },
+    { id: 'eth', n: 'Ethanol', src: 'from alcoholic drinks', yes: false, at: 'acoa', why: 'Oxidized to acetaldehyde, then acetate, then acetyl-CoA. It gives no net glucose, and the NADH it produces slows gluconeogenesis (see the casebook).' },
+    { id: 'asp', n: 'Aspartate', src: 'an amino acid', yes: true, at: 'oaa', why: 'Transamination gives oxaloacetate directly.' },
+    { id: 'acoa', n: 'Acetyl-CoA', src: 'from β-oxidation or pyruvate dehydrogenase', yes: false, at: 'acoa', why: 'Pyruvate dehydrogenase is irreversible, and the two carbons acetyl-CoA brings into the citric acid cycle leave as two CO₂.' },
+    { id: 'glu', n: 'Glutamate', src: 'an amino acid', yes: true, at: 'akg', why: 'Becomes α-ketoglutarate, which the citric acid cycle carries on to oxaloacetate.' },
+    { id: 'lys', n: 'Lysine', src: 'an amino acid', yes: false, at: 'acoa', why: 'Exclusively ketogenic, like leucine: degraded to acetoacetyl-CoA.' },
+    { id: 'prop', n: 'Propionyl-CoA', src: 'from the last round of β-oxidation of an odd-chain fatty acid', yes: true, at: 'suc', why: 'Carboxylated to methylmalonyl-CoA and rearranged (coenzyme B₁₂) to succinyl-CoA, which the cycle converts to oxaloacetate.' },
+    { id: 'aca', n: 'Acetoacetate', src: 'a ketone body', yes: false, at: 'acoa', why: 'Used by extrahepatic tissues by conversion back to acetyl-CoA, so it gives no net glucose.' }
+  ];
+  const done = {};
+  const map = $('#so-map');
+  const ROWS = [
+    { k: 'glc', n: 'Glucose', s: 'the product' },
+    { arrow: '↑ FBPase-1, glucose 6-phosphatase' },
+    { k: 'tri', n: 'Triose phosphates (DHAP)', s: 'entry for glycerol' },
+    { arrow: '↑ shared steps' },
+    { k: 'pep', n: 'Phosphoenolpyruvate', s: '' },
+    { arrow: '↑ PEP carboxykinase' },
+    { k: 'oaa', n: 'Oxaloacetate', s: 'also fed by the citric acid cycle', sub: [['akg', 'α-ketoglutarate'], ['suc', 'succinyl-CoA']] },
+    { arrow: '↑ pyruvate carboxylase' },
+    { k: 'pyr', n: 'Pyruvate', s: '' },
+    { arrow: '↓ pyruvate dehydrogenase (one way only)', dn: true },
+    { k: 'acoa', n: 'Acetyl-CoA: no net glucose', s: '2 C in, 2 CO₂ out', dead: true }
+  ];
+  function drawMap() {
+    map.replaceChildren();
+    ROWS.forEach(r => {
+      if (r.arrow) { map.append(h('div', { class: 'earrow' + (r.dn ? ' dn' : '') }, r.arrow)); return; }
+      const keys = [r.k, ...(r.sub || []).map(x => x[0])];
+      const chips = h('div', { class: 'chips' });
+      ITEMS.filter(it => keys.includes(it.at)).forEach(it => {
+        const sub = (r.sub || []).find(x => x[0] === it.at);
+        chips.append(h('span', { class: done[it.id] ? 'lit' : '' }, done[it.id] ? (sub ? `${it.n} → ${sub[1]}` : it.n) : '?'));
+      });
+      map.append(h('div', { class: 'erow' + (r.dead ? ' dead' : '') }, h('div', { class: 'en' }, h('span', null, r.n), r.s ? h('small', null, r.s) : null), chips.childNodes.length ? chips : null));
+    });
+  }
+  function score() {
+    const n = Object.keys(done).length, right = Object.values(done).filter(Boolean).length;
+    $('#so-score').replaceChildren(
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Sorted'), h('div', { class: 'v' }, `${n}`, h('small', null, ` / ${ITEMS.length}`))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Right first time'), h('div', { class: 'v' }, String(right))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, ' '), h('button', { type: 'button', class: 'btn', onclick: () => { Object.keys(done).forEach(k => delete done[k]); cards(); score(); drawMap(); } }, 'Start over')));
+  }
+  function cards() {
+    const box = $('#so-cards'); box.replaceChildren();
+    ITEMS.forEach(it => {
+      const c = h('div', { class: 'pcard' }, h('h4', null, it.n), h('span', { class: 'src' }, it.src));
+      if (it.id in done) {
+        c.classList.add(done[it.id] ? 'right' : 'wrong');
+        c.append(h('p', { class: 'why' }, h('span', { class: done[it.id] ? 'ok' : 'no' }, done[it.id] ? 'Right. ' : 'Not quite. '), h('b', null, it.yes ? 'Makes glucose. ' : 'No net glucose. '), it.why));
+      } else {
+        const ans = yes => { done[it.id] = yes === it.yes; cards(); score(); drawMap(); };
+        c.append(h('div', { class: 'acts' }, h('button', { type: 'button', onclick: () => ans(true) }, 'Makes glucose'), h('button', { type: 'button', onclick: () => ans(false) }, 'No net glucose')));
+      }
+      box.append(c);
+    });
+  }
+  cards(); score(); drawMap();
+};
+
+/* ================= 5 · ENERGY LEDGER ================= */
+INIT.ledger = function () {
+  const R = {
+    pyr: [['Pyruvate carboxylase', -2, 0, 0, '×2, mitochondria'], ['PEP carboxykinase', 0, -2, 0, '×2'], ['Malate dehydrogenase, out and back', 0, 0, 0, 'moves NADH to the cytosol'], ['Enolase, phosphoglycerate mutase', 0, 0, 0, '×2'], ['Phosphoglycerate kinase', -2, 0, 0, '×2'], ['Glyceraldehyde 3-phosphate dehydrogenase', 0, 0, -2, '×2'], ['Triose phosphate isomerase, aldolase', 0, 0, 0, ''], ['FBPase-1', 0, 0, 0, 'releases Pi'], ['Phosphohexose isomerase', 0, 0, 0, ''], ['Glucose 6-phosphatase', 0, 0, 0, 'releases Pi']],
+    lac: [['Lactate dehydrogenase', 0, 0, 2, '×2, cytosol'], ['Pyruvate carboxylase', -2, 0, 0, '×2'], ['PEP carboxykinase (mitochondrial)', 0, -2, 0, '×2'], ['Enolase, phosphoglycerate mutase', 0, 0, 0, '×2'], ['Phosphoglycerate kinase', -2, 0, 0, '×2'], ['Glyceraldehyde 3-phosphate dehydrogenase', 0, 0, -2, '×2'], ['Triose phosphate isomerase, aldolase', 0, 0, 0, ''], ['FBPase-1', 0, 0, 0, 'releases Pi'], ['Phosphohexose isomerase', 0, 0, 0, ''], ['Glucose 6-phosphatase', 0, 0, 0, 'releases Pi']],
+    gol: [['Glycerol kinase', -2, 0, 0, '×2'], ['Glycerol 3-phosphate dehydrogenase', 0, 0, 2, '×2, gives DHAP'], ['Triose phosphate isomerase', 0, 0, 0, 'one DHAP → glyceraldehyde 3-P'], ['Aldolase', 0, 0, 0, 'DHAP + GAP → F1,6BP'], ['FBPase-1', 0, 0, 0, 'releases Pi'], ['Phosphohexose isomerase', 0, 0, 0, ''], ['Glucose 6-phosphatase', 0, 0, 0, 'releases Pi']]
+  };
+  const EQ = {
+    pyr: '2 Pyruvate + 4 ATP + 2 GTP + 2 NADH + 2 H⁺ + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi + 2 NAD⁺',
+    lac: '2 Lactate + 4 ATP + 2 GTP + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi',
+    gol: '2 Glycerol + 2 ATP + 2 NAD⁺ + 2 H₂O → glucose + 2 ADP + 2 Pi + 2 NADH + 2 H⁺'
+  };
+  const CMP = {
+    pyr: 'Glycolysis turns glucose into 2 pyruvate and makes 2 ATP + 2 NADH. Going back costs 4 ATP + 2 GTP + 2 NADH: six high-energy phosphates spent to recover two. The extra four are the price of making both pathways strongly favorable in their own direction.',
+    lac: 'Lactate dehydrogenase supplies exactly the NADH that the GAPDH step uses, so the cost is six high-energy phosphates and no net NADH. Muscle got 2 ATP from making this lactate; the liver pays 6 to undo it (station 8).',
+    gol: 'Glycerol joins at dihydroxyacetone phosphate, so it skips pyruvate carboxylase, PEPCK and phosphoglycerate kinase. It costs only the 2 ATP of glycerol kinase and even yields 2 NADH.'
+  };
+  let start = 'pyr', shown = 0;
+  function render() {
+    const rows = R[start], t = $('#lg-tbl'); t.replaceChildren();
+    const cell = v => h('td', { class: 'num ' + (v < 0 ? 'neg' : v > 0 ? 'pos' : '') }, v ? (v > 0 ? '+' : '−') + Math.abs(v) : '·');
+    t.append(h('thead', null, h('tr', null, h('th', null, 'Step'), h('th', { class: 'num' }, 'ATP'), h('th', { class: 'num' }, 'GTP'), h('th', { class: 'num' }, 'NADH'))));
+    const tb = h('tbody');
+    rows.forEach((r, i) => tb.append(h('tr', { class: i < shown ? '' : 'hide' }, h('td', null, h('b', null, r[0]), r[4] ? h('span', { class: 'muted', style: 'font-size:12.5px' }, ' · ' + r[4]) : null), cell(r[1]), cell(r[2]), cell(r[3]))));
+    t.append(tb);
+    const sum = [1, 2, 3].map(k => rows.slice(0, shown).reduce((a, r) => a + r[k], 0));
+    t.append(h('tfoot', null, h('tr', null, h('td', null, shown < rows.length ? `Running total (${shown} of ${rows.length} steps)` : 'Net per glucose'), cell(sum[0]), cell(sum[1]), cell(sum[2]))));
+    const tile = (k, v) => h('div', { class: 'stat' }, h('div', { class: 'k' }, k), h('div', { class: 'v' }, v ? (v > 0 ? '+' : '−') + Math.abs(v) : '0'));
+    $('#lg-stats').replaceChildren(tile('ATP', sum[0]), tile('GTP', sum[1]), tile('NADH', sum[2]), tile('High-energy P', sum[0] + sum[1]));
+    const complete = shown === rows.length;
+    $('#lg-eq').replaceChildren(h('b', null, complete ? 'Overall: ' : 'Keep going. '), complete ? h('span', { class: 'mono', style: 'font-size:14px' }, EQ[start]) : 'The overall equation appears when every step is counted.');
+    $('#lg-cmp').replaceChildren(complete ? CMP[start] : 'Watch for the steps that cost ATP or GTP and the one that uses NADH.');
+    $('#lg-next').disabled = complete;
+  }
+  $$('#lg-start button').forEach(b => b.addEventListener('click', () => { start = b.dataset.s; shown = 0; $$('#lg-start button').forEach(x => x.classList.toggle('on', x === b)); render(); }));
+  $('#lg-next').addEventListener('click', () => { shown = Math.min(R[start].length, shown + 1); render(); });
+  $('#lg-all').addEventListener('click', () => { shown = R[start].length; render(); });
+  $('#lg-reset').addEventListener('click', () => { shown = 0; render(); });
+  render();
+};
+
+/* ================= 6 · RECIPROCAL REGULATION ================= */
+INIT.reg = function () {
+  const I = { f: $('#rg-f26'), a: $('#rg-amp'), c: $('#rg-cit'), ac: $('#rg-acc'), pk: $('#rg-pk') };
+  const PRE = [['Fed liver', { f: 85, a: 15, c: 30, ac: 15, pk: false }], ['Fasted liver', { f: 10, a: 10, c: 40, ac: 85, pk: true }], ['Low energy charge', { f: 50, a: 90, c: 10, ac: 20, pk: false }]];
+  const pre = $('#rg-pre');
+  PRE.forEach(([n, v]) => { const b = h('button', { type: 'button' }, n); b.addEventListener('click', () => { I.f.value = v.f; I.a.value = v.a; I.c.value = v.c; I.ac.value = v.ac; I.pk.checked = v.pk; $$('button', pre).forEach(x => x.classList.toggle('on', x === b)); draw(); }); pre.append(b); });
+  const svg = $('#rg-svg');
+  const defs = sv('defs');
+  [['rg-ahb', 'var(--gly)'], ['rg-aho', 'var(--accent)']].forEach(([id, c]) => { const m = sv('marker', { id, viewBox: '0 0 10 10', refX: 6, refY: 5, markerWidth: 4, markerHeight: 4, orient: 'auto-start-reverse' }); m.append(sv('path', { d: 'M0,0 L10,5 L0,10 z', fill: c })); defs.append(m); });
+  svg.append(defs);
+  const node = (x, y, t, w = 150) => { const g = sv('g'); g.append(sv('rect', { x: x - w / 2, y: y - 16, width: w, height: 32, rx: 9, fill: 'var(--panel)', stroke: 'var(--line)', 'stroke-width': 1.5 }), sv('text', { x, y: y + 5, 'text-anchor': 'middle', class: 'met-t' }, t)); return g; };
+  const P = {};
+  const path = (id, d, col, mk) => { P[id] = sv('path', { d, fill: 'none', stroke: col, 'stroke-linecap': 'round', 'marker-end': `url(#${mk})` }); svg.append(P[id]); };
+  path('pfk', 'M185,62 C120,62 120,188 182,188', 'var(--gly)', 'rg-ahb');
+  path('fbp', 'M335,188 C400,188 400,62 338,62', 'var(--accent)', 'rg-aho');
+  path('pk', 'M185,282 C120,282 120,418 182,418', 'var(--gly)', 'rg-ahb');
+  path('pc', 'M335,418 C380,418 400,400 405,372', 'var(--accent)', 'rg-aho');
+  path('pepck', 'M405,328 C400,300 380,282 338,282', 'var(--accent)', 'rg-aho');
+  svg.append(node(260, 62, 'Fructose 6-P'), node(260, 188, 'Fructose 1,6-bisP'), node(260, 282, 'PEP'), node(260, 418, 'Pyruvate'), node(415, 350, 'Oxaloacetate', 118));
+  const T = (x, y, t, cls, an = 'start', fill) => { const e = sv('text', { x, y, class: cls, 'text-anchor': an, fill }, t); svg.append(e); return e; };
+  T(112, 112, 'PFK-1', 'enz', 'end', 'var(--gly)'); const tPfk = T(112, 128, '', 'eff', 'end', 'var(--muted)');
+  T(112, 144, '+ F2,6BP, AMP', 'eff', 'end', 'var(--muted)'); T(112, 158, '− ATP, citrate', 'eff', 'end', 'var(--muted)');
+  T(408, 112, 'FBPase-1', 'enz', 'start', 'var(--accent)'); const tFbp = T(408, 128, '', 'eff', 'start', 'var(--muted)');
+  T(408, 144, '− F2,6BP, AMP', 'eff', 'start', 'var(--muted)');
+  T(112, 340, 'Pyruvate kinase', 'enz', 'end', 'var(--gly)'); const tPk = T(112, 356, '', 'eff', 'end', 'var(--muted)');
+  T(112, 372, '+ F1,6BP', 'eff', 'end', 'var(--muted)'); T(112, 386, '− ATP, acetyl-CoA, alanine', 'eff', 'end', 'var(--muted)'); T(112, 400, '− phosphorylation (PKA)', 'eff', 'end', 'var(--muted)');
+  T(430, 410, 'Pyruvate carboxylase', 'enz', 'start', 'var(--accent)'); const tPc = T(430, 426, '', 'eff', 'start', 'var(--muted)');
+  T(430, 442, '+ acetyl-CoA  − ADP', 'eff', 'start', 'var(--muted)');
+  T(430, 296, 'PEPCK', 'enz', 'start', 'var(--accent)');
+  const net1 = T(260, 128, '', 'enz', 'middle'), net2 = T(260, 352, '', 'enz', 'middle');
+  const lvl = v => (v * 100).toFixed(0) + '%';
+  function draw() {
+    const f = I.f.value / 100, a = I.a.value / 100, c = I.c.value / 100, ac = I.ac.value / 100, ph = I.pk.checked;
+    $('#rg-f26-o').textContent = lvl(f); $('#rg-amp-o').textContent = lvl(a); $('#rg-cit-o').textContent = lvl(c); $('#rg-acc-o').textContent = lvl(ac);
+    const pfk = clamp(0.12 + 0.6 * f + 0.35 * a - 0.4 * c, 0.02, 1);
+    const fbp = clamp(0.95 - 0.7 * f - 0.45 * a, 0.02, 1);
+    const pk = clamp(0.3 + 0.55 * pfk - 0.35 * ac - (ph ? 0.35 : 0), 0.02, 1);
+    const pc = clamp(0.08 + 0.9 * ac - 0.3 * a, 0.02, 1);
+    const W = v => 1.5 + 10 * v;
+    P.pfk.setAttribute('stroke-width', W(pfk)); P.fbp.setAttribute('stroke-width', W(fbp)); P.pk.setAttribute('stroke-width', W(pk));
+    P.pc.setAttribute('stroke-width', W(pc)); P.pepck.setAttribute('stroke-width', W(pc));
+    [['pfk', pfk], ['fbp', fbp], ['pk', pk], ['pc', pc], ['pepck', pc]].forEach(([k, v]) => P[k].setAttribute('opacity', 0.35 + 0.65 * v));
+    tPfk.textContent = `activity ${lvl(pfk)}`; tFbp.textContent = `activity ${lvl(fbp)}`; tPk.textContent = `activity ${lvl(pk)}`; tPc.textContent = `activity ${lvl(pc)}`;
+    const dirOf = d => Math.abs(d) < 0.12 ? ['balanced', 'var(--warn)'] : d > 0 ? ['net ↓ glycolysis', 'var(--gly)'] : ['net ↑ gluconeogenesis', 'var(--accent)'];
+    const d1 = dirOf(pfk - fbp), d2 = dirOf(pk - pc);
+    net1.textContent = d1[0]; net1.setAttribute('fill', d1[1]); net2.textContent = d2[0]; net2.setAttribute('fill', d2[1]);
+    const bar = (n, v, col) => h('div', { class: 'bar-row' }, h('span', null, n), h('div', { class: 'trk' }, h('div', { class: 'fill', style: `width:${(v * 100).toFixed(0)}%;background:${col}` })), h('span', { class: 'pct' }, lvl(v)));
+    $('#rg-bars').replaceChildren(bar('PFK-1', pfk, 'var(--gly)'), bar('FBPase-1', fbp, 'var(--accent)'), bar('Pyruvate kinase', pk, 'var(--gly)'), bar('Pyr. carboxylase', pc, 'var(--accent)'));
+    const cyc = Math.min(pfk, fbp) + Math.min(pk, pc);
+    const both = (pfk - fbp) * (pk - pc);
+    let msg;
+    if (pfk - fbp < -0.12 && pk - pc < -0.12) msg = 'Both cycles point toward glucose. Low F2,6BP has released FBPase-1, and acetyl-CoA has switched on pyruvate carboxylase: this liver is making glucose.';
+    else if (pfk - fbp > 0.12 && pk - pc > 0.12) msg = 'Both cycles point toward pyruvate. F2,6BP or AMP keeps PFK-1 on and FBPase-1 off, and F1,6BP feeds forward to pyruvate kinase: glycolysis.';
+    else if (both < 0) msg = 'The two cycles disagree. In the cell, hormones move these effectors together, so mixed signals like this are short-lived.';
+    else msg = 'Opposing enzymes are about equally active, so little net flux goes either way.';
+    $('#rg-txt').replaceChildren(msg, h('br'), h('span', { class: 'muted', style: 'font-size:13.5px' }, `Substrate cycling (both directions at once): ${cyc > 0.6 ? 'high, wasting ATP as heat' : cyc > 0.3 ? 'moderate' : 'low'}.`));
+  }
+  Object.values(I).forEach(e => e.addEventListener(e.type === 'checkbox' ? 'change' : 'input', () => { $$('button', pre).forEach(x => x.classList.remove('on')); draw(); }));
+  draw();
+};
+
+/* ================= 7 · FED VS FASTED ================= */
+INIT.fast = function () {
+  const svg = $('#fd-svg'), hI = $('#fd-h');
+  const L = 50, Rr = 505, T = 20, B = 250, X1 = 48;
+  const xp = t => L + t / X1 * (Rr - L), yp = f => B - f * (B - T);
+  const raw = t => { const ex = Math.exp(-t / 2.5), gl = (1 - Math.exp(-t / 1.5)) * Math.exp(-Math.max(0, t - 6) / 9), gn = 0.15 + 0.85 / (1 + Math.exp(-(t - 16) / 5)); const s = ex + gl + gn; return [ex / s, gl / s, gn / s]; };
+  const COL = ['var(--muted)', 'var(--gly)', 'var(--accent)'], NM = ['From food', 'Liver glycogen', 'Gluconeogenesis'];
+  const pts = []; for (let t = 0; t <= X1; t += 0.5) pts.push([t, raw(t)]);
+  for (let k = 2; k >= 0; k--) {
+    let d = `M${xp(0)},${yp(0)}`;
+    pts.forEach(([t, f]) => { const top = f.slice(0, k + 1).reduce((a, b) => a + b, 0); d += ` L${xp(t).toFixed(1)},${yp(top).toFixed(1)}`; });
+    d += ` L${xp(X1)},${yp(0)} Z`;
+    svg.append(sv('path', { d, fill: `color-mix(in srgb, ${COL[k]} ${k === 0 ? 30 : 45}%, var(--panel))` }));
+  }
+  [0, 12, 24, 36, 48].forEach(t => svg.append(sv('text', { x: xp(t), y: B + 17, 'text-anchor': 'middle' }, `${t} h`)));
+  [0.5, 1].forEach(f => svg.append(sv('text', { x: L - 8, y: yp(f) + 4, 'text-anchor': 'end' }, `${f * 100}%`)));
+  svg.append(sv('line', { x1: L, x2: Rr, y1: B, y2: B, class: 'axis' }));
+  const lg = sv('g', { transform: `translate(${L},${B + 38})` });
+  NM.forEach((n, k) => { lg.append(sv('rect', { x: k * 140, y: -9, width: 11, height: 11, rx: 2, fill: `color-mix(in srgb, ${COL[k]} 60%, var(--panel))` }), sv('text', { x: k * 140 + 16, y: 1 }, n)); });
+  svg.append(lg);
+  const mk = sv('line', { y1: T, y2: B, stroke: 'var(--ink)', 'stroke-width': 2 }), mkd = sv('circle', { r: 5, fill: 'var(--ink)' });
+  svg.append(mk, mkd);
+  const STATES = {
+    fed: [
+      ['Blood glucose', 'High after the meal', 'gl'], ['Pancreas', 'β cells release insulin', 'gl'], ['Liver cAMP', 'Low', 'gl'], ['Protein kinase A', 'Inactive; phosphoprotein phosphatase removes its phosphates', 'gl'],
+      ['branch', [['PFK-2/FBPase-2', 'Dephosphorylated: PFK-2 active, so F2,6BP rises. PFK-1 on, FBPase-1 off.'], ['Pyruvate kinase L', 'Dephosphorylated and active.'], ['Genes', 'Insulin represses PEPCK and glucose 6-phosphatase.']], 'gl'],
+      ['Acetyl-CoA', 'Low; pyruvate dehydrogenase active', 'gl'], ['Result', 'The liver runs glycolysis and stores glycogen.', 'gl']],
+    fast: [
+      ['Blood glucose', 'Falling toward the fasting level, then held there', 'on'], ['Pancreas', 'α cells release glucagon', 'on'], ['Liver cAMP', 'High', 'on'], ['Protein kinase A', 'Active', 'on'],
+      ['branch', [['PFK-2/FBPase-2', 'Phosphorylated: FBPase-2 active, so F2,6BP falls. PFK-1 slows, FBPase-1 is freed.'], ['Pyruvate kinase L', 'Phosphorylated and inactive, so PEP is not lost to pyruvate.'], ['Genes', 'CREB raises PEPCK and glucose 6-phosphatase transcription (hours).']], 'on'],
+      ['Acetyl-CoA', 'High from fatty acid oxidation: pyruvate carboxylase on, pyruvate dehydrogenase off', 'on'], ['Result', 'The liver exports glucose: glycogen first, then gluconeogenesis.', 'on']]
+  };
+  let state = 'fed';
+  function chain() {
+    const box = $('#fd-chain'); box.replaceChildren();
+    STATES[state].forEach((r, i) => {
+      if (i) box.append(h('div', { class: 'down', 'aria-hidden': 'true' }, '↓'));
+      if (r[0] === 'branch') { box.append(h('div', { class: 'branch' }, r[1].map(([n, d]) => h('div', { class: 'lnk ' + r[2] }, h('span', { class: 'nm' }, n), h('span', { class: 'ds' }, d))))); return; }
+      box.append(h('div', { class: 'lnk ' + r[2] }, h('span', { class: 'nm' }, r[0]), h('span', { class: 'chip ' + (state === 'fed' ? 'gly' : 'gng') }, state === 'fed' ? 'fed' : 'fasted'), h('span', { class: 'ds' }, r[1])));
+    });
+  }
+  function setState(s) { state = s; $$('#fd-state button').forEach(x => x.classList.toggle('on', x.dataset.s === s)); chain(); }
+  function clock() {
+    const t = +hI.value, f = raw(t);
+    $('#fd-h-o').textContent = `${t} h`;
+    mk.setAttribute('x1', xp(t)); mk.setAttribute('x2', xp(t)); mkd.setAttribute('cx', xp(t)); mkd.setAttribute('cy', yp(f[0] + f[1]));
+    $('#fd-stats').replaceChildren(...NM.map((n, k) => h('div', { class: 'stat' }, h('div', { class: 'k' }, n), h('div', { class: 'v' }, String(Math.round(f[k] * 100)), h('small', null, '%')))));
+    setState(t <= 3 ? 'fed' : 'fast');
+  }
+  $$('#fd-state button').forEach(b => b.addEventListener('click', () => { hI.value = b.dataset.s === 'fed' ? 1 : 18; clock(); }));
+  hI.addEventListener('input', clock);
+  clock();
+};
+
+/* ================= 8 · CORI AND GLUCOSE–ALANINE CYCLES ================= */
+INIT.cycles = function () {
+  const svg = $('#cy-svg'); let mode = 'cori';
+  function draw() {
+    svg.replaceChildren();
+    const defs = sv('defs');
+    [['cy-a1', 'var(--accent)'], ['cy-a2', 'var(--gly)']].forEach(([id, c]) => { const m = sv('marker', { id, viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }); m.append(sv('path', { d: 'M0,0 L10,5 L0,10 z', fill: c })); defs.append(m); });
+    svg.append(defs);
+    svg.append(sv('rect', { x: 10, y: 30, width: 220, height: 270, rx: 22, fill: 'var(--gly-soft)', stroke: 'var(--gly)', 'stroke-width': 1.5 }));
+    svg.append(sv('rect', { x: 410, y: 30, width: 220, height: 270, rx: 22, fill: 'var(--accent-soft)', stroke: 'var(--accent)', 'stroke-width': 1.5 }));
+    svg.append(sv('rect', { x: 246, y: 30, width: 148, height: 270, rx: 16, fill: 'var(--sunk)' }));
+    svg.append(sv('text', { x: 120, y: 58, 'text-anchor': 'middle', class: 'org' }, 'Muscle'));
+    svg.append(sv('text', { x: 520, y: 58, 'text-anchor': 'middle', class: 'org' }, 'Liver'));
+    svg.append(sv('text', { x: 320, y: 58, 'text-anchor': 'middle', class: 'sm' }, 'blood'));
+    const ala = mode === 'ala';
+    const ML = [['Glucose', 100], ['↓ glycolysis: +2 ATP', 128], ['2 Pyruvate', 156], [ala ? '↓ transamination (amino N added)' : '↓ lactate dehydrogenase', 184], [ala ? '2 Alanine' : '2 Lactate', 212]];
+    ML.forEach(([t, y], i) => svg.append(sv('text', { x: 120, y, 'text-anchor': 'middle', class: i % 2 ? 'sm' : 'mt' }, t)));
+    if (ala) svg.append(sv('text', { x: 120, y: 268, 'text-anchor': 'middle', class: 'sm' }, 'NADH can be reoxidized aerobically'));
+    else svg.append(sv('text', { x: 120, y: 268, 'text-anchor': 'middle', class: 'sm' }, 'NAD⁺ regenerated for glycolysis'));
+    const LL = [[ala ? '2 Alanine' : '2 Lactate', 212], [ala ? '↑ transamination; NH₃ → urea cycle' : '↑ lactate dehydrogenase', 184], ['2 Pyruvate', 156], ['↑ gluconeogenesis: −4 ATP, −2 GTP', 128], ['Glucose', 100]];
+    LL.forEach(([t, y], i) => svg.append(sv('text', { x: 520, y, 'text-anchor': 'middle', class: i % 2 ? 'sm' : 'mt' }, t)));
+    svg.append(sv('text', { x: 520, y: 268, 'text-anchor': 'middle', class: 'sm' }, ala ? 'also pays for urea synthesis' : 'energy from fatty acid oxidation'));
+    svg.append(sv('path', { d: 'M440,100 C380,100 260,100 202,100', fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'marker-end': 'url(#cy-a1)' }));
+    svg.append(sv('text', { x: 320, y: 92, 'text-anchor': 'middle', class: 'mt' }, 'glucose'));
+    svg.append(sv('path', { d: 'M200,212 C260,212 380,212 438,212', fill: 'none', stroke: 'var(--gly)', 'stroke-width': 3, 'marker-end': 'url(#cy-a2)' }));
+    svg.append(sv('text', { x: 320, y: 204, 'text-anchor': 'middle', class: 'mt' }, ala ? 'alanine' : 'lactate'));
+  }
+  function calc() {
+    const g = +$('#cy-g').value, mol = g / 180.16;
+    $('#cy-g-o').textContent = `${g} g (${(mol * 1000).toFixed(0)} mmol)`;
+    const tile = (k, v) => h('div', { class: 'stat' }, h('div', { class: 'k' }, k), h('div', { class: 'v', style: 'font-size:21px' }, v, h('small', null, ' mol')));
+    $('#cy-stats').replaceChildren(tile('Muscle gains (ATP)', (2 * mol).toFixed(2)), tile('Liver spends (~P)', (6 * mol).toFixed(2)), tile('Net cost', (4 * mol).toFixed(2)));
+    $('#cy-txt').replaceChildren(mode === 'cori'
+      ? `For every glucose that goes around the Cori cycle, muscle gains 2 ATP and the liver spends 6 high-energy phosphates. The body pays 4 per turn, a fair price for letting muscle keep working when oxygen is short. The liver’s ATP comes mostly from oxidizing fatty acids.`
+      : `Muscle sends its pyruvate out as alanine, which carries amino nitrogen from protein breakdown. The liver removes the amino group (to urea, which costs additional ATP) and makes glucose from the pyruvate. Same 6 ~P per glucose in the liver, plus the cost of urea.`);
+  }
+  $$('#cy-mode button').forEach(b => b.addEventListener('click', () => { mode = b.dataset.m; $$('#cy-mode button').forEach(x => x.classList.toggle('on', x === b)); draw(); calc(); }));
+  $('#cy-g').addEventListener('input', calc);
+  draw(); calc();
+};
+
+/* ================= 9 · CASEBOOK ================= */
+function mcq(item) {
+  const fb = h('p', { class: 'qfb', hidden: true }), opts = h('div', { class: 'qopts' });
+  item.o.forEach((txt, oi) => {
+    const b = h('button', { type: 'button', class: 'qopt' }, txt);
+    b.addEventListener('click', () => {
+      if (oi === item.a) { b.classList.add('right'); $$('.qopt', opts).forEach(x => { x.disabled = true; }); fb.hidden = false; fb.replaceChildren(h('span', { class: 'ok' }, 'Correct. '), item.why); }
+      else { b.classList.add('wrong'); b.disabled = true; fb.hidden = false; fb.replaceChildren(h('span', { class: 'no' }, 'Not quite. '), item.hint || 'Try another answer.'); }
+    });
+    opts.append(b);
+  });
+  return h('div', { class: 'stack', style: 'gap:8px' }, h('p', { class: 'qq', style: 'margin:0' }, item.q), opts, fb);
+}
+function caseCard(title, tags, ...body) {
+  return h('article', { class: 'case' },
+    h('div', { class: 'case-head' }, h('h3', null, title), h('div', { class: 'tags' }, tags.map(t => h('span', { class: 'chip' }, t)))),
+    ...body);
+}
+INIT.cases = function () {
+  const box = $('#cases');
+
+  /* Case 1: ethanol */
+  (function () {
+    const K = Math.exp(25.1 / RT298);   // LDH: pyruvate + NADH + H+ -> lactate + NAD+, ΔG′° = −25.1 kJ/mol
+    const id = 'cs-nadh';
+    const out = h('output', { for: id });
+    const inp = h('input', { type: 'range', id, min: -3.3, max: -2, step: 0.05, value: -3.1 });
+    const stats = h('div', { class: 'stat-row' });
+    const upd = () => {
+      const r = Math.pow(10, +inp.value), lp = K * r, base = K * Math.pow(10, -3.1);
+      out.textContent = r.toExponential(1).replace('e-', ' × 10⁻').replace(/⁻(\d)/, (m, d) => '⁻' + SUP[d]);
+      stats.replaceChildren(
+        h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Lactate : pyruvate'), h('div', { class: 'v' }, Math.round(lp).toLocaleString('en-US'), h('small', null, ' : 1'))),
+        h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Free pyruvate vs sober'), h('div', { class: 'v' }, String(Math.round(100 * (1 + base) / (1 + lp))), h('small', null, '%'))));
+    };
+    inp.addEventListener('input', upd); upd();
+    box.append(caseCard('Saturday night, no breakfast', ['Precursors', 'Compartments'],
+      h('div', { class: 'case-body split' },
+        h('div', { class: 'stack' },
+          h('p', null, 'A student skips dinner, drinks heavily, and is found confused and shaky the next morning with a blood glucose well below normal. Liver alcohol dehydrogenase and aldehyde dehydrogenase both reduce NAD⁺ to NADH in the cytosol.'),
+          mcq({ q: 'Why does heavy drinking during a fast cause hypoglycemia?', o: ['Ethanol is stored as glycogen instead of glucose', 'The extra cytosolic NADH pushes pyruvate to lactate and oxaloacetate to malate, draining gluconeogenic precursors', 'Ethanol activates pyruvate kinase', 'Ethanol blocks glucagon release'], a: 1,
+            why: 'Lactate dehydrogenase and malate dehydrogenase are near equilibrium, so a higher NADH/NAD⁺ ratio shifts them toward lactate and malate. With glycogen already used up by the fast, the liver depends on gluconeogenesis and can’t keep up.',
+            hint: 'Ethanol oxidation makes NADH. Which near-equilibrium reactions does that push?' })),
+        h('div', { class: 'stack blk' },
+          h('h3', null, 'Lactate dehydrogenase equilibrium'),
+          h('p', { class: 'hint', style: 'margin:0' }, '[lactate]/[pyruvate] = K′eq × [NADH]/[NAD⁺], with ΔG′° = −25.1 kJ/mol for pyruvate → lactate'),
+          h('div', { class: 'slider' }, h('div', { class: 'sl-top' }, h('label', { for: id }, 'Cytosolic NADH/NAD⁺'), out), inp),
+          stats,
+          h('p', { class: 'hint', style: 'margin:0' }, 'The sober cytosol keeps NADH/NAD⁺ near 10⁻³. Slide right to mimic ethanol oxidation.')))));
+  })();
+
+  /* Case 2: von Gierke */
+  box.append(caseCard('A baby who can’t fast', ['Pathway map', 'Compartments'],
+    h('p', null, 'A 6-month-old becomes sweaty and lethargic a few hours after each feeding. Blood glucose is very low, blood lactate is high, and the liver is enlarged and full of glycogen. Giving glucagon does not raise blood glucose.'),
+    mcq({ q: 'Which enzyme is most likely missing?', o: ['Muscle glycogen phosphorylase', 'Phosphofructokinase-1', 'Glucose 6-phosphatase', 'Pyruvate kinase'], a: 2,
+      why: 'This is von Gierke disease (type Ia glycogen storage disease). Glycogen breakdown and gluconeogenesis both end at glucose 6-phosphate, so without glucose 6-phosphatase the liver can’t release free glucose from either. Trapped glucose 6-phosphate is stored as glycogen or runs down glycolysis to lactate.',
+      hint: 'Both glycogen breakdown and gluconeogenesis are blocked. Where do the two pathways meet?' })));
+
+  /* Case 3: raw eggs */
+  box.append(caseCard('The raw-egg diet', ['Pathway map', 'Compartments'],
+    h('p', null, 'A bodybuilder drinks a dozen raw egg whites a day for months and develops hair loss, a scaly rash and fatigue. Raw egg white contains avidin, a protein that binds biotin extremely tightly (Kd ≈ 10⁻¹⁵ M). Cooking denatures avidin.'),
+    mcq({ q: 'Which gluconeogenic enzyme is most directly affected?', o: ['PEP carboxykinase', 'Pyruvate carboxylase', 'Fructose 1,6-bisphosphatase', 'Glucose 6-phosphatase'], a: 1,
+      why: 'Pyruvate carboxylase uses biotin, covalently attached to a lysine, to carry activated CO₂. Without biotin, bypass 1 stalls. Other biotin enzymes suffer too: acetyl-CoA carboxylase in fatty acid synthesis and propionyl-CoA carboxylase.',
+      hint: 'Which bypass enzyme carries CO₂ on a vitamin-derived cofactor?' })));
+
+  /* Case 4: type 2 diabetes */
+  box.append(caseCard('High blood glucose before breakfast', ['Fed vs fasted', 'Reciprocal regulation'],
+    h('p', null, 'A patient with type 2 diabetes has a high blood glucose every morning, even after an overnight fast with nothing to eat.'),
+    mcq({ q: 'Where does most of that fasting glucose come from?', o: ['Muscle glycogen released into the blood', 'The liver, which keeps making and releasing glucose because it responds poorly to insulin', 'Glucose left over from dinner', 'The brain'], a: 1,
+      why: 'Insulin normally suppresses hepatic glucose output, partly by repressing PEPCK and glucose 6-phosphatase. In insulin resistance the liver keeps producing glucose overnight. Metformin, the usual first drug, lowers blood glucose mainly by reducing glucose output from the liver.',
+      hint: 'Muscle can’t release free glucose. Which organ can?' })));
+
+  /* Case 5: seeds */
+  box.append(caseCard('Seeds that turn fat into sugar', ['Precursors', 'Energy ledger'],
+    h('p', null, 'A germinating sunflower seed has no photosynthesis yet, but it builds roots and shoots largely from the triacylglycerols stored in the seed. Most of that carbon becomes sucrose.'),
+    mcq({ q: 'How can the seedling make glucose from fatty acids when animals can’t?', o: ['It reverses pyruvate dehydrogenase', 'It runs pyruvate kinase backward', 'The glyoxylate cycle’s isocitrate lyase and malate synthase skip the two decarboxylations, giving net succinate from acetyl-CoA', 'It converts every fatty acid carbon into glycerol'], a: 2,
+      why: 'In glyoxysomes, two acetyl-CoA become one succinate without losing carbon as CO₂. Succinate is converted to oxaloacetate, then to PEP by PEPCK, and gluconeogenesis does the rest. Vertebrates lack isocitrate lyase and malate synthase.',
+      hint: 'Animals lose both acetyl carbons as CO₂ in the citric acid cycle. What would let a cell avoid that?' })));
+};
+
+/* ================= CHECK QUESTIONS ================= */
+Object.assign(QUIZ, {
+  map: [
+    { q: 'Which glycolytic enzyme is not used in gluconeogenesis?', o: ['Aldolase', 'Phosphoglycerate kinase', 'Phosphofructokinase-1', 'Enolase'], a: 2, why: 'PFK-1 has a large negative ΔG in the cell and is bypassed by fructose 1,6-bisphosphatase. The other three are near equilibrium and serve both pathways.' },
+    { q: 'Where is pyruvate carboxylase located?', o: ['Cytosol', 'Mitochondrial matrix', 'ER lumen', 'Plasma membrane'], a: 1, why: 'Pyruvate must enter the mitochondrion to be carboxylated to oxaloacetate.' },
+    { q: 'Which tissue releases newly made glucose into the blood?', o: ['Skeletal muscle', 'Brain', 'Liver', 'Adipose tissue'], a: 2, why: 'Liver (and, to a lesser extent, kidney) has glucose 6-phosphatase and can export free glucose.' }
+  ],
+  energy: [
+    { q: 'Aldolase has ΔG′° = +23.8 kJ/mol, yet it runs in both directions in the cell. Why?', o: ['It is coupled to ATP hydrolysis', 'Its products are kept at low concentrations, so ΔG in the cell is close to zero', 'Enzymes change ΔG′°', 'It runs only in glycolysis'], a: 1, why: 'Because two products form from one substrate, low concentrations make RT ln Q strongly negative and cancel the positive ΔG′°.' },
+    { q: 'What is ΔG′° for pyruvate kinase run in reverse?', o: ['−31.4 kJ/mol', '+0.9 kJ/mol', '+31.4 kJ/mol', '0'], a: 2, why: 'Reversing a reaction flips the sign of ΔG′°: +31.4 kJ/mol, K′eq ≈ 3 × 10⁻⁶. That is why bypass 1 is needed.' },
+    { q: 'Why don’t bypasses 2 and 3 need ATP?', o: ['They make ATP instead', 'They are hydrolyses of phosphate esters, which are already favorable', 'They use GTP', 'They happen in the ER'], a: 1, why: 'Removing a phosphate by hydrolysis has negative ΔG′° (−16.3 and −13.8 kJ/mol), so no coupling to ATP is needed.' }
+  ],
+  cell: [
+    { q: 'Starting from pyruvate, why does oxaloacetate leave the mitochondrion as malate?', o: ['Malate is more stable than oxaloacetate', 'There is no oxaloacetate transporter, and malate also carries reducing equivalents for cytosolic NADH', 'PEPCK uses malate as its substrate', 'To save GTP'], a: 1, why: 'Mitochondrial malate dehydrogenase uses NADH; cytosolic malate dehydrogenase regenerates it, supplying NADH for the GAPDH step.' },
+    { q: 'Starting from lactate, where is oxaloacetate converted to PEP?', o: ['In the cytosol, by pyruvate kinase', 'In the mitochondrion, by mitochondrial PEPCK', 'In the ER lumen', 'In the nucleus'], a: 1, why: 'Lactate dehydrogenase already supplied cytosolic NADH, so there is no need to export reducing equivalents as malate.' },
+    { q: 'Why can’t muscle glycogen raise blood glucose directly?', o: ['Muscle lacks glycogen phosphorylase', 'Muscle lacks glucose 6-phosphatase', 'Glucose can’t cross muscle membranes', 'Muscle has no hexokinase'], a: 1, why: 'Muscle can make glucose 6-phosphate from glycogen but can’t remove the phosphate, so the glucose stays in the muscle cell for its own use.' }
+  ],
+  sources: [
+    { q: 'Which of these can humans convert into net glucose?', o: ['Palmitate', 'Leucine', 'Glycerol', 'Acetyl-CoA'], a: 2, why: 'Glycerol enters at dihydroxyacetone phosphate. The other three yield only acetyl-CoA.' },
+    { q: 'Why can’t acetyl-CoA give net glucose in animals?', o: ['Pyruvate dehydrogenase is irreversible, and the two acetyl carbons are lost as CO₂ in the citric acid cycle', 'Acetyl-CoA can’t enter mitochondria', 'Acetyl-CoA inhibits PEPCK', 'Acetyl-CoA is used only for ketone bodies'], a: 0, why: 'There is no way back to pyruvate, and the cycle adds two carbons and removes two, leaving no extra oxaloacetate.' },
+    { q: 'Which amino acid is exclusively ketogenic?', o: ['Alanine', 'Aspartate', 'Glutamate', 'Lysine'], a: 3, why: 'Leucine and lysine are the only amino acids degraded entirely to acetyl-CoA or acetoacetyl-CoA.' }
+  ],
+  ledger: [
+    { q: 'How many high-energy phosphates (ATP + GTP) does it take to make one glucose from 2 pyruvate?', o: ['2', '4', '6', '8'], a: 2, why: '2 ATP at pyruvate carboxylase, 2 GTP at PEPCK, 2 ATP at phosphoglycerate kinase. Plus 2 NADH.' },
+    { q: 'Which step of gluconeogenesis consumes NADH?', o: ['Pyruvate carboxylase', 'Glyceraldehyde 3-phosphate dehydrogenase', 'FBPase-1', 'Enolase'], a: 1, why: 'Run in reverse, GAPDH reduces 1,3-bisphosphoglycerate to glyceraldehyde 3-phosphate using NADH.' },
+    { q: 'Why is glycerol a cheaper precursor than lactate?', o: ['It enters at DHAP, skipping the ATP- and GTP-consuming steps between pyruvate and 1,3-bisphosphoglycerate', 'It needs no enzymes', 'It is already glucose', 'It makes GTP'], a: 0, why: 'Glycerol costs only the 2 ATP of glycerol kinase and even produces 2 NADH.' }
+  ],
+  reg: [
+    { q: 'What does fructose 2,6-bisphosphate do in the liver?', o: ['Activates PFK-1 and inhibits FBPase-1', 'Activates both', 'Inhibits both', 'Inhibits PFK-1 and activates FBPase-1'], a: 0, why: 'High F2,6BP favors glycolysis; low F2,6BP (fasting) favors gluconeogenesis.' },
+    { q: 'Acetyl-CoA builds up in the liver during fasting. What is the effect?', o: ['It activates pyruvate kinase', 'It inhibits pyruvate carboxylase', 'It activates pyruvate carboxylase and inhibits pyruvate dehydrogenase', 'Nothing'], a: 2, why: 'Pyruvate is directed toward oxaloacetate and glucose instead of being oxidized.' },
+    { q: 'What is a substrate (futile) cycle?', o: ['Two opposing reactions running at the same time, with net hydrolysis of ATP', 'A reaction that never reaches equilibrium', 'Any cycle with an irreversible step', 'A pathway that makes no product'], a: 0, why: 'PFK-1 plus FBPase-1 together amount to ATP + H₂O → ADP + Pi. Reciprocal regulation keeps this small.' }
+  ],
+  fast: [
+    { q: 'How does glucagon lower fructose 2,6-bisphosphate in the liver?', o: ['It inhibits hexokinase', 'PKA phosphorylates PFK-2/FBPase-2, activating its phosphatase activity', 'It activates PFK-1', 'It raises insulin'], a: 1, why: 'Phosphorylation switches the bifunctional enzyme from making F2,6BP to breaking it down.' },
+    { q: 'After about a day without food, most blood glucose comes from…', o: ['liver glycogen', 'muscle glycogen', 'gluconeogenesis', 'fatty acids converted directly to glucose'], a: 2, why: 'Liver glycogen is largely used up within about a day; from then on the liver makes glucose from lactate, amino acids and glycerol.' },
+    { q: 'Why does glucagon inactivate pyruvate kinase L?', o: ['To speed up glycolysis', 'So PEP made by gluconeogenesis isn’t converted straight back to pyruvate', 'To make more ATP', 'To activate glucose 6-phosphatase'], a: 1, why: 'With pyruvate kinase off, the pyruvate → PEP bypass isn’t undone, avoiding a futile cycle.' }
+  ],
+  cycles: [
+    { q: 'What is the net cost to the body of one turn of the Cori cycle?', o: ['Nothing', '2 ATP', '4 ATP equivalents', '6 ATP equivalents'], a: 2, why: 'Muscle gains 2 ATP; the liver spends 6 (4 ATP + 2 GTP). Net: 4.' },
+    { q: 'Besides carbon, what does the glucose–alanine cycle carry to the liver?', o: ['Fatty acids', 'Amino nitrogen, for urea synthesis', 'Oxygen', 'Ketone bodies'], a: 1, why: 'Alanine carries amino groups from muscle protein breakdown to the liver, where they enter the urea cycle.' },
+    { q: 'During a fast, where does the liver get the ATP to run gluconeogenesis?', o: ['Glycolysis', 'Lactate fermentation', 'Oxidation of fatty acids', 'Hydrolysis of glucose 6-phosphate'], a: 2, why: 'Fatty acids released from adipose tissue are oxidized in the liver, supplying ATP (and acetyl-CoA, which activates pyruvate carboxylase).' }
+  ]
+});
+
+/* ================= BOOT ================= */
+STATIONS.forEach(id => renderQuiz(id));
+$$('.station').forEach((sec, i) => {
+  const nxt = STATIONS[i + 1]; if (!nxt) return;
+  sec.append(h('div', { class: 'next-row' }, h('button', { type: 'button', class: 'btn', onclick: () => showStation(nxt, true) }, `Next: ${TITLES[nxt]} →`)));
+});
+$$('.rail button').forEach(b => b.addEventListener('click', () => showStation(b.dataset.tab, false)));
+window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (STATIONS.includes(id) && id !== current) showStation(id, false); });
+(function boot() {
+  let id = location.hash.slice(1);
+  if (!STATIONS.includes(id)) { try { id = localStorage.getItem('gng-workbench-tab') || 'map'; } catch (e) { id = 'map'; } }
+  showStation(STATIONS.includes(id) ? id : 'map', false);
+})();
+
+</script>
+
+</body></html>

@@ -1,0 +1,1811 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>DNA Workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600;700&display=swap">
+<style>
+/* Layout: one lab-bench column. The masthead carries the β-globin codon tape (the thread through every station);
+   a sticky grouped rail switches stations; each station = intro → bench (the interactive) → key ideas + check questions. */
+:root{
+  --paper:#F1F2F7; --panel:#FFFFFF; --sunk:#E7E9F1; --ink:#171927; --muted:#565B75; --line:#D5D8E5;
+  --accent:#5A3EC8; --accent-ink:#FFFFFF; --accent-soft:#E8E3FA;
+  --a:#15855A; --t:#CC3D36; --g:#A86F06; --c:#2A62CF;
+  --good:#15855A; --bad:#C23A33; --warn:#966100;
+  --gel:#111326; --gel-edge:#2A2E4B; --well:#05060F; --band:#FFC98A; --ladder:#B8C1FF; --gel-text:#C9CDEA;
+  --agar:#F1E2B0; --agar-rim:#CDB872; --colony-white:#FCFBF4; --colony-blue:#2C5BC6;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10111B; --panel:#191B2A; --sunk:#232638; --ink:#E7E8F3; --muted:#A1A5C0; --line:#2F3249;
+    --accent:#A894FF; --accent-ink:#140F2C; --accent-soft:#2A2453;
+    --a:#3FCF8B; --t:#FF6F66; --g:#F0B648; --c:#76A5FF;
+    --good:#3FCF8B; --bad:#FF6F66; --warn:#F0B648;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10111B; --panel:#191B2A; --sunk:#232638; --ink:#E7E8F3; --muted:#A1A5C0; --line:#2F3249;
+  --accent:#A894FF; --accent-ink:#140F2C; --accent-soft:#2A2453;
+  --a:#3FCF8B; --t:#FF6F66; --g:#F0B648; --c:#76A5FF;
+  --good:#3FCF8B; --bad:#FF6F66; --warn:#F0B648;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 72px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-0.012em}
+p{margin:0}
+b,strong{font-weight:700}
+.eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.mono{font-family:var(--f-mono)}
+.muted{color:var(--muted)}
+.nt.A{color:var(--a)} .nt.T{color:var(--t)} .nt.G{color:var(--g)} .nt.C{color:var(--c)} .nt.U{color:var(--t)} .nt.W{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* masthead */
+.mast h1{font-size:clamp(40px,6.4vw,66px);font-weight:800;line-height:1}
+.mast h1 .dash{display:inline-block;width:.55em;height:.13em;margin:0 .06em .2em;vertical-align:middle;background:linear-gradient(var(--accent),var(--accent)) top/100% 35% no-repeat,linear-gradient(var(--muted),var(--muted)) bottom/100% 35% no-repeat}
+.mast .sub{max-width:64ch;color:var(--muted);margin-top:12px;font-size:17px}
+.tape-wrap{margin-top:22px;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:14px 16px 12px}
+.tape-label{font-size:14px;font-weight:700}
+.tape{display:flex;gap:4px;overflow-x:auto;padding:10px 0 8px;scrollbar-width:thin}
+.codon{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;min-width:3.5em;padding:5px 4px 4px;border-radius:8px;background:var(--sunk)}
+.codon .cseq{font-family:var(--f-mono);font-size:14.5px;font-weight:600;letter-spacing:.02em}
+.codon .caa{font-size:11.5px;color:var(--muted);line-height:1.2}
+.codon .cnum{font-family:var(--f-mono);font-size:10px;color:var(--muted)}
+.codon.hot{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.codon.hot .caa{color:var(--accent);font-weight:700}
+.tape-note{font-size:14px;color:var(--muted);max-width:90ch}
+
+/* rail */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin:24px -20px 0;padding:10px 20px 10px;border-bottom:1px solid var(--line);display:flex;gap:18px;overflow-x:auto;scrollbar-width:thin}
+.rail-group{display:flex;flex-direction:column;gap:5px;flex:0 0 auto}
+.rail-label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.rail-btns{display:flex;gap:6px}
+.rail button{font:700 14px var(--f-body);padding:6px 12px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);display:inline-flex;gap:7px;align-items:center;white-space:nowrap;cursor:pointer}
+.rail button:hover{border-color:var(--accent)}
+.rail button .n{font-family:var(--f-mono);font-size:11px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--sunk);color:var(--muted)}
+.rail button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.rail button.on .n{background:color-mix(in srgb,var(--accent-ink) 20%,transparent);color:inherit}
+
+/* station scaffold */
+.station{padding-top:28px}
+.st-head{display:flex;gap:14px;align-items:flex-end;margin-bottom:8px}
+.st-num{font-family:var(--f-display);font-weight:800;font-size:58px;line-height:.82;color:var(--accent)}
+.station h2{font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1.05}
+.lead{max-width:70ch;margin:8px 0 18px;font-size:17px}
+.bench{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.bench + .bench{margin-top:16px}
+.bench-title{font-size:20px;font-weight:800;margin-bottom:4px}
+.after{display:grid;gap:22px;margin-top:24px}
+@media (min-width:880px){.after{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}}
+.ideas h3,.check h3{font-size:20px;font-weight:800}
+.ideas ul{padding-left:1.15em;margin:10px 0 0}
+.ideas li{margin:7px 0;max-width:62ch}
+.ideas li::marker{color:var(--accent)}
+.next-row{margin-top:26px;display:flex;justify-content:flex-end}
+.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);max-width:90ch}
+
+/* check questions */
+.qcard{border-top:1px solid var(--line);padding:13px 0}
+.qcard:first-of-type{margin-top:8px}
+.qq{margin:0 0 9px;font-weight:700}
+.qopts{display:flex;flex-wrap:wrap;gap:7px}
+.qopt{font:inherit;font-size:15px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;text-align:left}
+.qopt:hover:not(:disabled){border-color:var(--accent)}
+.qopt:disabled{cursor:default}
+.qopt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 14%,var(--panel));color:var(--ink)}
+.qopt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--panel));color:var(--muted)}
+.qfb{margin-top:9px;font-size:15px;max-width:68ch}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+
+/* shared controls */
+.btn{font:700 14px var(--f-body);padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row-btns{display:flex;flex-wrap:wrap;gap:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:700 14px var(--f-body);padding:7px 13px;border:0;background:var(--panel);color:var(--ink);cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.slider{display:grid;gap:3px}
+.slider .sl-top{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted)}
+.slider output{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+.field{display:flex;flex-direction:column;gap:5px;font-size:14px;color:var(--muted)}
+.text-in{font:15px var(--f-mono);padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%;min-width:0;letter-spacing:.04em}
+.toggle{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer}
+.toggle input{accent-color:var(--accent);width:16px;height:16px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
+.stat{background:var(--sunk);border-radius:10px;padding:9px 12px}
+.stat .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:var(--f-display);font-size:25px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .v small{font-size:14px;font-weight:600;color:var(--muted)}
+.hint{font-size:13.5px;color:var(--muted);margin-top:8px}
+.chip{display:inline-block;font:700 10.5px var(--f-mono);letter-spacing:.07em;text-transform:uppercase;padding:3px 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:2px}
+.chip.good{background:color-mix(in srgb,var(--good) 17%,transparent);color:var(--good)}
+.chip.bad{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+.chip.warn{background:color-mix(in srgb,var(--warn) 17%,transparent);color:var(--warn)}
+.note{background:var(--sunk);border-radius:10px;padding:10px 13px;font-size:15px}
+.note + .note{margin-top:8px}
+.scroll-x{overflow-x:auto;min-width:0}
+table.tbl{border-collapse:collapse;width:100%;font-size:14px}
+.tbl th,.tbl td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font-weight:700;color:var(--muted);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.tbl td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.tbl .on{background:var(--accent-soft)}
+.svg-fill{width:100%;height:auto;display:block}
+.grid2{display:grid;gap:18px}
+@media (min-width:860px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.stack{display:grid;gap:14px;align-content:start;min-width:0}
+
+/* sequence grids (PCR, CRISPR) */
+.sgrid{display:grid;width:max-content;font-family:var(--f-mono);font-size:14px;--cw:11.5px;row-gap:1px}
+.sgrid .rl{font-size:10px;color:var(--muted);white-space:nowrap;height:14px;line-height:14px}
+.sgrid .end{font-size:11px;color:var(--muted);text-align:center}
+.sgrid .c{text-align:center;height:21px;line-height:21px;font-weight:600;border-radius:2px}
+.sgrid .c.dim{opacity:.38}
+.seq-scroll{overflow-x:auto;padding:6px 2px 10px;min-width:0}
+
+/* 1 strand builder */
+.sb-top{display:grid;gap:14px}
+@media (min-width:780px){.sb-top{grid-template-columns:auto minmax(0,1fr);align-items:end}}
+.keypad{display:flex;gap:7px;flex-wrap:wrap}
+.key{width:50px;height:50px;border-radius:12px;border:1px solid var(--line);background:var(--sunk);font:700 22px var(--f-mono);cursor:pointer}
+.key:hover{border-color:var(--accent)}
+.key.A{color:var(--a)} .key.T{color:var(--t)} .key.G{color:var(--g)} .key.C{color:var(--c)}
+.key.ghost{color:var(--muted);font-size:18px}
+.sb-inputs{display:grid;gap:10px;min-width:0}
+.duplex-scroll{overflow-x:auto;margin-top:16px;padding:6px 2px 8px;min-width:0}
+.duplex{display:grid;row-gap:3px;width:max-content;font-family:var(--f-mono)}
+.duplex .end{font-size:12px;color:var(--muted);display:grid;place-items:center}
+.nt-btn{font:700 18px var(--f-mono);height:34px;border:0;border-radius:7px;background:transparent;cursor:pointer;padding:0}
+.nt-btn:hover{background:var(--sunk)}
+.nt-btn.sel{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.comp{font:700 18px var(--f-mono);height:34px;display:grid;place-items:center}
+.bond{display:flex;justify-content:center;gap:3px;height:18px}
+.bond i{width:2px;background:var(--muted);opacity:.55;border-radius:1px}
+.bond.sel i{background:var(--accent);opacity:1}
+.empty{color:var(--muted);font-size:15px;padding:12px 0}
+.sb-lower{display:grid;gap:16px;margin-top:14px}
+@media (min-width:880px){.sb-lower{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.anatomy{margin:0;background:var(--sunk);border-radius:12px;padding:12px 14px;min-width:0}
+.anatomy figcaption{font-size:14.5px;margin-top:6px}
+.anatomy figcaption b{font-family:var(--f-display);font-size:17px}
+.nuc-svg{width:100%;max-width:400px;height:auto;display:block}
+.nuc-svg .ln{stroke:var(--ink);stroke-width:2.2;fill:none}
+.nuc-svg .ln-thin{stroke:var(--muted);stroke-width:1.5;fill:none}
+.nuc-svg .ring{stroke:var(--ink);stroke-width:2.4;fill:color-mix(in srgb,var(--panel) 70%,transparent)}
+.nuc-svg .p{fill:var(--accent)}
+.nuc-svg .ptext{fill:var(--accent-ink);font:800 18px var(--f-display)}
+.nuc-svg .lab{fill:var(--muted);font:12px var(--f-body)}
+.nuc-svg .num{fill:var(--ink);font:700 12px var(--f-mono)}
+.nuc-svg .atom{fill:var(--ink);font:700 14px var(--f-mono)}
+.nuc-svg .hot{fill:var(--accent);font:800 14px var(--f-mono)}
+.nuc-svg .basebox{stroke-width:2.4}
+.nuc-svg .baseletter{font:800 26px var(--f-mono)}
+.nuc-svg .basecls{font:12px var(--f-body);fill:var(--muted)}
+.chargaff td,.chargaff th{text-align:center}
+.chargaff td:first-child,.chargaff th:first-child{text-align:left}
+
+/* 2 helix */
+.hx{display:grid;gap:18px}
+@media (min-width:840px){.hx{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}}
+.hx-stage{position:relative;min-width:0;border-radius:12px;background:var(--panel)}
+.hx-stage canvas{display:block;width:100%;touch-action:pan-y;cursor:grab}
+.hx-stage canvas:active{cursor:grabbing}
+.hx-cap{position:absolute;right:10px;bottom:8px;font-size:12px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* 3 melting */
+.mt{display:grid;gap:18px}
+@media (min-width:880px){.mt{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}}
+.chart text{font-family:var(--f-body);fill:var(--muted);font-size:12px}
+.chart .axis{stroke:var(--line);stroke-width:1}
+.chart .grid{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.mladder{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:2px;font-family:var(--f-mono);font-size:13px;font-weight:700;padding:14px 0 10px}
+.mcol{display:flex;flex-direction:column;align-items:center;gap:2px}
+.mcol .tb{transition:transform .35s ease}
+.mcol.open .tb.top{transform:translateY(-7px)}
+.mcol.open .tb.bot{transform:translateY(7px)}
+.mcol .hb{height:13px;display:flex;gap:2px;transition:opacity .25s}
+.mcol .hb i{width:1.6px;background:var(--muted)}
+.mcol.open .hb{opacity:0}
+
+/* 4 PCR */
+.sgrid .fp{background:color-mix(in srgb,var(--accent) 20%,transparent)}
+.sgrid .rp{background:color-mix(in srgb,var(--accent) 20%,transparent)}
+.sgrid .rp.bad{background:color-mix(in srgb,var(--bad) 20%,transparent)}
+.parrow{height:18px;position:relative;align-self:center;font:700 10.5px var(--f-mono);color:var(--accent);display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.parrow::before{content:"";position:absolute;left:0;right:6px;top:50%;height:2px;background:currentColor;transform:translateY(-50%)}
+.parrow::after{content:"";position:absolute;right:0;top:50%;border:5px solid transparent;border-left:7px solid currentColor;transform:translate(5px,-50%)}
+.parrow.left::before{left:6px;right:0}
+.parrow.left::after{right:auto;left:0;border-left:5px solid transparent;border-right:7px solid currentColor;transform:translate(-7px,-50%)}
+.parrow span{position:relative;background:var(--panel);padding:0 4px}
+.parrow.bad{color:var(--bad)}
+.pcr-grid{display:grid;gap:16px;margin-top:10px}
+@media (min-width:960px){.pcr-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr)}}
+.blk{background:var(--sunk);border-radius:12px;padding:13px 14px;display:grid;gap:11px;align-content:start;min-width:0}
+.blk h3{font-size:16px;font-weight:800}
+.ptbl{font-size:13.5px}
+.ptbl .pseq{font-family:var(--f-mono);font-size:12.5px;word-break:break-all}
+.gel text{font-family:var(--f-mono);font-size:10px;fill:var(--gel-text)}
+.gel .lbl{fill:var(--muted)}
+
+/* 5 digest */
+.dg{display:grid;gap:18px}
+@media (min-width:980px){.dg{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr) minmax(0,.85fr)}}
+.map text{font-family:var(--f-body);font-size:11.5px;fill:var(--muted)}
+.map .site-on{fill:var(--accent);font-weight:700}
+.enz{display:grid;gap:7px}
+.enz label{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;align-items:start;background:var(--sunk);border-radius:10px;padding:8px 11px;cursor:pointer;border:1px solid transparent}
+.enz label.on{border-color:var(--accent);background:var(--accent-soft)}
+.enz input{accent-color:var(--accent);margin-top:4px;width:16px;height:16px}
+.enz .ename{font-weight:700}
+.enz .esite{font-family:var(--f-mono);font-size:12.5px;line-height:1.35;color:var(--ink)}
+.enz .esite .cut{color:var(--accent);font-weight:700}
+.enz .eend{font-size:12.5px;color:var(--muted)}
+.mys{display:grid;gap:18px}
+@media (min-width:860px){.mys{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+.mopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.mopt{background:var(--sunk);border:1px solid var(--line);border-radius:12px;padding:8px;cursor:pointer;font:inherit;color:var(--ink);text-align:center}
+.mopt:hover:not(:disabled){border-color:var(--accent)}
+.mopt.right{border-color:var(--good);box-shadow:inset 0 0 0 1px var(--good)}
+.mopt.wrong{border-color:var(--bad);opacity:.7}
+.mopt text{font-family:var(--f-body);font-size:12px;fill:var(--muted)}
+
+/* 6 cloning */
+.cl{display:grid;gap:18px}
+@media (min-width:880px){.cl{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.strat{display:grid;gap:8px}
+.strat label{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;background:var(--sunk);border:1px solid transparent;border-radius:10px;padding:9px 12px;cursor:pointer}
+.strat label.on{border-color:var(--accent);background:var(--accent-soft)}
+.strat input{accent-color:var(--accent);margin-top:4px}
+.strat .sdesc{font-size:13.5px;color:var(--muted);grid-column:2}
+.construct{display:grid;gap:8px;font-size:13.5px}
+.bar{display:flex;align-items:stretch;border-radius:8px;overflow:hidden;font:700 11.5px var(--f-mono);min-height:30px}
+.bar span{display:flex;align-items:center;justify-content:center;padding:0 8px;white-space:nowrap}
+.bar .vec{background:var(--sunk);color:var(--muted);flex:1}
+.bar .site{background:color-mix(in srgb,var(--accent) 22%,var(--panel));color:var(--ink)}
+.bar .ins{background:color-mix(in srgb,var(--g) 30%,var(--panel));color:var(--ink);flex:2}
+.plate-wrap{display:grid;justify-items:center;gap:8px}
+.plate{width:100%;max-width:340px;height:auto}
+.plate .colony{cursor:pointer}
+.plate .colony:hover{stroke:var(--accent);stroke-width:2.5}
+.plate .picked{stroke:var(--accent);stroke-width:3}
+
+/* 7 sanger */
+.trace text{font-family:var(--f-mono);font-size:13px;font-weight:700}
+.trace .tick{fill:var(--muted);font-size:9.5px;font-weight:400}
+.sq-grid{display:grid;gap:16px;margin-top:14px}
+@media (min-width:880px){.sq-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+
+/* 8 CRISPR */
+.sgrid .pam{background:color-mix(in srgb,var(--warn) 30%,transparent)}
+.sgrid .pamhint{box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--warn) 70%,transparent)}
+.sgrid .proto{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+.sgrid .mut{box-shadow:inset 0 0 0 1.5px var(--bad)}
+.sgrid .cutR{box-shadow:inset -3px 0 0 var(--accent)}
+.sgrid .mut.cutR{box-shadow:inset 0 0 0 1.5px var(--bad),inset -3px 0 0 var(--accent)}
+.pamlist{display:flex;flex-wrap:wrap;gap:6px}
+.pambtn{font:600 12.5px var(--f-mono);padding:6px 9px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;display:grid;gap:1px;text-align:left}
+.pambtn small{font:11px var(--f-body);color:var(--muted)}
+.pambtn:hover{border-color:var(--accent)}
+.pambtn.on{border-color:var(--accent);background:var(--accent-soft)}
+.pambtn.near small{color:var(--good);font-weight:700}
+.guide{font-family:var(--f-mono);font-size:15px;font-weight:700;letter-spacing:.03em;word-break:break-all}
+.prot{display:flex;flex-wrap:wrap;gap:3px;font-family:var(--f-mono);font-size:12.5px}
+.prot span{min-width:2.1em;text-align:center;padding:2px 3px;border-radius:5px;background:var(--panel)}
+.prot span.chg{background:color-mix(in srgb,var(--bad) 18%,var(--panel));color:var(--bad);font-weight:700}
+.prot span.fix{background:color-mix(in srgb,var(--good) 18%,var(--panel));color:var(--good);font-weight:700}
+.prot span.stop{background:var(--bad);color:var(--panel);font-weight:700}
+.prot span.gone{opacity:.3;text-decoration:line-through}
+.edit-seq{font-family:var(--f-mono);font-size:13px;word-break:break-all;line-height:1.7}
+.edit-seq .ins{background:color-mix(in srgb,var(--good) 25%,transparent);font-weight:700}
+.edit-seq .del{color:var(--bad);font-weight:700}
+.edit-seq .fixed{background:color-mix(in srgb,var(--good) 25%,transparent);font-weight:700}
+
+/* 9 casebook */
+.cases{display:grid;gap:18px}
+.case{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:12px;min-width:0}
+.case-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;justify-content:space-between}
+.case h3{font-size:22px;font-weight:800}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.case-body{display:grid;gap:16px}
+@media (min-width:860px){.case-body.split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.gtype{display:grid;gap:8px}
+.gtype .gt-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gtype .gt-row b{min-width:82px}
+select.sel{font:14px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.str-tbl td.match{color:var(--good);font-weight:700}
+.str-tbl td.miss{color:var(--bad);font-weight:700}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">Biochemistry I · Nucleic acids</p>
+  <h1>DNA Workbench</h1>
+  <p class="sub">Nine short stations: three on the molecule itself, five on the tools built around it, and a casebook that puts the tools to work. One gene runs through all of them.</p>
+  <div class="tape-wrap">
+    <p class="tape-label">The thread: start of the human β-globin coding sequence (<i>HBB</i>, exon 1)</p>
+    <div class="tape" id="tape" aria-label="β-globin codons 1 to 30"></div>
+    <p class="tape-note">Codon 6 is GAG (Glu). In the sickle-cell allele, HbS, a single A→T change makes it GTG (Val). Codons are numbered as in the mature protein, which lacks the initiator Met.</p>
+  </div>
+</header>
+
+<nav class="rail" id="rail" aria-label="Stations">
+  <div class="rail-group"><span class="rail-label">The molecule</span><div class="rail-btns">
+    <button type="button" data-tab="strand"><span class="n">1</span>Strand builder</button>
+    <button type="button" data-tab="helix"><span class="n">2</span>Double helix</button>
+    <button type="button" data-tab="melt"><span class="n">3</span>Melting</button>
+  </div></div>
+  <div class="rail-group"><span class="rail-label">The toolkit</span><div class="rail-btns">
+    <button type="button" data-tab="pcr"><span class="n">4</span>PCR</button>
+    <button type="button" data-tab="digest"><span class="n">5</span>Digest &amp; gel</button>
+    <button type="button" data-tab="clone"><span class="n">6</span>Cloning</button>
+    <button type="button" data-tab="sanger"><span class="n">7</span>Sequencing</button>
+    <button type="button" data-tab="crispr"><span class="n">8</span>CRISPR</button>
+  </div></div>
+  <div class="rail-group"><span class="rail-label">Apply it</span><div class="rail-btns">
+    <button type="button" data-tab="cases"><span class="n">9</span>Casebook</button>
+  </div></div>
+</nav>
+
+<main>
+<!-- 1 STRAND BUILDER -->
+<section class="station" data-station="strand" hidden>
+  <div class="st-head"><span class="st-num">1</span><div><p class="eyebrow">The molecule</p><h2>Strand builder</h2></div></div>
+  <p class="lead">A DNA strand is a chain of nucleotides joined by 3′,5′-phosphodiester bonds, so it has direction: a 5′ end and a 3′ end. Build a strand and the page writes its antiparallel partner, counts the hydrogen bonds, and checks Chargaff's rules.</p>
+  <div class="bench">
+    <div class="sb-top">
+      <div class="keypad" role="group" aria-label="Add a nucleotide to the 3′ end">
+        <button type="button" class="key A" data-add="A" aria-label="Add A">A</button>
+        <button type="button" class="key T" data-add="T" aria-label="Add T">T</button>
+        <button type="button" class="key G" data-add="G" aria-label="Add G">G</button>
+        <button type="button" class="key C" data-add="C" aria-label="Add C">C</button>
+        <button type="button" class="key ghost" id="sb-back" aria-label="Remove the last nucleotide">⌫</button>
+      </div>
+      <div class="sb-inputs">
+        <label class="field" for="sb-input">Or type a strand, 5′→3′ (up to 30 nucleotides)
+          <input id="sb-input" class="text-in" type="text" maxlength="30" spellcheck="false" autocomplete="off" autocapitalize="characters">
+        </label>
+        <div class="row-btns">
+          <button type="button" class="btn" id="sb-gene">Load β-globin start</button>
+          <button type="button" class="btn" id="sb-rand">Random 12-mer</button>
+          <button type="button" class="btn" id="sb-clear">Clear</button>
+        </div>
+      </div>
+    </div>
+    <div class="duplex-scroll"><div class="duplex" id="sb-duplex"></div></div>
+    <p class="hint">New nucleotides are added to the 3′ end, the same direction DNA polymerase works. Click any base on the top strand to see its parts.</p>
+    <div class="sb-lower">
+      <div class="stack" id="sb-stats"></div>
+      <figure class="anatomy" id="sb-anatomy"></figure>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Each nucleotide has a phosphate, 2′-deoxyribose, and a base. Purines (A, G) attach to C-1′ through N-9; pyrimidines (C, T) through N-1.</li>
+      <li>Phosphodiester bonds link the 3′-OH of one nucleotide to the 5′ phosphate of the next. Sequences are written 5′→3′.</li>
+      <li>The two strands are antiparallel and complementary: A=T with two hydrogen bonds, G≡C with three.</li>
+      <li>Chargaff's rules (A = T, G = C) describe double-stranded DNA. A single strand on its own need not follow them.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-strand"></div></div>
+  </div>
+</section>
+
+<!-- 2 DOUBLE HELIX -->
+<section class="station" data-station="helix" hidden>
+  <div class="st-head"><span class="st-num">2</span><div><p class="eyebrow">The molecule</p><h2>Double helix</h2></div></div>
+  <p class="lead">Two antiparallel strands wind around a common axis with the sugar–phosphate backbones outside and the stacked base pairs inside. The offset between the backbones creates a major and a minor groove. Compare the three forms Lehninger describes.</p>
+  <div class="bench hx">
+    <div class="hx-stage" id="hx-stage">
+      <canvas id="hx-canvas" role="img" aria-label="Rotating schematic model of a DNA double helix"></canvas>
+      <span class="hx-cap">Drag sideways to rotate · schematic, to scale</span>
+    </div>
+    <div class="stack">
+      <div class="seg" role="group" aria-label="Helix form">
+        <button type="button" data-form="A">A-form</button>
+        <button type="button" data-form="B" class="on">B-form</button>
+        <button type="button" data-form="Z">Z-form</button>
+      </div>
+      <div class="row-btns">
+        <label class="toggle"><input type="checkbox" id="hx-grooves" checked> Mark the grooves</label>
+        <label class="toggle"><input type="checkbox" id="hx-spin"> Auto-rotate</label>
+      </div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--accent)"></i>strand 1, 5′ at top</span>
+        <span><i class="sw" style="background:var(--muted)"></i>strand 2, 3′ at top</span>
+        <span><i class="sw" style="background:var(--a)"></i>A</span><span><i class="sw" style="background:var(--t)"></i>T</span><span><i class="sw" style="background:var(--g)"></i>G</span><span><i class="sw" style="background:var(--c)"></i>C</span>
+      </div>
+      <div class="scroll-x"><table class="tbl" id="hx-table"></table></div>
+      <p class="hint">Base pairs are colored from the first 22 bp of the β-globin sequence. Geometry uses the diameter, rise and base pairs per turn of each form.</p>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>B-DNA, the Watson–Crick structure, is right-handed, about 20 Å across, with 3.4 Å between stacked base pairs and about 10.5 bp per turn in solution.</li>
+      <li>Hydrophobic stacking of the bases and hydrogen bonding between pairs both stabilize the helix.</li>
+      <li>The major groove exposes more of each base's edge, so proteins can read the sequence there without unwinding DNA.</li>
+      <li>A-DNA is wider and more compact (favored in low-water conditions and RNA–DNA hybrids); Z-DNA is left-handed and slimmer.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-helix"></div></div>
+  </div>
+</section>
+
+<!-- 3 MELTING -->
+<section class="station" data-station="melt" hidden>
+  <div class="st-head"><span class="st-num">3</span><div><p class="eyebrow">The molecule</p><h2>Melting</h2></div></div>
+  <p class="lead">Heat separates the two strands. Because stacked bases absorb less UV light, absorbance at 260 nm rises as DNA melts (the hyperchromic effect). The midpoint of that rise is the melting temperature, t<sub>m</sub>.</p>
+  <div class="bench mt">
+    <div class="stack">
+      <svg id="mt-svg" class="svg-fill chart" viewBox="0 0 560 330" role="img" aria-label="Melting curve: relative absorbance at 260 nanometers versus temperature"></svg>
+    </div>
+    <div class="stack">
+      <div class="slider"><div class="sl-top"><label for="mt-gc">GC content</label><output id="mt-gc-o"></output></div><input type="range" id="mt-gc" min="20" max="80" step="1" value="50"></div>
+      <div class="slider"><div class="sl-top"><label for="mt-na">Na⁺ concentration</label><output id="mt-na-o"></output></div><input type="range" id="mt-na" min="0" max="100" step="1" value="59"></div>
+      <div class="slider"><div class="sl-top"><label for="mt-temp">Temperature</label><output id="mt-temp-o"></output></div><input type="range" id="mt-temp" min="40" max="110" step="0.5" value="70"></div>
+      <div class="stat-row" id="mt-stats"></div>
+      <div>
+        <p class="hint" style="margin:0">A 20 bp stretch at this GC content. A=T pairs separate first.</p>
+        <div class="mladder" id="mt-ladder" aria-hidden="true"></div>
+      </div>
+      <p class="hint">t<sub>m</sub> is estimated with an empirical formula for long DNA: 81.5 + 16.6 log[Na⁺] + 0.41(%GC). Values above 100 °C are extrapolations.</p>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Melting (denaturation) breaks hydrogen bonds and unstacks the bases; covalent bonds stay intact.</li>
+      <li>The transition is cooperative, so it happens over a narrow temperature range.</li>
+      <li>Higher GC content raises t<sub>m</sub>. Higher salt also raises it by shielding the negatively charged phosphates from each other.</li>
+      <li>Melting is reversible. Slow cooling lets complementary strands find each other and re-anneal, which is what PCR and hybridization rely on.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-melt"></div></div>
+  </div>
+</section>
+
+<!-- 4 PCR -->
+<section class="station" data-station="pcr" hidden>
+  <div class="st-head"><span class="st-num">4</span><div><p class="eyebrow">The toolkit</p><h2>PCR</h2></div></div>
+  <p class="lead">The polymerase chain reaction copies one stretch of DNA exponentially. Two primers mark the ends, and a heat-stable polymerase repeats three steps: denature, anneal, extend. Design primers against the β-globin template, set the program, and run it.</p>
+  <div class="bench">
+    <p class="bench-title">Template: 93 bp of β-globin exon 1</p>
+    <div class="seq-scroll"><div class="sgrid" id="pcr-grid"></div></div>
+    <div class="pcr-grid">
+      <div class="blk">
+        <h3>Primers (20 nt each)</h3>
+        <div class="slider"><div class="sl-top"><label for="pcr-f">Forward primer starts at</label><output id="pcr-f-o"></output></div><input type="range" id="pcr-f" min="1" max="25" step="1" value="3"></div>
+        <div class="slider"><div class="sl-top"><label for="pcr-r">Reverse primer site ends at</label><output id="pcr-r-o"></output></div><input type="range" id="pcr-r" min="70" max="93" step="1" value="86"></div>
+        <div class="scroll-x"><table class="tbl ptbl" id="pcr-ptbl"></table></div>
+        <label class="toggle"><input type="checkbox" id="pcr-mistake"> Write the reverse primer straight off the top strand (common mistake)</label>
+        <div id="pcr-warn"></div>
+      </div>
+      <div class="blk">
+        <h3>Program</h3>
+        <div class="slider"><div class="sl-top"><label for="pcr-ta">Annealing temperature</label><output id="pcr-ta-o"></output></div><input type="range" id="pcr-ta" min="40" max="70" step="1" value="52"></div>
+        <div class="slider"><div class="sl-top"><label for="pcr-n">Cycles</label><output id="pcr-n-o"></output></div><input type="range" id="pcr-n" min="10" max="40" step="1" value="30"></div>
+        <svg id="pcr-prof" class="svg-fill chart" viewBox="0 0 320 150" role="img" aria-label="Thermal profile of two PCR cycles"></svg>
+        <button type="button" class="btn primary" id="pcr-run">Run PCR</button>
+        <p class="hint" style="margin:0">Starts from 1,000 template copies with Taq polymerase.</p>
+      </div>
+      <div class="blk">
+        <h3>Result</h3>
+        <div class="stat-row" id="pcr-stats"></div>
+        <svg id="pcr-amp" class="svg-fill chart" viewBox="0 0 320 150" role="img" aria-label="Copies of the target versus cycle number"></svg>
+        <svg id="pcr-gel" class="svg-fill gel" viewBox="0 0 300 270" role="img" aria-label="Agarose gel of the PCR product"></svg>
+        <div id="pcr-verdict" class="note">Press Run PCR to see the product.</div>
+      </div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>The forward primer matches the top strand; the reverse primer matches the reverse complement of the bottom-strand end. Both 3′ ends point toward each other.</li>
+      <li>Set the annealing temperature a few degrees below the lower primer t<sub>m</sub>. Too high and primers won't stay bound; too low and they bind partial matches.</li>
+      <li>Copies roughly double each cycle until reagents run low, then the curve plateaus.</li>
+      <li>A no-template control should stay blank. A band there means contamination or primer dimers.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-pcr"></div></div>
+  </div>
+</section>
+
+<!-- 5 DIGEST -->
+<section class="station" data-station="digest" hidden>
+  <div class="st-head"><span class="st-num">5</span><div><p class="eyebrow">The toolkit</p><h2>Restriction digest &amp; gel</h2></div></div>
+  <p class="lead">Restriction endonucleases cut at short, usually palindromic sequences. Choose enzymes, predict the fragments from the map of the teaching plasmid pTEACH, then run the gel. DNA is negatively charged, so it moves toward the positive electrode, and smaller fragments move farther.</p>
+  <div class="bench dg">
+    <div class="stack">
+      <svg id="dg-map" class="svg-fill map" viewBox="-215 -180 430 360" role="img" aria-label="Circular map of plasmid pTEACH"></svg>
+    </div>
+    <div class="stack">
+      <div class="enz" id="dg-enz"></div>
+      <label class="field" for="dg-pred">Your prediction: fragment sizes in bp, separated by commas
+        <input id="dg-pred" class="text-in" type="text" placeholder="e.g. 1200, 2800" autocomplete="off">
+      </label>
+      <div class="row-btns"><button type="button" class="btn" id="dg-check">Check prediction</button><button type="button" class="btn primary" id="dg-run">Run the gel</button></div>
+      <div id="dg-msg"></div>
+    </div>
+    <div class="stack">
+      <svg id="dg-gel" class="svg-fill gel" viewBox="0 0 330 360" role="img" aria-label="Agarose gel of the digest"></svg>
+    </div>
+  </div>
+  <div class="bench">
+    <p class="bench-title">Mystery plasmid</p>
+    <p class="hint" style="margin:0 0 12px">A 5,000 bp plasmid was cut with EcoRI, HindIII, and both. Which map fits the gel?</p>
+    <div class="mys">
+      <svg id="mys-gel" class="svg-fill gel" viewBox="0 0 300 330" role="img" aria-label="Gel of the mystery plasmid digests"></svg>
+      <div class="stack"><div class="mopts" id="mys-opts"></div><div id="mys-msg"></div></div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Most type II restriction sites are 4–8 bp palindromes: the site reads the same 5′→3′ on both strands.</li>
+      <li>Staggered cuts leave short single-stranded "sticky" ends (5′ or 3′ overhangs); cuts straight across leave blunt ends.</li>
+      <li>On a circular plasmid, n cuts give n fragments. On a linear molecule, n cuts give n + 1.</li>
+      <li>Band brightness tracks mass, so a large fragment glows brighter than a small one, and two same-size fragments overlap into one bright band.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-digest"></div></div>
+  </div>
+</section>
+
+<!-- 6 CLONING -->
+<section class="station" data-station="clone" hidden>
+  <div class="st-head"><span class="st-num">6</span><div><p class="eyebrow">The toolkit</p><h2>Cloning</h2></div></div>
+  <p class="lead">To make many copies of a gene, or to express it, you join it to a vector that bacteria will copy. Here you'll put β-globin cDNA into pTEACH's multiple cloning site, which sits inside the lacZα gene. Pick a strategy, plate the transformed cells, and choose a colony.</p>
+  <div class="bench cl">
+    <div class="stack">
+      <div class="construct">
+        <div><b>Vector</b> pTEACH multiple cloning site (inside lacZα)</div>
+        <div class="bar" aria-label="Vector cloning site"><span class="vec">lacZα</span><span class="site">EcoRI 400</span><span class="site">BamHI 430</span><span class="site">HindIII 460</span><span class="vec">lacZα</span></div>
+        <div><b>Insert</b> β-globin cDNA, amplified with primers that add an EcoRI site at the 5′ end and a HindIII site at the 3′ end</div>
+        <div class="bar" aria-label="Insert"><span class="site">EcoRI</span><span class="ins">β-globin cDNA (≈450 bp)</span><span class="site">HindIII</span></div>
+      </div>
+      <p class="bench-title" style="font-size:16px;margin-top:4px">1 · Choose a cutting strategy (same enzymes for vector and insert)</p>
+      <div class="strat" id="cl-strat"></div>
+      <div class="row-btns"><button type="button" class="btn primary" id="cl-go">Cut, ligate, transform and plate</button><button type="button" class="btn" id="cl-reset">Start over</button></div>
+      <div id="cl-lig"></div>
+    </div>
+    <div class="plate-wrap">
+      <p class="bench-title" style="font-size:16px;justify-self:start">2 · LB plate with ampicillin and X-gal</p>
+      <svg id="cl-plate" class="plate" viewBox="0 0 300 300" role="img" aria-label="Petri dish of transformed colonies"></svg>
+      <div id="cl-pick" class="note" style="width:100%">Plate your cells, then click a colony to check it.</div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Cutting vector and insert with the same enzymes gives matching sticky ends; DNA ligase seals the backbone.</li>
+      <li>Antibiotic selection: only cells that took up a plasmid with ampR grow on ampicillin.</li>
+      <li>Blue–white screening: an insert in the cloning site disrupts lacZα, so no β-galactosidase forms to cleave X-gal. Colonies with an insert stay white.</li>
+      <li>Two different enzymes give directional cloning and keep the empty vector from closing on itself.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-clone"></div></div>
+  </div>
+</section>
+
+<!-- 7 SANGER -->
+<section class="station" data-station="sanger" hidden>
+  <div class="st-head"><span class="st-num">7</span><div><p class="eyebrow">The toolkit</p><h2>Sanger sequencing</h2></div></div>
+  <p class="lead">DNA polymerase extends a primer along the template. A small fraction of fluorescently labeled dideoxynucleotides (ddNTPs) are mixed in; they lack a 3′-OH, so each one that is incorporated ends its chain. Sorting the fragments by length reads the sequence one base at a time. Read three patients' β-globin sequences and find codon 6.</p>
+  <div class="bench">
+    <div class="row-btns" style="align-items:center;justify-content:space-between">
+      <div class="seg" role="group" aria-label="Patient sample" id="sq-samples">
+        <button type="button" data-s="0" class="on">Patient 1</button><button type="button" data-s="1">Patient 2</button><button type="button" data-s="2">Patient 3</button>
+      </div>
+      <div class="row-btns">
+        <div class="seg" role="group" aria-label="View" id="sq-view"><button type="button" data-v="trace" class="on">Capillary trace</button><button type="button" data-v="gel">Four-lane gel</button></div>
+        <label class="toggle"><input type="checkbox" id="sq-calls"> Show base calls</label>
+      </div>
+    </div>
+    <div class="scroll-x" style="margin-top:12px"><svg id="sq-svg" class="trace" viewBox="0 0 700 210" style="min-width:620px;width:100%;height:auto;display:block" role="img" aria-label="Sequencing data"></svg></div>
+    <div class="sq-grid">
+      <div class="stack">
+        <label class="field" for="sq-read">Type the sequence you read, 5′→3′ (left to right on the trace, bottom to top on the gel)
+          <input id="sq-read" class="text-in" type="text" spellcheck="false" autocomplete="off" placeholder="CTGACT…">
+        </label>
+        <div id="sq-readfb" class="hint" style="margin:0"></div>
+        <p class="hint" style="margin:0">Fragments start just after a primer that binds upstream. The read covers β-globin bases 10–33 (codons 3–10), so the read has the same sequence as the coding strand.</p>
+      </div>
+      <div class="stack">
+        <p><b>Genotype at codon 6</b></p>
+        <div class="row-btns" id="sq-gt">
+          <button type="button" class="btn" data-g="AA">HbA / HbA</button>
+          <button type="button" class="btn" data-g="AS">HbA / HbS</button>
+          <button type="button" class="btn" data-g="SS">HbS / HbS</button>
+        </div>
+        <div id="sq-gtfb"></div>
+      </div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>Each reaction has a template, a primer, DNA polymerase, all four dNTPs, and a little of each fluorescent ddNTP.</li>
+      <li>Every fragment ends in a ddNTP whose dye color names the last base. Capillary electrophoresis separates fragments that differ by one nucleotide.</li>
+      <li>The read is complementary to the template strand and runs 5′→3′ from the primer.</li>
+      <li>In a diploid sample, two overlapping peaks at one position point to a heterozygote. Next-generation methods run millions of reads in parallel, but this logic still applies.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-sanger"></div></div>
+  </div>
+</section>
+
+<!-- 8 CRISPR -->
+<section class="station" data-station="crispr" hidden>
+  <div class="st-head"><span class="st-num">8</span><div><p class="eyebrow">The toolkit</p><h2>CRISPR–Cas9</h2></div></div>
+  <p class="lead">Cas9 is a nuclease steered by a guide RNA. Its 20-nucleotide spacer pairs with the target DNA, but Cas9 only cuts if a PAM (5′-NGG-3′ for <i>S. pyogenes</i> Cas9) sits right next to the target. The cell then repairs the break, and the repair route decides the edit. Try to correct the sickle-cell mutation.</p>
+  <div class="bench">
+    <div class="row-btns" style="align-items:center;justify-content:space-between">
+      <div class="seg" role="group" aria-label="Allele" id="cr-allele"><button type="button" data-a="S" class="on">HbS allele (patient)</button><button type="button" data-a="A">HbA allele (normal)</button></div>
+      <span class="legend"><span><i class="sw" style="background:color-mix(in srgb,var(--warn) 45%,transparent)"></i>PAM</span><span><i class="sw" style="background:color-mix(in srgb,var(--accent) 35%,transparent)"></i>target (protospacer)</span><span><i class="sw" style="box-shadow:inset 0 0 0 1.5px var(--bad)"></i>codon 6 mutation site</span><span><i class="sw" style="background:var(--accent);width:3px"></i>cut</span></span>
+    </div>
+    <div class="seq-scroll" style="margin-top:8px"><div class="sgrid" id="cr-grid"></div></div>
+    <div class="grid2" style="margin-top:8px">
+      <div class="stack">
+        <p><b>1 · Pick a PAM</b> <span class="muted" style="font-size:14px">(both strands scanned; only sites with room for a 20-nt guide in this fragment are listed)</span></p>
+        <div class="pamlist" id="cr-pams"></div>
+        <div id="cr-guide" class="note">Select a PAM to design the guide RNA.</div>
+      </div>
+      <div class="stack">
+        <p><b>2 · Let the cell repair the break</b></p>
+        <div class="row-btns">
+          <button type="button" class="btn" id="cr-nhej" disabled>NHEJ (no template)</button>
+          <button type="button" class="btn" id="cr-hdr" disabled>HDR with a normal-sequence donor</button>
+        </div>
+        <div id="cr-out" class="stack"></div>
+      </div>
+    </div>
+  </div>
+  <div class="after">
+    <div class="ideas"><h3>Key ideas</h3><ul>
+      <li>The guide's 20-nt spacer matches the protospacer on the strand that carries the PAM; it base-pairs with the opposite strand.</li>
+      <li>Cas9 makes a blunt double-strand break about 3 bp upstream of the PAM. A PAM can be on either strand.</li>
+      <li>Non-homologous end joining (NHEJ) is fast but error-prone. Small insertions or deletions often shift the reading frame and knock a gene out.</li>
+      <li>Homology-directed repair (HDR) copies a supplied donor template and can make a precise change, mostly close to the cut. Donors usually also alter the PAM so Cas9 can't cut the repaired DNA again.</li>
+    </ul></div>
+    <div class="check"><h3>Check yourself</h3><div id="q-crispr"></div></div>
+  </div>
+</section>
+
+<!-- 9 CASEBOOK -->
+<section class="station" data-station="cases" hidden>
+  <div class="st-head"><span class="st-num">9</span><div><p class="eyebrow">Apply it</p><h2>Applications casebook</h2></div></div>
+  <p class="lead">Five short cases. Each one uses tools from the stations above; the tags show which.</p>
+  <div class="cases" id="cases"></div>
+</section>
+</main>
+
+<p class="foot">Structures, names and parameter values follow Lehninger <i>Principles of Biochemistry</i>. The plasmids pTEACH and the mystery plasmid, the case fragment sizes, and the STR profiles are teaching examples. Melting temperatures come from standard empirical formulas and are estimates.</p>
+</div>
+<script>
+'use strict';
+/* ---------- helpers ---------- */
+const $ = (q, r = document) => r.querySelector(q);
+const $$ = (q, r = document) => Array.from(r.querySelectorAll(q));
+const SVGNS = 'http://www.w3.org/2000/svg';
+const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function setAttrs(e, attrs) {
+  if (!attrs) return;
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.setAttribute('class', v);
+    else if (k === 'html') e.innerHTML = v;
+    else if (k === 'text') e.textContent = v;
+    else if (k === 'style' && typeof v === 'object') Object.assign(e.style, v);
+    else if (k.startsWith('on') && typeof v === 'function') e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+}
+function append(e, kids) { for (const k of kids.flat()) { if (k == null || k === false) continue; e.append(k.nodeType ? k : document.createTextNode(String(k))); } }
+function h(tag, attrs, ...kids) { const e = document.createElement(tag); setAttrs(e, attrs); append(e, kids); return e; }
+function sv(tag, attrs, ...kids) { const e = document.createElementNS(SVGNS, tag); setAttrs(e, attrs); append(e, kids); return e; }
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+function hexRgb(hx) {
+  hx = (hx || '#000000').replace('#', '');
+  if (hx.length === 3) hx = hx.split('').map(c => c + c).join('');
+  const n = parseInt(hx, 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function mix(fg, bg, t) { const a = hexRgb(fg), b = hexRgb(bg); return `rgb(${a.map((v, i) => Math.round(b[i] + (v - b[i]) * t)).join(',')})`; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const fmt = (v, d = 1) => Number(v).toFixed(d);
+const SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '-': '⁻' };
+function sci(x) {
+  if (x < 1e4) return Math.round(x).toLocaleString('en-US');
+  const e = Math.floor(Math.log10(x)); const m = x / Math.pow(10, e);
+  return `${m.toFixed(1)} × 10${String(e).split('').map(c => SUP[c]).join('')}`;
+}
+
+/* ---------- sequence biology ---------- */
+const COMP = { A: 'T', T: 'A', G: 'C', C: 'G', N: 'N' };
+const comp = q => q.split('').map(b => COMP[b] || 'N').join('');
+const revcomp = q => comp(q).split('').reverse().join('');
+const gcCount = q => (q.match(/[GC]/g) || []).length;
+// Human HBB coding sequence, ATG + codons 1–30 (exon 1)
+const GENE = 'ATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGG';
+const MUT = 19; // 0-based index of the middle base of codon 6 (GAG → GTG)
+const HBS = GENE.slice(0, MUT) + 'T' + GENE.slice(MUT + 1);
+const AA1 = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+const BIDX = { T: 0, C: 1, A: 2, G: 3 };
+const AA3 = { A: 'Ala', R: 'Arg', N: 'Asn', D: 'Asp', C: 'Cys', Q: 'Gln', E: 'Glu', G: 'Gly', H: 'His', I: 'Ile', L: 'Leu', K: 'Lys', M: 'Met', F: 'Phe', P: 'Pro', S: 'Ser', T: 'Thr', W: 'Trp', Y: 'Tyr', V: 'Val', '*': 'Stop' };
+const codonAA = c => AA1[16 * BIDX[c[0]] + 4 * BIDX[c[1]] + BIDX[c[2]]];
+function translate(q) { const out = []; for (let i = 0; i + 2 < q.length; i += 3) out.push(codonAA(q.slice(i, i + 3))); return out; }
+function primerTm(p) { return 64.9 + 41 * (gcCount(p) - 16.4) / p.length; }
+function ntSpans(q, extra) { return q.split('').map((b, i) => h('span', { class: `nt ${b}${extra ? ' ' + (extra(i) || '') : ''}` }, b)); }
+
+/* ---------- masthead tape ---------- */
+(function tape() {
+  const t = $('#tape');
+  for (let i = 0; i < GENE.length; i += 3) {
+    const cod = GENE.slice(i, i + 3), k = i / 3, aa = codonAA(cod);
+    t.append(h('div', { class: 'codon' + (k === 6 ? ' hot' : '') },
+      h('span', { class: 'cseq' }, ntSpans(cod)),
+      h('span', { class: 'caa' }, AA3[aa]),
+      h('span', { class: 'cnum' }, k === 0 ? 'start' : String(k))));
+  }
+})();
+
+/* ---------- stations ---------- */
+const STATIONS = ['strand', 'helix', 'melt', 'pcr', 'digest', 'clone', 'sanger', 'crispr', 'cases'];
+const TITLES = { strand: 'Strand builder', helix: 'Double helix', melt: 'Melting', pcr: 'PCR', digest: 'Restriction digest & gel', clone: 'Cloning', sanger: 'Sanger sequencing', crispr: 'CRISPR–Cas9', cases: 'Applications casebook' };
+const INIT = {}, ONSHOW = {}, ONHIDE = {};
+const inited = new Set();
+let current = null;
+function showStation(id, scroll) {
+  if (!STATIONS.includes(id)) id = 'strand';
+  if (current && current !== id && ONHIDE[current]) ONHIDE[current]();
+  current = id;
+  $$('.station').forEach(sec => { sec.hidden = sec.dataset.station !== id; });
+  $$('.rail button').forEach(b => { const on = b.dataset.tab === id; b.classList.toggle('on', on); if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  if (!inited.has(id) && INIT[id]) { inited.add(id); try { INIT[id](); } catch (e) { console.error(e); } }
+  if (ONSHOW[id]) ONSHOW[id]();
+  try { localStorage.setItem('dna-workbench-tab', id); } catch (e) { /* storage unavailable */ }
+  try { history.replaceState(null, '', '#' + id); } catch (e) { /* ignore */ }
+  const btn = $(`.rail button[data-tab="${id}"]`);
+  if (btn && btn.scrollIntoView) { try { btn.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) { /* ignore */ } }
+  if (scroll) { const r = $('#rail'); window.scrollTo({ top: Math.max(0, r.offsetTop - 4), behavior: REDUCED ? 'auto' : 'smooth' }); }
+}
+
+/* ---------- check questions ---------- */
+const QUIZ = {};
+function renderQuiz(id) {
+  const box = $('#q-' + id); if (!box || !QUIZ[id]) return;
+  QUIZ[id].forEach((item, qi) => {
+    const fb = h('p', { class: 'qfb', hidden: true });
+    const opts = h('div', { class: 'qopts' });
+    item.o.forEach((txt, oi) => {
+      const b = h('button', { type: 'button', class: 'qopt' }, txt);
+      b.addEventListener('click', () => {
+        if (oi === item.a) {
+          b.classList.add('right');
+          $$('.qopt', opts).forEach(x => { x.disabled = true; });
+          fb.hidden = false; fb.replaceChildren(h('span', { class: 'ok' }, 'Correct. '), item.why);
+        } else {
+          b.classList.add('wrong'); b.disabled = true;
+          fb.hidden = false; fb.replaceChildren(h('span', { class: 'no' }, 'Not quite. '), item.hint || 'Try another answer.');
+        }
+      });
+      opts.append(b);
+    });
+    box.append(h('div', { class: 'qcard' }, h('p', { class: 'qq' }, `${qi + 1}. ${item.q}`), opts, fb));
+  });
+}
+
+/* ---------- gel helper ---------- */
+function gelBox(svg, x, y, w, hgt) {
+  svg.append(sv('rect', { x, y, width: w, height: hgt, rx: 10, fill: 'var(--gel)', stroke: 'var(--gel-edge)', 'stroke-width': 1.5 }));
+}
+function gelBand(svg, cx, y, opacity, color, w = 38) {
+  const g = sv('g', { opacity: clamp(opacity, 0, 1) });
+  g.append(sv('rect', { x: cx - w / 2 - 2, y: y - 4, width: w + 4, height: 8, rx: 4, fill: color || 'var(--band)', opacity: 0.25 }));
+  g.append(sv('rect', { x: cx - w / 2, y: y - 2.2, width: w, height: 4.4, rx: 2, fill: color || 'var(--band)' }));
+  svg.append(g); return g;
+}
+function gelWell(svg, cx, y, w = 38) { svg.append(sv('rect', { x: cx - w / 2, y, width: w, height: 6, rx: 1.5, fill: 'var(--well)' })); }
+function logY(size, lo, hi, y0, y1) { return y0 + (Math.log10(hi) - Math.log10(size)) / (Math.log10(hi) - Math.log10(lo)) * (y1 - y0); }
+/* ================= 1 · STRAND BUILDER ================= */
+const NUC = {
+  A: { base: 'adenine', cls: 'purine', nuc: 'deoxyadenylate (dAMP)', link: 'N-9', bonds: 2 },
+  G: { base: 'guanine', cls: 'purine', nuc: 'deoxyguanylate (dGMP)', link: 'N-9', bonds: 3 },
+  T: { base: 'thymine', cls: 'pyrimidine', nuc: 'deoxythymidylate (dTMP)', link: 'N-1', bonds: 2 },
+  C: { base: 'cytosine', cls: 'pyrimidine', nuc: 'deoxycytidylate (dCMP)', link: 'N-1', bonds: 3 }
+};
+function nucleotideSVG(b) {
+  const N = NUC[b];
+  const svg = sv('svg', { viewBox: '0 0 330 228', class: 'nuc-svg', role: 'img', 'aria-label': `Schematic of ${N.nuc}` });
+  const O = [160, 66], C1 = [202, 98], C2 = [186, 148], C3 = [134, 148], C4 = [118, 98], C5 = [92, 58];
+  // phosphate – O – C5'
+  svg.append(sv('line', { x1: 56, y1: 46, x2: C5[0], y2: C5[1], class: 'ln' }));
+  svg.append(sv('line', { x1: C5[0], y1: C5[1], x2: C4[0], y2: C4[1], class: 'ln' }));
+  svg.append(sv('circle', { cx: 38, cy: 40, r: 22, class: 'p' }));
+  svg.append(sv('text', { x: 38, y: 46, class: 'ptext', 'text-anchor': 'middle' }, 'P'));
+  svg.append(sv('text', { x: 38, y: 80, class: 'lab', 'text-anchor': 'middle' }, 'phosphate'));
+  svg.append(sv('text', { x: 92, y: 46, class: 'num', 'text-anchor': 'middle' }, '5′'));
+  svg.append(sv('text', { x: 62, y: 64, class: 'lab' }, 'O'));
+  // ring
+  svg.append(sv('polygon', { points: [O, C1, C2, C3, C4].map(p => p.join(',')).join(' '), class: 'ring' }));
+  svg.append(sv('circle', { cx: O[0], cy: O[1], r: 10, fill: 'var(--sunk)' }));
+  svg.append(sv('text', { x: O[0], y: O[1] + 5, class: 'atom', 'text-anchor': 'middle' }, 'O'));
+  const ctr = [160, 112];
+  [[C1, '1′'], [C2, '2′'], [C3, '3′'], [C4, '4′']].forEach(([p, t]) => {
+    const x = p[0] + 0.3 * (ctr[0] - p[0]), y = p[1] + 0.3 * (ctr[1] - p[1]) + 4;
+    svg.append(sv('text', { x, y, class: 'num', 'text-anchor': 'middle' }, t));
+  });
+  // 2'-H and 3'-OH
+  svg.append(sv('line', { x1: C2[0], y1: C2[1], x2: C2[0] + 10, y2: C2[1] + 30, class: 'ln' }));
+  svg.append(sv('text', { x: C2[0] + 14, y: C2[1] + 46, class: 'hot', 'text-anchor': 'middle' }, 'H'));
+  svg.append(sv('text', { x: C2[0] + 2, y: C2[1] + 62, class: 'lab', 'text-anchor': 'start' }, '2′: H, not OH'));
+  svg.append(sv('line', { x1: C3[0], y1: C3[1], x2: C3[0] - 10, y2: C3[1] + 30, class: 'ln' }));
+  svg.append(sv('text', { x: C3[0] - 16, y: C3[1] + 46, class: 'atom', 'text-anchor': 'middle' }, 'OH'));
+  svg.append(sv('text', { x: C3[0] - 4, y: C3[1] + 62, class: 'lab', 'text-anchor': 'end' }, '3′-OH: next bond'));
+  // base
+  const col = `var(--${b.toLowerCase()})`;
+  svg.append(sv('line', { x1: C1[0], y1: C1[1], x2: 236, y2: C1[1], class: 'ln' }));
+  svg.append(sv('text', { x: 219, y: C1[1] - 7, class: 'lab', 'text-anchor': 'middle' }, N.link));
+  svg.append(sv('rect', { x: 236, y: 66, width: 84, height: 64, rx: 10, class: 'basebox', fill: `color-mix(in srgb, ${col} 16%, var(--panel))`, stroke: col }));
+  svg.append(sv('text', { x: 278, y: 101, class: 'baseletter', fill: col, 'text-anchor': 'middle' }, b));
+  svg.append(sv('text', { x: 278, y: 120, class: 'basecls', 'text-anchor': 'middle' }, N.cls));
+  return svg;
+}
+
+INIT.strand = function () {
+  const st = { seq: GENE.slice(0, 21), sel: MUT };
+  const inp = $('#sb-input');
+  function setSeq(v, fromInput) {
+    st.seq = v.toUpperCase().replace(/[^ACGT]/g, '').slice(0, 30);
+    if (st.sel >= st.seq.length) st.sel = Math.max(0, st.seq.length - 1);
+    if (!fromInput) inp.value = st.seq;
+    render();
+  }
+  inp.addEventListener('input', () => {
+    const cleaned = inp.value.toUpperCase().replace(/[^ACGT]/g, '');
+    if (cleaned !== inp.value) inp.value = cleaned;
+    setSeq(cleaned, true);
+  });
+  $$('[data-add]').forEach(b => b.addEventListener('click', () => { if (st.seq.length < 30) { st.sel = st.seq.length; setSeq(st.seq + b.dataset.add); } }));
+  $('#sb-back').addEventListener('click', () => setSeq(st.seq.slice(0, -1)));
+  $('#sb-clear').addEventListener('click', () => setSeq(''));
+  $('#sb-gene').addEventListener('click', () => { st.sel = MUT; setSeq(GENE.slice(0, 21)); });
+  $('#sb-rand').addEventListener('click', () => { let r = ''; for (let i = 0; i < 12; i++) r += 'ACGT'[Math.floor(Math.random() * 4)]; st.sel = 0; setSeq(r); });
+
+  function render() {
+    const q = st.seq, n = q.length, d = $('#sb-duplex');
+    d.replaceChildren();
+    const stats = $('#sb-stats'), ana = $('#sb-anatomy');
+    if (!n) {
+      d.style.gridTemplateColumns = '1fr';
+      d.append(h('p', { class: 'empty' }, 'Add nucleotides with the keypad or type a sequence.'));
+      stats.replaceChildren(); ana.replaceChildren(h('figcaption', { class: 'muted' }, 'Nucleotide details appear here.'));
+      return;
+    }
+    d.style.gridTemplateColumns = `2.6em repeat(${n}, 1.95em) 2.6em`;
+    d.append(h('span', { class: 'end' }, '5′'));
+    q.split('').forEach((b, i) => d.append(h('button', { type: 'button', class: `nt-btn nt ${b}${i === st.sel ? ' sel' : ''}`, 'aria-label': `Position ${i + 1}, ${NUC[b].base}`, 'aria-pressed': i === st.sel ? 'true' : 'false', onclick: () => { st.sel = i; render(); } }, b)));
+    d.append(h('span', { class: 'end' }, '3′'));
+    d.append(h('span'));
+    q.split('').forEach((b, i) => { const k = NUC[b].bonds; d.append(h('span', { class: 'bond' + (i === st.sel ? ' sel' : ''), title: `${k} hydrogen bonds` }, Array.from({ length: k }, () => h('i')))); });
+    d.append(h('span'));
+    d.append(h('span', { class: 'end' }, '3′'));
+    comp(q).split('').forEach(b => d.append(h('span', { class: `comp nt ${b}` }, b)));
+    d.append(h('span', { class: 'end' }, '5′'));
+
+    const cnt = { A: 0, T: 0, G: 0, C: 0 }; q.split('').forEach(b => cnt[b]++);
+    const gc = cnt.G + cnt.C, hb = 2 * (cnt.A + cnt.T) + 3 * gc;
+    stats.replaceChildren(
+      h('div', { class: 'stat-row' },
+        h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Length'), h('div', { class: 'v' }, String(n), ' ', h('small', null, 'bp'))),
+        h('div', { class: 'stat' }, h('div', { class: 'k' }, 'GC content'), h('div', { class: 'v' }, String(Math.round(100 * gc / n)), h('small', null, '%'))),
+        h('div', { class: 'stat' }, h('div', { class: 'k' }, 'H-bonds'), h('div', { class: 'v' }, String(hb)))),
+      h('div', { class: 'scroll-x' }, h('table', { class: 'tbl chargaff' },
+        h('thead', null, h('tr', null, h('th', null, "Chargaff's rules"), ...['A', 'T', 'G', 'C'].map(b => h('th', null, h('span', { class: 'nt ' + b }, b))))),
+        h('tbody', null,
+          h('tr', null, h('td', null, 'Top strand alone'), ...['A', 'T', 'G', 'C'].map(b => h('td', { class: 'num' }, String(cnt[b])))),
+          h('tr', null, h('td', null, 'Both strands'), h('td', { class: 'num' }, String(cnt.A + cnt.T)), h('td', { class: 'num' }, String(cnt.A + cnt.T)), h('td', { class: 'num' }, String(gc)), h('td', { class: 'num' }, String(gc)))))),
+      h('p', { class: 'hint', style: 'margin:0' }, cnt.A === cnt.T && cnt.G === cnt.C ? 'This strand happens to have A = T and G = C on its own. Usually it won’t.' : 'A ≠ T or G ≠ C on the single strand, but the duplex always has A = T and G = C.')
+    );
+    const b = q[st.sel], N = NUC[b];
+    ana.replaceChildren(nucleotideSVG(b),
+      h('figcaption', null, h('b', null, N.nuc), h('br'),
+        `Position ${st.sel + 1} · ${N.base}, a ${N.cls} · attached to C-1′ through ${N.link} · pairs with ${COMP[b]} by ${N.bonds} hydrogen bonds`));
+  }
+  inp.value = st.seq; render();
+};
+
+/* ================= 2 · DOUBLE HELIX ================= */
+const FORMS = {
+  A: { name: 'A-form', hand: 1, diam: 26, bpt: 11, rise: 2.6, tilt: 20, delta: 215, pucker: 'C-3′ endo', gly: 'anti', major: 'deep, narrow', minor: 'shallow, wide' },
+  B: { name: 'B-form', hand: 1, diam: 20, bpt: 10.5, rise: 3.4, tilt: 6, delta: 144, pucker: 'C-2′ endo', gly: 'anti', major: 'wide', minor: 'narrow' },
+  Z: { name: 'Z-form', hand: -1, diam: 18, bpt: 12, rise: 3.7, tilt: 7, delta: 120, pucker: 'C-2′ endo (pyrimidines), C-3′ endo (purines)', gly: 'anti (pyrimidines), syn (purines)', major: 'barely apparent', minor: 'narrow, deep' }
+};
+INIT.helix = function () {
+  const cv = $('#hx-canvas'), ctx = cv.getContext('2d');
+  const N = 22, seq = GENE.slice(0, N);
+  let form = 'B', rot = 0.6, spin = !REDUCED, grooves = true, raf = 0, W = 400, H = 460, drag = null;
+  $('#hx-spin').checked = spin;
+
+  function table() {
+    const t = $('#hx-table'); t.replaceChildren();
+    const rows = [['Helix sense', f => f.hand > 0 ? 'Right-handed' : 'Left-handed'], ['Diameter', f => `≈${f.diam} Å`], ['Base pairs per turn', f => String(f.bpt)], ['Rise per base pair', f => `${f.rise} Å`], ['Base tilt', f => `${f.tilt}°`], ['Sugar pucker', f => f.pucker], ['Glycosyl bond', f => f.gly], ['Major groove', f => f.major], ['Minor groove', f => f.minor]];
+    t.append(h('thead', null, h('tr', null, h('th', null, ''), ...['A', 'B', 'Z'].map(k => h('th', { class: k === form ? 'on' : '' }, FORMS[k].name)))));
+    const tb = h('tbody');
+    rows.forEach(([lab, fn]) => tb.append(h('tr', null, h('td', null, h('b', null, lab)), ...['A', 'B', 'Z'].map(k => h('td', { class: k === form ? 'on' : '' }, fn(FORMS[k]))))));
+    t.append(tb);
+  }
+  function size() {
+    const r = $('#hx-stage').getBoundingClientRect();
+    W = Math.max(260, Math.floor(r.width)); H = Math.round(clamp(W * 1.1, 400, 540));
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
+  }
+  function draw() {
+    const F = FORMS[form];
+    const bg = css('--panel'), inkC = css('--ink'), mutedC = css('--muted');
+    const colors = { 1: css('--accent'), 2: mutedC, A: css('--a'), T: css('--t'), G: css('--g'), C: css('--c') };
+    ctx.clearRect(0, 0, W, H);
+    const scale = (H * 0.84) / (N * 3.7);           // px per Å, same for every form so sizes compare
+    const R = F.diam / 2 * scale, tw = (2 * Math.PI / F.bpt) * F.hand, dl = F.delta * Math.PI / 180;
+    const cx = W * 0.62, cy = H / 2 - 6;
+    const yOf = i => cy + (i - (N - 1) / 2) * F.rise * scale;
+    const ph = (i, o) => i * tw + rot + o;
+    const pt = (phi, y) => ({ x: cx + R * Math.cos(phi), y, z: Math.sin(phi) });
+    const items = [], sub = 8;
+    [[0, 1], [dl, 2]].forEach(([o, s]) => {
+      for (let k = 0; k < (N - 1) * sub; k++) {
+        const t0 = k / sub, t1 = (k + 1) / sub, p = pt(ph(t0, o), yOf(t0)), q = pt(ph(t1, o), yOf(t1));
+        items.push({ k: 'bb', p, q, z: (p.z + q.z) / 2, c: colors[s] });
+      }
+    });
+    const tilt = Math.sin(F.tilt * Math.PI / 180) * R * 0.9;
+    for (let i = 0; i < N; i++) {
+      const b1 = seq[i], b2 = COMP[b1];
+      const p1 = pt(ph(i, 0), yOf(i) + tilt), p2 = pt(ph(i, dl), yOf(i) - tilt);
+      const m = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2, z: (p1.z + p2.z) / 2 };
+      items.push({ k: 'rung', p: p1, q: m, z: (p1.z + m.z) / 2 - 0.02, c: colors[b1] });
+      items.push({ k: 'rung', p: m, q: p2, z: (m.z + p2.z) / 2 - 0.02, c: colors[b2] });
+      items.push({ k: 'ph', p: p1, z: p1.z + 0.01, c: colors[1] });
+      items.push({ k: 'ph', p: p2, z: p2.z + 0.01, c: colors[2] });
+    }
+    items.sort((a, b) => a.z - b.z);
+    const bbW = 2.3 * scale, rungW = 1.45 * scale, phR = 1.65 * scale;
+    for (const it of items) {
+      const shade = mix(it.c, bg, 0.28 + 0.72 * (it.z + 1) / 2);
+      if (it.k === 'ph') { ctx.fillStyle = shade; ctx.beginPath(); ctx.arc(it.p.x, it.p.y, phR, 0, 2 * Math.PI); ctx.fill(); continue; }
+      ctx.strokeStyle = shade; ctx.lineWidth = it.k === 'bb' ? bbW : rungW; ctx.lineCap = it.k === 'bb' ? 'round' : 'butt';
+      ctx.beginPath(); ctx.moveTo(it.p.x, it.p.y); ctx.lineTo(it.q.x, it.q.y); ctx.stroke();
+    }
+    // grooves along the left silhouette
+    if (grooves) {
+      const cross = [];
+      [[0, 1], [dl, 2]].forEach(([o, s]) => { for (let k = -40; k <= 40; k++) { const i = (Math.PI + 2 * Math.PI * k - rot - o) / tw; if (i >= 0 && i <= N - 1) cross.push({ i, s }); } });
+      cross.sort((a, b) => a.i - b.i);
+      const best = {}, mid = (N - 1) / 2;
+      for (let j = 0; j < cross.length - 1; j++) {
+        const a = cross[j], b = cross[j + 1]; if (a.s === b.s) continue;
+        const ext = Math.abs(b.i - a.i) * Math.abs(tw);
+        const type = Math.abs(ext - dl) < Math.abs(ext - (2 * Math.PI - dl)) ? 'minor' : 'major';
+        const dist = Math.abs((a.i + b.i) / 2 - mid) + (type === 'major' ? 0.0 : 0.6);
+        if (!best[type] || dist < best[type].dist) best[type] = { a: a.i, b: b.i, dist };
+      }
+      const bx = cx - R - 12;
+      ctx.strokeStyle = inkC; ctx.fillStyle = inkC; ctx.lineWidth = 1.5; ctx.textAlign = 'right';
+      ['major', 'minor'].forEach(type => {
+        const g = best[type]; if (!g) return;
+        const y1 = yOf(g.a), y2 = yOf(g.b), ym = (y1 + y2) / 2;
+        ctx.beginPath(); ctx.moveTo(bx + 5, y1); ctx.lineTo(bx, y1); ctx.lineTo(bx, y2); ctx.lineTo(bx + 5, y2); ctx.stroke();
+        ctx.font = `700 13px ${css('--f-body') || 'sans-serif'}`; ctx.fillStyle = inkC;
+        ctx.fillText(type === 'major' ? 'Major groove' : 'Minor groove', bx - 7, ym);
+        ctx.font = `12px ${css('--f-body') || 'sans-serif'}`; ctx.fillStyle = mutedC;
+        ctx.fillText(type === 'major' ? F.major : F.minor, bx - 7, ym + 15);
+      });
+    }
+    // scale bar: 10 Å
+    const sb = 10 * scale, sx = W - 16 - sb, sy = H - 30;
+    ctx.strokeStyle = inkC; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + sb, sy); ctx.stroke();
+    ctx.fillStyle = mutedC; ctx.textAlign = 'center'; ctx.font = `11px ${css('--f-mono') || 'monospace'}`; ctx.fillText('10 Å', sx + sb / 2, sy - 6);
+  }
+  function loop() { if (!spin) { raf = 0; return; } rot += 0.008; draw(); raf = requestAnimationFrame(loop); }
+  function start() { if (spin && !raf) raf = requestAnimationFrame(loop); }
+  function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+
+  $$('[data-form]').forEach(b => b.addEventListener('click', () => { form = b.dataset.form; $$('[data-form]').forEach(x => x.classList.toggle('on', x === b)); table(); draw(); }));
+  $('#hx-grooves').addEventListener('change', e => { grooves = e.target.checked; draw(); });
+  $('#hx-spin').addEventListener('change', e => { spin = e.target.checked; if (spin) start(); else stop(); });
+  cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, spin }; spin = false; stop(); try { cv.setPointerCapture(e.pointerId); } catch (_) { /* ignore */ } });
+  cv.addEventListener('pointermove', e => { if (!drag) return; rot -= (e.clientX - drag.x) * 0.012; drag.x = e.clientX; draw(); });
+  const end = () => { if (!drag) return; spin = drag.spin; drag = null; start(); };
+  cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+  window.addEventListener('resize', () => { if (current === 'helix') size(); });
+  const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq && mq.addEventListener) mq.addEventListener('change', () => { if (current === 'helix') draw(); });
+  new MutationObserver(() => { if (current === 'helix') draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  table();
+  ONSHOW.helix = () => { size(); start(); };
+  ONHIDE.helix = stop;
+};
+
+/* ================= 3 · MELTING ================= */
+INIT.melt = function () {
+  const svg = $('#mt-svg'), gcI = $('#mt-gc'), naI = $('#mt-na'), tI = $('#mt-temp');
+  const X0 = 40, X1 = 110, Y0 = 1.0, Y1 = 1.45, L = 58, Rr = 544, T = 18, B = 286;
+  const xp = t => L + (t - X0) / (X1 - X0) * (Rr - L), yp = a => B - (a - Y0) / (Y1 - Y0) * (B - T);
+  const HYP = 0.40, WID = 1.6;
+  const tmOf = (g, na) => 81.5 + 16.6 * Math.log10(na) + 0.41 * g;
+  const fss = (t, tm) => 1 / (1 + Math.exp(-(t - tm) / WID));
+  const A = (t, tm) => 1 + HYP * fss(t, tm);
+  const naOf = v => Math.pow(10, -2 + 2 * v / 100);
+  const curve = tm => { let d = ''; for (let t = X0; t <= X1 + 1e-9; t += 0.5) d += (t === X0 ? 'M' : 'L') + xp(t).toFixed(1) + ',' + yp(A(t, tm)).toFixed(1); return d; };
+  // static frame
+  svg.append(sv('rect', { x: xp(100), y: T, width: Rr - xp(100), height: B - T, fill: 'var(--sunk)', opacity: 0.7 }));
+  svg.append(sv('text', { x: (xp(100) + Rr) / 2, y: T + 14, 'text-anchor': 'middle' }, 'extrapolated'));
+  for (let t = 40; t <= 110; t += 10) { svg.append(sv('line', { x1: xp(t), x2: xp(t), y1: T, y2: B, class: 'grid' })); svg.append(sv('text', { x: xp(t), y: B + 17, 'text-anchor': 'middle' }, String(t))); }
+  for (let a = 1.0; a <= 1.401; a += 0.1) { svg.append(sv('line', { x1: L, x2: Rr, y1: yp(a), y2: yp(a), class: 'grid' })); svg.append(sv('text', { x: L - 8, y: yp(a) + 4, 'text-anchor': 'end' }, a.toFixed(2))); }
+  svg.append(sv('line', { x1: L, x2: Rr, y1: B, y2: B, class: 'axis' })); svg.append(sv('line', { x1: L, x2: L, y1: T, y2: B, class: 'axis' }));
+  svg.append(sv('text', { x: (L + Rr) / 2, y: B + 36, 'text-anchor': 'middle' }, 'Temperature (°C)'));
+  svg.append(sv('text', { x: 16, y: (T + B) / 2, 'text-anchor': 'middle', transform: `rotate(-90 16 ${(T + B) / 2})` }, 'Relative A₂₆₀'));
+  const refTm = tmOf(50, 0.15);
+  svg.append(sv('path', { d: curve(refTm), fill: 'none', stroke: 'var(--muted)', 'stroke-width': 1.6, 'stroke-dasharray': '5 4' }));
+  const refLab = sv('text', { x: xp(refTm) + 8, y: yp(1.36), fill: 'var(--muted)' }, 'reference: 50% GC, 0.15 M Na⁺');
+  svg.append(refLab);
+  const tmLine = sv('line', { y1: T, y2: B, stroke: 'var(--accent)', 'stroke-width': 1.2, 'stroke-dasharray': '3 3' });
+  const live = sv('path', { fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'stroke-linecap': 'round' });
+  const tmLab = sv('text', { y: B - 8, fill: 'var(--accent)', 'font-weight': '700' });
+  const dot = sv('circle', { r: 6, fill: 'var(--panel)', stroke: 'var(--ink)', 'stroke-width': 2.5 });
+  svg.append(tmLine, live, tmLab, dot);
+  // ladder
+  const lad = $('#mt-ladder'); const cols = [];
+  for (let i = 0; i < 20; i++) { const c = h('div', { class: 'mcol' }, h('span', { class: 'tb top' }), h('span', { class: 'hb' }), h('span', { class: 'tb bot' })); lad.append(c); cols.push(c); }
+
+  function render() {
+    const g = +gcI.value, na = naOf(+naI.value), t = +tI.value, tm = tmOf(g, na);
+    $('#mt-gc-o').textContent = g + '%';
+    $('#mt-na-o').textContent = (na < 0.1 ? na.toFixed(3) : na.toFixed(2)) + ' M';
+    $('#mt-temp-o').textContent = fmt(t, 1) + ' °C';
+    live.setAttribute('d', curve(tm));
+    const tx = xp(clamp(tm, X0, X1));
+    tmLine.setAttribute('x1', tx); tmLine.setAttribute('x2', tx);
+    tmLab.setAttribute('x', tx > Rr - 70 ? tx - 6 : tx + 6); tmLab.setAttribute('text-anchor', tx > Rr - 70 ? 'end' : 'start');
+    tmLab.textContent = tm > X1 ? `tm ${fmt(tm)} °C (off scale)` : `tm ${fmt(tm)} °C`;
+    dot.setAttribute('cx', xp(t)); dot.setAttribute('cy', yp(A(t, tm)));
+    const f = fss(t, tm);
+    $('#mt-stats').replaceChildren(
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Melting temp'), h('div', { class: 'v' }, fmt(tm), h('small', null, ' °C'))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Relative A₂₆₀'), h('div', { class: 'v' }, A(t, tm).toFixed(2))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Single-stranded'), h('div', { class: 'v' }, String(Math.round(100 * f)), h('small', null, '%'))));
+    // ladder: evenly spread GC pairs; AT pairs open first
+    const isGC = []; for (let i = 0; i < 20; i++) isGC.push(Math.floor((i + 1) * g / 100) > Math.floor(i * g / 100));
+    const order = [...Array(20).keys()].sort((a, b) => (isGC[a] - isGC[b]) || (a - b));
+    const nOpen = Math.round(f * 20), open = new Set(order.slice(0, nOpen));
+    cols.forEach((c, i) => {
+      const top = isGC[i] ? (i % 2 ? 'C' : 'G') : (i % 2 ? 'T' : 'A');
+      c.children[0].className = `tb top nt ${top}`; c.children[0].textContent = top;
+      c.children[2].className = `tb bot nt ${COMP[top]}`; c.children[2].textContent = COMP[top];
+      c.children[1].replaceChildren(...Array.from({ length: isGC[i] ? 3 : 2 }, () => h('i')));
+      c.classList.toggle('open', open.has(i));
+    });
+  }
+  [gcI, naI, tI].forEach(i => i.addEventListener('input', render));
+  render();
+};
+/* ---------- shared grid placement ---------- */
+function place(grid, el, row, col, span = 1) { el.style.gridRow = String(row); el.style.gridColumn = `${col} / span ${span}`; grid.append(el); return el; }
+
+/* ================= 4 · PCR ================= */
+INIT.pcr = function () {
+  const L = 20, n = GENE.length, X0 = 1000, K = 1e12;
+  const st = { f: 3, r: 86, ta: 52, cycles: 30, mistake: false, timer: 0 };
+  const fI = $('#pcr-f'), rI = $('#pcr-r'), taI = $('#pcr-ta'), nI = $('#pcr-n'), mI = $('#pcr-mistake');
+
+  function primers() {
+    const fwd = GENE.slice(st.f - 1, st.f - 1 + L);
+    const site = GENE.slice(st.r - L, st.r);
+    const rev = st.mistake ? site : revcomp(site);
+    return { fwd, rev, tf: primerTm(fwd), tr: primerTm(rev), len: st.r - st.f + 1 };
+  }
+  function drawTemplate() {
+    const g = $('#pcr-grid'); g.replaceChildren();
+    g.style.gridTemplateColumns = `2.6em repeat(${n}, var(--cw)) 2.6em`;
+    for (let i = 0; i < n; i++) { const p = i + 1; if (p === 1 || p % 10 === 0) place(g, h('span', { class: 'rl' }, String(p)), 1, i + 2); }
+    place(g, h('div', { class: 'parrow' }, h('span', null, 'forward primer')), 2, st.f + 1, L);
+    if (st.mistake) place(g, h('div', { class: 'parrow bad' }, h('span', null, '"reverse" primer')), 2, st.r - L + 2, L);
+    place(g, h('span', { class: 'end' }, '5′'), 3, 1);
+    place(g, h('span', { class: 'end' }, '3′'), 4, 1);
+    for (let i = 0; i < n; i++) {
+      const inF = i >= st.f - 1 && i < st.f - 1 + L, inR = i >= st.r - L && i < st.r;
+      place(g, h('span', { class: `c nt ${GENE[i]}${inF ? ' fp' : ''}${inR && st.mistake ? ' rp bad' : ''}` }, GENE[i]), 3, i + 2);
+      const cb = COMP[GENE[i]];
+      place(g, h('span', { class: `c nt ${cb}${inR && !st.mistake ? ' rp' : ''}` }, cb), 4, i + 2);
+    }
+    place(g, h('span', { class: 'end' }, '3′'), 3, n + 2);
+    place(g, h('span', { class: 'end' }, '5′'), 4, n + 2);
+    if (!st.mistake) place(g, h('div', { class: 'parrow left' }, h('span', null, 'reverse primer')), 5, st.r - L + 2, L);
+  }
+  function profile() {
+    const svg = $('#pcr-prof'); svg.replaceChildren();
+    const yT = t => 125 - (t - 40) / 60 * 100; // 40..100 °C
+    [40, 60, 80, 100].forEach(t => { svg.append(sv('line', { x1: 34, x2: 314, y1: yT(t), y2: yT(t), class: 'grid' })); svg.append(sv('text', { x: 28, y: yT(t) + 4, 'text-anchor': 'end' }, String(t))); });
+    const steps = [[95, 'denature'], [st.ta, 'anneal'], [72, 'extend']];
+    let x = 38, d = `M${x},${yT(95)}`; const w = 38, ramp = 8;
+    for (let c = 0; c < 2; c++) steps.forEach(([t, lab], k) => {
+      d += ` L${x + ramp},${yT(t)} L${x + ramp + w},${yT(t)}`;
+      if (c === 0) { svg.append(sv('text', { x: x + ramp + w / 2, y: yT(t) - 7, 'text-anchor': 'middle', fill: 'var(--ink)', 'font-weight': '700' }, `${Math.round(t)}°`)); svg.append(sv('text', { x: x + ramp + w / 2, y: 142, 'text-anchor': 'middle', style: 'font-size:10px' }, lab)); }
+      x += ramp + w;
+    });
+    svg.append(sv('path', { d, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }));
+    svg.append(sv('text', { x: 300, y: 142, 'text-anchor': 'end' }, '× cycles'));
+  }
+  function outcome(P) {
+    if (st.mistake) return { kind: 'same', eff: 0 };
+    const tmin = Math.min(P.tf, P.tr), d = st.ta - tmin;
+    if (d > 5) return { kind: 'hot', eff: 0, d, tmin };
+    if (d > 2) return { kind: 'weak', eff: 0.6, d, tmin };
+    if (d >= -8) return { kind: 'good', eff: 0.95, d, tmin };
+    return { kind: 'cold', eff: 0.9, d, tmin };
+  }
+  function series(o) {
+    const xs = [X0];
+    for (let c = 1; c <= 40; c++) { const x = xs[c - 1]; xs.push(o.kind === 'same' ? x + X0 * 0.95 : x + o.eff * x * (1 - x / K)); }
+    return xs;
+  }
+  function ampChart(xs, upto) {
+    const svg = $('#pcr-amp'); svg.replaceChildren();
+    const xp = c => 36 + c / 40 * 274, yp = lg => 118 - (lg - 3) / 9 * 104;
+    for (let lg = 3; lg <= 12; lg += 3) { svg.append(sv('line', { x1: 36, x2: 310, y1: yp(lg), y2: yp(lg), class: 'grid' })); svg.append(sv('text', { x: 30, y: yp(lg) + 4, 'text-anchor': 'end' }, `10${String(lg).split('').map(c => SUP[c]).join('')}`)); }
+    for (let c = 0; c <= 40; c += 10) svg.append(sv('text', { x: xp(c), y: 134, 'text-anchor': 'middle' }, String(c)));
+    svg.append(sv('text', { x: 173, y: 148, 'text-anchor': 'middle' }, 'cycle'));
+    if (upto == null) return;
+    let d = ''; for (let c = 0; c <= upto; c++) d += (c ? 'L' : 'M') + xp(c).toFixed(1) + ',' + yp(Math.log10(xs[c])).toFixed(1);
+    svg.append(sv('path', { d, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }));
+    svg.append(sv('circle', { cx: xp(upto), cy: yp(Math.log10(xs[upto])), r: 4, fill: 'var(--accent)' }));
+  }
+  function gel(P, o, x, show) {
+    const svg = $('#pcr-gel'); svg.replaceChildren();
+    gelBox(svg, 62, 4, 230, 262);
+    const lanes = [['Ladder', 102], ['PCR', 177], ['No template', 252]];
+    lanes.forEach(([t, cx]) => { svg.append(sv('text', { x: cx, y: 18, 'text-anchor': 'middle' }, t)); gelWell(svg, cx, 25, 40); });
+    const y = sz => logY(sz, 20, 250, 44, 255);
+    [25, 50, 75, 100, 125, 150, 175, 200].forEach(sz => { gelBand(svg, 102, y(sz), 0.85, 'var(--ladder)', 40); svg.append(sv('text', { x: 56, y: y(sz) + 3.5, 'text-anchor': 'end', class: 'lbl' }, String(sz))); });
+    svg.append(sv('text', { x: 56, y: 262, 'text-anchor': 'end', class: 'lbl' }, 'bp'));
+    if (!show) return;
+    const I = clamp((Math.log10(x) - 8) / 3.5, 0, 1);
+    if (o.kind !== 'same' && o.kind !== 'hot') gelBand(svg, 177, y(P.len), I, null, 40);
+    if (o.kind === 'cold') {
+      gelBand(svg, 177, y(142), 0.42 * I, null, 40); gelBand(svg, 177, y(208), 0.32 * I, null, 40);
+      gelBand(svg, 177, y(40), 0.55 * I, null, 40); gelBand(svg, 252, y(40), 0.4, null, 40);
+    }
+  }
+  function stats(cycle, x, P, o) {
+    $('#pcr-stats').replaceChildren(
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Cycle'), h('div', { class: 'v' }, String(cycle))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Target copies'), h('div', { class: 'v', style: 'font-size:19px' }, sci(x))),
+      h('div', { class: 'stat' }, h('div', { class: 'k' }, 'Product'), h('div', { class: 'v' }, o && (o.kind === 'same' || o.kind === 'hot') ? '—' : String(P.len), h('small', null, ' bp'))));
+  }
+  function verdict(P, o, x) {
+    const v = $('#pcr-verdict'); const ta = st.ta, dd = o.d != null ? Math.abs(o.d).toFixed(1) : '';
+    const faint = clamp((Math.log10(x) - 8) / 3.5, 0, 1) < 0.35;
+    let chip, txt;
+    if (o.kind === 'same') { chip = h('span', { class: 'chip bad' }, 'No band'); txt = 'Both primers now have the top-strand sequence, so both anneal to the bottom strand and extend in the same direction. Copies grow only linearly. Reverse-complement the reverse primer.'; }
+    else if (o.kind === 'hot') { chip = h('span', { class: 'chip bad' }, 'No product'); txt = `At ${ta} °C the annealing step is ${dd} °C above the lower primer tm, so the primers can't stay bound. Lower the annealing temperature.`; }
+    else if (o.kind === 'weak' || faint) { chip = h('span', { class: 'chip warn' }, 'Faint band'); txt = o.kind === 'weak' ? `At ${ta} °C the primers bind only part of the time (${dd} °C above the lower tm), so each cycle is inefficient. Lower the annealing temperature a few degrees.` : `The ${P.len} bp product is correct, but ${st.cycles} cycles haven't made enough to see clearly. Add cycles.`; }
+    else if (o.kind === 'cold') { chip = h('span', { class: 'chip warn' }, 'Extra bands'); txt = `The ${P.len} bp product is there, plus extra bands and primer dimers near 40 bp, even in the no-template lane. At ${ta} °C (${dd} °C below the lower tm) primers also bind partial matches and each other. Raise the annealing temperature.`; }
+    else { chip = h('span', { class: 'chip good' }, 'Clean product'); txt = `One sharp ${P.len} bp band. Annealing ${dd} °C ${o.d > 0 ? 'above' : 'below'} the lower primer tm lets each primer bind only its own site.`; }
+    v.replaceChildren(chip, ' ', txt);
+  }
+  function update() {
+    st.f = +fI.value; st.r = +rI.value; st.ta = +taI.value; st.cycles = +nI.value; st.mistake = mI.checked;
+    $('#pcr-f-o').textContent = `position ${st.f}`; $('#pcr-r-o').textContent = `position ${st.r}`;
+    $('#pcr-ta-o').textContent = `${st.ta} °C`; $('#pcr-n-o').textContent = String(st.cycles);
+    const P = primers();
+    drawTemplate(); profile();
+    const t = $('#pcr-ptbl'); t.replaceChildren(
+      h('thead', null, h('tr', null, h('th', null, 'Primer'), h('th', null, '5′→3′'), h('th', null, 'tm'))),
+      h('tbody', null,
+        h('tr', null, h('td', null, h('b', null, 'Fwd')), h('td', { class: 'pseq' }, ntSpans(P.fwd)), h('td', { class: 'num' }, fmt(P.tf) + '°')),
+        h('tr', null, h('td', null, h('b', null, 'Rev')), h('td', { class: 'pseq' }, ntSpans(P.rev)), h('td', { class: 'num' }, fmt(P.tr) + '°'))));
+    const w = $('#pcr-warn'); w.replaceChildren();
+    if (st.mistake) w.append(h('p', { class: 'note' }, h('span', { class: 'chip bad' }, 'Same direction'), ' This primer matches the top strand, so it points the same way as the forward primer.'));
+    else if (Math.abs(P.tf - P.tr) > 5) w.append(h('p', { class: 'note' }, h('span', { class: 'chip warn' }, 'tm mismatch'), ` The primers differ by ${fmt(Math.abs(P.tf - P.tr))} °C. Any one annealing temperature will be too high for one primer or too low for the other.`));
+    else w.append(h('p', { class: 'hint', style: 'margin:0' }, `Product: ${P.len} bp. Primer tm values are within ${fmt(Math.abs(P.tf - P.tr))} °C of each other.`));
+    stopRun(); ampChart(null, null); gel(P, null, 0, false); stats(0, X0, P, null);
+    $('#pcr-verdict').replaceChildren('Press Run PCR to see the product.');
+  }
+  function stopRun() { if (st.timer) { clearInterval(st.timer); st.timer = 0; } $('#pcr-run').disabled = false; }
+  function run() {
+    stopRun();
+    const P = primers(), o = outcome(P), xs = series(o), N = st.cycles;
+    const finish = () => { ampChart(xs, N); stats(N, xs[N], P, o); gel(P, o, xs[N], true); verdict(P, o, xs[N]); $('#pcr-run').disabled = false; };
+    if (REDUCED) { finish(); return; }
+    $('#pcr-run').disabled = true; let c = 0;
+    st.timer = setInterval(() => {
+      c++; ampChart(xs, c); stats(c, xs[c], P, o);
+      if (c >= N) { clearInterval(st.timer); st.timer = 0; finish(); }
+    }, 70);
+  }
+  [fI, rI, taI, nI].forEach(i => i.addEventListener('input', update));
+  mI.addEventListener('change', update);
+  $('#pcr-run').addEventListener('click', run);
+  update();
+};
+
+/* ================= 5 · DIGEST & GEL ================= */
+const PTEACH = { name: 'pTEACH', len: 4000,
+  feats: [{ n: 'lacZα', a: 300, b: 650, col: 'var(--c)' }, { n: 'ampR', a: 1500, b: 2360, col: 'var(--t)' }, { n: 'ori', a: 2900, b: 3500, col: 'var(--muted)' }],
+  sites: { EcoRI: [400], BamHI: [430, 2230], HindIII: [460], PstI: [1650, 3100] } };
+const ENZ = [
+  { n: 'EcoRI', top: 'G^AATTC', bot: 'CTTAA^G', end: '5′ overhang (AATT)' },
+  { n: 'BamHI', top: 'G^GATCC', bot: 'CCTAG^G', end: '5′ overhang (GATC)' },
+  { n: 'HindIII', top: 'A^AGCTT', bot: 'TTCGA^A', end: '5′ overhang (AGCT)' },
+  { n: 'PstI', top: 'CTGCA^G', bot: 'G^ACGTC', end: '3′ overhang (TGCA)' }
+];
+function fragments(len, cuts) {
+  const p = [...new Set(cuts)].sort((a, b) => a - b);
+  if (!p.length) return [];
+  if (p.length === 1) return [len];
+  const out = []; for (let i = 1; i < p.length; i++) out.push(p[i] - p[i - 1]);
+  out.push(len - p[p.length - 1] + p[0]); return out.sort((a, b) => b - a);
+}
+function arcPath(r, a0, a1) {
+  const x0 = r * Math.cos(a0), y0 = r * Math.sin(a0), x1 = r * Math.cos(a1), y1 = r * Math.sin(a1);
+  return `M${x0.toFixed(2)},${y0.toFixed(2)} A${r},${r} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${x1.toFixed(2)},${y1.toFixed(2)}`;
+}
+const LADDER_1KB = [10000, 8000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1000, 750, 500, 250];
+const LADDER_LBL = [10000, 6000, 4000, 3000, 2000, 1500, 1000, 750, 500, 250];
+function drawLadder(svg, cx, y, labelX) {
+  LADDER_1KB.forEach(sz => { gelBand(svg, cx, y(sz), sz === 3000 || sz === 1000 ? 1 : 0.75, 'var(--ladder)', 38); });
+  if (labelX != null) LADDER_LBL.forEach(sz => svg.append(sv('text', { x: labelX, y: y(sz) + 3.5, 'text-anchor': 'end', class: 'lbl' }, sz >= 1000 ? (sz / 1000) + ' kb' : String(sz))));
+}
+function laneBands(svg, cx, frags, y, maxLen) {
+  const groups = {}; frags.forEach(f => { groups[f] = (groups[f] || 0) + 1; });
+  Object.entries(groups).forEach(([sz, k]) => { sz = +sz; if (sz < 100) return; gelBand(svg, cx, y(sz), 0.35 + 0.65 * Math.min(1, (sz * k) / maxLen), null, 38); });
+}
+
+INIT.digest = function () {
+  const len = PTEACH.len, sel = new Set(['EcoRI', 'PstI']);
+  let ran = false;
+  const ang = p => p / len * 2 * Math.PI - Math.PI / 2;
+  const box = $('#dg-enz');
+  ENZ.forEach(e => {
+    const cb = h('input', { type: 'checkbox', id: 'dg-' + e.n, checked: sel.has(e.n) });
+    const fmtSite = s => { const [a, b] = s.split('^'); return [a, h('span', { class: 'cut' }, '↓'), b]; };
+    const lab = h('label', { for: 'dg-' + e.n, class: sel.has(e.n) ? 'on' : '' }, cb,
+      h('span', null, h('span', { class: 'ename' }, e.n), ' ', h('span', { class: 'eend' }, `· ${e.end} · ${PTEACH.sites[e.n].length} site${PTEACH.sites[e.n].length > 1 ? 's' : ''}`),
+        h('span', { class: 'esite', style: 'display:block' }, '5′-', fmtSite(e.top), '-3′'),
+        h('span', { class: 'esite', style: 'display:block' }, '3′-', fmtSite(e.bot), '-5′')));
+    cb.addEventListener('change', () => { if (cb.checked) sel.add(e.n); else sel.delete(e.n); lab.classList.toggle('on', cb.checked); ran = false; $('#dg-msg').replaceChildren(); map(); gel(); });
+    box.append(lab);
+  });
+  function map() {
+    const svg = $('#dg-map'); svg.replaceChildren();
+    svg.append(sv('circle', { cx: 0, cy: 0, r: 118, fill: 'none', stroke: 'var(--line)', 'stroke-width': 4 }));
+    PTEACH.feats.forEach(f => {
+      svg.append(sv('path', { d: arcPath(118, ang(f.a), ang(f.b)), fill: 'none', stroke: `color-mix(in srgb, ${f.col} 55%, var(--panel))`, 'stroke-width': 14, 'stroke-linecap': 'butt' }));
+      const m = ang((f.a + f.b) / 2);
+      svg.append(sv('text', { x: 90 * Math.cos(m), y: 90 * Math.sin(m) + 4, 'text-anchor': 'middle', fill: 'var(--ink)', 'font-weight': '700' }, f.n));
+    });
+    svg.append(sv('text', { x: 0, y: -4, 'text-anchor': 'middle', fill: 'var(--ink)', style: 'font:800 20px var(--f-display)' }, 'pTEACH'));
+    svg.append(sv('text', { x: 0, y: 16, 'text-anchor': 'middle' }, '4,000 bp'));
+    const all = []; Object.entries(PTEACH.sites).forEach(([e, ps]) => ps.forEach(p => all.push({ e, p, a: ang(p) })));
+    all.sort((x, y) => x.a - y.a);
+    const minGap = 0.2; all.forEach((s, i) => { s.la = s.a; if (i && s.la - all[i - 1].la < minGap) s.la = all[i - 1].la + minGap; });
+    all.forEach(s => {
+      const on = sel.has(s.e);
+      svg.append(sv('line', { x1: 104 * Math.cos(s.a), y1: 104 * Math.sin(s.a), x2: 132 * Math.cos(s.a), y2: 132 * Math.sin(s.a), stroke: on ? 'var(--accent)' : 'var(--muted)', 'stroke-width': on ? 3 : 1.5 }));
+      svg.append(sv('line', { x1: 132 * Math.cos(s.a), y1: 132 * Math.sin(s.a), x2: 142 * Math.cos(s.la), y2: 142 * Math.sin(s.la), stroke: 'var(--line)', 'stroke-width': 1 }));
+      const lx = 147 * Math.cos(s.la), ly = 147 * Math.sin(s.la) + 4;
+      const anchor = Math.cos(s.la) > 0.2 ? 'start' : Math.cos(s.la) < -0.2 ? 'end' : 'middle';
+      svg.append(sv('text', { x: lx, y: ly, 'text-anchor': anchor, class: on ? 'site-on' : '' }, `${s.e} ${s.p.toLocaleString('en-US')}`));
+    });
+  }
+  const cuts = () => [...sel].flatMap(e => PTEACH.sites[e]);
+  function gel() {
+    const svg = $('#dg-gel'); svg.replaceChildren();
+    gelBox(svg, 62, 4, 190, 352);
+    const y = sz => logY(sz, 120, 12000, 44, 345);
+    [['Ladder', 102], ['Uncut', 157], ['Digest', 212]].forEach(([t, cx]) => { svg.append(sv('text', { x: cx, y: 18, 'text-anchor': 'middle' }, t)); gelWell(svg, cx, 25, 38); });
+    drawLadder(svg, 102, y, 56);
+    gelBand(svg, 157, y(7000), 0.55); gelBand(svg, 157, y(2700), 0.95);
+    svg.append(sv('text', { x: 258, y: y(7000) + 3.5, class: 'lbl' }, 'open circle'));
+    svg.append(sv('text', { x: 258, y: y(2700) + 3.5, class: 'lbl' }, 'supercoiled'));
+    if (!ran) { svg.append(sv('text', { x: 212, y: 190, 'text-anchor': 'middle', style: 'font:700 22px var(--f-mono)' }, '?')); return; }
+    laneBands(svg, 212, fragments(len, cuts()), y, len);
+  }
+  $('#dg-run').addEventListener('click', () => {
+    const msg = $('#dg-msg');
+    if (!sel.size) { msg.replaceChildren(h('p', { class: 'note' }, 'Pick at least one enzyme first.')); return; }
+    ran = true; gel();
+    const fr = fragments(len, cuts()), tiny = fr.filter(f => f < 100);
+    msg.replaceChildren(h('p', { class: 'note' }, h('b', null, `${[...sel].join(' + ')}: `),
+      `${cuts().length} cut${cuts().length > 1 ? 's' : ''} → ${fr.length} fragment${fr.length > 1 ? 's' : ''}: ${fr.map(f => f.toLocaleString('en-US') + ' bp').join(', ')}.`,
+      tiny.length ? ` The ${tiny.join(' and ')} bp piece${tiny.length > 1 ? 's are' : ' is'} too small to see on this gel and runs off the bottom.` : ''));
+  });
+  $('#dg-check').addEventListener('click', () => {
+    const msg = $('#dg-msg');
+    if (!sel.size) { msg.replaceChildren(h('p', { class: 'note' }, 'Pick at least one enzyme first.')); return; }
+    const raw = $('#dg-pred').value.replace(/(\d),(\d{3})(?!\d)/g, '$1$2');
+    const got = (raw.match(/\d+/g) || []).map(Number).sort((a, b) => b - a);
+    const exp = fragments(len, cuts());
+    const same = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
+    let chip, txt;
+    if (!got.length) { chip = h('span', { class: 'chip' }, 'No prediction'); txt = ' Type the sizes you expect, then check.'; }
+    else if (same(got, exp)) { chip = h('span', { class: 'chip good' }, 'Correct'); txt = ' Now run the gel to see them.'; }
+    else if (same(got, exp.filter(f => f >= 100))) { chip = h('span', { class: 'chip warn' }, 'Almost'); txt = ' You found every visible fragment but left out a small one. Check the sites that sit close together.'; }
+    else if (got.length !== exp.length) { chip = h('span', { class: 'chip bad' }, 'Count'); txt = ` You listed ${got.length} fragment${got.length > 1 ? 's' : ''}. On a circular plasmid, the number of fragments equals the number of cuts (${exp.length}).`; }
+    else { chip = h('span', { class: 'chip bad' }, 'Sizes'); txt = ` The count is right, but the sizes aren't. Subtract neighboring site positions, and remember the fragment that wraps past position 4,000 (total must be ${len.toLocaleString('en-US')} bp).`; }
+    msg.replaceChildren(h('p', { class: 'note' }, chip, txt));
+  });
+  map(); gel();
+
+  /* mystery plasmid */
+  const MLEN = 5000;
+  const MAPS = [
+    { id: 'X', E: [1000], H: [3000] },
+    { id: 'Y', E: [1000, 2500], H: [4000] },
+    { id: 'Z', E: [1000], H: [1500, 3500] }
+  ];
+  const ANSWER = 'Y';
+  (function mysteryGel() {
+    const svg = $('#mys-gel'); const m = MAPS.find(x => x.id === ANSWER);
+    gelBox(svg, 58, 4, 236, 322);
+    const y = sz => logY(sz, 120, 12000, 44, 315);
+    [['Ladder', 96], ['EcoRI', 152], ['HindIII', 204], ['Both', 256]].forEach(([t, cx]) => { svg.append(sv('text', { x: cx, y: 18, 'text-anchor': 'middle' }, t)); gelWell(svg, cx, 25, 38); });
+    drawLadder(svg, 96, y, 52);
+    laneBands(svg, 152, fragments(MLEN, m.E), y, MLEN);
+    laneBands(svg, 204, fragments(MLEN, m.H), y, MLEN);
+    laneBands(svg, 256, fragments(MLEN, [...m.E, ...m.H]), y, MLEN);
+  })();
+  const opts = $('#mys-opts');
+  MAPS.forEach(m => {
+    const a = p => p / MLEN * 2 * Math.PI - Math.PI / 2;
+    const s = sv('svg', { viewBox: '-80 -80 160 160', width: '100%', style: 'max-width:150px;display:block;margin:0 auto', 'aria-hidden': 'true' });
+    s.append(sv('circle', { r: 46, fill: 'none', stroke: 'var(--line)', 'stroke-width': 4 }));
+    s.append(sv('text', { y: 4, 'text-anchor': 'middle', style: 'font:800 15px var(--f-display);fill:var(--ink)' }, `Map ${m.id}`));
+    [['E', m.E, 'var(--accent)'], ['H', m.H, 'var(--ink)']].forEach(([k, ps, col]) => ps.forEach(p => {
+      s.append(sv('line', { x1: 38 * Math.cos(a(p)), y1: 38 * Math.sin(a(p)), x2: 56 * Math.cos(a(p)), y2: 56 * Math.sin(a(p)), stroke: col, 'stroke-width': 2.5 }));
+      s.append(sv('text', { x: 68 * Math.cos(a(p)), y: 68 * Math.sin(a(p)) + 4, 'text-anchor': 'middle', style: `fill:${col};font-weight:700` }, `${k} ${p / 1000}`));
+    }));
+    const b = h('button', { type: 'button', class: 'mopt', 'aria-label': `Map ${m.id}: EcoRI at ${m.E.join(' and ')}, HindIII at ${m.H.join(' and ')}` }, s);
+    b.addEventListener('click', () => {
+      const ok = m.id === ANSWER;
+      b.classList.add(ok ? 'right' : 'wrong');
+      if (ok) $$('.mopt', opts).forEach(x => { x.disabled = true; });
+      $('#mys-msg').replaceChildren(h('p', { class: 'note' }, h('span', { class: ok ? 'ok' : 'no' }, ok ? 'Correct. ' : 'Not this one. '),
+        ok ? 'EcoRI cuts twice (1,500 + 3,500), HindIII once (one 5,000 bp linear band), and the double digest gives 1,500 + 1,500 + 2,000. The two 1,500 bp pieces overlap, which is why that band is twice as bright.'
+          : `Map ${m.id} predicts EcoRI: ${fragments(MLEN, m.E).join(' + ')}; HindIII: ${fragments(MLEN, m.H).join(' + ')}; both: ${fragments(MLEN, [...m.E, ...m.H]).join(' + ')} bp. Compare with the gel.`));
+    });
+    opts.append(b);
+  });
+  $('#mys-opts').insertAdjacentElement('afterend', h('p', { class: 'hint', style: 'margin:0' }, 'E = EcoRI site, H = HindIII site, positions in kb from the top of the map.'));
+};
+/* ================= 6 · CLONING ================= */
+INIT.clone = function () {
+  const STRAT = [
+    { id: 'EH', name: 'EcoRI + HindIII', desc: 'A different sticky end on each side of the cloning site.' },
+    { id: 'E', name: 'EcoRI only', desc: 'The same sticky end on both sides. The insert is re-amplified with an EcoRI site at each end.' },
+    { id: 'BH', name: 'BamHI + HindIII', desc: 'Uses the BamHI site in the cloning site.' }
+  ];
+  let choice = 'EH', plated = false, colonies = [];
+  const box = $('#cl-strat');
+  STRAT.forEach(s => {
+    const r = h('input', { type: 'radio', name: 'cl-strat', id: 'cl-' + s.id, value: s.id, checked: s.id === choice });
+    const lab = h('label', { for: 'cl-' + s.id, class: s.id === choice ? 'on' : '' }, r, h('b', null, s.name), h('span', { class: 'sdesc' }, s.desc));
+    r.addEventListener('change', () => { choice = s.id; $$('label', box).forEach(l => l.classList.toggle('on', l === lab)); reset(); });
+    box.append(lab);
+  });
+  const LIG = {
+    EH: ['The vector’s EcoRI and HindIII ends don’t match each other, so the empty vector can’t close on itself. The insert’s ends match the vector’s ends one way only.', 'Main product: recombinant plasmid, insert in the correct orientation.'],
+    E: ['Both vector ends are EcoRI ends, so the vector can close again without any insert, and the insert (EcoRI at both ends) can join in either orientation.', 'Products: empty vector, recombinant with the insert forward, recombinant with the insert backward.'],
+    BH: ['BamHI cuts pTEACH twice: once in the cloning site and once inside ampR (position 2,230). The insert has EcoRI and HindIII ends, so its EcoRI end can’t join a BamHI end.', 'No circle with an intact ampR gene forms.']
+  };
+  function plateSVG() {
+    const svg = $('#cl-plate'); svg.replaceChildren();
+    svg.append(sv('circle', { cx: 150, cy: 150, r: 146, fill: 'none', stroke: 'var(--line)', 'stroke-width': 4 }));
+    svg.append(sv('circle', { cx: 150, cy: 150, r: 138, fill: 'var(--agar)', stroke: 'var(--agar-rim)', 'stroke-width': 2 }));
+    svg.append(sv('text', { x: 150, y: 280, 'text-anchor': 'middle', style: 'font:11px var(--f-mono);fill:#8A7A44' }, 'LB + amp + X-gal'));
+    colonies.forEach((c, i) => {
+      const el = sv('circle', { cx: c.x, cy: c.y, r: c.r, class: 'colony', fill: c.blue ? 'var(--colony-blue)' : 'var(--colony-white)', stroke: c.blue ? 'color-mix(in srgb, var(--colony-blue) 70%, black)' : 'var(--agar-rim)', 'stroke-width': 1.2, tabindex: 0, role: 'button', 'aria-label': `${c.blue ? 'Blue' : 'White'} colony ${i + 1}` });
+      const pick = () => { $$('.colony', svg).forEach(x => x.classList.remove('picked')); el.classList.add('picked'); showPick(c); };
+      el.addEventListener('click', pick);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+      svg.append(el);
+    });
+  }
+  function showPick(c) {
+    const p = $('#cl-pick');
+    if (c.blue) p.replaceChildren(h('span', { class: 'chip bad' }, 'Empty vector'), ' Blue: lacZα is intact, so β-galactosidase forms and cleaves X-gal into a blue product. No insert here.');
+    else if (c.rev) p.replaceChildren(h('span', { class: 'chip warn' }, 'Insert backward'), ' White, so it has an insert, but with one enzyme the insert can enter either way. This one is reversed. A check digest or sequencing would catch it.');
+    else p.replaceChildren(h('span', { class: 'chip good' }, 'Recombinant'), ' White: the insert interrupts lacZα, so no X-gal is cleaved. Grow this colony and a check digest with EcoRI + HindIII would release the ≈450 bp insert.');
+  }
+  function makeColonies() {
+    const r = rng(choice === 'EH' ? 21 : 34), out = [];
+    const N = choice === 'BH' ? 0 : 58, nBlue = choice === 'EH' ? 5 : 30;
+    let tries = 0;
+    while (out.length < N && tries < 5000) {
+      tries++;
+      const a = r() * 2 * Math.PI, d = Math.sqrt(r()) * 120, x = 150 + d * Math.cos(a), y = 150 + d * Math.sin(a), rad = 4 + r() * 3.5;
+      if (out.some(c => Math.hypot(c.x - x, c.y - y) < c.r + rad + 3)) continue;
+      out.push({ x, y, r: rad });
+    }
+    out.forEach((c, i) => { c.blue = i < nBlue; c.rev = !c.blue && choice === 'E' && i % 2 === 0; });
+    return out;
+  }
+  function reset() { plated = false; colonies = []; plateSVG(); $('#cl-lig').replaceChildren(); $('#cl-pick').replaceChildren('Plate your cells, then click a colony to check it.'); }
+  $('#cl-go').addEventListener('click', () => {
+    plated = true; colonies = makeColonies(); plateSVG();
+    const [a, b] = LIG[choice];
+    $('#cl-lig').replaceChildren(h('div', { class: 'note' }, h('b', null, 'Ligation: '), a), h('div', { class: 'note' }, h('b', null, 'Result: '), b));
+    if (!colonies.length) $('#cl-pick').replaceChildren(h('span', { class: 'chip bad' }, 'No colonies'), ' Nothing grew on ampicillin. Without an intact ampR gene, no transformed cell survives. Try another strategy.');
+    else { const blue = colonies.filter(c => c.blue).length; $('#cl-pick').replaceChildren(`${colonies.length} colonies: ${colonies.length - blue} white, ${blue} blue. Click one to check it.`); }
+  });
+  $('#cl-reset').addEventListener('click', reset);
+  reset();
+};
+
+/* ================= 7 · SANGER ================= */
+INIT.sanger = function () {
+  const START = 9, READ = GENE.slice(START, START + 24), HET = MUT - START;
+  const SAMPLES = ['AS', 'SS', 'AA'];
+  let s = 0, view = 'trace', calls = false;
+  const r = rng(11), hts = READ.split('').map(() => 0.62 + 0.38 * r());
+  const peaksAt = (i, gt) => i !== HET ? [[READ[i], 1]] : gt === 'AA' ? [['A', 1]] : gt === 'SS' ? [['T', 1]] : [['A', 0.56], ['T', 0.5]];
+  const expected = gt => READ.split('').map((b, i) => i === HET ? (gt === 'AA' ? 'A' : gt === 'SS' ? 'T' : 'W') : b).join('');
+  const svg = $('#sq-svg');
+  function draw() {
+    svg.replaceChildren(); const gt = SAMPLES[s];
+    if (view === 'trace') {
+      svg.setAttribute('viewBox', '0 0 700 220');
+      const x0 = 30, stp = 26.5, cx = i => x0 + 13 + i * stp, base = 182, amp = 132, sig = 4.2;
+      svg.append(sv('line', { x1: x0, x2: 680, y1: base, y2: base, stroke: 'var(--line)' }));
+      ['A', 'C', 'G', 'T'].forEach(B => {
+        const pk = []; READ.split('').forEach((_, i) => peaksAt(i, gt).forEach(([b, f]) => { if (b === B) pk.push([cx(i), hts[i] * f]); }));
+        let d = '';
+        for (let x = x0; x <= 680; x += 1.5) { let y = 0; pk.forEach(([c, hh]) => { y += hh * Math.exp(-((x - c) ** 2) / (2 * sig * sig)); }); d += (x === x0 ? 'M' : 'L') + x.toFixed(1) + ',' + (base - y * amp).toFixed(1); }
+        svg.append(sv('path', { d, fill: 'none', stroke: `var(--${B.toLowerCase()})`, 'stroke-width': 1.8, 'stroke-linejoin': 'round' }));
+      });
+      for (let c = 3; c <= 10; c++) {
+        const i0 = c * 3 - START, xa = cx(i0) - 11, xb = cx(i0 + 2) + 11;
+        svg.append(sv('line', { x1: xa, x2: xb, y1: 196, y2: 196, stroke: 'var(--line)', 'stroke-width': 1.5 }));
+        svg.append(sv('text', { x: (xa + xb) / 2, y: 211, 'text-anchor': 'middle', class: 'tick' }, `codon ${c}`));
+      }
+      if (calls) expected(gt).split('').forEach((b, i) => svg.append(sv('text', { x: cx(i), y: 26, 'text-anchor': 'middle', fill: b === 'W' ? 'var(--accent)' : `var(--${b.toLowerCase()})` }, b)));
+      svg.append(sv('text', { x: 680, y: 14, 'text-anchor': 'end', class: 'tick' }, 'short fragments → long fragments'));
+    } else {
+      svg.setAttribute('viewBox', '0 0 700 220');
+      gelBox(svg, 200, 2, 340, 214);
+      const lanes = ['A', 'C', 'G', 'T'], lx = k => 243 + k * 85, y = i => 205 - i * 7.4;
+      lanes.forEach((B, k) => { svg.append(sv('text', { x: lx(k), y: 16, 'text-anchor': 'middle', fill: 'var(--gel-text)', style: 'font-size:11px' }, `dd${B}TP`)); });
+      READ.split('').forEach((_, i) => peaksAt(i, gt).forEach(([b, f]) => {
+        const k = lanes.indexOf(b); svg.append(sv('rect', { x: lx(k) - 28, y: y(i) - 1.8, width: 56, height: 3.6, rx: 1.5, fill: 'var(--band)', opacity: f < 1 ? 0.55 : 0.95 }));
+        if (calls && k >= 0) svg.append(sv('text', { x: 562, y: y(i) + 3, class: 'tick', style: `fill:var(--${b.toLowerCase()})` }, f < 1 ? 'W' : b));
+      }));
+      svg.append(sv('text', { x: 190, y: 30, 'text-anchor': 'end', class: 'tick' }, 'longer'));
+      svg.append(sv('text', { x: 190, y: 205, 'text-anchor': 'end', class: 'tick' }, 'shorter (read first)'));
+      svg.append(sv('line', { x1: 160, x2: 160, y1: 195, y2: 40, stroke: 'var(--muted)', 'stroke-width': 1.5, 'marker-end': 'url(#sq-arrow)' }));
+      const defs = sv('defs'); const mk = sv('marker', { id: 'sq-arrow', viewBox: '0 0 10 10', refX: 5, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }); mk.append(sv('path', { d: 'M0,0 L10,5 L0,10 z', fill: 'var(--muted)' })); defs.append(mk); svg.prepend(defs);
+      svg.append(sv('text', { x: 150, y: 120, 'text-anchor': 'end', class: 'tick' }, 'read'));
+    }
+  }
+  function checkRead() {
+    const typed = $('#sq-read').value.toUpperCase().replace(/[^ACGTWN]/g, '');
+    const exp = expected(SAMPLES[s]); const fb = $('#sq-readfb');
+    if (!typed) { fb.replaceChildren(); return; }
+    let ok = 0, firstBad = -1;
+    for (let i = 0; i < Math.min(typed.length, exp.length); i++) {
+      const good = typed[i] === exp[i] || (exp[i] === 'W' && 'ATWN'.includes(typed[i]));
+      if (good) ok++; else if (firstBad < 0) firstBad = i;
+    }
+    const n = Math.min(typed.length, exp.length);
+    if (firstBad < 0 && n === exp.length) fb.replaceChildren(h('span', { class: 'ok' }, 'All 24 bases read correctly.'), exp.includes('W') ? ' At the double peak, A, T or W (the IUPAC code for A or T) all count.' : '');
+    else if (firstBad < 0) fb.replaceChildren(`${ok} of ${n} bases match so far.`);
+    else fb.replaceChildren(h('span', { class: 'no' }, `${ok} of ${n} match.`), ` Check base ${firstBad + 1}. Read from the shortest fragment.`);
+  }
+  $$('#sq-samples button').forEach(b => b.addEventListener('click', () => { s = +b.dataset.s; $$('#sq-samples button').forEach(x => x.classList.toggle('on', x === b)); $('#sq-gtfb').replaceChildren(); $$('#sq-gt button').forEach(x => x.classList.remove('primary')); draw(); checkRead(); }));
+  $$('#sq-view button').forEach(b => b.addEventListener('click', () => { view = b.dataset.v; $$('#sq-view button').forEach(x => x.classList.toggle('on', x === b)); draw(); }));
+  $('#sq-calls').addEventListener('change', e => { calls = e.target.checked; draw(); });
+  $('#sq-read').addEventListener('input', checkRead);
+  const WHY = {
+    AS: 'Overlapping A and T peaks at the middle base of codon 6: one allele reads GAG (Glu), the other GTG (Val). This patient is a carrier (sickle-cell trait).',
+    SS: 'Only a T peak at the middle base of codon 6: GTG (Val) on both alleles. Both β chains carry Val6, the genotype of sickle-cell disease.',
+    AA: 'Only an A peak at the middle base of codon 6: GAG (Glu) on both alleles. Normal β-globin.'
+  };
+  $$('#sq-gt button').forEach(b => b.addEventListener('click', () => {
+    const ok = b.dataset.g === SAMPLES[s];
+    $$('#sq-gt button').forEach(x => x.classList.toggle('primary', x === b && ok));
+    $('#sq-gtfb').replaceChildren(h('p', { class: 'note' }, h('span', { class: ok ? 'ok' : 'no' }, ok ? 'Correct. ' : 'Not quite. '), ok ? WHY[SAMPLES[s]] : 'Find codon 6 on the trace and look at its middle base. Is there one peak or two, and which colors?'));
+  }));
+  draw();
+};
+
+/* ================= 8 · CRISPR ================= */
+INIT.crispr = function () {
+  const st = { allele: 'S', sel: -1, k: 0 };
+  const seqOf = () => st.allele === 'S' ? HBS : GENE;
+  const toRNA = q => q.replace(/T/g, 'U');
+  function findPAMs(q) {
+    const out = [], n = q.length;
+    for (let j = 20; j + 2 < n; j++) if (q[j + 1] === 'G' && q[j + 2] === 'G') out.push({ strand: '+', pam: [j, j + 1, j + 2], proto: [j - 20, j - 1], cut: j - 4, guide: toRNA(q.slice(j - 20, j)), pamSeq: q.slice(j, j + 3) });
+    for (let p = 0; p + 22 < n; p++) if (q[p] === 'C' && q[p + 1] === 'C') out.push({ strand: '-', pam: [p, p + 1, p + 2], proto: [p + 3, p + 22], cut: p + 5, guide: toRNA(revcomp(q.slice(p + 3, p + 23))), pamSeq: revcomp(q.slice(p, p + 3)) });
+    out.forEach(o => { o.dist = o.cut >= MUT ? o.cut - MUT + 1 : MUT - o.cut; });
+    return out.sort((a, b) => a.dist - b.dist);
+  }
+  let pams = [];
+  function grid() {
+    const q = seqOf(), n = q.length, g = $('#cr-grid'); g.replaceChildren();
+    g.style.gridTemplateColumns = `2.6em repeat(${n}, var(--cw)) 2.6em`;
+    const P = pams[st.sel];
+    const hint = { '+': new Set(), '-': new Set() };
+    pams.forEach(p => p.pam.forEach(i => hint[p.strand].add(i)));
+    for (let i = 0; i < n; i++) { const pos = i + 1; if (pos === 1 || pos % 10 === 0) place(g, h('span', { class: 'rl' }, String(pos)), 1, i + 2); }
+    place(g, h('span', { class: 'end' }, '5′'), 2, 1); place(g, h('span', { class: 'end' }, '3′'), 3, 1);
+    for (let i = 0; i < n; i++) {
+      const cls = strand => {
+        let c = '';
+        if (P && P.strand === strand && i >= P.proto[0] && i <= P.proto[1]) c += ' proto';
+        if (P && P.strand === strand && P.pam.includes(i)) c += ' pam';
+        else if (!P && hint[strand].has(i)) c += ' pamhint';
+        if (i === MUT) c += ' mut';
+        if (P && i === P.cut) c += ' cutR';
+        return c;
+      };
+      place(g, h('span', { class: `c nt ${q[i]}${cls('+')}` }, q[i]), 2, i + 2);
+      place(g, h('span', { class: `c nt ${COMP[q[i]]}${cls('-')}` }, COMP[q[i]]), 3, i + 2);
+    }
+    place(g, h('span', { class: 'end' }, '3′'), 2, n + 2); place(g, h('span', { class: 'end' }, '5′'), 3, n + 2);
+  }
+  function list() {
+    const box = $('#cr-pams'); box.replaceChildren();
+    pams.forEach((p, i) => {
+      const b = h('button', { type: 'button', class: `pambtn${i === st.sel ? ' on' : ''}${p.dist <= 10 ? ' near' : ''}`, 'aria-pressed': i === st.sel ? 'true' : 'false' },
+        `${p.pamSeq} · ${p.strand === '+' ? 'top' : 'bottom'}`, h('small', null, `cut ${p.dist} bp from codon 6`));
+      b.addEventListener('click', () => { st.sel = i; st.k = 0; render(); });
+      box.append(b);
+    });
+  }
+  function guide() {
+    const g = $('#cr-guide'), P = pams[st.sel];
+    if (!P) { g.replaceChildren('Select a PAM to design the guide RNA. Faint underlines in the sequence mark every PAM.'); return; }
+    g.replaceChildren(
+      h('div', { class: 'eyebrow', style: 'margin:0 0 2px' }, 'Guide RNA spacer, 5′→3′'),
+      h('div', { class: 'guide' }, ntSpans(P.guide)),
+      h('p', { style: 'margin-top:8px;font-size:14.5px' }, `PAM 5′-${P.pamSeq}-3′ on the ${P.strand === '+' ? 'top' : 'bottom'} strand. Cas9 cuts between positions ${P.cut + 1} and ${P.cut + 2}, ${P.dist} bp from the codon 6 mutation site.`),
+      P.strand === '-' ? h('p', { class: 'hint', style: 'margin:4px 0 0' }, 'This PAM is on the bottom strand, so the spacer matches the bottom strand: it is the reverse complement of the highlighted top-strand bases, written with U for T.') : h('p', { class: 'hint', style: 'margin:4px 0 0' }, 'The spacer has the same sequence as the highlighted top-strand target, with U for T. It base-pairs with the bottom strand.'));
+  }
+  function protRow(label, before, after, mark) {
+    const row = h('div', { class: 'prot' });
+    let stopped = false;
+    after.forEach((aa, i) => {
+      let c = '';
+      if (stopped) c = 'gone';
+      else if (aa === '*') { c = 'stop'; stopped = true; }
+      else if (mark && aa !== before[i]) c = mark;
+      row.append(h('span', { class: c, title: i === 0 ? 'initiator Met' : `codon ${i}` }, aa === '*' ? 'Stop' : AA3[aa]));
+    });
+    return h('div', { class: 'stack', style: 'gap:4px' }, h('span', { class: 'hint', style: 'margin:0' }, label), row);
+  }
+  const NHEJ = [{ t: 'del', n: 1 }, { t: 'ins', b: 'A' }, { t: 'del', n: 2 }, { t: 'ins', b: 'T' }, { t: 'del', n: 3 }, { t: 'del', n: 4 }];
+  function nhej() {
+    const P = pams[st.sel], q = seqOf(), v = NHEJ[st.k % NHEJ.length]; st.k++;
+    const c = P.cut; let ed, view;
+    if (v.t === 'ins') { ed = q.slice(0, c + 1) + v.b + q.slice(c + 1); view = [q.slice(0, c + 1), h('span', { class: 'ins' }, v.b), q.slice(c + 1)]; }
+    else { const s0 = c + 1 - Math.ceil(v.n / 2); ed = q.slice(0, s0) + q.slice(s0 + v.n); view = [q.slice(0, s0), h('span', { class: 'del', title: `deleted ${q.slice(s0, s0 + v.n)}` }, `[−${q.slice(s0, s0 + v.n)}]`), q.slice(s0 + v.n)]; }
+    const before = translate(q), after = translate(ed), shift = (ed.length - q.length) % 3 !== 0;
+    const stopAt = after.indexOf('*');
+    $('#cr-out').replaceChildren(
+      h('p', null, h('span', { class: `chip ${shift ? 'bad' : 'warn'}` }, v.t === 'ins' ? `+1 insertion` : `−${v.n} deletion`), ' ',
+        shift ? `Frameshift: every codon after the cut is read in a new frame${stopAt > 0 ? `, and a premature stop appears at codon ${stopAt}` : ''}. This allele no longer makes working β-globin.` : 'In-frame: one codon is lost, so the protein is one residue shorter but mostly intact.'),
+      h('div', { class: 'edit-seq' }, view),
+      protRow('Before (this allele)', before, before, null),
+      protRow('After NHEJ', before, after, 'chg'),
+      h('p', { class: 'hint', style: 'margin:0' }, 'Each click repairs another cell. NHEJ gives a different small indel each time. It’s the route used to disable genes; see the BCL11A case in the casebook.'),
+      h('button', { type: 'button', class: 'btn', onclick: nhej }, 'Repair another cell'));
+  }
+  function hdr() {
+    const P = pams[st.sel], q = seqOf(), out = $('#cr-out');
+    if (st.allele === 'A') { out.replaceChildren(h('p', { class: 'note' }, h('span', { class: 'chip' }, 'No change'), ' This allele is already normal, so a normal-sequence donor changes nothing. Switch to the HbS allele.')); return; }
+    if (P.dist > 10) { out.replaceChildren(h('p', { class: 'note' }, h('span', { class: 'chip warn' }, 'Too far from the cut'), ` This cut is ${P.dist} bp from codon 6. HDR copies donor changes efficiently only close to the break (within about 10 bp), so most cells would just rejoin the ends by NHEJ. Pick the PAM closest to codon 6.`)); return; }
+    const before = translate(q), after = translate(GENE);
+    out.replaceChildren(
+      h('p', null, h('span', { class: 'chip good' }, 'Corrected'), ' The donor carries GAG at codon 6 plus matching sequence on both sides of the cut. The cell copied it while repairing the break, so Glu6 is restored.'),
+      h('div', { class: 'edit-seq' }, GENE.slice(0, MUT), h('span', { class: 'fixed', title: 'T → A' }, 'A'), GENE.slice(MUT + 1)),
+      protRow('Before (HbS)', before, before, null),
+      protRow('After HDR', before, after, 'fix'),
+      h('p', { class: 'hint', style: 'margin:0' }, 'Here the cut is only 2 bp from the mutation, which is why this site works. Real donors also add a silent change to the PAM or seed so Cas9 can’t cut the corrected allele again.'));
+  }
+  function render() {
+    pams = findPAMs(seqOf());
+    grid(); list(); guide();
+    const has = st.sel >= 0 && pams[st.sel];
+    $('#cr-nhej').disabled = !has; $('#cr-hdr').disabled = !has;
+    $('#cr-out').replaceChildren(has ? h('p', { class: 'hint', style: 'margin:0' }, 'Choose a repair route.') : '');
+  }
+  $$('#cr-allele button').forEach(b => b.addEventListener('click', () => { st.allele = b.dataset.a; $$('#cr-allele button').forEach(x => x.classList.toggle('on', x === b)); st.sel = -1; render(); }));
+  $('#cr-nhej').addEventListener('click', nhej);
+  $('#cr-hdr').addEventListener('click', hdr);
+  render();
+};
+/* ================= 9 · CASEBOOK ================= */
+function mcq(item) {
+  const fb = h('p', { class: 'qfb', hidden: true }), opts = h('div', { class: 'qopts' });
+  item.o.forEach((txt, oi) => {
+    const b = h('button', { type: 'button', class: 'qopt' }, txt);
+    b.addEventListener('click', () => {
+      if (oi === item.a) { b.classList.add('right'); $$('.qopt', opts).forEach(x => { x.disabled = true; }); fb.hidden = false; fb.replaceChildren(h('span', { class: 'ok' }, 'Correct. '), item.why); }
+      else { b.classList.add('wrong'); b.disabled = true; fb.hidden = false; fb.replaceChildren(h('span', { class: 'no' }, 'Not quite. '), item.hint || 'Try another answer.'); }
+    });
+    opts.append(b);
+  });
+  return h('div', { class: 'stack', style: 'gap:8px' }, h('p', { class: 'qq', style: 'margin:0' }, item.q), opts, fb);
+}
+function caseCard(title, tags, ...body) {
+  return h('article', { class: 'case' },
+    h('div', { class: 'case-head' }, h('h3', null, title), h('div', { class: 'tags' }, tags.map(t => h('span', { class: 'chip' }, t)))),
+    ...body);
+}
+INIT.cases = function () {
+  const box = $('#cases');
+
+  /* Case 1: sickle-cell test by PCR + MstII digest */
+  (function () {
+    const PAT = [{ n: 'Patient 1', g: 'AS' }, { n: 'Patient 2', g: 'AA' }, { n: 'Patient 3', g: 'SS' }];
+    const FR = { AA: [[225, 1], [175, 1]], SS: [[400, 1]], AS: [[400, 0.5], [225, 0.5], [175, 0.5]] };
+    const svg = sv('svg', { viewBox: '0 0 300 250', class: 'svg-fill gel', role: 'img', 'aria-label': 'Gel of MstII-digested PCR products from three patients' });
+    gelBox(svg, 56, 4, 240, 242);
+    const y = sz => logY(sz, 120, 700, 44, 236);
+    [['Ladder', 90], ['P1', 150], ['P2', 205], ['P3', 260]].forEach(([t, cx]) => { svg.append(sv('text', { x: cx, y: 18, 'text-anchor': 'middle' }, t)); gelWell(svg, cx, 25, 36); });
+    [600, 500, 400, 300, 200].forEach(sz => { gelBand(svg, 90, y(sz), 0.8, 'var(--ladder)', 36); svg.append(sv('text', { x: 50, y: y(sz) + 3.5, 'text-anchor': 'end', class: 'lbl' }, String(sz))); });
+    svg.append(sv('text', { x: 50, y: 245, 'text-anchor': 'end', class: 'lbl' }, 'bp'));
+    PAT.forEach((p, k) => FR[p.g].forEach(([sz, f]) => gelBand(svg, [150, 205, 260][k], y(sz), (0.3 + 0.7 * sz / 400) * (f < 1 ? 0.75 : 1), null, 36)));
+    const sels = PAT.map(p => h('select', { class: 'sel', 'aria-label': `Genotype of ${p.n}` }, h('option', { value: '' }, 'choose…'), h('option', { value: 'AA' }, 'HbA / HbA'), h('option', { value: 'AS' }, 'HbA / HbS'), h('option', { value: 'SS' }, 'HbS / HbS')));
+    const fb = h('div');
+    const btn = h('button', { type: 'button', class: 'btn primary' }, 'Check genotypes');
+    btn.addEventListener('click', () => {
+      const right = PAT.map((p, i) => sels[i].value === p.g);
+      if (right.every(Boolean)) fb.replaceChildren(h('p', { class: 'note' }, h('span', { class: 'ok' }, 'All three correct. '), 'MstII cuts the normal allele into 225 + 175 bp. HbS removes the site, so that allele stays 400 bp. Patient 1 has both patterns (carrier), Patient 2 only the cut pattern, Patient 3 only the uncut 400 bp band (sickle-cell disease).'));
+      else fb.replaceChildren(h('p', { class: 'note' }, h('span', { class: 'no' }, `${right.filter(Boolean).length} of 3 correct. `), 'A cut allele gives 225 + 175 bp; an uncut allele gives 400 bp. A carrier shows all three bands.'));
+    });
+    box.append(caseCard('The sickle-cell test', ['PCR', 'Restriction digest', 'Gel'],
+      h('div', { class: 'case-body split' },
+        h('div', { class: 'stack' },
+          h('p', null, 'A clinic amplifies a 400 bp stretch of β-globin around codon 6 from three patients, then digests it with MstII. MstII recognizes 5′-CCTNAGG-3′ and cuts after CC.'),
+          h('p', { class: 'mono', style: 'font-size:14px' }, 'HbA: ', ntSpans('CCTGAGG'), '  ← MstII site', h('br'), 'HbS: ', ntSpans('CCTGTGG'), '  ← no site'),
+          h('p', { class: 'hint', style: 'margin:0' }, 'In the normal allele the site sits 175 bp from one end of the PCR product.'),
+          h('div', { class: 'gtype' }, PAT.map((p, i) => h('div', { class: 'gt-row' }, h('b', null, p.n), sels[i]))),
+          h('div', null, btn), fb),
+        svg)));
+  })();
+
+  /* Case 2: STR profile */
+  (function () {
+    const LOCI = ['TH01', 'D8S1179', 'CSF1PO', 'vWA'];
+    const EV = ['6, 9.3', '12, 14', '10, 12', '16, 17'];
+    const SUS = { 'Suspect 1': ['6, 9.3', '12, 13', '10, 12', '16, 17'], 'Suspect 2': ['6, 9.3', '12, 14', '10, 12', '16, 17'], 'Suspect 3': ['7, 9.3', '12, 14', '11, 12', '15, 17'] };
+    const tbl = h('table', { class: 'tbl str-tbl' });
+    let revealed = false;
+    function drawT() {
+      tbl.replaceChildren(h('thead', null, h('tr', null, h('th', null, 'Profile'), ...LOCI.map(l => h('th', null, l)))));
+      const tb = h('tbody');
+      tb.append(h('tr', null, h('td', null, h('b', null, 'Evidence')), ...EV.map(v => h('td', { class: 'num' }, v))));
+      Object.entries(SUS).forEach(([n, al]) => tb.append(h('tr', null, h('td', null, n), ...al.map((v, i) => h('td', { class: 'num' + (revealed ? (v === EV[i] ? ' match' : ' miss') : '') }, v)))));
+      tbl.append(tb);
+    }
+    drawT();
+    const q = mcq({ q: 'Whose DNA matches the evidence?', o: ['Suspect 1', 'Suspect 2', 'Suspect 3', 'None of them'], a: 1,
+      why: 'Suspect 2 matches at every locus. Suspect 1 differs at D8S1179 and Suspect 3 at three loci, and a single clear mismatch excludes a person. Loci are inherited independently, so the chance of a random match is the product of the genotype frequencies at each locus. That’s why US labs type 20 core CODIS loci, not four.',
+      hint: 'Compare every locus. One mismatch is enough to exclude someone.' });
+    $$('.qopt', q).forEach(b => b.addEventListener('click', () => { revealed = true; drawT(); }));
+    box.append(caseCard('Whose DNA?', ['PCR', 'Capillary electrophoresis'],
+      h('p', null, 'Short tandem repeats (STRs) are 2–6 bp motifs repeated a variable number of times. PCR with fluorescent primers amplifies each locus and capillary electrophoresis sizes the products, which gives the number of repeats on each of a person’s two chromosomes (9.3 means nine full repeats plus three bases).'),
+      h('div', { class: 'scroll-x' }, tbl), q));
+  })();
+
+  /* Case 3: recombinant insulin */
+  box.append(caseCard('Insulin from bacteria', ['Cloning', 'Reverse transcription'],
+    h('p', null, 'In 1982, human insulin made in E. coli became the first recombinant DNA drug approved by the FDA. Before that, people with diabetes used insulin purified from pig and cow pancreas.'),
+    mcq({ q: 'To get E. coli to make a human protein, which DNA should you clone into the expression vector?', o: ['Genomic DNA of the human gene, introns included', 'The mRNA itself', 'cDNA made from the mature mRNA by reverse transcriptase', 'Any DNA with the right number of base pairs'], a: 2,
+      why: 'Bacteria have no spliceosome, so they can’t remove introns. cDNA copied from mature mRNA already lacks introns. The vector supplies a bacterial promoter and ribosome-binding site so the cell transcribes and translates it.',
+      hint: 'Think about what bacteria can and can’t do with a eukaryotic gene.' })));
+
+  /* Case 4: qPCR */
+  (function () {
+    const svg = sv('svg', { viewBox: '0 0 380 210', class: 'svg-fill chart', role: 'img', 'aria-label': 'Real-time PCR amplification curves for samples A, B and a no-template control' });
+    const xp = c => 44 + c / 40 * 320, yp = f => 174 - f * 150, TH = 0.08, s = 1.4;
+    for (let c = 0; c <= 40; c += 10) { svg.append(sv('line', { x1: xp(c), x2: xp(c), y1: 24, y2: 174, class: 'grid' })); svg.append(sv('text', { x: xp(c), y: 190, 'text-anchor': 'middle' }, String(c))); }
+    svg.append(sv('line', { x1: 44, x2: 364, y1: 174, y2: 174, class: 'axis' }));
+    svg.append(sv('text', { x: 204, y: 206, 'text-anchor': 'middle' }, 'cycle'));
+    svg.append(sv('text', { x: 14, y: 100, 'text-anchor': 'middle', transform: 'rotate(-90 14 100)' }, 'fluorescence'));
+    svg.append(sv('line', { x1: 44, x2: 364, y1: yp(TH), y2: yp(TH), stroke: 'var(--bad)', 'stroke-dasharray': '5 4', 'stroke-width': 1.4 }));
+    svg.append(sv('text', { x: 362, y: yp(TH) - 5, 'text-anchor': 'end', fill: 'var(--bad)' }, 'threshold'));
+    const curve = ct => { const c50 = ct + Math.log(1 / TH - 1) * s; let d = ''; for (let c = 0; c <= 40; c += 0.25) d += (c ? 'L' : 'M') + xp(c).toFixed(1) + ',' + yp(1 / (1 + Math.exp(-(c - c50) / s))).toFixed(1); return d; };
+    [[18, 'A', 'var(--accent)'], [24, 'B', 'var(--c)']].forEach(([ct, lab, col]) => {
+      svg.append(sv('path', { d: curve(ct), fill: 'none', stroke: col, 'stroke-width': 2.6 }));
+      svg.append(sv('line', { x1: xp(ct), x2: xp(ct), y1: yp(TH), y2: 174, stroke: col, 'stroke-dasharray': '2 3' }));
+      svg.append(sv('text', { x: xp(ct) + 4, y: 168, fill: col, 'font-weight': '700' }, `Ct ${ct}`));
+      const c50 = ct + Math.log(1 / TH - 1) * s;
+      svg.append(sv('text', lab === 'A' ? { x: xp(c50) - 9, y: yp(0.5) + 4, 'text-anchor': 'end', fill: col, 'font-weight': '700' } : { x: xp(c50) + 9, y: yp(0.5) + 4, fill: col, 'font-weight': '700' }, `Sample ${lab}`));
+    });
+    let d = ''; const r = rng(5); for (let c = 0; c <= 40; c += 0.5) d += (c ? 'L' : 'M') + xp(c).toFixed(1) + ',' + yp(0.01 + 0.006 * r()).toFixed(1);
+    svg.append(sv('path', { d, fill: 'none', stroke: 'var(--muted)', 'stroke-width': 1.6 }));
+    svg.append(sv('text', { x: xp(30), y: yp(0.04), fill: 'var(--muted)' }, 'no template'));
+    box.append(caseCard('How much virus?', ['PCR', 'Reverse transcription'],
+      h('div', { class: 'case-body split' },
+        h('div', { class: 'stack' },
+          h('p', null, 'Real-time (quantitative) PCR measures fluorescence every cycle. For an RNA virus, reverse transcriptase first copies the viral RNA into cDNA. The cycle at which a sample crosses the threshold (Ct) depends on how much target it started with.'),
+          mcq({ q: 'Assuming the target doubles every cycle, how much more target did sample A start with than sample B?', o: ['6 times as much', '64 times as much', '12 times as much', '1/64 as much'], a: 1,
+            why: 'A crosses 6 cycles earlier. Each cycle doubles the product, so A started with 2⁶ = 64 times as much target. Lower Ct means more starting material.',
+            hint: 'Count the cycles between the two Ct values, and remember each cycle doubles the product.' })),
+        svg)));
+  })();
+
+  /* Case 5: CRISPR therapy */
+  box.append(caseCard('Editing a treatment for sickle-cell disease', ['CRISPR', 'NHEJ'],
+    h('p', null, 'In December 2023 the FDA approved Casgevy (exagamglogene autotemcel) for sickle-cell disease, the first CRISPR–Cas9 therapy approved in the US. It does not repair codon 6.'),
+    mcq({ q: 'What does Casgevy edit?', o: ['Codon 6 of HBB, changed back to GAG inside circulating red blood cells', 'The whole HBB gene, deleted from liver cells', 'A new β-globin gene, added with a viral vector', 'An enhancer that drives BCL11A in red-cell precursors, edited in the patient’s own blood stem cells'], a: 3,
+      why: 'BCL11A represses the fetal γ-globin genes. Cas9 cuts the BCL11A erythroid enhancer and NHEJ disrupts it, so the patient’s red cells make fetal hemoglobin (α₂γ₂), which doesn’t polymerize the way HbS does. The stem cells are edited outside the body and returned after chemotherapy. Mature red cells have no nucleus, so they can’t be edited. Adding a gene with a viral vector describes a different approved therapy, not CRISPR.',
+      hint: 'Mature red blood cells have no nucleus. Which cells could carry an edit for life?' })));
+};
+
+/* ================= CHECK QUESTIONS ================= */
+Object.assign(QUIZ, {
+  strand: [
+    { q: 'A sample of double-stranded DNA is 30% adenine. What percentage is guanine?', o: ['30%', '20%', '40%', '70%'], a: 1, why: 'T pairs with A, so T is also 30%. That leaves 40% for G + C, split equally: 20% each.', hint: 'A = T and G = C, and everything adds to 100%.' },
+    { q: 'What makes the sugar in DNA "deoxy"?', o: ['It lacks a hydroxyl group at C-3′', 'It lacks a hydroxyl group at C-2′', 'It has no ring oxygen', 'It lacks the 5′ phosphate'], a: 1, why: '2′-Deoxyribose has H at C-2′ where ribose has OH. The 3′-OH must stay, because it forms the next phosphodiester bond.' },
+    { q: 'A strand reads 5′-GATTC-3′. What is its complementary strand, written 5′→3′?', o: ['5′-CTAAG-3′', '5′-GATTC-3′', '5′-GAATC-3′', '5′-CTTAG-3′'], a: 2, why: 'The complement, read under the original, is 3′-CTAAG-5′. Written 5′→3′ that is GAATC.', hint: 'Write the complement under each base, then read it from its 5′ end.' }
+  ],
+  helix: [
+    { q: 'About how many base pairs per turn does B-DNA have in solution?', o: ['3.4', '10.5', '12', '20'], a: 1, why: 'Watson and Crick’s model had 10 bp per 34 Å turn; in solution B-DNA has about 10.5. The 3.4 Å figure is the rise per base pair.' },
+    { q: 'Which form of DNA is a left-handed helix?', o: ['A-form', 'B-form', 'Z-form', 'All three'], a: 2, why: 'Z-DNA twists to the left with about 12 bp per turn and a zigzag backbone. Alternating C and G sequences favor it.' },
+    { q: 'Why do most sequence-specific DNA-binding proteins contact the major groove?', o: ['More of each base’s edge is exposed there, in a pattern that differs for each base pair', 'The major groove has no phosphates nearby', 'Only the major groove has hydrogen bonds', 'The minor groove is too wide for proteins'], a: 0, why: 'The major groove exposes more hydrogen-bond donors and acceptors, and their arrangement tells A=T, T=A, G≡C and C≡G apart without opening the helix.' }
+  ],
+  melt: [
+    { q: 'Two DNA samples are in the same buffer. One is 40% GC, the other 60% GC. Which has the higher tm?', o: ['The 40% GC sample', 'The 60% GC sample', 'They are the same', 'It depends only on length'], a: 1, why: 'G≡C pairs have three hydrogen bonds, and GC-rich DNA also stacks more strongly, so more heat is needed to separate the strands.' },
+    { q: 'Why does A₂₆₀ rise when DNA melts?', o: ['Melting breaks the phosphodiester backbone', 'Unstacked bases absorb more UV light than stacked ones', 'Hydrogen bonds absorb at 260 nm', 'The sample becomes more concentrated'], a: 1, why: 'Base stacking in the duplex suppresses UV absorbance. When the strands separate and unstack, absorbance rises (the hyperchromic effect).' },
+    { q: 'What happens to tm if you lower the Na⁺ concentration?', o: ['tm decreases', 'tm increases', 'No change', 'The DNA can no longer melt'], a: 0, why: 'Cations shield the negatively charged phosphates. With less shielding the strands repel each other more and separate at a lower temperature.' }
+  ],
+  pcr: [
+    { q: 'Why is Taq polymerase used in PCR?', o: ['It needs no primer', 'It stays active through repeated 95 °C denaturation steps', 'It copies RNA into DNA', 'It proofreads every base'], a: 1, why: 'Taq comes from Thermus aquaticus, a hot-spring bacterium. Its polymerase survives heating, so it doesn’t have to be added again each cycle.' },
+    { q: 'Your gel shows the right band plus extra bands and a smear near 40 bp. What should you change first?', o: ['Lower the annealing temperature', 'Add more cycles', 'Raise the annealing temperature', 'Shorten the denaturation step'], a: 2, why: 'Annealing far below the primer tm lets primers bind partial matches and each other (primer dimers). A higher annealing temperature restores specificity.' },
+    { q: 'Starting from one double-stranded target, about how many copies are there after 10 ideal cycles?', o: ['20', '100', '1,024', '10¹⁰'], a: 2, why: 'Each cycle doubles the copies: 2¹⁰ = 1,024. After 30 cycles, about 10⁹.' }
+  ],
+  digest: [
+    { q: 'Which sequence could be a type II restriction site (the same 5′→3′ on both strands)?', o: ['GAATTG', 'GAATTC', 'GATTAC', 'GACTTC'], a: 1, why: 'The complement of GAATTC, read 5′→3′, is also GAATTC. That palindrome is the EcoRI site.', hint: 'Write the complementary strand and read it 5′→3′.' },
+    { q: 'Uncut plasmid DNA shows two bands. Why?', o: ['The plasmid carries two genes', 'It exists as compact supercoiled and relaxed nicked (open-circle) forms', 'The ladder leaked into the lane', 'The gel ran backward'], a: 1, why: 'Supercoiled DNA is compact and runs faster than its true size. A single nick relaxes it into an open circle, which runs slower.' },
+    { q: 'Toward which electrode does DNA move, and which fragments move farthest?', o: ['Negative electrode; largest fragments', 'Positive electrode; largest fragments', 'Negative electrode; smallest fragments', 'Positive electrode; smallest fragments'], a: 3, why: 'The phosphate backbone makes DNA negative, so it moves toward the positive electrode. Small fragments thread through the agarose more easily and travel farther.' }
+  ],
+  clone: [
+    { q: 'Why do white colonies on X-gal usually carry the insert?', o: ['The insert makes a white pigment', 'Blue colonies have lost the plasmid', 'The insert interrupts lacZα, so no β-galactosidase forms to cleave X-gal', 'White colonies are resistant to X-gal'], a: 2, why: 'With lacZα intact, β-galactosidase cleaves X-gal into a blue product. An insert in the cloning site disrupts lacZα, so those colonies stay white.' },
+    { q: 'Why are transformed cells plated on ampicillin?', o: ['Only cells that took up a plasmid carrying ampR survive', 'Ampicillin turns colonies blue', 'It helps the insert ligate', 'It kills cells that carry the insert'], a: 0, why: 'Most cells never take up a plasmid. Ampicillin kills them, so every colony on the plate carries the vector’s ampR gene.' },
+    { q: 'What is the main advantage of cutting with two different enzymes, such as EcoRI and HindIII?', o: ['It makes blunt ends', 'The insert enters in one orientation, and the empty vector can’t easily close on itself', 'It doubles the number of colonies', 'It removes the need for ligase'], a: 1, why: 'The two ends are incompatible with each other, so the vector can’t re-close alone, and the insert fits in only one direction.' }
+  ],
+  sanger: [
+    { q: 'Why does a dideoxynucleotide (ddNTP) stop chain growth?', o: ['It can’t base-pair', 'It lacks the 3′-OH needed for the next phosphodiester bond', 'It lacks a phosphate', 'It blocks the primer'], a: 1, why: 'DNA polymerase adds each nucleotide to a 3′-OH. A ddNTP has H at C-3′, so nothing can be added after it.' },
+    { q: 'In a capillary trace, the first peak to reach the detector comes from…', o: ['the longest fragment', 'the shortest fragment, so the base closest to the primer', 'the template strand', 'unextended primer'], a: 1, why: 'Shorter fragments move faster. The shortest one ends nearest the primer, so the trace reads 5′→3′ from left to right.' },
+    { q: 'A diploid sample shows overlapping A and T peaks at one position, with clean single peaks elsewhere. This most likely means…', o: ['the person is heterozygous at that position', 'the sequencing reaction failed', 'the DNA was degraded', 'the primer bound twice'], a: 0, why: 'Each chromosome copy contributes fragments. If the two alleles differ at one base, both dyes appear at that position.' }
+  ],
+  crispr: [
+    { q: 'For S. pyogenes Cas9, what must sit right next to the target sequence?', o: ['A TATA box', 'A restriction site', 'A 5′-NGG-3′ PAM immediately 3′ of the 20-nt target, on the same strand', 'An NGG sequence inside the guide RNA'], a: 2, why: 'Cas9 checks for the PAM before testing the guide match. The PAM is in the target DNA, not in the guide.' },
+    { q: 'Where does Cas9 cut?', o: ['About 3 bp upstream of the PAM, making a blunt double-strand break', 'Exactly at the PAM', '20 bp downstream of the PAM, leaving sticky ends', 'Only one strand, at the guide’s 5′ end'], a: 0, why: 'Two nuclease domains cut the two strands at the same spot, 3 bp from the PAM, leaving blunt ends.' },
+    { q: 'Why does NHEJ repair of a Cas9 cut often knock a gene out?', o: ['It always deletes the whole gene', 'It copies the donor template', 'It often adds or removes a few bases, shifting the reading frame', 'It changes the promoter'], a: 2, why: 'NHEJ rejoins the ends without a template and often leaves small indels. Any indel that isn’t a multiple of 3 shifts the frame and usually creates an early stop codon.' }
+  ]
+});
+
+/* ================= BOOT ================= */
+STATIONS.forEach(id => renderQuiz(id));
+$$('.station').forEach((sec, i) => {
+  const nxt = STATIONS[i + 1]; if (!nxt) return;
+  sec.append(h('div', { class: 'next-row' }, h('button', { type: 'button', class: 'btn', onclick: () => showStation(nxt, true) }, `Next: ${TITLES[nxt]} →`)));
+});
+$$('.rail button').forEach(b => b.addEventListener('click', () => showStation(b.dataset.tab, false)));
+window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (STATIONS.includes(id) && id !== current) showStation(id, false); });
+(function boot() {
+  let id = location.hash.slice(1);
+  if (!STATIONS.includes(id)) { try { id = localStorage.getItem('dna-workbench-tab') || 'strand'; } catch (e) { id = 'strand'; } }
+  showStation(STATIONS.includes(id) ? id : 'strand', false);
+})();
+</script>
+
+</body></html>
