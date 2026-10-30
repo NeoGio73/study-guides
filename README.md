@@ -1,6 +1,6 @@
 # Interactive Chemistry Study Guides
 
-Fourteen interactive study guides and workbenches for four college chemistry courses: General Chemistry I, chemistry for non-science majors, Organic Chemistry I, and biochemistry. Each one is a single web page that runs in any current browser, with nothing to install and no account to create.
+Seventeen interactive study guides, workbenches and practice pages for four college chemistry courses: General Chemistry I, chemistry for non-science majors, Organic Chemistry I, and biochemistry. Each one is a single web page that runs in any current browser, with nothing to install and no account to create.
 
 In the calculation guides the numbers change every time, so a section can be practiced as often as you like, and most offer three levels of help: *Guided setup*, *Hints if I ask*, and *On my own*. Nothing in the guides is graded or sent anywhere. The workbenches remember your place in your own browser only.
 
@@ -28,6 +28,9 @@ The guides were built by John Picione with a generative AI coding assistant, and
 
 | Guide | Sections |
 | --- | --- |
+| [Chair Lab](organic-chemistry/chair-lab.html) | Explore a 3D cyclohexane chair · Read axial and equatorial positions and flip the ring · Chair challenges |
+| [Stereochemistry Lab](organic-chemistry/stereochemistry-lab.html) | Explore a tetrahedral center and assign R or S · Compare two stereocenters · Challenges on enantiomers, diastereomers and meso compounds |
+| [Stereochemistry Practice](organic-chemistry/stereochemistry-practice.html) | R/S and E/Z on 3D models of real molecules (ibuprofen, menthol, L-cysteine, substituted alkenes), with a results page |
 | [Polymers & the Surf Zone](organic-chemistry/polymers-surf-zone.html) | Chain-growth and step-growth polymers, vinyl polymers, tacticity, rubber and copolymers, structure and properties; then what surfboards and paddleboards are made of, waves, board math, fins and rails, East Florida surf, seasons and sharks, with slider labs; a self-check with three help levels |
 
 ## Biochemistry
@@ -50,11 +53,12 @@ Organic Chemistry I, following McMurry, *Organic Chemistry*, Chapter 11. This wa
 
 ## For instructors
 
-- **Each guide is one HTML file** with its styles and code inside it (except the Unity experiment above, a compiled WebGL build). Link it from any learning management system, or open it in a text editor and change it. Most load nothing from other sites; the polymers guide and two of the workbenches load their fonts from Google Fonts.
-- **Sources.** The biochemistry pages follow Lehninger *Principles of Biochemistry* for names and values; the carbohydrates and lipids guides also draw on the *Color Atlas of Biochemistry*. The polymers guide follows OpenStax *Organic Chemistry* (chapter 31 and section 8.10), and its structures were drawn with [RDKit](https://www.rdkit.org/).
+- **Each guide is one HTML file** with its styles and code inside it (except the Unity experiment above, a compiled WebGL build; the two stereochemistry pages also load JSmol from the `organic-chemistry/jsmol/` folder). Link it from any learning management system, or open it in a text editor and change it. Most load nothing from other sites; the polymers guide and two of the workbenches load their fonts from Google Fonts.
+- **3D viewers.** Chair Lab embeds [3Dmol.js](https://3dmol.org/) (BSD license). The stereochemistry pages use [JSmol](https://jmol.sourceforge.net/) (Jmol 16.5.5, LGPL), bundled in `organic-chemistry/jsmol/` (the HTML5 part only), so they load nothing from other sites; their structures were generated with RDKit and checked for the stated configurations.
+- **Sources.** The organic pages cite the sections of OpenStax *Organic Chemistry* they follow: chapter 4 (cyclohexane) and chapter 5 (stereochemistry). The biochemistry pages follow Lehninger *Principles of Biochemistry* for names and values; the carbohydrates and lipids guides also draw on the *Color Atlas of Biochemistry*. The polymers guide follows OpenStax *Organic Chemistry* (chapter 31 and section 8.10), and its structures were drawn with [RDKit](https://www.rdkit.org/).
 - **Credits in the polymers guide.** Photographs: Mavericks by Shalom Jacobovitz ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)) and Teahupo'o by Olivier Dugornay / Ifremer ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), both resized. The Mavericks bathymetry map is from the U.S. Geological Survey with the CSUMB Seafloor Mapping Lab. The guide links to two wave games that live in another repository.
 - **Other copies.** Each guide also lives in its own course's repository, where the course links to it. This repository is the complete set, and it will be tagged at the version described in the paper.
 
 ## License
 
-Code and text are under the [MIT License](LICENSE). The photographs and the map in the polymers guide are not; their credits and licenses are listed above and in the guide.
+Code and text are under the [MIT License](LICENSE). 3Dmol.js and JSmol keep their own licenses (BSD and LGPL). The photographs and the map in the polymers guide are not; their credits and licenses are listed above and in the guide.
