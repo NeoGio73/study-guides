@@ -618,8 +618,8 @@ function describe(st){
         blurb:'Nonpolar storage lipid. With no charged or polar head it cannot face water, so it coalesces into droplets (fat droplets in adipocytes).'};
     }
     const H=st.head?HEAD[st.head]:null;const base=H?H.pl:'phosphatidic acid',tail=H?H.tail:'phosphate';
-    const acPL=ac;const q=H?H.q:-2;
-    const qn=H?{etn:'phosphate −1, ethanolamine NH₃⁺ +1',cho:'phosphate −1, choline N⁺ +1',ser:'phosphate −1, COO⁻ −1, NH₃⁺ +1',gro:'phosphate −1'}[st.head]:'phosphate −2 (second pKa near 7, so some carry −1)';
+    const acPL=ac;const q=H?H.q:(acPL.length?-1:-2);
+    const qn=H?{etn:'phosphate −1, ethanolamine NH₃⁺ +1',cho:'phosphate −1, choline N⁺ +1',ser:'phosphate −1, COO⁻ −1, NH₃⁺ +1',gro:'phosphate −1'}[st.head]:acPL.length?'phosphate −1 (its second pKa is near 8 in membranes)':'phosphomonoester −2';
     const links=(acPL.length?`${acPL.length} ester${acPL.length>1?'s':''}, `:'')+(H?'phosphodiester':'phosphomonoester');
     const head=qType(q,H&&H.zw);
     if(acPL.length===2){
@@ -767,11 +767,11 @@ const CH=[
   ok:(d,st)=>d.kind==='pl'&&st.head==='cho'&&!isUnsat(st.sn1)&&isCisUnsat(st.sn2),msg:'Saturated at C-1 and unsaturated at C-2 is the most common pattern in natural glycerophospholipids.',
   near:(d,st)=>d.kind==='pl'&&st.head==='cho'?'Check which position carries the unsaturated chain.':''},
  {id:'q',t:'Build a glycerophospholipid with a net charge of −1 at pH 7.',ok:(d)=>d.kind==='pl'&&d.q===-1,
-  msg:'Phosphatidylserine and phosphatidylglycerol each carry −1. Choline and ethanolamine cancel the phosphate charge.',near:(d)=>d.kind==='pl'?`This one is ${qStr(d.q)}. Try a different head group.`:''},
+  msg:'Phosphatidylserine, phosphatidylglycerol and phosphatidic acid each carry −1. Choline and ethanolamine cancel the phosphate charge.',near:(d)=>d.kind==='pl'?`This one is ${qStr(d.q)}. Try a different head group.`:''},
  {id:'ara',t:'Put arachidonate where phospholipase A₂ can release it for eicosanoid synthesis.',ok:(d,st)=>d.kind==='pl'&&st.sn2==='ara',
   msg:'PLA₂ hydrolyzes the sn-2 ester, which is where membrane phospholipids carry arachidonate. Try cutting it in tab 2.',
   near:(d,st)=>st.bb==='gly'&&(st.sn1==='ara'||st.sn3==='ara')?'Arachidonate needs to be at the position PLA₂ cuts.':st.bb==='gly'&&st.sn2==='ara'?'Right position. Now make it a phospholipid with two acyl chains.':''},
- {id:'pa',t:'Build the parent compound of the glycerophospholipids.',ok:(d,st)=>d.kind==='pl'&&!st.head,msg:'Phosphatidic acid: two acyl chains and a phosphate with no head-group alcohol. Net charge −2.',near:()=>''},
+ {id:'pa',t:'Build the parent compound of the glycerophospholipids.',ok:(d,st)=>d.kind==='pl'&&!st.head,msg:'Phosphatidic acid: two acyl chains and a phosphate with no head-group alcohol. Net charge −1 at pH 7.',near:()=>''},
  {id:'sm',t:'Build sphingomyelin.',ok:(d)=>d.kind==='sm',msg:'Same phosphocholine head and net charge (0) as PC, but the backbone is sphingosine and the fatty acid is in amide linkage.',
   near:(d,st)=>st.bb==='gly'&&st.head==='cho'?'Close: that is phosphatidylcholine. Sphingomyelin uses the sphingosine backbone.':''},
  {id:'gal',t:'Build the cerebroside typical of neural tissue.',ok:(d)=>d.kind==='cb'&&d.sugar==='gal',msg:'Galactosylceramide, abundant in myelin.',
@@ -1010,12 +1010,12 @@ const FL=[['dppc','DPPC (16:0/16:0)',41,['pal','pal']],['dmpc','DMPC (14:0/14:0)
 const F={k:0,T:37,c:0,raf:0,lip:[]};
 function fSetup(){$('#fSel').innerHTML=FL.map((x,i)=>`<option value="${i}">${x[1]}, Tm ≈ ${x[2]<0?'−'+(-x[2]):x[2]} °C</option>`).join('');}
 function fState(){const L=FL[F.k],Tm=L[2],c=F.c/100;const w=2.2+60*c;const base=1/(1+Math.exp(-(F.T-Tm)/w));const kk=Math.min(1,c/.4)*.75;
-  const fl=(1-kk)*base+kk*.5;let ph;if(c>=.25)ph='Liquid-ordered';else if(F.T<Tm-3)ph='Gel (solid-ordered)';else if(F.T>Tm+3)ph='Fluid (liquid-disordered)';else ph='At the transition';
-  return {Tm,fl,ph,c};}
+  const fl=(1-kk)*base+kk*.5;const unsat=L[3].some(k=>FA[k]&&isCisUnsat(k));let ph;if(c>=.25)ph=unsat?'Fluid (liquid-disordered)':'Liquid-ordered';else if(F.T<Tm-3)ph='Gel (solid-ordered)';else if(F.T>Tm+3)ph='Fluid (liquid-disordered)';else ph='At the transition';
+  return {Tm,fl,ph,c,unsat};}
 function fUpdate(){const L=FL[F.k],s=fState();$('#fTv').textContent=(F.T<0?'−'+(-F.T):F.T)+' °C';$('#fCv').textContent=F.c+' mol %';
   const pct=v=>((v+20)/90*100)+'%';$('#fTm').style.left=pct(s.Tm);$('#fTm').textContent='Tm '+(s.Tm<0?'−'+(-s.Tm):s.Tm)+'°';$('#fBody').style.left=pct(37);
   $('#fBar').style.left=(s.fl*100)+'%';$('#fPhase').textContent=s.ph;
-  let t;if(s.c>=.25)t=`With ${F.c}% cholesterol the sharp transition is gone. The rigid sterol rings restrain the chains above Tm and keep them from packing into a gel below Tm, so fluidity changes little with temperature.`;
+  let t;if(s.c>=.25)t=`With ${F.c}% cholesterol the sharp transition is gone. The rigid sterol rings restrain the chains above Tm and keep them from packing into a gel below Tm, so fluidity changes little with temperature.${s.unsat?' With cis-unsaturated chains the bilayer stays liquid-disordered: a liquid-ordered phase needs saturated chains or sphingomyelin.':''}`;
   else if(F.T<s.Tm-3)t=`Below Tm the chains are fully extended (all-trans) and packed tightly: a gel. ${L[3].includes('ole')?'':'Saturated chains raise Tm, so this lipid is a gel even at body temperature if Tm is above 37 °C.'}`;
   else if(F.T>s.Tm+3)t=`Above Tm the chains rotate freely about their C–C bonds and the lipids diffuse sideways within each leaflet: a fluid bilayer. ${L[3].some(k=>FA[k]&&isCisUnsat(k))?'The kink of the cis double bond keeps Tm low.':''}`;
   else t='Near Tm, gel and fluid domains coexist. A small change in temperature changes fluidity sharply.';

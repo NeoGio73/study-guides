@@ -376,7 +376,7 @@ sub,sup{line-height:0}
       <div class="calc blk">
         <h3>From ΔG′° to K′<sub>eq</sub></h3>
         <div class="presets" id="kq-pre"></div>
-        <label class="field" for="kq-in">ΔG′° (kJ/mol)<input id="kq-in" class="num-in" type="number" step="0.1" value="31.4"></label>
+        <label class="field" for="kq-in">ΔG′° (kJ/mol)<input id="kq-in" class="num-in" type="number" step="0.1" min="-150" max="150" value="31.4"></label>
         <p class="eq">K′<sub>eq</sub> = e<sup>−ΔG′°/RT</sup>, R = 8.315 J/mol·K, T = 298 K</p>
         <div><span class="big" id="kq-out"></span></div>
         <p id="kq-txt" class="hint" style="margin:0"></p>
@@ -873,12 +873,16 @@ INIT.energy = function () {
   const kin = $('#kq-in'), kpre = $('#kq-pre');
   KP.forEach(([n, v]) => { const b = h('button', { type: 'button' }, `${n}: ${v > 0 ? '+' : ''}${v}`); b.addEventListener('click', () => { kin.value = v; $$('button', kpre).forEach(x => x.classList.toggle('on', x === b)); kq(); }); kpre.append(b); });
   function kq() {
-    const v = parseFloat(kin.value);
-    if (!isFinite(v)) { $('#kq-out').textContent = '—'; $('#kq-txt').textContent = 'Enter a number.'; return; }
+    const raw = parseFloat(kin.value);
+    if (!isFinite(raw)) { $('#kq-out').textContent = '—'; $('#kq-txt').textContent = 'Enter a number.'; return; }
+    const LIM = 150, v = clamp(raw, -LIM, LIM);   // biochemical ΔG′° values lie well inside ±150 kJ/mol
+    const clamped = v !== raw; if (clamped) kin.value = v;
     const K = Math.exp(-v / RT298);
+    if (Math.abs(v) < 0.5) { $('#kq-out').textContent = 'K′eq ≈ ' + K.toPrecision(2); $('#kq-txt').textContent = 'K′eq is close to 1: at equilibrium products and reactants are present in similar amounts, so the concentrations in the cell decide which way the step runs.'; return; }
     const ex = Math.floor(Math.log10(K)), sup = String(ex).split('').map(c => SUP[c]).join('');
     $('#kq-out').textContent = 'K′eq = ' + (K >= 0.01 && K < 1e4 ? K.toPrecision(3) : `${(K / Math.pow(10, ex)).toFixed(2)} × 10${sup}`);
     $('#kq-txt').textContent = K < 1 ? `At equilibrium the ratio [products]/[reactants] is only ${K < 0.001 ? 'about ' + $('#kq-out').textContent.replace('K′eq = ', '') : K.toPrecision(2)}. To run forward, the cell must keep products far below that, or couple the step to ATP hydrolysis.` : `At equilibrium products outnumber reactants by about ${K >= 1e4 ? K.toExponential(1) : Math.round(K).toLocaleString('en-US')} to 1, so the step runs forward easily.`;
+    if (clamped) $('#kq-txt').textContent += ` (ΔG′° is limited to ±${LIM} kJ/mol; biochemical values lie well inside this range.)`;
   }
   kin.addEventListener('input', () => { $$('button', kpre).forEach(x => x.classList.remove('on')); kq(); });
   $$('button', kpre)[0].classList.add('on'); kq();

@@ -337,7 +337,7 @@ select.sel{font:14px var(--f-body);padding:6px 8px;border-radius:8px;border:1px 
   <h1>DNA Workbench</h1>
   <p class="sub">Nine short stations: three on the molecule itself, five on the tools built around it, and a casebook that puts the tools to work. One gene runs through all of them.</p>
   <div class="tape-wrap">
-    <p class="tape-label">The thread: start of the human β-globin coding sequence (<i>HBB</i>, exon 1)</p>
+    <p class="tape-label">The thread: start of the human β-globin coding sequence (<i>HBB</i>, codons 1–30)</p>
     <div class="tape" id="tape" aria-label="β-globin codons 1 to 30"></div>
     <p class="tape-note">Codon 6 is GAG (Glu). In the sickle-cell allele, HbS, a single A→T change makes it GTG (Val). Codons are numbered as in the mature protein, which lacks the initiator Met.</p>
   </div>
@@ -479,7 +479,7 @@ select.sel{font:14px var(--f-body);padding:6px 8px;border-radius:8px;border:1px 
   <div class="st-head"><span class="st-num">4</span><div><p class="eyebrow">The toolkit</p><h2>PCR</h2></div></div>
   <p class="lead">The polymerase chain reaction copies one stretch of DNA exponentially. Two primers mark the ends, and a heat-stable polymerase repeats three steps: denature, anneal, extend. Design primers against the β-globin template, set the program, and run it.</p>
   <div class="bench">
-    <p class="bench-title">Template: 93 bp of β-globin exon 1</p>
+    <p class="bench-title">Template: 93 bp of β-globin coding sequence, codons 1–30</p>
     <div class="seq-scroll"><div class="sgrid" id="pcr-grid"></div></div>
     <div class="pcr-grid">
       <div class="blk">
@@ -509,7 +509,7 @@ select.sel{font:14px var(--f-body);padding:6px 8px;border-radius:8px;border:1px 
   </div>
   <div class="after">
     <div class="ideas"><h3>Key ideas</h3><ul>
-      <li>The forward primer matches the top strand; the reverse primer matches the reverse complement of the bottom-strand end. Both 3′ ends point toward each other.</li>
+      <li>The forward primer matches the top strand; the reverse primer is the reverse complement of the top strand at the far end, so it anneals to the top strand. Both 3′ ends point toward each other.</li>
       <li>Set the annealing temperature a few degrees below the lower primer t<sub>m</sub>. Too high and primers won't stay bound; too low and they bind partial matches.</li>
       <li>Copies roughly double each cycle until reagents run low, then the curve plateaus.</li>
       <li>A no-template control should stay blank. A band there means contamination or primer dimers.</li>
@@ -727,7 +727,7 @@ const COMP = { A: 'T', T: 'A', G: 'C', C: 'G', N: 'N' };
 const comp = q => q.split('').map(b => COMP[b] || 'N').join('');
 const revcomp = q => comp(q).split('').reverse().join('');
 const gcCount = q => (q.match(/[GC]/g) || []).length;
-// Human HBB coding sequence, ATG + codons 1–30 (exon 1)
+// Human HBB coding sequence, ATG + codons 1–30 (codon 30 spans the first intron's splice junction)
 const GENE = 'ATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGG';
 const MUT = 19; // 0-based index of the middle base of codon 6 (GAG → GTG)
 const HBS = GENE.slice(0, MUT) + 'T' + GENE.slice(MUT + 1);
@@ -1595,12 +1595,23 @@ INIT.crispr = function () {
     else { const s0 = c + 1 - Math.ceil(v.n / 2); ed = q.slice(0, s0) + q.slice(s0 + v.n); view = [q.slice(0, s0), h('span', { class: 'del', title: `deleted ${q.slice(s0, s0 + v.n)}` }, `[−${q.slice(s0, s0 + v.n)}]`), q.slice(s0 + v.n)]; }
     const before = translate(q), after = translate(ed), shift = (ed.length - q.length) % 3 !== 0;
     const stopAt = after.indexOf('*');
+    // In-frame deletion: re-align across the lost codon(s) so only residues that really changed are marked
+    let ref = before;
+    if (!shift && ed.length < q.length) {
+      const d = (q.length - ed.length) / 3; let best = null;
+      for (let j = 0; j <= after.length; j++) {
+        const r = after.map((_, i) => i < j ? before[i] : before[i + d]);
+        const miss = r.reduce((a, x, i) => a + (x !== after[i] ? 1 : 0), 0);
+        if (!best || miss < best.miss) best = { r, miss };
+      }
+      ref = best.r;
+    }
     $('#cr-out').replaceChildren(
       h('p', null, h('span', { class: `chip ${shift ? 'bad' : 'warn'}` }, v.t === 'ins' ? `+1 insertion` : `−${v.n} deletion`), ' ',
         shift ? `Frameshift: every codon after the cut is read in a new frame${stopAt > 0 ? `, and a premature stop appears at codon ${stopAt}` : ''}. This allele no longer makes working β-globin.` : 'In-frame: one codon is lost, so the protein is one residue shorter but mostly intact.'),
       h('div', { class: 'edit-seq' }, view),
       protRow('Before (this allele)', before, before, null),
-      protRow('After NHEJ', before, after, 'chg'),
+      protRow('After NHEJ', ref, after, 'chg'),
       h('p', { class: 'hint', style: 'margin:0' }, 'Each click repairs another cell. NHEJ gives a different small indel each time. It’s the route used to disable genes; see the BCL11A case in the casebook.'),
       h('button', { type: 'button', class: 'btn', onclick: nhej }, 'Repair another cell'));
   }
