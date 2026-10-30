@@ -295,6 +295,28 @@
   "pass": true
  },
  {
+  "item": "R3",
+  "what": "tritium 12.32 y in all 4 places, no 12.26",
+  "pass": true
+ },
+ {
+  "item": "R3",
+  "what": "U-238 4.47 billion y (4.468e9) in all 5 places, no 4.51",
+  "pass": true
+ },
+ {
+  "item": "R3",
+  "what": "tritium half-life problems use 12.32 years",
+  "pass": true,
+  "detail": "{\"n\":4347,\"bad\":0}"
+ },
+ {
+  "item": "R3",
+  "what": "simulator U-238, 2 half-lives = 8.94 billion years",
+  "pass": true,
+  "detail": "TIME ELAPSED | 8.94 billion years | FRACTION REMAINING"
+ },
+ {
   "item": "R2",
   "what": "iron-56 and nickel-62 most tightly bound",
   "pass": true

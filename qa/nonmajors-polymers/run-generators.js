@@ -15,7 +15,8 @@ const EXPECT = { bond: 1, conc: 7, neut: 1, ph: 7, nuc: 4, half: 6, energy: 7, f
 (async () => {
   const browser = await chromium.launch();
   const out = { settings: { GEN_N, UI_N, seed: 20261030, viewport: '390x844' } };
-  for (const which of ['ph', 'nuc']) {
+  const ONLY = process.argv[4];
+  for (const which of (ONLY ? [ONLY] : ['ph', 'nuc'])) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     await ctx.addInitScript(seedScript(20261030));
     const page = await ctx.newPage();
@@ -50,5 +51,5 @@ const EXPECT = { bond: 1, conc: 7, neut: 1, ph: 7, nuc: 4, half: 6, energy: 7, f
     await ctx.close();
   }
   await browser.close();
-  fs.writeFileSync(path.join(__dirname, 'generator-results.json'), JSON.stringify(out, null, 1));
+  fs.writeFileSync(path.join(__dirname, ONLY ? 'generator-results-' + ONLY + '.json' : 'generator-results.json'), JSON.stringify(out, null, 1));
 })().catch(e => { console.error(e); process.exit(1); });

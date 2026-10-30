@@ -6,3 +6,4 @@
 **/orig_*.html
 glycolysis/shot_*.png
 node_modules/
+**/*.log

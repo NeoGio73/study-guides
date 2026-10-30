@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs'); const path = require('path');
 const { BASE, PAGES, seedScript, stubExternal } = require('./common');
-const EXPORTS = { ph: 'genPH,mountPractice,state,render,parseNum,near', nuc: 'genEnergy,genNuc,mountPractice,state,render,parseNum,near' };
+const EXPORTS = { ph: 'genPH,mountPractice,state,render,parseNum,near', nuc: 'genEnergy,genNuc,genHalf,mountPractice,state,render,parseNum,near' };
 const out = []; const ok = (item, what, pass, detail) => { out.push({ item, what, pass, detail }); console.log((pass ? 'PASS ' : 'FAIL ') + item + ' ' + what + (detail ? ' :: ' + String(detail).slice(0, 140) : '')); };
 
 async function open(browser, which, vp) {
@@ -115,6 +115,13 @@ const accepted = fb => /Correct\.|All parts correct/.test(fb);
   ok('R2', 'reactor fuel about 3–5% everywhere', !/2\.5–3\.5/.test(src) && (src.match(/about 3–5% U|about 3–5% uranium/g) || []).length >= 4 && /o:\['0\.1%','3–5%','50%','100%'\],a:1/.test(src));
   ok('R2', 'US 94 reactors at 54 plants; France about two-thirds', /94 operating reactors at 54 plants \(EIA, March 2026\)/.test(src) && /94 reactors at 54 plants/.test(src) && /about two-thirds/.test(src) && !/104 plants|73%/.test(src));
   ok('R2', 'half-lives Na-24 14.96 h, Pu-238 87.7 y, Sr-90 28.8 y', /'14\.96 h'/.test(src) && /'87\.7 y'/.test(src) && /87\.7-year/.test(src) && /t:28\.8,/.test(src) && !/28\.5|14\.66|'86 y'|86-year/.test(src));
+  ok('R3', 'tritium 12.32 y in all 4 places, no 12.26', (src.match(/12\.32/g) || []).length === 4 && !/12\.26/.test(src));
+  ok('R3', 'U-238 4.47 billion y (4.468e9) in all 5 places, no 4.51', /t:4\.468e9/.test(src) && (src.match(/4\.47[- ]billion/g) || []).length === 4 && !/4\.51|4\.5-billion-year half-life|Uranium-238: 4\.5 billion/.test(src));
+  const h3 = await page.evaluate(() => { const out = { n: 0, bad: 0 }; for (let i = 0; i < 60000; i++) { const P = window.__G.genHalf(); const q = (P.ctx || '').replace(/<[^>]+>/g, ''); if (!/^Tritium/.test(q)) continue; out.n++; if (!/half-life of 12\.32 years/.test(q)) out.bad++; } return out; });
+  ok('R3', 'tritium half-life problems use 12.32 years', h3.n > 100 && h3.bad === 0, JSON.stringify(h3));
+  await page.evaluate(() => { const G = window.__G; G.state.tab = 'half'; G.render(); });
+  await page.selectOption('#hiso', 'U238'); await page.evaluate(() => { const s = document.getElementById('hn'); s.value = 2; s.dispatchEvent(new Event('input')); });
+  const hs = await page.innerText('#hout'); ok('R3', 'simulator U-238, 2 half-lives = 8.94 billion years', /8\.94 billion years/.test(hs), hs.split('\n').slice(0, 3).join(' | '));
   ok('R2', 'iron-56 and nickel-62 most tightly bound', /Iron-56 and nickel-62 are the most tightly bound nuclei/.test(src) && !/Iron has the most tightly bound/.test(src));
   ok('R2', 'transuranium: traces of Np and Pu noted, no "every element"', (src.match(/traces of neptunium and plutonium/g) || []).length === 5 && !/every element (beyond|heavier than) uranium|Every element beyond/.test(src));
   await ctx.close();
