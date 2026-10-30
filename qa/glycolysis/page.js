@@ -1,0 +1,1587 @@
+
+'use strict';
+/* ============================================================
+   Biochemistry data and problem logic (no page elements used here)
+   Enzyme names and standard free-energy changes follow
+   Lehninger Principles of Biochemistry.
+   ============================================================ */
+
+const R_GAS = 8.315;                       // J/(mol·K)
+const T_BODY = 310;                        // K (37 °C)
+const RT = R_GAS*T_BODY/1000;              // kJ/mol at 37 °C
+const RT25 = R_GAS*298/1000;               // kJ/mol at 25 °C, the standard temperature
+
+// Intermediates, drawn as Fischer projections. Each row is one carbon, top to bottom.
+//   {l, r}   groups on the left and right of the carbon      lb / rb : 2 = double bond to that group
+//   {c}      a terminal carbon written with its hydrogens     db : true = double bond down to the next carbon
+//   "~P" at the end of a group stands for a phosphoryl group, drawn as a circled P.
+// gc lists which carbons of glucose end up at each position.
+const MOL = {
+  Glc:{name:'glucose', short:'glucose', c:6, p:0, gc:[[1],[2],[3],[4],[5],[6]],
+       rows:[{l:'H',r:'O',rb:2},{l:'H',r:'OH'},{l:'HO',r:'H'},{l:'H',r:'OH'},{l:'H',r:'OH'},{c:'CH2OH'}]},
+  G6P:{name:'glucose 6-phosphate', short:'G6P', c:6, p:1, gc:[[1],[2],[3],[4],[5],[6]],
+       rows:[{l:'H',r:'O',rb:2},{l:'H',r:'OH'},{l:'HO',r:'H'},{l:'H',r:'OH'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  F6P:{name:'fructose 6-phosphate', short:'F6P', c:6, p:1, gc:[[1],[2],[3],[4],[5],[6]],
+       rows:[{c:'CH2OH'},{r:'O',rb:2},{l:'HO',r:'H'},{l:'H',r:'OH'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  FBP:{name:'fructose 1,6-bisphosphate', short:'F1,6BP', c:6, p:2, gc:[[1],[2],[3],[4],[5],[6]],
+       rows:[{c:'CH2O~P'},{r:'O',rb:2},{l:'HO',r:'H'},{l:'H',r:'OH'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  DHAP:{name:'dihydroxyacetone phosphate', short:'DHAP', c:3, p:1, gc:[[1],[2],[3]],
+       rows:[{c:'CH2O~P'},{r:'O',rb:2},{c:'CH2OH'}]},
+  G3P:{name:'glyceraldehyde 3-phosphate', short:'G3P', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'H',r:'O',rb:2},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  BPG:{name:'1,3-bisphosphoglycerate', short:'1,3-BPG', c:3, p:2, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'O',lb:2,r:'O~P'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  PG3:{name:'3-phosphoglycerate', short:'3-PG', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'O',lb:2,r:'O⁻'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+  PG2:{name:'2-phosphoglycerate', short:'2-PG', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'O',lb:2,r:'O⁻'},{l:'H',r:'O~P'},{c:'CH2OH'}]},
+  PEP:{name:'phosphoenolpyruvate', short:'PEP', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'O',lb:2,r:'O⁻'},{r:'O~P',db:true},{c:'CH2'}]},
+  Pyr:{name:'pyruvate', short:'pyruvate', c:3, p:0, gc:[[3,4],[2,5],[1,6]],
+       rows:[{l:'O',lb:2,r:'O⁻'},{r:'O',rb:2},{c:'CH3'}]}
+};
+// The main line of the pathway, in order.
+const LINE = ['Glc','G6P','F6P','FBP','G3P','BPG','PG3','PG2','PEP','Pyr'];
+
+const TYPES = ['phosphoryl transfer from ATP','isomerization','aldol cleavage','oxidation coupled to phosphorylation',
+               'phosphoryl transfer to ADP','phosphoryl shift within the molecule','dehydration'];
+const CARRIERS = ['ATP is consumed','ATP is produced','NADH is produced','none of these'];
+
+// The ten steps. dG is the standard free-energy change in kJ/mol.
+const STEPS = [
+  {n:1, s:'Glc', p:'G6P', enz:'hexokinase', type:0, co:0, dG:-16.7, irr:true,
+   eq:'Glucose + ATP → glucose 6-phosphate + ADP + H⁺',
+   what:'A phosphoryl group from ATP is added to the hydroxyl on C-6.',
+   why:'The charged phosphate traps glucose inside the cell and starts to destabilize it.',
+   reg:'Inhibited by its own product, glucose 6-phosphate (hexokinases I to III). The liver form, hexokinase IV (glucokinase), is not.',
+   mech:'Glucose binding makes the enzyme close around it (induced fit), which keeps water out. The C-6 hydroxyl then attacks the γ-phosphate of MgATP²⁻.'},
+  {n:2, s:'G6P', p:'F6P', enz:'phosphohexose isomerase', type:1, co:3, dG:1.7, irr:false,
+   eq:'Glucose 6-phosphate ⇌ fructose 6-phosphate',
+   what:'The carbonyl moves from C-1 to C-2: an aldose becomes a ketose.',
+   why:'This frees the C-1 hydroxyl for the next phosphorylation and sets up the split between C-3 and C-4.',
+   reg:'Not regulated. It runs close to equilibrium.',
+   mech:'The ring opens, an active-site Glu removes the proton from C-2 to give an enediol intermediate, and the proton is returned to C-1.'},
+  {n:3, s:'F6P', p:'FBP', enz:'phosphofructokinase-1', type:0, co:0, dG:-14.2, irr:true,
+   eq:'Fructose 6-phosphate + ATP → fructose 1,6-bisphosphate + ADP + H⁺',
+   what:'A second phosphoryl group from ATP is added, this time to the hydroxyl on C-1.',
+   why:'This is the committed step: fructose 1,6-bisphosphate has no fate other than glycolysis.',
+   reg:'The main control point. Inhibited by ATP and citrate. Activated by AMP, ADP, and fructose 2,6-bisphosphate.',
+   mech:'A direct phosphoryl transfer from MgATP²⁻ to the C-1 hydroxyl.'},
+  {n:4, s:'FBP', p:'G3P', p2:'DHAP', enz:'aldolase', type:2, co:3, dG:23.8, irr:false,
+   eq:'Fructose 1,6-bisphosphate ⇌ dihydroxyacetone phosphate + glyceraldehyde 3-phosphate',
+   what:'The bond between C-3 and C-4 breaks, giving two three-carbon sugar phosphates.',
+   why:'C-1 to C-3 become dihydroxyacetone phosphate. C-4 to C-6 become glyceraldehyde 3-phosphate.',
+   reg:'Not regulated. The large positive standard value is overcome in the cell because the products are kept at low concentration.',
+   mech:'The C-2 carbonyl forms a protonated Schiff base with an active-site Lys. That electron sink lets the C-3 to C-4 bond break, releasing glyceraldehyde 3-phosphate first. Hydrolysis of the Schiff base then releases dihydroxyacetone phosphate.'},
+  {n:5, s:'DHAP', p:'G3P', enz:'triose phosphate isomerase', type:1, co:3, dG:7.5, irr:false,
+   eq:'Dihydroxyacetone phosphate ⇌ glyceraldehyde 3-phosphate',
+   what:'The ketose is converted to the aldose, so both halves of glucose continue as glyceraldehyde 3-phosphate.',
+   why:'After this step, C-1, C-2, and C-3 of glucose cannot be told apart from C-6, C-5, and C-4.',
+   reg:'Not regulated. It runs close to equilibrium.',
+   mech:'An active-site Glu removes a proton from the CH₂OH carbon, an enediol intermediate forms, and a proton is delivered to the carbonyl carbon. The same chemistry as step 2.'},
+  {n:6, s:'G3P', p:'BPG', enz:'glyceraldehyde 3-phosphate dehydrogenase', type:3, co:2, dG:6.3, irr:false,
+   eq:'Glyceraldehyde 3-phosphate + NAD⁺ + Pᵢ ⇌ 1,3-bisphosphoglycerate + NADH + H⁺',
+   what:'The aldehyde on C-1 is oxidized, NAD⁺ is reduced to NADH, and inorganic phosphate is added to make an acyl phosphate.',
+   why:'The energy of the oxidation is saved in the acyl phosphate, which has a very high phosphoryl group transfer potential.',
+   reg:'Not a regulated step, but it needs a steady supply of NAD⁺.',
+   mech:'The aldehyde reacts with an active-site Cys to give a thiohemiacetal. Hydride transfer to NAD⁺ leaves a thioester. Inorganic phosphate then attacks the thioester and releases 1,3-bisphosphoglycerate.'},
+  {n:7, s:'BPG', p:'PG3', enz:'phosphoglycerate kinase', type:4, co:1, dG:-18.5, irr:false,
+   eq:'1,3-Bisphosphoglycerate + ADP ⇌ 3-phosphoglycerate + ATP',
+   what:'The phosphoryl group of the acyl phosphate on C-1 is transferred to ADP.',
+   why:'This is the first substrate-level phosphorylation. Because it happens twice per glucose, it pays back the 2 ATP invested.',
+   reg:'Not regulated. In the cell it runs close to equilibrium, coupled to step 6.',
+   mech:'A direct phosphoryl transfer from the acyl phosphate to MgADP⁻.'},
+  {n:8, s:'PG3', p:'PG2', enz:'phosphoglycerate mutase', type:5, co:3, dG:4.4, irr:false,
+   eq:'3-Phosphoglycerate ⇌ 2-phosphoglycerate',
+   what:'The net result is a phosphoryl group on C-2 instead of C-3.',
+   why:'This sets up the dehydration in the next step.',
+   reg:'Not regulated. It runs close to equilibrium.',
+   mech:'A phosphorylated His on the enzyme gives its phosphoryl group to C-2, making 2,3-bisphosphoglycerate. The phosphoryl group on C-3 is then passed back to the same His.'},
+  {n:9, s:'PG2', p:'PEP', enz:'enolase', type:6, co:3, dG:7.5, irr:false,
+   eq:'2-Phosphoglycerate ⇌ phosphoenolpyruvate + H₂O',
+   what:'Water is removed from C-2 and C-3, leaving a double bond.',
+   why:'Dehydration redistributes energy in the molecule and turns an ordinary phosphate ester into a high-energy enol phosphate.',
+   reg:'Not regulated. It runs close to equilibrium.',
+   mech:'Mg²⁺ makes the C-2 proton more acidic. An active-site Lys removes it to give an enolate, and a Glu donates a proton to the C-3 hydroxyl, which leaves as water.'},
+  {n:10, s:'PEP', p:'Pyr', enz:'pyruvate kinase', type:4, co:1, dG:-31.4, irr:true,
+   eq:'Phosphoenolpyruvate + ADP + H⁺ → pyruvate + ATP',
+   what:'The phosphoryl group is transferred from phosphoenolpyruvate to ADP.',
+   why:'The second substrate-level phosphorylation. It happens twice per glucose and provides the net gain of 2 ATP.',
+   reg:'Activated by fructose 1,6-bisphosphate (feedforward). Inhibited by ATP, acetyl-CoA, and alanine. The liver form is also switched off by phosphorylation.',
+   mech:'Phosphoryl transfer leaves pyruvate in its enol form, which tautomerizes at once to the much more stable keto form. That tautomerization is what makes the step so favorable. The enzyme needs K⁺ and Mg²⁺.'}
+];
+const ENZ = STEPS.map(s=>s.enz);
+
+// Mechanisms: the events in order, plus questions on the key ideas.
+const MECH = [
+  {step:1, events:[
+     'Glucose binds, and the two lobes of the enzyme close around it (induced fit).',
+     'MgATP²⁻ binds in the closed active site, with water excluded.',
+     'The hydroxyl on C-6 of glucose attacks the γ-phosphorus of ATP.',
+     'Glucose 6-phosphate and MgADP⁻ are released as the enzyme opens.'],
+   qs:[
+     {q:'Why does hexokinase close around glucose before the reaction happens?',
+      a:'It keeps water out of the active site, so ATP is not simply hydrolyzed.',
+      d:['It moves glucose to the mitochondrion.','It converts glucose to its open-chain form.','It releases ADP from the previous cycle.'],
+      why:'Water is small enough to fit where the C-6 hydroxyl sits. The conformational change brings ATP next to glucose only when glucose is bound.'},
+     {q:'Which form of ATP is the true substrate of hexokinase and phosphofructokinase-1?',
+      a:'MgATP²⁻: the Mg²⁺ ion shields the negative charges of the phosphates.',
+      d:['Free ATP⁴⁻, with no metal ion.','ATP bound to K⁺ only.','ADP plus inorganic phosphate.'],
+      why:'Mg²⁺ shields the negative charges and makes the terminal phosphorus easier for a nucleophile to attack.'}]},
+  {step:2, events:[
+     'The pyranose ring of glucose 6-phosphate opens.',
+     'An active-site Glu acts as a base and removes the proton from C-2.',
+     'A cis-enediol intermediate forms.',
+     'The proton is returned to C-1, leaving a carbonyl on C-2.',
+     'The ring closes to give fructose 6-phosphate.'],
+   qs:[
+     {q:'What is the intermediate in the reaction catalyzed by phosphohexose isomerase?',
+      a:'An enediol.',
+      d:['A Schiff base with a Lys side chain.','A thioester with a Cys side chain.','A phosphorylated His on the enzyme.'],
+      why:'Removing the C-2 proton gives an enediol. Putting a proton back on C-1 instead leaves the carbonyl on C-2.'},
+     {q:'What kind of catalysis does phosphohexose isomerase use?',
+      a:'General acid-base catalysis by active-site side chains.',
+      d:['Covalent catalysis through a Schiff base.','Oxidation by NAD⁺.','Phosphoryl transfer from ATP.'],
+      why:'Side chains in the active site remove and return protons. No covalent bond to the enzyme and no coenzyme such as NAD⁺ is involved.'}]},
+  {step:3, events:null,
+   qs:[
+     {q:'Which hydroxyl of fructose 6-phosphate is phosphorylated by phosphofructokinase-1?',
+      a:'The hydroxyl on C-1.',
+      d:['The hydroxyl on C-2.','The hydroxyl on C-3.','The hydroxyl on C-6.'],
+      why:'C-6 already carries a phosphoryl group. The isomerization in step 2 freed the C-1 hydroxyl for this step.'},
+     {q:'Why is the phosphofructokinase-1 reaction called the committed step of glycolysis?',
+      a:'Its product, fructose 1,6-bisphosphate, has no fate other than glycolysis.',
+      d:['It is the first step that uses ATP.','It is the only irreversible step.','It is the step that produces NADH.'],
+      why:'Glucose 6-phosphate and fructose 6-phosphate can enter other pathways. Fructose 1,6-bisphosphate cannot.'}]},
+  {step:4, events:[
+     'The carbonyl on C-2 of fructose 1,6-bisphosphate reacts with the amino group of an active-site Lys to form a protonated Schiff base.',
+     'The bond between C-3 and C-4 breaks. Glyceraldehyde 3-phosphate is released, and an enamine is left covalently bound to the enzyme.',
+     'The enamine is protonated, giving a Schiff base again.',
+     'Water hydrolyzes the Schiff base, releasing dihydroxyacetone phosphate and freeing the Lys.'],
+   qs:[
+     {q:'What covalent intermediate forms between aldolase and its substrate?',
+      a:'A protonated Schiff base (imine) between the C-2 carbonyl and a Lys side chain.',
+      d:['A thioester between C-1 and a Cys side chain.','A phosphorylated His on the enzyme.','An acyl phosphate on C-1.'],
+      why:'The amino group of Lys adds to the ketone carbonyl and loses water to form the imine.'},
+     {q:'How does the Schiff base help break the bond between C-3 and C-4?',
+      a:'The positively charged imine is an electron sink that stabilizes the carbanion left behind.',
+      d:['It oxidizes C-3 so that the bond weakens.','It transfers a phosphoryl group to C-4.','It holds the two products together until ATP arrives.'],
+      why:'When the carbon-carbon bond breaks, the electrons flow toward the protonated nitrogen and give an enamine.'},
+     {q:'Which product leaves aldolase first?',
+      a:'Glyceraldehyde 3-phosphate, made from C-4, C-5, and C-6.',
+      d:['Dihydroxyacetone phosphate, made from C-1, C-2, and C-3.','Both leave at the same time.','Neither: they stay bound until step 5.'],
+      why:'Carbons 1 to 3 are still attached to the Lys as the enamine. They leave as dihydroxyacetone phosphate only after hydrolysis.'}]},
+  {step:5, events:null,
+   qs:[
+     {q:'Triose phosphate isomerase and phosphohexose isomerase use the same kind of intermediate. What is it?',
+      a:'An enediol.',
+      d:['A Schiff base.','A thioester.','A carbocation.'],
+      why:'Both interconvert a ketose and an aldose by removing a proton from the carbon next to the carbonyl and returning it one carbon over.'},
+     {q:'Number the carbons of dihydroxyacetone phosphate as they were in fructose 1,6-bisphosphate, so that the CH₂O-phosphate carbon is C-1. Which carbon of glyceraldehyde 3-phosphate does it become?',
+      a:'C-3.',
+      d:['C-1.','C-2.','It is lost as CO₂.'],
+      why:'The phosphorylated carbon stays phosphorylated. In glyceraldehyde 3-phosphate that carbon is numbered C-3, because the aldehyde is C-1.'}]},
+  {step:6, events:[
+     'The aldehyde of glyceraldehyde 3-phosphate reacts with the –SH group of an active-site Cys, forming a thiohemiacetal.',
+     'A hydride ion is transferred to NAD⁺, giving NADH and a thioester (an acyl-enzyme intermediate).',
+     'NADH leaves, and a new NAD⁺ takes its place.',
+     'Inorganic phosphate attacks the carbonyl carbon of the thioester.',
+     '1,3-Bisphosphoglycerate is released, and the Cys is free again.'],
+   qs:[
+     {q:'What covalent intermediate holds the substrate on glyceraldehyde 3-phosphate dehydrogenase after the oxidation?',
+      a:'A thioester between C-1 of the substrate and a Cys side chain.',
+      d:['A Schiff base between C-2 and a Lys side chain.','A phosphorylated His on the enzyme.','An enediol.'],
+      why:'Oxidizing the thiohemiacetal gives a thioester, which is still a high-energy compound.'},
+     {q:'Where does the phosphoryl group added in this step come from?',
+      a:'Inorganic phosphate, Pᵢ.',
+      d:['ATP.','1,3-Bisphosphoglycerate from an earlier turn.','NADH.'],
+      why:'No ATP is spent here. The energy comes from the oxidation, and it is used to attach inorganic phosphate as an acyl phosphate.'},
+     {q:'Iodoacetate is a strong inhibitor of glycolysis. Why?',
+      a:'It reacts with the active-site Cys of glyceraldehyde 3-phosphate dehydrogenase.',
+      d:['It competes with ATP at hexokinase.','It removes Mg²⁺ from enolase.','It replaces inorganic phosphate in step 6.'],
+      why:'Alkylating the Cys thiol prevents the thiohemiacetal from forming, so the enzyme is dead.'},
+     {q:'Why does the enzyme go through a thioester rather than simply making a carboxylic acid?',
+      a:'The thioester keeps the energy of the oxidation, so phosphate can be added to make an acyl phosphate.',
+      d:['A carboxylic acid would be too large for the active site.','The thioester is needed to reduce NAD⁺.','It lets the enzyme use ATP as the phosphate donor.'],
+      why:'A free carboxylate would be too stable to react with phosphate. The thioester keeps the group activated.'}]},
+  {step:7, events:null,
+   qs:[
+     {q:'Phosphoglycerate kinase carries out a substrate-level phosphorylation. What does that mean?',
+      a:'ATP is made by transferring a phosphoryl group directly from a substrate to ADP.',
+      d:['ATP is made using a proton gradient across a membrane.','A substrate is phosphorylated using ATP.','Inorganic phosphate is added to a substrate.'],
+      why:'The acyl phosphate of 1,3-bisphosphoglycerate has a higher phosphoryl group transfer potential than ATP, so the transfer to ADP is favorable.'},
+     {q:'Which phosphoryl group of 1,3-bisphosphoglycerate is transferred to ADP?',
+      a:'The one on C-1, in the acyl phosphate.',
+      d:['The one on C-3, in the phosphate ester.','Either one, at random.','Neither: the phosphate comes from Pᵢ.'],
+      why:'An acyl phosphate is a mixed anhydride and releases far more free energy on hydrolysis than the ordinary ester on C-3.'}]},
+  {step:8, events:[
+     'The enzyme starts with a phosphoryl group already attached to an active-site His.',
+     'The phosphoryl group is transferred from the His to the hydroxyl on C-2 of 3-phosphoglycerate.',
+     '2,3-Bisphosphoglycerate is present as an enzyme-bound intermediate.',
+     'The phosphoryl group on C-3 is transferred to the same His.',
+     '2-Phosphoglycerate is released, leaving the enzyme phosphorylated and ready for the next round.'],
+   qs:[
+     {q:'What is the intermediate in the phosphoglycerate mutase reaction?',
+      a:'2,3-Bisphosphoglycerate.',
+      d:['1,3-Bisphosphoglycerate.','An enediol.','A Schiff base.'],
+      why:'For a moment the substrate carries phosphoryl groups on both C-2 and C-3.'},
+     {q:'Is the phosphoryl group on C-2 of the product the same one that was on C-3 of the substrate?',
+      a:'No. The one on C-2 came from the enzyme, and the one from C-3 stays on the enzyme.',
+      d:['Yes. It slides directly from C-3 to C-2.','Yes. It leaves as Pᵢ and comes back.','No. The one on C-2 came from ATP.'],
+      why:'The enzyme is a phosphoenzyme. It gives a phosphoryl group to C-2 and then takes the one from C-3.'}]},
+  {step:9, events:[
+     'Two Mg²⁺ ions bind the carboxylate of 2-phosphoglycerate, which makes the proton on C-2 more acidic.',
+     'An active-site Lys acts as a base and removes the proton from C-2.',
+     'An enolate intermediate forms, stabilized by the Mg²⁺ ions.',
+     'An active-site Glu donates a proton to the hydroxyl on C-3, which leaves as water.',
+     'Phosphoenolpyruvate is released.'],
+   qs:[
+     {q:'What does the enolase reaction accomplish?',
+      a:'It turns a low-energy phosphate ester into a compound with a very high phosphoryl group transfer potential.',
+      d:['It oxidizes C-2 and reduces NAD⁺.','It adds a second phosphoryl group.','It makes ATP directly.'],
+      why:'Hydrolysis of 2-phosphoglycerate releases about 17.6 kJ/mol. Hydrolysis of phosphoenolpyruvate releases 61.9 kJ/mol.'},
+     {q:'What is the role of Mg²⁺ in enolase?',
+      a:'It stabilizes the negative charge of the enolate intermediate.',
+      d:['It carries the phosphoryl group.','It oxidizes the substrate.','It binds NAD⁺.'],
+      why:'The metal ions neutralize charge on the carboxylate, making the C-2 proton easier to remove.'},
+     {q:'Fluoride inhibits glycolysis at this step. How?',
+      a:'With phosphate it forms a complex that ties up the Mg²⁺ in the active site of enolase.',
+      d:['It alkylates a Cys in the active site.','It replaces inorganic phosphate in step 6.','It competes with glucose for hexokinase.'],
+      why:'Without Mg²⁺ the enolate cannot be stabilized, so the reaction stops and 2-phosphoglycerate builds up.'}]},
+  {step:10, events:null,
+   qs:[
+     {q:'What makes the pyruvate kinase reaction so strongly favorable?',
+      a:'Pyruvate is released as the enol, which tautomerizes to the much more stable keto form.',
+      d:['It is coupled to the oxidation of NADH.','It releases CO₂.','It uses two molecules of ADP.'],
+      why:'In phosphoenolpyruvate the phosphoryl group locks the molecule in the unstable enol form. Once it is transferred, the enol becomes a ketone.'},
+     {q:'Which ions does pyruvate kinase need?',
+      a:'K⁺ and Mg²⁺ (or Mn²⁺).',
+      d:['Ca²⁺ only.','Fe²⁺ and Cu²⁺.','Zn²⁺ only.'],
+      why:'Mg²⁺ binds with the nucleotide, and K⁺ is needed in the active site.'}]}
+];
+
+// Regulation: how a signal acts on one enzyme.
+const KINDS = ['allosteric regulation by an energy or fuel signal','product inhibition','feedforward activation',
+               'covalent modification (phosphorylation)','no regulation: this is not a signal for this enzyme'];
+const REG = [
+  {enz:'phosphofructokinase-1', sig:'a high concentration of ATP', eff:'inhibits', kind:0,
+   why:'ATP is a substrate, but at high concentration it also binds an allosteric site and lowers the affinity of the enzyme for fructose 6-phosphate. Plenty of ATP means glycolysis can slow down.'},
+  {enz:'phosphofructokinase-1', sig:'a rise in AMP', eff:'activates', kind:0,
+   why:'AMP signals that the energy charge is low. It relieves the inhibition by ATP, so glycolysis speeds up.'},
+  {enz:'phosphofructokinase-1', sig:'a rise in ADP', eff:'activates', kind:0,
+   why:'ADP, like AMP, signals that ATP is being used up. It relieves the inhibition by ATP.'},
+  {enz:'phosphofructokinase-1', sig:'a rise in citrate', eff:'inhibits', kind:0,
+   why:'Citrate signals that the citric acid cycle is well supplied with fuel, so less glucose needs to be broken down.'},
+  {enz:'phosphofructokinase-1', sig:'a rise in fructose 2,6-bisphosphate', eff:'activates', kind:0,
+   why:'Fructose 2,6-bisphosphate is the most powerful activator of the enzyme. In the liver its level rises when blood glucose is high.'},
+  {enz:'hexokinase in muscle', sig:'a rise in glucose 6-phosphate', eff:'inhibits', kind:1, also:[0],
+   why:'Glucose 6-phosphate is the product of the reaction, and it inhibits the enzyme allosterically. If it is not being used, there is no point in making more.'},
+  {enz:'hexokinase IV (glucokinase) in the liver', sig:'a rise in glucose 6-phosphate', eff:'has no direct effect on', kind:4,
+   why:'Unlike the muscle enzyme, hexokinase IV is not inhibited by its product. That lets the liver keep taking up glucose when blood glucose is high.'},
+  {enz:'pyruvate kinase', sig:'a rise in fructose 1,6-bisphosphate', eff:'activates', kind:2,
+   why:'Fructose 1,6-bisphosphate is made earlier in the pathway. When it builds up, it speeds up the last step so the intermediates keep moving.'},
+  {enz:'pyruvate kinase', sig:'a high concentration of ATP', eff:'inhibits', kind:0, also:[1],
+   why:'ATP signals a high energy charge. It binds an allosteric site and lowers the affinity of the enzyme for phosphoenolpyruvate. ATP is also a product of this reaction, so calling it product inhibition is reasonable too.'},
+  {enz:'pyruvate kinase', sig:'a rise in alanine', eff:'inhibits', kind:0,
+   why:'Alanine is made from pyruvate. Plenty of alanine means building blocks are abundant, so less pyruvate is needed.'},
+  {enz:'pyruvate kinase', sig:'a rise in acetyl-CoA', eff:'inhibits', kind:0,
+   why:'Acetyl-CoA signals that fuel for the citric acid cycle is already available, for example from fatty acids.'},
+  {enz:'pyruvate kinase in the liver', sig:'glucagon, acting through protein kinase A', eff:'inhibits', kind:3,
+   why:'Protein kinase A phosphorylates the liver form of pyruvate kinase and switches it off, so the liver does not use up glucose when blood glucose is low.'},
+  {enz:'hexokinase in muscle', sig:'a rise in citrate', eff:'has no direct effect on', kind:4,
+   why:'Citrate acts on phosphofructokinase-1, not on hexokinase. Hexokinase responds to its own product, glucose 6-phosphate.'},
+  {enz:'phosphofructokinase-1', sig:'a rise in alanine', eff:'has no direct effect on', kind:4,
+   why:'Alanine acts on pyruvate kinase, at the end of the pathway. It is not a signal for phosphofructokinase-1.'}
+];
+const REGTABLE = {
+  'hexokinase':'Hexokinase I to III (muscle and most tissues): inhibited by glucose 6-phosphate. Hexokinase IV (glucokinase, in the liver) is not inhibited by glucose 6-phosphate.',
+  'phosphofructokinase-1':'Phosphofructokinase-1: inhibited by ATP and citrate; activated by AMP, ADP, and fructose 2,6-bisphosphate.',
+  'pyruvate kinase':'Pyruvate kinase: activated by fructose 1,6-bisphosphate; inhibited by ATP, acetyl-CoA, and alanine; the liver form is switched off by phosphorylation.'
+};
+
+// Entry points for energy accounting, per molecule entering: ATP invested, ATP produced, NADH, pyruvate.
+const ENTRY = [
+  {name:'glucose', inv:2, mk:4, nadh:2, pyr:2, how:'Two ATP are invested (steps 1 and 3). Each of the two trioses then makes 2 ATP and 1 NADH.'},
+  {name:'glucose 6-phosphate', inv:1, mk:4, nadh:2, pyr:2, how:'The hexokinase step is already done, so only the ATP for phosphofructokinase-1 is invested.'},
+  {name:'fructose 1,6-bisphosphate', inv:0, mk:4, nadh:2, pyr:2, how:'Both investment steps are already done. Two trioses each make 2 ATP and 1 NADH.'},
+  {name:'glyceraldehyde 3-phosphate', inv:0, mk:2, nadh:1, pyr:1, how:'One triose goes through the payoff phase once: 2 ATP and 1 NADH.'},
+  {name:'dihydroxyacetone phosphate', inv:0, mk:2, nadh:1, pyr:1, how:'It is converted to glyceraldehyde 3-phosphate, which goes through the payoff phase once.'},
+  {name:'a glucose unit removed from glycogen by phosphorolysis', route:'Phosphorolysis uses inorganic phosphate, not ATP. The glucose 1-phosphate that forms is converted to glucose 6-phosphate.', inv:1, mk:4, nadh:2, pyr:2, how:'Phosphorolysis gives glucose 1-phosphate, which becomes glucose 6-phosphate with no ATP spent. Only phosphofructokinase-1 uses ATP.'},
+  {name:'fructose in muscle (phosphorylated by hexokinase)', route:'In muscle, hexokinase phosphorylates fructose directly to fructose 6-phosphate.', inv:2, mk:4, nadh:2, pyr:2, how:'Hexokinase makes fructose 6-phosphate (1 ATP), and phosphofructokinase-1 uses a second ATP.'},
+  {name:'galactose', route:'Galactose is phosphorylated by galactokinase, using ATP, and the product is then converted to glucose 6-phosphate.', inv:2, mk:4, nadh:2, pyr:2, how:'Galactokinase uses 1 ATP, and the product is converted to glucose 6-phosphate. Phosphofructokinase-1 uses a second ATP.'},
+  {name:'mannose', route:'Hexokinase phosphorylates mannose, and the mannose 6-phosphate is isomerized to fructose 6-phosphate.', inv:2, mk:4, nadh:2, pyr:2, how:'Hexokinase makes mannose 6-phosphate (1 ATP), which is isomerized to fructose 6-phosphate. Phosphofructokinase-1 uses a second ATP.'},
+  {name:'glycerol', route:'Glycerol is phosphorylated by glycerol kinase, using ATP. The glycerol 3-phosphate is then oxidized by NAD⁺ to dihydroxyacetone phosphate.', inv:1, mk:2, nadh:2, pyr:1, how:'Glycerol kinase uses 1 ATP. Oxidation to dihydroxyacetone phosphate makes 1 NADH, and the payoff phase adds 2 ATP and 1 more NADH.'}
+];
+
+// Typical concentrations in a red blood cell, in µM. Used as starting points for free-energy problems.
+const CONC = {Glc:5000, G6P:83, F6P:14, FBP:31, DHAP:140, G3P:19, BPG:1.0, PG3:120, PG2:30, PEP:23, Pyr:51, ATP:1850, ADP:140};
+// Component reactions that add up to a glycolytic step.
+const COUPLE = [
+  {a:'Glucose + Pᵢ → glucose 6-phosphate + H₂O', da:13.8, b:'ATP + H₂O → ADP + Pᵢ', db:-30.5, sum:'Glucose + ATP → glucose 6-phosphate + ADP', step:1},
+  {a:'Fructose 6-phosphate + Pᵢ → fructose 1,6-bisphosphate + H₂O', da:16.3, b:'ATP + H₂O → ADP + Pᵢ', db:-30.5, sum:'Fructose 6-phosphate + ATP → fructose 1,6-bisphosphate + ADP', step:3},
+  {a:'Phosphoenolpyruvate + H₂O → pyruvate + Pᵢ', da:-61.9, b:'ADP + Pᵢ → ATP + H₂O', db:30.5, sum:'Phosphoenolpyruvate + ADP → pyruvate + ATP', step:10},
+  {a:'Glyceraldehyde 3-phosphate + NAD⁺ + Pᵢ → 1,3-bisphosphoglycerate + NADH + H⁺', da:6.3, b:'1,3-Bisphosphoglycerate + ADP → 3-phosphoglycerate + ATP', db:-18.5, sum:'Glyceraldehyde 3-phosphate + NAD⁺ + Pᵢ + ADP → 3-phosphoglycerate + NADH + H⁺ + ATP', step:'6 and 7'}
+];
+
+// Fates of pyruvate.
+const FATES = [
+  {cond:'skeletal muscle during a sprint, when oxygen cannot be supplied fast enough', prod:'lactate', enz:'lactate dehydrogenase'},
+  {cond:'a red blood cell, which has no mitochondria', prod:'lactate', enz:'lactate dehydrogenase'},
+  {cond:'yeast growing without oxygen', prod:'ethanol and CO₂', enz:'pyruvate decarboxylase, then alcohol dehydrogenase'},
+  {cond:'heart muscle with a good oxygen supply', prod:'acetyl-CoA and CO₂', enz:'the pyruvate dehydrogenase complex'},
+  {cond:'a liver cell under aerobic conditions that needs energy', prod:'acetyl-CoA and CO₂', enz:'the pyruvate dehydrogenase complex'}
+];
+const FPRODS = ['lactate','ethanol and CO₂','acetyl-CoA and CO₂'];
+const FENZ = ['lactate dehydrogenase','pyruvate decarboxylase, then alcohol dehydrogenase','the pyruvate dehydrogenase complex'];
+const FQ = [
+  {q:'Why does a cell without oxygen have to convert pyruvate to lactate or ethanol?',
+   a:'To turn NADH back into NAD⁺, which glyceraldehyde 3-phosphate dehydrogenase needs.',
+   d:['To make extra ATP from pyruvate.','To get rid of excess phosphate.','To make more glucose.'],
+   why:'A cell holds only a small amount of NAD⁺. If NADH were not reoxidized, step 6 would stop within seconds and so would ATP production.'},
+  {q:'Glucose is converted to two molecules of lactate. What is the net change in NAD⁺ and NADH?',
+   a:'None. The 2 NADH made in step 6 are used up reducing 2 pyruvate.',
+   d:['A net gain of 2 NADH.','A net loss of 2 NADH.','A net gain of 4 NADH.'],
+   why:'Glucose (C₆H₁₂O₆) and two lactic acids (2 C₃H₆O₃) have the same overall oxidation state, so there is no net oxidation or reduction.'},
+  {q:'Which cofactor does pyruvate decarboxylase need to remove CO₂ from pyruvate?',
+   a:'Thiamine pyrophosphate (TPP).',
+   d:['NAD⁺.','Biotin.','Coenzyme A.'],
+   why:'TPP, made from vitamin B₁, stabilizes the carbanion that forms when CO₂ leaves. NADH is used in the next step, by alcohol dehydrogenase.'},
+  {q:'In ethanol fermentation, which carbons of glucose are released as CO₂?',
+   a:'C-3 and C-4.',
+   d:['C-1 and C-6.','C-2 and C-5.','C-1 and C-2.'],
+   why:'C-3 and C-4 of glucose become the carboxyl carbon (C-1) of pyruvate, and that is the carbon lost as CO₂.'},
+  {q:'How much ATP does a cell gain per glucose when it ferments glucose to lactate?',
+   a:'A net of 2 ATP, all from glycolysis.',
+   d:['A net of 4 ATP.','No ATP at all.','About 30 ATP.'],
+   why:'Lactate dehydrogenase makes no ATP. Fermentation only regenerates NAD⁺ so that glycolysis can keep making its 2 ATP.'},
+  {q:'Which enzyme reduces pyruvate to lactate?',
+   a:'Lactate dehydrogenase, using NADH.',
+   d:['Pyruvate kinase, using ATP.','Pyruvate decarboxylase, using TPP.','Alcohol dehydrogenase, using NADH.'],
+   why:'Lactate dehydrogenase transfers a hydride from NADH to the keto carbon of pyruvate.'}
+];
+
+// Inhibitors and enzyme deficiencies.
+const BLOCKS = [
+  {name:'Iodoacetate', about:'Iodoacetate reacts with thiol groups. It is added to a cell extract that is carrying out glycolysis.',
+   enz:'glyceraldehyde 3-phosphate dehydrogenase', build:'glyceraldehyde 3-phosphate, dihydroxyacetone phosphate, and fructose 1,6-bisphosphate', atp:'−2', at:6,
+   why:'Iodoacetate alkylates the active-site Cys of glyceraldehyde 3-phosphate dehydrogenase. Everything before step 6 piles up. Two ATP were invested and none are made.'},
+  {name:'Fluoride', about:'Fluoride is added to a cell extract that is carrying out glycolysis. (It is also used in blood collection tubes for glucose tests.)',
+   enz:'enolase', build:'2-phosphoglycerate and 3-phosphoglycerate', atp:'0', at:9,
+   why:'Fluoride and phosphate tie up the Mg²⁺ that enolase needs. The pathway stops after step 8. Two ATP were invested and two were made in step 7, so the net is zero.'},
+  {name:'Arsenate', ask:'Which enzyme uses arsenate in place of its normal substrate?', about:'Arsenate, which resembles inorganic phosphate, is added to cells that are carrying out glycolysis.',
+   enz:'glyceraldehyde 3-phosphate dehydrogenase', build:'nothing builds up: the pathway keeps running', atp:'0', at:6,
+   why:'Arsenate takes the place of phosphate in step 6. The product falls apart to 3-phosphoglycerate without making ATP, so step 7 is bypassed. Glycolysis continues, but the 2 ATP from step 10 only repay the 2 invested.'},
+  {name:'Phosphofructokinase-1 deficiency', about:'A person inherits a muscle phosphofructokinase-1 that does not work (Tarui disease).',
+   enz:'phosphofructokinase-1', build:'glucose 6-phosphate and fructose 6-phosphate', atp:'−1', at:3,
+   why:'The pathway stops at step 3, so the hexose monophosphates build up and are stored as glycogen. One ATP was spent by hexokinase and none are made. Exercise causes cramps.'},
+  {name:'Pyruvate kinase deficiency', about:'A person inherits a red blood cell pyruvate kinase with very low activity.',
+   enz:'pyruvate kinase', build:'phosphoenolpyruvate and the intermediates just before it', atp:'0', at:10,
+   why:'The last step is blocked, so phosphoenolpyruvate and earlier intermediates rise. Two ATP were invested and two were made in step 7. Red cells depend on glycolysis for ATP, so they break down (hemolytic anemia).'},
+  {name:'Triose phosphate isomerase deficiency', about:'A person inherits a triose phosphate isomerase with very low activity.',
+   enz:'triose phosphate isomerase', build:'dihydroxyacetone phosphate', atp:'0', at:5,
+   why:'Only the glyceraldehyde 3-phosphate half of each glucose can go on. It makes 2 ATP, which only repays the 2 invested. Dihydroxyacetone phosphate builds up.'},
+  {name:'2-Deoxyglucose', ask:'Which enzyme cannot use the product that forms?', about:'Cells are given 2-deoxyglucose, which is glucose without the hydroxyl on C-2.',
+   enz:'phosphohexose isomerase', build:'2-deoxyglucose 6-phosphate', atp:'−1', at:2,
+   why:'Hexokinase phosphorylates it, using 1 ATP. Without a hydroxyl on C-2 the product cannot be isomerized, so it builds up and no ATP is ever made from it.'}
+];
+
+/* ---------- Numbers and small helpers ---------- */
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const rint = (a,b) => a+Math.floor(Math.random()*(b-a+1));
+function shuffle(a){ const b=a.slice(); for(let i=b.length-1;i>0;i--){ const j=rint(0,i), t=b[i]; b[i]=b[j]; b[j]=t; } return b; }
+// A shuffled copy that is never already in the right order.
+function scramble(a){ for(;;){ const b=shuffle(a); if(b.some((x,i)=>x!==a[i])) return b; } }
+// The correct answer plus distractors, in random order.
+function options(correct, pool, n){
+  const rest=shuffle(pool.filter(x=>x!==correct)).slice(0,(n||4)-1);
+  return shuffle([correct].concat(rest));
+}
+function sig(x,n){
+  const big=Math.abs(x)>=1e5 || (x!==0 && Math.abs(x)<1e-3);            // very large and very small values in scientific notation
+  let s=big ? Number(x).toExponential(n-1) : Number(x).toPrecision(n); const neg=s[0]==='-'; if(neg) s=s.slice(1);
+  if(s.indexOf('e')>=0){ const p=s.split('e'), ex=Number(p[1]); s=p[0]+' × 10<sup>'+(ex<0?'−'+(-ex):ex)+'</sup>'; }
+  return (neg?'−':'')+s;
+}
+function fx(x,d){
+  const s=Number(x).toFixed(d);
+  return s[0]==='-' ? (Number(s)===0 ? s.slice(1) : '−'+s.slice(1)) : s;
+}
+const plus = s => (s[0]==='−' ? s : '+'+s);
+function fmt3(v){
+  if(!(v>0) || !isFinite(v)) return null;
+  const s=Number(v).toPrecision(3);
+  if(s.indexOf('e')>=0) return null;
+  if(s.indexOf('.')<0 && /0$/.test(s)) return null;
+  return s;
+}
+const cap = s => s.charAt(0).toUpperCase()+s.slice(1);
+const stepOf = n => STEPS[n-1];
+
+/* ---------- Small HTML builders ---------- */
+const frac = (t,b) => '<span class="frac"><span class="t">'+t+'</span><span class="b">'+b+'</span></span>';
+const XOP = '<span class="op" aria-hidden="true">×</span>';
+const EQOP = '<span class="op">=</span>';
+const PH = '<span class="ph" aria-label="blank">?</span>';
+const lab = t => '<p class="helplab">'+t+'</p>';
+const txt = t => '<p class="helptext">'+t+'</p>';
+const blankIn = (k,label,wide) => '<input class="blank'+(wide?' wide':'')+'" data-k="'+k+'" type="text" inputmode="text" autocomplete="off" aria-label="'+label+'">';
+const bl = (mode,k,label,wide) => mode==='live' ? blankIn(k,label,wide) : PH;
+const row = inner => '<div class="chain">'+inner+'</div>';
+const q = s => '<span class="qty">'+s+'</span>';
+const cellRow = inner => '<div class="chain cells">'+inner+'</div>';
+const gcell = (mode,sym,k,label,unit,val,unk) => q(sym+' = '+(unk ? '<b>?</b>' : mode==='show' ? val : bl(mode,k,label,true))+(unit ? ' '+unit : ''));
+const clean = (errors, ans, minAbs) => errors.filter(e => isFinite(e.value) && Math.abs(e.value-ans) > Math.max(0.02*Math.abs(ans), minAbs||0));
+const solWrap = (items, note) => '<div class="solution"><h3>Explanation</h3><ol>'+items.map(t=>'<li>'+t+'</li>').join('')+'</ol>'+(note||'')+'</div>';
+const olist = items => '<ol class="evlist">'+items.map(t=>'<li>'+t+'</li>').join('')+'</ol>';
+const DG="ΔG", DG0="ΔG′°";
+
+/* ---------- Structures ---------- */
+const SUBS={'2':'₂','3':'₃'};
+const grp = s => s.replace(/[23]/g, d=>SUBS[d]);
+const tw = s => { let w=0; for(const ch of s) w += /[A-Z]/.test(ch) ? 10 : /[₂₃⁻]/.test(ch) ? 6.5 : 8; return w; };
+// A text alternative built from the rows, so the structure can be read without seeing it.
+const SAY = s => s.replace(/^HO$/,'OH').replace('~P','–phosphate').replace(/2/g,'₂').replace(/3/g,'₃');
+function fischerText(rows, flip){
+  const n=rows.length;
+  return 'Fischer projection, top to bottom: '+rows.map((r,i)=>{
+    const c=flip ? n-i : i+1, side=(s,b,w)=>(b===2 ? 'double-bonded ' : '')+SAY(s)+' on the '+w;
+    let t = r.c ? SAY(r.c) : [r.l ? side(r.l,r.lb,'left') : '', r.r ? side(r.r,r.rb,'right') : ''].filter(Boolean).join(', ');
+    if(r.db) t+=', double bond to C-'+(flip ? c-1 : c+1);
+    return 'C-'+c+': '+t;
+  }).join('; ')+'.';
+}
+// Fischer projection as SVG. o.num numbers the carbons, o.hi highlights rows, o.cap shows the name.
+// Trigonal carbons are drawn with 120° bond angles: a top carbon with two groups (aldehyde, carboxylate, acyl phosphate)
+// is a 120° V, and a chain carbon with one double-bonded group sits to the side of the chain.
+function fischer(key, o){
+  o=o||{};
+  const M=MOL[key], rows=o.flip ? M.rows.slice().reverse() : M.rows, n=rows.length, rh=30, cx=o.num ? 84 : 66, W=cx+96;
+  const kink=rows.map((r,i)=> i>0 && i<n-1 && !r.c && !r.l && (r.rb===2 || r.db) ? rh/Math.sqrt(3) : 0);
+  const vee=!rows[0].c && rows[0].l && rows[0].r && (rows[0].lb===2 || rows[0].rb===2);
+  const top=vee ? (kink[1] ? 38 : 27) : 20, H=top+n*rh+(o.cap ? 16 : 0);
+  const ink='#1b2430';
+  let g='';
+  const T=(x,y,s,anchor)=>'<text x="'+x+'" y="'+y+'" font-size="15" text-anchor="'+(anchor||'start')+'" fill="'+ink+'">'+s+'</text>';
+  const L=(x1,y1,x2,y2)=>'<line x1="'+(+x1.toFixed(2))+'" y1="'+(+y1.toFixed(2))+'" x2="'+(+x2.toFixed(2))+'" y2="'+(+y2.toFixed(2))+'" stroke="'+ink+'" stroke-width="1.4"/>';
+  // A bond between two atom centres, shortened by s1 and s2 so that it stops short of the letters.
+  const bond=(x1,y1,x2,y2,s1,s2,dbl)=>{
+    const d=Math.hypot(x2-x1,y2-y1), ux=(x2-x1)/d, uy=(y2-y1)/d, a=[x1+ux*s1,y1+uy*s1], b=[x2-ux*s2,y2-uy*s2];
+    if(!dbl) return L(a[0],a[1],b[0],b[1]);
+    const px=-uy*2.5, py=ux*2.5;
+    return L(a[0]+px,a[1]+py,b[0]+px,b[1]+py)+L(a[0]-px,a[1]-py,b[0]-px,b[1]-py);
+  };
+  // A group that may end in a circled P. Returns the SVG for it, starting at x (or ending at x when anchored at the end).
+  const group=(x,y,s)=>{
+    const hasP=/~P$/.test(s), t=grp(s.replace('~P',''));
+    let out=T(x,y,t);
+    if(hasP){ const px=x+tw(t)+3; out+=L(px,y-5,px+7,y-5)+'<circle cx="'+(px+16)+'" cy="'+(y-5)+'" r="9" fill="#fff" stroke="'+ink+'" stroke-width="1.4"/>'+
+      '<text x="'+(px+16)+'" y="'+(y)+'" font-size="12" font-weight="700" text-anchor="middle" fill="'+ink+'">P</text>'; }
+    return out;
+  };
+  rows.forEach((r,i)=>{
+    const y=top+i*rh+4, ax=cx+kink[i];                             // baseline of the row, and x of its carbon
+    const ci=o.flip ? n-1-i : i;                                  // carbon index in the molecule's own numbering
+    if(o.hi && o.hi.indexOf(ci)>=0) g+='<circle cx="'+(+ax.toFixed(2))+'" cy="'+(y-5)+'" r="12" fill="#ffd591" stroke="#dd962a" stroke-width="1.5"/>';
+    if(o.num) g+='<text x="'+(cx-62)+'" y="'+y+'" font-size="11" text-anchor="end" fill="#566070">'+(ci+1)+'</text>';
+    if(i<n-1){
+      const bx=cx+kink[i+1];
+      g+= bx===ax ? bond(ax,y-5,bx,y+rh-5,8,11,r.db) : bond(ax,y-5,bx,y+rh-5,9,10,r.db);
+    }
+    if(r.c){ g+=group(cx-5,y,r.c); return; }
+    g+=T(+ax.toFixed(2),y,'C','middle');
+    if(i===0 && vee){
+      // The two groups sit 120° from the bond to C-2 and from each other.
+      const bx=cx+kink[1], d=Math.hypot(bx-ax,rh), ux=(bx-ax)/d, uy=rh/d;
+      const dirs=[120,-120].map(a=>{ const t=a*Math.PI/180; return [ux*Math.cos(t)-uy*Math.sin(t), ux*Math.sin(t)+uy*Math.cos(t)]; }).sort((p,q)=>p[0]-q[0]);
+      [[r.l,r.lb,dirs[0]],[r.r,r.rb,dirs[1]]].forEach(([s,b,u])=>{
+        const lx=ax+26*u[0], ly=y-5+26*u[1];
+        g+=bond(ax,y-5,lx,ly,8,8,b===2);
+        g+= /~P$/.test(s) ? group(+(lx-5).toFixed(2),+(ly+5).toFixed(2),s) : T(+lx.toFixed(2),+(ly+5).toFixed(2),grp(s),'middle');
+      });
+      return;
+    }
+    if(r.l){
+      g+=T(ax-17,y,grp(r.l),'end');
+      if(r.lb===2) g+=L(ax-15,y-7.5,ax-7,y-7.5)+L(ax-15,y-3,ax-7,y-3); else g+=L(ax-15,y-5,ax-7,y-5);
+    }
+    if(r.r){
+      if(r.rb===2) g+=L(ax+7,y-7.5,ax+15,y-7.5)+L(ax+7,y-3,ax+15,y-3); else g+=L(ax+7,y-5,ax+15,y-5);
+      g+=group(+(ax+17).toFixed(2),y,r.r);
+    }
+  });
+  if(o.cap) g+='<text x="'+(W/2)+'" y="'+(H-2)+'" font-size="11" text-anchor="middle" fill="#566070">'+M.short+'</text>';
+  const label=(o.alt || 'Structure of '+M.name)+'. '+fischerText(rows,o.flip)+(o.hi && o.hi.length ? ' Highlighted: '+o.hi.map(h=>'C-'+(h+1)).join(', ')+'.' : '');
+  return '<svg class="fis" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="'+label+'">'+g+'</svg>';
+}
+const figRow = inner => '<div class="figrow">'+inner+'</div>';
+const figArrow = label => '<span class="figarrow"><span aria-hidden="true">→</span>'+(label ? '<small>'+label+'</small>' : '')+'</span>';
+// Substrate and product of a step, side by side.
+function stepFigure(st, o){
+  o=o||{};
+  // Step 5: dihydroxyacetone phosphate is drawn upside down so that its phosphate lines up with the product's.
+  if(st.n===5) return figRow(fischer(st.s,Object.assign({},o,{flip:true}))+figArrow(o.arrow)+fischer(st.p,o));
+  const prod = st.p2 ? fischer(st.p2,o)+'<span class="figplus">+</span>'+fischer(st.p,o) : fischer(st.p,o);
+  return figRow(fischer(st.s,o)+figArrow(o.arrow)+prod);
+}
+
+/* ---------- 1. The pathway in order ---------- */
+const describe = k => MOL[k].c+' carbons, '+(MOL[k].p===0 ? 'no phosphate' : MOL[k].p===1 ? '1 phosphate' : '2 phosphates');
+function seqMsg(given, answer, what){
+  let k=0; while(k<answer.length && given[k]===answer[k]) k++;
+  if(k===0) return 'The first one is not right. Start with the '+what+' that comes earliest in the pathway.';
+  return 'The first '+(k===1 ? 'one is' : k+' are')+' right. Look again at what comes after '+answer[k-1].replace(/\.$/,'')+'.';
+}
+function makeOrder(prev){
+  for(let t=0;;t++){
+    const type=pick(['seqI','seqI','seqE','next','prev','prod','sub']);
+    if(t<20 && prev && prev.type===type) continue;
+    const names=LINE.map(k=>MOL[k].name);
+    if(type==='seqI' || type==='seqE'){
+      const len=5, start=rint(0,(type==='seqI' ? LINE.length : ENZ.length)-len);
+      const answer=(type==='seqI' ? names : ENZ).slice(start,start+len);
+      const what = type==='seqI' ? 'intermediate' : 'enzyme';
+      const part={type:'seq', label:'Put these '+what+'s in the order they appear in glycolysis.', items:scramble(answer), answer,
+        wrongMsg:g=>seqMsg(g,answer,what), show:answer.join(' → ')};
+      // The clues follow the shuffled order shown to the student, never the answer order.
+      const clue = type==='seqI'
+        ? '<ul class="clues">'+part.items.map(nm=>LINE.find(k=>MOL[k].name===nm)).map(k=>'<li><b>'+MOL[k].name+':</b> '+describe(k)+'</li>').join('')+'</ul>'
+        : '<ul class="clues">'+part.items.map(nm=>STEPS.find(s=>s.enz===nm)).map(s=>'<li><b>'+s.enz+':</b> '+TYPES[s.type]+'</li>').join('')+'</ul>';
+      return {kind:'order', type, ctx:'Glycolysis converts one glucose to two pyruvate in ten steps.', question:'These five '+what+'s are consecutive in the pathway, but they are shuffled here.',
+        parts:[part], blanks:{}, blankMsg:()=>'',
+        guided:lab(type==='seqI' ? 'Clue: the carbons and phosphates on each one' : 'Clue: what each enzyme does')+clue,
+        hints:[lab('Hint 1')+txt(type==='seqI' ? 'Follow the phosphates and the carbon count: phosphates are added in the first half, the six-carbon sugar is split into two three-carbon pieces, and the phosphates are handed to ADP in the second half.'
+                                               : 'Enzyme names describe the reaction. A kinase moves a phosphoryl group to or from ATP, an isomerase rearranges, and a dehydrogenase oxidizes.'),
+               lab('Hint 2')+txt('The first one is '+answer[0]+'.')],
+        solution:solWrap(['<b>In order:</b> '+answer.join(' → ')].concat(type==='seqI' ? STEPS.filter(s=>LINE.indexOf(s.s)>=start && LINE.indexOf(s.s)<start+len-1 && s.n!==5).map(s=>'Step '+s.n+', '+s.enz+': '+s.what) : STEPS.slice(start,start+len).map(s=>'Step '+s.n+', '+s.enz+': '+s.what)))};
+    }
+    const i = type==='next' ? pick([0,1,2,4,5,6,7,8]) : type==='prev' ? pick([1,2,3,5,6,7,8,9]) : 0;
+    let question, answer, pool=names, why, guided;
+    if(type==='next'){ answer=names[i+1]; question='Which intermediate comes immediately after '+names[i]+' on the way to pyruvate?';
+      const s=STEPS.find(x=>x.s===LINE[i] && x.p===LINE[i+1]); why='Step '+s.n+', '+s.enz+': '+s.what; guided=fischer(LINE[i],{cap:true}); }
+    else if(type==='prev'){ answer=names[i-1]; question='Which intermediate comes immediately before '+names[i]+'?';
+      const s=STEPS.find(x=>x.s===LINE[i-1] && x.p===LINE[i]); why='Step '+s.n+', '+s.enz+': '+s.what; guided=fischer(LINE[i],{cap:true}); }
+    else {
+      const s=pick(STEPS.filter(x=>x.n!==5));
+      if(type==='prod'){ answer=MOL[s.p].name; question='What is the product of the '+s.enz+' reaction'+(s.p2 ? ', other than '+MOL[s.p2].name : '')+'?'; guided=fischer(s.s,{cap:true}); }
+      else { answer=MOL[s.s].name; question='What is the substrate of '+s.enz+'?'; guided=fischer(s.p,{cap:true}); }
+      why='Step '+s.n+': '+s.eq+'. '+s.what;
+    }
+    const part={type:'choice', plain:true, label:'Choose one', options:options(answer, /aldolase/.test(question) ? pool : pool.concat(['dihydroxyacetone phosphate']),5), answer, show:answer,
+      wrongMsg:c=>'Not '+c+'. Think about what the enzyme at that point does to the molecule.'};
+    return {kind:'order', type, ctx:'Glycolysis converts one glucose to two pyruvate in ten steps.', question, parts:[part], blanks:{}, blankMsg:()=>'',
+      guided:lab('Clue: the structure you are starting from')+figRow(guided),
+      hints:[lab('Hint 1')+txt('Follow the phosphates and the carbon count: phosphates are added in the first half, the six-carbon sugar is split into two three-carbon pieces, and the phosphates are handed to ADP in the second half.'),
+             lab('Hint 2')+txt(why.split(': ')[0]+' is the step to think about.')],
+      solution:solWrap(['<b>'+cap(answer)+'.</b>', why])};
+  }
+}
+
+/* ---------- 2. Enzymes and reaction types ---------- */
+function makeEnzyme(prev){
+  let st; do{ st=pick(STEPS); }while(prev && prev.st===st);
+  const names = MOL[st.s].name+' → '+(st.p2 ? MOL[st.p2].name+' + ' : '')+MOL[st.p].name;
+  const TYPEWHY=[
+    'A phosphoryl transfer from ATP adds a phosphate to the substrate and leaves ADP.',
+    'An isomerization rearranges the atoms without adding or removing anything.',
+    'An aldol cleavage breaks a carbon-carbon bond and gives two smaller molecules.',
+    'An oxidation coupled to phosphorylation makes NADH and adds inorganic phosphate.',
+    'A phosphoryl transfer to ADP makes ATP and removes a phosphate from the substrate.',
+    'A phosphoryl shift moves a phosphate from one carbon to another in the same molecule.',
+    'A dehydration removes water and leaves a double bond.'];
+  const parts=[
+    {type:'choice', plain:true, label:'Which enzyme catalyzes this step?', options:options(st.enz,ENZ,5), answer:st.enz, show:st.enz,
+     wrongMsg:c=>{ const o=STEPS.find(x=>x.enz===c); return cap(c)+' catalyzes step '+o.n+': '+o.eq+'.'; }},
+    {type:'choice', plain:true, label:'What type of reaction is it?', options:options(TYPES[st.type],TYPES,5), answer:TYPES[st.type], show:TYPES[st.type],
+     wrongMsg:c=>TYPEWHY[TYPES.indexOf(c)]+' Compare the substrate and product again.'},
+    {type:'choice', plain:true, label:'What happens to ATP or NADH in this step?', options:CARRIERS, answer:CARRIERS[st.co], show:CARRIERS[st.co],
+     wrongMsg:c=>'Not here. '+(st.co===3 ? 'Neither ATP nor NADH takes part in this step.' : st.co===0 ? 'Look for a phosphate that is added from ATP.' : st.co===1 ? 'Look for a phosphate that is handed to ADP.' : 'Look for an oxidation: NAD⁺ accepts the electrons.')},
+    {type:'choice', plain:true, label:'In the cell, is this step essentially irreversible?', options:['yes','no'], answer:st.irr ? 'yes' : 'no', show:st.irr ? 'irreversible' : 'reversible',
+     wrongMsg:()=> st.irr ? 'This is one of the three steps with a large negative '+DG+' in the cell: hexokinase, phosphofructokinase-1, and pyruvate kinase.' : 'Only three steps are essentially irreversible: hexokinase, phosphofructokinase-1, and pyruvate kinase. The rest run close to equilibrium.'}
+  ];
+  return {kind:'enzyme', st, ctx:'Step '+st.n+' of glycolysis.', question:cap(names), parts, blanks:{}, blankMsg:()=>'',
+    guided:lab('Compare the substrate and the product. What changed?')+stepFigure(st,{cap:true,num:true}),
+    hints:[lab('Hint 1')+txt('The name of an enzyme describes its reaction. A kinase transfers a phosphoryl group to or from ATP. An isomerase or a mutase rearranges the molecule. A dehydrogenase oxidizes it. Aldolase splits it, and enolase makes an enol by removing water.'),
+           lab('Hint 2')+txt(st.what)],
+    solution:solWrap(['<b>'+cap(st.enz)+'.</b> '+st.eq, '<b>Reaction type:</b> '+TYPES[st.type]+'. '+st.what, '<b>Why it matters:</b> '+st.why,
+                      '<b>'+DG0+' = '+plus(fx(st.dG,1))+' kJ/mol.</b> '+(st.irr ? 'In the cell this step is far from equilibrium and essentially irreversible.' : 'In the cell this step runs close to equilibrium.')])};
+}
+
+/* ---------- 3. Structures ---------- */
+const CHANGES = {1:'a phosphoryl group was added to C-6', 2:'the aldehyde became a ketone: the carbonyl moved from C-1 to C-2', 3:'a phosphoryl group was added to C-1',
+  4:'the bond between C-3 and C-4 was broken', 5:'the ketone became an aldehyde: the carbonyl moved to an end carbon', 6:'C-1 was oxidized and gained a phosphoryl group',
+  7:'the phosphoryl group on C-1 was removed', 8:'the phosphoryl group is now on C-2 instead of C-3', 9:'water was removed, leaving a double bond',
+  10:'the phosphoryl group on C-2 was removed'};
+const CARBONQ = [
+  {m:'Glc', q:'Which carbon of glucose does hexokinase phosphorylate?', a:6, why:'Hexokinase adds the phosphoryl group to the hydroxyl on C-6, the primary alcohol (CH₂OH) at the end of the chain.'},
+  {m:'F6P', q:'Which carbon of fructose 6-phosphate does phosphofructokinase-1 phosphorylate?', a:1, why:'C-6 already has a phosphoryl group. The second one goes on the hydroxyl of C-1.'},
+  {m:'FBP', q:'Aldolase breaks the bond between C-3 and which other carbon of fructose 1,6-bisphosphate?', a:4, why:'The split is between C-3 and C-4, giving two three-carbon pieces.'},
+  {m:'G3P', q:'Which carbon of glyceraldehyde 3-phosphate is oxidized by glyceraldehyde 3-phosphate dehydrogenase?', a:1, why:'The aldehyde on C-1 is oxidized to the level of a carboxylic acid and is trapped as an acyl phosphate.'},
+  {m:'BPG', q:'Which carbon of 1,3-bisphosphoglycerate carries the phosphoryl group that is transferred to ADP?', a:1, why:'The acyl phosphate on C-1 has the high phosphoryl group transfer potential. The ester on C-3 stays.'},
+  {m:'PG2', q:'In the product of phosphoglycerate mutase, which carbon carries the phosphoryl group?', a:2, why:'After the mutase reaction the phosphoryl group is on C-2 instead of C-3.'},
+  {m:'PG2', q:'Enolase removes a hydroxyl group as water. Which carbon of 2-phosphoglycerate loses its hydroxyl?', a:3, why:'The proton comes from C-2 and the hydroxyl from C-3, leaving a double bond between them.'},
+  {m:'FBP', q:'Which carbon of fructose 1,6-bisphosphate carries the carbonyl group?', a:2, why:'Fructose is a ketose: the carbonyl is on C-2. That is where the Schiff base with aldolase forms.'}
+];
+function makeStructure(prev){
+  for(let t=0;;t++){
+    const type=pick(['name','name','change','change','carbon']);
+    if(type==='name'){
+      const k=pick(Object.keys(MOL)); if(t<20 && prev && prev.key===k) continue;
+      const answer=MOL[k].name, pool=Object.keys(MOL).map(x=>MOL[x].name);
+      const part={type:'choice', plain:true, label:'Which intermediate is this?', options:options(answer,pool,5), answer, show:answer,
+        wrongMsg:c=>{ const o=Object.keys(MOL).find(x=>MOL[x].name===c); return cap(c)+' has '+describe(o)+(MOL[o].c===MOL[k].c && MOL[o].p===MOL[k].p ? ', the same as this one, so look at where the carbonyl and the phosphate are.' : '. Count again.'); }};
+      return {kind:'structure', type, key:k, ctx:'A Fischer projection of one of the intermediates. The circled P is a phosphoryl group.', question:'Identify this intermediate.',
+        figure:figRow(fischer(k,{alt:'Structure to identify'})), parts:[part], blanks:{}, blankMsg:()=>'',
+        guided:lab('Count first')+txt('How many carbons? How many phosphoryl groups, and on which carbons? Is the top carbon an aldehyde, a carboxylate, or a CH₂ group?')+figRow(fischer(k,{num:true,alt:'The same structure with its carbons numbered'})),
+        hints:[lab('Hint 1')+txt('Count the carbons and the phosphoryl groups. Then look at the top carbon: an aldehyde means an aldose, a carboxylate means an acid.'),
+               lab('Hint 2')+txt('This one has '+describe(k)+'.')],
+        solution:solWrap(['<b>'+cap(answer)+'.</b> It has '+describe(k)+'.', figRow(fischer(k,{num:true,cap:true}))])};
+    }
+    if(type==='change'){
+      const st=pick(STEPS); if(t<20 && prev && prev.st===st) continue;
+      const parts=[
+        {type:'choice', plain:true, label:'What changed?', options:options(CHANGES[st.n],Object.keys(CHANGES).map(k=>CHANGES[k]),4), answer:CHANGES[st.n], show:CHANGES[st.n],
+         wrongMsg:()=>'Compare the two structures carbon by carbon, from the top down.'},
+        {type:'choice', plain:true, label:'Which enzyme does this?', options:options(st.enz,ENZ,5), answer:st.enz, show:st.enz,
+         wrongMsg:c=>{ const o=STEPS.find(x=>x.enz===c); return cap(c)+' catalyzes step '+o.n+': '+o.what; }}
+      ];
+      return {kind:'structure', type, st, ctx:'One step of glycolysis, shown as structures.', question:'Compare the substrate and the product.',
+        figure:stepFigure(st,{alt:'Structure'}), parts, blanks:{}, blankMsg:()=>'',
+        guided:lab('The same structures with the carbons numbered')+stepFigure(st,{num:true,alt:'Structure with numbered carbons'}),
+        hints:[lab('Hint 1')+txt('Go down the chain one carbon at a time. Look for a new or missing phosphoryl group, a carbonyl that has moved, or a change in the number of carbons.'),
+               lab('Hint 2')+txt('The substrate is '+MOL[st.s].name+'.')],
+        solution:solWrap(['<b>Step '+st.n+', '+st.enz+'.</b> '+st.eq, st.what, stepFigure(st,{num:true,cap:true})])};
+    }
+    const cq=pick(CARBONQ); if(t<20 && prev && prev.cq===cq) continue;
+    const n=MOL[cq.m].c, opts=[]; for(let i=1;i<=n;i++) opts.push('C-'+i);
+    const part={type:'choice', plain:true, label:'Choose the carbon', options:opts, answer:'C-'+cq.a, show:'C-'+cq.a,
+      wrongMsg:()=>'Not that one. Number the carbons from the top of the Fischer projection and look at what is attached to each.'};
+    return {kind:'structure', type, cq, ctx:'The carbons of '+MOL[cq.m].name+' are numbered from the top.', question:cq.q,
+      figure:figRow(fischer(cq.m,{num:true})), parts:[part], blanks:{}, blankMsg:()=>'',
+      guided:lab('Clue')+txt('Find the group the question is about, then read off the number of the carbon it is attached to.'),
+      hints:[lab('Hint 1')+txt('The carbons are numbered from the top. C-1 is the top carbon.'), lab('Hint 2')+txt(cq.why.split('. ')[0]+'.')],
+      solution:solWrap(['<b>C-'+cq.a+'.</b> '+cq.why, figRow(fischer(cq.m,{num:true,hi:[cq.a-1],cap:true}))])};
+  }
+}
+
+/* ---------- 4. Mechanisms ---------- */
+function makeMechanism(prev){
+  for(let t=0;;t++){
+    const m=pick(MECH), st=stepOf(m.step);
+    const doSeq = m.events && Math.random()<0.45;
+    const key=m.step+(doSeq ? 's' : 'q');
+    if(doSeq){
+      if(t<30 && prev && prev.key===key) continue;
+      const answer=m.events;
+      const part={type:'seq', long:true, label:'Put the events of the '+st.enz+' mechanism in order.', items:scramble(answer), answer,
+        wrongMsg:g=>{ let k=0; while(k<answer.length && g[k]===answer[k]) k++;
+          return k===0 ? 'The first event is not right. Ask what has to happen before any bond can be made or broken.' : 'The first '+(k===1 ? 'event is' : k+' events are')+' right. Think again about what must come next.'; },
+        show:''};
+      return {kind:'mechanism', key, ctx:'Step '+st.n+': '+st.eq, question:'How does '+st.enz+' carry out this reaction?',
+        figure:stepFigure(st,{cap:true}), parts:[part], blanks:{}, blankMsg:()=>'',
+        guided:lab('Clue')+txt('The first event is: '+answer[0]),
+        hints:[lab('Hint 1')+txt(st.mech), lab('Hint 2')+txt('The last event is: '+answer[answer.length-1])],
+        solution:solWrap(answer)};
+    }
+    const mq=pick(m.qs), qkey=m.step+':'+m.qs.indexOf(mq);
+    if(t<30 && prev && prev.key===qkey) continue;
+    const part={type:'choice', plain:true, long:true, label:'Choose one', options:shuffle([mq.a].concat(mq.d)), answer:mq.a, show:mq.a,
+      wrongMsg:()=>'Not that one. Think about what this enzyme has in its active site and what the reaction needs.'};
+    return {kind:'mechanism', key:qkey, ctx:'Step '+st.n+': '+st.eq, question:mq.q,
+      figure:stepFigure(st,{cap:true}), parts:[part], blanks:{}, blankMsg:()=>'',
+      guided:lab('The mechanism of '+st.enz)+(m.events ? olist(m.events) : txt(st.mech)),
+      hints:[lab('Hint 1')+txt(st.what), lab('Hint 2: the mechanism')+(m.events ? olist(m.events) : txt(st.mech))],
+      solution:solWrap(['<b>'+mq.a+'</b>', mq.why].concat(m.events ? ['<b>The mechanism in order:</b>'+olist(m.events)] : [st.mech]))};
+  }
+}
+
+/* ---------- 5. Energy accounting ---------- */
+const exact = (label, ans, errors, generic) => ({type:'num', label, unit:'', answer:ans, sf:null, tolRel:0, tolAbs:0.01, errAbs:0.01,
+  errors:errors.filter(e=>Math.abs(e.value-ans)>0.5), generic, show:String(ans)});
+function makeEnergy(prev){
+  let e; do{ e=pick(ENTRY); }while(prev && prev.e===e);
+  const n=rint(2,12), net=e.mk-e.inv;
+  const parts=[
+    exact('ATP invested', n*e.inv, [{value:e.inv, msg:'That is the number for one molecule. There are '+n+' of them.'},
+      {value:n*2, msg:'Two ATP are invested only when the pathway starts from free glucose. Check which investment steps this starting material still has to go through.'}],
+      'Not yet. Count every step that uses ATP on the way from this starting material to pyruvate, then multiply by '+n+'.'),
+    exact('ATP produced', n*e.mk, [{value:e.mk, msg:'That is the number for one molecule. There are '+n+' of them.'},
+      {value:n*e.mk/2, msg:'Steps 7 and 10 each make one ATP per triose. '+(e.pyr===2 ? 'Each six-carbon sugar gives two trioses, so the payoff phase runs twice.' : 'Count both steps.')},
+      {value:n*net, msg:'That is the net gain. This part asks for the total made in steps 7 and 10, before subtracting what was invested.'}],
+      'Not yet. Each triose that goes through the payoff phase makes 2 ATP: one in step 7 and one in step 10.'),
+    exact('Net ATP', n*net, [{value:n*e.mk, msg:'That is the total made. Subtract the ATP that was invested.'},
+      {value:net, msg:'That is the number for one molecule. There are '+n+' of them.'},
+      {value:n*2, msg:'A net of 2 per molecule is right for free glucose. This starting material is different, so recount the ATP invested and produced.'}],
+      'Not yet. Net ATP = ATP produced − ATP invested.'),
+    exact('NADH produced', n*e.nadh, [{value:e.nadh, msg:'That is the number for one molecule. There are '+n+' of them.'},
+      {value:n*e.nadh*2, msg:'Step 6 makes one NADH per triose, not two.'},
+      {value:n, msg:'Count one NADH for each triose that passes through step 6'+(e.name==='glycerol' ? ', plus the one made when glycerol 3-phosphate is oxidized.' : '.')}],
+      'Not yet. Step 6 makes one NADH for each glyceraldehyde 3-phosphate.'+(e.name==='glycerol' ? ' Add the one made when glycerol 3-phosphate is oxidized.' : ''))
+  ];
+  const cells=m=>cellRow(gcell(m,'ATP invested','i','ATP invested per molecule','',String(e.inv),false)+gcell(m,'ATP produced','m','ATP produced per molecule','',String(e.mk),false)+
+                         gcell(m,'NADH','h','NADH per molecule','',String(e.nadh),false));
+  const blanks={i:{want:e.inv,tol:0,abs:0.01}, m:{want:e.mk,tol:0,abs:0.01}, h:{want:e.nadh,tol:0,abs:0.01}};
+  const blankMsg=got=>{
+    const bad=k=>got[k] && !got[k].empty && !got[k].good;
+    if(bad('i')) return 'Check the ATP invested for one molecule. Which ATP-using steps does this starting material still have to pass through?';
+    if(bad('m')) return 'Check the ATP produced for one molecule. Steps 7 and 10 each make one ATP per triose.';
+    if(bad('h')) return 'Check the NADH for one molecule. Step 6 makes one NADH per triose.'+(e.name==='glycerol' ? ' Glycerol makes one more on its way in.' : '');
+    return '';
+  };
+  return {kind:'energy', e, ctx:'Counting ATP and NADH for the conversion to pyruvate.'+(e.route ? ' '+e.route : ''), question:n+' molecules of '+e.name+' are converted to pyruvate by glycolysis. Count the totals for all '+n+' molecules.',
+    parts, blanks, blankMsg,
+    guided:lab('Work it out for one molecule first, then multiply by '+n+'.')+cells('live'),
+    hints:[lab('Hint 1')+txt('In glycolysis, ATP is invested in steps 1 and 3. ATP is produced in steps 7 and 10, and NADH in step 6. Everything after the split at step 4 happens once for each triose.'+(e.route ? ' For this starting material, also count any ATP or NADH in the route described above.' : '')),
+           lab('Hint 2: for one molecule')+cells('ph')],
+    solution:solWrap(['<b>For one molecule.</b> '+e.how, 'ATP invested: '+e.inv+'. ATP produced: '+e.mk+'. Net ATP: '+net+'. NADH: '+e.nadh+'. Pyruvate: '+e.pyr+'.',
+      '<b>For '+n+' molecules.</b> ATP invested: '+n*e.inv+'. ATP produced: '+n*e.mk+'. Net ATP: <b>'+n*net+'</b>. NADH: <b>'+n*e.nadh+'</b>.'])};
+}
+
+/* ---------- 6. Free energy ---------- */
+const RT_NOTE='R = 8.315 J/(mol·K) and T = 310 K (37 °C), so RT = 2.58 kJ/mol. Assume '+DG0+' is the same at 37 °C as at 25 °C.';
+const EQ_DG=row(q(DG)+EQOP+q(DG0+' + RT ln Q'));
+const r3 = v => Number(Number(v).toPrecision(3));
+const jitter = v => r3(v*(0.45+Math.random()*1.9));
+// Steps that run close to equilibrium in the cell.
+const NEAR = [2,4,5,7,8,9];
+function makeFreeEnergy(prev){
+  for(let t=0;;t++){
+    const r0=Math.random(), type = r0<0.36 ? 'ratio' : r0<0.52 ? 'ratio4' : r0<0.68 ? 'split' : r0<0.84 ? 'keq' : 'sum';
+    if(type==='sum'){
+      const c=pick(COUPLE); if(t<20 && prev && prev.c===c) continue;
+      const ans=c.da+c.db;
+      const part={type:'num', label:DG0+' for the overall reaction', unit:'kJ/mol', answer:ans, sf:null, tolRel:0, tolAbs:0.06, errAbs:0.06, show:plus(fx(ans,1))+' kJ/mol',
+        errors:clean([{value:c.da-c.db, msg:'Add the two values, keeping the sign of each one.'},{value:-ans, msg:'The size is right but the sign is not. Add the two values with their signs.'},
+                      {value:Math.abs(c.da)+Math.abs(c.db), msg:'Keep the signs. One of these reactions is unfavorable and the other is favorable.'}], ans, 0.2),
+        generic:'Not yet. When reactions add up, their '+DG0+' values add up too.'};
+      const fav={type:'choice', plain:true, label:'Under standard conditions, is the overall reaction favorable?', options:['yes','no'], answer:ans<0 ? 'yes' : 'no', show:ans<0 ? 'favorable' : 'unfavorable',
+        wrongMsg:()=>'A negative '+DG0+' means the reaction is favorable under standard conditions.'};
+      return {kind:'free', type, c, ctx: typeof c.step==='number'
+          ? 'When reactions are added, their '+DG0+' values add too. This is how an unfavorable reaction is driven by a favorable one. The sum is thermodynamic bookkeeping only: the kinase transfers the phosphoryl group directly, and no free Pᵢ is formed.'
+          : 'Two reactions that share an intermediate can be added. This is how an unfavorable reaction is driven by a favorable one.',
+        question:'Add these two reactions to get '+(typeof c.step==='number' ? 'step '+c.step+' of glycolysis' : 'the combined reaction of steps '+c.step)+'.',
+        figure:'<div class="rxns"><div>'+c.a+'<span>'+DG0+' = '+plus(fx(c.da,1))+' kJ/mol</span></div><div>'+c.b+'<span>'+DG0+' = '+plus(fx(c.db,1))+' kJ/mol</span></div><div class="tot">'+c.sum+'<span>'+DG0+' = ?</span></div></div>',
+        parts:[part,fav], blanks:{}, blankMsg:()=>'',
+        guided:lab('Clue')+txt('Whatever is made in one reaction and used in the other cancels. The '+DG0+' values simply add, signs included.'),
+        hints:[lab('Hint 1')+txt('When two reactions are added, their '+DG0+' values are added.'), lab('Hint 2')+row(q('('+plus(fx(c.da,1))+') + ('+plus(fx(c.db,1))+') = ?'))],
+        solution:solWrap(['<b>Add the reactions.</b> '+c.sum, '<b>Add the values.</b> ('+plus(fx(c.da,1))+') + ('+plus(fx(c.db,1))+') = <b>'+plus(fx(ans,1))+' kJ/mol</b>',
+          ans<0 ? 'The overall reaction is favorable because the favorable half is larger than the unfavorable half.' : 'The overall reaction is unfavorable under standard conditions.'])};
+    }
+    if(type==='keq'){
+      const st=pick(STEPS); if(t<20 && prev && prev.st===st && prev.type===type) continue;
+      const xK=Number((-st.dG/2.48).toFixed(2)), ans=Math.exp(xK);   // with the RT given in the problem, so the worked lines reproduce
+      const part={type:'num', label:'K′eq', unit:'', answer:ans, sf:null, tolRel:0.04, show:sig(ans,2),
+        errors:clean([{value:Math.exp(st.dG/RT25), msg:'Watch the sign. K′eq = e^(−'+DG0+'/RT), so a positive '+DG0+' gives a K′eq smaller than 1.'},
+                      {value:Math.pow(10,-st.dG/RT25), msg:'Use the natural exponential, e^x, not 10^x.'},
+                      {value:Math.exp(-st.dG/(R_GAS*298)), msg:DG0+' is in kJ/mol, so RT must be in kJ/mol as well: 2.48 kJ/mol, not 2478 J/mol.'},
+                      {value:-st.dG/RT25, msg:'That is the exponent, −'+DG0+'/RT. K′eq is e raised to that power.'}], ans),
+        generic:'Not yet. '+DG0+' = −RT ln K′eq, so K′eq = e^(−'+DG0+'/RT).'};
+      const side={type:'choice', plain:true, label:'At equilibrium under standard conditions, which side is favored?', options:['products','reactants'], answer:st.dG<0 ? 'products' : 'reactants', show:st.dG<0 ? 'products' : 'reactants',
+        wrongMsg:()=>'A K′eq larger than 1 favors products. A K′eq smaller than 1 favors reactants.'};
+      const cells=m=>cellRow(gcell(m,'−'+DG0+'/RT','x','the exponent, minus delta G standard over RT','',fx(xK,2),false));
+      return {kind:'free', type, st, ctx:'Step '+st.n+', '+st.enz+': '+st.eq, question:'For this step, '+DG0+' = '+plus(fx(st.dG,1))+' kJ/mol. What is the equilibrium constant, K′eq? Standard values are for 25 °C (298 K), where RT = 2.48 kJ/mol.',
+        parts:[part,side], blanks:{x:{want:xK,tol:0.02}}, blankMsg:got=>(got.x && !got.x.empty && !got.x.good) ? 'Check the exponent: −('+plus(fx(st.dG,1))+' kJ/mol) ÷ 2.48 kJ/mol. Mind the sign.' : '',
+        guided:lab('Step 1: the exponent')+cells('live')+lab('Step 2')+row(q('K′eq = e<sup>−'+DG0+'/RT</sup>')),
+        hints:[lab('Hint 1')+row(q(DG0+' = −RT ln K′eq'))+row(q('K′eq = e<sup>−'+DG0+'/RT</sup>')), lab('Hint 2: the exponent')+cells('ph')],
+        solution:solWrap(['<b>Exponent.</b> −'+DG0+'/RT = −('+plus(fx(st.dG,1))+') ÷ 2.48 = '+fx(xK,2), '<b>K′eq</b> = e<sup>'+fx(xK,2)+'</sup> = <b>'+sig(ans,2)+'</b>',
+          ans<1 ? 'K′eq is smaller than 1: at equilibrium under standard conditions, reactants are favored. The step still goes forward in the cell when the products are kept at low concentration.' : 'K′eq is larger than 1: products are favored.'])};
+    }
+    // ΔG under cell conditions.
+    let st, top, bot, ks;
+    if(type==='ratio'){ st=pick([STEPS[1],STEPS[4],STEPS[7],STEPS[8]]); top=[st.p]; bot=[st.s]; }
+    else if(type==='ratio4'){ st=pick([STEPS[0],STEPS[2],STEPS[6],STEPS[9]]); const mk=st.co===1; top=[st.p, mk ? 'ATP' : 'ADP']; bot=[st.s, mk ? 'ADP' : 'ATP']; }
+    else { st=STEPS[3]; top=['DHAP','G3P']; bot=['FBP']; }
+    if(t<20 && prev && prev.st===st) continue;
+    ks=top.concat(bot);
+    const conc={}; ks.forEach(k=>{ conc[k]=jitter(CONC[k]); });
+    const sh=k=> MOL[k] ? MOL[k].short : k;
+    const prod=arr=>arr.reduce((p,k)=>p*conc[k],1);
+    const unitFix = type==='split' ? 1e-6 : 1;                         // two products over one reactant: µM must become M
+    if(NEAR.indexOf(st.n)>=0){
+      // Pick a free-energy change near zero, then set the first product's concentration to match it.
+      const aim = Math.random()<0.75 ? -(0.6+Math.random()*6) : 0.6+Math.random()*3;
+      const Qaim=Math.exp((aim-st.dG)/RT);
+      conc[top[0]]=r3(Qaim*prod(bot)/(prod(top.slice(1))*unitFix));
+      if(!(conc[top[0]]>=0.05 && conc[top[0]]<=20000)) continue;
+    }
+    const Q=prod(top)/prod(bot)*unitFix, rtq=Number((2.58*Math.log(r3(Q))).toFixed(2)), ans=st.dG+rtq;   // 2.58 and Q as displayed, so the worked lines reproduce
+    if(Math.abs(ans)<0.4 || Math.abs(ans)>60) continue;
+    const Qtext=frac(top.map(k=>'['+sh(k)+']').join(' '), bot.map(k=>'['+sh(k)+']').join(' '));
+    const Qsf=sig(Q,3);
+    const parts=[
+      {type:'num', label:'Q, the mass-action ratio'+(type==='split' ? ' (concentrations in mol/L)' : ''), unit:'', answer:Q, sf:null, tolRel:0.012, show:Qsf,
+       errors:clean([{value:1/Q, msg:'The ratio is upside down. Products go on top and reactants on the bottom.'}].concat(
+         type==='split' ? [{value:Q*1e6, msg:'The concentrations must be in mol/L, because the standard state is 1 M. With two products over one reactant the units do not cancel, so convert µM to M first.'},
+                           {value:Q*1e3, msg:'Convert micromolar to molar: 1 µM = 1 × 10⁻⁶ M.'}] : []), Q),
+       generic:'Not yet. Q = concentrations of the products multiplied together, divided by the concentrations of the reactants multiplied together.'},
+      {type:'num', label:DG+' under these conditions', unit:'kJ/mol', answer:ans, sf:null, tolRel:0, tolAbs:0.15, errAbs:0.12, show:plus(fx(ans,1))+' kJ/mol',
+       errors:clean([
+         {value:st.dG+RT*Math.log10(Q), msg:'Use the natural logarithm, ln, not log base 10.'},
+         {value:st.dG-RT*Math.log(Q), msg:'Check the ratio or the sign: it is '+DG0+' plus RT ln Q, with products over reactants in Q.'},
+         {value:st.dG+RT*1000*Math.log(Q), msg:'RT has to be in kJ/mol to match '+DG0+': 2.58 kJ/mol, not 2578 J/mol.'},
+         {value:RT*Math.log(Q), msg:'That is only the RT ln Q term. Add '+DG0+' to it.'},
+         {value:st.dG, msg:'That is '+DG0+', the value under standard conditions. The cell is not at standard conditions, so add RT ln Q.'}
+       ].concat(type==='split' ? [{value:st.dG+RT*Math.log(Q*1e6), msg:'The concentrations were left in µM. Convert them to mol/L before calculating Q.'}] : []), ans, 0.3),
+       generic:'Not yet. '+DG+' = '+DG0+' + RT ln Q, with RT = 2.58 kJ/mol.'},
+      {type:'choice', plain:true, label:'Which direction is spontaneous under these conditions?', options:['forward, toward the products','reverse, toward the reactants'],
+       answer:ans<0 ? 'forward, toward the products' : 'reverse, toward the reactants', show:ans<0 ? 'forward' : 'reverse',
+       wrongMsg:()=>'A negative '+DG+' means the reaction goes forward as written. A positive '+DG+' means it goes in reverse.'}
+    ];
+    const cells=m=>cellRow(gcell(m,'RT ln Q','rt','RT times the natural log of Q','kJ/mol',fx(rtq,2),false));
+    const blanks={rt:{want:rtq,tol:0.02,abs:0.06}};
+    const blankMsg=got=>{
+      const bad=k=>got[k] && !got[k].empty && !got[k].good;
+      if(bad('rt') && Math.abs(got.rt.v+RT*Math.log(Q))<=0.06) return 'The sign of RT ln Q is reversed, which usually means Q is upside down. Products go on top.';
+      if(bad('rt')) return 'Check RT ln Q: 2.58 kJ/mol times the natural log of Q.';
+      return '';
+    };
+    const concList=ks.map(k=>'['+sh(k)+'] = '+conc[k]+' µM').join(', ');
+    return {kind:'free', type, st, ctx:'Step '+st.n+', '+st.enz+': '+st.eq,
+      question:'In a cell at 37 °C the concentrations are '+concList+'. For this step, '+DG0+' = '+plus(fx(st.dG,1))+' kJ/mol. '+RT_NOTE,
+      parts, blanks, blankMsg, Q, conc, top, bot, unitFix,
+      guided:lab('Step 1: the mass-action ratio'+(type==='split' ? ', with concentrations in mol/L' : ''))+row(q('Q')+EQOP+Qtext)+lab('Step 2: the concentration term')+cells('live')+lab('Step 3')+EQ_DG,
+      hints:[lab('Hint 1')+EQ_DG+row(q('Q')+EQOP+Qtext)+(type==='split' ? txt('Here two products sit over one reactant, so the units do not cancel. Convert µM to M first.') : txt('The units cancel in this ratio, so µM can be used as given.')),
+             lab('Hint 2: the pieces')+cells('ph')],
+      solution:solWrap([
+        '<b>Q.</b> '+(type==='split' ? '('+conc.DHAP+' × 10⁻⁶)('+conc.G3P+' × 10⁻⁶) ÷ ('+conc.FBP+' × 10⁻⁶)' : '('+top.map(k=>conc[k]).join(' × ')+') ÷ ('+bot.map(k=>conc[k]).join(' × ')+')')+' = <b>'+Qsf+'</b>',
+        '<b>RT ln Q.</b> 2.58 kJ/mol × ln('+Qsf+') = '+plus(fx(rtq,2))+' kJ/mol',
+        '<b>'+DG+'.</b> ('+plus(fx(st.dG,1))+') + ('+plus(fx(rtq,2))+') = <b>'+plus(fx(ans,1))+' kJ/mol</b>',
+        ans<0 ? 'Negative, so the step goes forward under these conditions'+(st.dG>0 ? ', even though '+DG0+' is positive. Keeping the product concentration low pulls the reaction forward.' : '.')
+              : 'Positive, so under these particular conditions the step would run in reverse. Steps that sit close to equilibrium can go either way as concentrations shift.'])};
+  }
+}
+
+/* ---------- 7. Regulation ---------- */
+function makeRegulation(prev){
+  let r; do{ r=pick(REG); }while(prev && prev.r===r);
+  const base=Object.keys(REGTABLE).find(k=>r.enz.indexOf(k)===0);
+  const EFF=['activates','inhibits','has no direct effect on'];
+  const parts=[
+    {type:'choice', plain:true, label:'What does this signal do to the enzyme?', options:EFF.map(e=>e.replace(' on','')), answer:r.eff.replace(' on',''), show:r.eff.replace(' on',''),
+     wrongMsg:()=>'Ask what the signal says about the cell. Signs of plenty of energy or fuel slow glycolysis down. Signs of low energy speed it up.'},
+    {type:'choice', plain:true, long:true, label:'What kind of regulation is this?', options:KINDS, answer:KINDS[r.kind], also:(r.also||[]).map(k=>KINDS[k]), show:KINDS[r.kind],
+     wrongMsg:c=>c===KINDS[1] ? 'Product inhibition means the enzyme is inhibited by the product of its own reaction.' : c===KINDS[2] ? 'Feedforward activation means an intermediate made earlier in the pathway activates a later enzyme.' :
+                 c===KINDS[3] ? 'Covalent modification means a group such as phosphate is attached to the enzyme itself, usually in response to a hormone.' : 'Think about where this signal molecule comes from and how it reaches the enzyme.'}
+  ];
+  return {kind:'regulation', r, ctx:'Glycolysis is controlled at its three irreversible steps: hexokinase, phosphofructokinase-1, and pyruvate kinase.',
+    question:'How does '+r.sig+' affect '+r.enz+'?', parts, blanks:{}, blankMsg:()=>'',
+    guided:lab('Clue')+txt('First ask what the signal means. Is the cell rich in energy and building blocks, or short of them? Glycolysis should slow down when there is plenty and speed up when there is a shortage.'),
+    hints:[lab('Hint 1')+txt('Signals of plenty (ATP, citrate, acetyl-CoA, alanine) slow glycolysis. Signals of need (AMP, ADP) and signals that glucose is abundant speed it up.'),
+           lab('Hint 2: what regulates this enzyme')+txt(REGTABLE[base])],
+    solution:solWrap(['<b>It '+r.eff+' '+r.enz+'.</b> '+r.why, '<b>Kind of regulation:</b> '+KINDS[r.kind]+'.', REGTABLE[base]])};
+}
+
+/* ---------- 8. Fates of pyruvate ---------- */
+function makeFates(prev){
+  for(let t=0;;t++){
+    const type=pick(['cond','cond','count','count','why']);
+    if(type==='cond'){
+      const f=pick(FATES); if(t<20 && prev && prev.f===f) continue;
+      const parts=[
+        {type:'choice', plain:true, label:'What is pyruvate converted to?', options:FPRODS, answer:f.prod, show:f.prod,
+         wrongMsg:c=>c===FPRODS[2] ? 'Making acetyl-CoA needs mitochondria and, in the end, oxygen to reoxidize the NADH.' : c===FPRODS[1] ? 'Ethanol fermentation happens in yeast and some other microorganisms, not in animal cells.' : 'Lactate is made when NADH cannot be reoxidized by the mitochondria.'},
+        {type:'choice', plain:true, long:true, label:'Which enzyme or enzymes do it?', options:FENZ, answer:f.enz, show:f.enz,
+         wrongMsg:()=>'Match the enzyme to the product: lactate dehydrogenase makes lactate, pyruvate decarboxylase and alcohol dehydrogenase make ethanol, and the pyruvate dehydrogenase complex makes acetyl-CoA.'}
+      ];
+      return {kind:'fates', type, f, ctx:'Glycolysis ends at pyruvate. What happens next depends on the cell and on the oxygen supply.',
+        question:'What happens to pyruvate in '+f.cond+'?', parts, blanks:{}, blankMsg:()=>'',
+        guided:lab('Clue')+txt('Ask two things. Does this cell have mitochondria and enough oxygen to reoxidize NADH? Is it an animal cell or yeast?'),
+        hints:[lab('Hint 1')+txt('With oxygen and mitochondria, pyruvate is oxidized to acetyl-CoA. Without them, pyruvate is reduced so that NADH is turned back into NAD⁺.'),
+               lab('Hint 2')+txt('Animal cells reduce pyruvate to lactate. Yeast removes CO₂ first and reduces the product to ethanol.')],
+        solution:solWrap(['<b>'+cap(f.prod)+'</b>, made by '+f.enz+'.', f.prod===FPRODS[2] ? 'With oxygen available, NADH is reoxidized by the mitochondria, so pyruvate can be oxidized further for much more ATP. The pyruvate dehydrogenase complex catalyzes pyruvate + CoA + NAD⁺ → acetyl-CoA + CO₂ + NADH, using the bound cofactors thiamine pyrophosphate (TPP), lipoate, and FAD.' : 'Reducing pyruvate uses the NADH from step 6 and regenerates the NAD⁺ that glycolysis needs to keep going.'])};
+    }
+    if(type==='why'){
+      const fq=pick(FQ); if(t<20 && prev && prev.fq===fq) continue;
+      const part={type:'choice', plain:true, long:true, label:'Choose one', options:shuffle([fq.a].concat(fq.d)), answer:fq.a, show:fq.a,
+        wrongMsg:()=>'Not that one. Remember that fermentation makes no ATP of its own. Its job is to regenerate NAD⁺.'};
+      return {kind:'fates', type, fq, ctx:'Glycolysis ends at pyruvate. What happens next depends on the cell and on the oxygen supply.', question:fq.q, parts:[part], blanks:{}, blankMsg:()=>'',
+        guided:lab('Clue')+txt('Step 6 needs NAD⁺ and makes NADH. A cell has only a small pool of NAD⁺, so the NADH has to be turned back into NAD⁺ somehow.'),
+        hints:[lab('Hint 1')+txt('Fermentation exists to regenerate NAD⁺ when the mitochondria cannot do it.'), lab('Hint 2')+txt(fq.why.split('. ')[0]+'.')],
+        solution:solWrap(['<b>'+fq.a+'</b>', fq.why])};
+    }
+    const yeast=Math.random()<0.5, n=rint(2,12);
+    if(t<20 && prev && prev.type==='count' && prev.yeast===yeast) continue;
+    const parts = yeast ? [
+      exact('Ethanol produced', 2*n, [{value:n, msg:'Each glucose gives two pyruvate, and each pyruvate gives one ethanol.'}], 'Not yet. One ethanol is made from each pyruvate.'),
+      exact('CO₂ released', 2*n, [{value:n, msg:'Each glucose gives two pyruvate, and each pyruvate loses one CO₂.'},{value:6*n, msg:'Only one carbon of each pyruvate is lost as CO₂. The other two become ethanol.'}], 'Not yet. One CO₂ is released from each pyruvate.'),
+      exact('Net ATP', 2*n, [{value:4*n, msg:'That is the total made. Two ATP per glucose were invested, so the net is 2 per glucose.'},{value:0, msg:'Glycolysis still gives a net of 2 ATP per glucose. Fermentation itself makes none.'}], 'Not yet. The only ATP comes from glycolysis: a net of 2 per glucose.'),
+      exact('Net NADH', 0, [{value:2*n, msg:'The 2 NADH per glucose made in step 6 are used up by alcohol dehydrogenase, so none are left over.'}], 'Not yet. Count the NADH made in step 6 and the NADH used to reduce acetaldehyde.')
+    ] : [
+      exact('Lactate produced', 2*n, [{value:n, msg:'Each glucose gives two pyruvate, and each pyruvate gives one lactate.'}], 'Not yet. One lactate is made from each pyruvate.'),
+      exact('Net ATP', 2*n, [{value:4*n, msg:'That is the total made. Two ATP per glucose were invested, so the net is 2 per glucose.'},{value:0, msg:'Glycolysis still gives a net of 2 ATP per glucose. Lactate dehydrogenase makes none.'}], 'Not yet. The only ATP comes from glycolysis: a net of 2 per glucose.'),
+      exact('Net NADH', 0, [{value:2*n, msg:'The 2 NADH per glucose made in step 6 are used up by lactate dehydrogenase, so none are left over.'}], 'Not yet. Count the NADH made in step 6 and the NADH used to reduce pyruvate.')
+    ];
+    return {kind:'fates', type, yeast, ctx:yeast ? 'Ethanol fermentation: glucose → 2 ethanol + 2 CO₂' : 'Lactate fermentation: glucose → 2 lactate',
+      question:n+' molecules of glucose are fermented to '+(yeast ? 'ethanol by yeast' : 'lactate in a muscle cell')+' with no oxygen. Count the totals.', parts, blanks:{}, blankMsg:()=>'',
+      guided:lab('Clue')+txt('Glycolysis gives 2 pyruvate, a net of 2 ATP, and 2 NADH per glucose. Fermentation then uses one NADH for each pyruvate.'),
+      hints:[lab('Hint 1')+txt('Work it out for one glucose, then multiply by '+n+'.'), lab('Hint 2')+txt('Fermentation makes no ATP. It uses up exactly the NADH that glycolysis made.')],
+      solution:solWrap(['<b>Per glucose.</b> 2 pyruvate, net 2 ATP, 2 NADH from glycolysis. '+(yeast ? 'Each pyruvate loses one CO₂ and is reduced to ethanol, using one NADH.' : 'Each pyruvate is reduced to lactate, using one NADH.'),
+        '<b>For '+n+' glucose.</b> '+(yeast ? 'Ethanol: '+2*n+'. CO₂: '+2*n+'. ' : 'Lactate: '+2*n+'. ')+'Net ATP: '+2*n+'. Net NADH: 0.'])};
+  }
+}
+
+/* ---------- Carbon tracing ---------- */
+// Row (0-based) of molecule key that holds glucose carbon c, or -1 if it is not there.
+const rowOf = (key, c) => MOL[key].gc.findIndex(a=>a.indexOf(c)>=0);
+const PYR_POS = ['C-1, the carboxyl carbon','C-2, the carbonyl carbon','C-3, the methyl carbon'];
+const ETOH_POS = ['CO₂','ethanol, the CH₂OH carbon','ethanol, the CH₃ carbon'];
+
+/* ---------- 9. Pathway lab: trace a carbon, block a step ---------- */
+const LAC_POS = ['C-1, the carboxyl carbon','C-2, the carbon that carries the hydroxyl group','C-3, the methyl carbon'];
+function traceFigure(c){
+  const hi=k=>({num:true, cap:true, hi:[rowOf(k,c)]});
+  const first = c<=3 ? fischer('DHAP',hi('DHAP'))+figArrow('step 5') : '';
+  return figRow(fischer('Glc',hi('Glc'))+figArrow('steps 1 to 3')+fischer('FBP',hi('FBP'))+figArrow('step 4')+first+fischer('G3P',hi('G3P'))+figArrow('steps 6 to 10')+fischer('Pyr',hi('Pyr')));
+}
+function makeTracer(prev, want){
+  let c; do{ c = want || rint(1,6); }while(!want && prev && prev.c===c);
+  const end=pick(['pyruvate','pyruvate','lactate','ethanol']);
+  const pos=rowOf('Pyr',c);                                            // 0 carboxyl, 1 carbonyl, 2 methyl
+  const triose = c<=3 ? 'dihydroxyacetone phosphate' : 'glyceraldehyde 3-phosphate';
+  const parts=[
+    {type:'choice', plain:true, label:'Right after aldolase, which triose holds the label?', options:['dihydroxyacetone phosphate','glyceraldehyde 3-phosphate'], answer:triose, show:triose,
+     wrongMsg:()=>'Aldolase splits the bond between C-3 and C-4. Carbons 1 to 3 leave as dihydroxyacetone phosphate, and carbons 4 to 6 as glyceraldehyde 3-phosphate.'},
+    {type:'choice', plain:true, long:true, label:'Which carbon of pyruvate is labeled?', options:PYR_POS, answer:PYR_POS[pos], show:'pyruvate '+PYR_POS[pos],
+     wrongMsg:()=>'Not that one. The phosphorylated end of each triose (C-1 and C-6 of glucose) becomes the methyl group of pyruvate. The carbons at the split (C-3 and C-4) become the carboxyl group.'}
+  ];
+  if(end==='lactate') parts.push({type:'choice', plain:true, long:true, label:'The pyruvate is reduced to lactate. Which carbon of lactate is labeled?', options:LAC_POS, answer:LAC_POS[pos], show:'lactate '+LAC_POS[pos],
+     wrongMsg:()=>'Lactate dehydrogenase only reduces the carbonyl on C-2 to a hydroxyl group. No carbon moves, so the label stays at the same position.'});
+  if(end==='ethanol') parts.push({type:'choice', plain:true, long:true, label:'Yeast ferments the pyruvate. Where is the label now?', options:ETOH_POS, answer:ETOH_POS[pos], show:ETOH_POS[pos],
+     wrongMsg:()=>'Pyruvate decarboxylase removes the carboxyl carbon (C-1) as CO₂. C-2 becomes the CH₂OH carbon of ethanol, and C-3 stays as the CH₃ group.'});
+  return {kind:'tracer', c, end, ctx:'Glucose is made with a carbon-14 label on one carbon and is then broken down by glycolysis.',
+    question:'The label is on C-'+c+' of glucose. Follow it through the pathway.',
+    figure:figRow(fischer('Glc',{num:true, hi:[c-1], alt:'Glucose with carbon '+c+' highlighted'})), parts, blanks:{}, blankMsg:()=>'',
+    guided:lab('Clue: how the six carbons are divided')+txt('Aldolase cuts between C-3 and C-4. Carbons 1, 2, 3 become dihydroxyacetone phosphate and carbons 4, 5, 6 become glyceraldehyde 3-phosphate. '+
+      'Triose phosphate isomerase then turns the first into the second, so C-1 of glucose ends up in the same position as C-6, C-2 with C-5, and C-3 with C-4.')+
+      figRow(fischer('FBP',{num:true, cap:true, hi:[c-1]})),
+    hints:[lab('Hint 1')+txt('Aldolase cuts between C-3 and C-4. Triose phosphate isomerase then makes the two halves identical: C-1 of glucose is equivalent to C-6, C-2 to C-5, and C-3 to C-4.'),
+           lab('Hint 2')+txt('In glyceraldehyde 3-phosphate, the aldehyde carbon comes from C-3 or C-4 of glucose, and the phosphorylated carbon comes from C-1 or C-6. The aldehyde carbon becomes the carboxyl group of pyruvate.')],
+    solution:solWrap(['<b>The split.</b> C-'+c+' of glucose leaves aldolase in '+triose+'.'+(c<=3 ? ' Triose phosphate isomerase then converts it to glyceraldehyde 3-phosphate.' : ''),
+      '<b>Pyruvate.</b> C-'+c+' of glucose becomes '+PYR_POS[pos]+' of pyruvate. C-'+(7-c)+' of glucose ends up in the same position.'+traceFigure(c)].concat(end==='lactate' ? ['<b>Lactate.</b> Reduction does not move any carbon, so the label is on '+LAC_POS[pos]+'.'] :
+                             end==='ethanol' ? ['<b>Fermentation.</b> '+(pos===0 ? 'The carboxyl carbon is lost, so the label leaves as CO₂.' : 'The label stays in '+ETOH_POS[pos]+'.')] : []))};
+}
+const NETS = ['−2','−1','0','+2'];
+// Blocks whose lists of accumulating intermediates overlap are not offered as wrong answers for each other.
+const BUILD_GROUPS = [[5,6],[9,10]];
+const pathStrip = at => '<p class="strip">'+LINE.map((k,i)=>{
+    const n = i<4 ? i+1 : i+2;                                         // the step that uses this intermediate (step 5 is the side branch)
+    return MOL[k].short+(i<LINE.length-1 ? (n===at ? ' <b class="blocked">✗</b> ' : ' → ') : '');
+  }).join('')+'</p>';
+function makeBlock(prev){
+  let b; do{ b=pick(BLOCKS); }while(prev && prev.b===b);
+  const parts=[
+    {type:'choice', plain:true, label:b.ask || 'Which enzyme is affected?', options:options(b.enz,ENZ,5), answer:b.enz, show:b.enz,
+     wrongMsg:c=>{ const o=STEPS.find(x=>x.enz===c); return 'Not '+c+' (step '+o.n+'). Think about what this particular agent reacts with or resembles.'; }},
+    {type:'choice', plain:true, long:true, label:'What builds up?', options:options(b.build, BLOCKS.filter(x=>x===b || !BUILD_GROUPS.some(g=>g.indexOf(x.at)>=0 && g.indexOf(b.at)>=0)).map(x=>x.build).filter((x,i,a)=>a.indexOf(x)===i), 4), answer:b.build, show:b.build,
+     wrongMsg:()=>'Intermediates build up just before the blocked step, and those in equilibrium with them rise too.'},
+    {type:'choice', plain:true, label:'Net ATP per glucose (or glucose analog) that enters', options:NETS, answer:b.atp, show:b.atp+' ATP',
+     wrongMsg:()=>'Count the ATP spent before the block (steps 1 and 3) and the ATP made in any payoff steps that still run (steps 7 and 10, twice each per glucose).'}
+  ];
+  return {kind:'block', b, ctx:'Blocking one step shows what each part of the pathway does.', question:b.about,
+    parts, blanks:{}, blankMsg:()=>'',
+    guided:lab('Clue')+txt('Find the enzyme first. Everything before it piles up, and everything after it stops. Then count ATP: steps 1 and 3 each use one, and steps 7 and 10 each make two per glucose.'),
+    hints:[lab('Hint 1')+txt('Ask what the agent does chemically. Does it react with a thiol, tie up a metal ion, imitate phosphate, or imitate glucose?'),
+           lab('Hint 2')+txt('ATP is used in steps 1 and 3. Per glucose, step 7 makes 2 ATP and step 10 makes 2 ATP.')],
+    solution:solWrap(['<b>'+cap(b.enz)+'</b> (step '+b.at+').', b.why].concat(b.name==='Arsenate' || b.at===5 ? [] :
+      b.name==='2-Deoxyglucose' ? ['<p class="strip">2-deoxyglucose → 2-deoxyglucose 6-phosphate <b class="blocked">✗</b> (no isomerization)</p>'] : [pathStrip(b.at)]))};
+}
+
+function makeProblem(kind, prev){
+  if(kind==='order')      return makeOrder(prev);
+  if(kind==='enzyme')     return makeEnzyme(prev);
+  if(kind==='structure')  return makeStructure(prev);
+  if(kind==='mechanism')  return makeMechanism(prev);
+  if(kind==='energy')     return makeEnergy(prev);
+  if(kind==='free')       return makeFreeEnergy(prev);
+  if(kind==='regulation') return makeRegulation(prev);
+  if(kind==='tracer')     return makeTracer(prev, arguments[2]);
+  if(kind==='block')      return makeBlock(prev);
+  return makeFates(prev);
+}
+
+/* ---------- Reading and grading answers ---------- */
+// Reads what a student typed: 2.50, -25.7, +14.8, .25, 1.2e-3, 1.2 x 10^-3, with or without units after it.
+function parseInput(raw){
+  const s=String(raw).trim().replace(/,/g,'').replace(/[−–]/g,'-');
+  const m=s.match(/^([+-]?\s*(?:\d+\.?\d*|\.\d+))(?:\s*(?:[eE]|[x×*]\s*10\s*\^?\s*)([+-]?\d+))?/);
+  if(!m) return null;
+  const mant=m[1].replace(/\s+/g,'');
+  const value=Number(mant)*Math.pow(10, m[2] ? Number(m[2]) : 0);
+  if(!isFinite(value)) return null;
+  let d=mant.replace(/^[+-]/,''), sfMin, sfMax;
+  if(d.indexOf('.')>=0){ d=d.replace('.','').replace(/^0+/,''); sfMin=sfMax=Math.max(d.length,1); }
+  else { d=d.replace(/^0+/,''); sfMax=Math.max(d.length,1); sfMin=Math.max(d.replace(/0+$/,'').length,1); }
+  return {value, sfMin, sfMax};
+}
+// status: 'empty', 'invalid', 'correct', 'close' or 'wrong'.
+function gradePart(part, raw){
+  if(part.type==='choice'){
+    if(raw==null || raw==='') return {status:'empty'};
+    return (raw===part.answer || (part.also && part.also.indexOf(raw)>=0)) ? {status:'correct'} : {status:'wrong', msg:part.wrongMsg(raw)};
+  }
+  if(part.type==='seq'){
+    if(!raw || !raw.length) return {status:'empty'};
+    if(raw.length<part.answer.length) return {status:'invalid', msg:'Place all '+part.answer.length+' before checking.'};
+    return raw.every((x,i)=>x===part.answer[i]) ? {status:'correct'} : {status:'wrong', msg:part.wrongMsg(raw)};
+  }
+  if(String(raw).trim()==='') return {status:'empty'};
+  const inp=parseInput(raw);
+  if(!inp) return {status:'invalid', msg:'Enter your answer as a number, such as 12, −16.7, or 9.7e-5.'};
+  const v=inp.value, ans=part.answer, diff=Math.abs(v-ans);
+  const tol=Math.max((part.tolRel===undefined ? 0.01 : part.tolRel)*Math.abs(ans), part.tolAbs||0);
+  if(diff<=tol) return {status:'correct'};
+  for(const e of part.errors){
+    if(Math.abs(v-e.value)<=Math.max(0.012*Math.abs(e.value), part.errAbs||0)) return {status:'wrong', msg:e.msg};
+  }
+  if(diff<=3*tol) return {status:'close', msg:'Close. Keep extra digits through the middle steps and round only at the end.'};
+  return {status:'wrong', msg:part.generic};
+}
+
+if(typeof module!=='undefined' && module.exports){
+  module.exports={RT,RT25,MOL,LINE,STEPS,ENZ,TYPES,CARRIERS,MECH,REG,KINDS,ENTRY,CONC,COUPLE,FATES,FQ,BLOCKS,CARBONQ,CHANGES,
+                  fischer,stepFigure,makeProblem,makeTracer,makeBlock,rowOf,r3,NEAR,PYR_POS,ETOH_POS,parseInput,gradePart,shuffle,options};
+}
+
+
+/* ============================================================
+   Page code
+   ============================================================ */
+if(typeof document!=='undefined'){
+
+const $ = (s,r) => (r||document).querySelector(s);
+const view=$('#view'), nav=$('#tabs');
+const LET='abcdef';
+
+const TABS=[
+  {id:'map',        label:'Roadmap'},
+  {id:'order',      label:'The pathway in order', n:1},
+  {id:'enzyme',     label:'Enzymes and reaction types', n:2},
+  {id:'structure',  label:'Structures', n:3},
+  {id:'mechanism',  label:'Mechanisms', n:4},
+  {id:'energy',     label:'Energy accounting', n:5},
+  {id:'free',       label:'Free energy', n:6},
+  {id:'regulation', label:'Regulation', n:7},
+  {id:'fates',      label:'Fates of pyruvate', n:8},
+  {id:'lab',        label:'Pathway lab', n:9}
+];
+const META={
+  order:{title:'The pathway in order',
+    lede:'Ten steps turn one glucose into two pyruvate. The first five steps spend ATP and split the six-carbon sugar into two three-carbon pieces. The last five steps, which happen twice per glucose, harvest ATP and NADH. Learn the order by following the carbons and the phosphates.'},
+  enzyme:{title:'Enzymes and reaction types',
+    lede:'Only a few kinds of reaction occur in glycolysis: phosphoryl transfers, isomerizations, one cleavage, one oxidation, and one dehydration. Once you can see what changed between substrate and product, the name of the enzyme usually follows.'},
+  structure:{title:'Structures',
+    lede:'Every intermediate is drawn here as a Fischer projection, with a circled P for each phosphoryl group. To tell them apart, count the carbons, find the phosphates, and look at the top carbon.'},
+  mechanism:{title:'Mechanisms',
+    lede:'Each enzyme solves a chemical problem: how to move a carbonyl, how to break a carbon-carbon bond, how to save the energy of an oxidation. Knowing the intermediate that each enzyme uses explains why the pathway is built the way it is.'},
+  energy:{title:'Energy accounting',
+    lede:'ATP is spent in steps 1 and 3. ATP is made in steps 7 and 10, and NADH in step 6. Everything after the split at step 4 happens once for each three-carbon piece. Where a molecule enters the pathway decides how much it costs and how much it returns.'},
+  free:{title:'Free energy',
+    lede:'ΔG′° describes a reaction under standard conditions, with every reactant and product at 1 M, and it sets the equilibrium constant: ΔG′° = −RT ln K′eq. A cell is nowhere near standard conditions. The actual free-energy change is ΔG = ΔG′° + RT ln Q, where Q is the ratio of product to reactant concentrations in the cell. A step goes forward only when ΔG is negative.'},
+  regulation:{title:'Regulation',
+    lede:'Seven of the ten steps run close to equilibrium and simply follow the flow. The three steps that are far from equilibrium, catalyzed by hexokinase, phosphofructokinase-1, and pyruvate kinase, are where the cell controls the rate.'},
+  fates:{title:'Fates of pyruvate',
+    lede:'Glycolysis needs a steady supply of NAD⁺ for step 6. With oxygen, the mitochondria reoxidize NADH and pyruvate is oxidized further. Without oxygen, pyruvate itself is reduced so that NAD⁺ is regenerated.'},
+  lab:{title:'Pathway lab',
+    lede:'Three tools for putting the pieces together. Run the pathway one step at a time and watch the ATP and NADH ledger. Follow a labeled carbon from glucose to pyruvate. Or block one step and predict what happens.'}
+};
+const MODES=[
+  {id:'guided', label:'Guided'},
+  {id:'hint',   label:'Hints if I ask'},
+  {id:'solo',   label:'On my own'}
+];
+const NUMERIC={energy:true, free:true};
+const fresh = () => ({mode:'guided', P:null, misses:0, hint:0, done:false, solved:0, streak:0, partDone:[], seq:{}});
+const state={tab:'map', mapSel:null, mapFilter:'all', tool:'run',
+  order:fresh(), enzyme:fresh(), structure:fresh(), mechanism:fresh(), energy:fresh(), free:fresh(), regulation:fresh(), fates:fresh(),
+  tracer:fresh(), block:fresh(),
+  run:{i:0, stage:'enz', used:0, made:0, nadh:0, wrong:0, log:[], order:null, cross:true, fb:null}};
+
+/* ---------- Tabs ---------- */
+function renderTabs(){
+  nav.innerHTML=TABS.map(t=>
+    '<button role="tab" id="tab-'+t.id+'" aria-controls="view" data-tab="'+t.id+'"'+(t.n?' data-n="'+t.n+'"':'')+' aria-selected="'+(state.tab===t.id)+'">'+
+    (t.n?'<span class="tn">'+t.n+'</span>':'')+t.label+'</button>').join('');
+}
+nav.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-tab]'); if(!b) return;
+  state.tab=b.dataset.tab; render();
+  const sel=nav.querySelector('[aria-selected="true"]'); if(sel) sel.focus();   // keep keyboard focus on the tab
+});
+function render(){
+  renderTabs();
+  view.setAttribute('aria-labelledby','tab-'+state.tab);
+  view.onclick=null;
+  if(state.tab==='map') renderMap();
+  else if(state.tab==='lab') renderLab();
+  else renderPractice(state.tab);
+}
+
+/* ---------- Shared pieces for practice sections ---------- */
+function seqHTML(part, i, order, okCount){
+  return order.map((t,j)=>
+    '<li'+(j<okCount ? ' class="ok"' : '')+'><span class="seqtxt">'+t+'</span>'+
+    '<span class="seqbtns">'+
+      '<button type="button" class="mv" data-seq="'+i+':'+j+':-1"'+(j===0 ? ' disabled' : '')+' aria-label="Move up: '+t.replace(/"/g,'')+'">↑</button>'+
+      '<button type="button" class="mv" data-seq="'+i+':'+j+':1"'+(j===order.length-1 ? ' disabled' : '')+' aria-label="Move down: '+t.replace(/"/g,'')+'">↓</button>'+
+    '</span></li>').join('');
+}
+function partHTML(S, part, i, multi){
+  const letter = multi ? '('+LET[i]+') ' : '';
+  if(part.type==='seq'){
+    return '<li class="part block"><span class="plab" id="pl'+i+'">'+letter+part.label+' Use the arrows to move an item up or down.</span>'+
+      '<span class="pmark" id="pm'+i+'" aria-hidden="true"></span>'+
+      '<ol class="seq'+(part.long ? ' long' : '')+'" id="ps'+i+'" aria-labelledby="pl'+i+'">'+seqHTML(part,i,S.seq[i],0)+'</ol></li>';
+  }
+  if(part.type==='choice'){
+    return '<li class="part'+(part.long ? ' block' : '')+'"><span class="plab" id="pl'+i+'">'+letter+part.label+'</span>'+
+      '<span class="pctl"><span class="choice'+(part.long ? ' long' : '')+'" id="pc'+i+'" role="radiogroup" aria-labelledby="pl'+i+'">'+
+      part.options.map((o,j)=>'<label class="opt"><input type="radio" name="p'+i+'" value="'+j+'"><span>'+o+'</span></label>').join('')+
+      '</span><span class="pmark" id="pm'+i+'" aria-hidden="true"></span></span></li>';
+  }
+  return '<li class="part"><label class="plab" for="pin'+i+'">'+letter+part.label+'</label>'+
+    '<span class="pctl"><input id="pin'+i+'" class="pin" type="text" inputmode="text" autocomplete="off" spellcheck="false">'+
+    '<span class="unit">'+part.unit+'</span><span class="pmark" id="pm'+i+'" aria-hidden="true"></span></span></li>';
+}
+function setFb(type, html){
+  const fb=$('#fb'), ic={ok:'✓',bad:'✗',warn:'!',info:'i'}[type];
+  fb.className='fb show '+type;
+  fb.innerHTML='<span class="ic" aria-hidden="true">'+ic+'</span><div>'+html+'</div>';
+}
+function lock(){
+  document.querySelectorAll('#ans input, #ans button').forEach(el=>{ el.disabled=true; });
+}
+function readPart(S, parts, i){
+  if(parts[i].type==='seq') return S.seq[i];
+  if(parts[i].type==='choice'){ const c=$('#ans input[name="p'+i+'"]:checked'); return c ? parts[i].options[Number(c.value)] : ''; }
+  return $('#pin'+i).value;
+}
+function markPart(S, parts, i, good){
+  const part=parts[i], pm=$('#pm'+i);
+  const el = part.type==='seq' ? $('#ps'+i) : part.type==='choice' ? $('#pc'+i) : $('#pin'+i);
+  el.classList.remove('ok','no'); el.classList.add(good?'ok':'no');
+  pm.className='pmark '+(good?'ok':'no'); pm.textContent=good?'✓':'✗';
+  if(part.type==='seq'){
+    // Show how many from the top are already in the right place.
+    let k=0; while(k<part.answer.length && S.seq[i][k]===part.answer[k]) k++;
+    el.innerHTML=seqHTML(part,i,S.seq[i],k);
+  }
+  if(good){
+    if(part.type==='num') el.disabled=true;
+    else el.querySelectorAll('input, button').forEach(x=>{ x.disabled=true; });
+  }
+}
+
+/* ---------- Practice sections ---------- */
+function nextProblem(kind, arg){
+  const S=state[kind];
+  S.P=makeProblem(kind, S.P, arg); S.misses=0; S.hint=0; S.done=false; S.partDone=[]; S.seq={};
+  S.P.parts.forEach((p,i)=>{ if(p.type==='seq') S.seq[i]=p.items.slice(); });
+}
+// o.head replaces the section heading. o.extra is placed above the problem, and o.onExtra handles clicks in it.
+function renderPractice(kind, o){
+  o=o||{};
+  const S=state[kind];
+  if(!S.P) nextProblem(kind);
+  let head=o.head;
+  if(!head){ const m=META[kind], n=TABS.find(t=>t.id===kind).n; head='<h2>'+n+'. '+m.title+'</h2><p class="lede">'+m.lede+'</p>'+(kind==='free' ? dgTable() : ''); }
+  view.innerHTML=
+    '<section>'+head+
+    '<div class="modebar"><span class="modebar-label" id="ml">How much help</span>'+
+      '<div class="seg" id="modeseg" role="group" aria-labelledby="ml">'+
+      MODES.map(m=>'<button type="button" data-mode="'+m.id+'" aria-pressed="'+(S.mode===m.id)+'">'+m.label+'</button>').join('')+
+      '</div></div>'+
+    (o.extra ? '<div id="extra">'+o.extra+'</div>' : '')+
+    '<article class="problem" id="problem"></article>'+
+    '<p class="tally" id="tally"></p>'+
+    '</section>';
+  $('#modeseg').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-mode]'); if(!b) return;
+    setMode(kind, b.dataset.mode);
+  });
+  if(o.onExtra) $('#extra').addEventListener('click',o.onExtra);
+  $('#problem').addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b || b.disabled) return;
+    if(b.dataset.seq){ moveSeq(kind, b.dataset.seq); return; }
+    const act=b.dataset.act;
+    if(act==='hint'){ S.hint++; drawHelp(kind); drawActions(kind); }
+    else if(act==='solution'){ revealSolution(kind); }
+    else if(act==='next'){ nextProblem(kind); drawProblem(kind,true); if(o.onNew) o.onNew(); }
+    else if(act==='levelup'){ setMode(kind, S.mode==='guided' ? 'hint' : 'solo'); }
+  });
+  drawProblem(kind,false);
+}
+function moveSeq(kind, code){
+  const S=state[kind], p=code.split(':').map(Number), i=p[0], j=p[1], d=p[2], a=S.seq[i], k=j+d;
+  if(k<0 || k>=a.length) return;
+  const t=a[j]; a[j]=a[k]; a[k]=t;
+  const list=$('#ps'+i), pm=$('#pm'+i);
+  list.classList.remove('ok','no'); pm.className='pmark'; pm.textContent='';
+  list.innerHTML=seqHTML(S.P.parts[i],i,a,0);
+  // Keep the keyboard focus on the item that was moved.
+  const again=list.querySelector('[data-seq="'+i+':'+k+':'+d+'"]');
+  const f = again && !again.disabled ? again : list.querySelector('[data-seq="'+i+':'+k+':'+(-d)+'"]');
+  if(f) f.focus();
+}
+// Changing the help level keeps whatever the student has already entered.
+function setMode(kind, mode){
+  const S=state[kind];
+  S.mode=mode; S.hint=0;
+  view.querySelectorAll('#modeseg button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.mode===mode)));
+  if(S.done){ nextProblem(kind); drawProblem(kind,false); }
+  else { drawHelp(kind); drawActions(kind); }
+}
+function drawProblem(kind, focus){
+  const S=state[kind], P=S.P, multi=P.parts.length>1, single=P.parts[0];
+  const numOnly = !multi && single.type==='num';
+  $('#problem').innerHTML=
+    '<p class="ctx">'+P.ctx+'</p>'+
+    '<p class="q">'+P.question+'</p>'+
+    (P.figure || '')+
+    '<form id="ans" novalidate autocomplete="off">'+
+      '<div id="help"></div>'+
+      (numOnly
+        ? '<div class="ansrow"><label for="pin0">'+single.label+'</label>'+
+          '<input id="pin0" class="pin" type="text" inputmode="text" autocomplete="off" spellcheck="false">'+
+          '<span class="unit">'+single.unit+'</span><span class="pmark" id="pm0" aria-hidden="true"></span>'+
+          '<button class="btn primary" type="submit">Check answer</button></div>'
+        : '<ol class="parts">'+P.parts.map((p,i)=>partHTML(S,p,i,multi)).join('')+'</ol>'+
+          '<div class="checkrow"><button class="btn primary" type="submit">Check answer'+(multi?'s':'')+'</button></div>')+
+    '</form>'+
+    '<div id="fb" class="fb" role="status" aria-live="polite"></div>'+
+    '<div id="sol"></div>'+
+    '<div class="actions" id="actions"></div>';
+  $('#ans').addEventListener('submit',e=>{ e.preventDefault(); check(kind); });
+  drawHelp(kind); drawActions(kind); drawTally(kind);
+  if(focus){ const f=$('#help input')||$('#problem .pin')||$('#problem .opt input')||$('#problem .mv:not([disabled])'); if(f) f.focus(); }
+}
+function drawHelp(kind){
+  const S=state[kind], P=S.P;
+  // Keep anything already typed into the guided blanks.
+  const kept={}; document.querySelectorAll('#help input[data-k]').forEach(i=>{ kept[i.dataset.k]=i.value; });
+  let out='';
+  if(S.mode==='guided') out=P.guided;
+  else if(S.mode==='hint') out=P.hints.slice(0,S.hint).join('');
+  $('#help').innerHTML=out;
+  document.querySelectorAll('#help input[data-k]').forEach(i=>{ if(kept[i.dataset.k]) i.value=kept[i.dataset.k]; });
+}
+function drawActions(kind){
+  const S=state[kind]; let out='';
+  if(S.mode==='hint' && !S.done && S.hint<2)
+    out+='<button type="button" class="btn" data-act="hint">'+(S.hint===0?'Show a hint':'Show another hint')+'</button>';
+  if(!S.done && S.misses>=2)
+    out+='<button type="button" class="btn" data-act="solution">Show the answer and explanation</button>';
+  out+='<button type="button" class="btn'+(S.done?' primary':'')+'" data-act="next">'+(S.done?'Next question':'Skip to a new question')+'</button>';
+  $('#actions').innerHTML=out;
+}
+function drawTally(kind){
+  const S=state[kind];
+  $('#tally').textContent = S.solved===0 ? 'No questions answered correctly yet this session.'
+    : 'Answered correctly this session: '+S.solved+(S.streak>1 ? ' ('+S.streak+' in a row)' : '');
+}
+// Marks each filled blank right or wrong and returns the most useful message.
+function checkBlanks(P){
+  const res={any:false, allOK:true, msg:''}, got={};
+  Object.keys(P.blanks).forEach(k=>{
+    const i=$('#help input[data-k="'+k+'"]'); if(!i) return;
+    const raw=i.value.trim(), inp=parseInput(raw), v=inp ? inp.value : NaN;
+    i.classList.remove('ok','no'); i.removeAttribute('aria-invalid');
+    if(!raw){ res.allOK=false; got[k]={empty:true}; return; }
+    res.any=true;
+    const B=P.blanks[k];
+    const good=isFinite(v) && Math.abs(v-B.want)<=Math.max(B.tol*Math.abs(B.want), B.abs||0)+1e-12;
+    i.classList.add(good?'ok':'no'); if(!good){ i.setAttribute('aria-invalid','true'); res.allOK=false; }
+    got[k]={v, good};
+  });
+  res.msg=P.blankMsg(got)||'';
+  return res;
+}
+function check(kind){
+  const S=state[kind], P=S.P; if(S.done) return;
+  const multi=P.parts.length>1, tagOf=i=> multi ? '<b>('+LET[i]+')</b> ' : '';
+  const bl = S.mode==='guided' ? checkBlanks(P) : {any:false, allOK:true, msg:''};
+  const res=P.parts.map((part,i)=> S.partDone[i] ? {status:'done'} : gradePart(part, readPart(S,P.parts,i)));
+  const open=res.filter(r=>r.status!=='done');
+
+  if(open.every(r=>r.status==='empty')){
+    if(bl.any && bl.msg) setFb('bad','<p>'+bl.msg+'</p>');
+    else if(bl.any && bl.allOK) setFb('info','<p>The setup is right. Now finish the calculation and enter your answer'+(multi?'s':'')+'.</p>');
+    else if(bl.any) setFb('info','<p>Good so far. Fill in the remaining blanks, then calculate.</p>');
+    else setFb('info','<p>'+(P.parts.some(p=>p.type==='num') ? 'Enter' : 'Choose')+' your answer'+(multi?'s':'')+', then select Check answer'+(multi?'s':'')+'.</p>');
+    return;
+  }
+  const inv=res.findIndex(r=>r.status==='invalid');
+  if(inv>=0){ setFb('info','<p>'+tagOf(inv)+res[inv].msg+'</p>'); return; }
+
+  const wrong=[], newlyRight=[];
+  res.forEach((r,i)=>{
+    if(r.status==='correct'){ S.partDone[i]=true; markPart(S,P.parts,i,true); newlyRight.push(i); }
+    else if(r.status==='wrong' || r.status==='close'){ markPart(S,P.parts,i,false); wrong.push(i); }
+  });
+
+  if(P.parts.every((p,i)=>S.partDone[i])){
+    S.done=true; S.solved++; S.streak++;
+    const shown=P.parts.map((p,i)=>p.show ? (multi ? '('+LET[i]+') ' : '')+p.show : '').filter(Boolean);
+    let html = '<p><b>'+(multi ? 'All parts correct.' : 'Correct.')+'</b> '+shown.join('; ')+'</p>';
+    if(S.streak>=2 && S.mode!=='solo'){
+      html+='<p>That is '+S.streak+' in a row. Ready for less help?</p>'+
+            '<button type="button" class="btn inline" data-act="levelup">Try one '+(S.mode==='guided'?'with hints only if you ask':'on your own')+'</button>';
+    }
+    setFb('ok', html); lock();
+    $('#sol').innerHTML='<details class="soldet"'+(NUMERIC[kind] ? '' : ' open')+'><summary>'+(NUMERIC[kind] ? 'See the worked solution' : 'Why this is right')+'</summary>'+P.solution+'</details>';
+    drawActions(kind); drawTally(kind);
+    const nx=$('#actions [data-act="next"]'); if(nx) nx.focus();
+    return;
+  }
+  if(wrong.length){
+    S.misses++; S.streak=0;
+    let msg;
+    if(!multi) msg='<p>'+(bl.msg || res[0].msg)+'</p>';
+    else msg=(bl.msg ? '<p><b>Setup.</b> '+bl.msg+'</p>' : '')+wrong.map(i=>'<p>'+tagOf(i)+res[i].msg+'</p>').join('');
+    if(S.misses===2) msg+='<p>You can try again or open the explanation below.</p>';
+    const onlyClose = !bl.msg && wrong.every(i=>res[i].status==='close');
+    setFb(onlyClose ? 'warn' : 'bad', msg);
+  } else {
+    const todo=P.parts.map((p,i)=>i).filter(i=>!S.partDone[i]);
+    const rest='part'+(todo.length>1?'s ':' ')+todo.map(i=>'('+LET[i]+')').join(' and ');
+    const msg=(bl.msg ? '<p><b>Setup.</b> '+bl.msg+'</p>' : '')+
+      '<p>'+(newlyRight.length ? 'Right so far. ' : '')+'Now answer '+rest+'.</p>';
+    setFb(bl.msg ? 'bad' : 'info', msg);
+  }
+  drawActions(kind); drawTally(kind);
+}
+function revealSolution(kind){
+  const S=state[kind];
+  S.done=true; S.streak=0; lock();
+  $('#sol').innerHTML=S.P.solution;
+  setFb('info','<p>Read through the explanation, then try a new question.</p>');
+  drawActions(kind); drawTally(kind);
+}
+
+/* ---------- Reference table for the free-energy section ---------- */
+function dgTable(){
+  const max=32;
+  const bar=v=>{
+    const w=Math.abs(v)/max*50;
+    return '<span class="dgbar" aria-hidden="true"><span class="'+(v<0?'neg':'pos')+'" style="width:'+w.toFixed(1)+'%;'+(v<0 ? 'right:50%' : 'left:50%')+'"></span></span>';
+  };
+  return '<details class="how ref"><summary>Standard free-energy changes for the ten steps</summary>'+
+    '<table class="dgtbl"><thead><tr><th scope="col">Step</th><th scope="col">Enzyme</th><th scope="col" class="num">'+DG0+' (kJ/mol)</th><th scope="col"><span class="vh">Bar</span></th></tr></thead><tbody>'+
+    STEPS.map(s=>'<tr><td>'+s.n+'</td><td>'+s.enz+'</td><td class="num">'+plus(fx(s.dG,1))+'</td><td>'+bar(s.dG)+'</td></tr>').join('')+
+    '</tbody></table>'+
+    '<p class="helptext">Bars to the left are favorable under standard conditions, and bars to the right are unfavorable. '+
+    'Several steps have a positive '+DG0+' and still go forward in the cell, because the concentrations there make '+DG+' negative. '+
+    'Values are for pH 7 and 25 °C and follow Lehninger. For the hydrolysis of ATP, '+DG0+' = −30.5 kJ/mol.</p></details>';
+}
+
+/* ---------- Roadmap ---------- */
+const FILTERS=[
+  {id:'all',  label:'All steps',            test:()=>true},
+  {id:'use',  label:'Uses ATP',             test:s=>s.co===0},
+  {id:'make', label:'Makes ATP',            test:s=>s.co===1},
+  {id:'nadh', label:'Makes NADH',           test:s=>s.co===2},
+  {id:'irr',  label:'Irreversible and regulated', test:s=>s.irr},
+  {id:'iso',  label:'Isomerizations',       test:s=>s.type===1 || s.type===5}
+];
+function badges(s){
+  const twice=s.n>=6, out=[];
+  if(s.co===0) out.push('uses 1 ATP');
+  if(s.co===1) out.push('makes 2 ATP');
+  if(s.co===2) out.push('makes 2 NADH');
+  if(s.irr) out.push('irreversible');
+  return out.map(t=>'<span class="bdg">'+t+'</span>').join('');
+}
+function stepBtn(s){
+  const ph = s.n<=5 ? 'a' : 'b';
+  return '<button type="button" class="pstep '+ph+'" data-step="'+s.n+'" aria-pressed="false">'+
+    '<span class="pn">'+s.n+'</span><b>'+s.enz.replace('phospho','phospho\u00AD').replace('dehydro','dehydro\u00AD').replace('fructo','fructo\u00AD')+'</b>'+
+    '<small>'+MOL[s.s].short+' → '+(s.p2 ? MOL[s.p2].short+' + ' : '')+MOL[s.p].short+'</small>'+
+    '<span class="badges">'+badges(s)+'</span></button>';
+}
+function renderMap(){
+  view.innerHTML=
+    '<section>'+
+    '<h2>The pathway at a glance</h2>'+
+    '<p class="lede">Glycolysis breaks one six-carbon glucose into two three-carbon pyruvate in ten steps, in the cytosol, with no oxygen needed. Select any step to see its reaction, its structures, and how the enzyme works.</p>'+
+    '<div class="paths" role="group" aria-label="Highlight steps"><span class="lab">Highlight</span>'+
+      FILTERS.map(f=>'<button type="button" class="btn inline" style="margin-top:0" data-filter="'+f.id+'" aria-pressed="false">'+f.label+'</button>').join('')+'</div>'+
+    '<p class="phase a">Preparatory phase: 2 ATP are invested and the six-carbon sugar is split into two trioses</p>'+
+    '<div class="pgrid">'+STEPS.slice(0,5).map(stepBtn).join('')+'</div>'+
+    '<p class="phase b">Payoff phase: every step happens twice per glucose, giving 4 ATP and 2 NADH</p>'+
+    '<div class="pgrid">'+STEPS.slice(5).map(stepBtn).join('')+'</div>'+
+    '<div class="detail" id="detail" aria-live="polite"></div>'+
+    '<div class="builds"><h3>How to use this guide</h3><ul>'+
+      '<li><b>Sections 1 to 3</b> build the map in your head: the order of the steps, what each enzyme does, and what each intermediate looks like.</li>'+
+      '<li><b>Section 4</b> goes inside the enzymes: the intermediates and the catalytic strategies they use.</li>'+
+      '<li><b>Sections 5 and 6</b> are the bookkeeping: counting ATP and NADH, and using free energy to see why some steps are reversible and others are not.</li>'+
+      '<li><b>Sections 7 and 8</b> cover control of the pathway and what happens to pyruvate afterward.</li>'+
+      '<li><b>Section 9</b> lets you run the whole pathway, follow a labeled carbon, and predict the effect of an inhibitor.</li>'+
+      '<li>Each section has three levels of help. Start guided, then turn the help down as you improve. Questions change every time, and nothing is graded.</li>'+
+    '</ul></div>'+
+    '</section>';
+  view.onclick=e=>{
+    if(state.tab!=='map') return;
+    const f=e.target.closest('button[data-filter]'), s=e.target.closest('button[data-step]');
+    if(f){ state.mapFilter=f.dataset.filter; paintMap(); }
+    else if(s){ const n=Number(s.dataset.step); state.mapSel = state.mapSel===n ? null : n; paintMap(); }
+  };
+  paintMap();
+}
+function paintMap(){
+  const F=FILTERS.find(f=>f.id===state.mapFilter);
+  view.querySelectorAll('button[data-filter]').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.filter===state.mapFilter)));
+  view.querySelectorAll('button[data-step]').forEach(b=>{
+    const s=stepOf(Number(b.dataset.step));
+    b.classList.toggle('dim', !F.test(s) && state.mapSel!==s.n);
+    b.setAttribute('aria-pressed', String(state.mapSel===s.n));
+  });
+  const d=$('#detail');
+  if(!state.mapSel){
+    d.innerHTML='<p><b>Overall</b></p>'+
+      '<p class="ex">Glucose + 2 NAD⁺ + 2 ADP + 2 P<sub>i</sub> → 2 pyruvate + 2 NADH + 2 H⁺ + 2 ATP + 2 H₂O</p>'+
+      '<p style="margin-top:8px">Select a step above to see the details. The buttons after “Highlight” pick out the steps that share a feature.</p>';
+    return;
+  }
+  const s=stepOf(state.mapSel);
+  const effect = s.co===0 ? '1 ATP is used' : s.co===1 ? '1 ATP is made per triose, so 2 per glucose' : s.co===2 ? '1 NADH is made per triose, so 2 per glucose' : 'No ATP or NADH is involved';
+  d.innerHTML=
+    '<h3>Step '+s.n+': '+s.enz+'</h3>'+
+    '<p class="ex">'+s.eq+'</p>'+
+    stepFigure(s,{num:true,cap:true})+
+    '<table class="facts"><tbody>'+
+      '<tr><th scope="row">What happens</th><td>'+s.what+'</td></tr>'+
+      '<tr><th scope="row">Why it matters</th><td>'+s.why+'</td></tr>'+
+      '<tr><th scope="row">Reaction type</th><td>'+cap(TYPES[s.type])+'</td></tr>'+
+      '<tr><th scope="row">ATP and NADH</th><td>'+effect+'</td></tr>'+
+      '<tr><th scope="row">'+DG0+'</th><td>'+plus(fx(s.dG,1))+' kJ/mol. '+(s.irr ? 'In the cell this step is far from equilibrium and essentially irreversible.' : 'In the cell this step runs close to equilibrium and is easily reversed.')+'</td></tr>'+
+      '<tr><th scope="row">Regulation</th><td>'+s.reg+'</td></tr>'+
+      '<tr><th scope="row">How the enzyme works</th><td>'+s.mech+'</td></tr>'+
+    '</tbody></table>';
+}
+
+/* ---------- 9. Pathway lab ---------- */
+const TOOLS=[
+  {id:'run',    label:'Run the pathway'},
+  {id:'tracer', label:'Trace a carbon'},
+  {id:'block',  label:'Block a step'}
+];
+const labHead = () =>
+  '<h2>9. '+META.lab.title+'</h2><p class="lede">'+META.lab.lede+'</p>'+
+  '<div class="modebar"><span class="modebar-label" id="tl">Tool</span>'+
+    '<div class="seg" id="toolseg" role="group" aria-labelledby="tl">'+
+    TOOLS.map(t=>'<button type="button" data-tool="'+t.id+'" aria-pressed="'+(state.tool===t.id)+'">'+t.label+'</button>').join('')+
+  '</div></div>';
+function renderLab(){
+  view.onclick=null;
+  if(state.tool==='run') renderRun();
+  else if(state.tool==='tracer'){
+    renderPractice('tracer',{head:labHead(),
+      extra:'<div class="paths" role="group" aria-label="Choose the labeled carbon"><span class="lab">Put the label on</span>'+
+        [1,2,3,4,5,6].map(c=>'<button type="button" class="btn inline" style="margin-top:0" data-c="'+c+'" aria-pressed="'+(state.tracer.P && state.tracer.P.c===c)+'">C-'+c+'</button>').join('')+'</div>',
+      onExtra:e=>{ const b=e.target.closest('button[data-c]'); if(!b) return; nextProblem('tracer', Number(b.dataset.c)); drawProblem('tracer',false); paintCarbon(); },
+      onNew:paintCarbon});
+    paintCarbon();
+  }
+  else renderPractice('block',{head:labHead()});
+  $('#toolseg').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-tool]'); if(!b) return;
+    state.tool=b.dataset.tool; renderLab();
+    const tb=view.querySelector('#toolseg button[data-tool="'+state.tool+'"]'); if(tb) tb.focus();   // keep keyboard focus on the tool
+  });
+}
+function paintCarbon(){
+  view.querySelectorAll('button[data-c]').forEach(b=>b.setAttribute('aria-pressed', String(Number(b.dataset.c)===state.tracer.P.c)));
+}
+
+// Run the pathway: pick the enzyme, then say what the step does to ATP and NADH.
+function newRun(){
+  const R=state.run;
+  R.i=0; R.stage='enz'; R.used=0; R.made=0; R.nadh=0; R.wrong=0; R.log=[]; R.fb=null;
+  R.order=shuffle(ENZ);
+}
+const runMols = i => i<4 ? [[LINE[i],1]] : i===4 ? [['DHAP',1],['G3P',1]] : [[LINE[i-1],2]];
+function renderRun(){
+  const R=state.run;
+  if(!R.order) newRun();
+  view.innerHTML=
+    '<section>'+labHead()+
+    '<article class="problem" id="problem">'+
+      '<div class="labgrid">'+
+        '<div><h3>In the cell now</h3><div id="runfig"></div><div id="runask"></div></div>'+
+        '<div><h3>Ledger for one glucose</h3><div id="runledger"></div>'+
+          '<h3 style="margin-top:14px">Steps completed</h3><ol class="runlog" id="runlog"></ol></div>'+
+      '</div>'+
+      '<div id="fb" class="fb" role="status" aria-live="polite"></div>'+
+      '<div class="actions"><button type="button" class="btn" data-act="restart">Start over</button>'+
+        '<label class="chk"><input type="checkbox" id="cross"'+(R.cross ? ' checked' : '')+'> Cross off enzymes already used</label></div>'+
+    '</article></section>';
+  $('#problem').addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b || b.disabled) return;
+    if(b.dataset.act==='restart'){ newRun(); paintRun(true); }
+    else if(b.dataset.enz!==undefined) runEnzyme(Number(b.dataset.enz));
+    else if(b.dataset.eff!==undefined) runEffect(Number(b.dataset.eff));
+  });
+  $('#cross').addEventListener('change',e=>{ R.cross=e.target.checked; paintRun(false); });
+  paintRun(false);
+}
+function runEnzyme(k){
+  const R=state.run, st=STEPS[R.i], name=R.order[k];
+  if(name===st.enz){
+    R.stage='eff';
+    R.fb=['ok','<p><b>Yes, '+st.enz+'.</b> '+st.what+'</p>'];
+  } else {
+    R.wrong++;
+    const o=STEPS.find(x=>x.enz===name), have=runMols(R.i).map(m=>MOL[m[0]].name).join(' and ');
+    R.fb=['bad','<p>'+cap(name)+' acts on '+MOL[o.s].name+'. Right now you have '+have+'. What has to happen to it next?</p>'];
+  }
+  paintRun(true);
+}
+function runEffect(k){
+  const R=state.run, st=STEPS[R.i];
+  if(k===st.co){
+    const twice=st.n>=6;
+    let note='No ATP or NADH is involved.';
+    if(st.co===0){ R.used+=1; note='Uses 1 ATP.'; }
+    if(st.co===1){ R.made+=2; note='Makes 1 ATP per triose: 2 ATP per glucose.'; }
+    if(st.co===2){ R.nadh+=2; note='Makes 1 NADH per triose: 2 NADH per glucose.'; }
+    R.log.push('<b>'+cap(st.enz)+'.</b> '+MOL[st.s].short+' → '+(st.p2 ? MOL[st.p2].short+' + ' : '')+MOL[st.p].short+'. '+note);
+    R.i++; R.stage='enz';
+    R.fb = R.i<10 ? ['ok','<p><b>Right.</b> '+note+' '+st.why+'</p>']
+      : ['ok','<p><b>Pathway complete.</b> One glucose has become two pyruvate, with a net gain of 2 ATP and 2 NADH.</p>'+
+              '<p>Glucose + 2 NAD⁺ + 2 ADP + 2 P<sub>i</sub> → 2 pyruvate + 2 NADH + 2 H⁺ + 2 ATP + 2 H₂O</p>'+
+              '<p>'+(R.wrong===0 ? 'You made no wrong picks.' : 'Wrong picks along the way: '+R.wrong+'.')+' Select Start over to run it again with the enzymes in a new order.</p>'];
+  } else {
+    R.wrong++;
+    R.fb=['bad','<p>Not here. '+(st.co===3 ? 'Look again at the reaction: nothing is transferred to or from ATP, and nothing is oxidized.' : st.co===0 ? 'A phosphoryl group is being added to the sugar. Where does it come from?' :
+      st.co===1 ? 'A phosphoryl group leaves the substrate in this step. Where does it go?' : 'The aldehyde is oxidized in this step, so something has to accept the electrons.')+'</p>'];
+  }
+  paintRun(true);
+}
+function paintRun(focus){
+  const R=state.run, done=R.i>=10, st=STEPS[Math.min(R.i,9)];
+  $('#runfig').innerHTML=figRow(runMols(R.i).map(m=>fischer(m[0],{cap:true})+(m[1]>1 ? '<span class="times">× '+m[1]+'</span>' : '')).join('<span class="figplus">+</span>'));
+  let ask='';
+  if(done) ask='<p class="helptext"><b>Two pyruvate.</b> Go on to section 8 to see what happens to them.</p>';
+  else if(R.stage==='enz'){
+    ask='<p class="helplab" id="ra">Step '+(R.i+1)+' of 10. Which enzyme acts next?</p><div class="enzgrid" role="group" aria-labelledby="ra">'+
+      R.order.map((n,k)=>{
+        const used = R.cross && STEPS.findIndex(s=>s.enz===n)<R.i;
+        return '<button type="button" class="btn enzbtn'+(used ? ' used' : '')+'" data-enz="'+k+'"'+(used ? ' disabled' : '')+'>'+(used ? '✓ ' : '')+n+'</button>';
+      }).join('')+'</div>';
+  } else {
+    ask='<p class="helplab" id="ra">'+cap(st.enz)+': '+st.eq+'</p><p class="helplab">What does this step do to ATP or NADH?</p><div class="enzgrid" role="group" aria-labelledby="ra">'+
+      CARRIERS.map((c,k)=>'<button type="button" class="btn enzbtn" data-eff="'+k+'">'+cap(c)+'</button>').join('')+'</div>';
+  }
+  $('#runask').innerHTML=ask;
+  $('#runledger').innerHTML='<table class="note-tbl"><tbody>'+
+    '<tr><th scope="row">ATP used</th><td>'+R.used+'</td></tr>'+
+    '<tr><th scope="row">ATP made</th><td>'+R.made+'</td></tr>'+
+    '<tr><th scope="row">Net ATP</th><td>'+(R.made-R.used>0 ? '+' : R.made-R.used<0 ? '−' : '')+Math.abs(R.made-R.used)+'</td></tr>'+
+    '<tr><th scope="row">NADH made</th><td>'+R.nadh+'</td></tr>'+
+    '</tbody></table>';
+  $('#runlog').innerHTML = R.log.length ? R.log.map(t=>'<li>'+t+'</li>').join('') : '<li class="none">Nothing yet. Start with glucose.</li>';
+  const fb=$('#fb');
+  if(R.fb) setFb(R.fb[0], R.fb[1]); else { fb.className='fb'; fb.innerHTML=''; }
+  if(focus){ const f=$('#runask button:not([disabled])') || $('#problem [data-act="restart"]'); if(f) f.focus(); }
+}
+
+render();
+}

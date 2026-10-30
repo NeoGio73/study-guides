@@ -1,0 +1,8 @@
+# bulky screenshots and working copies, kept out of the repository
+**/shots/
+**/sheets/
+**/__pycache__/
+**/orig/
+**/orig_*.html
+glycolysis/shot_*.png
+node_modules/

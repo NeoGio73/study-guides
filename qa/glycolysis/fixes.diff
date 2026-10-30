@@ -1,0 +1,248 @@
+--- original.html	2026-10-30 09:21:41.589336801 -0400
++++ /path/to/study-guides/biochemistry/glycolysis-study-guide.html	2026-10-30 09:23:38.836311562 -0400
+@@ -264,7 +264,8 @@
+ .pstep[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+ .pstep[aria-pressed="true"] small{color:#fff}
+ .pstep[aria-pressed="true"] .pn,.pstep[aria-pressed="true"] .bdg{background:transparent}
+-.pstep.dim{opacity:.28}
++.pstep.dim{background:#fff;border-color:var(--line);color:var(--muted)}
++.pstep.dim small{color:var(--muted)}
+ .detail{margin-top:16px}
+ .detail h3{font-family:var(--serif);font-size:1.2rem;font-weight:600}
+ .facts{width:100%;border-collapse:collapse;font-size:.95rem}
+@@ -344,13 +345,13 @@
+   BPG:{name:'1,3-bisphosphoglycerate', short:'1,3-BPG', c:3, p:2, gc:[[3,4],[2,5],[1,6]],
+        rows:[{l:'O',lb:2,r:'O~P'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+   PG3:{name:'3-phosphoglycerate', short:'3-PG', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+-       rows:[{c:'COO⁻'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
++       rows:[{l:'O',lb:2,r:'O⁻'},{l:'H',r:'OH'},{c:'CH2O~P'}]},
+   PG2:{name:'2-phosphoglycerate', short:'2-PG', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+-       rows:[{c:'COO⁻'},{l:'H',r:'O~P'},{c:'CH2OH'}]},
++       rows:[{l:'O',lb:2,r:'O⁻'},{l:'H',r:'O~P'},{c:'CH2OH'}]},
+   PEP:{name:'phosphoenolpyruvate', short:'PEP', c:3, p:1, gc:[[3,4],[2,5],[1,6]],
+-       rows:[{c:'COO⁻'},{r:'O~P',db:true},{c:'CH2'}]},
++       rows:[{l:'O',lb:2,r:'O⁻'},{r:'O~P',db:true},{c:'CH2'}]},
+   Pyr:{name:'pyruvate', short:'pyruvate', c:3, p:0, gc:[[3,4],[2,5],[1,6]],
+-       rows:[{c:'COO⁻'},{r:'O',rb:2},{c:'CH3'}]}
++       rows:[{l:'O',lb:2,r:'O⁻'},{r:'O',rb:2},{c:'CH3'}]}
+ };
+ // The main line of the pathway, in order.
+ const LINE = ['Glc','G6P','F6P','FBP','G3P','BPG','PG3','PG2','PEP','Pyr'];
+@@ -751,14 +752,37 @@
+ const SUBS={'2':'₂','3':'₃'};
+ const grp = s => s.replace(/[23]/g, d=>SUBS[d]);
+ const tw = s => { let w=0; for(const ch of s) w += /[A-Z]/.test(ch) ? 10 : /[₂₃⁻]/.test(ch) ? 6.5 : 8; return w; };
++// A text alternative built from the rows, so the structure can be read without seeing it.
++const SAY = s => s.replace(/^HO$/,'OH').replace('~P','–phosphate').replace(/2/g,'₂').replace(/3/g,'₃');
++function fischerText(rows, flip){
++  const n=rows.length;
++  return 'Fischer projection, top to bottom: '+rows.map((r,i)=>{
++    const c=flip ? n-i : i+1, side=(s,b,w)=>(b===2 ? 'double-bonded ' : '')+SAY(s)+' on the '+w;
++    let t = r.c ? SAY(r.c) : [r.l ? side(r.l,r.lb,'left') : '', r.r ? side(r.r,r.rb,'right') : ''].filter(Boolean).join(', ');
++    if(r.db) t+=', double bond to C-'+(flip ? c-1 : c+1);
++    return 'C-'+c+': '+t;
++  }).join('; ')+'.';
++}
+ // Fischer projection as SVG. o.num numbers the carbons, o.hi highlights rows, o.cap shows the name.
++// Trigonal carbons are drawn with 120° bond angles: a top carbon with two groups (aldehyde, carboxylate, acyl phosphate)
++// is a 120° V, and a chain carbon with one double-bonded group sits to the side of the chain.
+ function fischer(key, o){
+   o=o||{};
+-  const M=MOL[key], rows=o.flip ? M.rows.slice().reverse() : M.rows, n=rows.length, rh=30, top=20, cx=o.num ? 84 : 66, W=cx+96, H=top+n*rh+(o.cap ? 16 : 0);
++  const M=MOL[key], rows=o.flip ? M.rows.slice().reverse() : M.rows, n=rows.length, rh=30, cx=o.num ? 84 : 66, W=cx+96;
++  const kink=rows.map((r,i)=> i>0 && i<n-1 && !r.c && !r.l && (r.rb===2 || r.db) ? rh/Math.sqrt(3) : 0);
++  const vee=!rows[0].c && rows[0].l && rows[0].r && (rows[0].lb===2 || rows[0].rb===2);
++  const top=vee ? (kink[1] ? 38 : 27) : 20, H=top+n*rh+(o.cap ? 16 : 0);
+   const ink='#1b2430';
+   let g='';
+   const T=(x,y,s,anchor)=>'<text x="'+x+'" y="'+y+'" font-size="15" text-anchor="'+(anchor||'start')+'" fill="'+ink+'">'+s+'</text>';
+-  const L=(x1,y1,x2,y2)=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+ink+'" stroke-width="1.4"/>';
++  const L=(x1,y1,x2,y2)=>'<line x1="'+(+x1.toFixed(2))+'" y1="'+(+y1.toFixed(2))+'" x2="'+(+x2.toFixed(2))+'" y2="'+(+y2.toFixed(2))+'" stroke="'+ink+'" stroke-width="1.4"/>';
++  // A bond between two atom centres, shortened by s1 and s2 so that it stops short of the letters.
++  const bond=(x1,y1,x2,y2,s1,s2,dbl)=>{
++    const d=Math.hypot(x2-x1,y2-y1), ux=(x2-x1)/d, uy=(y2-y1)/d, a=[x1+ux*s1,y1+uy*s1], b=[x2-ux*s2,y2-uy*s2];
++    if(!dbl) return L(a[0],a[1],b[0],b[1]);
++    const px=-uy*2.5, py=ux*2.5;
++    return L(a[0]+px,a[1]+py,b[0]+px,b[1]+py)+L(a[0]-px,a[1]-py,b[0]-px,b[1]-py);
++  };
+   // A group that may end in a circled P. Returns the SVG for it, starting at x (or ending at x when anchored at the end).
+   const group=(x,y,s)=>{
+     const hasP=/~P$/.test(s), t=grp(s.replace('~P',''));
+@@ -768,27 +792,39 @@
+     return out;
+   };
+   rows.forEach((r,i)=>{
+-    const y=top+i*rh+4;
++    const y=top+i*rh+4, ax=cx+kink[i];                             // baseline of the row, and x of its carbon
+     const ci=o.flip ? n-1-i : i;                                  // carbon index in the molecule's own numbering
+-    if(o.hi && o.hi.indexOf(ci)>=0) g+='<circle cx="'+cx+'" cy="'+(y-5)+'" r="12" fill="#ffd591" stroke="#dd962a" stroke-width="1.5"/>';
++    if(o.hi && o.hi.indexOf(ci)>=0) g+='<circle cx="'+(+ax.toFixed(2))+'" cy="'+(y-5)+'" r="12" fill="#ffd591" stroke="#dd962a" stroke-width="1.5"/>';
+     if(o.num) g+='<text x="'+(cx-62)+'" y="'+y+'" font-size="11" text-anchor="end" fill="#566070">'+(ci+1)+'</text>';
+     if(i<n-1){
+-      if(r.db) g+=L(cx-2.5,y+3,cx-2.5,y+rh-16)+L(cx+2.5,y+3,cx+2.5,y+rh-16);
+-      else g+=L(cx,y+3,cx,y+rh-16);
++      const bx=cx+kink[i+1];
++      g+= bx===ax ? bond(ax,y-5,bx,y+rh-5,8,11,r.db) : bond(ax,y-5,bx,y+rh-5,9,10,r.db);
+     }
+     if(r.c){ g+=group(cx-5,y,r.c); return; }
+-    g+=T(cx,y,'C','middle');
++    g+=T(+ax.toFixed(2),y,'C','middle');
++    if(i===0 && vee){
++      // The two groups sit 120° from the bond to C-2 and from each other.
++      const bx=cx+kink[1], d=Math.hypot(bx-ax,rh), ux=(bx-ax)/d, uy=rh/d;
++      const dirs=[120,-120].map(a=>{ const t=a*Math.PI/180; return [ux*Math.cos(t)-uy*Math.sin(t), ux*Math.sin(t)+uy*Math.cos(t)]; }).sort((p,q)=>p[0]-q[0]);
++      [[r.l,r.lb,dirs[0]],[r.r,r.rb,dirs[1]]].forEach(([s,b,u])=>{
++        const lx=ax+26*u[0], ly=y-5+26*u[1];
++        g+=bond(ax,y-5,lx,ly,8,8,b===2);
++        g+= /~P$/.test(s) ? group(+(lx-5).toFixed(2),+(ly+5).toFixed(2),s) : T(+lx.toFixed(2),+(ly+5).toFixed(2),grp(s),'middle');
++      });
++      return;
++    }
+     if(r.l){
+-      g+=T(cx-17,y,grp(r.l),'end');
+-      if(r.lb===2) g+=L(cx-15,y-7.5,cx-7,y-7.5)+L(cx-15,y-3,cx-7,y-3); else g+=L(cx-15,y-5,cx-7,y-5);
++      g+=T(ax-17,y,grp(r.l),'end');
++      if(r.lb===2) g+=L(ax-15,y-7.5,ax-7,y-7.5)+L(ax-15,y-3,ax-7,y-3); else g+=L(ax-15,y-5,ax-7,y-5);
+     }
+     if(r.r){
+-      if(r.rb===2) g+=L(cx+7,y-7.5,cx+15,y-7.5)+L(cx+7,y-3,cx+15,y-3); else g+=L(cx+7,y-5,cx+15,y-5);
+-      g+=group(cx+17,y,r.r);
++      if(r.rb===2) g+=L(ax+7,y-7.5,ax+15,y-7.5)+L(ax+7,y-3,ax+15,y-3); else g+=L(ax+7,y-5,ax+15,y-5);
++      g+=group(+(ax+17).toFixed(2),y,r.r);
+     }
+   });
+   if(o.cap) g+='<text x="'+(W/2)+'" y="'+(H-2)+'" font-size="11" text-anchor="middle" fill="#566070">'+M.short+'</text>';
+-  return '<svg class="fis" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="'+(o.alt || 'Structure of '+M.name)+'">'+g+'</svg>';
++  const label=(o.alt || 'Structure of '+M.name)+'. '+fischerText(rows,o.flip)+(o.hi && o.hi.length ? ' Highlighted: '+o.hi.map(h=>'C-'+(h+1)).join(', ')+'.' : '');
++  return '<svg class="fis" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="'+label+'">'+g+'</svg>';
+ }
+ const figRow = inner => '<div class="figrow">'+inner+'</div>';
+ const figArrow = label => '<span class="figarrow"><span aria-hidden="true">→</span>'+(label ? '<small>'+label+'</small>' : '')+'</span>';
+@@ -819,9 +855,10 @@
+       const what = type==='seqI' ? 'intermediate' : 'enzyme';
+       const part={type:'seq', label:'Put these '+what+'s in the order they appear in glycolysis.', items:scramble(answer), answer,
+         wrongMsg:g=>seqMsg(g,answer,what), show:answer.join(' → ')};
++      // The clues follow the shuffled order shown to the student, never the answer order.
+       const clue = type==='seqI'
+-        ? '<ul class="clues">'+LINE.slice(start,start+len).map(k=>'<li><b>'+MOL[k].name+':</b> '+describe(k)+'</li>').join('')+'</ul>'
+-        : '<ul class="clues">'+STEPS.slice(start,start+len).map(s=>'<li><b>'+s.enz+':</b> '+TYPES[s.type]+'</li>').join('')+'</ul>';
++        ? '<ul class="clues">'+part.items.map(nm=>LINE.find(k=>MOL[k].name===nm)).map(k=>'<li><b>'+MOL[k].name+':</b> '+describe(k)+'</li>').join('')+'</ul>'
++        : '<ul class="clues">'+part.items.map(nm=>STEPS.find(s=>s.enz===nm)).map(s=>'<li><b>'+s.enz+':</b> '+TYPES[s.type]+'</li>').join('')+'</ul>';
+       return {kind:'order', type, ctx:'Glycolysis converts one glucose to two pyruvate in ten steps.', question:'These five '+what+'s are consecutive in the pathway, but they are shuffled here.',
+         parts:[part], blanks:{}, blankMsg:()=>'',
+         guided:lab(type==='seqI' ? 'Clue: the carbons and phosphates on each one' : 'Clue: what each enzyme does')+clue,
+@@ -1031,8 +1068,10 @@
+         generic:'Not yet. When reactions add up, their '+DG0+' values add up too.'};
+       const fav={type:'choice', plain:true, label:'Under standard conditions, is the overall reaction favorable?', options:['yes','no'], answer:ans<0 ? 'yes' : 'no', show:ans<0 ? 'favorable' : 'unfavorable',
+         wrongMsg:()=>'A negative '+DG0+' means the reaction is favorable under standard conditions.'};
+-      return {kind:'free', type, c, ctx:'Two reactions that share an intermediate can be added. This is how an unfavorable reaction is driven by a favorable one.',
+-        question:'Add these two reactions to get '+(typeof c.step==='number' ? 'step '+c.step : 'steps '+c.step+' together')+' of glycolysis.',
++      return {kind:'free', type, c, ctx: typeof c.step==='number'
++          ? 'When reactions are added, their '+DG0+' values add too. This is how an unfavorable reaction is driven by a favorable one. The sum is thermodynamic bookkeeping only: the kinase transfers the phosphoryl group directly, and no free Pᵢ is formed.'
++          : 'Two reactions that share an intermediate can be added. This is how an unfavorable reaction is driven by a favorable one.',
++        question:'Add these two reactions to get '+(typeof c.step==='number' ? 'step '+c.step+' of glycolysis' : 'the combined reaction of steps '+c.step)+'.',
+         figure:'<div class="rxns"><div>'+c.a+'<span>'+DG0+' = '+plus(fx(c.da,1))+' kJ/mol</span></div><div>'+c.b+'<span>'+DG0+' = '+plus(fx(c.db,1))+' kJ/mol</span></div><div class="tot">'+c.sum+'<span>'+DG0+' = ?</span></div></div>',
+         parts:[part,fav], blanks:{}, blankMsg:()=>'',
+         guided:lab('Clue')+txt('Whatever is made in one reaction and used in the other cancels. The '+DG0+' values simply add, signs included.'),
+@@ -1042,7 +1081,7 @@
+     }
+     if(type==='keq'){
+       const st=pick(STEPS); if(t<20 && prev && prev.st===st && prev.type===type) continue;
+-      const ans=Math.exp(-st.dG/RT25);
++      const xK=Number((-st.dG/2.48).toFixed(2)), ans=Math.exp(xK);   // with the RT given in the problem, so the worked lines reproduce
+       const part={type:'num', label:'K′eq', unit:'', answer:ans, sf:null, tolRel:0.04, show:sig(ans,2),
+         errors:clean([{value:Math.exp(st.dG/RT25), msg:'Watch the sign. K′eq = e^(−'+DG0+'/RT), so a positive '+DG0+' gives a K′eq smaller than 1.'},
+                       {value:Math.pow(10,-st.dG/RT25), msg:'Use the natural exponential, e^x, not 10^x.'},
+@@ -1051,12 +1090,12 @@
+         generic:'Not yet. '+DG0+' = −RT ln K′eq, so K′eq = e^(−'+DG0+'/RT).'};
+       const side={type:'choice', plain:true, label:'At equilibrium under standard conditions, which side is favored?', options:['products','reactants'], answer:st.dG<0 ? 'products' : 'reactants', show:st.dG<0 ? 'products' : 'reactants',
+         wrongMsg:()=>'A K′eq larger than 1 favors products. A K′eq smaller than 1 favors reactants.'};
+-      const cells=m=>cellRow(gcell(m,'−'+DG0+'/RT','x','the exponent, minus delta G standard over RT','',fx(-st.dG/RT25,2),false));
++      const cells=m=>cellRow(gcell(m,'−'+DG0+'/RT','x','the exponent, minus delta G standard over RT','',fx(xK,2),false));
+       return {kind:'free', type, st, ctx:'Step '+st.n+', '+st.enz+': '+st.eq, question:'For this step, '+DG0+' = '+plus(fx(st.dG,1))+' kJ/mol. What is the equilibrium constant, K′eq? Standard values are for 25 °C (298 K), where RT = 2.48 kJ/mol.',
+-        parts:[part,side], blanks:{x:{want:-st.dG/RT25,tol:0.02}}, blankMsg:got=>(got.x && !got.x.empty && !got.x.good) ? 'Check the exponent: −('+plus(fx(st.dG,1))+' kJ/mol) ÷ 2.48 kJ/mol. Mind the sign.' : '',
++        parts:[part,side], blanks:{x:{want:xK,tol:0.02}}, blankMsg:got=>(got.x && !got.x.empty && !got.x.good) ? 'Check the exponent: −('+plus(fx(st.dG,1))+' kJ/mol) ÷ 2.48 kJ/mol. Mind the sign.' : '',
+         guided:lab('Step 1: the exponent')+cells('live')+lab('Step 2')+row(q('K′eq = e<sup>−'+DG0+'/RT</sup>')),
+         hints:[lab('Hint 1')+row(q(DG0+' = −RT ln K′eq'))+row(q('K′eq = e<sup>−'+DG0+'/RT</sup>')), lab('Hint 2: the exponent')+cells('ph')],
+-        solution:solWrap(['<b>Exponent.</b> −'+DG0+'/RT = −('+plus(fx(st.dG,1))+') ÷ 2.48 = '+fx(-st.dG/RT25,2), '<b>K′eq</b> = e<sup>'+fx(-st.dG/RT25,2)+'</sup> = <b>'+sig(ans,2)+'</b>',
++        solution:solWrap(['<b>Exponent.</b> −'+DG0+'/RT = −('+plus(fx(st.dG,1))+') ÷ 2.48 = '+fx(xK,2), '<b>K′eq</b> = e<sup>'+fx(xK,2)+'</sup> = <b>'+sig(ans,2)+'</b>',
+           ans<1 ? 'K′eq is smaller than 1: at equilibrium under standard conditions, reactants are favored. The step still goes forward in the cell when the products are kept at low concentration.' : 'K′eq is larger than 1: products are favored.'])};
+     }
+     // ΔG under cell conditions.
+@@ -1077,7 +1116,7 @@
+       conc[top[0]]=r3(Qaim*prod(bot)/(prod(top.slice(1))*unitFix));
+       if(!(conc[top[0]]>=0.05 && conc[top[0]]<=20000)) continue;
+     }
+-    const Q=prod(top)/prod(bot)*unitFix, ans=st.dG+RT*Math.log(Q);
++    const Q=prod(top)/prod(bot)*unitFix, rtq=Number((2.58*Math.log(r3(Q))).toFixed(2)), ans=st.dG+rtq;   // 2.58 and Q as displayed, so the worked lines reproduce
+     if(Math.abs(ans)<0.4 || Math.abs(ans)>60) continue;
+     const Qtext=frac(top.map(k=>'['+sh(k)+']').join(' '), bot.map(k=>'['+sh(k)+']').join(' '));
+     const Qsf=sig(Q,3);
+@@ -1100,8 +1139,8 @@
+        answer:ans<0 ? 'forward, toward the products' : 'reverse, toward the reactants', show:ans<0 ? 'forward' : 'reverse',
+        wrongMsg:()=>'A negative '+DG+' means the reaction goes forward as written. A positive '+DG+' means it goes in reverse.'}
+     ];
+-    const cells=m=>cellRow(gcell(m,'RT ln Q','rt','RT times the natural log of Q','kJ/mol',fx(RT*Math.log(Q),2),false));
+-    const blanks={rt:{want:RT*Math.log(Q),tol:0.02,abs:0.06}};
++    const cells=m=>cellRow(gcell(m,'RT ln Q','rt','RT times the natural log of Q','kJ/mol',fx(rtq,2),false));
++    const blanks={rt:{want:rtq,tol:0.02,abs:0.06}};
+     const blankMsg=got=>{
+       const bad=k=>got[k] && !got[k].empty && !got[k].good;
+       if(bad('rt') && Math.abs(got.rt.v+RT*Math.log(Q))<=0.06) return 'The sign of RT ln Q is reversed, which usually means Q is upside down. Products go on top.';
+@@ -1117,8 +1156,8 @@
+              lab('Hint 2: the pieces')+cells('ph')],
+       solution:solWrap([
+         '<b>Q.</b> '+(type==='split' ? '('+conc.DHAP+' × 10⁻⁶)('+conc.G3P+' × 10⁻⁶) ÷ ('+conc.FBP+' × 10⁻⁶)' : '('+top.map(k=>conc[k]).join(' × ')+') ÷ ('+bot.map(k=>conc[k]).join(' × ')+')')+' = <b>'+Qsf+'</b>',
+-        '<b>RT ln Q.</b> 2.58 kJ/mol × ln('+Qsf+') = '+plus(fx(RT*Math.log(Q),2))+' kJ/mol',
+-        '<b>'+DG+'.</b> ('+plus(fx(st.dG,1))+') + ('+plus(fx(RT*Math.log(Q),2))+') = <b>'+plus(fx(ans,1))+' kJ/mol</b>',
++        '<b>RT ln Q.</b> 2.58 kJ/mol × ln('+Qsf+') = '+plus(fx(rtq,2))+' kJ/mol',
++        '<b>'+DG+'.</b> ('+plus(fx(st.dG,1))+') + ('+plus(fx(rtq,2))+') = <b>'+plus(fx(ans,1))+' kJ/mol</b>',
+         ans<0 ? 'Negative, so the step goes forward under these conditions'+(st.dG>0 ? ', even though '+DG0+' is positive. Keeping the product concentration low pulls the reaction forward.' : '.')
+               : 'Positive, so under these particular conditions the step would run in reverse. Steps that sit close to equilibrium can go either way as concentrations shift.'])};
+   }
+@@ -1161,7 +1200,7 @@
+         guided:lab('Clue')+txt('Ask two things. Does this cell have mitochondria and enough oxygen to reoxidize NADH? Is it an animal cell or yeast?'),
+         hints:[lab('Hint 1')+txt('With oxygen and mitochondria, pyruvate is oxidized to acetyl-CoA. Without them, pyruvate is reduced so that NADH is turned back into NAD⁺.'),
+                lab('Hint 2')+txt('Animal cells reduce pyruvate to lactate. Yeast removes CO₂ first and reduces the product to ethanol.')],
+-        solution:solWrap(['<b>'+cap(f.prod)+'</b>, made by '+f.enz+'.', f.prod===FPRODS[2] ? 'With oxygen available, NADH is reoxidized by the mitochondria, so pyruvate can be oxidized further for much more ATP.' : 'Reducing pyruvate uses the NADH from step 6 and regenerates the NAD⁺ that glycolysis needs to keep going.'])};
++        solution:solWrap(['<b>'+cap(f.prod)+'</b>, made by '+f.enz+'.', f.prod===FPRODS[2] ? 'With oxygen available, NADH is reoxidized by the mitochondria, so pyruvate can be oxidized further for much more ATP. The pyruvate dehydrogenase complex catalyzes pyruvate + CoA + NAD⁺ → acetyl-CoA + CO₂ + NADH, using the bound cofactors thiamine pyrophosphate (TPP), lipoate, and FAD.' : 'Reducing pyruvate uses the NADH from step 6 and regenerates the NAD⁺ that glycolysis needs to keep going.'])};
+     }
+     if(type==='why'){
+       const fq=pick(FQ); if(t<20 && prev && prev.fq===fq) continue;
+@@ -1255,7 +1294,8 @@
+     guided:lab('Clue')+txt('Find the enzyme first. Everything before it piles up, and everything after it stops. Then count ATP: steps 1 and 3 each use one, and steps 7 and 10 each make two per glucose.'),
+     hints:[lab('Hint 1')+txt('Ask what the agent does chemically. Does it react with a thiol, tie up a metal ion, imitate phosphate, or imitate glucose?'),
+            lab('Hint 2')+txt('ATP is used in steps 1 and 3. Per glucose, step 7 makes 2 ATP and step 10 makes 2 ATP.')],
+-    solution:solWrap(['<b>'+cap(b.enz)+'</b> (step '+b.at+').', b.why].concat(b.name==='Arsenate' || b.at===5 ? [] : [pathStrip(b.at)]))};
++    solution:solWrap(['<b>'+cap(b.enz)+'</b> (step '+b.at+').', b.why].concat(b.name==='Arsenate' || b.at===5 ? [] :
++      b.name==='2-Deoxyglucose' ? ['<p class="strip">2-deoxyglucose → 2-deoxyglucose 6-phosphate <b class="blocked">✗</b> (no isomerization)</p>'] : [pathStrip(b.at)]))};
+ }
+ 
+ function makeProblem(kind, prev){
+@@ -1371,15 +1411,17 @@
+ /* ---------- Tabs ---------- */
+ function renderTabs(){
+   nav.innerHTML=TABS.map(t=>
+-    '<button role="tab" data-tab="'+t.id+'"'+(t.n?' data-n="'+t.n+'"':'')+' aria-selected="'+(state.tab===t.id)+'">'+
++    '<button role="tab" id="tab-'+t.id+'" aria-controls="view" data-tab="'+t.id+'"'+(t.n?' data-n="'+t.n+'"':'')+' aria-selected="'+(state.tab===t.id)+'">'+
+     (t.n?'<span class="tn">'+t.n+'</span>':'')+t.label+'</button>').join('');
+ }
+ nav.addEventListener('click',e=>{
+   const b=e.target.closest('button[data-tab]'); if(!b) return;
+   state.tab=b.dataset.tab; render();
++  const sel=nav.querySelector('[aria-selected="true"]'); if(sel) sel.focus();   // keep keyboard focus on the tab
+ });
+ function render(){
+   renderTabs();
++  view.setAttribute('aria-labelledby','tab-'+state.tab);
+   view.onclick=null;
+   if(state.tab==='map') renderMap();
+   else if(state.tab==='lab') renderLab();
+@@ -1755,6 +1797,7 @@
+   $('#toolseg').addEventListener('click',e=>{
+     const b=e.target.closest('button[data-tool]'); if(!b) return;
+     state.tool=b.dataset.tool; renderLab();
++    const tb=view.querySelector('#toolseg button[data-tool="'+state.tool+'"]'); if(tb) tb.focus();   // keep keyboard focus on the tool
+   });
+ }
+ function paintCarbon(){

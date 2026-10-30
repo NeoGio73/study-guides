@@ -1,0 +1,58 @@
+[
+ {
+  "name": "gases",
+  "viewport": "1280x900",
+  "counts": {
+   "tabs": 13,
+   "clicks": 222,
+   "sliderMoves": 115,
+   "selects": 10,
+   "fieldEntries": 144,
+   "submits": 65
+  },
+  "errors": [],
+  "issues": []
+ },
+ {
+  "name": "calorimetry",
+  "viewport": "1280x900",
+  "counts": {
+   "tabs": 7,
+   "clicks": 127,
+   "sliderMoves": 0,
+   "selects": 0,
+   "fieldEntries": 0,
+   "submits": 35
+  },
+  "errors": [],
+  "issues": []
+ },
+ {
+  "name": "gases",
+  "viewport": "390x844",
+  "counts": {
+   "tabs": 13,
+   "clicks": 222,
+   "sliderMoves": 115,
+   "selects": 10,
+   "fieldEntries": 144,
+   "submits": 65
+  },
+  "errors": [],
+  "issues": []
+ },
+ {
+  "name": "calorimetry",
+  "viewport": "390x844",
+  "counts": {
+   "tabs": 7,
+   "clicks": 127,
+   "sliderMoves": 0,
+   "selects": 0,
+   "fieldEntries": 0,
+   "submits": 35
+  },
+  "errors": [],
+  "issues": []
+ }
+]

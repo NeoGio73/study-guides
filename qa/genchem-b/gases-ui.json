@@ -1,0 +1,161 @@
+{
+ "N": 2000,
+ "sections": {
+  "pres": {
+   "count": 2000,
+   "byKind": {
+    "mc": 1143,
+    "num": 857
+   },
+   "fails": [],
+   "slipTried": 195,
+   "slipShown": 195,
+   "slipMissing": [],
+   "hintsOpened": 428
+  },
+  "boyle": {
+   "count": 2000,
+   "byKind": {
+    "mc": 1000,
+    "num": 1000
+   },
+   "fails": [],
+   "slipTried": 237,
+   "slipShown": 237,
+   "slipMissing": [],
+   "hintsOpened": 549
+  },
+  "charles": {
+   "count": 2000,
+   "byKind": {
+    "num": 1142,
+    "mc": 858
+   },
+   "fails": [],
+   "slipTried": 287,
+   "slipShown": 287,
+   "slipMissing": [],
+   "hintsOpened": 434,
+   "degTried": 571,
+   "degShown": 571
+  },
+  "gay": {
+   "count": 2000,
+   "byKind": {
+    "mc": 858,
+    "num": 1142
+   },
+   "fails": [],
+   "slipTried": 285,
+   "slipShown": 285,
+   "slipMissing": [],
+   "hintsOpened": 474,
+   "degTried": 142,
+   "degShown": 142
+  },
+  "comb": {
+   "count": 2000,
+   "byKind": {
+    "mc": 800,
+    "num": 1200
+   },
+   "fails": [],
+   "slipTried": 302,
+   "slipShown": 302,
+   "slipMissing": [],
+   "hintsOpened": 535,
+   "degTried": 200,
+   "degShown": 200
+  },
+  "ideal": {
+   "count": 2000,
+   "byKind": {
+    "mc": 769,
+    "num": 1231
+   },
+   "fails": [],
+   "slipTried": 314,
+   "slipShown": 314,
+   "slipMissing": [],
+   "hintsOpened": 523,
+   "degTried": 65,
+   "degShown": 65
+  },
+  "dens": {
+   "count": 2000,
+   "byKind": {
+    "num": 1000,
+    "mc": 1000
+   },
+   "fails": [],
+   "slipTried": 269,
+   "slipShown": 269,
+   "slipMissing": [],
+   "hintsOpened": 612
+  },
+  "dalton": {
+   "count": 2000,
+   "byKind": {
+    "num": 1286,
+    "mc": 714
+   },
+   "fails": [],
+   "slipTried": 285,
+   "slipShown": 285,
+   "slipMissing": [],
+   "hintsOpened": 472
+  },
+  "stoich": {
+   "count": 2000,
+   "byKind": {
+    "num": 1285,
+    "mc": 572,
+    "order": 143
+   },
+   "fails": [],
+   "slipTried": 304,
+   "slipShown": 304,
+   "slipMissing": [],
+   "hintsOpened": 486
+  },
+  "kmt": {
+   "count": 2000,
+   "byKind": {
+    "mc": 1143,
+    "num": 857
+   },
+   "fails": [],
+   "slipTried": 217,
+   "slipShown": 217,
+   "slipMissing": [],
+   "hintsOpened": 434
+  },
+  "real": {
+   "count": 2000,
+   "byKind": {
+    "mc": 1667,
+    "num": 333
+   },
+   "fails": [],
+   "slipTried": 74,
+   "slipShown": 74,
+   "slipMissing": [],
+   "hintsOpened": 220
+  },
+  "mix": {
+   "count": 2000,
+   "byKind": {
+    "num": 1853,
+    "mc": 147
+   },
+   "fails": [],
+   "slipTried": 446,
+   "slipShown": 446,
+   "slipMissing": [],
+   "hintsOpened": 667,
+   "degTried": 166,
+   "degShown": 166
+  }
+ },
+ "pageErrors": []
+}

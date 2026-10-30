@@ -1,0 +1,914 @@
+{
+ "lab": {
+  "single:2-Butanol:R": {
+   "formula": "C4H10O",
+   "stored_formula": "C4H10O",
+   "rdkit_center": "R",
+   "expected": "R",
+   "stored_cip": {
+    "2": "R"
+   },
+   "all_centers": {
+    "2": "R"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H10(H0)]",
+    "C4[C2(H1),C5(H3),H11(H0),H12(H0)]",
+    "C1[C2(H1),H6(H0),H7(H0),H8(H0)]",
+    "H9[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    9,
+    7,
+    6,
+    3
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    -0.0,
+    0.0,
+    -1.096
+   ],
+   "smiles": "CC[C@@H](C)O"
+  },
+  "single:2-Butanol:S": {
+   "formula": "C4H10O",
+   "stored_formula": "C4H10O",
+   "rdkit_center": "S",
+   "expected": "S",
+   "stored_cip": {
+    "2": "S"
+   },
+   "all_centers": {
+    "2": "S"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H10(H0)]",
+    "C4[C2(H1),C5(H3),H11(H0),H12(H0)]",
+    "C1[C2(H1),H6(H0),H7(H0),H8(H0)]",
+    "H9[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    9,
+    7,
+    6,
+    3
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    0.0,
+    -1.096
+   ],
+   "smiles": "CC[C@H](C)O"
+  },
+  "single:Lactic acid:R": {
+   "formula": "C3H6O3",
+   "stored_formula": "C3H6O3",
+   "rdkit_center": "R",
+   "expected": "R",
+   "stored_cip": {
+    "2": "R"
+   },
+   "all_centers": {
+    "2": "R"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H11(H0)]",
+    "C4[C2(H1),O5(H0),O6(H1)]",
+    "C1[C2(H1),H7(H0),H8(H0),H9(H0)]",
+    "H10[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    7,
+    6,
+    4,
+    1
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    -0.0,
+    -1.095
+   ],
+   "smiles": "C[C@@H](O)C(=O)O"
+  },
+  "single:Lactic acid:S": {
+   "formula": "C3H6O3",
+   "stored_formula": "C3H6O3",
+   "rdkit_center": "S",
+   "expected": "S",
+   "stored_cip": {
+    "2": "S"
+   },
+   "all_centers": {
+    "2": "S"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H11(H0)]",
+    "C4[C2(H1),O5(H0),O6(H1)]",
+    "C1[C2(H1),H7(H0),H8(H0),H9(H0)]",
+    "H10[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    7,
+    6,
+    4,
+    1
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    -0.0,
+    -1.095
+   ],
+   "smiles": "C[C@H](O)C(=O)O"
+  },
+  "single:Bromochlorofluoromethane:R": {
+   "formula": "CHBrClF",
+   "stored_formula": "CHBrClF",
+   "rdkit_center": "R",
+   "expected": "R",
+   "stored_cip": {
+    "2": "R"
+   },
+   "all_centers": {
+    "2": "R"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "Br4[C2(H1)]",
+    "Cl3[C2(H1)]",
+    "F1[C2(H1)]",
+    "H5[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    4,
+    3,
+    2,
+    0
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    -0.0,
+    -0.0,
+    -1.093
+   ],
+   "smiles": "F[C@H](Cl)Br"
+  },
+  "single:Bromochlorofluoromethane:S": {
+   "formula": "CHBrClF",
+   "stored_formula": "CHBrClF",
+   "rdkit_center": "S",
+   "expected": "S",
+   "stored_cip": {
+    "2": "S"
+   },
+   "all_centers": {
+    "2": "S"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "Br4[C2(H1)]",
+    "Cl3[C2(H1)]",
+    "F1[C2(H1)]",
+    "H5[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    4,
+    3,
+    2,
+    0
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    -0.0,
+    -1.093
+   ],
+   "smiles": "F[C@@H](Cl)Br"
+  },
+  "single:2-Propanol:R": {
+   "formula": "C3H8O",
+   "stored_formula": "C3H8O",
+   "rdkit_center": "none",
+   "expected": "none",
+   "stored_cip": {},
+   "all_centers": {},
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H9(H0)]",
+    "C1[C2(H1),H5(H0),H6(H0),H7(H0)]",
+    "C4[C2(H1),H10(H0),H11(H0),H12(H0)]",
+    "H8[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    5,
+    3,
+    3,
+    1
+   ],
+   "prio_order_ok": null,
+   "H_vector": [
+    -0.0,
+    -0.0,
+    -1.095
+   ],
+   "smiles": "CC(C)O"
+  },
+  "single:2-Propanol:S": {
+   "formula": "C3H8O",
+   "stored_formula": "C3H8O",
+   "rdkit_center": "none",
+   "expected": "none",
+   "stored_cip": {},
+   "all_centers": {},
+   "ok": true,
+   "priority_atoms": [
+    "O3[C2(H1),H9(H0)]",
+    "C1[C2(H1),H5(H0),H6(H0),H7(H0)]",
+    "C4[C2(H1),H10(H0),H11(H0),H12(H0)]",
+    "H8[C2(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    5,
+    3,
+    3,
+    1
+   ],
+   "prio_order_ok": null,
+   "H_vector": [
+    0.0,
+    -0.0,
+    -1.095
+   ],
+   "smiles": "CC(C)O"
+  },
+  "single:2-Aminobutanoic acid:R": {
+   "formula": "C4H9NO2",
+   "stored_formula": "C4H9NO2",
+   "rdkit_center": "R",
+   "expected": "R",
+   "stored_cip": {
+    "3": "R"
+   },
+   "all_centers": {
+    "3": "R"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "N4[C3(H1),H14(H0),H15(H0)]",
+    "C5[C3(H1),O6(H0),O7(H1)]",
+    "C2[C1(H3),C3(H1),H11(H0),H12(H0)]",
+    "H13[C3(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    9,
+    8,
+    6,
+    2
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    0.0,
+    -1.095
+   ],
+   "smiles": "CC[C@@H](N)C(=O)O"
+  },
+  "single:2-Aminobutanoic acid:S": {
+   "formula": "C4H9NO2",
+   "stored_formula": "C4H9NO2",
+   "rdkit_center": "S",
+   "expected": "S",
+   "stored_cip": {
+    "3": "S"
+   },
+   "all_centers": {
+    "3": "S"
+   },
+   "ok": true,
+   "priority_atoms": [
+    "N4[C3(H1),H14(H0),H15(H0)]",
+    "C5[C3(H1),O6(H0),O7(H1)]",
+    "C2[C1(H3),C3(H1),H11(H0),H12(H0)]",
+    "H13[C3(H1)]"
+   ],
+   "legacy_ranks_desc_should_decrease": [
+    9,
+    8,
+    6,
+    2
+   ],
+   "prio_order_ok": true,
+   "H_vector": [
+    0.0,
+    0.0,
+    -1.095
+   ],
+   "smiles": "CC[C@H](N)C(=O)O"
+  },
+  "pair:RR": {
+   "rdkit": "RR",
+   "expected": "RR",
+   "ok": true,
+   "smiles": "C[C@@H](Cl)[C@@H](C)Cl",
+   "centerH": [
+    "H10[C2(H1)]",
+    "H11[C4(H1)]"
+   ],
+   "chiral_centers": {
+    "2": "R",
+    "4": "R"
+   }
+  },
+  "pair:SS": {
+   "rdkit": "SS",
+   "expected": "SS",
+   "ok": true,
+   "smiles": "C[C@H](Cl)[C@H](C)Cl",
+   "centerH": [
+    "H10[C2(H1)]",
+    "H11[C4(H1)]"
+   ],
+   "chiral_centers": {
+    "2": "S",
+    "4": "S"
+   }
+  },
+  "pair:RS": {
+   "rdkit": "RS",
+   "expected": "RS",
+   "ok": true,
+   "smiles": "C[C@H](Cl)[C@@H](C)Cl",
+   "centerH": [
+    "H10[C2(H1)]",
+    "H11[C4(H1)]"
+   ],
+   "chiral_centers": {
+    "2": "R",
+    "4": "S"
+   }
+  },
+  "pair:SR": {
+   "rdkit": "SR",
+   "expected": "SR",
+   "ok": true,
+   "smiles": "C[C@H](Cl)[C@@H](C)Cl",
+   "centerH": [
+    "H10[C2(H1)]",
+    "H11[C4(H1)]"
+   ],
+   "chiral_centers": {
+    "2": "S",
+    "4": "R"
+   }
+  },
+  "pair_identities": {
+   "RS_eq_SR": true,
+   "RR_ne_SS": true,
+   "smiles": {
+    "RR": "C[C@@H](Cl)[C@@H](C)Cl",
+    "SS": "C[C@H](Cl)[C@H](C)Cl",
+    "RS": "C[C@H](Cl)[C@@H](C)Cl",
+    "SR": "C[C@H](Cl)[C@@H](C)Cl"
+   }
+  },
+  "mission5_view": {
+   "H_z": -1.096,
+   "H_direction": "away",
+   "path": "clockwise",
+   "keyed": "R",
+   "rdkit": "R"
+  },
+  "mission6_view": {
+   "H_z": 1.096,
+   "H_direction": "toward",
+   "path": "clockwise",
+   "keyed": "S",
+   "rdkit": "S"
+  }
+ },
+ "practice": {
+  "q1": {
+   "formula": "CHBrClF",
+   "smiles": "F[C@H](Cl)Br",
+   "atom_cip": {
+    "2": "R"
+   },
+   "bond_cip": {}
+  },
+  "q2": {
+   "formula": "C4H10O",
+   "smiles": "CC[C@H](C)O",
+   "atom_cip": {
+    "2": "S"
+   },
+   "bond_cip": {}
+  },
+  "q3": {
+   "formula": "C7H12",
+   "smiles": "C/C=C/C=C\\CC",
+   "atom_cip": {},
+   "bond_cip": {
+    "2=3": "E",
+    "4=5": "Z"
+   }
+  },
+  "q4": {
+   "formula": "C3H7NO2S",
+   "smiles": "N[C@@H](CS)C(=O)O",
+   "atom_cip": {
+    "2": "R"
+   },
+   "bond_cip": {}
+  },
+  "q5": {
+   "formula": "C13H18O2",
+   "smiles": "CC(C)Cc1ccc([C@H](C)C(=O)O)cc1",
+   "atom_cip": {
+    "11": "S"
+   },
+   "bond_cip": {}
+  },
+  "q6": {
+   "formula": "C6H12",
+   "smiles": "C/C=C(\\C)CC",
+   "atom_cip": {},
+   "bond_cip": {
+    "2=3": "E"
+   }
+  },
+  "q7": {
+   "formula": "C2HBrClF",
+   "smiles": "F/C(Br)=C/Cl",
+   "atom_cip": {},
+   "bond_cip": {
+    "2=4": "Z"
+   }
+  },
+  "q8": {
+   "formula": "C10H20O",
+   "smiles": "CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O",
+   "atom_cip": {
+    "4": "S",
+    "7": "R",
+    "10": "R"
+   },
+   "bond_cip": {}
+  },
+  "q9": {
+   "formula": "C4H6O6",
+   "smiles": "O=C(O)[C@@H](O)[C@@H](O)C(=O)O",
+   "atom_cip": {
+    "2": "S",
+    "3": "R"
+   },
+   "bond_cip": {}
+  },
+  "q10a": {
+   "formula": "C4H9Cl",
+   "smiles": "CC[C@H](C)Cl",
+   "atom_cip": {
+    "2": "S"
+   },
+   "bond_cip": {}
+  },
+  "q10b": {
+   "formula": "C4H9Cl",
+   "smiles": "CC[C@@H](C)Cl",
+   "atom_cip": {
+    "2": "R"
+   },
+   "bond_cip": {}
+  },
+  "q11a": {
+   "formula": "C4H8BrCl",
+   "smiles": "C[C@H](Cl)[C@H](C)Br",
+   "atom_cip": {
+    "2": "S",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q11b": {
+   "formula": "C4H8BrCl",
+   "smiles": "C[C@H](Cl)[C@@H](C)Br",
+   "atom_cip": {
+    "2": "R",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q13a": {
+   "formula": "C5H11Cl",
+   "smiles": "CCC[C@H](C)Cl",
+   "atom_cip": {
+    "2": "S"
+   },
+   "bond_cip": {}
+  },
+  "q13b": {
+   "formula": "C5H11Cl",
+   "smiles": "CC[C@@H](C)CCl",
+   "atom_cip": {
+    "3": "R"
+   },
+   "bond_cip": {}
+  },
+  "q14": {
+   "formula": "C8H16",
+   "smiles": "C[C@@H]1CCC[C@H](C)C1",
+   "atom_cip": {
+    "2": "R",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q15": {
+   "formula": "C11H22",
+   "smiles": "CC(C)(C)[C@H]1CC[C@@H](C)CC1",
+   "atom_cip": {
+    "2": "s",
+    "5": "s"
+   },
+   "bond_cip": {}
+  },
+  "q16": {
+   "formula": "C5H8",
+   "smiles": "CC=C=CC",
+   "atom_cip": {},
+   "bond_cip": {}
+  },
+  "q17": {
+   "formula": "C4H8Br2",
+   "smiles": "C[C@H](Br)[C@H](C)Br",
+   "atom_cip": {
+    "2": "S",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q18": {
+   "formula": "C4H9NO3",
+   "smiles": "C[C@@H](O)[C@H](N)C(=O)O",
+   "atom_cip": {
+    "2": "R",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q19": {
+   "formula": "C10H14O",
+   "smiles": "C=C(C)[C@H]1CC=C(C)C(=O)C1",
+   "atom_cip": {
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q20a": {
+   "formula": "C4H8Br2",
+   "smiles": "C[C@H](Br)[C@@H](C)Br",
+   "atom_cip": {
+    "2": "S",
+    "4": "R"
+   },
+   "bond_cip": {}
+  },
+  "q20b": {
+   "formula": "C4H8Br2",
+   "smiles": "C[C@H](Br)[C@@H](C)Br",
+   "atom_cip": {
+    "2": "R",
+    "4": "S"
+   },
+   "bond_cip": {}
+  },
+  "q12a": {
+   "formula": "C4H9Br",
+   "smiles": "CC[C@H](C)Br",
+   "atom_cip": {
+    "2": "S"
+   },
+   "bond_cip": {}
+  },
+  "q12b": {
+   "formula": "C4H9Br",
+   "smiles": "CC[C@H](C)Br",
+   "atom_cip": {
+    "2": "S"
+   },
+   "bond_cip": {}
+  }
+ },
+ "practice_detail": {
+  "q4_ref": {
+   "name": "L-cysteine",
+   "page": "N[C@@H](CS)C(=O)O",
+   "ref": "N[C@@H](CS)C(=O)O",
+   "match": true
+  },
+  "q5_ref": {
+   "name": "(S)-ibuprofen",
+   "page": "CC(C)Cc1ccc([C@H](C)C(=O)O)cc1",
+   "ref": "CC(C)Cc1ccc([C@H](C)C(=O)O)cc1",
+   "match": true
+  },
+  "q8_ref": {
+   "name": "(-)-menthol (1R,2S,5R)",
+   "page": "CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O",
+   "ref": "CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O",
+   "match": true
+  },
+  "q18_ref": {
+   "name": "L-threonine (2S,3R)",
+   "page": "C[C@@H](O)[C@H](N)C(=O)O",
+   "ref": "C[C@@H](O)[C@H](N)C(=O)O",
+   "match": true
+  },
+  "q19_ref": {
+   "name": "(S)-(+)-carvone",
+   "page": "C=C(C)[C@H]1CC=C(C)C(=O)C1",
+   "ref": "C=C(C)[C@H]1CC=C(C)C(=O)C1",
+   "match": true
+  },
+  "q1_achiral": false,
+  "q2_achiral": false,
+  "q3_achiral": true,
+  "q4_achiral": false,
+  "q5_achiral": false,
+  "q6_achiral": true,
+  "q7_achiral": true,
+  "q8_achiral": false,
+  "q9_achiral": true,
+  "q10a_achiral": false,
+  "q10b_achiral": false,
+  "q11a_achiral": false,
+  "q11b_achiral": false,
+  "q13a_achiral": false,
+  "q13b_achiral": false,
+  "q14_achiral": true,
+  "q15_achiral": true,
+  "q16_achiral": true,
+  "q17_achiral": false,
+  "q18_achiral": false,
+  "q19_achiral": false,
+  "q20a_achiral": true,
+  "q20b_achiral": true,
+  "q12a_achiral": false,
+  "q12b_achiral": false,
+  "Q1_q1_atoms": {
+   "2": "C2:Br4,Cl3,F1,H5 CIP=R"
+  },
+  "Q1_q1_reveal": {
+   "2": "R"
+  },
+  "Q2_q2_atoms": {
+   "2": "C2:C1,C4,H9,O3 CIP=S"
+  },
+  "Q2_q2_reveal": {
+   "2": "S"
+  },
+  "Q3_q5_atoms": {
+   "2": "C2:C1,C3,C4,H19",
+   "4": "C4:C2,C5,H23,H24",
+   "11": "C11:C12,C13,C8,H29 CIP=S",
+   "13": "C13:C11,O14,O15"
+  },
+  "Q3_q5_reveal": {
+   "11": "3 (S)"
+  },
+  "Q4_q8_atoms": {
+   "4": "C4:C10,C2,C5,H19 CIP=S",
+   "7": "C7:C6,C8,C9,H24 CIP=R",
+   "10": "C10:C4,C9,H30,O11 CIP=R"
+  },
+  "Q4_q8_reveal": {
+   "4": "C2: S",
+   "7": "C5: R",
+   "10": "C1: R"
+  },
+  "Q5_q6_atoms": {
+   "2": "C2:C1,C3,H10",
+   "3": "C3:C2,C4,C5"
+  },
+  "Q5_q6_reveal": {
+   "2": "E"
+  },
+  "Q6_q7_atoms": {
+   "2": "C2:Br3,C4,F1",
+   "4": "C4:C2,Cl5,H6"
+  },
+  "Q6_q7_reveal": {
+   "2": "Z"
+  },
+  "Q7_q3_atoms": {
+   "2": "C2:C1,C3,H11",
+   "3": "C3:C2,C4,H12",
+   "4": "C4:C3,C5,H13",
+   "5": "C5:C4,C6,H14"
+  },
+  "Q7_q3_reveal": {
+   "2": "C2=C3: E",
+   "5": "C4=C5: Z"
+  },
+  "Q8_q4_atoms": {
+   "2": "C2:C3,C5,H10,N1 CIP=R"
+  },
+  "Q8_q4_reveal": {
+   "2": "R"
+  },
+  "Q9_q10a_atoms": {
+   "2": "C2:C1,C4,Cl3,H9 CIP=S"
+  },
+  "Q9_q10a_reveal": {
+   "2": "S"
+  },
+  "Q9_q10b_atoms": {
+   "2": "C2:C1,C4,Cl3,H9 CIP=R"
+  },
+  "Q9_q10b_reveal": {
+   "2": "R"
+  },
+  "Q10_q11a_atoms": {
+   "2": "C2:Br3,C1,C4,H10 CIP=S",
+   "4": "C4:C2,C5,Cl6,H11 CIP=S"
+  },
+  "Q10_q11a_reveal": {
+   "2": "C2: S",
+   "4": "C3: S"
+  },
+  "Q10_q11b_atoms": {
+   "2": "C2:Br3,C1,C4,H10 CIP=R",
+   "4": "C4:C2,C5,Cl6,H11 CIP=S"
+  },
+  "Q10_q11b_reveal": {
+   "2": "C2: R",
+   "4": "C3: S"
+  },
+  "Q11_q12a_atoms": {
+   "2": "C2:Br3,C1,C4,H9 CIP=S"
+  },
+  "Q11_q12a_reveal": {
+   "2": "S"
+  },
+  "Q11_q12b_atoms": {
+   "2": "C2:Br3,C1,C4,H9 CIP=S"
+  },
+  "Q11_q12b_reveal": {
+   "2": "S"
+  },
+  "Q12_q13a_atoms": {
+   "2": "C2:C1,C4,Cl3,H10 CIP=S"
+  },
+  "Q12_q13a_reveal": {
+   "2": "S"
+  },
+  "Q12_q13b_atoms": {
+   "3": "C3:C2,C4,C5,H9 CIP=R"
+  },
+  "Q12_q13b_reveal": {
+   "3": "R"
+  },
+  "Q13_q18_atoms": {
+   "2": "C2:C1,C4,H12,O3 CIP=R",
+   "4": "C4:C2,C6,H14,N5 CIP=S"
+  },
+  "Q13_q18_reveal": {
+   "2": "C3: R",
+   "4": "C2: S"
+  },
+  "Q14_q9_atoms": {
+   "2": "C2:C3,C8,H12,O1 CIP=S",
+   "3": "C3:C2,C5,H13,O4 CIP=R"
+  },
+  "Q14_q9_reveal": {
+   "2": "C2: S",
+   "3": "C3: R"
+  },
+  "Q15_q17_atoms": {
+   "2": "C2:Br3,C1,C4,H10 CIP=S",
+   "4": "C4:Br6,C2,C5,H11 CIP=S"
+  },
+  "Q15_q17_reveal": {
+   "2": "C2: S",
+   "4": "C3: S"
+  },
+  "Q16_q20a_atoms": {
+   "2": "C2:Br3,C1,C4,H10 CIP=S",
+   "4": "C4:Br6,C2,C5,H11 CIP=R"
+  },
+  "Q16_q20a_reveal": {
+   "2": "C2: S",
+   "4": "C3: R"
+  },
+  "Q16_q20b_atoms": {
+   "2": "C2:Br3,C1,C4,H10 CIP=R",
+   "4": "C4:Br6,C2,C5,H11 CIP=S"
+  },
+  "Q16_q20b_reveal": {
+   "2": "C2: R",
+   "4": "C3: S"
+  },
+  "Q17_q14_atoms": {
+   "2": "C2:C1,C3,C8,H12 CIP=R",
+   "4": "C4:C3,C5,C6,H15 CIP=S"
+  },
+  "Q17_q14_reveal": {
+   "2": "C1: R",
+   "4": "C3: S"
+  },
+  "Q18_q15_atoms": {
+   "1": "C1:C2,H12,H13,H14",
+   "2": "C2:C1,C3,C7,H15 CIP=s",
+   "5": "C5:C4,C6,C8,H20 CIP=s",
+   "8": "C8:C10,C11,C5,C9"
+  },
+  "Q18_q15_reveal": {
+   "1": "axial",
+   "8": "equatorial"
+  },
+  "Q19_q19_atoms": {
+   "4": "C4:C11,C2,C5,H17 CIP=S"
+  },
+  "Q19_q19_reveal": {
+   "4": "S"
+  },
+  "Q20_q16_atoms": {
+   "2": "C2:C1,C3,H9",
+   "3": "C3:C2,C4",
+   "4": "C4:C3,C5,H10"
+  },
+  "Q20_q16_reveal": null,
+  "q14_geometry": {
+   "ringC2->C1": {
+    "angle_to_normal": 70.5,
+    "pos": "equatorial",
+    "face": -1
+   },
+   "ringC2->H12": {
+    "angle_to_normal": 1.7,
+    "pos": "axial",
+    "face": 1
+   },
+   "ringC4->C5": {
+    "angle_to_normal": 70.5,
+    "pos": "equatorial",
+    "face": -1
+   },
+   "ringC4->H15": {
+    "angle_to_normal": 1.7,
+    "pos": "axial",
+    "face": 1
+   },
+   "cis": true
+  },
+  "q15_geometry": {
+   "ringC2->C1": {
+    "angle_to_normal": 11.0,
+    "pos": "axial",
+    "face": -1
+   },
+   "ringC2->H15": {
+    "angle_to_normal": 62.2,
+    "pos": "equatorial",
+    "face": 1
+   },
+   "ringC5->C8": {
+    "angle_to_normal": 75.2,
+    "pos": "equatorial",
+    "face": -1
+   },
+   "ringC5->H20": {
+    "angle_to_normal": 1.7,
+    "pos": "axial",
+    "face": 1
+   },
+   "cis": true
+  },
+  "q16_atoms": {
+   "1": "C1:C2,H6,H7,H8",
+   "2": "C2:C1,C3,H9",
+   "3": "C3:C2,C4",
+   "4": "C4:C3,C5,H10",
+   "5": "C5:C4,H11,H12,H13"
+  },
+  "q16_CH3_C_C_CH3_dihedral": 87.6,
+  "q16_C=C=C_angle": 179.0,
+  "q12a_dihedrals": {
+   "Br_C2_C3_C4": 71.4,
+   "C1_C2_C3_C4": -168.8
+  },
+  "q12b_dihedrals": {
+   "Br_C2_C3_C4": 174.6,
+   "C1_C2_C3_C4": -65.2
+  },
+  "q16_end_plane_angle": 88.1,
+  "q16_axial_chirality": "Sa",
+  "q16_note": "RDKit does not perceive allene axial chirality, so q16_achiral (SMILES test) is not meaningful; plane angle and Ra/Sa are computed from coordinates"
+ }
+}

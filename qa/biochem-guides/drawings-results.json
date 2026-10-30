@@ -1,0 +1,88 @@
+{
+ "carbonylAngles": {
+  "carbs D-glucono-delta-lactone C-1": {
+   "bondDirections": [
+    0,
+    120,
+    240
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    119.9,
+    120
+   ]
+  },
+  "lipids fatty acid COOH C-1 (faSVG)": {
+   "bondDirections": [
+    30.5,
+    149.5,
+    270
+   ],
+   "anglesBetweenNeighbours": [
+    119.1,
+    120.5,
+    120.5
+   ]
+  },
+  "lipids triacylglycerol ester C, row C-1 (tagSVG)": {
+   "bondDirections": [
+    30.1,
+    150.1,
+    270
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    119.9,
+    120.1
+   ]
+  },
+  "lipids triacylglycerol ester C, row C-2 (tagSVG)": {
+   "bondDirections": [
+    30.1,
+    150.1,
+    270
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    119.9,
+    120.1
+   ]
+  },
+  "lipids phospholipase ester C at C-1 (plaseSVG)": {
+   "bondDirections": [
+    90,
+    210,
+    330
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    120,
+    120
+   ]
+  },
+  "lipids phospholipase ester C at C-2 (plaseSVG)": {
+   "bondDirections": [
+    90,
+    210,
+    330
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    120,
+    120
+   ]
+  },
+  "lipids fatty acid synthase beta-keto C, cycle 1 step 1 (fasSVG)": {
+   "bondDirections": [
+    90,
+    210,
+    330
+   ],
+   "anglesBetweenNeighbours": [
+    120,
+    120,
+    120
+   ]
+  }
+ }
+}

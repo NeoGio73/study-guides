@@ -1,0 +1,878 @@
+{
+ "carbs": {
+  "checks": 1892,
+  "problems": [],
+  "notes": [],
+  "lactoneAngles": [
+   119.9,
+   120,
+   120
+  ],
+  "disaccharideCombos": 160,
+  "invert": {
+   "start": 66.4,
+   "end": -20.68,
+   "zeroAtPct": 0.762
+  },
+  "muta": {
+   "eqRotationFromComposition": 54.3,
+   "modelEq": 52,
+   "consistentFractionAlpha": 0.355
+  },
+  "branchPercentExample": {
+   "residues": 2,
+   "branch": 0.049519230769230774,
+   "pct": 2.4759615384615388
+  },
+  "pageErrors": []
+ },
+ "lipids": {
+  "checks": 56043,
+  "problems": [],
+  "notes": [],
+  "samples": {
+   "table": [
+    {
+     "sh": "12:0",
+     "name": "Lauric acid",
+     "sys": "n-Dodecanoic acid",
+     "mp": 44.2,
+     "omega": null
+    },
+    {
+     "sh": "14:0",
+     "name": "Myristic acid",
+     "sys": "n-Tetradecanoic acid",
+     "mp": 53.9,
+     "omega": null
+    },
+    {
+     "sh": "16:0",
+     "name": "Palmitic acid",
+     "sys": "n-Hexadecanoic acid",
+     "mp": 63.1,
+     "omega": null
+    },
+    {
+     "sh": "18:0",
+     "name": "Stearic acid",
+     "sys": "n-Octadecanoic acid",
+     "mp": 69.6,
+     "omega": null
+    },
+    {
+     "sh": "20:0",
+     "name": "Arachidic acid",
+     "sys": "n-Eicosanoic acid",
+     "mp": 76.5,
+     "omega": null
+    },
+    {
+     "sh": "24:0",
+     "name": "Lignoceric acid",
+     "sys": "n-Tetracosanoic acid",
+     "mp": 86,
+     "omega": null
+    },
+    {
+     "sh": "16:1(Δ9)",
+     "name": "Palmitoleic acid",
+     "sys": "cis-9-Hexadecenoic acid",
+     "mp": 0.25,
+     "omega": 7
+    },
+    {
+     "sh": "18:1(Δ9)",
+     "name": "Oleic acid",
+     "sys": "cis-9-Octadecenoic acid",
+     "mp": 13.4,
+     "omega": 9
+    },
+    {
+     "sh": "18:2(Δ9,12)",
+     "name": "Linoleic acid",
+     "sys": "cis-,cis-9,12-Octadecadienoic acid",
+     "mp": -5,
+     "omega": 6
+    },
+    {
+     "sh": "18:3(Δ9,12,15)",
+     "name": "α-Linolenic acid",
+     "sys": "cis-,cis-,cis-9,12,15-Octadecatrienoic acid",
+     "mp": -11,
+     "omega": 3
+    },
+    {
+     "sh": "20:4(Δ5,8,11,14)",
+     "name": "Arachidonic acid",
+     "sys": "cis-,cis-,cis-,cis-5,8,11,14-Eicosatetraenoic acid",
+     "mp": -49.5,
+     "omega": 6
+    }
+   ],
+   "checkShort 18:2(Δ9,12)": "true",
+   "checkShort 18:2 (9,12)": "true",
+   "checkShort 18:2;9,12": "true",
+   "checkShort 18:2 d9,12": "true",
+   "checkShort 18:2(Δ9,Δ12)": "true",
+   "checkShort 18:2 cis,cis-9,12": "true",
+   "checkShort 18:2(Δ10,13)": "false / Use the lower-numbered carbon of each double bond. A double bond between C-9 and",
+   "checkShort 18:2(Δ6,9)": "false / Those positions are counted from the methyl end. Δ positions are counted from th",
+   "checkShort 18:1(Δ9)": "false / The chain length is right. Now count the double bonds again.",
+   "checkShort C18:2(Δ9,12)": "true",
+   "checkShort 18:2(Δ⁹,¹²)": "true",
+   "tagNames": [
+    "1,3-dipalmitoyl-2-oleoylglycerol",
+    "1,2-dipalmitoyl-3-oleoylglycerol",
+    "1-stearoyl-2-linoleoyl-3-palmitoylglycerol",
+    "tripalmitin"
+   ],
+   "lipidAssembler": {
+    "ester/fa/fa/": "Triacylglycerol | 0",
+    "ester/fa/p/h": "Phosphatidic acid | −1*",
+    "ester/fa/p/eth": "Phosphatidylethanolamine | 0",
+    "ester/fa/p/cho": "Phosphatidylcholine | 0",
+    "ester/fa/p/ser": "Phosphatidylserine | −1",
+    "ester/fa/p/gro": "Phosphatidylglycerol | −1",
+    "ester/fa/p/ino": "Phosphatidylinositol | −1",
+    "ester/fa/p/pip2": "Phosphatidylinositol 4,5-bisphosphate (PIP<sub>2</sub>) | −4*",
+    "ester/fa/p/pg": "Cardiolipin | −2",
+    "ester/fa/sugar/gal": "Monogalactosyldiacylglycerol (MGDG) | 0",
+    "ester/fa/sugar/digal": "Digalactosyldiacylglycerol (DGDG) | 0",
+    "ester/fa/sugar/sulfo": "Sulfolipid | −1",
+    "ester/acetyl/fa/": "Not a common natural lipid | —",
+    "ester/acetyl/p/h": "Not a common natural lipid | —",
+    "ester/acetyl/p/eth": "Not a common natural lipid | —",
+    "ester/acetyl/p/cho": "Not a common natural lipid | —",
+    "ester/acetyl/p/ser": "Not a common natural lipid | —",
+    "ester/acetyl/p/gro": "Not a common natural lipid | —",
+    "ester/acetyl/p/ino": "Not a common natural lipid | —",
+    "ester/acetyl/p/pip2": "Not a common natural lipid | —",
+    "ester/acetyl/p/pg": "Not a common natural lipid | —",
+    "ester/acetyl/sugar/gal": "Not a common natural lipid | —",
+    "ester/acetyl/sugar/digal": "Not a common natural lipid | —",
+    "ester/acetyl/sugar/sulfo": "Not a common natural lipid | —",
+    "ester/oh/fa/": "A 1,3-diacylglycerol | 0",
+    "ester/oh/p/h": "Lysophosphatidic acid | −1*",
+    "ester/oh/p/eth": "Lysophosphatidylethanolamine | 0",
+    "ester/oh/p/cho": "Lysophosphatidylcholine (lysolecithin) | 0",
+    "ester/oh/p/ser": "Lysophosphatidylserine | −1",
+    "ester/oh/p/gro": "Lysophosphatidylglycerol | −1",
+    "ester/oh/p/ino": "Lysophosphatidylinositol | −1",
+    "ester/oh/p/pip2": "Lysophosphatidylinositol 4,5-bisphosphate | −4*",
+    "ester/oh/p/pg": "Monolysocardiolipin | −2",
+    "ester/oh/sugar/gal": "Not a common natural lipid | —",
+    "ester/oh/sugar/digal": "Not a common natural lipid | —",
+    "ester/oh/sugar/sulfo": "Not a common natural lipid | —",
+    "alkyl/fa/fa/": "An alkyldiacylglycerol | 0",
+    "alkyl/fa/p/h": "An alkyl ether lipid | −1*",
+    "alkyl/fa/p/eth": "An alkyl ether lipid | 0",
+    "alkyl/fa/p/cho": "An alkyl ether lipid | 0",
+    "alkyl/fa/p/ser": "An alkyl ether lipid | −1",
+    "alkyl/fa/p/gro": "An alkyl ether lipid | −1",
+    "alkyl/fa/p/ino": "An alkyl ether lipid | −1",
+    "alkyl/fa/p/pip2": "An alkyl ether lipid | −4*",
+    "alkyl/fa/p/pg": "An alkyl ether lipid | −2",
+    "alkyl/fa/sugar/gal": "Not a common natural lipid | —",
+    "alkyl/fa/sugar/digal": "Not a common natural lipid | —",
+    "alkyl/fa/sugar/sulfo": "Not a common natural lipid | —",
+    "alkyl/acetyl/fa/": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/h": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/eth": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/cho": "Platelet-activating factor | 0",
+    "alkyl/acetyl/p/ser": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/gro": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/ino": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/pip2": "Not a common natural lipid | —",
+    "alkyl/acetyl/p/pg": "Not a common natural lipid | —",
+    "alkyl/acetyl/sugar/gal": "Not a common natural lipid | —",
+    "alkyl/acetyl/sugar/digal": "Not a common natural lipid | —",
+    "alkyl/acetyl/sugar/sulfo": "Not a common natural lipid | —",
+    "alkyl/oh/fa/": "Not a common natural lipid | —",
+    "alkyl/oh/p/h": "An alkyl ether lysophospholipid | −1*",
+    "alkyl/oh/p/eth": "An alkyl ether lysophospholipid | 0",
+    "alkyl/oh/p/cho": "Lyso-PAF (1-alkyl-2-lysophosphatidylcholine) | 0",
+    "alkyl/oh/p/ser": "An alkyl ether lysophospholipid | −1",
+    "alkyl/oh/p/gro": "An alkyl ether lysophospholipid | −1",
+    "alkyl/oh/p/ino": "An alkyl ether lysophospholipid | −1",
+    "alkyl/oh/p/pip2": "An alkyl ether lysophospholipid | −4*",
+    "alkyl/oh/p/pg": "An alkyl ether lysophospholipid | −2",
+    "alkyl/oh/sugar/gal": "Not a common natural lipid | —",
+    "alkyl/oh/sugar/digal": "Not a common natural lipid | —",
+    "alkyl/oh/sugar/sulfo": "Not a common natural lipid | —",
+    "alkenyl/fa/fa/": "An alkenyldiacylglycerol | 0",
+    "alkenyl/fa/p/h": "A plasmalogen | −1*",
+    "alkenyl/fa/p/eth": "A plasmalogen | 0",
+    "alkenyl/fa/p/cho": "A plasmalogen | 0",
+    "alkenyl/fa/p/ser": "A plasmalogen | −1",
+    "alkenyl/fa/p/gro": "A plasmalogen | −1",
+    "alkenyl/fa/p/ino": "A plasmalogen | −1",
+    "alkenyl/fa/p/pip2": "A plasmalogen | −4*",
+    "alkenyl/fa/p/pg": "A plasmalogen | −2",
+    "alkenyl/fa/sugar/gal": "Not a common natural lipid | —",
+    "alkenyl/fa/sugar/digal": "Not a common natural lipid | —",
+    "alkenyl/fa/sugar/sulfo": "Not a common natural lipid | —",
+    "alkenyl/acetyl/fa/": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/h": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/eth": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/cho": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/ser": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/gro": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/ino": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/pip2": "Not a common natural lipid | —",
+    "alkenyl/acetyl/p/pg": "Not a common natural lipid | —",
+    "alkenyl/acetyl/sugar/gal": "Not a common natural lipid | —",
+    "alkenyl/acetyl/sugar/digal": "Not a common natural lipid | —",
+    "alkenyl/acetyl/sugar/sulfo": "Not a common natural lipid | —",
+    "alkenyl/oh/fa/": "Not a common natural lipid | —",
+    "alkenyl/oh/p/h": "A lysoplasmalogen | −1*",
+    "alkenyl/oh/p/eth": "A lysoplasmalogen | 0",
+    "alkenyl/oh/p/cho": "A lysoplasmalogen | 0",
+    "alkenyl/oh/p/ser": "A lysoplasmalogen | −1",
+    "alkenyl/oh/p/gro": "A lysoplasmalogen | −1",
+    "alkenyl/oh/p/ino": "A lysoplasmalogen | −1",
+    "alkenyl/oh/p/pip2": "A lysoplasmalogen | −4*",
+    "alkenyl/oh/p/pg": "A lysoplasmalogen | −2",
+    "alkenyl/oh/sugar/gal": "Not a common natural lipid | —",
+    "alkenyl/oh/sugar/digal": "Not a common natural lipid | —",
+    "alkenyl/oh/sugar/sulfo": "Not a common natural lipid | —",
+    "sph/h": "Ceramide | 0",
+    "sph/pc": "Sphingomyelin | 0",
+    "sph/pe": "Sphingomyelin | 0",
+    "sph/glc": "Glucosylcerebroside | 0",
+    "sph/gal": "Galactosylcerebroside | 0",
+    "sph/lac": "A globoside (for example lactosylceramide) | 0",
+    "sph/gm": "A ganglioside (for example GM2) | −1 for each sialic acid"
+   },
+   "oddButReal": {
+    "lysoPAF": "Lyso-PAF (1-alkyl-2-lysophosphatidylcholine)",
+    "alkylDiacylglycerol": "An alkyldiacylglycerol",
+    "lysoplasmalogen": "A lysoplasmalogen",
+    "PA": "Phosphatidic acid −1*"
+   },
+   "phospholipases": {
+    "A1/pc": "a free fatty acid (from C-1) and a 2-acyl lysophospholipid",
+    "A1/pip2": "a free fatty acid (from C-1) and a 2-acyl lysophospholipid",
+    "A2/pc": "a free fatty acid (from C-2, often arachidonate) and a 1-acyl lysophospholipid (lysolecithin)",
+    "A2/pip2": "a free fatty acid (from C-2, often arachidonate) and a 1-acyl lysophospholipid",
+    "C/pc": "1,2-diacylglycerol, which stays in the membrane, and phosphocholine, which is water-soluble",
+    "C/pip2": "1,2-diacylglycerol, which stays in the membrane, and inositol 1,4,5-trisphosphate (IP<sub>3</sub>), which is water-soluble",
+    "D/pc": "phosphatidic acid and free choline",
+    "D/pip2": "phosphatidic acid and the free head-group alcohol (inositol 4,5-bisphosphate)"
+   },
+   "betaOx": {
+    "4:0": {
+     "passes": 1,
+     "FADH2": 1,
+     "NADH": 1,
+     "acetylCoA": 2,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 22,
+     "netATPifNADPHcounted": 22
+    },
+    "5:0": {
+     "passes": 1,
+     "FADH2": 1,
+     "NADH": 1,
+     "acetylCoA": 1,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 12,
+     "netATPifNADPHcounted": 12
+    },
+    "6:0": {
+     "passes": 2,
+     "FADH2": 2,
+     "NADH": 2,
+     "acetylCoA": 3,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 36,
+     "netATPifNADPHcounted": 36
+    },
+    "7:0": {
+     "passes": 2,
+     "FADH2": 2,
+     "NADH": 2,
+     "acetylCoA": 2,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 26,
+     "netATPifNADPHcounted": 26
+    },
+    "8:0": {
+     "passes": 3,
+     "FADH2": 3,
+     "NADH": 3,
+     "acetylCoA": 4,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 50,
+     "netATPifNADPHcounted": 50
+    },
+    "9:0": {
+     "passes": 3,
+     "FADH2": 3,
+     "NADH": 3,
+     "acetylCoA": 3,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 40,
+     "netATPifNADPHcounted": 40
+    },
+    "10:0": {
+     "passes": 4,
+     "FADH2": 4,
+     "NADH": 4,
+     "acetylCoA": 5,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 64,
+     "netATPifNADPHcounted": 64
+    },
+    "11:0": {
+     "passes": 4,
+     "FADH2": 4,
+     "NADH": 4,
+     "acetylCoA": 4,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 54,
+     "netATPifNADPHcounted": 54
+    },
+    "12:0": {
+     "passes": 5,
+     "FADH2": 5,
+     "NADH": 5,
+     "acetylCoA": 6,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 78,
+     "netATPifNADPHcounted": 78
+    },
+    "13:0": {
+     "passes": 5,
+     "FADH2": 5,
+     "NADH": 5,
+     "acetylCoA": 5,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 68,
+     "netATPifNADPHcounted": 68
+    },
+    "14:0": {
+     "passes": 6,
+     "FADH2": 6,
+     "NADH": 6,
+     "acetylCoA": 7,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 92,
+     "netATPifNADPHcounted": 92
+    },
+    "15:0": {
+     "passes": 6,
+     "FADH2": 6,
+     "NADH": 6,
+     "acetylCoA": 6,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 82,
+     "netATPifNADPHcounted": 82
+    },
+    "16:0": {
+     "passes": 7,
+     "FADH2": 7,
+     "NADH": 7,
+     "acetylCoA": 8,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 106,
+     "netATPifNADPHcounted": 106
+    },
+    "17:0": {
+     "passes": 7,
+     "FADH2": 7,
+     "NADH": 7,
+     "acetylCoA": 7,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 96,
+     "netATPifNADPHcounted": 96
+    },
+    "18:0": {
+     "passes": 8,
+     "FADH2": 8,
+     "NADH": 8,
+     "acetylCoA": 9,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 120,
+     "netATPifNADPHcounted": 120
+    },
+    "19:0": {
+     "passes": 8,
+     "FADH2": 8,
+     "NADH": 8,
+     "acetylCoA": 8,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 110,
+     "netATPifNADPHcounted": 110
+    },
+    "20:0": {
+     "passes": 9,
+     "FADH2": 9,
+     "NADH": 9,
+     "acetylCoA": 10,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 134,
+     "netATPifNADPHcounted": 134
+    },
+    "21:0": {
+     "passes": 9,
+     "FADH2": 9,
+     "NADH": 9,
+     "acetylCoA": 9,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 124,
+     "netATPifNADPHcounted": 124
+    },
+    "22:0": {
+     "passes": 10,
+     "FADH2": 10,
+     "NADH": 10,
+     "acetylCoA": 11,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 148,
+     "netATPifNADPHcounted": 148
+    },
+    "23:0": {
+     "passes": 10,
+     "FADH2": 10,
+     "NADH": 10,
+     "acetylCoA": 10,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 138,
+     "netATPifNADPHcounted": 138
+    },
+    "24:0": {
+     "passes": 11,
+     "FADH2": 11,
+     "NADH": 11,
+     "acetylCoA": 12,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 162,
+     "netATPifNADPHcounted": 162
+    },
+    "25:0": {
+     "passes": 11,
+     "FADH2": 11,
+     "NADH": 11,
+     "acetylCoA": 11,
+     "propionyl": 1,
+     "NADPH": 0,
+     "netATP": 152,
+     "netATPifNADPHcounted": 152
+    },
+    "26:0": {
+     "passes": 12,
+     "FADH2": 12,
+     "NADH": 12,
+     "acetylCoA": 13,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 176,
+     "netATPifNADPHcounted": 176
+    },
+    "18:1(Δ9)": {
+     "passes": 8,
+     "FADH2": 7,
+     "NADH": 8,
+     "acetylCoA": 9,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 118.5,
+     "netATPifNADPHcounted": 118.5
+    },
+    "18:2(Δ9,12)": {
+     "passes": 8,
+     "FADH2": 7,
+     "NADH": 8,
+     "acetylCoA": 9,
+     "propionyl": 0,
+     "NADPH": 1,
+     "netATP": 118.5,
+     "netATPifNADPHcounted": 116
+    },
+    "18:3(Δ9,12,15)": {
+     "passes": 8,
+     "FADH2": 6,
+     "NADH": 8,
+     "acetylCoA": 9,
+     "propionyl": 0,
+     "NADPH": 1,
+     "netATP": 117,
+     "netATPifNADPHcounted": 114.5
+    },
+    "20:4(Δ5,8,11,14)": {
+     "passes": 9,
+     "FADH2": 7,
+     "NADH": 9,
+     "acetylCoA": 10,
+     "propionyl": 0,
+     "NADPH": 2,
+     "netATP": 131,
+     "netATPifNADPHcounted": 126
+    },
+    "16:1(Δ9)": {
+     "passes": 7,
+     "FADH2": 6,
+     "NADH": 7,
+     "acetylCoA": 8,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 104.5,
+     "netATPifNADPHcounted": 104.5
+    },
+    "18:3(Δ6,9,12)": {
+     "passes": 8,
+     "FADH2": 7,
+     "NADH": 8,
+     "acetylCoA": 9,
+     "propionyl": 0,
+     "NADPH": 2,
+     "netATP": 118.5,
+     "netATPifNADPHcounted": 113.5
+    },
+    "20:3(Δ8,11,14)": {
+     "passes": 9,
+     "FADH2": 8,
+     "NADH": 9,
+     "acetylCoA": 10,
+     "propionyl": 0,
+     "NADPH": 2,
+     "netATP": 132.5,
+     "netATPifNADPHcounted": 127.5
+    },
+    "22:6(Δ4,7,10,13,16,19)": {
+     "passes": 10,
+     "FADH2": 7,
+     "NADH": 10,
+     "acetylCoA": 11,
+     "propionyl": 0,
+     "NADPH": 3,
+     "netATP": 143.5,
+     "netATPifNADPHcounted": 136
+    },
+    "20:5(Δ5,8,11,14,17)": {
+     "passes": 9,
+     "FADH2": 6,
+     "NADH": 9,
+     "acetylCoA": 10,
+     "propionyl": 0,
+     "NADPH": 2,
+     "netATP": 129.5,
+     "netATPifNADPHcounted": 124.5
+    },
+    "24:1(Δ15)": {
+     "passes": 11,
+     "FADH2": 10,
+     "NADH": 11,
+     "acetylCoA": 12,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 160.5,
+     "netATPifNADPHcounted": 160.5
+    },
+    "22:1(Δ13)": {
+     "passes": 10,
+     "FADH2": 9,
+     "NADH": 10,
+     "acetylCoA": 11,
+     "propionyl": 0,
+     "NADPH": 0,
+     "netATP": 146.5,
+     "netATPifNADPHcounted": 146.5
+    }
+   },
+   "fasLedger": [
+    {
+     "p": 0,
+     "cycle": 0,
+     "step": 0,
+     "cycles": 0,
+     "malonyl": 1,
+     "nadph": 0,
+     "co2": 0,
+     "len": 2,
+     "done": false
+    },
+    {
+     "p": 1,
+     "cycle": 1,
+     "step": 1,
+     "cycles": 0,
+     "malonyl": 1,
+     "nadph": 0,
+     "co2": 1,
+     "len": 4,
+     "done": false
+    },
+    {
+     "p": 2,
+     "cycle": 1,
+     "step": 2,
+     "cycles": 0,
+     "malonyl": 1,
+     "nadph": 1,
+     "co2": 1,
+     "len": 4,
+     "done": false
+    },
+    {
+     "p": 4,
+     "cycle": 1,
+     "step": 4,
+     "cycles": 0,
+     "malonyl": 1,
+     "nadph": 2,
+     "co2": 1,
+     "len": 4,
+     "done": false
+    },
+    {
+     "p": 5,
+     "cycle": 1,
+     "step": 5,
+     "cycles": 1,
+     "malonyl": 2,
+     "nadph": 2,
+     "co2": 1,
+     "len": 4,
+     "done": false
+    },
+    {
+     "p": 6,
+     "cycle": 2,
+     "step": 1,
+     "cycles": 1,
+     "malonyl": 2,
+     "nadph": 2,
+     "co2": 2,
+     "len": 6,
+     "done": false
+    },
+    {
+     "p": 7,
+     "cycle": 2,
+     "step": 2,
+     "cycles": 1,
+     "malonyl": 2,
+     "nadph": 3,
+     "co2": 2,
+     "len": 6,
+     "done": false
+    },
+    {
+     "p": 9,
+     "cycle": 2,
+     "step": 4,
+     "cycles": 1,
+     "malonyl": 2,
+     "nadph": 4,
+     "co2": 2,
+     "len": 6,
+     "done": false
+    },
+    {
+     "p": 10,
+     "cycle": 2,
+     "step": 5,
+     "cycles": 2,
+     "malonyl": 3,
+     "nadph": 4,
+     "co2": 2,
+     "len": 6,
+     "done": false
+    },
+    {
+     "p": 11,
+     "cycle": 3,
+     "step": 1,
+     "cycles": 2,
+     "malonyl": 3,
+     "nadph": 4,
+     "co2": 3,
+     "len": 8,
+     "done": false
+    },
+    {
+     "p": 12,
+     "cycle": 3,
+     "step": 2,
+     "cycles": 2,
+     "malonyl": 3,
+     "nadph": 5,
+     "co2": 3,
+     "len": 8,
+     "done": false
+    },
+    {
+     "p": 14,
+     "cycle": 3,
+     "step": 4,
+     "cycles": 2,
+     "malonyl": 3,
+     "nadph": 6,
+     "co2": 3,
+     "len": 8,
+     "done": false
+    },
+    {
+     "p": 33,
+     "cycle": 7,
+     "step": 3,
+     "cycles": 6,
+     "malonyl": 7,
+     "nadph": 13,
+     "co2": 7,
+     "len": 16,
+     "done": false
+    },
+    {
+     "p": 34,
+     "cycle": 7,
+     "step": 4,
+     "cycles": 6,
+     "malonyl": 7,
+     "nadph": 14,
+     "co2": 7,
+     "len": 16,
+     "done": false
+    },
+    {
+     "p": 35,
+     "cycle": 7,
+     "step": 5,
+     "cycles": 7,
+     "malonyl": 7,
+     "nadph": 14,
+     "co2": 7,
+     "len": 16,
+     "done": true
+    }
+   ],
+   "lipo": [
+    {
+     "name": "Chylomicrons",
+     "dens": "<1.006",
+     "size": "100 to 500 nm",
+     "sum": 100,
+     "comp": [
+      2,
+      9,
+      1,
+      3,
+      85
+     ]
+    },
+    {
+     "name": "VLDL",
+     "dens": "0.95–1.006",
+     "size": "28 to 70 nm",
+     "sum": 97,
+     "comp": [
+      10,
+      18,
+      7,
+      12,
+      50
+     ]
+    },
+    {
+     "name": "LDL",
+     "dens": "1.006–1.063",
+     "size": "20 to 25 nm",
+     "sum": 98,
+     "comp": [
+      23,
+      20,
+      8,
+      37,
+      10
+     ]
+    },
+    {
+     "name": "HDL",
+     "dens": "1.063–1.210",
+     "size": "8 to 11 nm",
+     "sum": 100,
+     "comp": [
+      55,
+      24,
+      2,
+      15,
+      4
+     ]
+    }
+   ],
+   "memPresets": {
+    "Saturated lipids only": {
+     "F": 14,
+     "state": "Liquid-ordered (Lo)"
+    },
+    "One unsaturated chain per lipid": {
+     "F": 74,
+     "state": "Liquid-disordered (Ld)"
+    },
+    "Plasma membrane": {
+     "F": 61.4,
+     "state": "Liquid-disordered (Ld)"
+    },
+    "A lipid raft": {
+     "F": 30,
+     "state": "Liquid-ordered (Lo)"
+    },
+    "Short chains": {
+     "F": 74,
+     "state": "Liquid-disordered (Ld)"
+    },
+    "page: Saturated lipids only": {
+     "F": 14,
+     "state": "Liquid-ordered (Lo)"
+    },
+    "page: One unsaturated chain per lipid": {
+     "F": 74,
+     "state": "Liquid-disordered (Ld)"
+    },
+    "page: Plasma membrane": {
+     "F": 57.8,
+     "state": "Between the two extremes"
+    },
+    "page: A lipid raft": {
+     "F": 30,
+     "state": "Liquid-ordered (Lo)"
+    },
+    "page: Short chains": {
+     "F": 74,
+     "state": "Liquid-disordered (Ld)"
+    }
+   },
+   "challengeSolutionsWithoutCholesterol": {
+    "cold10C": 11,
+    "hot45C": 8
+   },
+   "coldChallengeSolvedOnlyWithCholesterol": "44 combinations, e.g. [{\"len\":14,\"unsat\":30,\"chol\":20},{\"len\":20,\"unsat\":80,\"chol\":20},{\"len\":14,\"unsat\":30,\"chol\":25}]"
+  },
+  "fattyAcidCombos": 6900,
+  "tagCombos": 512,
+  "pageErrors": []
+ }
+}

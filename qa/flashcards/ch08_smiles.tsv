@@ -1,0 +1,62 @@
+acetaldehyde	acetaldehyde	CC=O	
+aceticacid	acetic acid	CC(=O)O	
+acetone	acetone	CC(C)=O	
+brdmb	2-bromo-2,3-dimethylbutane	CC(C)C(C)(C)Br	
+brmb	2-bromo-2-methylbutane	CCC(C)(C)Br	
+bromo1p	1-bromopropane	CCCBr	
+bromo2p	2-bromopropane	CC(C)Br	
+bromoethanol	2-bromoethanol	OCCBr	
+bromohydrin	1-bromo-2-methyl-2-propanol	CC(C)(O)CBr	
+butanone	2-butanone	CCC(C)=O	
+butene2	2-butene	C/C=C/C	
+cbutene	cis-2-butene	C/C=C\C	
+chcl3	chloroform	ClC(Cl)Cl	
+chex	cyclohexene	C1=CCCCC1	
+cisdmch	cis-1,2-dimethylcyclohexane	C[C@@H]1CCCC[C@@H]1C	
+cisepox	cis-2,3-dimethyloxirane	C[C@@H]1O[C@@H]1C	
+clmch	1-chloro-1-methylcyclohexane	CC1(Cl)CCCCC1	
+co2	CO₂	O=*=O	UNK atoms [1]
+cpdiol	cis-1,2-cyclopentanediol	O[C@@H]1CCC[C@@H]1O	
+cpent	cyclopentene	C1=CCCC1	
+dcp	1,2-dichloropropane	CC(Cl)CCl	
+[07:12:41] Explicit valence for atom # 1 N, 4, is greater than permitted
+diazomethane	diazomethane	FAIL	UNK atoms [0]
+dmb2ol	2,3-dimethyl-2-butanol	CC(C)C(C)(C)O	
+dmb2ol33	3,3-dimethyl-2-butanol	CC(O)C(C)(C)C	
+dmbutene	3,3-dimethyl-1-butene	C=CC(C)(C)C	
+dmchene	1,2-dimethylcyclohexene	CC1=C(C)CCCC1	
+ethane	ethane	CC	
+ethanol	ethanol	CCO	
+ethene	ethene	C=C	
+formald	formaldehyde	C=O	
+glycol	ethylene glycol (1,2-ethanediol)	OCCO	
+ibual	2-methylpropanal (isobutyraldehyde)	CC(C)C=O	
+ibuoh	2-methyl-1-propanol	CC(C)CO	
+isobutylene	2-methylpropene	C=C(C)C	
+m2b	2-methyl-2-butene	CC=C(C)C	
+mb1ol	3-methyl-1-butanol	CC(C)CCO	
+mb2ol	2-methyl-2-butanol	CCC(C)(C)O	
+mb2ol3	3-methyl-2-butanol	CC(C)C(C)O	
+mbutene	3-methyl-1-butene	C=CC(C)C	
+mbutene2	2-methyl-1-butene	C=C(C)CC	
+mchex	1-methylcyclohexene	CC1=CCCCC1	
+mchexol	1-methylcyclohexanol	CC1(O)CCCCC1	
+mcpent	1-methylcyclopentene	CC1=CCCC1	
+mcpentol	1-methylcyclopentanol	CC1(O)CCCC1	
+mesodbb	meso-2,3-dibromobutane	C[C@H](Br)[C@@H](C)Br	
+norcarane	bicyclo[4.1.0]heptane	C1CCC2CC2C1	
+oxohept	6-oxoheptanoic acid	CC(=O)CCCCC(=O)O	
+propane	propane	CCC	
+propanediol	1,2-propanediol	CC(O)CO	
+propanol	1-propanol	CCCO	
+propene	propene	C=CC	
+tbcpol	trans-2-bromocyclopentanol	O[C@@H]1CCC[C@H]1Br	
+tbubr	tert-butyl bromide	CC(C)(C)Br	
+tbuoh	tert-butyl alcohol	CC(C)(C)O	
+tbutene	trans-2-butene	C/C=C/C	
+tdbch	trans-1,2-dibromocyclohexane	Br[C@@H]1CCCC[C@H]1Br	
+tdbcp	(1R,2R)-1,2-dibromocyclopentane	Br[C@@H]1CCC[C@H]1Br	
+tdbcp2	(1S,2S)-1,2-dibromocyclopentane	Br[C@H]1CCC[C@@H]1Br	
+tdccp	trans-1,1-dichloro-2,3-dimethylcyclopropane	C[C@@H]1[C@@H](C)C1(Cl)Cl	
+tmcpol	trans-2-methylcyclopentanol	C[C@@H]1CCC[C@H]1O	
+tme	2,3-dimethyl-2-butene	CC(C)=C(C)C	

@@ -1,0 +1,126 @@
+[
+ {
+  "q": "A solution has pH 13. What is its hydrogen-ion concentration in mol/L? (You can type it as 1e-13, 1x10^-13, or a decimal.)",
+  "answer": [
+   "1 × 10^−13 mol/L"
+  ],
+  "solution": " pH 13 → exponent −13. [H^+ ] = 1 × 10^−13 mol/L = 0.0000000000001 mol/L. ",
+  "feedback": "✗Not quite. Check the setup and try again.",
+  "name": "pH 13 [H+]: type 0",
+  "typed": [
+   "0"
+  ]
+ },
+ {
+  "q": "A solution has pH 13. What is its hydrogen-ion concentration in mol/L? (You can type it as 1e-13, 1x10^-13, or a decimal.)",
+  "answer": [
+   "1 × 10^−13 mol/L"
+  ],
+  "solution": " pH 13 → exponent −13. [H^+ ] = 1 × 10^−13 mol/L = 0.0000000000001 mol/L. ",
+  "feedback": "✗Not quite. Check the setup and try again.",
+  "name": "pH 13 [H+]: type 1e-11 (100x too big)",
+  "typed": [
+   "1e-11"
+  ]
+ },
+ {
+  "q": "A solution has pH 2. What is its hydroxide-ion concentration, [OH−], in mol/L?",
+  "answer": [
+   "1 × 10^−12 mol/L"
+  ],
+  "solution": " pH 2 → [H^+ ] = 1 × 10^−2 mol/L. 14 − 2 = 12, so [OH^− ] = 1 × 10^−12 mol/L . Check: 10^−2 × 10^−12 = 10^−14 . More H^+ than OH^− : acidic. ",
+  "feedback": "✗Not quite. Check the setup and try again.",
+  "name": "pH 2 [OH-]: type 1e-11 (10x too big)",
+  "typed": [
+   "1e-11"
+  ]
+ },
+ {
+  "q": "A solution has pH 10.6. What is [H+] in mol/L? (Type it as a decimal or as 3.2e-5 style.)",
+  "answer": [
+   "2.51 × 10^−11 mol/L"
+  ],
+  "solution": " [H^+ ] = 10^−10.6 mol/L. 10^−10.6 = 10^0.4 × 10^−11 = 2.51 × 10^−11 , so [H^+ ] = 2.51 × 10^−11 mol/L (2.51 × 10^−11 ). Check: pH 10.6 is basic, and the concentration sits between the table values for pH 10 and pH 11. ",
+  "feedback": "✗Not quite. Check the setup and try again.",
+  "name": "pH 10.6 [H+]: type 5e-11 (2x too big)",
+  "typed": [
+   "5e-11"
+  ]
+ },
+ {
+  "q": "A solution has pH 4.9. What is [H+] in mol/L? (Type it as a decimal or as 3.2e-5 style.)",
+  "answer": [
+   "1.26 × 10^−5 mol/L"
+  ],
+  "solution": " [H^+ ] = 10^−4.9 mol/L. 10^−4.9 = 10^0.1 × 10^−5 = 1.26 × 10^−5 , so [H^+ ] = 1.26 × 10^−5 mol/L (1.26 × 10^−5 ). Check: pH 4.9 is acidic, and the concentration sits between the table values for pH 4 and pH 5. ",
+  "feedback": "!Close, but not within rounding. Check your arithmetic.",
+  "name": "pH 4.9 [H+]: type the worked solution value 1.3 x 10^-5",
+  "typed": [
+   "1.3x10^-5"
+  ]
+ },
+ {
+  "q": "A solution has pH 7. What is its hydrogen-ion concentration in mol/L? (You can type it as 1e-7, 1x10^-7, or a decimal.)",
+  "answer": [
+   "1 × 10^−7 mol/L"
+  ],
+  "solution": " pH 7 → exponent −7. [H^+ ] = 1 × 10^−7 mol/L = 0.0000001 mol/L. ",
+  "feedback": "✓Correct. 1 × 10−7 mol/L",
+  "name": "pH 7 [H+]: type 1 × 10^−7 with a Unicode minus",
+  "typed": [
+   "1 × 10^−7"
+  ]
+ },
+ {
+  "q": "A solution has pH 7. What is its hydrogen-ion concentration in mol/L? (You can type it as 1e-7, 1x10^-7, or a decimal.)",
+  "answer": [
+   "1 × 10^−7 mol/L"
+  ],
+  "solution": " pH 7 → exponent −7. [H^+ ] = 1 × 10^−7 mol/L = 0.0000001 mol/L. ",
+  "feedback": "✓Correct. 1 × 10−7 mol/L",
+  "name": "pH 7 [H+]: type 1*10^-7",
+  "typed": [
+   "1*10^-7"
+  ]
+ },
+ {
+  "q": "A phone charger rated at 5 W runs for 0.5 hours. How much energy does it use?",
+  "answer": [
+   "0.0025 kWh"
+  ],
+  "solution": " Power in kW: 5 ÷ 1000 = 0.005 kW. Energy: 0.005 kW × 0.5 h = 0.0025 kWh (that is 0.009 million joules). ",
+  "feedback": "✗Not quite. Check the setup and try again.",
+  "name": "5 W x 0.5 h: type worked-solution kWh 0.003",
+  "typed": [
+   "0.003"
+  ]
+ },
+ {
+  "q": "A phone charger rated at 5 W runs for 1 hour. How much energy does it use, and what does it cost at $0.12 per kWh?",
+  "answer": [
+   "0.005 kWh",
+   "$0.0006"
+  ],
+  "solution": " Power in kW: 5 ÷ 1000 = 0.005 kW. Energy: 0.005 kW × 1 h = 0.005 kWh . Cost: 0.005 kWh × $0.12 = $0.0006 . ",
+  "feedback": "✗(b) Not quite. Check the setup and try again.",
+  "name": "5 W x 1 h at $0.12: cost typed $0.006 (10x the right $0.0006)",
+  "typed": [
+   "0.005",
+   "$0.006"
+  ]
+ },
+ {
+  "q": "A phone charger rated at 5 W runs for 1 hour. How much energy does it use, and what does it cost at $0.12 per kWh?",
+  "answer": [
+   "0.005 kWh",
+   "$0.0006"
+  ],
+  "solution": " Power in kW: 5 ÷ 1000 = 0.005 kW. Energy: 0.005 kW × 1 h = 0.005 kWh . Cost: 0.005 kWh × $0.12 = $0.0006 . ",
+  "feedback": "✗(b) Not quite. Check the setup and try again.",
+  "name": "5 W x 1 h at $0.12: cost typed $0.00",
+  "typed": [
+   "0.005",
+   "$0.00"
+  ]
+ }
+]

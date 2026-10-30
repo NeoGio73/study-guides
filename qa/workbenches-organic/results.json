@@ -1,0 +1,627 @@
+{
+ "smoke": [
+  {
+   "page": "biochemistry/lipid-workbench.html",
+   "viewport": "1280x900",
+   "counts": {
+    "build": {
+     "clicks": 15,
+     "sliders": 0,
+     "checks": 1,
+     "selects": 0
+    },
+    "cut": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 6
+    },
+    "water": {
+     "clicks": 2,
+     "sliders": 6,
+     "checks": 0,
+     "selects": 16
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "biochemistry/lipid-workbench.html",
+   "viewport": "390x844",
+   "counts": {
+    "build": {
+     "clicks": 15,
+     "sliders": 0,
+     "checks": 1,
+     "selects": 0
+    },
+    "cut": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 6
+    },
+    "water": {
+     "clicks": 2,
+     "sliders": 6,
+     "checks": 0,
+     "selects": 16
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "biochemistry/dna-workbench.html",
+   "viewport": "1280x900",
+   "counts": {
+    "strand": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "helix": {
+     "clicks": 6,
+     "sliders": 0,
+     "checks": 2,
+     "selects": 0
+    },
+    "melt": {
+     "clicks": 5,
+     "sliders": 9,
+     "checks": 0,
+     "selects": 0
+    },
+    "pcr": {
+     "clicks": 4,
+     "sliders": 12,
+     "checks": 1,
+     "selects": 0
+    },
+    "digest": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 4,
+     "selects": 0
+    },
+    "clone": {
+     "clicks": 7,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "sanger": {
+     "clicks": 13,
+     "sliders": 0,
+     "checks": 1,
+     "selects": 0
+    },
+    "crispr": {
+     "clicks": 24,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "cases": {
+     "clicks": 8,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 12
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+   ],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "biochemistry/dna-workbench.html",
+   "viewport": "390x844",
+   "counts": {
+    "strand": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "helix": {
+     "clicks": 8,
+     "sliders": 0,
+     "checks": 2,
+     "selects": 0
+    },
+    "melt": {
+     "clicks": 5,
+     "sliders": 9,
+     "checks": 0,
+     "selects": 0
+    },
+    "pcr": {
+     "clicks": 4,
+     "sliders": 12,
+     "checks": 1,
+     "selects": 0
+    },
+    "digest": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 4,
+     "selects": 0
+    },
+    "clone": {
+     "clicks": 7,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "sanger": {
+     "clicks": 13,
+     "sliders": 0,
+     "checks": 1,
+     "selects": 0
+    },
+    "crispr": {
+     "clicks": 24,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "cases": {
+     "clicks": 8,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 12
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+   ],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "biochemistry/gluconeogenesis-workbench.html",
+   "viewport": "1280x900",
+   "counts": {
+    "map": {
+     "clicks": 21,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "energy": {
+     "clicks": 16,
+     "sliders": 9,
+     "checks": 0,
+     "selects": 0
+    },
+    "cell": {
+     "clicks": 10,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "sources": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "ledger": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "reg": {
+     "clicks": 8,
+     "sliders": 12,
+     "checks": 1,
+     "selects": 0
+    },
+    "fast": {
+     "clicks": 7,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    },
+    "cycles": {
+     "clicks": 7,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    },
+    "cases": {
+     "clicks": 9,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+   ],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "biochemistry/gluconeogenesis-workbench.html",
+   "viewport": "390x844",
+   "counts": {
+    "map": {
+     "clicks": 21,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "energy": {
+     "clicks": 16,
+     "sliders": 9,
+     "checks": 0,
+     "selects": 0
+    },
+    "cell": {
+     "clicks": 10,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "sources": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "ledger": {
+     "clicks": 9,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    },
+    "reg": {
+     "clicks": 8,
+     "sliders": 12,
+     "checks": 1,
+     "selects": 0
+    },
+    "fast": {
+     "clicks": 7,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    },
+    "cycles": {
+     "clicks": 7,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    },
+    "cases": {
+     "clicks": 9,
+     "sliders": 3,
+     "checks": 0,
+     "selects": 0
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+   ],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/chair-lab.html",
+   "viewport": "1280x900",
+   "counts": {
+    "page": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 2,
+     "selects": 17
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/chair-lab.html",
+   "viewport": "390x844",
+   "counts": {
+    "page": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 3,
+     "selects": 17
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/stereochemistry-lab.html",
+   "viewport": "1280x900",
+   "counts": {
+    "page": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 2,
+     "selects": 27
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/stereochemistry-lab.html",
+   "viewport": "390x844",
+   "counts": {
+    "page": {
+     "clicks": 14,
+     "sliders": 0,
+     "checks": 2,
+     "selects": 27
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/stereochemistry-practice.html",
+   "viewport": "1280x900",
+   "counts": {
+    "page": {
+     "clicks": 28,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  },
+  {
+   "page": "organic-chemistry/stereochemistry-practice.html",
+   "viewport": "390x844",
+   "counts": {
+    "page": {
+     "clicks": 28,
+     "sliders": 0,
+     "checks": 0,
+     "selects": 0
+    }
+   },
+   "pageErrors": 0,
+   "consoleErrors": [],
+   "offsite": [],
+   "textHits": 0,
+   "overflow390": []
+  }
+ ],
+ "dna": {
+  "strand_draws": 2000,
+  "strand_bad": 0,
+  "melt_states": 143,
+  "melt_bad": 0,
+  "pcr_runs": 3000,
+  "pcr_bad": 0,
+  "digest_subsets": 15,
+  "crispr_pams": 30,
+  "nhej_edits": 180,
+  "mstII_combos": 27,
+  "sanger_samples": 3
+ },
+ "gng": {
+  "reg_states": 2000,
+  "reg_violations": 0,
+  "keq_inputs": 12,
+  "faults": [
+   {
+    "sec": "energy",
+    "msg": "K\u2032eq calculator prints NaN/Infinity/garbled exponent for extreme \u0394G\u2032\u00b0",
+    "ex": {
+     "input": -1800,
+     "out": "K\u2032eq = NaN \u00d7 10",
+     "txt": "At equilibrium products outnumber reactants by about Infinity to 1, so the step runs forwa"
+    }
+   },
+   {
+    "sec": "energy",
+    "msg": "K\u2032eq calculator prints NaN/Infinity/garbled exponent for extreme \u0394G\u2032\u00b0",
+    "ex": {
+     "input": 5000,
+     "out": "K\u2032eq = NaN \u00d7 10\u207b",
+     "txt": "At equilibrium the ratio [products]/[reactants] is only about NaN \u00d7 10\u207b. To run forward, t"
+    }
+   },
+   {
+    "sec": "energy",
+    "msg": "\u0394G\u2032\u00b0 = 0 (K\u2032eq = 1) is described as \"runs forward easily\"",
+    "ex": "At equilibrium products outnumber reactants by about 1 to 1, so the step runs forward easily."
+   }
+  ]
+ },
+ "lipid": {
+  "build_combos": 1170,
+  "build_bad": 0,
+  "cut_rounds": 2000,
+  "cut_bad": 0,
+  "fluidity_states": 4914,
+  "fluidity_bad": 0,
+  "water_predictions": 32
+ },
+ "chair": {
+  "models": 18,
+  "faults": [],
+  "missions": 6
+ },
+ "stereo_rdkit": {
+  "lab_models": 14,
+  "lab_all_ok": true,
+  "practice_mols": 25,
+  "allene_q16_end_plane_angle_deg": 20.8
+ },
+ "stereo_ui": {
+  "lab_answers": 48,
+  "pairs": 16,
+  "practice_answers": 80,
+  "faults": []
+ },
+ "curated_faults": [
+  {
+   "page": "stereochemistry-practice",
+   "sec": "Q20 allene",
+   "sev": "wrong science (model)",
+   "what": "penta-2,3-diene 3D model is nearly planar: substituent planes twisted 20.8 deg instead of 90 deg (C1-C2...C4-C5 dihedral 20.7 deg)"
+  },
+  {
+   "page": "stereochemistry-lab + practice",
+   "sec": "status/footer text",
+   "sev": "cosmetic/misleading",
+   "what": "says JSmol loads from St. Olaf / needs internet; page loads ./jsmol locally with no off-site requests"
+  },
+  {
+   "page": "stereochemistry-practice",
+   "sec": "footer",
+   "sev": "content",
+   "what": "no OpenStax ch.5 citation and no JSmol credit/licence line"
+  },
+  {
+   "page": "lipid-workbench",
+   "sec": "PA charge",
+   "sev": "wrong/doubtful science",
+   "what": "phosphatidic acid shown as -2 at pH 7; Lehninger Fig 10-9 lists -1 (bilayer pKa2 ~7.9)"
+  },
+  {
+   "page": "lipid-workbench",
+   "sec": "fluidity Lo label",
+   "sev": "doubtful",
+   "what": "any lipid with >=25% cholesterol labelled liquid-ordered, incl. DOPC/POPC"
+  },
+  {
+   "page": "dna-workbench",
+   "sec": "PCR key ideas",
+   "sev": "wrong wording",
+   "what": "\"reverse primer matches the reverse complement of the bottom-strand end\" = top strand (the common mistake)"
+  },
+  {
+   "page": "dna-workbench",
+   "sec": "CRISPR NHEJ -3",
+   "sev": "cosmetic/misleading",
+   "what": "in-frame -3 deletion highlights 23 downstream residues as changed (index-wise compare)"
+  },
+  {
+   "page": "dna-workbench",
+   "sec": "gene label",
+   "sev": "minor science",
+   "what": "93-nt GENE labelled exon 1; codon 30 (AGG) is split AG|G by intron 1, so last base is exon 2"
+  },
+  {
+   "page": "dna-workbench",
+   "sec": "cloning BH",
+   "sev": "doubtful",
+   "what": "BamHI+HindIII gives 0 colonies; uncut vector background would give blue colonies (EH shows 5)"
+  },
+  {
+   "page": "gluconeogenesis-workbench",
+   "sec": "Keq calculator",
+   "sev": "cosmetic",
+   "what": "|dG0|>=~1760 kJ/mol prints \"NaN x 10\" / \"Infinity to 1\"; dG0=0 says \"runs forward easily\""
+  },
+  {
+   "page": "gluconeogenesis-workbench",
+   "sec": "ethanol case",
+   "sev": "doubtful",
+   "what": "says aldehyde dehydrogenase reduces NAD+ in the cytosol; main ALDH2 is mitochondrial"
+  }
+ ],
+ "rerun_after_fixes": {
+  "smoke": {
+   "runs": 12,
+   "pageErrors": 0,
+   "textHits": 0,
+   "overflow390": 0,
+   "offsite": 0,
+   "consoleErrors": "Google Fonts blocked by sandbox only"
+  },
+  "stereo_rdkit": {
+   "practice_mols": 25,
+   "q16_end_plane_angle": 88.1,
+   "q16_dihedral_C1C2C4C5": 87.6,
+   "q16_CCC_angle": 179.0,
+   "refs_match": true
+  },
+  "stereo_ui": {
+   "lab_answers": 48,
+   "practice_answers": 80,
+   "faults": 0
+  },
+  "dna": {
+   "strand": {
+    "draws": 2000,
+    "bad": 0
+   },
+   "pcr_runs": 3000,
+   "pcr_bad": 0,
+   "crispr_bad": 0,
+   "texts": {
+    "exon": 0,
+    "keyIdea": "The forward primer matches the top strand; the reverse primer is the reverse complement of the top strand at the far end, so it anneals to the top strand. Both 3\u2032 ends point toward each other.",
+    "template": "Template: 93 bp of \u03b2-globin coding sequence, codons 1\u201330",
+    "tape": "The thread: start of the human \u03b2-globin coding sequence (HBB, codons 1\u201330)"
+   },
+   "faults": 0
+  },
+  "gng": {
+   "keq_inputs": 16,
+   "keq_bad": 0,
+   "reg_states": 2000,
+   "reg_viol": 0,
+   "faults": 0
+  },
+  "lipid": {
+   "build": {
+    "combos": 1170,
+    "bad": 0,
+    "challengesDone": 7,
+    "challengeTotal": 7
+   },
+   "cut_rounds": 2000,
+   "cut_bad": 0,
+   "fluidity_states": 4914,
+   "fluidity_bad": 0,
+   "faults": 0
+  }
+ }
+}

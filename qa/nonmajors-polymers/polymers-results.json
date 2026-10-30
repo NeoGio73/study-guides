@@ -1,0 +1,404 @@
+{
+ "pageErrors": [],
+ "labs": {
+  "swell": {
+   "combos": 18,
+   "mismatches": 0,
+   "examples": []
+  },
+  "wind": {
+   "combos": 25,
+   "mismatches": 0,
+   "examples": []
+  },
+  "brk": {
+   "combos": 80,
+   "mismatches": 0,
+   "examples": []
+  },
+  "board": {
+   "combos": 768,
+   "mismatches": 0,
+   "examples": []
+  },
+  "fin": {
+   "combos": 405,
+   "mismatches": 0,
+   "examples": []
+  },
+  "tide": {
+   "combos": 135,
+   "mismatches": 0,
+   "examples": []
+  },
+  "caro": {
+   "combos": 25,
+   "mismatches": 0,
+   "examples": []
+  },
+  "suit": {
+   "combos": 30,
+   "mismatches": 0,
+   "examples": []
+  }
+ },
+ "faults": [],
+ "notes": [
+  {
+   "lab": "wind",
+   "at": "30 mph, fetch 190→200 mi",
+   "H": "3.8 m · 12 ft → 3.9 m · 13 ft",
+   "T": "10.0 s → 10.5 s",
+   "jumpPct": "5.0"
+  },
+  {
+   "lab": "breaker / Teahupoo text",
+   "claim": "1:1 bottom gives ξ0 far into the plunging range (0.5–3.3)",
+   "computed": [
+    {
+     "H0": 2,
+     "T": 14,
+     "xi": 12.4,
+     "xi_1to3": 4.1
+    },
+    {
+     "H0": 3,
+     "T": 16,
+     "xi": 11.5,
+     "xi_1to3": 3.8
+    },
+    {
+     "H0": 4,
+     "T": 18,
+     "xi": 11.2,
+     "xi_1to3": 3.7
+    },
+    {
+     "H0": 1.2,
+     "T": 11,
+     "xi": 12.5,
+     "xi_1to3": 4.2
+    }
+   ],
+   "sliderMinSlope": "1:5"
+  }
+ ],
+ "practice": [
+  {
+   "level": "guided",
+   "i": 0,
+   "title": "1. Degree of polymerization",
+   "typed": "9980",
+   "feedback": "Correct.",
+   "mine": 9980.8
+  },
+  {
+   "level": "guided",
+   "i": 1,
+   "title": "2. Carothers equation",
+   "typed": "22600",
+   "feedback": "Correct.",
+   "mine": 22632
+  },
+  {
+   "level": "guided",
+   "i": 2,
+   "title": "3. Swell speed",
+   "typed": "18.7",
+   "feedback": "Correct.",
+   "mine": 18.736
+  },
+  {
+   "level": "guided",
+   "i": 3,
+   "title": "4. Wave speed at the break",
+   "typed": "4.76",
+   "feedback": "Correct.",
+   "mine": 4.758
+  },
+  {
+   "level": "guided",
+   "i": 4,
+   "title": "5. Inflatable SUP in a hot car",
+   "typed": "18.0",
+   "feedback": "Correct.",
+   "mine": 17.988
+  },
+  {
+   "level": "guided",
+   "i": 5,
+   "title": "6. Will it barrel?",
+   "typed": "1.05",
+   "feedback": "Correct.",
+   "mine": 1.0456
+  },
+  {
+   "level": "guided",
+   "i": 6,
+   "title": "7. Hull speed",
+   "typed": "2.45",
+   "feedback": "Correct.",
+   "mine": 2.4454
+  },
+  {
+   "level": "guided",
+   "i": 7,
+   "title": "8. Width and stability",
+   "typed": "1.34",
+   "feedback": "Correct.",
+   "mine": 1.3436
+  },
+  {
+   "level": "guided",
+   "i": 8,
+   "title": "9. Archimedes on a SUP",
+   "typed": "52.8",
+   "feedback": "Correct.",
+   "mine": 52.798
+  },
+  {
+   "level": "guided",
+   "i": 9,
+   "title": "10. Fin side force and torque",
+   "typed": "31.4",
+   "feedback": "Correct.",
+   "mine": 31.365
+  },
+  {
+   "level": "guided",
+   "i": 10,
+   "title": "11. Rule of twelfths",
+   "typed": "2.1",
+   "feedback": "Correct.",
+   "mine": 2.1
+  },
+  {
+   "level": "guided",
+   "i": 11,
+   "title": "12. Shark metabolism and season",
+   "typed": "2.08",
+   "feedback": "Correct.",
+   "mine": 2.0814
+  },
+  {
+   "level": "hints",
+   "i": 0,
+   "title": "1. Degree of polymerization",
+   "typed": "9980",
+   "feedback": "Correct.",
+   "mine": 9980.8
+  },
+  {
+   "level": "hints",
+   "i": 1,
+   "title": "2. Carothers equation",
+   "typed": "22600",
+   "feedback": "Correct.",
+   "mine": 22632
+  },
+  {
+   "level": "hints",
+   "i": 2,
+   "title": "3. Swell speed",
+   "typed": "18.7",
+   "feedback": "Correct.",
+   "mine": 18.736
+  },
+  {
+   "level": "hints",
+   "i": 3,
+   "title": "4. Wave speed at the break",
+   "typed": "4.76",
+   "feedback": "Correct.",
+   "mine": 4.758
+  },
+  {
+   "level": "hints",
+   "i": 4,
+   "title": "5. Inflatable SUP in a hot car",
+   "typed": "18.0",
+   "feedback": "Correct.",
+   "mine": 17.988
+  },
+  {
+   "level": "hints",
+   "i": 5,
+   "title": "6. Will it barrel?",
+   "typed": "1.05",
+   "feedback": "Correct.",
+   "mine": 1.0456
+  },
+  {
+   "level": "hints",
+   "i": 6,
+   "title": "7. Hull speed",
+   "typed": "2.45",
+   "feedback": "Correct.",
+   "mine": 2.4454
+  },
+  {
+   "level": "hints",
+   "i": 7,
+   "title": "8. Width and stability",
+   "typed": "1.34",
+   "feedback": "Correct.",
+   "mine": 1.3436
+  },
+  {
+   "level": "hints",
+   "i": 8,
+   "title": "9. Archimedes on a SUP",
+   "typed": "52.8",
+   "feedback": "Correct.",
+   "mine": 52.798
+  },
+  {
+   "level": "hints",
+   "i": 9,
+   "title": "10. Fin side force and torque",
+   "typed": "31.4",
+   "feedback": "Correct.",
+   "mine": 31.365
+  },
+  {
+   "level": "hints",
+   "i": 10,
+   "title": "11. Rule of twelfths",
+   "typed": "2.1",
+   "feedback": "Correct.",
+   "mine": 2.1
+  },
+  {
+   "level": "hints",
+   "i": 11,
+   "title": "12. Shark metabolism and season",
+   "typed": "2.08",
+   "feedback": "Correct.",
+   "mine": 2.0814
+  },
+  {
+   "level": "own",
+   "i": 0,
+   "title": "1. Degree of polymerization",
+   "typed": "9980",
+   "feedback": "Correct.",
+   "mine": 9980.8
+  },
+  {
+   "level": "own",
+   "i": 1,
+   "title": "2. Carothers equation",
+   "typed": "22600",
+   "feedback": "Correct.",
+   "mine": 22632
+  },
+  {
+   "level": "own",
+   "i": 2,
+   "title": "3. Swell speed",
+   "typed": "18.7",
+   "feedback": "Correct.",
+   "mine": 18.736
+  },
+  {
+   "level": "own",
+   "i": 3,
+   "title": "4. Wave speed at the break",
+   "typed": "4.76",
+   "feedback": "Correct.",
+   "mine": 4.758
+  },
+  {
+   "level": "own",
+   "i": 4,
+   "title": "5. Inflatable SUP in a hot car",
+   "typed": "18.0",
+   "feedback": "Correct.",
+   "mine": 17.988
+  },
+  {
+   "level": "own",
+   "i": 5,
+   "title": "6. Will it barrel?",
+   "typed": "1.05",
+   "feedback": "Correct.",
+   "mine": 1.0456
+  },
+  {
+   "level": "own",
+   "i": 6,
+   "title": "7. Hull speed",
+   "typed": "2.45",
+   "feedback": "Correct.",
+   "mine": 2.4454
+  },
+  {
+   "level": "own",
+   "i": 7,
+   "title": "8. Width and stability",
+   "typed": "1.34",
+   "feedback": "Correct.",
+   "mine": 1.3436
+  },
+  {
+   "level": "own",
+   "i": 8,
+   "title": "9. Archimedes on a SUP",
+   "typed": "52.8",
+   "feedback": "Correct.",
+   "mine": 52.798
+  },
+  {
+   "level": "own",
+   "i": 9,
+   "title": "10. Fin side force and torque",
+   "typed": "31.4",
+   "feedback": "Correct.",
+   "mine": 31.365
+  },
+  {
+   "level": "own",
+   "i": 10,
+   "title": "11. Rule of twelfths",
+   "typed": "2.1",
+   "feedback": "Correct.",
+   "mine": 2.1
+  },
+  {
+   "level": "own",
+   "i": 11,
+   "title": "12. Shark metabolism and season",
+   "typed": "2.08",
+   "feedback": "Correct.",
+   "mine": 2.0814
+  },
+  {
+   "commaTest": true,
+   "i": 0,
+   "typed": "9,982",
+   "inputValueSeenByPage": "9982",
+   "feedback": "Correct."
+  },
+  {
+   "commaTest": true,
+   "i": 0,
+   "typed": "9982",
+   "inputValueSeenByPage": "9982",
+   "feedback": "Correct."
+  },
+  {
+   "commaTest": true,
+   "i": 0,
+   "typed": "9.98e3",
+   "inputValueSeenByPage": "9.98e3",
+   "feedback": "Correct."
+  },
+  {
+   "commaTest": true,
+   "i": 1,
+   "typed": "22,632",
+   "inputValueSeenByPage": "22632",
+   "feedback": "Correct."
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "C3 polysaccharides \"more than 20 or so\"": {
+  "pass": true,
+  "detail": "polysaccharides (more than 20 or so units)"
+ },
+ "C6 arabinose sentence": {
+  "pass": true,
+  "detail": "Most of the hexoses of living organisms are D isomers. Exceptions among other sugars include the pentose L-arabinose and a few sugar derivatives, such as L-fucose."
+ },
+ "C7 lower-case names mid-sentence": {
+  "pass": true,
+  "detail": {
+   "offenders": [],
+   "samples": [
+    "Which sugar is the C-4 epimer of D-idose?",
+    "How are D-glucose and L-glucose related?",
+    "Is maltose a reducing sugar?",
+    "Which sugar is the C-3 epimer of D-mannose?"
+   ],
+   "cmp": "Epimers\n\nD-Glucose and D-mannose differ in configuration at one carbon only, C-2"
+  }
+ },
+ "C4 mutarotation self-consistent": {
+  "pass": true,
+  "detail": {
+   "poly": "polysaccharides (more than 20 or so units)",
+   "arabinose": "Most of the hexoses of living organisms are D isomers. Exceptions among other sugars include the pentose L-arabinose and a few sugar derivatives, such as L-fucose.",
+   "cmpEpimer": "Epimers\n\nD-Glucose and D-mannose differ in configuration at one carbon only, C-2. Two sugars like this are called epimers.",
+   "cmpEnant": "Enantiomers\n\nEvery chiral carbon is reversed, so D-glucose and L-glucose are mirror images of each other. Enantiomers share one name and differ only in D or L.",
+   "capsMidSentence": [],
+   "sampleQs": [
+    "Which sugar is the C-4 epimer of D-idose?",
+    "How are D-glucose and L-glucose related?",
+    "Is maltose a reducing sugar?",
+    "Which sugar is the C-3 epimer of D-mannose?"
+   ],
+   "muta50": {
+    "rot": "+52°",
+    "a": "36%",
+    "b": "64%"
+   },
+   "mutaNote": "The starting values and the end point of +52° are from the Color Atlas, p. 36. The mixture shown, about 36% α and 64% β, is the one those three readings imply; Lehninger gives it as about one-third α and two-thirds β. The speed of the change shown here is only illustrative.",
+   "eqFromComposition": 52.5,
+   "methylResiduesPerBranch": [
+    "24.9",
+    "29.5"
+   ]
+  }
+ },
+ "C5 methylation branch frequency within 24-30": {
+  "pass": true,
+  "detail": [
+   "24.9",
+   "29.5"
+  ]
+ },
+ "C8 C-2/C-3 labels clear of the bond": {
+  "pass": true,
+  "detail": [
+   {
+    "acceptor": "Glc C-2",
+    "labelToBondPx": 12
+   },
+   {
+    "acceptor": "Glc C-3",
+    "labelToBondPx": 12
+   },
+   {
+    "acceptor": "Gal C-2",
+    "labelToBondPx": 12
+   },
+   {
+    "acceptor": "Gal C-3",
+    "labelToBondPx": 12
+   },
+   {
+    "acceptor": "Man C-2",
+    "labelToBondPx": 12
+   },
+   {
+    "acceptor": "Man C-3",
+    "labelToBondPx": 12
+   }
+  ]
+ },
+ "26 phosphatidic acid -1 with consistent footnote": {
+  "pass": true,
+  "detail": {
+   "keyFact": "Net charge at pH 7: phosphatidylethanolamine 0, phosphatidylcholine 0, phosphatidylserine −1, phosphatidylglycerol −1, cardiolipin −2, phosphatidic acid −1*, PIP2 −4*. (*Lehninger’s values. A phosphate monoester is only partly ionized on its second —OH at pH 7",
+   "readout": "Phosphatidic acid Class Glycerophospholipid Role Membrane lipid Net charge at pH 7 −1* The parent compound of all glycerophospholipids, a phosphomonoester. Cells hold only trace amounts, but it is the central intermediate of lipid synthesis. *The value Lehning"
+  }
+ },
+ "29 cholesterol locked at 0 in both challenges": {
+  "pass": true,
+  "detail": {
+   "keyFact": "Net charge at pH 7: phosphatidylethanolamine 0, phosphatidylcholine 0, phosphatidylserine −1, phosphatidylglycerol −1, cardiolipin −2, phosphatidic acid −1*, PIP2 −4*. (*Lehninger’s values. A phosphate monoester is only partly ionized on its second —OH at pH 7: phosphatidic acid is counted as −1, and in PIP2 the phosphodiester is −1 and each ring phosphate about −1.5.)",
+   "paReadout": "Phosphatidic acid Class Glycerophospholipid Role Membrane lipid Net charge at pH 7 −1* The parent compound of all glycerophospholipids, a phosphomonoester. Cells hold only trace amounts, but it is the central intermediate of lipid synthesis. *The value Lehninger gives in Fig. 10-8. A phosphate monoester is only partly ionized on its second —OH at pH 7: phosphatidic acid is counted as −1, and in PIP2 the phosphodiester is −1 and each ring phosphate about −1.5.",
+   "allMinus2": 0,
+   "lysoPIP2": "Lysophosphatidylinositol 4,5-bisphosphate",
+   "lysoPAF": "Lyso-PAF (1-alkyl-2-lysophosphatidylcholine)",
+   "lysoPls": "A lysoplasmalogen",
+   "cold": {
+    "chol": "0",
+    "disabled": true
+   },
+   "coldAfterForcedInput": "40% of lipids",
+   "hot": {
+    "chol": "0",
+    "disabled": true
+   },
+   "plasma": {
+    "state": "Between the two extremes",
+    "needle": "57.8%",
+    "cholEnabled": true
+   },
+   "carbonCount": "Follow the carbon count: 2, 4, 6, 6, 5, 10, 15, 30, 27.",
+   "chyloSize": "100 to 500 nm",
+   "acetylLabelX": 3.5,
+   "checker": [
+    "C18:2(Δ9,12) -> true",
+    "18:2(Δ⁹,¹²) -> true",
+    "c18:2 (9,12) -> true",
+    "18:2(Δ9,12) -> true",
+    "18:2(Δ10,13) -> false"
+   ],
+   "transType": "Polyunsaturated, each pair of double bonds separated by one CH2 group",
+   "cisType": "Polyunsaturated, each pair of double bonds separated by one CH2 group (the natural pattern)",
+   "icosa": "0 Icosa- in page; table: cis-,cis-,cis-,cis-5,8,11,14-Eicosatetraenoic acid"
+  }
+ },
+ "47/L5 plasma-membrane preset in the middle zone": {
+  "pass": true,
+  "detail": {
+   "state": "Between the two extremes",
+   "needle": "57.8%",
+   "cholEnabled": true
+  }
+ },
+ "47/L7 assembler names": {
+  "pass": true,
+  "detail": [
+   "Lysophosphatidylinositol 4,5-bisphosphate",
+   "Lyso-PAF (1-alkyl-2-lysophosphatidylcholine)",
+   "A lysoplasmalogen"
+  ]
+ },
+ "47/L9 chylomicron size stated once": {
+  "pass": true,
+  "detail": "100 to 500 nm"
+ },
+ "47/L10 carbon-count sentence": {
+  "pass": true,
+  "detail": "Follow the carbon count: 2, 4, 6, 6, 5, 10, 15, 30, 27."
+ },
+ "47/L3 acetyl-CoA label not clipped": {
+  "pass": true,
+  "detail": 3.5
+ },
+ "47/L12 shorthand checker": {
+  "pass": true,
+  "detail": [
+   "C18:2(Δ9,12) -> true",
+   "18:2(Δ⁹,¹²) -> true",
+   "c18:2 (9,12) -> true",
+   "18:2(Δ9,12) -> true",
+   "18:2(Δ10,13) -> false"
+  ]
+ },
+ "47/L13 natural pattern only for cis; one spelling": {
+  "pass": true,
+  "detail": {
+   "trans": "Polyunsaturated, each pair of double bonds separated by one CH2 group",
+   "cis": "Polyunsaturated, each pair of double bonds separated by one CH2 group (the natural pattern)",
+   "icosa": "0 Icosa- in page; table: cis-,cis-,cis-,cis-5,8,11,14-Eicosatetraenoic acid"
+  }
+ },
+ "47/L4 long trans names wrap at 390 px": {
+  "pass": true,
+  "detail": {
+   "maxScrollWidth": 390
+  }
+ }
+}

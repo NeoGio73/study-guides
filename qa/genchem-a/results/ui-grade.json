@@ -1,0 +1,1049 @@
+[
+ {
+  "page": "mole-and-molar-mass-study-guide.html",
+  "pageErrors": [],
+  "runs": [
+   {
+    "tab": "molar",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 344,
+    "blankFails": []
+   },
+   {
+    "tab": "molar",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "molar",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "particles",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 60,
+    "blankFails": []
+   },
+   {
+    "tab": "particles",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "particles",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mass",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 60,
+    "blankFails": []
+   },
+   {
+    "tab": "mass",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mass",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "twostep",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 120,
+    "blankFails": []
+   },
+   {
+    "tab": "twostep",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "twostep",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "inside",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 199,
+    "blankFails": []
+   },
+   {
+    "tab": "inside",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "inside",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mixed",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 127,
+    "blankFails": []
+   },
+   {
+    "tab": "mixed",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mixed",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   }
+  ]
+ },
+ {
+  "page": "stoichiometry-study-guide.html",
+  "pageErrors": [],
+  "runs": [
+   {
+    "tab": "molmol",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many moles of O2 must react to produce 2.58 mol of P4O10?",
+      "typed": "2.58",
+      "expected": "You divided by the coefficient of P4O10 (1) but did not multiply by the coefficient of O2 (5). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. P4O10 and O2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of CO2 can form from 3.56 mol of C3H8? Assume the other reactant is in excess.",
+      "typed": "3.56",
+      "expected": "You divided by the coefficient of C3H8 (1) but did not multiply by the coefficient of CO2 (3). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. C3H8 and CO2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of Fe2O3 can form from 2.97 mol of Fe? Assume the other reactant is in excess.",
+      "typed": "5.94",
+      "expected": "You multiplied by the coefficient of Fe2O3 (2) but did not divide by the coefficient of Fe (4). The ratio needs both.",
+      "shown": "✗ That is the result with the mole ratio upside down. Put mol Fe2O3 on top so that mol Fe cancels: 2 mol Fe2O3 over 4 mol Fe."
+     },
+     {
+      "q": "When 24.0 mol of Fe forms, how many moles of Al2O3 form along with it?",
+      "typed": "24.0",
+      "expected": "You multiplied by the coefficient of Al2O3 (1) but did not divide by the coefficient of Fe (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. Fe and Al2O3 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of H2O can form from 3.09 mol of C6H12O6? Assume the other reactant is in excess.",
+      "typed": "3.09",
+      "expected": "You divided by the coefficient of C6H12O6 (1) but did not multiply by the coefficient of H2O (6). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. C6H12O6 and H2O are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of O2 must react to produce 7.13 mol of H2O?",
+      "typed": "7.13",
+      "expected": "You multiplied by the coefficient of O2 (1) but did not divide by the coefficient of H2O (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. H2O and O2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of C6H12O6 must react to produce 4.68 mol of CO2?",
+      "typed": "4.68",
+      "expected": "You multiplied by the coefficient of C6H12O6 (1) but did not divide by the coefficient of CO2 (6). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. CO2 and C6H12O6 are not 1:1 here. Check their coefficients."
+     }
+    ],
+    "blankChecks": 120,
+    "blankFails": []
+   },
+   {
+    "tab": "molmol",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many moles of Fe2O3 can form from 7.78 mol of Fe? Assume the other reactant is in excess.",
+      "typed": "15.6",
+      "expected": "You multiplied by the coefficient of Fe2O3 (2) but did not divide by the coefficient of Fe (4). The ratio needs both.",
+      "shown": "✗ That is the result with the mole ratio upside down. Put mol Fe2O3 on top so that mol Fe cancels: 2 mol Fe2O3 over 4 mol Fe."
+     },
+     {
+      "q": "How many moles of P4O10 can form from 23.5 mol of O2? Assume the other reactant is in excess.",
+      "typed": "23.5",
+      "expected": "You multiplied by the coefficient of P4O10 (1) but did not divide by the coefficient of O2 (5). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. O2 and P4O10 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of NH3 can form from 10.7 mol of N2? Assume the other reactant is in excess.",
+      "typed": "10.7",
+      "expected": "You divided by the coefficient of N2 (1) but did not multiply by the coefficient of NH3 (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. N2 and NH3 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of Fe2O3 are needed to react completely with 2.36 mol of CO?",
+      "typed": "2.36",
+      "expected": "You multiplied by the coefficient of Fe2O3 (1) but did not divide by the coefficient of CO (3). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. CO and Fe2O3 are not 1:1 here. Check their coefficients."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "molmol",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many moles of O2 must react to produce 6.40 mol of P4O10?",
+      "typed": "6.40",
+      "expected": "You divided by the coefficient of P4O10 (1) but did not multiply by the coefficient of O2 (5). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. P4O10 and O2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "When 6.48 mol of Al2O3 forms, how many moles of Fe form along with it?",
+      "typed": "6.48",
+      "expected": "You divided by the coefficient of Al2O3 (1) but did not multiply by the coefficient of Fe (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. Al2O3 and Fe are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of NaCl can form from 8.30 mol of Cl2? Assume the other reactant is in excess.",
+      "typed": "8.30",
+      "expected": "You divided by the coefficient of Cl2 (1) but did not multiply by the coefficient of NaCl (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. Cl2 and NaCl are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of O2 must react to produce 7.98 mol of P4O10?",
+      "typed": "7.98",
+      "expected": "You divided by the coefficient of P4O10 (1) but did not multiply by the coefficient of O2 (5). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. P4O10 and O2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of N2 must react to produce 15.2 mol of NH3?",
+      "typed": "15.2",
+      "expected": "You multiplied by the coefficient of N2 (1) but did not divide by the coefficient of NH3 (2). The ratio needs both.",
+      "shown": "✗ That is the amount you started with, so no mole ratio was applied. NH3 and N2 are not 1:1 here. Check their coefficients."
+     },
+     {
+      "q": "How many moles of C2H6 must react to produce 5.81 mol of CO2?",
+      "typed": "11.6",
+      "expected": "You multiplied by the coefficient of C2H6 (2) but did not divide by the coefficient of CO2 (4). The ratio needs both.",
+      "shown": "✗ That is the result with the mole ratio upside down. Put mol C2H6 on top so that mol CO2 cancels: 2 mol C2H6 over 4 mol CO2."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "massmass",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "massmass",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "massmass",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "density",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many grams of H2 can form from 8.19 mL of liquid water (H2O, density 1.00 g/mL)? Assume the other reactant is in excess.",
+      "typed": "0.229",
+      "expected": "It looks like the coefficients were counted twice: once in the mole ratio and again inside a molar mass. Molar mass is f",
+      "shown": "✗ That is the moles of H2, and the question asks for grams. One more step: multiply by the molar mass of H2."
+     }
+    ],
+    "blankChecks": 303,
+    "blankFails": []
+   },
+   {
+    "tab": "density",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "density",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "limiting",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "limiting",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "A reaction mixture contains 20.6 g of C3H8 and 42.4 g of O2.",
+      "typed": "97.2",
+      "expected": "The mole ratio is upside down. Put mol CO2 on top so that moles of the reactant cancel.",
+      "shown": "✗ (b) Do not add the two amounts. Only the limiting reactant decides how much product forms, so use the smaller amount."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "limiting",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "yield",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "In the lab, 57.7 g of NH3 reacts with an excess of the other reactant, and 87.0 g of H2O is collected.",
+      "typed": "86.6",
+      "expected": "You applied the mole ratio directly to grams. Coefficients compare moles, not grams, so convert grams of NH3 to moles fi",
+      "shown": "✗ (a) That is the actual yield, the amount that was collected. The theoretical yield comes from stoichiometry: start from the 57.7 g of NH3."
+     }
+    ],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "yield",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "yield",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 318,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   }
+  ]
+ },
+ {
+  "page": "solution-stoichiometry-study-guide.html",
+  "pageErrors": [],
+  "runs": [
+   {
+    "tab": "molarity",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 137,
+    "blankFails": []
+   },
+   {
+    "tab": "molarity",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "molarity",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 180,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "titration",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "A 25.00 mL sample of HNO3 solution is titrated with 0.1000 M KOH. The equivalence point is reached after 21.59 mL of KOH has been added. What is the molarity of the HNO3 solution?",
+      "typed": "0.002159",
+      "expected": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+      "shown": "✗ That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity."
+     },
+     {
+      "q": "A 0.6971 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 27.87 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.003413",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     },
+     {
+      "q": "A 0.7753 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 31.72 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.003796",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     }
+    ],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "titration",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "A 50.00 mL sample of NaOH solution is titrated with 0.1064 M HCl. The equivalence point is reached after 16.40 mL of HCl has been added. What is the molarity of the NaOH solution?",
+      "typed": "0.001745",
+      "expected": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     },
+     {
+      "q": "A 0.7893 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 29.07 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.003865",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     },
+     {
+      "q": "A 0.8896 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 21.55 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.004356",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "titration",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "A 0.7630 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 38.18 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.003736",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     },
+     {
+      "q": "A 0.7478 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 23.71 mL of NaOH has been added. What is the molarity of the NaOH so",
+      "typed": "0.003662",
+      "expected": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+      "shown": "✗ That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "lab",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "early": 0
+   }
+  ]
+ },
+ {
+  "page": "solutions-and-gases-study-guide.html",
+  "pageErrors": [],
+  "runs": [
+   {
+    "tab": "molarity",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 145,
+    "blankFails": []
+   },
+   {
+    "tab": "molarity",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "molarity",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 180,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "dilution",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solstoich",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 240,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "mix",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "gaslaw",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 180,
+    "blankFails": []
+   },
+   {
+    "tab": "gaslaw",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "gaslaw",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 29,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "gasstoich",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 418,
+    "blankFails": []
+   },
+   {
+    "tab": "gasstoich",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many grams of Al are needed to react completely with 248 mL of Cl2 gas at 71.6 °C and 642 mmHg?",
+      "typed": "0.199",
+      "expected": "It looks like 22.4 L/mol was used. That value only applies at STP (0 °C and 1 atm). Use PV = nRT with the temperature an",
+      "shown": "✗ It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 3 mol Cl2 with 2 mol Al. Multiply the moles of Cl2 by 2 mol Al over 3 mol Cl2."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "gasstoich",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solgas",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 400,
+    "blankFails": []
+   },
+   {
+    "tab": "solgas",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [
+     {
+      "q": "How many liters of H2 gas, measured at 29.0 °C and 0.945 atm, can form from 78.6 mL of 0.173 M H2SO4? Assume the other reactant is in excess.",
+      "typed": "0.0136",
+      "expected": "That is the moles of H2SO4. Keep going: apply the mole ratio to get moles of H2.",
+      "shown": "✗ That is the moles of H2. Use PV = nRT to turn the moles into a volume."
+     }
+    ],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "solgas",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "guided",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 360,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "hint",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   },
+   {
+    "tab": "capstone",
+    "mode": "solo",
+    "n": 60,
+    "ok": 60,
+    "fails": [],
+    "slipChecks": 30,
+    "slipFails": [],
+    "blankChecks": 0,
+    "blankFails": []
+   }
+  ]
+ }
+]

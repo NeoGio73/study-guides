@@ -1,0 +1,3744 @@
+{
+ "guide": "general-chemistry/solution-stoichiometry-study-guide.html",
+ "problems": {
+  "molarity": 10000,
+  "molarity:mL": 1384,
+  "molarity:Mmol": 1440,
+  "molarity:g": 2836,
+  "molarity:Mg": 2872,
+  "molarity:mol": 1468,
+  "dilution": 10000,
+  "dilution:V1": 3995,
+  "dilution:V2": 1993,
+  "dilution:M2": 2130,
+  "dilution:water": 1882,
+  "solstoich": 10000,
+  "solstoich:sol>g": 3963,
+  "solstoich:g>mL": 3163,
+  "solstoich:sol>mL": 2874,
+  "mix": 20000,
+  "titration": 10000,
+  "titration:findV": 1876,
+  "titration:sample": 2548,
+  "titration:findM": 3761,
+  "titration:khp": 1815,
+  "lab": 10000
+ },
+ "checks": {
+  "molarity:mL | bad-token scan": 19375,
+  "molarity:mL | zero-quantity scan": 19375,
+  "molarity:mL | solution shows the displayed answer": 1384,
+  "molarity:mL | answer finite": 1384,
+  "molarity:mL | displayed answer accepted": 2768,
+  "molarity:mL | slip message reachable: That is the volume in liters# The question asks for millilit": 1384,
+  "molarity:mL | slip message reachable: Liters = moles ÷ molarity# It looks like you multiplied#": 1383,
+  "molarity:mL | slip message reachable: It looks like grams were used in place of moles# Convert # g": 1384,
+  "molarity:mL | slip message reachable: That is the moles of NaHCO# Divide by the molarity to get li": 83,
+  "molarity:mL | guided blank accepted": 4152,
+  "molarity:mL | name matches formula": 1384,
+  "molarity:mL | concentration below solubility": 1384,
+  "molarity:mL | independent recompute": 1384,
+  "molarity:mL | displayed digits vs independent value": 1384,
+  "molarity:mL | named slip: left in liters": 1382,
+  "molarity:mL | named slip: grams as moles": 1384,
+  "molarity:mL | named slip: stopped at moles": 1381,
+  "molarity:mL | slip message reachable: That is the moles of KOH# Divide by the molarity to get lite": 88,
+  "molarity:Mmol | bad-token scan": 18715,
+  "molarity:Mmol | zero-quantity scan": 18715,
+  "molarity:Mmol | solution shows the displayed answer": 1440,
+  "molarity:Mmol | answer finite": 1440,
+  "molarity:Mmol | displayed answer accepted": 2880,
+  "molarity:Mmol | slip message reachable: Molarity is moles per liter, not per milliliter# Convert # m": 1440,
+  "molarity:Mmol | slip message reachable: The fraction is upside down# Molarity is moles on top, liter": 1435,
+  "molarity:Mmol | slip message reachable: Molarity = moles ÷ liters# It looks like you multiplied#": 1440,
+  "molarity:Mmol | guided blank accepted": 2880,
+  "molarity:Mmol | name matches formula": 1440,
+  "molarity:Mmol | concentration below solubility": 1440,
+  "molarity:Mmol | independent recompute": 1440,
+  "molarity:Mmol | displayed digits vs independent value": 1440,
+  "molarity:Mmol | named slip: mL not converted": 1438,
+  "molarity:Mmol | named slip: inverted": 1434,
+  "molarity:Mmol | named slip: multiplied": 1437,
+  "molarity:g | bad-token scan": 39704,
+  "molarity:g | zero-quantity scan": 39704,
+  "molarity:g | solution shows the displayed answer": 2836,
+  "molarity:g | answer finite": 2836,
+  "molarity:g | displayed answer accepted": 5672,
+  "molarity:g | slip message reachable: That is the moles of KCl needed# The question asks for grams": 165,
+  "molarity:g | slip message reachable: Molarity is moles per liter# Convert # mL to liters before m": 2836,
+  "molarity:g | slip message reachable: To go from moles to grams, multiply by the molar mass# It lo": 2836,
+  "molarity:g | slip message reachable: That is the mass in one full liter# You are making only # mL": 2836,
+  "molarity:g | guided blank accepted": 14180,
+  "molarity:g | name matches formula": 2836,
+  "molarity:g | concentration below solubility": 2836,
+  "molarity:g | independent recompute": 2836,
+  "molarity:g | displayed digits vs independent value": 2836,
+  "molarity:g | named slip: stopped at moles": 2836,
+  "molarity:g | named slip: mL not converted": 2836,
+  "molarity:g | named slip: mass per liter": 2836,
+  "molarity:g | slip message reachable: That is the moles of NaCl needed# The question asks for gram": 157,
+  "molarity:g | slip message reachable: That is the moles of NaOH needed# The question asks for gram": 181,
+  "molarity:mL | slip message reachable: That is the moles of CuSO# Divide by the molarity to get lit": 96,
+  "molarity:Mg | bad-token scan": 40191,
+  "molarity:Mg | zero-quantity scan": 40191,
+  "molarity:Mg | solution shows the displayed answer": 2872,
+  "molarity:Mg | answer finite": 2872,
+  "molarity:Mg | displayed answer accepted": 5744,
+  "molarity:Mg | slip message reachable: It looks like grams were used in place of moles# Convert # g": 2872,
+  "molarity:Mg | slip message reachable: Molarity is moles per liter, not per milliliter# Convert # m": 2872,
+  "molarity:Mg | slip message reachable: The fraction is upside down# Molarity is moles on top, liter": 2855,
+  "molarity:Mg | slip message reachable: That is the moles of NaOH# Divide by the liters of solution ": 189,
+  "molarity:Mg | guided blank accepted": 14360,
+  "molarity:Mg | name matches formula": 2872,
+  "molarity:Mg | concentration below solubility": 2872,
+  "molarity:Mg | independent recompute": 2872,
+  "molarity:Mg | displayed digits vs independent value": 2872,
+  "molarity:Mg | named slip: grams as moles": 2872,
+  "molarity:Mg | named slip: mL not converted": 2872,
+  "molarity:Mg | named slip: stopped at moles": 2872,
+  "molarity:Mg | slip message reachable: That is the moles of KNO# Divide by the liters of solution t": 190,
+  "molarity:g | slip message reachable: That is the moles of C#H#O# needed# The question asks for gr": 162,
+  "molarity:Mg | slip message reachable: That is the moles of NaCl# Divide by the liters of solution ": 202,
+  "molarity:mL | slip message reachable: That is the moles of KI# Divide by the molarity to get liter": 98,
+  "molarity:g | slip message reachable: That is the moles of CuSO# needed# The question asks for gra": 191,
+  "molarity:mL | slip message reachable: That is the moles of NH#Cl# Divide by the molarity to get li": 77,
+  "molarity:mol | bad-token scan": 19074,
+  "molarity:mol | zero-quantity scan": 19074,
+  "molarity:mol | solution shows the displayed answer": 1468,
+  "molarity:mol | answer finite": 1468,
+  "molarity:mol | displayed answer accepted": 2936,
+  "molarity:mol | slip message reachable: Molarity is moles per liter# Convert # mL to liters before m": 1468,
+  "molarity:mol | slip message reachable: Moles = molarity × liters# It looks like you divided#": 2926,
+  "molarity:mol | guided blank accepted": 2936,
+  "molarity:mol | name matches formula": 1468,
+  "molarity:mol | concentration below solubility": 1468,
+  "molarity:mol | independent recompute": 1468,
+  "molarity:mol | displayed digits vs independent value": 1468,
+  "molarity:mol | named slip: mL not converted": 1464,
+  "molarity:mol | named slip: divided": 1464,
+  "molarity:mL | slip message reachable: That is the moles of Na#SO# Divide by the molarity to get li": 97,
+  "molarity:g | slip message reachable: That is the moles of KOH needed# The question asks for grams": 191,
+  "molarity:g | slip message reachable: That is the moles of KI needed# The question asks for grams,": 181,
+  "molarity:g | slip message reachable: That is the moles of AgNO# needed# The question asks for gra": 209,
+  "molarity:g | slip message reachable: That is the moles of CaCl# needed# The question asks for gra": 158,
+  "molarity:Mg | slip message reachable: That is the moles of Na#CO# Divide by the liters of solution": 170,
+  "molarity:g | slip message reachable: That is the moles of NH#Cl needed# The question asks for gra": 179,
+  "molarity:mL | slip message reachable: That is the moles of C#H#O# Divide by the molarity to get li": 89,
+  "molarity:g | slip message reachable: That is the moles of Na#CO# needed# The question asks for gr": 194,
+  "molarity:Mg | slip message reachable: That is the moles of AgNO# Divide by the liters of solution ": 184,
+  "molarity:Mg | slip message reachable: That is the moles of C#H#O# Divide by the liters of solution": 176,
+  "molarity:Mg | slip message reachable: That is the moles of KOH# Divide by the liters of solution t": 192,
+  "molarity:g | slip message reachable: That is the moles of NaHCO# needed# The question asks for gr": 183,
+  "molarity:Mg | slip message reachable: That is the moles of KI# Divide by the liters of solution to": 165,
+  "molarity:g | slip message reachable: That is the moles of Na#SO# needed# The question asks for gr": 141,
+  "molarity:mL | slip message reachable: That is the moles of MgCl# Divide by the molarity to get lit": 83,
+  "molarity:g | slip message reachable: That is the moles of KNO# needed# The question asks for gram": 191,
+  "molarity:Mg | slip message reachable: That is the moles of Na#SO# Divide by the liters of solution": 158,
+  "molarity:mL | slip message reachable: That is the moles of CaCl# Divide by the molarity to get lit": 71,
+  "molarity:Mg | slip message reachable: That is the moles of CuSO# Divide by the liters of solution ": 171,
+  "molarity:g | slip message reachable: That is the moles of KBr needed# The question asks for grams": 163,
+  "molarity:Mg | slip message reachable: That is the moles of NH#Cl# Divide by the liters of solution": 204,
+  "molarity:mL | slip message reachable: That is the moles of NaCl# Divide by the molarity to get lit": 86,
+  "molarity:Mg | slip message reachable: That is the moles of KBr# Divide by the liters of solution t": 167,
+  "molarity:mL | slip message reachable: That is the moles of NaOH# Divide by the molarity to get lit": 74,
+  "molarity:mL | slip message reachable: That is the moles of KCl# Divide by the molarity to get lite": 90,
+  "molarity:mL | slip message reachable: That is the moles of KNO# Divide by the molarity to get lite": 85,
+  "molarity:Mg | slip message reachable: That is the moles of KCl# Divide by the liters of solution t": 169,
+  "molarity:mL | slip message reachable: That is the moles of AgNO# Divide by the molarity to get lit": 91,
+  "molarity:Mg | slip message reachable: That is the moles of CaCl# Divide by the liters of solution ": 171,
+  "molarity:g | slip message reachable: That is the moles of MgCl# needed# The question asks for gra": 190,
+  "molarity:Mg | slip message reachable: That is the moles of NaHCO# Divide by the liters of solution": 190,
+  "molarity:Mg | slip message reachable: That is the moles of MgCl# Divide by the liters of solution ": 174,
+  "molarity:mL | slip message reachable: That is the moles of Na#CO# Divide by the molarity to get li": 74,
+  "molarity:mL | slip message reachable: That is the moles of KBr# Divide by the molarity to get lite": 102,
+  "dilution:V1 | bad-token scan": 43945,
+  "dilution:V1 | zero-quantity scan": 43945,
+  "dilution:V1 | solution shows the displayed answer": 3995,
+  "dilution:V1 | answer finite": 3995,
+  "dilution:V1 | displayed answer accepted": 7990,
+  "dilution:V1 | slip message reachable: That is more than the final volume, which cannot be right: o": 3995,
+  "dilution:V1 | guided blank accepted": 11985,
+  "dilution:V1 | physical sanity": 3995,
+  "dilution:V1 | concentration below solubility": 3995,
+  "dilution:V1 | dilution blank message with three wrong blanks": 3995,
+  "dilution:V1 | independent recompute": 3995,
+  "dilution:V1 | displayed digits vs independent value": 3995,
+  "dilution:V1 | named slip: inverted": 3995,
+  "dilution:V2 | bad-token scan": 21923,
+  "dilution:V2 | zero-quantity scan": 21923,
+  "dilution:V2 | solution shows the displayed answer": 1993,
+  "dilution:V2 | answer finite": 1993,
+  "dilution:V2 | displayed answer accepted": 3986,
+  "dilution:V2 | slip message reachable: The final volume has to be larger than the # mL you start wi": 1993,
+  "dilution:V2 | guided blank accepted": 5979,
+  "dilution:V2 | physical sanity": 1993,
+  "dilution:V2 | concentration below solubility": 1993,
+  "dilution:V2 | dilution blank message with three wrong blanks": 1993,
+  "dilution:V2 | independent recompute": 1993,
+  "dilution:V2 | displayed digits vs independent value": 1993,
+  "dilution:V2 | named slip: inverted": 1993,
+  "dilution:M2 | bad-token scan": 23430,
+  "dilution:M2 | zero-quantity scan": 23430,
+  "dilution:M2 | solution shows the displayed answer": 2130,
+  "dilution:M2 | answer finite": 2130,
+  "dilution:M2 | displayed answer accepted": 4260,
+  "dilution:M2 | slip message reachable: A diluted solution is always less concentrated than the stoc": 2130,
+  "dilution:M2 | guided blank accepted": 6390,
+  "dilution:M2 | physical sanity": 2130,
+  "dilution:M2 | concentration below solubility": 2130,
+  "dilution:M2 | dilution blank message with three wrong blanks": 2130,
+  "dilution:M2 | independent recompute": 2130,
+  "dilution:M2 | displayed digits vs independent value": 2130,
+  "dilution:M2 | named slip: inverted": 2130,
+  "dilution:water | bad-token scan": 22584,
+  "dilution:water | zero-quantity scan": 22584,
+  "dilution:water | solution shows the displayed answer": 1882,
+  "dilution:water | answer finite": 1882,
+  "dilution:water | displayed answer accepted": 3764,
+  "dilution:water | slip message reachable: That is the total volume of the diluted solution# The questi": 1882,
+  "dilution:water | slip message reachable: The final volume has to be larger than the # mL you start wi": 1882,
+  "dilution:water | guided blank accepted": 5646,
+  "dilution:water | physical sanity": 1882,
+  "dilution:water | concentration below solubility": 1882,
+  "dilution:water | dilution blank message with three wrong blanks": 1882,
+  "dilution:water | independent recompute": 1882,
+  "dilution:water | displayed digits vs independent value": 1882,
+  "dilution:water | named slip: gave total volume": 1882,
+  "dilution:water | named slip: inverted": 1882,
+  "solstoich:sol>g | bad-token scan": 63073,
+  "solstoich:sol>g | zero-quantity scan": 63073,
+  "solstoich:sol>g | solution shows the displayed answer": 3963,
+  "solstoich:sol>g | answer finite": 3963,
+  "solstoich:sol>g | displayed answer accepted": 7926,
+  "solstoich:sol>g | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 3963,
+  "solstoich:sol>g | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 3963,
+  "solstoich:sol>g | slip message reachable: That is the moles of AgCl# The question asks for grams, so m": 264,
+  "solstoich:sol>g | slip message reachable: It looks like milliliters were used where liters are needed#": 3963,
+  "solstoich:sol>g | slip message reachable: To get moles from a solution, multiply the liters by the mol": 3925,
+  "solstoich:sol>g | slip message reachable: That is the moles of CaCl# Keep going: apply the mole ratio ": 496,
+  "solstoich:sol>g | equation balanced and matches my coefficients": 3963,
+  "solstoich:sol>g | given value shown in question": 11889,
+  "solstoich:sol>g | concentration below solubility": 3963,
+  "solstoich:sol>g | independent recompute": 3963,
+  "solstoich:sol>g | displayed digits vs independent value": 3963,
+  "solstoich:sol>g | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 3963,
+  "solstoich:sol>g | guided blank accepted": 15852,
+  "solstoich:sol>g | named slip: 1:1 ratio": 3963,
+  "solstoich:sol>g | named slip: ratio upside down": 3963,
+  "solstoich:sol>g | named slip: stopped at moles": 3963,
+  "solstoich:sol>g | named slip: mL as L": 3963,
+  "solstoich:g>mL | bad-token scan": 53753,
+  "solstoich:g>mL | zero-quantity scan": 53753,
+  "solstoich:g>mL | solution shows the displayed answer": 3163,
+  "solstoich:g>mL | answer finite": 3163,
+  "solstoich:g>mL | displayed answer accepted": 6326,
+  "solstoich:g>mL | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 3163,
+  "solstoich:g>mL | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 3163,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Mg(OH)# were used as moles# Divid": 616,
+  "solstoich:g>mL | slip message reachable: That is the volume in liters# The question asks for millilit": 3163,
+  "solstoich:g>mL | slip message reachable: To get a volume from moles, divide by the molarity (mol/L)# ": 3145,
+  "solstoich:g>mL | slip message reachable: That is the moles of HCl# Divide by the molarity to get lite": 1597,
+  "solstoich:g>mL | slip message reachable: That is the moles of Mg(OH)# Keep going: apply the mole rati": 616,
+  "solstoich:g>mL | equation balanced and matches my coefficients": 3163,
+  "solstoich:g>mL | given value shown in question": 6326,
+  "solstoich:g>mL | concentration below solubility": 3163,
+  "solstoich:g>mL | independent recompute": 3163,
+  "solstoich:g>mL | displayed digits vs independent value": 3163,
+  "solstoich:g>mL | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 3163,
+  "solstoich:g>mL | guided blank accepted": 12652,
+  "solstoich:g>mL | named slip: 1:1 ratio": 3148,
+  "solstoich:g>mL | named slip: ratio upside down": 3149,
+  "solstoich:g>mL | named slip: grams as moles": 3163,
+  "solstoich:g>mL | named slip: left in liters": 3163,
+  "solstoich:g>mL | named slip: multiplied by molarity": 3115,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Ca#(PO#)# were used as moles# Div": 433,
+  "solstoich:g>mL | slip message reachable: That is the moles of Na#PO# Divide by the molarity to get li": 227,
+  "solstoich:g>mL | slip message reachable: That is the moles of Ca#(PO#)# Keep going: apply the mole ra": 433,
+  "solstoich:sol>mL | bad-token scan": 51702,
+  "solstoich:sol>mL | zero-quantity scan": 51702,
+  "solstoich:sol>mL | solution shows the displayed answer": 2874,
+  "solstoich:sol>mL | answer finite": 2874,
+  "solstoich:sol>mL | displayed answer accepted": 5748,
+  "solstoich:sol>mL | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 2874,
+  "solstoich:sol>mL | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 2874,
+  "solstoich:sol>mL | slip message reachable: It looks like milliliters were used where liters are needed#": 2874,
+  "solstoich:sol>mL | slip message reachable: To get moles from a solution, multiply the liters by the mol": 2855,
+  "solstoich:sol>mL | slip message reachable: That is the volume in liters# The question asks for millilit": 2874,
+  "solstoich:sol>mL | slip message reachable: To get a volume from moles, divide by the molarity (mol/L)# ": 2863,
+  "solstoich:sol>mL | slip message reachable: That is the moles of Pb(NO#)# Divide by the molarity to get ": 255,
+  "solstoich:sol>mL | slip message reachable: That is the moles of KI# Keep going: apply the mole ratio to": 255,
+  "solstoich:sol>mL | equation balanced and matches my coefficients": 2874,
+  "solstoich:sol>mL | given value shown in question": 8622,
+  "solstoich:sol>mL | concentration below solubility": 5748,
+  "solstoich:sol>mL | independent recompute": 2874,
+  "solstoich:sol>mL | displayed digits vs independent value": 2874,
+  "solstoich:sol>mL | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 2874,
+  "solstoich:sol>mL | guided blank accepted": 11496,
+  "solstoich:sol>mL | named slip: 1:1 ratio": 2866,
+  "solstoich:sol>mL | named slip: ratio upside down": 2869,
+  "solstoich:sol>mL | named slip: mL as L": 2874,
+  "solstoich:sol>mL | named slip: left in liters": 2874,
+  "solstoich:sol>mL | named slip: multiplied by molarity": 2850,
+  "solstoich:sol>g | slip message reachable: That is the moles of Cu(OH)# The question asks for grams, so": 249,
+  "solstoich:sol>g | slip message reachable: That is the moles of NaOH# Keep going: apply the mole ratio ": 492,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of CO# were used as moles# Divide by": 174,
+  "solstoich:g>mL | slip message reachable: That is the moles of CO# Keep going: apply the mole ratio to": 174,
+  "solstoich:sol>g | slip message reachable: That is the moles of Mg# The question asks for grams, so mul": 263,
+  "solstoich:sol>g | slip message reachable: That is the moles of HCl# Keep going: apply the mole ratio t": 1930,
+  "solstoich:sol>g | slip message reachable: That is the moles of PbI# The question asks for grams, so mu": 246,
+  "solstoich:sol>g | slip message reachable: That is the moles of KI# Keep going: apply the mole ratio to": 246,
+  "solstoich:g>mL | slip message reachable: That is the moles of CaCl# Divide by the molarity to get lit": 441,
+  "solstoich:sol>g | slip message reachable: That is the moles of H# The question asks for grams, so mult": 297,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of AgCl were used as moles# Divide b": 235,
+  "solstoich:g>mL | slip message reachable: That is the moles of AgCl# Keep going: apply the mole ratio ": 235,
+  "solstoich:sol>g | slip message reachable: That is the moles of Ca#(PO#)# The question asks for grams, ": 477,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of PbI# were used as moles# Divide b": 212,
+  "solstoich:g>mL | slip message reachable: That is the moles of KI# Divide by the molarity to get liter": 212,
+  "solstoich:g>mL | slip message reachable: That is the moles of PbI# Keep going: apply the mole ratio t": 212,
+  "solstoich:sol>g | slip message reachable: That is the moles of CO# The question asks for grams, so mul": 238,
+  "solstoich:sol>mL | slip message reachable: That is the moles of AgNO# Divide by the molarity to get lit": 477,
+  "solstoich:sol>mL | slip message reachable: That is the moles of K#CrO# Keep going: apply the mole ratio": 240,
+  "solstoich:sol>mL | slip message reachable: That is the moles of FeCl# Divide by the molarity to get lit": 227,
+  "solstoich:sol>mL | slip message reachable: That is the moles of NaOH# Keep going: apply the mole ratio ": 469,
+  "solstoich:sol>g | slip message reachable: That is the moles of CaCO# The question asks for grams, so m": 239,
+  "solstoich:sol>mL | slip message reachable: That is the moles of Na#PO# Divide by the molarity to get li": 233,
+  "solstoich:sol>mL | slip message reachable: That is the moles of CaCl# Keep going: apply the mole ratio ": 470,
+  "solstoich:sol>g | slip message reachable: That is the moles of Mg(OH)# The question asks for grams, so": 687,
+  "solstoich:sol>g | slip message reachable: That is the moles of Ag#CrO# The question asks for grams, so": 257,
+  "solstoich:sol>g | slip message reachable: That is the moles of AgNO# Keep going: apply the mole ratio ": 257,
+  "solstoich:sol>g | slip message reachable: That is the moles of Zn# The question asks for grams, so mul": 258,
+  "solstoich:sol>g | slip message reachable: That is the moles of Al# The question asks for grams, so mul": 245,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Zn were used as moles# Divide by ": 229,
+  "solstoich:g>mL | slip message reachable: That is the moles of Zn# Keep going: apply the mole ratio to": 229,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of CaCO# were used as moles# Divide ": 239,
+  "solstoich:g>mL | slip message reachable: That is the moles of CaCO# Keep going: apply the mole ratio ": 239,
+  "solstoich:sol>mL | slip message reachable: That is the moles of NaOH# Divide by the molarity to get lit": 446,
+  "solstoich:sol>mL | slip message reachable: That is the moles of CuSO# Keep going: apply the mole ratio ": 213,
+  "solstoich:sol>mL | slip message reachable: That is the moles of KI# Divide by the molarity to get liter": 284,
+  "solstoich:sol>mL | slip message reachable: That is the moles of Pb(NO#)# Keep going: apply the mole rat": 284,
+  "solstoich:sol>mL | slip message reachable: That is the moles of CaCl# Divide by the molarity to get lit": 485,
+  "solstoich:sol>mL | slip message reachable: That is the moles of Na#PO# Keep going: apply the mole ratio": 246,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Ag#CrO# were used as moles# Divid": 263,
+  "solstoich:g>mL | slip message reachable: That is the moles of AgNO# Divide by the molarity to get lit": 263,
+  "solstoich:g>mL | slip message reachable: That is the moles of Ag#CrO# Keep going: apply the mole rati": 263,
+  "solstoich:sol>mL | slip message reachable: That is the moles of FeCl# Keep going: apply the mole ratio ": 233,
+  "solstoich:sol>mL | slip message reachable: That is the moles of K#CrO# Divide by the molarity to get li": 225,
+  "solstoich:sol>mL | slip message reachable: That is the moles of AgNO# Keep going: apply the mole ratio ": 464,
+  "solstoich:sol>g | slip message reachable: That is the moles of Fe(OH)# The question asks for grams, so": 243,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Mg were used as moles# Divide by ": 156,
+  "solstoich:g>mL | slip message reachable: That is the moles of Mg# Keep going: apply the mole ratio to": 156,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Cu(OH)# were used as moles# Divid": 223,
+  "solstoich:g>mL | slip message reachable: That is the moles of NaOH# Divide by the molarity to get lit": 423,
+  "solstoich:g>mL | slip message reachable: That is the moles of Cu(OH)# Keep going: apply the mole rati": 223,
+  "solstoich:sol>g | slip message reachable: That is the moles of Na#PO# Keep going: apply the mole ratio": 245,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Fe(OH)# were used as moles# Divid": 200,
+  "solstoich:g>mL | slip message reachable: That is the moles of Fe(OH)# Keep going: apply the mole rati": 200,
+  "solstoich:sol>mL | slip message reachable: That is the moles of CuSO# Divide by the molarity to get lit": 242,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of Al were used as moles# Divide by ": 136,
+  "solstoich:g>mL | slip message reachable: That is the moles of Al# Keep going: apply the mole ratio to": 136,
+  "solstoich:g>mL | slip message reachable: It looks like the grams of H# were used as moles# Divide by ": 47,
+  "solstoich:g>mL | slip message reachable: That is the moles of H# Keep going: apply the mole ratio to ": 47,
+  "mix | bad-token scan": 250000,
+  "mix | zero-quantity scan": 250000,
+  "mix | solution shows the displayed answer": 20000,
+  "mix | choice answer accepted": 10000,
+  "mix | answer finite": 20000,
+  "mix | displayed answer accepted": 40000,
+  "mix | slip message reachable: That is the amount the other reactant could make, but it wou": 10000,
+  "mix | slip message reachable: It looks like milliliters were used where liters are needed#": 10000,
+  "mix | slip message reachable: That is the moles of Fe(OH)# The question asks for grams, so": 877,
+  "mix | slip message reachable: Do not add the two amounts# Only the limiting reactant decid": 10000,
+  "mix | slip message reachable: That is the actual yield, the amount that was collected# The": 10000,
+  "mix | slip message reachable: A percent yield above #% means the fraction is upside down# ": 10000,
+  "mix | slip message reachable: That is the fraction of the theoretical yield# Multiply by #": 10000,
+  "mix | slip message reachable: That uses the amount of product the excess reactant could ma": 10000,
+  "mix | equation balanced and matches my coefficients": 10000,
+  "mix | given value shown in question": 30000,
+  "mix | concentration below solubility": 20000,
+  "mix | limiting reactant": 10000,
+  "mix | independent recompute (theoretical yield)": 10000,
+  "mix | displayed digits vs independent value": 20000,
+  "mix | physical sanity": 10000,
+  "mix | independent recompute (percent yield)": 10000,
+  "mix | guided blank accepted": 80000,
+  "mix | named slip: used excess reactant": 10000,
+  "mix | named slip: mL as L": 10000,
+  "mix | named slip: stopped at moles": 10000,
+  "mix | named slip: added both": 10000,
+  "mix | named slip: gave actual": 10000,
+  "mix | named slip: inverted percent": 10000,
+  "mix | named slip: fraction": 10000,
+  "mix | named slip: vs excess reactant": 10000,
+  "mix | wrong-choice message": 10000,
+  "mix | slip message reachable: That is the moles of Ca#(PO#)# The question asks for grams, ": 1029,
+  "mix | slip message reachable: That is the moles of AgCl# The question asks for grams, so m": 1951,
+  "mix | slip message reachable: That is the moles of CaCO# The question asks for grams, so m": 1025,
+  "mix | slip message reachable: That is the moles of PbI# The question asks for grams, so mu": 1010,
+  "mix | slip message reachable: That is the moles of PbSO# The question asks for grams, so m": 1064,
+  "mix | slip message reachable: That is the moles of BaSO# The question asks for grams, so m": 1055,
+  "mix | slip message reachable: That is the moles of Ag#CrO# The question asks for grams, so": 976,
+  "mix | slip message reachable: That is the moles of Cu(OH)# The question asks for grams, so": 1013,
+  "titration:findV | bad-token scan": 32108,
+  "titration:findV | zero-quantity scan": 32108,
+  "titration:findV | solution shows the displayed answer": 1876,
+  "titration:findV | answer finite": 1876,
+  "titration:findV | displayed answer accepted": 3752,
+  "titration:findV | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 1046,
+  "titration:findV | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 1046,
+  "titration:findV | slip message reachable: It looks like milliliters were used where liters are needed#": 1876,
+  "titration:findV | slip message reachable: To get moles from a solution, multiply the liters by the mol": 1876,
+  "titration:findV | slip message reachable: That is the volume in liters# The question asks for millilit": 1876,
+  "titration:findV | slip message reachable: To get a volume from moles, divide by the molarity (mol/L)# ": 1876,
+  "titration:findV | slip message reachable: That is the moles of NaOH# Divide by the molarity to get lit": 791,
+  "titration:findV | slip message reachable: That is the moles of H#C#O# Keep going: apply the mole ratio": 123,
+  "titration:findV | equation balanced and matches my coefficients": 1876,
+  "titration:findV | given value shown in question": 5628,
+  "titration:findV | concentration below solubility": 4188,
+  "titration:findV | independent recompute": 1876,
+  "titration:findV | displayed digits vs independent value": 1876,
+  "titration:findV | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 1876,
+  "titration:findV | guided blank accepted": 7504,
+  "titration:findV | named slip: 1:1 ratio": 1046,
+  "titration:findV | named slip: ratio upside down": 1046,
+  "titration:findV | named slip: mL as L": 1876,
+  "titration:findV | named slip: left in liters": 1876,
+  "titration:findV | named slip: multiplied by molarity": 1876,
+  "titration:findV | titration graded to 4 sf": 1876,
+  "titration:sample | bad-token scan": 39142,
+  "titration:sample | zero-quantity scan": 39142,
+  "titration:sample | solution shows the displayed answer": 2548,
+  "titration:sample | answer finite": 2548,
+  "titration:sample | displayed answer accepted": 5096,
+  "titration:sample | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 1735,
+  "titration:sample | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 1735,
+  "titration:sample | slip message reachable: That is the moles of H#C#H#O# The question asks for grams, s": 839,
+  "titration:sample | slip message reachable: It looks like milliliters were used where liters are needed#": 2548,
+  "titration:sample | slip message reachable: To get moles from a solution, multiply the liters by the mol": 2548,
+  "titration:sample | slip message reachable: That is the moles of NaOH# Keep going: apply the mole ratio ": 2548,
+  "titration:sample | equation balanced and matches my coefficients": 2548,
+  "titration:sample | given value shown in question": 7644,
+  "titration:sample | concentration below solubility": 2548,
+  "titration:sample | independent recompute": 2548,
+  "titration:sample | displayed digits vs independent value": 2548,
+  "titration:sample | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 2548,
+  "titration:sample | guided blank accepted": 10192,
+  "titration:sample | named slip: 1:1 ratio": 1735,
+  "titration:sample | named slip: ratio upside down": 1735,
+  "titration:sample | named slip: stopped at moles": 2548,
+  "titration:sample | named slip: mL as L": 2548,
+  "titration:sample | titration graded to 4 sf": 2548,
+  "titration:findM | bad-token scan": 68344,
+  "titration:findM | zero-quantity scan": 68344,
+  "titration:findM | solution shows the displayed answer": 3761,
+  "titration:findM | answer finite": 3761,
+  "titration:findM | displayed answer accepted": 7522,
+  "titration:findM | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 2231,
+  "titration:findM | slip message reachable: That is the result with the mole ratio upside down# Put mol ": 2231,
+  "titration:findM | slip message reachable: It looks like milliliters were used where liters are needed#": 3761,
+  "titration:findM | slip message reachable: To get moles from a solution, multiply the liters by the mol": 3761,
+  "titration:findM | slip message reachable: Molarity is moles per liter# Convert # mL to liters before d": 3761,
+  "titration:findM | slip message reachable: Molarity = moles ÷ liters# It looks like you multiplied#": 3761,
+  "titration:findM | slip message reachable: You divided by the volume of the HNO# solution# Divide the m": 312,
+  "titration:findM | slip message reachable: That is the moles of Ba(OH)# Divide by the liters of Ba(OH)#": 163,
+  "titration:findM | slip message reachable: That is the moles of HNO# Keep going: apply the mole ratio t": 314,
+  "titration:findM | equation balanced and matches my coefficients": 3761,
+  "titration:findM | given value shown in question": 11283,
+  "titration:findM | concentration below solubility": 8265,
+  "titration:findM | independent recompute": 3761,
+  "titration:findM | displayed digits vs independent value": 3761,
+  "titration:findM | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 3761,
+  "titration:findM | guided blank accepted": 18805,
+  "titration:findM | named slip: 1:1 ratio": 2231,
+  "titration:findM | named slip: ratio upside down": 2231,
+  "titration:findM | named slip: mL as L": 3761,
+  "titration:findM | named slip: mL not converted": 3761,
+  "titration:findM | titration graded to 4 sf": 3761,
+  "titration:findM | slip message reachable: You divided by the volume of the NaOH solution# Divide the m": 1546,
+  "titration:findM | slip message reachable: That is the moles of HNO# Divide by the liters of HNO# solut": 840,
+  "titration:findM | slip message reachable: That is the moles of NaOH# Keep going: apply the mole ratio ": 1570,
+  "titration:findV | slip message reachable: That is the moles of HCl# Keep going: apply the mole ratio t": 280,
+  "titration:findV | slip message reachable: That is the moles of HCl# Divide by the molarity to get lite": 132,
+  "titration:findV | slip message reachable: That is the moles of Ba(OH)# Keep going: apply the mole rati": 155,
+  "titration:khp | bad-token scan": 27225,
+  "titration:khp | zero-quantity scan": 27225,
+  "titration:khp | solution shows the displayed answer": 1815,
+  "titration:khp | answer finite": 1815,
+  "titration:khp | displayed answer accepted": 3630,
+  "titration:khp | slip message reachable: It looks like the grams of KHC#H#O# were used as moles# Divi": 1815,
+  "titration:khp | slip message reachable: Molarity is moles per liter# Convert # mL to liters before d": 1815,
+  "titration:khp | slip message reachable: Molarity = moles ÷ liters# It looks like you multiplied#": 1815,
+  "titration:khp | slip message reachable: That is the moles of NaOH# Divide by the liters of NaOH solu": 1815,
+  "titration:khp | slip message reachable: That is the moles of KHC#H#O# Keep going: apply the mole rat": 1815,
+  "titration:khp | equation balanced and matches my coefficients": 1815,
+  "titration:khp | given value shown in question": 3630,
+  "titration:khp | independent recompute": 1815,
+  "titration:khp | displayed digits vs independent value": 1815,
+  "titration:khp | concentration below solubility": 1815,
+  "titration:khp | container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 1815,
+  "titration:khp | guided blank accepted": 9075,
+  "titration:khp | named slip: grams as moles": 1815,
+  "titration:khp | named slip: mL not converted": 1815,
+  "titration:khp | titration graded to 4 sf": 1815,
+  "titration:khp | KHP molar mass": 1815,
+  "titration:findM | slip message reachable: That is the moles of HCl# Divide by the liters of HCl soluti": 586,
+  "titration:findM | slip message reachable: That is the moles of CH#COOH# Divide by the liters of CH#COO": 224,
+  "titration:findM | slip message reachable: You divided by the volume of the Ba(OH)# solution# Divide th": 571,
+  "titration:findM | slip message reachable: That is the moles of Ba(OH)# Keep going: apply the mole rati": 580,
+  "titration:sample | slip message reachable: That is the moles of H#C#O# The question asks for grams, so ": 896,
+  "titration:findM | slip message reachable: That is the moles of KOH# Divide by the liters of KOH soluti": 227,
+  "titration:findV | slip message reachable: That is the moles of HNO# Keep going: apply the mole ratio t": 445,
+  "titration:findV | slip message reachable: That is the moles of H#SO# Divide by the molarity to get lit": 73,
+  "titration:findV | slip message reachable: That is the moles of KOH# Keep going: apply the mole ratio t": 104,
+  "titration:sample | slip message reachable: That is the moles of CH#COOH# The question asks for grams, s": 813,
+  "titration:findM | slip message reachable: You divided by the volume of the KOH solution# Divide the mo": 555,
+  "titration:findM | slip message reachable: That is the moles of H#SO# Divide by the liters of H#SO# sol": 576,
+  "titration:findM | slip message reachable: That is the moles of KOH# Keep going: apply the mole ratio t": 563,
+  "titration:findM | slip message reachable: That is the moles of H#C#O# Divide by the liters of H#C#O# s": 246,
+  "titration:findV | slip message reachable: That is the moles of CH#COOH# Keep going: apply the mole rat": 144,
+  "titration:findV | slip message reachable: That is the moles of NaOH# Keep going: apply the mole ratio ": 266,
+  "titration:findM | slip message reachable: You divided by the volume of the HCl solution# Divide the mo": 206,
+  "titration:findM | slip message reachable: That is the moles of HCl# Keep going: apply the mole ratio t": 208,
+  "titration:findM | slip message reachable: You divided by the volume of the CH#COOH solution# Divide th": 100,
+  "titration:findM | slip message reachable: That is the moles of NaOH# Divide by the liters of NaOH solu": 658,
+  "titration:findM | slip message reachable: That is the moles of CH#COOH# Keep going: apply the mole rat": 101,
+  "titration:findM | slip message reachable: You divided by the volume of the H#C#H#O# solution# Divide t": 92,
+  "titration:findM | slip message reachable: That is the moles of H#C#H#O# Keep going: apply the mole rat": 94,
+  "titration:findV | slip message reachable: That is the moles of H#SO# Keep going: apply the mole ratio ": 285,
+  "titration:findV | slip message reachable: That is the moles of Ba(OH)# Divide by the molarity to get l": 281,
+  "titration:findV | slip message reachable: That is the moles of HNO# Divide by the molarity to get lite": 208,
+  "titration:findM | slip message reachable: You divided by the volume of the H#C#O# solution# Divide the": 118,
+  "titration:findM | slip message reachable: That is the moles of H#C#O# Keep going: apply the mole ratio": 121,
+  "titration:findM | slip message reachable: That is the moles of H#C#H#O# Divide by the liters of H#C#H#": 241,
+  "titration:findV | slip message reachable: That is the moles of KOH# Divide by the molarity to get lite": 279,
+  "titration:findM | slip message reachable: You divided by the volume of the H#SO# solution# Divide the ": 206,
+  "titration:findM | slip message reachable: That is the moles of H#SO# Keep going: apply the mole ratio ": 210,
+  "titration:findV | slip message reachable: That is the moles of H#C#H#O# Keep going: apply the mole rat": 74,
+  "titration:findV | slip message reachable: That is the moles of H#C#H#O# Divide by the molarity to get ": 19,
+  "titration:findV | slip message reachable: That is the moles of CH#COOH# Divide by the molarity to get ": 57,
+  "titration:findV | slip message reachable: That is the moles of H#C#O# Divide by the molarity to get li": 36,
+  "lab | ratio": 10000,
+  "lab | true molarity": 10000,
+  "lab | endpoint reachable with one-drop steps": 10000,
+  "lab | buret capacity": 10000,
+  "lab | bad-token scan": 849480,
+  "lab | zero-quantity scan": 849480,
+  "lab | solution shows the displayed answer": 100000,
+  "lab | answer finite": 100000,
+  "lab | displayed answer accepted": 200000,
+  "lab | slip message reachable: That is the final buret reading# The volume delivered is the": 50000,
+  "lab | slip message reachable: It looks like a #:# mole ratio was assumed# The balanced equ": 24900,
+  "lab | slip message reachable: The mole ratio is upside down# There are fewer moles of H#SO": 8465,
+  "lab | slip message reachable: It looks like the final buret reading was used as the volume": 50000,
+  "lab | slip message reachable: Molarity is moles per liter# Convert the milliliters to lite": 100000,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of H#SO#": 8417,
+  "lab | slip message reachable: That is the moles of H#SO# Divide by the liters of H#SO# sam": 8465,
+  "lab | independent recompute (volume delivered)": 50000,
+  "lab | displayed digits vs independent value": 100000,
+  "lab | independent recompute (acid molarity)": 50000,
+  "lab | named slip: used final reading": 48745,
+  "lab | named slip: final reading as volume": 48748,
+  "lab | named slip: mL not converted": 50000,
+  "lab | named slip: 1:1 ratio": 24900,
+  "lab | named slip: ratio upside down": 24900,
+  "lab | molarity sf": 50000,
+  "lab | slip message reachable: The mole ratio is upside down# There are fewer moles of H#C#": 16435,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of H#C#O": 8127,
+  "lab | slip message reachable: That is the moles of H#C#O# Divide by the liters of H#C#O# s": 8180,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of CH#CO": 8323,
+  "lab | slip message reachable: That is the moles of CH#COOH# Divide by the liters of CH#COO": 8365,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of HCl b": 8203,
+  "lab | slip message reachable: That is the moles of HCl# Divide by the liters of HCl sample": 8245,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of H#C#H": 8193,
+  "lab | slip message reachable: That is the moles of H#C#H#O# Divide by the liters of H#C#H#": 8255,
+  "lab | slip message reachable: You divided by the volume of NaOH# Divide the moles of HNO# ": 8417,
+  "lab | slip message reachable: That is the moles of HNO# Divide by the liters of HNO# sampl": 8490
+ },
+ "faults": [
+  {
+   "section": "molarity:mol",
+   "code": "slip-message-shadowed: Moles = molarity × liters# It looks like you divided# => Molarity is moles per liter# Convert # mL to liters before m",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "47.5",
+     "intended": "Moles = molarity × liters. It looks like you divided.",
+     "shown": "Molarity is moles per liter. Convert 31.6 mL to liters before multiplying.",
+     "ex": {
+      "question": "How many moles of KOH are in 31.6 mL of 1.50 M KOH solution?",
+      "eq": null,
+      "show": [
+       "0.0474 mol KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "12.6",
+     "intended": "Moles = molarity × liters. It looks like you divided.",
+     "shown": "Molarity is moles per liter. Convert 31.7 mL to liters before multiplying.",
+     "ex": {
+      "question": "How many moles of C6H12O6 are in 31.7 mL of 0.399 M C6H12O6 solution?",
+      "eq": null,
+      "show": [
+       "0.0126 mol C6H12O6"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "6.40",
+     "intended": "Moles = molarity × liters. It looks like you divided.",
+     "shown": "Molarity is moles per liter. Convert 31.7 mL to liters before multiplying.",
+     "ex": {
+      "question": "How many moles of KCl are in 31.7 mL of 0.203 M KCl solution?",
+      "eq": null,
+      "show": [
+       "0.00644 mol KCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mg",
+   "code": "slip-message-shadowed: The fraction is upside down# Molarity is moles on top, liter => It looks like grams were used in place of moles# Convert # g",
+   "n": 5,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "8.61",
+     "intended": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "shown": "It looks like grams were used in place of moles. Convert 5.34 g to moles with the molar mass first.",
+     "ex": {
+      "question": "A solution is made by dissolving 5.34 g of potassium chloride (KCl) in enough water to make 617 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "0.116 M KCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "7.46",
+     "intended": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "shown": "It looks like grams were used in place of moles. Convert 1.88 g to moles with the molar mass first.",
+     "ex": {
+      "question": "A solution is made by dissolving 1.88 g of potassium hydroxide (KOH) in enough water to make 250.0 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "0.134 M KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "7.30",
+     "intended": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "shown": "It looks like grams were used in place of moles. Convert 0.340 g to moles with the molar mass first.",
+     "ex": {
+      "question": "A solution is made by dissolving 0.340 g of ammonium chloride (NH4Cl) in enough water to make 46.4 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "0.137 M NH4Cl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "7.31",
+     "intended": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "shown": "It looks like grams were used in place of moles. Convert 3.66 g to moles with the molar mass first.",
+     "ex": {
+      "question": "A solution is made by dissolving 3.66 g of ammonium chloride (NH4Cl) in enough water to make 500.0 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "0.137 M NH4Cl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mg",
+   "code": "slip-message-shadowed: That is the moles of KNO# Divide by the liters of solution t => The fraction is upside down# Molarity is moles on top, liter",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.404",
+     "intended": "That is the moles of KNO3. Divide by the liters of solution to get the molarity.",
+     "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "ex": {
+      "question": "A solution is made by dissolving 40.8 g of potassium nitrate (KNO3) in enough water to make 164 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "2.46 M KNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mg",
+   "code": "named-slip-wrong-message: stopped at moles",
+   "n": 2,
+   "detail": "Independently computed slip does not get its specific message",
+   "examples": [
+    {
+     "typed": "0.404",
+     "status": "wrong",
+     "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "expected": "That is the moles",
+     "ex": {
+      "question": "A solution is made by dissolving 40.8 g of potassium nitrate (KNO3) in enough water to make 164 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "2.46 M KNO3"
+      ]
+     }
+    },
+    {
+     "typed": "0.793",
+     "status": "wrong",
+     "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "expected": "That is the moles",
+     "ex": {
+      "question": "A solution is made by dissolving 44.5 g of potassium hydroxide (KOH) in enough water to make 625 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "1.27 M KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mmol",
+   "code": "slip-message-shadowed: Molarity = moles ÷ liters# It looks like you multiplied# => The fraction is upside down# Molarity is moles on top, liter",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.500",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "ex": {
+      "question": "A solution contains 1.00 mol of CaCl2 in 500.0 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "2.00 M CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mg",
+   "code": "slip-message-shadowed: That is the moles of KOH# Divide by the liters of solution t => The fraction is upside down# Molarity is moles on top, liter",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.793",
+     "intended": "That is the moles of KOH. Divide by the liters of solution to get the molarity.",
+     "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+     "ex": {
+      "question": "A solution is made by dissolving 44.5 g of potassium hydroxide (KOH) in enough water to make 625 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "1.27 M KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:Mmol",
+   "code": "slip-message-shadowed: Molarity = moles ÷ liters# It looks like you multiplied# => Molarity is moles per liter, not per milliliter# Convert # m",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.000501",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "Molarity is moles per liter, not per milliliter. Convert 31.5 mL to liters first.",
+     "ex": {
+      "question": "A solution contains 0.0159 mol of NaCl in 31.5 mL of solution. What is the molarity of the solution?",
+      "eq": null,
+      "show": [
+       "0.505 M NaCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "molarity:mL",
+   "code": "slip-message-shadowed: That is the moles of KI# Divide by the molarity to get liter => That is the volume in liters# The question asks for millilit",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.227",
+     "intended": "That is the moles of KI. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.999 M KI solution contains 37.6 g of KI?",
+      "eq": null,
+      "show": [
+       "227 mL"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: To get moles from a solution, multiply the liters by the mol => That is the result with the mole ratio upside down# Put mol ",
+   "n": 6,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "71.8",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol Na3PO4 on top so that mol CaCl2 cancels: 2 mol Na3PO4 over 3 mol CaCl2.",
+     "ex": {
+      "question": "How many milliliters of 0.495 M Na3PO4 are needed to react completely with 35.4 mL of 0.664 M CaCl2?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "31.7 mL Na3PO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "387",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol Pb(NO3)2 on top so that mol KI cancels: 1 mol Pb(NO3)2 over 2 mol KI.",
+     "ex": {
+      "question": "How many milliliters of 0.200 M Pb(NO3)2 are needed to react completely with 77.7 mL of 0.502 M KI?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "97.5 mL Pb(NO3)2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "267",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol CaCl2 on top so that mol AgNO3 cancels: 1 mol CaCl2 over 2 mol AgNO3.",
+     "ex": {
+      "question": "How many milliliters of 0.289 M CaCl2 are needed to react completely with 76.9 mL of 0.499 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "66.4 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "40.9",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol CaCl2 on top so that mol AgNO3 cancels: 1 mol CaCl2 over 2 mol AgNO3.",
+     "ex": {
+      "question": "How many milliliters of 0.969 M CaCl2 are needed to react completely with 39.7 mL of 0.501 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "10.3 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: That is the moles of AgNO# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 2,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0238",
+     "intended": "That is the moles of AgNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M AgNO3 must react to produce 3.94 g of Ag2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "23.8 mL AgNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0223",
+     "intended": "That is the moles of AgNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M AgNO3 must react to produce 3.70 g of Ag2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "22.1 mL AgNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: To get a volume from moles, divide by the molarity (mol/L)#  => That is the result with the mole ratio upside down# Put mol ",
+   "n": 14,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "83.3",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Mg(OH)2 cancels: 2 mol HCl over 1 mol Mg(OH)2.",
+     "ex": {
+      "question": "How many milliliters of 0.499 M HCl are needed to react completely with 4.87 g of Mg(OH)2?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "335 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "67.1",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol NaOH on top so that mol Cu(OH)2 cancels: 2 mol NaOH over 1 mol Cu(OH)2.",
+     "ex": {
+      "question": "How many milliliters of 0.499 M NaOH must react to produce 6.56 g of Cu(OH)2?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "270 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "19.8",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Mg(OH)2 cancels: 2 mol HCl over 1 mol Mg(OH)2.",
+     "ex": {
+      "question": "How many milliliters of 0.501 M HCl are needed to react completely with 1.15 g of Mg(OH)2?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "78.7 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "13.9",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol AgNO3 on top so that mol Ag2CrO4 cancels: 2 mol AgNO3 over 1 mol Ag2CrO4.",
+     "ex": {
+      "question": "How many milliliters of 0.499 M AgNO3 must react to produce 4.61 g of Ag2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "55.7 mL AgNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: That is the moles of CaCl# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0285",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M CaCl2 must react to produce 8.18 g of AgCl?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "28.5 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0644",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M CaCl2 must react to produce 6.66 g of Ca3(PO4)2?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "63.8 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0142",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.991 M CaCl2 must react to produce 4.07 g of AgCl?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "14.3 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: That is the moles of KI# Divide by the molarity to get liter => That is the volume in liters# The question asks for millilit",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0350",
+     "intended": "That is the moles of KI. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M KI must react to produce 8.07 g of PbI2?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "34.7 mL KI"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0200",
+     "intended": "That is the moles of KI. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M KI must react to produce 4.62 g of PbI2?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "19.8 mL KI"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00274",
+     "intended": "That is the moles of KI. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M KI must react to produce 0.632 g of PbI2?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "2.71 mL KI"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: To get a volume from moles, divide by the molarity (mol/L)#  => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 13,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "4.13",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol AgCl with 1 mol CaCl2. Multiply the moles of AgCl by 1 mol CaCl2 over 2 mol AgCl.",
+     "ex": {
+      "question": "How many milliliters of 1.42 M CaCl2 must react to produce 0.833 g of AgCl?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "2.05 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "254",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Mg with 2 mol HCl. Multiply the moles of Mg by 2 mol HCl over 1 mol Mg.",
+     "ex": {
+      "question": "How many milliliters of 0.704 M HCl are needed to react completely with 4.39 g of Mg?",
+      "eq": "Mg + 2 HCl -> MgCl2 + H2",
+      "show": [
+       "513 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "8.46",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Fe(OH)3 with 3 mol NaOH. Multiply the moles of Fe(OH)3 by 3 mol NaOH over 1 mol Fe",
+     "ex": {
+      "question": "How many milliliters of 0.576 M NaOH must react to produce 0.523 g of Fe(OH)3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "25.5 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "196",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Fe(OH)3 with 3 mol NaOH. Multiply the moles of Fe(OH)3 by 3 mol NaOH over 1 mol Fe",
+     "ex": {
+      "question": "How many milliliters of 0.578 M NaOH must react to produce 12.1 g of Fe(OH)3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "588 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>g",
+   "code": "slip-message-shadowed: To get moles from a solution, multiply the liters by the mol => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 16,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "1.86",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 3 mol NaOH with 1 mol Fe(OH)3. Multiply the moles of NaOH by 1 mol Fe(OH)3 over 3 mol Na",
+     "ex": {
+      "question": "How many grams of Fe(OH)3 can form from 30.2 mL of 0.579 M NaOH? Assume the other reactant is in excess.",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "0.623 g Fe(OH)3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "16.7",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 3 mol CaCl2 with 1 mol Ca3(PO4)2. Multiply the moles of CaCl2 by 1 mol Ca3(PO4)2 over 3 ",
+     "ex": {
+      "question": "How many grams of Ca3(PO4)2 can form from 93.4 mL of 0.577 M CaCl2? Assume the other reactant is in excess.",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "5.57 g Ca3(PO4)2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "2.01",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol HCl with 1 mol Mg(OH)2. Multiply the moles of HCl by 1 mol Mg(OH)2 over 2 mol HCl.",
+     "ex": {
+      "question": "How many grams of Mg(OH)2 are needed to react completely with 48.7 mL of 0.708 M HCl?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "1.01 g Mg(OH)2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "2.07",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 6 mol HCl with 2 mol Al. Multiply the moles of HCl by 2 mol Al over 6 mol HCl.",
+     "ex": {
+      "question": "How many grams of Al are needed to react completely with 133 mL of 0.579 M HCl?",
+      "eq": "2 Al + 6 HCl -> 2 AlCl3 + 3 H2",
+      "show": [
+       "0.693 g Al"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: That is the moles of HCl# Divide by the molarity to get lite => That is the volume in liters# The question asks for millilit",
+   "n": 11,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0743",
+     "intended": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M HCl are needed to react completely with 2.43 g of Zn?",
+      "eq": "Zn + 2 HCl -> ZnCl2 + H2",
+      "show": [
+       "74.3 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.264",
+     "intended": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M HCl are needed to react completely with 7.71 g of Mg(OH)2?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "262 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0504",
+     "intended": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M HCl are needed to react completely with 1.47 g of Mg(OH)2?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "50.4 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.801",
+     "intended": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M HCl must react to produce 0.807 g of H2?",
+      "eq": "Zn + 2 HCl -> ZnCl2 + H2",
+      "show": [
+       "801 mL HCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: To get moles from a solution, multiply the liters by the mol => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 8,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "11.1",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol K2CrO4 with 2 mol AgNO3. The shortcut M1V1 = M2V2 does not work here. Go through m",
+     "ex": {
+      "question": "How many milliliters of 1.32 M AgNO3 are needed to react completely with 10.3 mL of 1.41 M K2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "22.0 mL AgNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "14.4",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol AgNO3 with 1 mol K2CrO4. The shortcut M1V1 = M2V2 does not work here. Go through m",
+     "ex": {
+      "question": "How many milliliters of 0.809 M K2CrO4 are needed to react completely with 16.5 mL of 0.706 M AgNO3?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "7.20 mL K2CrO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "23.5",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol AgNO3 with 1 mol K2CrO4. The shortcut M1V1 = M2V2 does not work here. Go through m",
+     "ex": {
+      "question": "How many milliliters of 0.312 M K2CrO4 are needed to react completely with 10.4 mL of 0.708 M AgNO3?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "11.8 mL K2CrO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "362",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol CaCl2 with 2 mol AgNO3. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "How many milliliters of 0.112 M AgNO3 are needed to react completely with 28.6 mL of 1.41 M CaCl2?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "720 mL AgNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of CaCl# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 4,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.00221",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.994 M CaCl2 are needed to react completely with 20.3 mL of 0.218 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "2.23 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00354",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.999 M CaCl2 are needed to react completely with 24.3 mL of 0.291 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "3.54 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00773",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M CaCl2 are needed to react completely with 10.9 mL of 0.473 M Na3PO4?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "7.73 mL CaCl2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00399",
+     "intended": "That is the moles of CaCl2. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M CaCl2 are needed to react completely with 18.1 mL of 0.147 M Na3PO4?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "3.99 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of AgNO# Keep going: apply the mole ratio  => That is the volume in liters# The question asks for millilit",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0410",
+     "intended": "That is the moles of AgNO3. Keep going: apply the mole ratio to get moles of K2CrO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.496 M K2CrO4 are needed to react completely with 56.0 mL of 0.732 M AgNO3?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "41.3 mL K2CrO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.185",
+     "intended": "That is the moles of AgNO3. Keep going: apply the mole ratio to get moles of K2CrO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.504 M K2CrO4 are needed to react completely with 138 mL of 1.34 M AgNO3?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "183 mL K2CrO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0265",
+     "intended": "That is the moles of AgNO3. Keep going: apply the mole ratio to get moles of CaCl2.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.502 M CaCl2 are needed to react completely with 21.0 mL of 1.26 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "26.4 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 4,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0172",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M NaOH are needed to react completely with 77.4 mL of 0.111 M CuSO4?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "17.2 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0220",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.995 M NaOH are needed to react completely with 32.6 mL of 0.225 M FeCl3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "22.1 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0696",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M NaOH are needed to react completely with 58.3 mL of 0.398 M FeCl3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "68.9 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.127",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M NaOH are needed to react completely with 80.9 mL of 0.524 M FeCl3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "126 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of KI# Keep going: apply the mole ratio to => That is the volume in liters# The question asks for millilit",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0398",
+     "intended": "That is the moles of KI. Keep going: apply the mole ratio to get moles of Pb(NO3)2.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.497 M Pb(NO3)2 are needed to react completely with 52.0 mL of 0.766 M KI?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "40.1 mL Pb(NO3)2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of CaCl# Keep going: apply the mole ratio  => That is the volume in liters# The question asks for millilit",
+   "n": 2,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0206",
+     "intended": "That is the moles of CaCl2. Keep going: apply the mole ratio to get moles of Na3PO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.664 M Na3PO4 are needed to react completely with 34.2 mL of 0.601 M CaCl2?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "20.6 mL Na3PO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0648",
+     "intended": "That is the moles of CaCl2. Keep going: apply the mole ratio to get moles of Na3PO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.671 M Na3PO4 are needed to react completely with 62.9 mL of 1.03 M CaCl2?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "64.4 mL Na3PO4"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>g",
+   "code": "slip-message-shadowed: To get moles from a solution, multiply the liters by the mol => That is the result with the mole ratio upside down# Put mol ",
+   "n": 12,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.748",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol Mg(OH)2 on top so that mol HCl cancels: 1 mol Mg(OH)2 over 2 mol HCl.",
+     "ex": {
+      "question": "How many grams of Mg(OH)2 are needed to react completely with 12.8 mL of 0.499 M HCl?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "0.186 g Mg(OH)2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "1.50",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol Cu(OH)2 on top so that mol NaOH cancels: 1 mol Cu(OH)2 over 2 mol NaOH.",
+     "ex": {
+      "question": "How many grams of Cu(OH)2 can form from 15.4 mL of 0.502 M NaOH? Assume the other reactant is in excess.",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "0.377 g Cu(OH)2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "4.04",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol CO2 on top so that mol HCl cancels: 1 mol CO2 over 2 mol HCl.",
+     "ex": {
+      "question": "How many grams of CO2 can form from 92.1 mL of 0.502 M HCl? Assume the other reactant is in excess.",
+      "eq": "CaCO3 + 2 HCl -> CaCl2 + H2O + CO2",
+      "show": [
+       "1.02 g CO2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "2.66",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the result with the mole ratio upside down. Put mol CaCO3 on top so that mol HCl cancels: 1 mol CaCO3 over 2 mol HCl.",
+     "ex": {
+      "question": "How many grams of CaCO3 are needed to react completely with 26.6 mL of 0.501 M HCl?",
+      "eq": "CaCO3 + 2 HCl -> CaCl2 + H2O + CO2",
+      "show": [
+       "0.667 g CaCO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: To get a volume from moles, divide by the molarity (mol/L)#  => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 5,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "34.4",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Pb(NO3)2 with 2 mol KI. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "How many milliliters of 0.709 M KI are needed to react completely with 56.6 mL of 0.428 M Pb(NO3)2?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "68.3 mL KI"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "61.6",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol AgNO3 with 1 mol K2CrO4. The shortcut M1V1 = M2V2 does not work here. Go through m",
+     "ex": {
+      "question": "How many milliliters of 1.41 M K2CrO4 are needed to react completely with 71.6 mL of 1.22 M AgNO3?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "31.0 mL K2CrO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "88.3",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol CuSO4 with 2 mol NaOH. The shortcut M1V1 = M2V2 does not work here. Go through mol",
+     "ex": {
+      "question": "How many milliliters of 0.706 M NaOH are needed to react completely with 118 mL of 0.530 M CuSO4?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "177 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "23.8",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol AgNO3 with 1 mol CaCl2. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "How many milliliters of 1.42 M CaCl2 are needed to react completely with 53.4 mL of 0.628 M AgNO3?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "11.8 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: To get a volume from moles, divide by the molarity (mol/L)#  => That is the result with the mole ratio upside down# Put mol ",
+   "n": 5,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "106",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol NaOH on top so that mol CuSO4 cancels: 2 mol NaOH over 1 mol CuSO4.",
+     "ex": {
+      "question": "How many milliliters of 0.501 M NaOH are needed to react completely with 119 mL of 0.888 M CuSO4?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "422 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "93.9",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol AgNO3 on top so that mol CaCl2 cancels: 2 mol AgNO3 over 1 mol CaCl2.",
+     "ex": {
+      "question": "How many milliliters of 0.501 M AgNO3 are needed to react completely with 137 mL of 0.684 M CaCl2?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "374 mL AgNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "34.6",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol NaOH on top so that mol FeCl3 cancels: 3 mol NaOH over 1 mol FeCl3.",
+     "ex": {
+      "question": "How many milliliters of 0.333 M NaOH are needed to react completely with 50.7 mL of 0.684 M FeCl3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "312 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "12.6",
+     "intended": "To get a volume from moles, divide by the molarity (mol/L). It looks like you multiplied.",
+     "shown": "That is the result with the mole ratio upside down. Put mol NaOH on top so that mol FeCl3 cancels: 3 mol NaOH over 1 mol FeCl3.",
+     "ex": {
+      "question": "How many milliliters of 0.334 M NaOH are needed to react completely with 97.7 mL of 0.129 M FeCl3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "113 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 4,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0362",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.993 M NaOH must react to produce 1.29 g of Fe(OH)3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "36.5 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0636",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.992 M NaOH must react to produce 3.10 g of Cu(OH)2?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "64.1 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.119",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M NaOH must react to produce 5.82 g of Cu(OH)2?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "118 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0239",
+     "intended": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M NaOH must react to produce 0.853 g of Fe(OH)3?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "23.9 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of Na#PO# Keep going: apply the mole ratio => That is the volume in liters# The question asks for millilit",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0108",
+     "intended": "That is the moles of Na3PO4. Keep going: apply the mole ratio to get moles of CaCl2.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.49 M CaCl2 are needed to react completely with 77.4 mL of 0.140 M Na3PO4?",
+      "eq": "3 CaCl2 + 2 Na3PO4 -> Ca3(PO4)2 + 6 NaCl",
+      "show": [
+       "10.9 mL CaCl2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of AgNO# Divide by the molarity to get lit => That is the volume in liters# The question asks for millilit",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0520",
+     "intended": "That is the moles of AgNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.00 M AgNO3 are needed to react completely with 25.0 mL of 1.04 M K2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "52.0 mL AgNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00491",
+     "intended": "That is the moles of AgNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M AgNO3 are needed to react completely with 23.4 mL of 0.105 M CaCl2?",
+      "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+      "show": [
+       "4.87 mL AgNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00777",
+     "intended": "That is the moles of AgNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 1.01 M AgNO3 are needed to react completely with 14.5 mL of 0.268 M K2CrO4?",
+      "eq": "2 AgNO3 + K2CrO4 -> Ag2CrO4 + 2 KNO3",
+      "show": [
+       "7.70 mL AgNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>g",
+   "code": "slip-message-shadowed: To get moles from a solution, multiply the liters by the mol => That is the moles of H# The question asks for grams, so mult",
+   "n": 2,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0310",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the moles of H2. The question asks for grams, so multiply by the molar mass of H2.",
+     "ex": {
+      "question": "How many grams of H2 can form from 43.7 mL of 1.42 M HCl? Assume the other reactant is in excess.",
+      "eq": "2 Al + 6 HCl -> 2 AlCl3 + 3 H2",
+      "show": [
+       "0.0626 g H2"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0185",
+     "intended": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+     "shown": "That is the moles of H2. The question asks for grams, so multiply by the molar mass of H2.",
+     "ex": {
+      "question": "How many grams of H2 can form from 26.0 mL of 1.42 M HCl? Assume the other reactant is in excess.",
+      "eq": "Mg + 2 HCl -> MgCl2 + H2",
+      "show": [
+       "0.0372 g H2"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the volume in liters# The question asks for millilit",
+   "n": 5,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.00418",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CuSO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.496 M CuSO4 are needed to react completely with 41.0 mL of 0.102 M NaOH?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "4.22 mL CuSO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00759",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of FeCl3.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.335 M FeCl3 are needed to react completely with 11.9 mL of 0.638 M NaOH?",
+      "eq": "FeCl3 + 3 NaOH -> Fe(OH)3 + 3 NaCl",
+      "show": [
+       "7.55 mL FeCl3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0101",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CuSO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.503 M CuSO4 are needed to react completely with 30.7 mL of 0.330 M NaOH?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "10.1 mL CuSO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0167",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CuSO4.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.497 M CuSO4 are needed to react completely with 98.4 mL of 0.170 M NaOH?",
+      "eq": "CuSO4 + 2 NaOH -> Cu(OH)2 + Na2SO4",
+      "show": [
+       "16.8 mL CuSO4"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:g>mL",
+   "code": "named-slip-wrong-message: multiplied by molarity",
+   "n": 1,
+   "detail": "Independently computed slip does not get its specific message",
+   "examples": [
+    {
+     "typed": "10.3",
+     "status": "wrong",
+     "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Mg(OH)2 cancels: 2 mol HCl over 1 mol Mg(OH)2.",
+     "expected": "you multiplied",
+     "ex": {
+      "question": "How many milliliters of 0.503 M HCl are needed to react completely with 0.599 g of Mg(OH)2?",
+      "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+      "show": [
+       "40.8 mL HCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "solstoich:sol>mL",
+   "code": "slip-message-shadowed: That is the moles of KI# Divide by the molarity to get liter => That is the volume in liters# The question asks for millilit",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.0894",
+     "intended": "That is the moles of KI. Divide by the molarity to get liters, then convert to milliliters.",
+     "shown": "That is the volume in liters. The question asks for milliliters, so multiply by 1000.",
+     "ex": {
+      "question": "How many milliliters of 0.994 M KI are needed to react completely with 37.9 mL of 1.18 M Pb(NO3)2?",
+      "eq": "Pb(NO3)2 + 2 KI -> PbI2 + 2 KNO3",
+      "show": [
+       "90.0 mL KI"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of HNO# Divide by the liters of HNO# solut",
+   "n": 259,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.005773",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of HNO3 solution is titrated with 0.1869 M NaOH. The equivalence point is reached after 30.89 mL of NaOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.2309 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003854",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of HNO3 solution is titrated with 0.2097 M NaOH. The equivalence point is reached after 18.38 mL of NaOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.1927 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.008802",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.2071 M NaOH. The equivalence point is reached after 42.50 mL of NaOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.8802 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.006085",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.1819 M NaOH. The equivalence point is reached after 33.45 mL of NaOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.6085 M HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of HCl# Keep going: apply the mole ratio t => That is the moles of NaOH# Divide by the molarity to get lit",
+   "n": 153,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002747",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1856 M NaOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.1099 M HCl?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "14.80 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005698",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2462 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.2849 M HCl?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "23.14 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003148",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1364 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1574 M HCl?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "23.08 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002882",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2700 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1441 M HCl?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "10.67 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:khp",
+   "code": "slip-message-shadowed: That is the moles of KHC#H#O# Keep going: apply the mole rat => That is the moles of NaOH# Divide by the liters of NaOH solu",
+   "n": 1815,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002511",
+     "intended": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 0.5128 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 39.71 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.06323 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003415",
+     "intended": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 0.6974 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 29.12 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.1173 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002133",
+     "intended": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 0.4356 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 23.07 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.09246 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003485",
+     "intended": "That is the moles of KHC8H4O4. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 0.7118 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 30.94 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.1127 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of HCl# Divide by the liters of HCl soluti",
+   "n": 297,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.005372",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the liters of HCl solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HCl solution is titrated with 0.1316 M NaOH. The equivalence point is reached after 40.82 mL of NaOH has been added. What is the molarity of the HCl solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.5372 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.007650",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the liters of HCl solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of HCl solution is titrated with 0.1924 M NaOH. The equivalence point is reached after 39.76 mL of NaOH has been added. What is the molarity of the HCl solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.3825 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002227",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the liters of HCl solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of HCl solution is titrated with 0.1416 M NaOH. The equivalence point is reached after 15.73 mL of NaOH has been added. What is the molarity of the HCl solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.04455 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004344",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the liters of HCl solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HCl solution is titrated with 0.1283 M NaOH. The equivalence point is reached after 33.86 mL of NaOH has been added. What is the molarity of the HCl solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.4344 M HCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of CH#COOH# Divide by the liters of CH#COO",
+   "n": 224,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002602",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the liters of CH3COOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of CH3COOH solution is titrated with 0.1248 M NaOH. The equivalence point is reached after 20.85 mL of NaOH has been added. What is the molarity of the CH3COOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.05204 M CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003753",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the liters of CH3COOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of CH3COOH solution is titrated with 0.1844 M NaOH. The equivalence point is reached after 20.35 mL of NaOH has been added. What is the molarity of the CH3COOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.07505 M CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.006125",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the liters of CH3COOH solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of CH3COOH solution is titrated with 0.1674 M NaOH. The equivalence point is reached after 36.59 mL of NaOH has been added. What is the molarity of the CH3COOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.2450 M CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004473",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the liters of CH3COOH solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of CH3COOH solution is titrated with 0.2337 M NaOH. The equivalence point is reached after 19.14 mL of NaOH has been added. What is the molarity of the CH3COOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.1789 M CH3COOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of HNO# Keep going: apply the mole ratio t => That is the moles of KOH# Divide by the liters of KOH soluti",
+   "n": 122,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.004509",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the liters of KOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of KOH solution is titrated with 0.1246 M HNO3. The equivalence point is reached after 36.19 mL of HNO3 has been added. What is the molarity of the KOH solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.2255 M KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005794",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the liters of KOH solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of KOH solution is titrated with 0.1645 M HNO3. The equivalence point is reached after 35.22 mL of HNO3 has been added. What is the molarity of the KOH solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.5794 M KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005992",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the liters of KOH solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of KOH solution is titrated with 0.2179 M HNO3. The equivalence point is reached after 27.50 mL of HNO3 has been added. What is the molarity of the KOH solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.5992 M KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003002",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the liters of KOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of KOH solution is titrated with 0.1171 M HNO3. The equivalence point is reached after 25.64 mL of HNO3 has been added. What is the molarity of the KOH solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.06005 M KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of HNO# Keep going: apply the mole ratio t => That is the moles of NaOH# Divide by the molarity to get lit",
+   "n": 146,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.005626",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2835 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.2813 M HNO3?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "19.84 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005168",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1474 M NaOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.2067 M HNO3?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "35.06 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005217",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1405 M NaOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.2087 M HNO3?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "37.14 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.006623",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1666 M NaOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.2649 M HNO3?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "39.75 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:sample",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of CH#COOH# The question asks for grams, s",
+   "n": 813,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.008735",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. The question asks for grams, so multiply by the molar mass of CH3COOH.",
+     "ex": {
+      "question": "A sample of vinegar containing acetic acid (CH3COOH) is titrated with 0.2320 M NaOH. The equivalence point is reached after 37.65 mL of NaOH has been added. How many grams of CH3COOH were in the sample?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.5245 g CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004190",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. The question asks for grams, so multiply by the molar mass of CH3COOH.",
+     "ex": {
+      "question": "A sample of vinegar containing acetic acid (CH3COOH) is titrated with 0.2038 M NaOH. The equivalence point is reached after 20.56 mL of NaOH has been added. How many grams of CH3COOH were in the sample?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.2516 g CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002504",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. The question asks for grams, so multiply by the molar mass of CH3COOH.",
+     "ex": {
+      "question": "A sample of vinegar containing acetic acid (CH3COOH) is titrated with 0.1449 M NaOH. The equivalence point is reached after 17.28 mL of NaOH has been added. How many grams of CH3COOH were in the sample?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.1504 g CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003917",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. The question asks for grams, so multiply by the molar mass of CH3COOH.",
+     "ex": {
+      "question": "A sample of vinegar containing acetic acid (CH3COOH) is titrated with 0.1867 M NaOH. The equivalence point is reached after 20.98 mL of NaOH has been added. How many grams of CH3COOH were in the sample?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.2352 g CH3COOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of KOH# Keep going: apply the mole ratio t => That is the moles of HNO# Divide by the liters of HNO# solut",
+   "n": 290,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.005991",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of HNO3 solution is titrated with 0.1496 M KOH. The equivalence point is reached after 40.05 mL of KOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.2397 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003672",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.1949 M KOH. The equivalence point is reached after 18.84 mL of KOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.3672 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005073",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of HNO3 solution is titrated with 0.2106 M KOH. The equivalence point is reached after 24.09 mL of KOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.1015 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004787",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the liters of HNO3 solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.2238 M KOH. The equivalence point is reached after 21.39 mL of KOH has been added. What is the molarity of the HNO3 solution?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "0.4787 M HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of CH#COOH# Keep going: apply the mole rat => That is the moles of NaOH# Divide by the molarity to get lit",
+   "n": 144,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002876",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2026 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1438 M CH3COOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "14.20 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002638",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1409 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1319 M CH3COOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "18.72 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005230",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2847 M NaOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.2092 M CH3COOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "18.37 mL NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003232",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1528 M NaOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1616 M CH3COOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "21.15 mL NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of CH#COOH# Keep going: apply the mole rat => That is the moles of NaOH# Divide by the liters of NaOH solu",
+   "n": 101,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.006683",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1944 M CH3COOH. The equivalence point is reached after 34.38 mL of CH3COOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.3342 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004325",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1832 M CH3COOH. The equivalence point is reached after 23.61 mL of CH3COOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.2163 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004339",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of NaOH solution is titrated with 0.1758 M CH3COOH. The equivalence point is reached after 24.68 mL of CH3COOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.4339 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004575",
+     "intended": "That is the moles of CH3COOH. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1046 M CH3COOH. The equivalence point is reached after 43.74 mL of CH3COOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "0.2288 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of HNO# Keep going: apply the mole ratio t => That is the moles of NaOH# Divide by the liters of NaOH solu",
+   "n": 115,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.007490",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of NaOH solution is titrated with 0.1814 M HNO3. The equivalence point is reached after 41.29 mL of HNO3 has been added. What is the molarity of the NaOH solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.1498 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.007238",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1723 M HNO3. The equivalence point is reached after 42.01 mL of HNO3 has been added. What is the molarity of the NaOH solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.3619 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002672",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of NaOH solution is titrated with 0.1673 M HNO3. The equivalence point is reached after 15.97 mL of HNO3 has been added. What is the molarity of the NaOH solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.05344 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002396",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 50.00 mL sample of NaOH solution is titrated with 0.1448 M HNO3. The equivalence point is reached after 16.55 mL of HNO3 has been added. What is the molarity of the NaOH solution?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "0.04793 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of HNO# Divide by the molarity to get lite",
+   "n": 56,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002568",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2145 M HNO3 is needed to reach the equivalence point in the titration of 10.00 mL of 0.2568 M NaOH?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "11.97 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003120",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1630 M HNO3 is needed to reach the equivalence point in the titration of 20.00 mL of 0.1560 M NaOH?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "19.14 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005314",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2949 M HNO3 is needed to reach the equivalence point in the titration of 20.00 mL of 0.2657 M NaOH?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "18.02 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002624",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1509 M HNO3 is needed to reach the equivalence point in the titration of 20.00 mL of 0.1312 M NaOH?",
+      "eq": "HNO3 + NaOH -> NaNO3 + H2O",
+      "show": [
+       "17.39 mL HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of KOH# Keep going: apply the mole ratio t => That is the moles of HNO# Divide by the molarity to get lite",
+   "n": 72,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.007047",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2166 M HNO3 is needed to reach the equivalence point in the titration of 25.00 mL of 0.2819 M KOH?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "32.54 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002879",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2699 M HNO3 is needed to reach the equivalence point in the titration of 10.00 mL of 0.2879 M KOH?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "10.67 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002685",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1702 M HNO3 is needed to reach the equivalence point in the titration of 10.00 mL of 0.2685 M KOH?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "15.78 mL HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002154",
+     "intended": "That is the moles of KOH. Keep going: apply the mole ratio to get moles of HNO3.",
+     "shown": "That is the moles of HNO3. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1339 M HNO3 is needed to reach the equivalence point in the titration of 10.00 mL of 0.2154 M KOH?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "16.09 mL HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of HNO# Keep going: apply the mole ratio t => That is the moles of KOH# Divide by the molarity to get lite",
+   "n": 145,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.002010",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1134 M KOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.1005 M HNO3?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "17.72 mL KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.005463",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2288 M KOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.2185 M HNO3?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "23.87 mL KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004557",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1773 M KOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.1823 M HNO3?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "25.71 mL KOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004022",
+     "intended": "That is the moles of HNO3. Keep going: apply the mole ratio to get moles of KOH.",
+     "shown": "That is the moles of KOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2028 M KOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.2011 M HNO3?",
+      "eq": "HNO3 + KOH -> KNO3 + H2O",
+      "show": [
+       "19.83 mL KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of HCl# Divide by the molarity to get lite",
+   "n": 57,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.006970",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2531 M HCl is needed to reach the equivalence point in the titration of 25.00 mL of 0.2788 M NaOH?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "27.54 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002513",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1795 M HCl is needed to reach the equivalence point in the titration of 25.00 mL of 0.1005 M NaOH?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "14.00 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.002164",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1899 M HCl is needed to reach the equivalence point in the titration of 20.00 mL of 0.1082 M NaOH?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "11.40 mL HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003723",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of HCl.",
+     "shown": "That is the moles of HCl. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2171 M HCl is needed to reach the equivalence point in the titration of 25.00 mL of 0.1489 M NaOH?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "17.15 mL HCl"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: That is the moles of HCl# Keep going: apply the mole ratio t => That is the moles of NaOH# Divide by the liters of NaOH solu",
+   "n": 122,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.005528",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of NaOH solution is titrated with 0.1412 M HCl. The equivalence point is reached after 39.15 mL of HCl has been added. What is the molarity of the NaOH solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.2211 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004075",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1521 M HCl. The equivalence point is reached after 26.79 mL of HCl has been added. What is the molarity of the NaOH solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.2037 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004281",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 10.00 mL sample of NaOH solution is titrated with 0.1798 M HCl. The equivalence point is reached after 23.81 mL of HCl has been added. What is the molarity of the NaOH solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.4281 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.003566",
+     "intended": "That is the moles of HCl. Keep going: apply the mole ratio to get moles of NaOH.",
+     "shown": "That is the moles of NaOH. Divide by the liters of NaOH solution to get the molarity.",
+     "ex": {
+      "question": "A 25.00 mL sample of NaOH solution is titrated with 0.2328 M HCl. The equivalence point is reached after 15.32 mL of HCl has been added. What is the molarity of the NaOH solution?",
+      "eq": "HCl + NaOH -> NaCl + H2O",
+      "show": [
+       "0.1427 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:khp",
+   "code": "slip-message-shadowed: Molarity = moles ÷ liters# It looks like you multiplied# => Molarity is moles per liter# Convert # mL to liters before d",
+   "n": 24,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.00009286",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "Molarity is moles per liter. Convert 31.50 mL to liters before dividing.",
+     "ex": {
+      "question": "A 0.6020 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 31.50 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.09358 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00007673",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "Molarity is moles per liter. Convert 31.69 mL to liters before dividing.",
+     "ex": {
+      "question": "A 0.4945 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 31.69 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.07641 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.0001192",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "Molarity is moles per liter. Convert 31.68 mL to liters before dividing.",
+     "ex": {
+      "question": "A 0.7681 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 31.68 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.1187 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.00009420",
+     "intended": "Molarity = moles ÷ liters. It looks like you multiplied.",
+     "shown": "Molarity is moles per liter. Convert 31.60 mL to liters before dividing.",
+     "ex": {
+      "question": "A 0.6088 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 31.60 mL of NaOH has been added. What is the molarity of the NaOH solution?",
+      "eq": "KHC8H4O4 + NaOH -> KNaC8H4O4 + H2O",
+      "show": [
+       "0.09434 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findV",
+   "code": "slip-message-shadowed: That is the moles of NaOH# Keep going: apply the mole ratio  => That is the moles of CH#COOH# Divide by the molarity to get ",
+   "n": 57,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.003510",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.1080 M CH3COOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.1404 M NaOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "32.50 mL CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004320",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2987 M CH3COOH is needed to reach the equivalence point in the titration of 25.00 mL of 0.1728 M NaOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "14.46 mL CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004036",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2836 M CH3COOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.2018 M NaOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "14.23 mL CH3COOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.004044",
+     "intended": "That is the moles of NaOH. Keep going: apply the mole ratio to get moles of CH3COOH.",
+     "shown": "That is the moles of CH3COOH. Divide by the molarity to get liters, then convert to milliliters.",
+     "ex": {
+      "question": "What volume, in milliliters, of 0.2577 M CH3COOH is needed to reach the equivalence point in the titration of 20.00 mL of 0.2022 M NaOH?",
+      "eq": "CH3COOH + NaOH -> NaCH3COO + H2O",
+      "show": [
+       "15.69 mL CH3COOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the NaOH solution# Divide the m => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 3,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.05020",
+     "intended": "You divided by the volume of the NaOH solution. Divide the moles of H2SO4 by the volume of the H2SO4 solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol NaOH with 1 mol H2SO4. The shortcut M1V1 = M2V2 does not work here. Go through mol",
+     "ex": {
+      "question": "A 50.00 mL sample of H2SO4 solution is titrated with 0.1004 M NaOH. The equivalence point is reached after 24.86 mL of NaOH has been added. What is the molarity of the H2SO4 solution?",
+      "eq": "H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O",
+      "show": [
+       "0.02496 M H2SO4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.05360",
+     "intended": "You divided by the volume of the NaOH solution. Divide the moles of H2C2O4 by the volume of the H2C2O4 solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol NaOH with 1 mol H2C2O4. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "A 50.00 mL sample of H2C2O4 solution is titrated with 0.1072 M NaOH. The equivalence point is reached after 24.82 mL of NaOH has been added. What is the molarity of the H2C2O4 solution?",
+      "eq": "H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O",
+      "show": [
+       "0.02661 M H2C2O4"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.05905",
+     "intended": "You divided by the volume of the NaOH solution. Divide the moles of H2C2O4 by the volume of the H2C2O4 solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 2 mol NaOH with 1 mol H2C2O4. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "A 50.00 mL sample of H2C2O4 solution is titrated with 0.1181 M NaOH. The equivalence point is reached after 25.23 mL of NaOH has been added. What is the molarity of the H2C2O4 solution?",
+      "eq": "H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O",
+      "show": [
+       "0.02980 M H2C2O4"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the Ba(OH)# solution# Divide th => That is the result with the mole ratio upside down# Put mol ",
+   "n": 4,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.2510",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HNO3 by the volume of the HNO3 solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HNO3 on top so that mol Ba(OH)2 cancels: 2 mol HNO3 over 1 mol Ba(OH)2.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.1255 M Ba(OH)2. The equivalence point is reached after 39.67 mL of Ba(OH)2 has been added. What is the molarity of the HNO3 solution?",
+      "eq": "2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O",
+      "show": [
+       "0.9957 M HNO3"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.2510",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HCl by the volume of the HCl solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Ba(OH)2 cancels: 2 mol HCl over 1 mol Ba(OH)2.",
+     "ex": {
+      "question": "A 10.00 mL sample of HCl solution is titrated with 0.1255 M Ba(OH)2. The equivalence point is reached after 40.19 mL of Ba(OH)2 has been added. What is the molarity of the HCl solution?",
+      "eq": "2 HCl + Ba(OH)2 -> BaCl2 + 2 H2O",
+      "show": [
+       "1.009 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.2712",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HCl by the volume of the HCl solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Ba(OH)2 cancels: 2 mol HCl over 1 mol Ba(OH)2.",
+     "ex": {
+      "question": "A 10.00 mL sample of HCl solution is titrated with 0.1356 M Ba(OH)2. The equivalence point is reached after 39.70 mL of Ba(OH)2 has been added. What is the molarity of the HCl solution?",
+      "eq": "2 HCl + Ba(OH)2 -> BaCl2 + 2 H2O",
+      "show": [
+       "1.077 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.2332",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HNO3 by the volume of the HNO3 solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol HNO3 on top so that mol Ba(OH)2 cancels: 2 mol HNO3 over 1 mol Ba(OH)2.",
+     "ex": {
+      "question": "A 10.00 mL sample of HNO3 solution is titrated with 0.1166 M Ba(OH)2. The equivalence point is reached after 39.74 mL of Ba(OH)2 has been added. What is the molarity of the HNO3 solution?",
+      "eq": "2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O",
+      "show": [
+       "0.9267 M HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the H#SO# solution# Divide the  => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.2222",
+     "intended": "You divided by the volume of the H2SO4 solution. Divide the moles of KOH by the volume of the KOH solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol H2SO4 with 2 mol KOH. The shortcut M1V1 = M2V2 does not work here. Go through mole",
+     "ex": {
+      "question": "A 10.00 mL sample of KOH solution is titrated with 0.1111 M H2SO4. The equivalence point is reached after 20.16 mL of H2SO4 has been added. What is the molarity of the KOH solution?",
+      "eq": "H2SO4 + 2 KOH -> K2SO4 + 2 H2O",
+      "show": [
+       "0.4480 M KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the Ba(OH)# solution# Divide th => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 2,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.2750",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HCl by the volume of the HCl solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Ba(OH)2 with 2 mol HCl. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "A 20.00 mL sample of HCl solution is titrated with 0.1375 M Ba(OH)2. The equivalence point is reached after 40.10 mL of Ba(OH)2 has been added. What is the molarity of the HCl solution?",
+      "eq": "2 HCl + Ba(OH)2 -> BaCl2 + 2 H2O",
+      "show": [
+       "0.5514 M HCl"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.2612",
+     "intended": "You divided by the volume of the Ba(OH)2 solution. Divide the moles of HNO3 by the volume of the HNO3 solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol Ba(OH)2 with 2 mol HNO3. The shortcut M1V1 = M2V2 does not work here. Go through m",
+     "ex": {
+      "question": "A 20.00 mL sample of HNO3 solution is titrated with 0.1306 M Ba(OH)2. The equivalence point is reached after 39.93 mL of Ba(OH)2 has been added. What is the molarity of the HNO3 solution?",
+      "eq": "2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O",
+      "show": [
+       "0.5215 M HNO3"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the H#SO# solution# Divide the  => That is the result with the mole ratio upside down# Put mol ",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.3148",
+     "intended": "You divided by the volume of the H2SO4 solution. Divide the moles of KOH by the volume of the KOH solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol KOH on top so that mol H2SO4 cancels: 2 mol KOH over 1 mol H2SO4.",
+     "ex": {
+      "question": "A 10.00 mL sample of KOH solution is titrated with 0.1574 M H2SO4. The equivalence point is reached after 39.90 mL of H2SO4 has been added. What is the molarity of the KOH solution?",
+      "eq": "H2SO4 + 2 KOH -> K2SO4 + 2 H2O",
+      "show": [
+       "1.256 M KOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the H#C#O# solution# Divide the => That is the result with the mole ratio upside down# Put mol ",
+   "n": 1,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.2026",
+     "intended": "You divided by the volume of the H2C2O4 solution. Divide the moles of NaOH by the volume of the NaOH solution.",
+     "shown": "That is the result with the mole ratio upside down. Put mol NaOH on top so that mol H2C2O4 cancels: 2 mol NaOH over 1 mol H2C2O4.",
+     "ex": {
+      "question": "A 10.00 mL sample of NaOH solution is titrated with 0.1013 M H2C2O4. The equivalence point is reached after 39.93 mL of H2C2O4 has been added. What is the molarity of the NaOH solution?",
+      "eq": "H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O",
+      "show": [
+       "0.8090 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "titration:findM",
+   "code": "slip-message-shadowed: You divided by the volume of the H#C#O# solution# Divide the => It looks like a #:# mole ratio was assumed# The balanced equ",
+   "n": 2,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 0,
+     "typed": "0.2472",
+     "intended": "You divided by the volume of the H2C2O4 solution. Divide the moles of NaOH by the volume of the NaOH solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol H2C2O4 with 2 mol NaOH. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "A 10.00 mL sample of NaOH solution is titrated with 0.1236 M H2C2O4. The equivalence point is reached after 20.15 mL of H2C2O4 has been added. What is the molarity of the NaOH solution?",
+      "eq": "H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O",
+      "show": [
+       "0.4981 M NaOH"
+      ]
+     }
+    },
+    {
+     "part": 0,
+     "typed": "0.3044",
+     "intended": "You divided by the volume of the H2C2O4 solution. Divide the moles of NaOH by the volume of the NaOH solution.",
+     "shown": "It looks like a 1:1 mole ratio was assumed. The balanced equation pairs 1 mol H2C2O4 with 2 mol NaOH. The shortcut M1V1 = M2V2 does not work here. Go through mo",
+     "ex": {
+      "question": "A 20.00 mL sample of NaOH solution is titrated with 0.1522 M H2C2O4. The equivalence point is reached after 40.08 mL of H2C2O4 has been added. What is the molarity of the NaOH solution?",
+      "eq": "H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O",
+      "show": [
+       "0.6100 M NaOH"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of HNO#  => It looks like the final buret reading was used as the volume",
+   "n": 104,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.1599",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HNO3 by the volume of the HNO3 sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1860,
+      "look": "over",
+      "acid": "HNO3",
+      "Va": "20.00",
+      "Mt": "0.1599",
+      "Veq": 17.584,
+      "init": 149
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1972",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HNO3 by the volume of the HNO3 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2440,
+      "look": "over",
+      "acid": "HNO3",
+      "Va": "25.00",
+      "Mt": "0.1972",
+      "Veq": 23.397,
+      "init": 52
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1386",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HNO3 by the volume of the HNO3 sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1640,
+      "look": "over",
+      "acid": "HNO3",
+      "Va": "20.00",
+      "Mt": "0.1386",
+      "Veq": 15.393,
+      "init": 359
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1558",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HNO3 by the volume of the HNO3 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2135,
+      "look": "over",
+      "acid": "HNO3",
+      "Va": "25.00",
+      "Mt": "0.1558",
+      "Veq": 20.336,
+      "init": 363
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of H#SO# => It looks like the final buret reading was used as the volume",
+   "n": 102,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.08935",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2SO4 by the volume of the H2SO4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2270,
+      "look": "over",
+      "acid": "H2SO4",
+      "Va": "25.00",
+      "Mt": "0.1787",
+      "Veq": 17.67,
+      "init": 231
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.09705",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2SO4 by the volume of the H2SO4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2230,
+      "look": "over",
+      "acid": "H2SO4",
+      "Va": "25.00",
+      "Mt": "0.1941",
+      "Veq": 17.277,
+      "init": 295
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.06085",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2SO4 by the volume of the H2SO4 sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1640,
+      "look": "over",
+      "acid": "H2SO4",
+      "Va": "20.00",
+      "Mt": "0.1217",
+      "Veq": 15.374,
+      "init": 376
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.07180",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2SO4 by the volume of the H2SO4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2105,
+      "look": "over",
+      "acid": "H2SO4",
+      "Va": "25.00",
+      "Mt": "0.1436",
+      "Veq": 20.016,
+      "init": 379
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of HCl b => It looks like the final buret reading was used as the volume",
+   "n": 96,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.1477",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HCl by the volume of the HCl sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2290,
+      "look": "over",
+      "acid": "HCl",
+      "Va": "25.00",
+      "Mt": "0.1477",
+      "Veq": 17.882,
+      "init": 206
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1619",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HCl by the volume of the HCl sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2110,
+      "look": "over",
+      "acid": "HCl",
+      "Va": "25.00",
+      "Mt": "0.1619",
+      "Veq": 16.074,
+      "init": 387
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1117",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HCl by the volume of the HCl sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1835,
+      "look": "end",
+      "acid": "HCl",
+      "Va": "20.00",
+      "Mt": "0.1117",
+      "Veq": 18.284,
+      "init": 150
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1117",
+     "intended": "You divided by the volume of NaOH. Divide the moles of HCl by the volume of the HCl sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1855,
+      "look": "past",
+      "acid": "HCl",
+      "Va": "20.00",
+      "Mt": "0.1117",
+      "Veq": 18.284,
+      "init": 150
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of H#C#H => It looks like the final buret reading was used as the volume",
+   "n": 114,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.03643",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H3C6H5O7 by the volume of the H3C6H5O7 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2245,
+      "look": "over",
+      "acid": "H3C6H5O7",
+      "Va": "25.00",
+      "Mt": "0.1093",
+      "Veq": 17.444,
+      "init": 261
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.03410",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H3C6H5O7 by the volume of the H3C6H5O7 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2340,
+      "look": "end",
+      "acid": "H3C6H5O7",
+      "Va": "25.00",
+      "Mt": "0.1023",
+      "Veq": 23.34,
+      "init": 138
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.03410",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H3C6H5O7 by the volume of the H3C6H5O7 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2360,
+      "look": "past",
+      "acid": "H3C6H5O7",
+      "Va": "25.00",
+      "Mt": "0.1023",
+      "Veq": 23.34,
+      "init": 138
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.04470",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H3C6H5O7 by the volume of the H3C6H5O7 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2415,
+      "look": "over",
+      "acid": "H3C6H5O7",
+      "Va": "25.00",
+      "Mt": "0.1341",
+      "Veq": 23.11,
+      "init": 63
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of H#C#O => It looks like the final buret reading was used as the volume",
+   "n": 98,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.09710",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2C2O4 by the volume of the H2C2O4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2365,
+      "look": "over",
+      "acid": "H2C2O4",
+      "Va": "25.00",
+      "Mt": "0.1942",
+      "Veq": 22.633,
+      "init": 121
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.06995",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2C2O4 by the volume of the H2C2O4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2185,
+      "look": "over",
+      "acid": "H2C2O4",
+      "Va": "25.00",
+      "Mt": "0.1399",
+      "Veq": 20.817,
+      "init": 292
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.09600",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2C2O4 by the volume of the H2C2O4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2415,
+      "look": "end",
+      "acid": "H2C2O4",
+      "Va": "25.00",
+      "Mt": "0.1920",
+      "Veq": 24.109,
+      "init": 73
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.09600",
+     "intended": "You divided by the volume of NaOH. Divide the moles of H2C2O4 by the volume of the H2C2O4 sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2420,
+      "look": "end",
+      "acid": "H2C2O4",
+      "Va": "25.00",
+      "Mt": "0.1920",
+      "Veq": 24.109,
+      "init": 73
+     }
+    }
+   ]
+  },
+  {
+   "section": "lab",
+   "code": "slip-message-shadowed: You divided by the volume of NaOH# Divide the moles of CH#CO => It looks like the final buret reading was used as the volume",
+   "n": 96,
+   "detail": "A listed slip shows a different message (an earlier slip or the generic message wins)",
+   "examples": [
+    {
+     "part": 1,
+     "typed": "0.1803",
+     "intended": "You divided by the volume of NaOH. Divide the moles of CH3COOH by the volume of the CH3COOH sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2365,
+      "look": "end",
+      "acid": "CH3COOH",
+      "Va": "25.00",
+      "Mt": "0.1803",
+      "Veq": 23.636,
+      "init": 159
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1654",
+     "intended": "You divided by the volume of NaOH. Divide the moles of CH3COOH by the volume of the CH3COOH sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2170,
+      "look": "over",
+      "acid": "CH3COOH",
+      "Va": "25.00",
+      "Mt": "0.1654",
+      "Veq": 16.698,
+      "init": 352
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1604",
+     "intended": "You divided by the volume of NaOH. Divide the moles of CH3COOH by the volume of the CH3COOH sample (20.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 1640,
+      "look": "over",
+      "acid": "CH3COOH",
+      "Va": "20.00",
+      "Mt": "0.1604",
+      "Veq": 15.378,
+      "init": 347
+     }
+    },
+    {
+     "part": 1,
+     "typed": "0.1975",
+     "intended": "You divided by the volume of NaOH. Divide the moles of CH3COOH by the volume of the CH3COOH sample (25.00 mL, in liters).",
+     "shown": "It looks like the final buret reading was used as the volume. Use the volume delivered: final reading minus initial reading.",
+     "ex": {
+      "d": 2210,
+      "look": "over",
+      "acid": "CH3COOH",
+      "Va": "25.00",
+      "Mt": "0.1975",
+      "Veq": 17.098,
+      "init": 304
+     }
+    }
+   ]
+  }
+ ]
+}

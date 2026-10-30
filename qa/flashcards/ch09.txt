@@ -1,0 +1,297 @@
+#c001 [naming 1] Term
+  F: Give the two acceptable names for HC≡CH.
+  B: Ethyne (systematic) and acetylene (common). Both are accepted by IUPAC.
+  SB: [ethyne:ethyne (acetylene) (nocap)]
+#c002 [naming 2] Concept
+  F: How are alkynes named?
+  B: Like alkenes, but with the suffix -yne instead of -ene. Number the longest chain containing the C≡C so the triple bond gets the lowest number.
+#c003 [naming 3] Concept
+  F: What is the geometry around an alkyne carbon?
+  SF: [butyne2:2-butyne]
+  B: Linear, 180°. Each triple-bond carbon is sp-hybridized: one σ bond plus two π bonds join the two carbons.
+  SB: [butyne2:2-butyne (nocap)]
+  N: Rotate the model: the four carbons of 2-butyne sit on one straight line.
+  3D: butyne2 2-butyne: C–C≡C–C in a straight line None
+#c004 [naming 4] Name it
+  F: Name this alkyne.
+  SF: [pentyne2:2-pentyne (nocap)]
+  B: 2-Pentyne
+#c005 [naming 5] Name it
+  F: Name this alkyne.
+  SF: [mp2:4-methyl-2-pentyne (nocap)]
+  B: 4-Methyl-2-pentyne
+  N: Number from the end nearer the triple bond: the C≡C gets 2, the methyl gets 4.
+#c006 [naming 6] Name it
+  F: Name this alkyne.
+  SF: [dmh:2,5-dimethyl-3-hexyne (nocap)]
+  B: 2,5-Dimethyl-3-hexyne
+#c007 [naming 7] Name it
+  F: Draw 3-methyl-1-butyne.
+  SB: [mb1yne:3-methyl-1-butyne]
+#c008 [prep 1] Concept
+  F: How can an alkyne be made from a vicinal dihalide?
+  B: By two consecutive dehydrohalogenations (two E2 eliminations) with a strong base, usually sodium amide, NaNH_2. Each step removes one H and one X.
+  N: The intermediate after the first elimination is a bromoalkene (a vinylic halide).
+#c009 [prep 2] Reaction
+  F: Predict the product.
+  SF: [dbb:1,2-dibromobutane] --(1) 3 NaNH_2, mineral oil, heat / (2) NH_4Cl--> ?
+  B: 1-Butyne.
+  SB: [butyne1:1-butyne]
+  N: This dibromide comes from 1-butene + Br_2. So an alkene can be turned into an alkyne in two stages: add Br_2, then eliminate twice.
+#c010 [prep 3] Concept
+  F: Making a terminal alkyne this way uses 3 equivalents of NaNH_2 and an NH_4Cl workup. Why?
+  B: Two equivalents do the two eliminations. The terminal alkyne is acidic, so the third equivalent removes its ≡C–H, giving the alkynide anion. NH_4Cl then puts the H back.
+#c011 [prep 4] Reaction
+  F: Predict the product.
+  SF: [gemdcl:(1,1-dichloroethyl)cyclohexane] --(1) 3 NaNH_2, mineral oil, heat / (2) HA--> ?
+  B: Cyclohexylacetylene: geminal dihalides also give alkynes by double elimination.
+  SB: [ethynylchex:cyclohexylacetylene]
+#c012 [prep 5] Reaction
+  F: Predict the product.
+  SF: [stilbdibr:1,2-dibromo-1,2-diphenylethane] --2 KOH / ethanol, heat--> ?
+  B: Diphenylacetylene, after two eliminations of HBr.
+  SB: [dpa:diphenylacetylene]
+#c013 [addx 1] Concept
+  F: How many times does Br_2 add to an alkyne?
+  B: Once or twice, depending on how many equivalents are used. One equivalent usually gives the trans dihaloalkene; a second gives the tetrahaloalkane.
+#c014 [addx 2] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [butyne2:2-butyne] --Br_2 (1 equiv) / CCl_4--> ?
+  B: (E)-2,3-Dibromo-2-butene: the two Br atoms add anti, so they end up trans.
+  SB: [edbb:(E)-2,3-dibromo-2-butene]
+  3D: edbb (E)-2,3-dibromo-2-butene: Br atoms trans None
+#c015 [addx 3] Reaction
+  F: Predict the product.
+  SF: [butyne2:2-butyne] --2 Br_2 / CCl_4--> ?
+  B: 2,2,3,3-Tetrabromobutane.
+  SB: [tetrabr:2,2,3,3-tetrabromobutane]
+#c016 [addx 4] Reaction
+  F: Predict the product.
+  SF: [hexyne1:1-hexyne] --HBr (1 equiv) / --> ?
+  B: 2-Bromo-1-hexene (Markovnikov).
+  SB: [bromohexene:2-bromo-1-hexene]
+#c017 [addx 5] Reaction
+  F: Predict the product.
+  SF: [hexyne1:1-hexyne] --2 HBr / --> ?
+  B: 2,2-Dibromohexane: a geminal dihalide.
+  SB: [dibromohexane:2,2-dibromohexane]
+  N: Both additions are Markovnikov, so both Br atoms end up on the same carbon.
+#c018 [addx 6] Concept
+  F: HX + alkyne: how many additions, which regiochemistry, and what kind of dihalide?
+  B: One or two additions, depending on the molar equivalents of HX. Both are Markovnikov, giving a geminal dihalide.
+#c019 [hydr 1] Reaction
+  F: Predict the product.
+  SF: [hexyne1:1-hexyne] --H_2O, H_2SO_4 / HgSO_4--> ?
+  B: 2-Hexanone, a methyl ketone.
+  SB: [hexanone2:2-hexanone]
+  N: Markovnikov addition of water gives an enol, OH on C2. The enol tautomerizes to the ketone.
+#c020 [hydr 2] Concept
+  F: In Hg^2+-catalyzed hydration of 1-hexyne, what is formed first, before the ketone?
+  B: An enol: an OH on a C=C carbon. It quickly isomerizes to the ketone.
+  SB: [hexenol:hex-1-en-2-ol (an enol)] --tautomerizes / --> [hexanone2:2-hexanone]
+#c021 [hydr 3] Term
+  F: What are keto–enol tautomers?
+  B: Constitutional isomers that interconvert easily with a trace of acid or base. An H moves between O and C, and the double bond shifts between C=O and C=C.
+#c022 [hydr 4] Concept
+  F: Why do most aldehydes and ketones exist mainly in the keto form?
+  B: The C=O double bond is stronger than the C=C double bond of the enol.
+  N: Acetone: over 99% keto. Cyclohexanone: about 98.8% keto, 1.2% enol.
+#c023 [hydr 5] Concept
+  F: Draw the enol tautomer of cyclohexanone.
+  SF: [chxone:cyclohexanone]
+  SB: [chxenol:cyclohex-1-en-1-ol (enol)]
+#c024 [hydr 6] Concept
+  F: An enolate anion is protonated. Where can the proton add, and what does each give?
+  B: On oxygen → the enol. On carbon → the keto form. The two are formed reversibly and interconvert.
+#c025 [hydr 7] Reaction
+  F: Predict the product.
+  SF: [hexyne1:1-hexyne] --(1) BH_3·THF / (2) H_2O_2, OH^–--> ?
+  B: Hexanal, an aldehyde.
+  SB: [hexanal:hexanal]
+  N: Anti-Markovnikov: the OH goes on the terminal carbon, and that enol tautomerizes to an aldehyde.
+#c026 [hydr 8] Reaction
+  F: Predict the product.
+  SF: [phac:phenylacetylene] --(1) BH_3·THF / (2) H_2O_2, OH^–--> ?
+  B: Phenylacetaldehyde.
+  SB: [phacald:phenylacetaldehyde]
+#c027 [hydr 9] Reaction
+  F: Predict the product.
+  SF: [phac:phenylacetylene] --H_2O, H_2SO_4 / HgSO_4--> ?
+  B: Acetophenone, a methyl ketone.
+  SB: [acetophenone:acetophenone]
+#c028 [red 1] Reaction
+  F: Predict the product.
+  SF: [butyne2:2-butyne] --2 H_2, Pt / solvent, pressure--> ?
+  B: Butane: two equivalents of H_2 add.
+  SB: [butane:butane]
+  N: Pt, Pd or Ni reduce the alkyne all the way to the alkane; the reaction does not stop at the alkene.
+#c029 [red 2] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [octyne4:4-octyne] --(1) Li, C_2H_5NH_2, –78 °C / (2) NH_4Cl--> ?
+  B: trans-4-Octene, (E).
+  SB: [transoctene:trans-4-octene]
+  N: A dissolving-metal reduction: net anti addition of hydrogen, giving the trans alkene.
+#c030 [red 3] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [butyne2:2-butyne] --H_2 / Lindlar catalyst--> ?
+  B: cis-2-Butene, (Z).
+  SB: [cisbutene:cis-2-butene]
+  N: Syn addition of H_2 on the catalyst surface. The catalyst is deactivated, so it stops at the alkene.
+#c031 [red 4] Term
+  F: What is Lindlar’s catalyst, and what does it make?
+  B: Palladium on CaCO_3, deactivated (“poisoned”) with quinoline. It hydrogenates alkynes only as far as the cis alkene.
+#c032 [red 5] Concept
+  F: 2-Butyne is reduced two ways. Which reagent gives which alkene?
+  SF: [butyne2:2-butyne]
+  B: H_2, Lindlar → cis-2-butene (syn).Li or Na in NH_3 or an amine → trans-2-butene (anti).
+  SB: [cisbutene:cis-2-butene] "vs." [transbutene:trans-2-butene]
+  N: Rotate each model: in the cis isomer both CH_3 groups are on the same side of the C=C.
+  3D: butenes cis- and trans-2-butene ['cis (Lindlar)', 'trans (Li, amine)']
+#c033 [red 6] Concept ENRICH
+  F: Why does Li in ethylamine give the trans alkene?
+  B: Li donates one electron to the π bond (radical anion), which takes H^+ from the amine (vinylic radical). A second Li gives a vinylic anion, which prefers the less crowded trans shape before it is protonated.
+#c034 [red 7] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [pentyne2:2-pentyne] --D_2 / Lindlar catalyst--> ?
+  B: (Z)-2,3-Dideuterio-2-pentene.
+  SB: [dpentene:(Z)-2,3-dideuterio-2-pentene]
+  N: Both D atoms add to the same face (syn), so they end up cis.
+#c035 [red 8] Reaction
+  F: Predict the product.
+  SF: [enyne:(but-1-en-3-ynyl)benzene] --excess H_2 / Pd/C--> ?
+  B: Butylbenzene.
+  SB: [butylbenzene:butylbenzene]
+  N: Both the C=C and the C≡C are reduced. The benzene ring is not reduced under these conditions.
+#c036 [oxid 1] Concept
+  F: What do O_3 and basic KMnO_4 do to an internal alkyne?
+  B: They cleave the triple bond, turning each alkyne carbon into a carboxylic acid: R–C≡C–R′ → RCO_2H + R′CO_2H.
+  N: It works, but it is not the best way to make carboxylic acids; better methods come in later chapters.
+#c037 [oxid 2] Reaction
+  F: Predict the products.
+  SF: [pentyne2:2-pentyne] --(1) KMnO_4, OH^– / (2) H_3O^+--> ?
+  B: Acetic acid + propanoic acid.
+  SB: [aceticacid:acetic acid] + [propanoic:propanoic acid]
+#c038 [oxid 3] Puzzle
+  F: An alkyne, C_6H_10, gives only propanoic acid with O_3 then HOAc. What is it?
+  B: 3-Hexyne.
+  SB: [hexyne3:3-hexyne]
+  N: A symmetrical alkyne: both halves are CH_3CH_2C.
+#c039 [acid 1] Concept
+  F: Give the approximate pK_a of the C–H in ethyne, ethene and ethane.
+  B: Ethyne ≈ 25 · ethene ≈ 44 · ethane ≈ 50. Acetylenic hydrogens are far more acidic than other C–H bonds.
+#c040 [acid 2] Concept
+  F: Rank from most to least acidic: H–NH_2, H–OH, H–C≡CR, H–CH_2CH_3, H–OR, H–CH=CH_2.
+  B: H–OH (15.7) > H–OR (16–17) > H–C≡CR (25) > H–NH_2 (38) > H–CH=CH_2 (44) > H–CH_2CH_3 (50)
+#c041 [acid 3] Concept
+  F: Why is a terminal alkyne C–H so much more acidic than an alkene or alkane C–H?
+  B: The anion’s lone pair sits in an sp orbital, which has 50% s character. It is held closer to the nucleus and is more stable than an sp^2 or sp^3 anion.
+#c042 [acid 4] Reaction
+  F: Predict the products.
+  SF: [propyne:propyne] --NaNH_2 / liquid NH_3--> ?
+  B: Sodium propynide (an alkynide) + NH_3.
+  SB: [propynide:sodium propynide] + "NH_3"
+#c043 [acid 5] Concept
+  F: NaNH_2 deprotonates a terminal alkyne, but NaOH does not. Why?
+  B: NH_3 (pK_a 38) is a much weaker acid than the alkyne (25), so the equilibrium lies on the alkynide side. Water (15.7) is a stronger acid than the alkyne, so hydroxide can’t pull the proton off to any useful extent.
+#c044 [acid 6] Term
+  F: What is an alkynide (acetylide) anion?
+  B: The anion R–C≡C:^– formed when a strong base removes the ≡C–H proton of a terminal alkyne. It is a strong base and a good nucleophile.
+#c045 [alkyl 1] Term
+  F: What is alkylation, and why does it matter?
+  B: A carbon–carbon bond-forming reaction that lengthens the carbon chain. Reactions that make C–C bonds are some of the most important in organic synthesis.
+#c046 [alkyl 2] Concept
+  F: In an alkyl halide, which carbon does the nucleophile attack, and why is it δ+?
+  B: The carbon bonded to X. The electronegative halogen polarizes the C–X bond, leaving that carbon partially positive.
+#c047 [alkyl 3] Term
+  F: What is a leaving group?
+  B: A substituent that can leave as a relatively stable species, either as an anion (e.g., Br^–) or as a neutral molecule.
+#c048 [alkyl 4] Term
+  F: What is steric hindrance?
+  B: When the spatial arrangement of atoms or groups at or near a reacting site blocks or slows a reaction.
+#c049 [alkyl 5] Concept
+  F: Rank these by how fast a nucleophile attacks C–X: methyl, 1°, 2°, 3°, neopentyl.
+  B: Methyl > 1° > 2° ≫ neopentyl > 3°
+  N: Approximate relative rates: methyl 30, 1° 1, 2° 0.03, neopentyl 0.00001, 3° ~0. Tertiary and neopentyl carbons are too hindered to react.
+#c050 [alkyl 6] Concept
+  F: Which alkyl halides work in acetylide alkylation?
+  B: Methyl or primary halides that are unbranched at the second carbon. More hindered halides don’t work.
+#c051 [alkyl 7] Reaction
+  F: Predict the product.
+  SF: [butyne1:1-butyne] --(1) NaNH_2, NH_3 / (2) CH_3Br--> ?
+  B: 2-Pentyne.
+  SB: [pentyne2:2-pentyne]
+#c052 [alkyl 8] Reaction
+  F: Predict the product.
+  SF: [ethyne:ethyne (acetylene)] --(1) NaNH_2, NH_3 / (2) CH_3Br--> ?
+  B: Propyne.
+  SB: [propyne:propyne]
+#c053 [alkyl 9] Reaction
+  F: Predict the product of all three steps.
+  SF: [mb1yne:3-methyl-1-butyne] --(1) NaNH_2, NH_3 / (2) CH_3Br--> --excess H_2 / Pt, pressure--> ?
+  B: 2-Methylpentane.
+  SB: [mp2:4-methyl-2-pentyne] --excess H_2, Pt / --> [mpentane:2-methylpentane]
+  N: Alkylation gives 4-methyl-2-pentyne; hydrogenation then gives the alkane. Alkynes are handy for building other functional groups.
+#c054 [synth 1] Term
+  F: What is retrosynthetic analysis?
+  B: Planning a synthesis by working backward from the target molecule to simpler starting materials. Often several routes are possible.
+#c055 [synth 2] Synthesis
+  F: Work backward: which terminal alkyne and which alkyl halide make this target?
+  SF: [cyhexbutyne:1-cyclohexyl-1-butyne]
+  B: Cyclohexylacetylene (deprotonated with NaNH_2) + bromoethane.
+  SB: [ethynylchex:cyclohexylacetylene] + [bromoethane:bromoethane]
+  N: Break the bond between the alkyne carbon and the CH_2CH_3: the alkynide is the nucleophile, CH_3CH_2Br the electrophile.
+#c056 [synth 3] Synthesis
+  F: Give the reagents and intermediates for this conversion.
+  SF: [mpentyne1:4-methyl-1-pentyne] --? / --> [mheptene:trans-6-methyl-3-heptene]
+  B: (1) NaNH_2 (2) CH_3CH_2Br (3) Li in C_2H_5NH_2 or Na in NH_3
+  SB: [mpentyne1:4-methyl-1-pentyne (nocap)] --NaNH_2; CH_3CH_2Br / --> [mheptyne:6-methyl-3-heptyne] --Li, C_2H_5NH_2 / --> [mheptene:trans-6-methyl-3-heptene (nocap)]
+  N: Trans alkene, so finish with a dissolving-metal reduction, not Lindlar.
+#c057 [synth 4] Synthesis
+  F: Give the reagents and intermediates for this conversion.
+  SF: [butyne1:1-butyne] --? / --> [hexanol3:3-hexanol]
+  B: Alkylate, reduce to the alkene, then hydrate.
+  SB: [butyne1:1-butyne (nocap)] --NaNH_2; CH_3CH_2Br / --> [hexyne3:3-hexyne] --H_2, Lindlar / --> [cishexene3:cis-3-hexene] --H_3O^+ / --> [hexanol3:3-hexanol (nocap)]
+  N: 3-Hexene is symmetrical, so H_3O^+, oxymercuration or hydroboration all give 3-hexanol.
+#c058 [synth 5] Synthesis
+  F: Starting from acetylene and any alkyl halide, make 2-heptanone.
+  SF: [ethyne:ethyne (acetylene)] --? / --> [heptanone2:2-heptanone]
+  B: Alkylate once, then Hg^2+ hydration.
+  SB: [ethyne:ethyne (acetylene) (nocap)] --NaNH_2; CH_3(CH_2)_4Br / --> [heptyne1:1-heptyne] --H_2O, H_2SO_4, HgSO_4 / --> [heptanone2:2-heptanone (nocap)]
+  N: Markovnikov hydration of a terminal alkyne gives the methyl ketone.
+#c059 [synth 6] Synthesis
+  F: Starting from acetylene and any alkyl halide, make this alkene.
+  SF: [ethyne:ethyne (acetylene)] --? / --> [dpbutene:trans-1,4-diphenyl-2-butene]
+  B: Alkylate twice with benzyl bromide, then reduce.
+  SB: [ethyne:ethyne (acetylene) (nocap)] --NaNH_2; PhCH_2Br / --> [phpropyne:3-phenyl-1-propyne] --NaNH_2; PhCH_2Br / --> [dpbutyne:1,4-diphenyl-2-butyne] --Li, C_2H_5NH_2 / --> [dpbutene:trans-1,4-diphenyl-2-butene (nocap)]
+  N: Benzyl bromide is a primary halide, so it alkylates well. Use Lindlar instead of Li in the last step for the cis alkene.
+#c060 [synth 7] Synthesis
+  F: Starting from acetylene and any alkyl halide, make 1,2-dichloropropane.
+  SF: [ethyne:ethyne (acetylene)] --? / --> [dcp:1,2-dichloropropane]
+  B: Alkylate, reduce to the alkene, add Cl_2.
+  SB: [ethyne:ethyne (acetylene) (nocap)] --NaNH_2; CH_3Br / --> [propyne:propyne] --H_2, Lindlar / --> [propene:propene] --Cl_2 / --> [dcp:1,2-dichloropropane (nocap)]
+#c061 [synth 8] Synthesis
+  F: Starting from acetylene and any alkyl halide, make acetic acid.
+  SF: [ethyne:ethyne (acetylene)] --? / --> [aceticacid:acetic acid]
+  B: Alkylate twice with CH_3Br, then cleave.
+  SB: [ethyne:ethyne (acetylene) (nocap)] --(NaNH_2; CH_3Br) × 2 / --> [butyne2:2-butyne] --(1) O_3 (2) HOAc / or KMnO_4, OH^–; H_3O^+--> "2 ×" [aceticacid:acetic acid (nocap)]
+  N: Symmetrical 2-butyne splits into two identical acetic acid molecules.
+#c062 [synth 9] Synthesis
+  F: Starting from acetylene and any alkyl halide, make 2-bromopentane.
+  SF: [ethyne:ethyne (acetylene)] --? / --> [bromopentane2:2-bromopentane]
+  B: Alkylate, reduce to the alkene, add HBr.
+  SB: [ethyne:ethyne (acetylene) (nocap)] --NaNH_2; CH_3CH_2CH_2Br / --> [pentyne1:1-pentyne] --H_2, Lindlar / --> [pentene1:1-pentene] --HBr / --> [bromopentane2:2-bromopentane (nocap)]
+  N: Markovnikov HBr addition puts Br on C2. (Adding HBr directly to 1-pentyne would not work: it gives a bromoalkene, then a gem-dibromide.)
+#c063 [review 1] Big picture
+  F: Which reagents add to an alkyne twice if you use enough of them?
+  B: X_2 (→ tetrahalide), HX (→ gem-dihalide) and H_2 with Pt, Pd or Ni (→ alkane).
+#c064 [review 2] Big picture
+  F: How can you stop at the alkene stage?
+  B: One equivalent of X_2 or HX · H_2, Lindlar for the cis alkene · Li or Na in NH_3/amine for the trans alkene
+#c065 [review 3] Big picture
+  F: A terminal alkyne is hydrated two ways. Which gives a methyl ketone and which an aldehyde?
+  SF: [hexyne1:1-hexyne]
+  B: H_2O, H_2SO_4, HgSO_4 → methyl ketone (Markovnikov).BH_3·THF; then H_2O_2, OH^– → aldehyde (anti-Markovnikov).
+  SB: [hexanone2:2-hexanone] "vs." [hexanal:hexanal]
+#c066 [review 4] Big picture
+  F: You want to lengthen a carbon chain using an alkyne. What are the two steps, and what limits the halide?
+  B: (1) NaNH_2 to make the alkynide; (2) an alkyl halide, which must be methyl or primary and unbranched at the second carbon.

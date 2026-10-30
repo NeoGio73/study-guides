@@ -1,0 +1,90 @@
+[
+ {
+  "page": "mole-and-molar-mass-study-guide.html",
+  "view": "desktop",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 537,
+  "problemsSeen": 72,
+  "notes": []
+ },
+ {
+  "page": "stoichiometry-study-guide.html",
+  "view": "desktop",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 537,
+  "problemsSeen": 72,
+  "notes": []
+ },
+ {
+  "page": "solution-stoichiometry-study-guide.html",
+  "view": "desktop",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 656,
+  "problemsSeen": 63,
+  "notes": []
+ },
+ {
+  "page": "solutions-and-gases-study-guide.html",
+  "view": "desktop",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 715,
+  "problemsSeen": 96,
+  "notes": []
+ },
+ {
+  "page": "mole-and-molar-mass-study-guide.html",
+  "view": "phone",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 537,
+  "problemsSeen": 72,
+  "notes": []
+ },
+ {
+  "page": "stoichiometry-study-guide.html",
+  "view": "phone",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 537,
+  "problemsSeen": 72,
+  "notes": []
+ },
+ {
+  "page": "solution-stoichiometry-study-guide.html",
+  "view": "phone",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 660,
+  "problemsSeen": 63,
+  "notes": []
+ },
+ {
+  "page": "solutions-and-gases-study-guide.html",
+  "view": "phone",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "bad": [],
+  "overflow": [],
+  "clicks": 715,
+  "problemsSeen": 96,
+  "notes": []
+ }
+]

@@ -1,0 +1,1044 @@
+{
+ "settings": {
+  "GEN_N": 20000,
+  "UI_N": 2000,
+  "seed": 20261030,
+  "viewport": "390x844"
+ },
+ "ph": {
+  "perType": {
+   "bond": {
+    "calls": 20000,
+    "typeCount": {
+     "bond": 20000
+    },
+    "ms": 934,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "bond": 2000
+      },
+      "ms": 9272
+     },
+     "hint": {
+      "typeCount": {
+       "bond": 2000
+      },
+      "ms": 8840
+     },
+     "solo": {
+      "typeCount": {
+       "bond": 2000
+      },
+      "ms": 6775
+     }
+    }
+   },
+   "conc": {
+    "calls": 140651,
+    "typeCount": {
+     "moles": 20092,
+     "pct2ppm": 20224,
+     "molarity": 20109,
+     "pctmass": 20025,
+     "limit": 20097,
+     "mg2ppb": 20000,
+     "ppm2mg": 20104
+    },
+    "ms": 22146,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "pct2ppm": 2000,
+       "molarity": 2000,
+       "pctmass": 2000,
+       "limit": 2000,
+       "mg2ppb": 2000,
+       "ppm2mg": 2000,
+       "moles": 2000
+      },
+      "ms": 698262
+     },
+     "hint": {
+      "typeCount": {
+       "pct2ppm": 2000,
+       "molarity": 2000,
+       "pctmass": 2000,
+       "limit": 2000,
+       "mg2ppb": 2000,
+       "ppm2mg": 2000,
+       "moles": 2000
+      },
+      "ms": 269547
+     },
+     "solo": {
+      "typeCount": {
+       "pct2ppm": 2000,
+       "molarity": 2000,
+       "pctmass": 2000,
+       "limit": 2000,
+       "mg2ppb": 2000,
+       "ppm2mg": 2000,
+       "moles": 2000
+      },
+      "ms": 137551
+     }
+    }
+   },
+   "neut": {
+    "calls": 20000,
+    "typeCount": {
+     "neut": 20000
+    },
+    "ms": 891,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "neut": 2000
+      },
+      "ms": 6447
+     },
+     "hint": {
+      "typeCount": {
+       "neut": 2000
+      },
+      "ms": 6138
+     },
+     "solo": {
+      "typeCount": {
+       "neut": 2000
+      },
+      "ms": 5185
+     }
+    }
+   },
+   "ph": {
+    "calls": 141109,
+    "typeCount": {
+     "calcH": 20171,
+     "toOH": 20356,
+     "times": 20125,
+     "class": 20019,
+     "toPH": 20163,
+     "toH": 20000,
+     "calc": 20275
+    },
+    "ms": 2050,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "toOH": 2000,
+       "times": 2000,
+       "class": 2000,
+       "calcH": 2000,
+       "toPH": 2000,
+       "toH": 2000,
+       "calc": 2000
+      },
+      "ms": 201252
+     },
+     "hint": {
+      "typeCount": {
+       "toOH": 2000,
+       "times": 2000,
+       "class": 2000,
+       "calcH": 2000,
+       "toPH": 2000,
+       "toH": 2000,
+       "calc": 2000
+      },
+      "ms": 254559
+     },
+     "solo": {
+      "typeCount": {
+       "toOH": 2000,
+       "times": 2000,
+       "class": 2000,
+       "calcH": 2000,
+       "toPH": 2000,
+       "toH": 2000,
+       "calc": 2000
+      },
+      "ms": 168585
+     }
+    }
+   }
+  },
+  "counts": {
+   "worked example bond": 1,
+   "bond(worked example):bond": 1,
+   "bond:bond": 20000,
+   "ui bond:bond:guided": 2000,
+   "ui bond:bond:hint": 2000,
+   "ui bond:bond:solo": 2000,
+   "worked example conc": 1,
+   "conc(worked example):pctmass": 1,
+   "conc:moles": 20092,
+   "conc:pct2ppm": 20224,
+   "conc:molarity": 20109,
+   "conc:pctmass": 20025,
+   "conc:limit": 20097,
+   "conc:mg2ppb": 20000,
+   "conc:ppm2mg": 20104,
+   "ui conc:pct2ppm:guided": 2000,
+   "ui conc:molarity:guided": 2000,
+   "ui conc:pctmass:guided": 2000,
+   "ui conc:limit:guided": 2000,
+   "ui conc:mg2ppb:guided": 2000,
+   "ui conc:ppm2mg:guided": 2000,
+   "ui conc:moles:guided": 2000,
+   "ui conc:pct2ppm:hint": 2000,
+   "ui conc:molarity:hint": 2000,
+   "ui conc:pctmass:hint": 2000,
+   "ui conc:limit:hint": 2000,
+   "ui conc:mg2ppb:hint": 2000,
+   "ui conc:ppm2mg:hint": 2000,
+   "ui conc:moles:hint": 2000,
+   "ui conc:pct2ppm:solo": 2000,
+   "ui conc:molarity:solo": 2000,
+   "ui conc:pctmass:solo": 2000,
+   "ui conc:limit:solo": 2000,
+   "ui conc:mg2ppb:solo": 2000,
+   "ui conc:ppm2mg:solo": 2000,
+   "ui conc:moles:solo": 2000,
+   "worked example neut": 1,
+   "neut(worked example):neut": 1,
+   "neut:neut": 20000,
+   "ui neut:neut:guided": 2000,
+   "ui neut:neut:hint": 2000,
+   "ui neut:neut:solo": 2000,
+   "worked example ph": 1,
+   "ph(worked example):times": 1,
+   "ph:calcH": 20171,
+   "ph:toOH": 20356,
+   "ph:times": 20125,
+   "ph:class": 20019,
+   "ph:toPH": 20163,
+   "ph:toH": 20000,
+   "ph:calc": 20275,
+   "ui ph:toOH:guided": 2000,
+   "ui ph:times:guided": 2000,
+   "ui ph:class:guided": 2000,
+   "ui ph:calcH:guided": 2000,
+   "ui ph:toPH:guided": 2000,
+   "ui ph:toH:guided": 2000,
+   "ui ph:calc:guided": 2000,
+   "ui ph:toOH:hint": 2000,
+   "ui ph:times:hint": 2000,
+   "ui ph:class:hint": 2000,
+   "ui ph:calcH:hint": 2000,
+   "ui ph:toPH:hint": 2000,
+   "ui ph:toH:hint": 2000,
+   "ui ph:calc:hint": 2000,
+   "ui ph:toOH:solo": 2000,
+   "ui ph:times:solo": 2000,
+   "ui ph:class:solo": 2000,
+   "ui ph:calcH:solo": 2000,
+   "ui ph:toPH:solo": 2000,
+   "ui ph:toH:solo": 2000,
+   "ui ph:calc:solo": 2000
+  },
+  "faults": {},
+  "notes": {
+   "bond: class changes with revised Pauling values": {
+    "n": 2572,
+    "examples": [
+     "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+     "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent",
+     "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+     "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent",
+     "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+     "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent"
+    ]
+   }
+  },
+  "extras": {
+   "phTimesLabels": {
+    "0": "4% hydrochloric acid",
+    "1": "stomach acid",
+    "2": "lemon juice",
+    "3": "cola",
+    "4": "tomato juice",
+    "5": "black coffee",
+    "6": "milk",
+    "7": "pure water",
+    "8": "seawater",
+    "9": "baking soda solution",
+    "10": "milk of magnesia",
+    "11": "household ammonia",
+    "12": "washing soda",
+    "13": "0.4% (0.1 M) sodium hydroxide",
+    "14": "1 M sodium hydroxide"
+   },
+   "halfIso": {}
+  },
+  "parseVariants": [
+   {
+    "typed": "1x10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1×10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 × 10^−7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1×10−7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 x 10-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1e-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1.3x10^-5",
+    "parsed": 0.000013,
+    "ok": true
+   },
+   {
+    "typed": "−183",
+    "parsed": -183,
+    "ok": true
+   },
+   {
+    "typed": "$0.45",
+    "parsed": 0.45,
+    "ok": true
+   },
+   {
+    "typed": "7,600",
+    "parsed": 7600,
+    "ok": true
+   },
+   {
+    "typed": "1/8",
+    "parsed": 0.125,
+    "ok": true
+   },
+   {
+    "typed": "0.0000001",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1*10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1·10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1E-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 × 10^0",
+    "parsed": 1,
+    "ok": true
+   },
+   {
+    "typed": "3.125%",
+    "parsed": 3.125,
+    "ok": true
+   },
+   {
+    "typed": "2.5 mg",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "abc",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "1×10^",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "1.2.3",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "",
+    "parsed": null,
+    "ok": true
+   }
+  ],
+  "timings": [
+   {
+    "gen": "bond",
+    "phase": "gen",
+    "secs": 1.047
+   },
+   {
+    "gen": "bond",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 9.305
+   },
+   {
+    "gen": "bond",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 8.898
+   },
+   {
+    "gen": "bond",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 6.797
+   },
+   {
+    "gen": "conc",
+    "phase": "gen",
+    "secs": 22.185
+   },
+   {
+    "gen": "conc",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 698.29
+   },
+   {
+    "gen": "conc",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 269.584
+   },
+   {
+    "gen": "conc",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 137.571
+   },
+   {
+    "gen": "neut",
+    "phase": "gen",
+    "secs": 0.911
+   },
+   {
+    "gen": "neut",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 6.467
+   },
+   {
+    "gen": "neut",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 6.157
+   },
+   {
+    "gen": "neut",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 5.198
+   },
+   {
+    "gen": "ph",
+    "phase": "gen",
+    "secs": 2.071
+   },
+   {
+    "gen": "ph",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 201.269
+   },
+   {
+    "gen": "ph",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 254.58
+   },
+   {
+    "gen": "ph",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 168.602
+   }
+  ],
+  "pageErrors": []
+ },
+ "nuc": {
+  "perType": {
+   "nuc": {
+    "calls": 100633,
+    "typeCount": {
+     "bombard": 20467,
+     "product": 40145,
+     "particle": 20000,
+     "parent": 20021
+    },
+    "ms": 1824,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "product": 2000,
+       "particle": 2000,
+       "parent": 2000,
+       "bombard": 2000
+      },
+      "ms": 71677
+     },
+     "hint": {
+      "typeCount": {
+       "product": 2000,
+       "particle": 2000,
+       "parent": 2000,
+       "bombard": 2000
+      },
+      "ms": 88147
+     },
+     "solo": {
+      "typeCount": {
+       "product": 2000,
+       "particle": 2000,
+       "parent": 2000,
+       "bombard": 2000
+      },
+      "ms": 61783
+     }
+    }
+   },
+   "half": {
+    "calls": 140471,
+    "typeCount": {
+     "percent": 20035,
+     "howlong": 20120,
+     "count": 20282,
+     "remain": 39842,
+     "date": 20000,
+     "findhalf": 20192
+    },
+    "ms": 8115,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "howlong": 2000,
+       "count": 2000,
+       "remain": 2000,
+       "percent": 2000,
+       "date": 2000,
+       "findhalf": 2000
+      },
+      "ms": 129438
+     },
+     "hint": {
+      "typeCount": {
+       "howlong": 2000,
+       "count": 2000,
+       "remain": 2000,
+       "percent": 2000,
+       "date": 2000,
+       "findhalf": 2000
+      },
+      "ms": 139530
+     },
+     "solo": {
+      "typeCount": {
+       "howlong": 2000,
+       "count": 2000,
+       "remain": 2000,
+       "percent": 2000,
+       "date": 2000,
+       "findhalf": 2000
+      },
+      "ms": 95007
+     }
+    }
+   },
+   "energy": {
+    "calls": 142072,
+    "typeCount": {
+     "time": 20259,
+     "power": 20428,
+     "bond": 20379,
+     "joules": 20341,
+     "cost": 20396,
+     "calories": 20000,
+     "kwh": 20269
+    },
+    "ms": 13322,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "power": 2000,
+       "bond": 2000,
+       "joules": 2000,
+       "time": 2000,
+       "cost": 2000,
+       "calories": 2000,
+       "kwh": 2000
+      },
+      "ms": 169571
+     },
+     "hint": {
+      "typeCount": {
+       "power": 2000,
+       "bond": 2000,
+       "joules": 2000,
+       "time": 2000,
+       "cost": 2000,
+       "calories": 2000,
+       "kwh": 2000
+      },
+      "ms": 220788
+     },
+     "solo": {
+      "typeCount": {
+       "power": 2000,
+       "bond": 2000,
+       "joules": 2000,
+       "time": 2000,
+       "cost": 2000,
+       "calories": 2000,
+       "kwh": 2000
+      },
+      "ms": 154952
+     }
+    }
+   },
+   "fuel": {
+    "calls": 100424,
+    "typeCount": {
+     "octane": 20066,
+     "co2": 20000,
+     "carbon": 20090,
+     "years": 20094,
+     "share": 20174
+    },
+    "ms": 6645,
+    "ui": {
+     "guided": {
+      "typeCount": {
+       "co2": 2000,
+       "carbon": 2000,
+       "years": 2000,
+       "share": 2000,
+       "octane": 2000
+      },
+      "ms": 76680
+     },
+     "hint": {
+      "typeCount": {
+       "co2": 2000,
+       "carbon": 2000,
+       "years": 2000,
+       "share": 2000,
+       "octane": 2000
+      },
+      "ms": 81056
+     },
+     "solo": {
+      "typeCount": {
+       "co2": 2000,
+       "carbon": 2000,
+       "years": 2000,
+       "share": 2000,
+       "octane": 2000
+      },
+      "ms": 74177
+     }
+    }
+   }
+  },
+  "counts": {
+   "worked example nuc": 1,
+   "nuc(worked example):product": 1,
+   "nuc:bombard": 20467,
+   "nuc:product": 40145,
+   "nuc:particle": 20000,
+   "nuc:parent": 20021,
+   "ui nuc:product:guided": 2000,
+   "ui nuc:particle:guided": 2000,
+   "ui nuc:parent:guided": 2000,
+   "ui nuc:bombard:guided": 2000,
+   "ui nuc:product:hint": 2000,
+   "ui nuc:particle:hint": 2000,
+   "ui nuc:parent:hint": 2000,
+   "ui nuc:bombard:hint": 2000,
+   "ui nuc:product:solo": 2000,
+   "ui nuc:particle:solo": 2000,
+   "ui nuc:parent:solo": 2000,
+   "ui nuc:bombard:solo": 2000,
+   "worked example half": 1,
+   "half(worked example):remain": 1,
+   "half:percent": 20035,
+   "half:howlong": 20120,
+   "half:count": 20282,
+   "half:remain": 39842,
+   "half:date": 20000,
+   "half:findhalf": 20192,
+   "ui half:howlong:guided": 2000,
+   "ui half:count:guided": 2000,
+   "ui half:remain:guided": 2000,
+   "ui half:percent:guided": 2000,
+   "ui half:date:guided": 2000,
+   "ui half:findhalf:guided": 2000,
+   "ui half:howlong:hint": 2000,
+   "ui half:count:hint": 2000,
+   "ui half:remain:hint": 2000,
+   "ui half:percent:hint": 2000,
+   "ui half:date:hint": 2000,
+   "ui half:findhalf:hint": 2000,
+   "ui half:howlong:solo": 2000,
+   "ui half:count:solo": 2000,
+   "ui half:remain:solo": 2000,
+   "ui half:percent:solo": 2000,
+   "ui half:date:solo": 2000,
+   "ui half:findhalf:solo": 2000,
+   "worked example energy": 1,
+   "energy(worked example):cost": 1,
+   "energy:time": 20259,
+   "energy:power": 20428,
+   "energy:bond": 20379,
+   "energy:joules": 20341,
+   "energy:cost": 20396,
+   "energy:calories": 20000,
+   "energy:kwh": 20269,
+   "ui energy:power:guided": 2000,
+   "ui energy:bond:guided": 2000,
+   "ui energy:joules:guided": 2000,
+   "ui energy:time:guided": 2000,
+   "ui energy:cost:guided": 2000,
+   "ui energy:calories:guided": 2000,
+   "ui energy:kwh:guided": 2000,
+   "ui energy:power:hint": 2000,
+   "ui energy:bond:hint": 2000,
+   "ui energy:joules:hint": 2000,
+   "ui energy:time:hint": 2000,
+   "ui energy:cost:hint": 2000,
+   "ui energy:calories:hint": 2000,
+   "ui energy:kwh:hint": 2000,
+   "ui energy:power:solo": 2000,
+   "ui energy:bond:solo": 2000,
+   "ui energy:joules:solo": 2000,
+   "ui energy:time:solo": 2000,
+   "ui energy:cost:solo": 2000,
+   "ui energy:calories:solo": 2000,
+   "ui energy:kwh:solo": 2000,
+   "worked example fuel": 1,
+   "fuel(worked example):co2": 1,
+   "fuel:octane": 20066,
+   "fuel:co2": 20000,
+   "fuel:carbon": 20090,
+   "fuel:years": 20094,
+   "fuel:share": 20174,
+   "ui fuel:co2:guided": 2000,
+   "ui fuel:carbon:guided": 2000,
+   "ui fuel:years:guided": 2000,
+   "ui fuel:share:guided": 2000,
+   "ui fuel:octane:guided": 2000,
+   "ui fuel:co2:hint": 2000,
+   "ui fuel:carbon:hint": 2000,
+   "ui fuel:years:hint": 2000,
+   "ui fuel:share:hint": 2000,
+   "ui fuel:octane:hint": 2000,
+   "ui fuel:co2:solo": 2000,
+   "ui fuel:carbon:solo": 2000,
+   "ui fuel:years:solo": 2000,
+   "ui fuel:share:solo": 2000,
+   "ui fuel:octane:solo": 2000
+  },
+  "faults": {},
+  "notes": {},
+  "extras": {
+   "phTimesLabels": {},
+   "halfIso": {
+    "Strontium-90": "28.5 years",
+    "Phosphorus-32": "14.3 days",
+    "Cobalt-60": "5.271 years",
+    "Iodine-131": "8.04 days",
+    "Technetium-99m": "6 hours",
+    "Tritium (hydrogen-3)": "12.26 years",
+    "Carbon-14": "5730 years"
+   }
+  },
+  "parseVariants": [
+   {
+    "typed": "1x10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1×10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 × 10^−7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1×10−7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 x 10-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1e-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1.3x10^-5",
+    "parsed": 0.000013,
+    "ok": true
+   },
+   {
+    "typed": "−183",
+    "parsed": -183,
+    "ok": true
+   },
+   {
+    "typed": "$0.45",
+    "parsed": 0.45,
+    "ok": true
+   },
+   {
+    "typed": "7,600",
+    "parsed": 7600,
+    "ok": true
+   },
+   {
+    "typed": "1/8",
+    "parsed": 0.125,
+    "ok": true
+   },
+   {
+    "typed": "0.0000001",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1*10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1·10^-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1E-7",
+    "parsed": 1e-7,
+    "ok": true
+   },
+   {
+    "typed": "1 × 10^0",
+    "parsed": 1,
+    "ok": true
+   },
+   {
+    "typed": "3.125%",
+    "parsed": 3.125,
+    "ok": true
+   },
+   {
+    "typed": "2.5 mg",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "abc",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "1×10^",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "1.2.3",
+    "parsed": null,
+    "ok": true
+   },
+   {
+    "typed": "",
+    "parsed": null,
+    "ok": true
+   }
+  ],
+  "timings": [
+   {
+    "gen": "nuc",
+    "phase": "gen",
+    "secs": 1.841
+   },
+   {
+    "gen": "nuc",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 71.693
+   },
+   {
+    "gen": "nuc",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 88.164
+   },
+   {
+    "gen": "nuc",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 61.802
+   },
+   {
+    "gen": "half",
+    "phase": "gen",
+    "secs": 8.145
+   },
+   {
+    "gen": "half",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 129.455
+   },
+   {
+    "gen": "half",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 139.548
+   },
+   {
+    "gen": "half",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 95.031
+   },
+   {
+    "gen": "energy",
+    "phase": "gen",
+    "secs": 13.338
+   },
+   {
+    "gen": "energy",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 169.596
+   },
+   {
+    "gen": "energy",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 220.805
+   },
+   {
+    "gen": "energy",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 154.975
+   },
+   {
+    "gen": "fuel",
+    "phase": "gen",
+    "secs": 6.659
+   },
+   {
+    "gen": "fuel",
+    "phase": "ui",
+    "modes": [
+     "guided"
+    ],
+    "secs": 76.697
+   },
+   {
+    "gen": "fuel",
+    "phase": "ui",
+    "modes": [
+     "hint"
+    ],
+    "secs": 81.073
+   },
+   {
+    "gen": "fuel",
+    "phase": "ui",
+    "modes": [
+     "solo"
+    ],
+    "secs": 74.197
+   }
+  ],
+  "pageErrors": []
+ }
+}

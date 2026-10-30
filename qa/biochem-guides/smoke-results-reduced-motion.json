@@ -1,0 +1,322 @@
+[
+ {
+  "kind": "carbs",
+  "viewport": {
+   "width": 1280,
+   "height": 900
+  },
+  "tabs": [
+   "map",
+   "mono",
+   "ring",
+   "deriv",
+   "di",
+   "poly",
+   "gag",
+   "glyco",
+   "code",
+   "lab"
+  ],
+  "perTab": [
+   {
+    "tab": "map",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "mono",
+    "clicks": 435,
+    "errs": []
+   },
+   {
+    "tab": "ring",
+    "clicks": 432,
+    "errs": []
+   },
+   {
+    "tab": "deriv",
+    "clicks": 426,
+    "errs": []
+   },
+   {
+    "tab": "di",
+    "clicks": 435,
+    "errs": []
+   },
+   {
+    "tab": "poly",
+    "clicks": 426,
+    "errs": []
+   },
+   {
+    "tab": "gag",
+    "clicks": 415,
+    "errs": []
+   },
+   {
+    "tab": "glyco",
+    "clicks": 405,
+    "errs": []
+   },
+   {
+    "tab": "code",
+    "clicks": 419,
+    "errs": []
+   },
+   {
+    "tab": "lab",
+    "clicks": 415,
+    "errs": []
+   }
+  ],
+  "bad": [],
+  "overflow": [],
+  "errors": []
+ },
+ {
+  "kind": "carbs",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "tabs": [
+   "map",
+   "mono",
+   "ring",
+   "deriv",
+   "di",
+   "poly",
+   "gag",
+   "glyco",
+   "code",
+   "lab"
+  ],
+  "perTab": [
+   {
+    "tab": "map",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "mono",
+    "clicks": 435,
+    "errs": []
+   },
+   {
+    "tab": "ring",
+    "clicks": 433,
+    "errs": []
+   },
+   {
+    "tab": "deriv",
+    "clicks": 427,
+    "errs": []
+   },
+   {
+    "tab": "di",
+    "clicks": 436,
+    "errs": []
+   },
+   {
+    "tab": "poly",
+    "clicks": 426,
+    "errs": []
+   },
+   {
+    "tab": "gag",
+    "clicks": 415,
+    "errs": []
+   },
+   {
+    "tab": "glyco",
+    "clicks": 405,
+    "errs": []
+   },
+   {
+    "tab": "code",
+    "clicks": 419,
+    "errs": []
+   },
+   {
+    "tab": "lab",
+    "clicks": 415,
+    "errs": []
+   }
+  ],
+  "bad": [],
+  "overflow": [],
+  "errors": []
+ },
+ {
+  "kind": "lipids",
+  "viewport": {
+   "width": 1280,
+   "height": 900
+  },
+  "tabs": [
+   "map",
+   "fa",
+   "ml",
+   "sig",
+   "lab",
+   "mem",
+   "dig",
+   "box",
+   "ket",
+   "fas",
+   "cls",
+   "cho"
+  ],
+  "perTab": [
+   {
+    "tab": "map",
+    "clicks": 416,
+    "errs": []
+   },
+   {
+    "tab": "fa",
+    "clicks": 456,
+    "errs": []
+   },
+   {
+    "tab": "ml",
+    "clicks": 435,
+    "errs": []
+   },
+   {
+    "tab": "sig",
+    "clicks": 409,
+    "errs": []
+   },
+   {
+    "tab": "lab",
+    "clicks": 415,
+    "errs": []
+   },
+   {
+    "tab": "mem",
+    "clicks": 443,
+    "errs": []
+   },
+   {
+    "tab": "dig",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "box",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "ket",
+    "clicks": 404,
+    "errs": []
+   },
+   {
+    "tab": "fas",
+    "clicks": 421,
+    "errs": []
+   },
+   {
+    "tab": "cls",
+    "clicks": 414,
+    "errs": []
+   },
+   {
+    "tab": "cho",
+    "clicks": 425,
+    "errs": []
+   }
+  ],
+  "bad": [],
+  "overflow": [],
+  "errors": []
+ },
+ {
+  "kind": "lipids",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "tabs": [
+   "map",
+   "fa",
+   "ml",
+   "sig",
+   "lab",
+   "mem",
+   "dig",
+   "box",
+   "ket",
+   "fas",
+   "cls",
+   "cho"
+  ],
+  "perTab": [
+   {
+    "tab": "map",
+    "clicks": 416,
+    "errs": []
+   },
+   {
+    "tab": "fa",
+    "clicks": 456,
+    "errs": []
+   },
+   {
+    "tab": "ml",
+    "clicks": 434,
+    "errs": []
+   },
+   {
+    "tab": "sig",
+    "clicks": 409,
+    "errs": []
+   },
+   {
+    "tab": "lab",
+    "clicks": 421,
+    "errs": []
+   },
+   {
+    "tab": "mem",
+    "clicks": 442,
+    "errs": []
+   },
+   {
+    "tab": "dig",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "box",
+    "clicks": 414,
+    "errs": []
+   },
+   {
+    "tab": "ket",
+    "clicks": 404,
+    "errs": []
+   },
+   {
+    "tab": "fas",
+    "clicks": 420,
+    "errs": []
+   },
+   {
+    "tab": "cls",
+    "clicks": 413,
+    "errs": []
+   },
+   {
+    "tab": "cho",
+    "clicks": 425,
+    "errs": []
+   }
+  ],
+  "bad": [],
+  "overflow": [],
+  "errors": []
+ }
+]

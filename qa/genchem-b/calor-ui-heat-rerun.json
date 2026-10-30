@@ -1,0 +1,39 @@
+{
+ "PER": 700,
+ "sections": {
+  "heat": {
+   "guided": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 1400
+   },
+   "hint": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 1400
+   },
+   "solo": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 0
+   }
+  }
+ },
+ "hess": null,
+ "pageErrors": []
+}

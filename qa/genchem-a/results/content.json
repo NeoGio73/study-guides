@@ -1,0 +1,40 @@
+{
+ "counts": {
+  "mole": {
+   "atomicMasses": 27,
+   "reactions": 0,
+   "names": 63,
+   "densities": 0
+  },
+  "stoich": {
+   "atomicMasses": 16,
+   "reactions": 38,
+   "names": 27,
+   "densities": 14
+  },
+  "solstoich": {
+   "atomicMasses": 21,
+   "reactions": 27,
+   "names": 16,
+   "densities": 0
+  },
+  "solgas": {
+   "atomicMasses": 25,
+   "reactions": 51,
+   "names": 26,
+   "densities": 0
+  }
+ },
+ "examplesChecked": 17,
+ "notes": [
+  {
+   "guide": "solgas",
+   "what": "atomic mass differs from IUPAC abridged value",
+   "detail": {
+    "e": "Ar",
+    "page": "39.948",
+    "iupac": 39.95
+   }
+  }
+ ]
+}

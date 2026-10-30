@@ -1,0 +1,161 @@
+{
+ "carbs": {
+  "sections": {
+   "mono": {
+    "items": 17,
+    "generators": 4,
+    "draws": 10013,
+    "distinct": 857
+   },
+   "ring": {
+    "items": 17,
+    "generators": 2,
+    "draws": 5015,
+    "distinct": 36
+   },
+   "deriv": {
+    "items": 17,
+    "generators": 2,
+    "draws": 5015,
+    "distinct": 29
+   },
+   "di": {
+    "items": 17,
+    "generators": 3,
+    "draws": 7514,
+    "distinct": 36
+   },
+   "poly": {
+    "items": 19,
+    "generators": 5,
+    "draws": 12514,
+    "distinct": 103
+   },
+   "gag": {
+    "items": 16,
+    "generators": 2,
+    "draws": 5014,
+    "distinct": 22
+   },
+   "glyco": {
+    "items": 16,
+    "generators": 1,
+    "draws": 2515,
+    "distinct": 23
+   },
+   "code": {
+    "items": 16,
+    "generators": 2,
+    "draws": 5014,
+    "distinct": 26
+   },
+   "lab": {
+    "items": 12,
+    "generators": 3,
+    "draws": 7509,
+    "distinct": 31
+   }
+  },
+  "problems": [
+   {
+    "sec": "code",
+    "idx": 0,
+    "msg": "trap value 256 coincides with the accepted answer 256 (harmless, trap unreachable)",
+    "q": "How many different linear oligonucleotides of 4 units can be made from the 4 common nucleotides?",
+    "c": 256
+   },
+   {
+    "sec": "code",
+    "idx": 0,
+    "msg": "trap value 256 coincides with the accepted answer 256 (harmless, trap unreachable)",
+    "q": "How many different linear oligonucleotides of 4 units can be made from the 4 common nucleotides?",
+    "c": 256
+   },
+   {
+    "sec": "code",
+    "idx": 0,
+    "msg": "trap value 256 coincides with the accepted answer 256 (harmless, trap unreachable)",
+    "q": "How many different linear oligonucleotides of 4 units can be made from the 4 common nucleotides?",
+    "c": 256
+   }
+  ],
+  "missingExports": [
+   "faShort",
+   "checkShort"
+  ],
+  "errors": []
+ },
+ "lipids": {
+  "sections": {
+   "fa": {
+    "items": 19,
+    "generators": 7,
+    "draws": 17512,
+    "distinct": 1769
+   },
+   "ml": {
+    "items": 18,
+    "generators": 7,
+    "draws": 17511,
+    "distinct": 945
+   },
+   "sig": {
+    "items": 20,
+    "generators": 5,
+    "draws": 12515,
+    "distinct": 127
+   },
+   "lab": {
+    "items": 12,
+    "generators": 4,
+    "draws": 10008,
+    "distinct": 793
+   },
+   "mem": {
+    "items": 17,
+    "generators": 6,
+    "draws": 15011,
+    "distinct": 37
+   },
+   "dig": {
+    "items": 15,
+    "generators": 2,
+    "draws": 5013,
+    "distinct": 23
+   },
+   "box": {
+    "items": 17,
+    "generators": 6,
+    "draws": 15011,
+    "distinct": 44
+   },
+   "ket": {
+    "items": 12,
+    "generators": 0,
+    "draws": 12,
+    "distinct": 12
+   },
+   "fas": {
+    "items": 21,
+    "generators": 4,
+    "draws": 10017,
+    "distinct": 41
+   },
+   "cls": {
+    "items": 19,
+    "generators": 1,
+    "draws": 2518,
+    "distinct": 24
+   },
+   "cho": {
+    "items": 22,
+    "generators": 4,
+    "draws": 10018,
+    "distinct": 47
+   }
+  },
+  "problems": [],
+  "missingExports": [],
+  "errors": []
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "date": "2026-10-30",
+ "guides": [
+  "general-chemistry/gases-study-guide.html",
+  "general-chemistry/calorimetry-and-hess-law-study-guide.html"
+ ],
+ "scripts": {
+  "lib.js": "shared helpers; seeds Math.random; injects read-only instrumentation into the HTML response in flight (guide files untouched)",
+  "indep.js": "independently typed reference data (IUPAC atomic weights, R, CRC water vapor pressure, textbook van der Waals a/b, critical temperatures, ΔHf, specific heats, ΔHsoln, solubilities)",
+  "smoke.js -> smoke-results.json": "every tab/button/slider/select/explorer field at 1280x900 and 390x844",
+  "gen-gases.js -> gases-generators.json": "2,000 problems per generator, recomputed from question text; displayed answer and correctly rounded answer graded; slips inside tolerance; slip-message firing",
+  "ui-gases.js -> gases-ui.json": "2,000 questions per section through the real check() with typed displayed answers, hints/setups, slip spot checks",
+  "models-gases.js -> gases-models.json": "explorer readouts vs the laws (Boyle, Charles, Gay-Lussac, Avogadro, combined, PV=nRT, density chart, unknown gas, Dalton, air, over water, stoichiometry, urms, Graham, Z, van der Waals)",
+  "why-gases.js -> gases-why.json": "worked explanation contains the displayed answer (74,000 numeric problems)",
+  "calor-solve.js": "independent solver for calorimetry questions + guided-blank values",
+  "gen-calor.js -> calor-generators.json": "52,134 generated problems recomputed; ΔH data vs ΔHf; Hess by independent linear solve",
+  "ui-calor.js -> calor-ui.json": "8,400 problems through the UI at Guided setup / Hints if I ask / On my own, plus 2,100 Hess problems arranged with the buttons",
+  "slips-calor.js -> calor-slips.json": "120,116 slip values typed as a student would round them; worked-solution q vs guided blank",
+  "lab-calor.js -> calor-lab.json": "6,000 simulated calorimeter runs with energy bookkeeping and independent grading; 6 UI runs with a fast clock"
+ },
+ "counts": {
+  "smoke": {
+   "errors": 0,
+   "badText": 0,
+   "overflow390": 0,
+   "gasesPerViewport": {
+    "tabs": 13,
+    "clicks": 222,
+    "sliderMoves": 115,
+    "selectOptions": 10,
+    "fieldEntries": 144,
+    "submits": 65
+   },
+   "calorPerViewport": {
+    "tabs": 7,
+    "clicks": 128,
+    "submits": 35,
+    "labRuns": 3
+   }
+  },
+  "gases": {
+   "generatedProblems": 258000,
+   "numericRecomputed": 224000,
+   "displayedAnswerRejected": 0,
+   "independentAnswerRejected": 0,
+   "maxDeviationOverTolerance": 0.108,
+   "uiQuestions": 24000,
+   "uiRejected": 0,
+   "slipMessagesShown": "3175/3175",
+   "modelComparisons": 4225
+  },
+  "calorimetry": {
+   "generatedProblems": 52134,
+   "displayedAnswerRejected": 0,
+   "independentAnswerOutsideTol": 0,
+   "uiProblems": 8400,
+   "uiAccepted": 8400,
+   "independentAnswersAcceptedInUI": "4200/4200",
+   "hessUI": "2100/2100",
+   "slipValuesTried": 120116,
+   "slipMessagesFired": 118302,
+   "labModelRuns": 6000,
+   "labEnergyImbalanceMax": 4.4e-15,
+   "labUIRuns": "6/6 graded correct"
+  }
+ },
+ "faults": [
+  {
+   "id": "G1",
+   "guide": "gases",
+   "section": "9 Gas stoichiometry (g2L, L2g), 7 Density (dQ, mFromD), and their copies in 12",
+   "severity": "grading: wrong method accepted",
+   "issue": "The 22.41 L/mol shortcut away from STP is a named slip with its own message, but numQ drops that message when it falls within 1.3 x tolerance, and the 2% tolerance then marks the slip correct",
+   "rate": "g2L 7.2%, L2g 10.3%, dQ 3.5%, mFromD 2.9% of draws",
+   "example": "CO2 from 14.8 g CaCO3 at 28 °C and 1.10 atm: answer 3.32 L; 0.1479 mol x 22.41 = 3.31 L is accepted",
+   "code": "numQ: if(!isFinite(t[0]) || Math.abs(t[0] - o.a) <= 1.3 * tol) return;  with g2L T = gT(15, 40), P = g3(rint(90, 130)/100)",
+   "fix": "redraw T,P until |RT/P - 22.41| > 3% (as the van der Waals generator does with its 3% guard), or use rel 0.01 for these types"
+  },
+  {
+   "id": "G2",
+   "guide": "gases",
+   "section": "2/5/8/6 (toSTP, bMixed, fromX, iN)",
+   "severity": "grading: wrong method accepted (smaller)",
+   "issue": "Other slips land inside the 2% window by coincidence",
+   "rate": "toSTP upside-down pressure ratio 14.4% (P1 within ~1% of 760 torr); fromX 'multiplied by moles' 4.6% (total moles near 1); bMixed 1.6%; iN 0.6%",
+   "example": "442 mL at 755 torr and 15 °C to STP: answer 416 mL; upside-down ratio gives 422 mL, accepted",
+   "fix": "redraw when a listed slip is within tolerance (P1 not within 15 torr of 760; n1+n2 not within 0.04 of 1)"
+  },
+  {
+   "id": "G3",
+   "guide": "gases",
+   "section": "3 Charles (solveT, factorT), 4 Gay-Lussac (glT), 5 combined (cT), copies in 12",
+   "severity": "feedback (slip message does not fire)",
+   "issue": "°C answers are shown rounded to whole degrees, but a slip matches only within 1.1% of its value, so a slip typed to the nearest degree gets the generic hint",
+   "rate": "Celsius-in-ratio slip 19-21% (cT), 15% (glT), 19% (combT); V1/V2 slip 11-13%; factorT Celsius slip 13%",
+   "example": "290 mL at 14 °C heated to 380 mL: the Celsius slip gives 18.3 °C; typing 18 shows the generic hint, not 'You used the Celsius temperature in the ratio'",
+   "code": "check(): Q.traps.find(tr => Math.abs(v - tr[0]) <= Math.max(1e-9, Math.abs(tr[0]) * 0.011))",
+   "fix": "use Math.max(Math.abs(tr[0]) * 0.011, Q.unit === '°C' ? 0.6 : 0)"
+  },
+  {
+   "id": "G4",
+   "guide": "gases",
+   "section": "3, 4, 5, 6 (°C answers)",
+   "severity": "cosmetic",
+   "issue": "Answer displayed as '−0 °C' (and in the worked line)",
+   "rate": "about 0.2-0.35% of cT/glT draws",
+   "example": "795 mL at 42 °C cooled to 689 mL: shows −0 °C (T2 = 273.13 K)",
+   "code": "show: minus(a.toFixed(0)) in Charles solveT, glT, comb cT, ideal iT",
+   "fix": "const r = Math.round(a) || 0; show: minus(String(r))"
+  },
+  {
+   "id": "G5",
+   "guide": "gases",
+   "section": "9 'When every substance is a gas' table",
+   "severity": "wrong chemistry (text)",
+   "issue": "For CH4 + 2 O2 -> CO2 + 2 H2O(g) the page says '6.00 L of reactants give 6.00 L of products, because the number of moles of gas changes in the reaction' (3 -> 3, no change)",
+   "code": "drawVol: '... because the number of moles of gas changes in the reaction.'",
+   "fix": "branch: if the totals are equal say the moles of gas do not change here"
+  }
+ ],
+ "calorimetryFaults": [
+  {
+   "id": "C1",
+   "section": "1 Heat and temperature",
+   "severity": "wrong chemistry",
+   "issue": "ethanol drawn at temperatures above its normal boiling point (78.4 °C)",
+   "rate": "271 of 16,100 Section 1 problems (about 1 in 4 ethanol problems)",
+   "example": "A 315 g sample of ethanol (specific heat 2.44 J/(g·°C)) cools from 83.1 °C to 35.3 °C",
+   "code": "makeHeat: Ti = heating ? rint(150,300)/10 : rint(600,950)/10 with sub = pick(SUBST)",
+   "fix": "per-substance limits, e.g. skip when name==='ethanol' && Math.max(Ti,Tf) > 75"
+  },
+  {
+   "id": "C2",
+   "section": "5 Hess's law",
+   "severity": "cosmetic",
+   "issue": "'Your version' and the running sum show coefficients like 0.5/2, 1.5/2, 2.5/2, 3.5/2 after a x½ choice",
+   "rate": "most problems where a student tries x½",
+   "example": "CO(g) + ½O2(g) -> CO2(g) multiplied by ½ shows ½CO(g)+0.5/2O2(g)→½CO2(g)",
+   "code": "const coefTxt = c => Number.isInteger(c) ? String(c) : c===0.5 ? '½' : (c*2)+'/2';",
+   "fix": "handle quarters: c*4 integer -> '¼', '¾', '5/4', '7/4'"
+  },
+  {
+   "id": "C3",
+   "section": "1 Heat and temperature (m, c, dT, Tf types)",
+   "severity": "grading (guided blank) + cosmetic",
+   "issue": "worked solution prints q to whole joules; for heats under 100 J given with a decimal the printed q differs from the given q, its arithmetic line does not reproduce the answer, and typing the printed q into the guided q blank is marked wrong (1% tolerance)",
+   "rate": "15 of 3,387 (0.44%)",
+   "example": "16.2 g unknown metal releases 24.7 J, 75.8 -> 64.0 °C: solution shows q = −25 J and c = −25 J ÷ (16.2 g × −11.8 °C) = 0.129 (−25 gives 0.131)",
+   "code": "makeHeat: '<b>Heat in joules.</b> q = '+fx(qJ,0)+' J' (three places) and gcell(...,fx(qJ,0),...)",
+   "fix": "print the given value: sig(qJ,3) or the qS text with its sign"
+  },
+  {
+   "id": "C4",
+   "section": "3 Coffee-cup (predict final T)",
+   "severity": "grading: wrong method accepted",
+   "issue": "the 'use the total mass (water + solid)' slip changes Tf by less than the 0.15 °C tolerance, so it is accepted and its message never shows",
+   "rate": "770 of 2,243 (34%)",
+   "example": "2.37 g KOH in 150.0 g water at 23.67 °C, ΔH = −57.6 kJ/mol: answer 27.49 °C; water-only mass gives 27.55 °C, accepted",
+   "code": "makeCoffee predict: tolAbs:0.15 and clean(..., ans, 0.3)",
+   "fix": "redraw until |slip − ans| ≥ 0.3 °C, or drop this slip from the predict type"
+  },
+  {
+   "id": "C5",
+   "section": "1/2/3 temperature answers (sf:null, 1 decimal)",
+   "severity": "feedback (slip message does not fire)",
+   "issue": "slip values near 0 °C typed to 1 decimal miss the 1% match window",
+   "rate": "≈210 of ≈12,000 temperature-slip tries",
+   "example": "98.0 g granite at 16.6 °C absorbs 1.63 kJ: the sign slip −4.45 typed as −4.5 shows the generic hint, not 'The sample absorbed heat, so its temperature goes up'",
+   "code": "gradePart: Math.abs(v-e.value)<=Math.max(0.01*Math.abs(e.value), part.errAbs||0) (temperature parts set no errAbs; Hess sets 0.15)",
+   "fix": "add errAbs:0.15 to the Tf parts"
+  },
+  {
+   "id": "C6",
+   "section": "3 Coffee-cup (diss, predict) and 6 lab (salt)",
+   "severity": "wrong chemistry (minor)",
+   "issue": "KNO3 amounts above its solubility at the final temperature",
+   "rate": "diss 0.26%, predict 0.5%, lab 0.1%",
+   "example": "11.3 g KNO3 in 50.0 g water, 19.22 -> 4.01 °C (22.6 g/100 g vs about 16 g/100 g at 4 °C)",
+   "fix": "cap the KNO3 mass/water ratio or redraw when the final temperature is below the saturation temperature"
+  },
+  {
+   "id": "C7",
+   "section": "6 Run an experiment (salt)",
+   "severity": "cosmetic",
+   "issue": "procedure says weigh out between 2 and 10 g, but the scoop button stays until the mass reaches 10 g and each scoop adds 0.9-2.2 g, so up to 12.2 g",
+   "example": "UI run recorded 11.50 g KOH",
+   "code": "paintSteps: out=(ms<10 ? B('scoop','Add a scoop') : '')",
+   "fix": "hide the button when ms + 2.2 > 10, or clamp the scoop"
+  }
+ ],
+ "doubtful": [
+  "gases van der Waals calculator allows NH3, Cl2 (and CO2 at 280-300 K) below Tc at densities where they would condense, with no warning (e.g. Cl2, 2.00 mol, 1.0 L, 280 K shows 25.8 atm; Cl2 vapor pressure at 7 °C is about 4.5 atm); the practice generator explicitly avoids this",
+  "gases ideal-gas explorer: solving for T reaches 1.52 K (0.25 atm, 1 L, 2 mol) and 60,900 K (5 atm, 50 L, 0.05 mol); P above 5 atm pins the gauge; V above 50 L overfills the drawing",
+  "gases speed-distribution explorer offers Xe, CO2 and CH4 at 100 K, below their normal boiling or sublimation points",
+  "gases massIn / scuba tank use PV = nRT up to 150-220 atm (CH4 at 150 atm, 25 °C: van der Waals Z ≈ 0.78) while Section 11 says ideality fails at high pressure; standard textbook idealization",
+  "calorimetry Hess N2O5 target ΔH = +28.4 kJ disagrees with ΔHf data (2 × 11.3 = +22.6 kJ); comes from the given −76.6 kJ for N2O5(g)+H2O(l)→2HNO3(l) (ΔHf gives −73.7). NO + O → NO2 −304.1 vs −306.3 (O2 → 2 O given as 495 kJ vs 498.4). Textbook exercise values, internally consistent",
+  "calorimetry thermite context says 'molten iron' but the equation and ΔH (−851.5 kJ) are for Fe(s)",
+  "gases practice engine offers 'Show answer' after one miss and reveals after three misses (numeric) or two (multiple choice); the calorimetry guide offers the worked solution after two misses"
+ ],
+ "verifiedCorrect": [
+  "all gases constants: R 0.08206/62.36/8.314, 760 torr, 101.325 kPa, 14.70 psi, 22.41 L, 22.71 L (1 bar), air 28.97 g/mol, air composition, water vapor pressure table (within 0.1 torr of CRC), van der Waals table (matches textbook values to rounding)",
+  "every gases worked example (3.60 L, 2.16 L, 7.53 atm, 1.56e3 L, 6.28 L, 122 g NaN3, 515 m/s, 1,150 mph)",
+  "ten-gas density chart, molecular speeds, Graham ratios and times, KMT before/after pictures, Z curves (He/H2 never below 1 at 320-800 K), van der Waals numbers",
+  "calorimetry specific heats, ΔHsoln (all within 2% of CRC), −55.8 kJ/mol, all 15 thermochemical equations balanced and within 1 kJ of ΔHf-based values, all 12 Hess sets solvable with the documented multipliers",
+  "lab model: energy conserved to 1e-15 apart from the deliberate loss; perfect-timing results 3.2-3.8% low (metal), 1.5-1.9% (neutralization), 2.8% (salt): 'slightly small' claim holds; 0 misidentified metals in 2,000 runs"
+ ],
+ "fixes_2026_10_30": {
+  "G1": "gases: awayFromSTP() helper; dQ, mFromD, g2L, L2g redraw T/P until RT/P is >3% from 22.41 L/mol. Re-run: STP-shortcut slip accepted 0 (was 2.9-10.3%), its message never dropped.",
+  "G2": "gases: numQ() sets slipInside when a listed slip (not giving the identical value) is inside the tolerance; drawQuestion() redraws (up to 40). Re-run: 0 slips accepted in 258,000 problems; guard never exhausted.",
+  "G3": "gases: check() slip window Math.max(Q.unit==='°C' ? 0.6 : 1e-9, 1.1%). Re-run UI: 1,144/1,144 whole-degree °C slips show their message.",
+  "G4": "gases: deg0() helper replaces minus(x.toFixed(0)) in 13 places (practice answers, worked lines, combined and ideal explorers). Re-run: 0 \"−0\".",
+  "G5": "gases: drawVol() sums reactant/product volumes and says \"does not change in this reaction\" when equal. Verified CH4 (6.00 -> 6.00 L), NH3 and C3H8 wording.",
+  "C1": "calorimetry: TMAX {ethanol:75, water:95}; makeHeat redraws above it. Re-run: 0 out-of-liquid-range problems (was 271).",
+  "C2": "calorimetry: coefTxt() renders ¼, ¾, 5/4, 7/4. Re-run Hess UI: 0 decimal-over-2 coefficients in 2,100 problems with ×½ tried.",
+  "C3": "calorimetry: qJS (q as given) in the makeHeat worked solution and cells. Re-run: printed q matches the guided blank in 3,447/3,447; Section 1 guided blanks 0 rejects.",
+  "C4": "calorimetry: makeCoffee predict redraws (keeping the predict type) until the water-only slip is > max(0.3 °C, 2% of the answer) away. Re-run: accepted 0 (was 34%).",
+  "C5": "calorimetry: errAbs 0.15 on the three temperature parts. Re-run: near-0 °C slip misses 211 -> about 5 (remaining misses are two slips with equal values).",
+  "C6": "calorimetry: kno3Sol() table; makeCoffee redraws when KNO3 exceeds 90% of its solubility at the final temperature. Re-run: 0 over solubility (generator).",
+  "C7": "calorimetry: paintSteps() hides \"Add a scoop\" when ms+2.2 > 10. Re-run: 300 UI sequences max 9.88 g."
+ }
+}

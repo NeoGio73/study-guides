@@ -1,0 +1,177 @@
+{
+ "PER": 700,
+ "sections": {
+  "heat": {
+   "guided": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [
+     {
+      "type": "c",
+      "q": "A 10.2 g sample of an unknown metal releases 19.3 J of heat, and its temperature changes from 86.0 °C to 71.3 °C. What is the specific heat of the metal?",
+      "bad": [
+       "q=-19"
+      ],
+      "fb": "✓Correct. 0.129 J/(g·°C)That is 315 in a row. Ready for less help?Try one with hints only if you ask"
+     },
+     {
+      "type": "m",
+      "q": "A sample of gold (specific heat 0.129 J/(g·°C)) releases 26.5 J of heat, and its temperature changes from 80.5 °C to 64.3 °C. What is the mass of the sample?",
+      "bad": [
+       "q=-26"
+      ],
+      "fb": "✓Correct. 12.7 gThat is 424 in a row. Ready for less help?Try one with hints only if you ask"
+     }
+    ],
+    "blankMsgs": 0,
+    "hintsShown": 1400
+   },
+   "hint": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 1400
+   },
+   "solo": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 0
+   }
+  },
+  "exchange": {
+   "guided": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 1870
+   },
+   "hint": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 3266
+   },
+   "solo": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 0
+   }
+  },
+  "coffee": {
+   "guided": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 2100
+   },
+   "hint": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 3500
+   },
+   "solo": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 0
+   }
+  },
+  "thermo": {
+   "guided": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 700
+   },
+   "hint": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 1400
+   },
+   "solo": {
+    "problems": 700,
+    "accepted": 700,
+    "mineAccepted": 350,
+    "mineTried": 350,
+    "failures": [],
+    "blankRejects": [],
+    "blankMsgs": 0,
+    "hintsShown": 0
+   }
+  }
+ },
+ "hess": {
+  "guided": {
+   "problems": 700,
+   "accepted": 700,
+   "matched": 700,
+   "failures": [],
+   "blankRejects": [],
+   "oddCoefs": {}
+  },
+  "hint": {
+   "problems": 700,
+   "accepted": 700,
+   "matched": 700,
+   "failures": [],
+   "blankRejects": [],
+   "oddCoefs": {}
+  },
+  "solo": {
+   "problems": 700,
+   "accepted": 700,
+   "matched": 700,
+   "failures": [],
+   "blankRejects": [],
+   "oddCoefs": {}
+  }
+ },
+ "pageErrors": []
+}

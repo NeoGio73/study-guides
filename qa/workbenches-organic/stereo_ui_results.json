@@ -1,0 +1,765 @@
+{
+ "lab": {
+  "grading": {
+   "answered": 48,
+   "score": "12 / 12 solved"
+  },
+  "pairs": [
+   [
+    "RR",
+    "RR",
+    "Identical",
+    "Identical"
+   ],
+   [
+    "RR",
+    "SS",
+    "Enantiomers",
+    "Enantiomers"
+   ],
+   [
+    "RR",
+    "RS",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "RR",
+    "SR",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "SS",
+    "RR",
+    "Enantiomers",
+    "Enantiomers"
+   ],
+   [
+    "SS",
+    "SS",
+    "Identical",
+    "Identical"
+   ],
+   [
+    "SS",
+    "RS",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "SS",
+    "SR",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "RS",
+    "RR",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "RS",
+    "SS",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "RS",
+    "RS",
+    "Identical",
+    "Identical"
+   ],
+   [
+    "RS",
+    "SR",
+    "Identical",
+    "Identical"
+   ],
+   [
+    "SR",
+    "RR",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "SR",
+    "SS",
+    "Diastereomers",
+    "Diastereomers"
+   ],
+   [
+    "SR",
+    "RS",
+    "Identical",
+    "Identical"
+   ],
+   [
+    "SR",
+    "SR",
+    "Identical",
+    "Identical"
+   ]
+  ],
+  "jsmolOrientation": [
+   {
+    "mission": 5,
+    "raw": {
+     "id": "stereoquizmodela",
+     "pts": [
+      [
+       309,
+       293,
+       2124
+      ],
+      [
+       411,
+       122,
+       2116
+      ],
+      [
+       204,
+       125,
+       2118
+      ],
+      [
+       309,
+       180,
+       2249
+      ],
+      [
+       309,
+       180,
+       2159
+      ]
+     ]
+    },
+    "H_sz_minus_C": 90,
+    "area": -35091
+   },
+   {
+    "mission": 6,
+    "raw": {
+     "id": "stereoquizmodela",
+     "pts": [
+      [
+       309,
+       293,
+       2194
+      ],
+      [
+       411,
+       122,
+       2202
+      ],
+      [
+       204,
+       125,
+       2200
+      ],
+      [
+       309,
+       180,
+       2069
+      ],
+      [
+       309,
+       180,
+       2159
+      ]
+     ]
+    },
+    "H_sz_minus_C": -90,
+    "area": -35091
+   }
+  ]
+ },
+ "practice": {
+  "log": [
+   {
+    "pass": 0,
+    "q": 1,
+    "picked": "R",
+    "fb": "Correct",
+    "correct": "R"
+   },
+   {
+    "pass": 0,
+    "q": 2,
+    "picked": "R",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 0,
+    "q": 3,
+    "picked": "Carbon 1",
+    "fb": "Not quite",
+    "correct": "Carbon 3"
+   },
+   {
+    "pass": 0,
+    "q": 4,
+    "picked": "1",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 0,
+    "q": 5,
+    "picked": "E",
+    "fb": "Correct",
+    "correct": "E"
+   },
+   {
+    "pass": 0,
+    "q": 6,
+    "picked": "E",
+    "fb": "Not quite",
+    "correct": "Z"
+   },
+   {
+    "pass": 0,
+    "q": 7,
+    "picked": "(2E,4E)",
+    "fb": "Not quite",
+    "correct": "(2E,4Z)"
+   },
+   {
+    "pass": 0,
+    "q": 8,
+    "picked": "R",
+    "fb": "Correct",
+    "correct": "R"
+   },
+   {
+    "pass": 0,
+    "q": 9,
+    "picked": "Enantiomers",
+    "fb": "Correct",
+    "correct": "Enantiomers"
+   },
+   {
+    "pass": 0,
+    "q": 10,
+    "picked": "Enantiomers",
+    "fb": "Not quite",
+    "correct": "Diastereomers"
+   },
+   {
+    "pass": 0,
+    "q": 11,
+    "picked": "Enantiomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 0,
+    "q": 12,
+    "picked": "Enantiomers",
+    "fb": "Not quite",
+    "correct": "Constitutional isomers"
+   },
+   {
+    "pass": 0,
+    "q": 13,
+    "picked": "(2R,3R)",
+    "fb": "Not quite",
+    "correct": "(2S,3R)"
+   },
+   {
+    "pass": 0,
+    "q": 14,
+    "picked": "It is a meso compound: achiral, even though it has",
+    "fb": "Correct",
+    "correct": "It is a meso compound: achiral, even though it has two stere"
+   },
+   {
+    "pass": 0,
+    "q": 15,
+    "picked": "2",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 0,
+    "q": 16,
+    "picked": "Enantiomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 0,
+    "q": 17,
+    "picked": "cis and achiral",
+    "fb": "Correct",
+    "correct": "cis and achiral"
+   },
+   {
+    "pass": 0,
+    "q": 18,
+    "picked": "tert-Butyl axial, methyl equatorial",
+    "fb": "Not quite",
+    "correct": "tert-Butyl equatorial, methyl axial"
+   },
+   {
+    "pass": 0,
+    "q": 19,
+    "picked": "R",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 0,
+    "q": 20,
+    "picked": "It is chiral, even though it has no stereocenter",
+    "fb": "Correct",
+    "correct": "It is chiral, even though it has no stereocenter"
+   },
+   {
+    "pass": 1,
+    "q": 1,
+    "picked": "S",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 1,
+    "q": 2,
+    "picked": "S",
+    "fb": "Correct",
+    "correct": "S"
+   },
+   {
+    "pass": 1,
+    "q": 3,
+    "picked": "Carbon 2",
+    "fb": "Not quite",
+    "correct": "Carbon 3"
+   },
+   {
+    "pass": 1,
+    "q": 4,
+    "picked": "2",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 1,
+    "q": 5,
+    "picked": "Z",
+    "fb": "Not quite",
+    "correct": "E"
+   },
+   {
+    "pass": 1,
+    "q": 6,
+    "picked": "Z",
+    "fb": "Correct",
+    "correct": "Z"
+   },
+   {
+    "pass": 1,
+    "q": 7,
+    "picked": "(2E,4Z)",
+    "fb": "Correct",
+    "correct": "(2E,4Z)"
+   },
+   {
+    "pass": 1,
+    "q": 8,
+    "picked": "S",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 1,
+    "q": 9,
+    "picked": "Diastereomers",
+    "fb": "Not quite",
+    "correct": "Enantiomers"
+   },
+   {
+    "pass": 1,
+    "q": 10,
+    "picked": "Diastereomers",
+    "fb": "Correct",
+    "correct": "Diastereomers"
+   },
+   {
+    "pass": 1,
+    "q": 11,
+    "picked": "Diastereomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 1,
+    "q": 12,
+    "picked": "Diastereomers",
+    "fb": "Not quite",
+    "correct": "Constitutional isomers"
+   },
+   {
+    "pass": 1,
+    "q": 13,
+    "picked": "(2R,3S)",
+    "fb": "Not quite",
+    "correct": "(2S,3R)"
+   },
+   {
+    "pass": 1,
+    "q": 14,
+    "picked": "It is chiral and has a non-superimposable mirror i",
+    "fb": "Not quite",
+    "correct": "It is a meso compound: achiral, even though it has two stere"
+   },
+   {
+    "pass": 1,
+    "q": 15,
+    "picked": "3",
+    "fb": "Correct",
+    "correct": "3"
+   },
+   {
+    "pass": 1,
+    "q": 16,
+    "picked": "Diastereomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 1,
+    "q": 17,
+    "picked": "cis and chiral",
+    "fb": "Not quite",
+    "correct": "cis and achiral"
+   },
+   {
+    "pass": 1,
+    "q": 18,
+    "picked": "tert-Butyl equatorial, methyl axial",
+    "fb": "Correct",
+    "correct": "tert-Butyl equatorial, methyl axial"
+   },
+   {
+    "pass": 1,
+    "q": 19,
+    "picked": "S",
+    "fb": "Correct",
+    "correct": "S"
+   },
+   {
+    "pass": 1,
+    "q": 20,
+    "picked": "It is achiral, because it has no stereocenter",
+    "fb": "Not quite",
+    "correct": "It is chiral, even though it has no stereocenter"
+   },
+   {
+    "pass": 2,
+    "q": 1,
+    "picked": "Neither: this carbon is not a stereocenter",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 2,
+    "q": 2,
+    "picked": "Neither: this carbon is not a stereocenter",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 2,
+    "q": 3,
+    "picked": "Carbon 3",
+    "fb": "Correct",
+    "correct": "Carbon 3"
+   },
+   {
+    "pass": 2,
+    "q": 4,
+    "picked": "3",
+    "fb": "Correct",
+    "correct": "3"
+   },
+   {
+    "pass": 2,
+    "q": 5,
+    "picked": "Neither: this alkene has no E/Z isomers",
+    "fb": "Not quite",
+    "correct": "E"
+   },
+   {
+    "pass": 2,
+    "q": 6,
+    "picked": "Neither: this alkene has no E/Z isomers",
+    "fb": "Not quite",
+    "correct": "Z"
+   },
+   {
+    "pass": 2,
+    "q": 7,
+    "picked": "(2Z,4E)",
+    "fb": "Not quite",
+    "correct": "(2E,4Z)"
+   },
+   {
+    "pass": 2,
+    "q": 8,
+    "picked": "Neither: this carbon is not a stereocenter",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 2,
+    "q": 9,
+    "picked": "Identical (the same compound)",
+    "fb": "Not quite",
+    "correct": "Enantiomers"
+   },
+   {
+    "pass": 2,
+    "q": 10,
+    "picked": "Identical (the same compound)",
+    "fb": "Not quite",
+    "correct": "Diastereomers"
+   },
+   {
+    "pass": 2,
+    "q": 11,
+    "picked": "Identical (the same compound)",
+    "fb": "Correct",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 2,
+    "q": 12,
+    "picked": "Identical (the same compound)",
+    "fb": "Not quite",
+    "correct": "Constitutional isomers"
+   },
+   {
+    "pass": 2,
+    "q": 13,
+    "picked": "(2S,3R)",
+    "fb": "Correct",
+    "correct": "(2S,3R)"
+   },
+   {
+    "pass": 2,
+    "q": 14,
+    "picked": "It is achiral because it has no stereocenters",
+    "fb": "Not quite",
+    "correct": "It is a meso compound: achiral, even though it has two stere"
+   },
+   {
+    "pass": 2,
+    "q": 15,
+    "picked": "4",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 2,
+    "q": 16,
+    "picked": "Identical (the same compound)",
+    "fb": "Correct",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 2,
+    "q": 17,
+    "picked": "trans and achiral",
+    "fb": "Not quite",
+    "correct": "cis and achiral"
+   },
+   {
+    "pass": 2,
+    "q": 18,
+    "picked": "Both equatorial",
+    "fb": "Not quite",
+    "correct": "tert-Butyl equatorial, methyl axial"
+   },
+   {
+    "pass": 2,
+    "q": 19,
+    "picked": "Neither: this carbon is not a stereocenter",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 2,
+    "q": 20,
+    "picked": "It is achiral, because the molecule is planar",
+    "fb": "Not quite",
+    "correct": "It is chiral, even though it has no stereocenter"
+   },
+   {
+    "pass": 3,
+    "q": 1,
+    "picked": "It depends on how the model is rotated",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 3,
+    "q": 2,
+    "picked": "It depends on how the model is rotated",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 3,
+    "q": 3,
+    "picked": "Carbon 4",
+    "fb": "Not quite",
+    "correct": "Carbon 3"
+   },
+   {
+    "pass": 3,
+    "q": 4,
+    "picked": "4",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 3,
+    "q": 5,
+    "picked": "It cannot be assigned, because E/Z needs a hydroge",
+    "fb": "Not quite",
+    "correct": "E"
+   },
+   {
+    "pass": 3,
+    "q": 6,
+    "picked": "It cannot be assigned, because no two substituents",
+    "fb": "Not quite",
+    "correct": "Z"
+   },
+   {
+    "pass": 3,
+    "q": 7,
+    "picked": "(2Z,4Z)",
+    "fb": "Not quite",
+    "correct": "(2E,4Z)"
+   },
+   {
+    "pass": 3,
+    "q": 8,
+    "picked": "It depends on how the model is rotated",
+    "fb": "Not quite",
+    "correct": "R"
+   },
+   {
+    "pass": 3,
+    "q": 9,
+    "picked": "Constitutional isomers",
+    "fb": "Not quite",
+    "correct": "Enantiomers"
+   },
+   {
+    "pass": 3,
+    "q": 10,
+    "picked": "Constitutional isomers",
+    "fb": "Not quite",
+    "correct": "Diastereomers"
+   },
+   {
+    "pass": 3,
+    "q": 11,
+    "picked": "Constitutional isomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 3,
+    "q": 12,
+    "picked": "Constitutional isomers",
+    "fb": "Correct",
+    "correct": "Constitutional isomers"
+   },
+   {
+    "pass": 3,
+    "q": 13,
+    "picked": "(2S,3S)",
+    "fb": "Not quite",
+    "correct": "(2S,3R)"
+   },
+   {
+    "pass": 3,
+    "q": 14,
+    "picked": "It is a racemic mixture",
+    "fb": "Not quite",
+    "correct": "It is a meso compound: achiral, even though it has two stere"
+   },
+   {
+    "pass": 3,
+    "q": 15,
+    "picked": "8",
+    "fb": "Not quite",
+    "correct": "3"
+   },
+   {
+    "pass": 3,
+    "q": 16,
+    "picked": "Constitutional isomers",
+    "fb": "Not quite",
+    "correct": "Identical (the same compound)"
+   },
+   {
+    "pass": 3,
+    "q": 17,
+    "picked": "trans and chiral",
+    "fb": "Not quite",
+    "correct": "cis and achiral"
+   },
+   {
+    "pass": 3,
+    "q": 18,
+    "picked": "Both axial",
+    "fb": "Not quite",
+    "correct": "tert-Butyl equatorial, methyl axial"
+   },
+   {
+    "pass": 3,
+    "q": 19,
+    "picked": "It depends on how the model is rotated",
+    "fb": "Not quite",
+    "correct": "S"
+   },
+   {
+    "pass": 3,
+    "q": 20,
+    "picked": "It is chiral, because the central carbon is a ster",
+    "fb": "Not quite",
+    "correct": "It is chiral, even though it has no stereocenter"
+   }
+  ],
+  "keyed": [
+   "1: R",
+   "5: E",
+   "8: R",
+   "9: Enantiomers",
+   "14: It is a meso compound: achiral, even though it has",
+   "17: cis and achiral",
+   "20: It is chiral, even though it has no stereocenter",
+   "2: S",
+   "6: Z",
+   "7: (2E,4Z)",
+   "10: Diastereomers",
+   "15: 3",
+   "18: tert-Butyl equatorial, methyl axial",
+   "19: S",
+   "3: Carbon 3",
+   "4: 3",
+   "11: Identical (the same compound)",
+   "13: (2S,3R)",
+   "16: Identical (the same compound)",
+   "12: Constitutional isomers"
+  ]
+ },
+ "faults": []
+}

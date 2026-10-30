@@ -1,0 +1,107 @@
+{
+ "disaccharideAcceptorFace": [
+  {
+   "acceptor": "Glc C-2",
+   "drawnFrom": "down",
+   "haworthFace": "down",
+   "ok": true
+  },
+  {
+   "acceptor": "Glc C-3",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Glc C-4",
+   "drawnFrom": "down",
+   "haworthFace": "down",
+   "ok": true
+  },
+  {
+   "acceptor": "Glc C-6",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Gal C-2",
+   "drawnFrom": "down",
+   "haworthFace": "down",
+   "ok": true
+  },
+  {
+   "acceptor": "Gal C-3",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Gal C-4",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Gal C-6",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Man C-2",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Man C-3",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  },
+  {
+   "acceptor": "Man C-4",
+   "drawnFrom": "down",
+   "haworthFace": "down",
+   "ok": true
+  },
+  {
+   "acceptor": "Man C-6",
+   "drawnFrom": "up",
+   "haworthFace": "up",
+   "ok": true
+  }
+ ],
+ "nonreducingSecondRing": "Fru ring drawn mirrored left-right (ringPts mir=true) with C-6 above the ring and the beta bond also above; a left-right mirror with unchanged up/down depicts the enantiomer (L) of the residue. Lehninger turns the second ring over, which inverts up/down.",
+ "carbsText": {
+  "polysaccharideSize": "polysaccharides (more than 20 or so units)",
+  "mutaNote": "The starting values and the end point of +52° are from the Color Atlas, p.",
+  "heparin": ""
+ },
+ "betaOxLabel": {
+  "label": "acetyl-CoA",
+  "bboxX": 3.5,
+  "viewBoxX": 0,
+  "clipped": false
+ },
+ "membrane": {
+  "Saturated lipids only": "Liquid-ordered (Lo) | needle 14%",
+  "One unsaturated chain per lipid": "Liquid-disordered (Ld) | needle 74%",
+  "Plasma membrane": "Between the two extremes | needle 57.8%",
+  "A lipid raft": "Liquid-ordered (Lo) | needle 30%",
+  "Short chains": "Liquid-disordered (Ld) | needle 74%",
+  "coldChallengeWithCholesterol": "Between the two extremes Biological membranes are kept here: ordered enough to be a barrier, fluid enough for proteins and lipids to move. Packing moderate Chain motion moderate Sideways diffusion moderate Cholesterol pulls the membrane toward the middle from either side. Its rigid ring system restrains unsaturated chains that would be very fluid, and it gets between long saturated chains that wou",
+  "cholSliderEnabledDuringBacterialChallenge": false
+ },
+ "lipidsText": {
+  "tlcCaption": "Positions follow the plate in the Color Atlas (p.",
+  "albumin": "BANK fa: as many as seven fatty acids",
+  "albuminDig": "serum albumin (Mr 66,000), which binds as many as seven and makes up about half of serum protein.",
+  "stagesSub": "Follow the carbon count: 2, 4, 6, 6, 5, 10, 15, 30, 27.",
+  "paCharge": "Net charge at pH 7: phosphatidylethanolamine 0, phosphatidylcholine 0, phosphatidylserine −1, phosphatidylglycerol −1, cardiolipin −2, phosphatidic acid −1*, PIP2 −4*. (*Lehninger’s values. A phosphate monoester is only partly ionized on its second —OH at pH 7: phosphatidic acid is counted as −1, and in PIP2 the phosphodiester is −1 and each ring phosphate about −1.5.)"
+ },
+ "lysoPIP2": "Lysophosphatidylinositol 4,5-bisphosphate",
+ "faBuilderDelta2": "18:1(Δ2) | No common name in the table | cis-2-Octadecenoic acid | ω-16 (18 − 2 = 16) | Monounsaturated",
+ "tagReadout": "Name | 1-palmitoyl-2-α-linolenoyl-3-stearoylglycerol | Kind | Mixed triacylglycerol: 3 kinds of fatty acid | C-2 of glycerol | A chiral center, because C-1 and C-3 carry different fatty acids | Saturated chains | 2 of 3. The more saturated chains a triacylglycerol has, the higher it melts. | With NaOH | Saponification gives glycerol and the sodium salts of palmitic acid, α-linolenic acid and stearic acid (soap)."
+}

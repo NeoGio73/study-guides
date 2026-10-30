@@ -1,0 +1,126 @@
+{
+ "ph@1280": {
+  "page": "chemistry-for-nonmajors/polarity-to-ph-study-guide.html",
+  "viewport": {
+   "width": 1280,
+   "height": 900
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [],
+  "counts": {
+   "tabs": 9,
+   "buttonsClicked": 518,
+   "slidersMoved": 1,
+   "selectsTried": 9,
+   "textInputsTried": 3
+  }
+ },
+ "ph@390": {
+  "page": "chemistry-for-nonmajors/polarity-to-ph-study-guide.html",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [],
+  "counts": {
+   "tabs": 9,
+   "buttonsClicked": 518,
+   "slidersMoved": 1,
+   "selectsTried": 9,
+   "textInputsTried": 3
+  }
+ },
+ "nuc@1280": {
+  "page": "chemistry-for-nonmajors/nuclear-chemistry-and-energy-study-guide.html",
+  "viewport": {
+   "width": 1280,
+   "height": 900
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [],
+  "counts": {
+   "tabs": 11,
+   "buttonsClicked": 310,
+   "slidersMoved": 3,
+   "selectsTried": 5,
+   "textInputsTried": 2
+  }
+ },
+ "nuc@390": {
+  "page": "chemistry-for-nonmajors/nuclear-chemistry-and-energy-study-guide.html",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [],
+  "counts": {
+   "tabs": 11,
+   "buttonsClicked": 310,
+   "slidersMoved": 3,
+   "selectsTried": 5,
+   "textInputsTried": 2
+  }
+ },
+ "poly@1280": {
+  "page": "organic-chemistry/polymers-surf-zone.html",
+  "viewport": {
+   "width": 1280,
+   "height": 900
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [
+   "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap"
+  ],
+  "counts": {
+   "tabs": 0,
+   "buttonsClicked": 71,
+   "slidersMoved": 25,
+   "selectsTried": 1,
+   "textInputsTried": 0
+  }
+ },
+ "poly@390": {
+  "page": "organic-chemistry/polymers-surf-zone.html",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badText": [],
+  "overflow": [],
+  "clickFailures": [],
+  "external": [
+   "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap"
+  ],
+  "counts": {
+   "tabs": 0,
+   "buttonsClicked": 71,
+   "slidersMoved": 25,
+   "selectsTried": 1,
+   "textInputsTried": 0
+  }
+ }
+}

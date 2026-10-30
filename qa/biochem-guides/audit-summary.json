@@ -1,0 +1,321 @@
+{
+ "date": "2026-10-30",
+ "scope": [
+  "biochemistry/carbohydrates-study-guide.html",
+  "biochemistry/lipids-study-guide.html"
+ ],
+ "scripts": {
+  "harness.js": "opens a guide through Playwright and exposes internals (BANK, quiz state, pure functions) as window.__T by an in-memory injection; guide files are not modified",
+  "smoke.js": "every tab, every control, then 3 x 400 random clicks per tab, at 1280x900 and 390x844 (RM=1 for reduced motion); errors, NaN/undefined/Infinity/null/[object Object], horizontal overflow",
+  "banks.js": "every bank item, every generator drawn 2,500 times; structural and key checks; dumps every distinct question with its key to bank-dump-*.txt",
+  "quizui.js": "answers 400 questions per practice block through the real UI with the keyed/displayed answer; also wrong-answer and Show-answer paths",
+  "models.js": "exhaustive builder logic checks against independent expectations (sugar names/relations, Haworth faces, chairs, disaccharides, fatty acid names/omega/checker, TAG names, lipid assembler, beta oxidation, FAS ledger, lipoproteins, membrane model)",
+  "drawings.js": "renders structure galleries (drawings-*.png) and measures bond angles at drawn carbonyl carbons",
+  "targeted.js": "follow-up checks of the suspected faults (targeted-results.json, targeted-disaccharide-faces.png)",
+  "overflow390.js": "reproduces the 390 px overflow in the fatty acid builder (overflow390-fa.png)"
+ },
+ "counts": {
+  "carbs": {
+   "tabs": 10,
+   "smokeClicks": {
+    "1280": 12224,
+    "390": 12221,
+    "reducedMotion1280": 4225,
+    "reducedMotion390": 4223
+   },
+   "pageErrors": 0,
+   "badTokens": 0,
+   "overflow390": 0,
+   "bankItems": 147,
+   "generators": 24,
+   "draws": 60123,
+   "uiQuestionsAnswered": 3600,
+   "keyedAnswersRejected": 0,
+   "wrongAnswersAccepted": 0,
+   "modelChecks": 1412,
+   "disaccharideCombos": 160
+  },
+  "lipids": {
+   "tabs": 12,
+   "smokeClicks": {
+    "1280": 14689,
+    "390": 14684,
+    "reducedMotion1280": 5074,
+    "reducedMotion390": 5092
+   },
+   "pageErrors": 0,
+   "badTokens": 0,
+   "overflow390": "1 (fatty acid builder, trans EPA/DHA systematic name)",
+   "bankItems": 192,
+   "generators": 46,
+   "draws": 115146,
+   "uiQuestionsAnswered": 4400,
+   "keyedAnswersRejected": 0,
+   "wrongAnswersAccepted": 0,
+   "modelChecks": 56030
+  }
+ },
+ "faults": {
+  "carbs": [
+   {
+    "id": "C1",
+    "section": "4 Glycosidic bonds, Build a disaccharide",
+    "severity": "wrong science (drawing)",
+    "what": "Acceptor oxygen drawn on the wrong face for C-3 of Glc, Gal, Man and C-2 of Man (4 of 12 acceptor positions)",
+    "repro": "Glucose, alpha, joined to C-3 of Glucose: bond enters C-3 from below; C-3 OH is up in the Haworth formula",
+    "code": "disSVG: `else bDir = 1;` (only C-4 consults B.cfg)",
+    "fix": "for any pyranose acceptor c in 2..4 use `bDir = B.cfg[c - 2] === 'R' ? 1 : -1`"
+   },
+   {
+    "id": "C2",
+    "section": "4 Glycosidic bonds, Build a disaccharide (sucrose, trehalose, any 1<->1/1<->2)",
+    "severity": "wrong science (drawing, stereo)",
+    "what": "Second residue of a nonreducing disaccharide is mirrored left-right but keeps up/down for C-6 and the anomeric bond, which depicts the enantiomer (e.g. beta-L-fructofuranose in sucrose)",
+    "code": "disSVG: `ringPts(B, bx, ay, nonred, ...)` with C-6 always `y - 54`/`y - 34`, `bDir = D.bn === 'a' ? 1 : -1`",
+    "fix": "when mirrored also invert vertical offsets (C-6 below, alpha bond up, beta bond down, Fru C-1 above) = 180 degree in-plane rotation, as textbooks draw sucrose and trehalose"
+   },
+   {
+    "id": "C3",
+    "section": "1 Monosaccharides, Key facts",
+    "severity": "wrong vs source",
+    "what": "'polysaccharides (more than 10 units)'; Lehninger: 'more than 20 or so monosaccharide units'",
+    "fix": "use Lehninger's wording"
+   },
+   {
+    "id": "C4",
+    "section": "2 Rings, Mutarotation",
+    "severity": "minor inconsistency",
+    "what": "38% alpha / 62% beta with +112 and +19 gives +54.3, not +52; +52 implies about 36/64",
+    "code": "MUTA = {a:112, b:19, eq:52, tau:10, eqBeta:62}"
+   },
+   {
+    "id": "C5",
+    "section": "9 Working with carbohydrates, Practice",
+    "severity": "minor (realism)",
+    "what": "methylation generator picks 5-6% branch points for amylopectin (one per 17-20 residues), outside the guide's own 24-30",
+    "code": "BANK.lab generator 3: pct = pick([3, 4, 5, 6])"
+   },
+   {
+    "id": "C6",
+    "section": "1 Monosaccharides, Key facts",
+    "severity": "cosmetic",
+    "what": "'Most hexoses ... are D isomers. L-Arabinose ... exceptions' (arabinose is a pentose)"
+   },
+   {
+    "id": "C7",
+    "section": "1, 3 Practice",
+    "severity": "cosmetic",
+    "what": "capitalized names mid-sentence: 'the C-2 epimer of D-Galactose?', 'Is Methyl alpha-D-glucoside...', 'Is N-Acetyl-D-glucosamine...'",
+    "code": "BANK.mono gens 3-4 use sugarName().full; BANK.deriv gen 1 keeps capitals"
+   },
+   {
+    "id": "C8",
+    "section": "4 disaccharide drawing",
+    "severity": "cosmetic",
+    "what": "C-2/C-3 acceptor number labels sit on the ring bond/orange path"
+   },
+   {
+    "id": "C9",
+    "section": "8 Sugar code, Practice",
+    "severity": "harmless",
+    "what": "trap n^t equals the answer t^n for 4 nucleotides x 4 units (unreachable trap)"
+   }
+  ],
+  "lipids": [
+   {
+    "id": "L1",
+    "section": "1 Fatty acids, Build a triacylglycerol",
+    "severity": "drawing standard (instructor's 120 degree rule)",
+    "what": "ester carbonyl carbon angles 90 / 121 / 149 degrees (O-C horizontal, C=O straight down, C-2 up-right)",
+    "code": "tagSVG ester lines",
+    "fix": "draw the ester O up-left at (x0-15, y-9) as faSVG does for COOH, keep C=O straight down"
+   },
+   {
+    "id": "L2",
+    "section": "2 Membrane lipids, phospholipase drawing",
+    "severity": "drawing standard",
+    "what": "ester carbonyl angles 90 / 65 / 155 degrees",
+    "code": "plaseSVG: O-C line 114..142 horizontal, C=O vertical up at x 140/144, zig starts (142,y)->(157,y-7)"
+   },
+   {
+    "id": "L3",
+    "section": "7 Beta oxidation, run-through drawing",
+    "severity": "cosmetic",
+    "what": "'acetyl-CoA' label clipped to 'cetyl-CoA' (bbox x = -4.5)",
+    "code": "beadsSVG: text at x0 - 12, text-anchor end"
+   },
+   {
+    "id": "L4",
+    "section": "1 Fatty acids, builder at 390 px",
+    "severity": "cosmetic (layout)",
+    "what": "trans EPA/DHA systematic names are unbreakable; page becomes 411/460 px wide",
+    "fix": ".kv dd{overflow-wrap:anywhere} or 'all-trans-'"
+   },
+   {
+    "id": "L5",
+    "section": "5 Membranes, virtual membrane",
+    "severity": "model inconsistency",
+    "what": "'Plasma membrane' preset gives F = 61.4: labelled liquid-disordered and outside the 'where cells keep it' zone the text says biological membranes occupy",
+    "code": "MEM_PRESETS 'Plasma membrane' {T:37,len:18,unsat:50,chol:35}; fluidity()"
+   },
+   {
+    "id": "L6",
+    "section": "5 Membranes, bacterial challenges",
+    "severity": "wrong science (pedagogy)",
+    "what": "cholesterol slider stays active; 44 slider combinations solve the 10 degree challenge only with cholesterol, though the guide says bacteria cannot make sterols",
+    "fix": "lock chol = 0 while S.goal is set"
+   },
+   {
+    "id": "L7",
+    "section": "2 Membrane lipids, assembler",
+    "severity": "doubtful",
+    "what": "lyso-PAF (alkyl/OH/P-choline), alkyl diacylglycerols and lysoplasmalogens reported as 'Not a common natural lipid'; lyso-PIP2 named 'Lysophosphatidylinositol 4,5-bisphosphate (PIP2)'",
+    "code": "lipidResult odd(...) branches; Lyso + h.lipid"
+   },
+   {
+    "id": "L8",
+    "section": "2 Membrane lipids, Key facts / assembler",
+    "severity": "doubtful",
+    "what": "phosphatidic acid shown as -2* while the footnote says each phosphomonoester is about -1.5 (so PA about -1.5); check the value printed in Lehninger Fig. 10-9"
+   },
+   {
+    "id": "L9",
+    "section": "11 Cholesterol, Four lipoproteins",
+    "severity": "cosmetic/doubtful",
+    "what": "chylomicron diameter '50 to 200 nm (range 100 to 500 nm)' contradicts itself",
+    "code": "LIPO chylo size"
+   },
+   {
+    "id": "L10",
+    "section": "11 Cholesterol, stages stepper",
+    "severity": "cosmetic",
+    "what": "'Follow the carbon count: 2, 6, 5, 10, 15, 30, 27' omits acetoacetyl-CoA (4) and the second 6 shown in the stepper"
+   },
+   {
+    "id": "L11",
+    "section": "1, 2 Practice",
+    "severity": "cosmetic",
+    "what": "'Which enzyme is missing in Generalized gangliosidosis?', 'what does glycerophospholipid form?'"
+   },
+   {
+    "id": "L12",
+    "section": "1 Fatty acids, shorthand checker",
+    "severity": "minor grading usability",
+    "what": "rejects 'C18:2(...)' and superscript digits; superscripts get the misleading 'Add the position' message",
+    "code": "parseShort regex"
+   },
+   {
+    "id": "L13",
+    "section": "1 Fatty acids, builder",
+    "severity": "cosmetic",
+    "what": "systematic names mix Lehninger's 'Icosatetraenoic' (table) with generated 'Eicosa-' names; trans methylene-interrupted chains still say '(the natural pattern)'"
+   },
+   {
+    "id": "L14",
+    "section": "4 Lab methods, TLC caption",
+    "severity": "verify",
+    "what": "solvent 'hexane, diethyl ether and formic acid, 80:80:2' (the usual neutral-lipid system is 80:20:2)"
+   },
+   {
+    "id": "L15",
+    "section": "1 and 6",
+    "severity": "verify",
+    "what": "albumin binds 'as many as seven' fatty acids; Lehninger 5e-7e say 'as many as 10 ... per protein monomer'"
+   },
+   {
+    "id": "L16",
+    "section": "7 Beta oxidation, ATP sheet",
+    "severity": "design note",
+    "what": "NADPH used by 2,4-dienoyl-CoA reductase is not subtracted (linoleate 118.5, arachidonate 131); stated on the page; many keys give 116 for linoleate"
+   },
+   {
+    "id": "L17",
+    "section": "9 Fatty acid synthesis drawing",
+    "severity": "cosmetic",
+    "what": "beta-keto C=O drawn perpendicular to a straight bead chain (180/90/90); KS thiol renders 'S  H'"
+   }
+  ]
+ },
+ "notFaults": [
+  "All keyed answers in all 20 practice banks are correct as read; numeric displayed answers are accepted by the checker; no generator produced NaN/undefined or impossible combinations in 175,269 draws",
+  "Sugar builder: names, D/L, aldo/keto class, epimer/enantiomer/diastereomer for every configuration of 3-6 carbons correct",
+  "Haworth formulas: all 8 D-aldohexopyranoses and L-galactose, both anomers, D-fructofuranose, D-ribofuranose, 2-deoxyribose: every OH face and beta = cis to C-6 correct; beta-L-fucose correct",
+  "D-glucono-delta-lactone C-1 drawn trigonal planar: 119.9 / 120 / 120 degrees; fatty acid COOH 119.1 / 120.5 / 120.5",
+  "Chairs: axial counts alpha-4C1 1, beta-4C1 0, alpha-1C4 4, beta-1C4 5",
+  "Disaccharide names/abbreviations/reducing calls for all 160 combinations; maltose, lactose, sucrose (both orders), trehalose, gentiobiose recognized; beta,beta and alpha,beta variants not misnamed",
+  "Beta oxidation counts and ATP for 4:0-26:0 and unsaturated presets match an independent count; palmitate 108 gross / 106 net; oleate 118.5; isozyme ranges VLCAD 12-18, MCAD 4-14, SCAD 4-8",
+  "FAS: 7 malonyl-CoA, 7 ATP, 14 NADPH, 7 CO2, 6 H2O; step ledger monotonic and correct at every one of 35 steps",
+  "Phospholipase cut sites (A1, A2 acyl-O; C glycerol-O-P; D P-O-headgroup) and products correct for PC and PIP2",
+  "Lipoprotein densities and compositions match Lehninger Table 21-1; protein rises and TAG falls with density"
+ ],
+ "fixRound": {
+  "date": "2026-10-30",
+  "verify": "verify-fixes.js -> verify-fixes-results.json (16/16 pass)",
+  "carbonylAngles": {
+   "carbs D-glucono-delta-lactone C-1": [
+    120,
+    119.9,
+    120
+   ],
+   "lipids fatty acid COOH C-1 (faSVG)": [
+    119.1,
+    120.5,
+    120.5
+   ],
+   "lipids triacylglycerol ester C, row C-1 (tagSVG)": [
+    120,
+    119.9,
+    120.1
+   ],
+   "lipids triacylglycerol ester C, row C-2 (tagSVG)": [
+    120,
+    119.9,
+    120.1
+   ],
+   "lipids phospholipase ester C at C-1 (plaseSVG)": [
+    120,
+    120,
+    120
+   ],
+   "lipids phospholipase ester C at C-2 (plaseSVG)": [
+    120,
+    120,
+    120
+   ],
+   "lipids fatty acid synthase beta-keto C, cycle 1 step 1 (fasSVG)": [
+    120,
+    120,
+    120
+   ]
+  },
+  "rerun": {
+   "smokeClicks": {
+    "carbs": [
+     12221,
+     12221,
+     4221,
+     4224
+    ],
+    "lipids": [
+     14666,
+     14661,
+     5064,
+     5067
+    ]
+   },
+   "pageErrors": 0,
+   "badTokens": 0,
+   "overflow390": 0,
+   "bankDraws": 175269,
+   "bankProblems": "3 (harmless unreachable trap, C9, not in fix list)",
+   "uiQuestions": 8000,
+   "uiFailures": 0,
+   "wrongAccepted": 0,
+   "modelChecks": {
+    "carbs": 1892,
+    "lipids": 56043
+   },
+   "modelProblems": 0
+  }
+ }
+}

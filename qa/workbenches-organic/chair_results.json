@@ -1,0 +1,618 @@
+{
+ "checks": {
+  "viewerCaptured": true,
+  "models": [
+   {
+    "compound": "Cyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [],
+    "rows": [
+     "Only hydrogen substituents."
+    ],
+    "stab": "Both chairs have equal energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "Cyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [],
+    "rows": [
+     "Only hydrogen substituents."
+    ],
+    "stab": "Both chairs have equal energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "Methylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial"
+    ],
+    "stab": "The chair with equatorial methyl is favored because it avoids the two axial methyl–hydrogen 1,3-diaxial interactions.",
+    "errs": []
+   },
+   {
+    "compound": "Methylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial"
+    ],
+    "stab": "The chair with equatorial methyl is favored because it avoids the two axial methyl–hydrogen 1,3-diaxial interactions.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,2-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C2 eq up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C2 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,2-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C2 ax up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C2 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,2-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C2 ax down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C2 · methyl/down/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,2-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C2 eq down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C2 · methyl/down/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,3-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C3 ax up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C3 · methyl/up/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,3-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C3 eq up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C3 · methyl/up/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,3-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C3 eq down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C3 · methyl/down/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,3-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C3 ax down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C3 · methyl/down/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,4-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C4 eq up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C4 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1,4-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C4 ax up"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C4 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Each chair has one axial and one equatorial methyl. For these identical substituents, the two chairs are equal in energy by symmetry.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,4-Dimethylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C4 ax down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C4 · methyl/down/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "trans-1,4-Dimethylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C4 eq down"
+    ],
+    "rows": [
+     "C1 · methyl/up/axial/equatorial",
+     "C4 · methyl/down/axial/equatorial"
+    ],
+    "stab": "The diequatorial chair is favored over the diaxial chair. Consider all steric interactions; simply counting axial groups is not a general energy calculator.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1-tert-Butyl-4-methylcyclohexane",
+    "chair": "A",
+    "ringZ": [
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257
+    ],
+    "subs": [
+     "C1 ax up",
+     "C4 eq up"
+    ],
+    "rows": [
+     "C1 · tert-butyl/up/axial/equatorial",
+     "C4 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Favor the chair with tert-butyl equatorial, even though methyl must then be axial. The larger tert-butyl group has a much stronger equatorial preference.",
+    "errs": []
+   },
+   {
+    "compound": "cis-1-tert-Butyl-4-methylcyclohexane",
+    "chair": "B",
+    "ringZ": [
+     -0.257,
+     0.257,
+     -0.257,
+     0.257,
+     -0.257,
+     0.257
+    ],
+    "subs": [
+     "C1 eq up",
+     "C4 ax up"
+    ],
+    "rows": [
+     "C1 · tert-butyl/up/axial/equatorial",
+     "C4 · methyl/up/equatorial/axial"
+    ],
+    "stab": "Favor the chair with tert-butyl equatorial, even though methyl must then be axial. The larger tert-butyl group has a much stronger equatorial preference.",
+    "errs": []
+   }
+  ],
+  "guides": [
+   [
+    "Cyclohexane",
+    "A",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "Cyclohexane",
+    "B",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "Methylcyclohexane",
+    "A",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "Methylcyclohexane",
+    "B",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,2-Dimethylcyclohexane",
+    "A",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,2-Dimethylcyclohexane",
+    "B",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,2-Dimethylcyclohexane",
+    "A",
+    "4 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,2-Dimethylcyclohexane",
+    "B",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,3-Dimethylcyclohexane",
+    "A",
+    "3 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,3-Dimethylcyclohexane",
+    "B",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,3-Dimethylcyclohexane",
+    "A",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,3-Dimethylcyclohexane",
+    "B",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,4-Dimethylcyclohexane",
+    "A",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1,4-Dimethylcyclohexane",
+    "B",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,4-Dimethylcyclohexane",
+    "A",
+    "4 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "trans-1,4-Dimethylcyclohexane",
+    "B",
+    "0 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1-tert-Butyl-4-methylcyclohexane",
+    "A",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ],
+   [
+    "cis-1-tert-Butyl-4-methylcyclohexane",
+    "B",
+    "2 unique 1,3-diaxial guides shown. Gold dashes identify proximity, not bonds or measured energies."
+   ]
+  ],
+  "missions": [
+   {
+    "m": 0,
+    "q": "For methylcyclohexane, which chair is favored?",
+    "results": [
+     [
+      "Methyl axial",
+      "Not yet. Turn "
+     ],
+     [
+      "Methyl equatorial",
+      "✓ Correct! Equ"
+     ],
+     [
+      "The chairs always have equal energy",
+      "Not yet. Turn "
+     ]
+    ],
+    "loaded": [
+     "Methylcyclohexane",
+     "Chair A: C1 Me is axial and up."
+    ]
+   },
+   {
+    "m": 1,
+    "q": "In chair A, C1 methyl is axial and up. After the chair flip it is…",
+    "results": [
+     [
+      "Equatorial and down",
+      "Not yet. Axial"
+     ],
+     [
+      "Axial and down",
+      "Not yet. Axial"
+     ],
+     [
+      "Equatorial and up",
+      "✓ Correct! The"
+     ]
+    ],
+    "loaded": [
+     "Methylcyclohexane",
+     "Chair A: C1 Me is axial and up."
+    ]
+   },
+   {
+    "m": 2,
+    "q": "Can cis-1,2-dimethylcyclohexane have a chair with both methyl groups equatorial?",
+    "results": [
+     [
+      "Yes, in chair A",
+      "Not yet. At ad"
+     ],
+     [
+      "Yes, after a chair flip",
+      "Not yet. At ad"
+     ],
+     [
+      "No: one is axial and one equatorial in either chair",
+      "✓ Correct! Cis"
+     ]
+    ],
+    "loaded": [
+     "cis-1,2-Dimethylcyclohexane",
+     "Chair A: C1 Me is axial and up; C2 Me is equatorial and up."
+    ]
+   },
+   {
+    "m": 3,
+    "q": "Which 1,3-dimethyl stereoisomer can adopt a diequatorial chair?",
+    "results": [
+     [
+      "Cis",
+      "✓ Correct! Cis"
+     ],
+     [
+      "Trans",
+      "Not yet. At C1"
+     ],
+     [
+      "Both",
+      "Not yet. At C1"
+     ]
+    ],
+    "loaded": [
+     "cis-1,3-Dimethylcyclohexane",
+     "Chair A: C1 Me is axial and up; C3 Me is axial and up."
+    ]
+   },
+   {
+    "m": 4,
+    "q": "Flip trans-1,4-dimethylcyclohexane from its diaxial chair. The product chair is…",
+    "results": [
+     [
+      "Cis and diequatorial",
+      "Not yet. A fli"
+     ],
+     [
+      "Trans and diequatorial",
+      "✓ Correct! Bot"
+     ],
+     [
+      "Trans and still diaxial",
+      "Not yet. A fli"
+     ]
+    ],
+    "loaded": [
+     "trans-1,4-Dimethylcyclohexane",
+     "Chair A: C1 Me is axial and up; C4 Me is axial and down."
+    ]
+   },
+   {
+    "m": 5,
+    "q": "For cis-1-tert-butyl-4-methylcyclohexane, favor the chair with…",
+    "results": [
+     [
+      "tert-Butyl axial and methyl equatorial",
+      "Not yet. Cis-1"
+     ],
+     [
+      "Both groups equatorial",
+      "Not yet. Cis-1"
+     ],
+     [
+      "tert-Butyl equatorial and methyl axial",
+      "✓ Correct! ter"
+     ]
+    ],
+    "loaded": [
+     "cis-1-tert-Butyl-4-methylcyclohexane",
+     "Chair A: C1 tBu is axial and up; C4 Me is equatorial and up."
+    ]
+   }
+  ]
+ },
+ "faults": []
+}

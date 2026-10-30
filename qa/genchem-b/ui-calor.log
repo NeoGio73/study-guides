@@ -1,0 +1,21 @@
+heat      guided  problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 2 unfilled-blank problems 0 hint panels 1400
+    BLANK {"type":"c","q":"A 10.2 g sample of an unknown metal releases 19.3 J of heat, and its temperature changes from 86.0 °C to 71.3 °C. What is the specific heat of the metal?","bad":["q=-19"],"fb":"✓Correct. 0.129 J/(g·°C)That is 315 in a row. Ready for less help?Try one with hints only if you ask"}
+    BLANK {"type":"m","q":"A sample of gold (specific heat 0.129 J/(g·°C)) releases 26.5 J of heat, and its temperature changes from 80.5 °C to 64.3 °C. What is the mass of the sample?","bad":["q=-26"],"fb":"✓Correct. 12.7 gThat is 424 in a row. Ready for less help?Try one with hints only if you ask"}
+heat      hint    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 1400
+heat      solo    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 0
+exchange  guided  problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 1870
+exchange  hint    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 3266
+exchange  solo    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 0
+coffee    guided  problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 2100
+coffee    hint    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 3500
+coffee    solo    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 0
+thermo    guided  problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 700
+thermo    hint    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 1400
+thermo    solo    problems 700 accepted 700 (independent answers accepted 350/350) blank rejects 0 unfilled-blank problems 0 hint panels 0
+hess      guided  problems 700 accepted 700 arrangement matched 700 blank rejects 0 odd coefficient texts {}
+    sample Your version: undefined  sum/tip: undefined
+hess      hint    problems 700 accepted 700 arrangement matched 700 blank rejects 0 odd coefficient texts {}
+    sample Your version: undefined  sum/tip: undefined
+hess      solo    problems 700 accepted 700 arrangement matched 700 blank rejects 0 odd coefficient texts {}
+    sample Your version: undefined  sum/tip: undefined
+page errors 0 []

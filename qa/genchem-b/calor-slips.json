@@ -1,0 +1,375 @@
+{
+ "out": {
+  "heat/Tf": {
+   "tried": 3068,
+   "fired": 2512,
+   "missed": {
+    "That is the size of the temperature change. The final temperature is the starting temperature plus the change.": 554,
+    "It looks like the heat was left in kilojoules. Convert it to joules first: multiply by 1000.": 1,
+    "The sample absorbed heat, so its temperature goes up, not down.": 1
+   },
+   "samples": {
+    "That is the size of the temperature change. The final temperature is the starting temperature plus the change.": {
+     "q": "A 18.6 g sample of aluminum (specific heat 0.897 J/(g·°C)) at 19.3 °C absorbs 811 J of heat. What is its final temperature?",
+     "answer": 67.90886347562365,
+     "slip": 48.60886347562364,
+     "typed": "48.6",
+     "got": "wrong: That is the temperature change. The final temperature is the starting temperature plus the change."
+    },
+    "It looks like the heat was left in kilojoules. Convert it to joules first: multiply by 1000.": {
+     "q": "A 365 g sample of ethanol (specific heat 2.44 J/(g·°C)) at 16.7 °C absorbs 14.8 kJ of heat. What is its final temperature?",
+     "answer": 33.31801033011453,
+     "slip": 16.716618010330112,
+     "typed": "16.7",
+     "got": "wrong: That is the temperature change. The final temperature is the starting temperature plus the change."
+    },
+    "The sample absorbed heat, so its temperature goes up, not down.": {
+     "q": "A 218 g sample of glass (specific heat 0.840 J/(g·°C)) at 20.5 °C absorbs 1.89 kJ of heat. What is its final temperature?",
+     "answer": 30.821100917431192,
+     "slip": 10.178899082568808,
+     "typed": "10.2",
+     "got": "wrong: That is the temperature change. The final temperature is the starting temperature plus the change."
+    }
+   }
+  },
+  "heat/c": {
+   "tried": 3123,
+   "fired": 3122,
+   "missed": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 1
+   },
+   "samples": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": {
+     "q": "A 44.8 g sample of an unknown metal releases 957 J of heat, and its temperature changes from 63.7 °C to 8.2 °C. What is the specific heat of the metal?",
+     "answer": 0.38489382239382247,
+     "slip": 2.605074041811847,
+     "typed": "2.61",
+     "got": "wrong: The fraction is upside down. c = q ÷ (m × ΔT)."
+    }
+   }
+  },
+  "heat/qk": {
+   "tried": 3332,
+   "fired": 3322,
+   "missed": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 4,
+    "The specific heat is missing. q = m × c × ΔT.": 6
+   },
+   "samples": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": {
+     "q": "A 71.7 g sample of glass (specific heat 0.840 J/(g·°C)) cools from 68.5 °C to 34.3 °C. What is q for the glass, in kilojoules?",
+     "answer": -2.0597976000000005,
+     "slip": 2.0658204000000002,
+     "typed": "2.07",
+     "got": "wrong: The sample cooled, so it lost heat and q is negative. ΔT is final minus initial."
+    },
+    "The specific heat is missing. q = m × c × ΔT.": {
+     "q": "A 30.4 g sample of iron (specific heat 0.449 J/(g·°C)) is heated from 22.2 °C to 40.1 °C. What is q for the iron, in kilojoules?",
+     "answer": 0.24432784,
+     "slip": 0.54416,
+     "typed": "0.544",
+     "got": "wrong: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial."
+    }
+   }
+  },
+  "heat/m": {
+   "tried": 2916,
+   "fired": 2916,
+   "missed": {},
+   "samples": {}
+  },
+  "heat/dT": {
+   "tried": 2272,
+   "fired": 2272,
+   "missed": {},
+   "samples": {}
+  },
+  "heat/q": {
+   "tried": 6880,
+   "fired": 6869,
+   "missed": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 5,
+    "The specific heat is missing. q = m × c × ΔT.": 6
+   },
+   "samples": {
+    "It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": {
+     "q": "A 27.8 g sample of glass (specific heat 0.840 J/(g·°C)) cools from 76.9 °C to 38.6 °C. What is q for the glass, in joules?",
+     "answer": -894.3815999999999,
+     "slip": 901.3872,
+     "typed": "901",
+     "got": "wrong: The sample cooled, so it lost heat and q is negative. ΔT is final minus initial."
+    },
+    "The specific heat is missing. q = m × c × ΔT.": {
+     "q": "A 50.7 g sample of titanium (specific heat 0.523 J/(g·°C)) is heated from 17.9 °C to 37.5 °C. What is q for the titanium, in joules?",
+     "answer": 519.7155600000001,
+     "slip": 993.7200000000001,
+     "typed": "994",
+     "got": "wrong: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial."
+    }
+   }
+  },
+  "exchange/c": {
+   "tried": 26581,
+   "fired": 26532,
+   "missed": {
+    "It looks like the mass of the water was used. Divide by the mass of the metal.": 27,
+    "That is the heat capacity of the whole piece, in J/°C. Divide by the mass of the metal to get the specific hea": 13,
+    "That uses the temperature change of the metal. The water went from X °C to X °C.": 5,
+    "It looks like the final temperature was used. Use the change in the water temperature: final − initial.": 4
+   },
+   "samples": {
+    "It looks like the mass of the water was used. Divide by the mass of the metal.": {
+     "q": "A 60.6 g piece of an unknown metal at 86.34 °C is dropped into 65.2 g of water at 19.81 °C in an insulated cup. The final temperature of the water and the metal is 25.05 °C. The specific heat of water is 4.184 J/(g·°C).",
+     "answer": 0.38486490724451794,
+     "slip": 0.3577118616413771,
+     "typed": "0.358",
+     "got": "wrong: The metal cools only to the final temperature of the mixture (25.05 °C), not to the starting temperature of the water."
+    },
+    "That is the heat capacity of the whole piece, in J/°C. Divide by the mass of the metal to get the specific hea": {
+     "q": "A 36.3 g piece of an unknown metal at 99.68 °C is dropped into 166 g of water at 23.46 °C in an insulated cup. The final temperature of the water and the metal is 25.49 °C. The specific heat of water is 4.184 J/(g·°C).",
+     "answer": 0.5235326911730249,
+     "slip": 19.004236689580804,
+     "typed": "19.0",
+     "got": "wrong: That uses the temperature change of the water. The metal has its own ΔT: it cooled from 99.68 °C to 25.49 °C."
+    },
+    "That uses the temperature change of the metal. The water went from X °C to X °C.": {
+     "q": "A 137 g piece of an unknown metal at 76.69 °C is dropped into 63.5 g of water at 18.27 °C in an insulated cup. The final temperature of the water and the metal is 36.75 °C. The specific heat of water is 4.184 J/(g·°C).",
+     "answer": 4909.84032,
+     "slip": 10611.41896,
+     "typed": "1.06e+4",
+     "got": "wrong: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the wate"
+    },
+    "It looks like the final temperature was used. Use the change in the water temperature: final − initial.": {
+     "q": "A 134 g piece of an unknown metal at 91.17 °C is dropped into 61.7 g of water at 24.58 °C in an insulated cup. The final temperature of the water and the metal is 45.73 °C. The specific heat of water is 4.184 J/(g·°C).",
+     "answer": 5459.93172,
+     "slip": 11805.327544,
+     "typed": "1.18e+4",
+     "got": "wrong: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the wate"
+    }
+   }
+  },
+  "exchange/Tf": {
+   "tried": 5296,
+   "fired": 5243,
+   "missed": {
+    "That weights the temperatures by mass only. Each mass has to be multiplied by its specific heat as well.": 53
+   },
+   "samples": {
+    "That weights the temperatures by mass only. Each mass has to be multiplied by its specific heat as well.": {
+     "q": "A 78.9 g piece of lead (specific heat 0.129 J/(g·°C)) at 82.89 °C is dropped into 81.1 g of water at 24.57 °C in an insulated cup. What is the final temperature? The specific heat of water is 4.184 J/(g·°C).",
+     "answer": 26.27,
+     "slip": 53.32905000000001,
+     "typed": "53.3",
+     "got": "wrong: That is the plain average of the two temperatures. The water holds much more heat per degree than the metal, so the fina"
+    }
+   }
+  },
+  "coffee/diss": {
+   "tried": 15881,
+   "fired": 15881,
+   "missed": {},
+   "samples": {}
+  },
+  "coffee/predict": {
+   "tried": 4016,
+   "fired": 3525,
+   "missed": {
+    "That is the size of the temperature change. The final temperature is the starting temperature plus the change.": 470,
+    "The enthalpy is in kilojoules, and the specific heat is in joules. Convert kJ to J first.": 11,
+    "That is the temperature change. The final temperature is the starting temperature plus the change.": 3,
+    "The solution is the water plus the dissolved solid. Use the total mass: X g + X g.": 7
+   },
+   "samples": {
+    "That is the size of the temperature change. The final temperature is the starting temperature plus the change.": {
+     "q": "10.2 g of sodium hydroxide (NaOH) is dissolved in 100.0 g of water at 23.39 °C in a coffee-cup calorimeter. The enthalpy of solution is −44.5 kJ/mol. What is the final temperature of the solution? Assume the solution has a specific heat of 4.184 J/(g·°C) and that no heat is lost to the cup.",
+     "answer": 48.00086743032831,
+     "slip": 24.61086743032831,
+     "typed": "24.6",
+     "got": "wrong: That is the temperature change. The final temperature is the starting temperature plus the change."
+    },
+    "The enthalpy is in kilojoules, and the specific heat is in joules. Convert kJ to J first.": {
+     "q": "11.3 g of calcium chloride (CaCl2) is dissolved in 75.0 g of water at 23.04 °C in a coffee-cup calorimeter. The enthalpy of solution is −81.3 kJ/mol. What is the final temperature of the solution? Assume the solution has a specific heat of 4.184 J/(g·°C) and that no heat is lost to the cup.",
+     "answer": 45.96565734624588,
+     "slip": 23.062925657346245,
+     "typed": "23.1",
+     "got": "wrong: That is the temperature change. The final temperature is the starting temperature plus the change."
+    },
+    "That is the temperature change. The final temperature is the starting temperature plus the change.": {
+     "q": "10.9 g of calcium chloride (CaCl2) is dissolved in 150.0 g of water at 23.76 °C in a coffee-cup calorimeter. The enthalpy of solution is −81.3 kJ/mol. What is the final temperature of the solution? Assume the solution has a specific heat of 4.184 J/(g·°C) and that no heat is lost to the cup.",
+     "answer": 35.621090049826535,
+     "slip": 11.861090049826537,
+     "typed": "11.9",
+     "got": "wrong: ΔH is negative, so dissolving releases heat into the solution. The temperature goes up, not down."
+    },
+    "The solution is the water plus the dissolved solid. Use the total mass: X g + X g.": {
+     "q": "7.13 g of ammonium nitrate (NH4NO3) is dissolved in 50.0 g of water at 20.57 °C in a coffee-cup calorimeter. The enthalpy of solution is +25.7 kJ/mol. What is the final temperature of the solution? Assume the solution has a specific heat of 4.184 J/(g·°C) and that no heat is lost to the cup.",
+     "answer": 10.992334322161017,
+     "slip": 9.62655919650118,
+     "typed": "9.6",
+     "got": "wrong: That is the size of the temperature change. The final temperature is the starting temperature plus the change."
+    }
+   }
+  },
+  "coffee/neut": {
+   "tried": 21570,
+   "fired": 21570,
+   "missed": {},
+   "samples": {}
+  },
+  "thermo/kJ2g": {
+   "tried": 3838,
+   "fired": 3828,
+   "missed": {
+    "That is the moles of H2. The question asks for grams, so multiply by the molar mass.": 10
+   },
+   "samples": {
+    "That is the moles of H2. The question asks for grams, so multiply by the molar mass.": {
+     "q": "How many grams of H2 must react when 482 kJ of heat is released?",
+     "answer": 3.4067179846046187,
+     "slip": 1.6864940517844647,
+     "typed": "1.69",
+     "got": "wrong: The ΔH belongs to the equation as written, so it goes with 2 mol of H2, not 1 mol."
+    }
+   }
+  },
+  "thermo/g2kJ": {
+   "tried": 10194,
+   "fired": 10166,
+   "missed": {
+    "It looks like grams were used as moles. Divide the grams by the molar mass first.": 28
+   },
+   "samples": {
+    "It looks like grams were used as moles. Divide the grams by the molar mass first.": {
+     "q": "What is the enthalpy change, in kJ, when 33.6 g of H2 reacts?",
+     "answer": -4753.90099009901,
+     "slip": -9602.880000000001,
+     "typed": "-9.60e+3",
+     "got": "wrong: The ΔH belongs to the equation as written, so it goes with 2 mol of H2, not 1 mol."
+    }
+   }
+  },
+  "thermo/mol2kJ": {
+   "tried": 1696,
+   "fired": 1696,
+   "missed": {},
+   "samples": {}
+  },
+  "hess/hess": {
+   "tried": 9614,
+   "fired": 9203,
+   "missed": {
+    "The size is right but the sign is not. Check which equations were reversed.": 76,
+    "Check equation 1. It has to be reversed, so the sign of its ΔH changes.": 97,
+    "Check equation 2. It has to be reversed, so the sign of its ΔH changes.": 66,
+    "Check equation 1. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": 40,
+    "Check equation 3. It has to be reversed, so the sign of its ΔH changes.": 15,
+    "Check equation 2. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": 44,
+    "Check equation 1. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": 17,
+    "Check equation 1. It has to be multiplied by 3, so its ΔH is multiplied by 3 as well.": 18,
+    "Check equation 3. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": 8,
+    "Check equation 3. It has to be multiplied by 4, so its ΔH is multiplied by 4 as well.": 1,
+    "Check equation 2. It has to be multiplied by 3, so its ΔH is multiplied by 3 as well.": 16,
+    "Check equation 2. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": 6,
+    "Check equation 3. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": 7
+   },
+   "samples": {
+    "The size is right but the sign is not. Check which equations were reversed.": {
+     "q": "",
+     "answer": -110.5,
+     "slip": 110.5,
+     "typed": "110.5",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 1. It has to be reversed, so the sign of its ΔH changes.": {
+     "q": "",
+     "answer": -136.39999999999986,
+     "slip": 435.20000000000016,
+     "typed": "435.2",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 2. It has to be reversed, so the sign of its ΔH changes.": {
+     "q": "",
+     "answer": -395.70000000000005,
+     "slip": -197.90000000000003,
+     "typed": "-197.9",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 1. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": {
+     "q": "",
+     "answer": 66.4,
+     "slip": -47.69999999999999,
+     "typed": "-47.7",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 3. It has to be reversed, so the sign of its ΔH changes.": {
+     "q": "",
+     "answer": -108.69999999999999,
+     "slip": -65.29999999999998,
+     "typed": "-65.3",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 2. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": {
+     "q": "",
+     "answer": -108.69999999999999,
+     "slip": -130.39999999999998,
+     "typed": "-130.4",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 1. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": {
+     "q": "",
+     "answer": -74.80000000000007,
+     "slip": 210.99999999999994,
+     "typed": "211.0",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 1. It has to be multiplied by 3, so its ΔH is multiplied by 3 as well.": {
+     "q": "",
+     "answer": -24.799999999999955,
+     "slip": 541.2,
+     "typed": "541.2",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 3. It has to be multiplied by ½, so its ΔH is multiplied by ½ as well.": {
+     "q": "",
+     "answer": -74.80000000000007,
+     "slip": 815.4999999999999,
+     "typed": "815.5",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 3. It has to be multiplied by 4, so its ΔH is multiplied by 4 as well.": {
+     "q": "",
+     "answer": 28.399999999999977,
+     "slip": 550.6999999999999,
+     "typed": "550.7",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 2. It has to be multiplied by 3, so its ΔH is multiplied by 3 as well.": {
+     "q": "",
+     "answer": -24.799999999999955,
+     "slip": 541.2,
+     "typed": "541.2",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 2. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": {
+     "q": "",
+     "answer": 226.7999999999999,
+     "slip": 620.3,
+     "typed": "620.3",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    },
+    "Check equation 3. It has to be multiplied by 2, so its ΔH is multiplied by 2 as well.": {
+     "q": "",
+     "answer": 226.79999999999995,
+     "slip": 620.3,
+     "typed": "620.3",
+     "got": "wrong: It looks like the ΔH values were added just as given. Whatever you do to an equation, you do to its ΔH: reversing change"
+    }
+   }
+  }
+ },
+ "solQ": {
+  "count": 3447,
+  "mismatched": 0,
+  "sample": null
+ }
+}

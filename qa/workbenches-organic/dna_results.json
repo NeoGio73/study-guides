@@ -1,0 +1,1042 @@
+{
+ "checks": {
+  "texts": {
+   "exon": 0,
+   "keyIdea": "The forward primer matches the top strand; the reverse primer is the reverse complement of the top strand at the far end, so it anneals to the top strand. Both 3′ ends point toward each other.",
+   "template": "Template: 93 bp of β-globin coding sequence, codons 1–30",
+   "tape": "The thread: start of the human β-globin coding sequence (HBB, codons 1–30)"
+  },
+  "gene": {
+   "len": 93,
+   "protein": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGR",
+   "matchesHBB": true,
+   "codon6": "GAG",
+   "hbsCodon6": "GTG",
+   "hbsAA6": "V"
+  },
+  "strand": {
+   "draws": 2000,
+   "bad": 0
+  },
+  "melt": {
+   "states": 143,
+   "bad": 0,
+   "ex": [],
+   "tmAt50GC015M": 88.32311490032431,
+   "maxTm": 114.3,
+   "minTm": 56.5
+  },
+  "pcr": {
+   "runs": 3000,
+   "bad": 0,
+   "outcomeCounts": {
+    "cold": 600,
+    "good": 525,
+    "hot": 966,
+    "weak": 309,
+    "same": 600
+   },
+   "ex": [],
+   "defaults": {
+    "fwd": "GGTGCATCTGACTCCTGAGG",
+    "rev": "AGGGCCTCACCACCAACTTC",
+    "tf": "55.9",
+    "tr": "55.9",
+    "len": 84
+   }
+  },
+  "digest": [
+   {
+    "on": "EcoRI",
+    "exp": [
+     4000
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 2 fragments. On a circular plasmid, the num",
+    "nBands": 1,
+    "expBands": 1
+   },
+   {
+    "on": "BamHI",
+    "exp": [
+     2200,
+     1800
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 3 fragments. On a circular plasmid, the num",
+    "nBands": 2,
+    "expBands": 2
+   },
+   {
+    "on": "EcoRI+BamHI",
+    "exp": [
+     2170,
+     1800,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 4 fragments. On a circular plasmid, the num",
+    "nBands": 2,
+    "expBands": 2
+   },
+   {
+    "on": "HindIII",
+    "exp": [
+     4000
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 2 fragments. On a circular plasmid, the num",
+    "nBands": 1,
+    "expBands": 1
+   },
+   {
+    "on": "EcoRI+HindIII",
+    "exp": [
+     3940,
+     60
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 3 fragments. On a circular plasmid, the num",
+    "nBands": 1,
+    "expBands": 1
+   },
+   {
+    "on": "BamHI+HindIII",
+    "exp": [
+     2200,
+     1770,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 4 fragments. On a circular plasmid, the num",
+    "nBands": 2,
+    "expBands": 2
+   },
+   {
+    "on": "EcoRI+BamHI+HindIII",
+    "exp": [
+     2170,
+     1770,
+     30,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 5 fragments. On a circular plasmid, the num",
+    "nBands": 2,
+    "expBands": 2
+   },
+   {
+    "on": "PstI",
+    "exp": [
+     2550,
+     1450
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 3 fragments. On a circular plasmid, the num",
+    "nBands": 2,
+    "expBands": 2
+   },
+   {
+    "on": "EcoRI+PstI",
+    "exp": [
+     1450,
+     1300,
+     1250
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 4 fragments. On a circular plasmid, the num",
+    "nBands": 3,
+    "expBands": 3
+   },
+   {
+    "on": "BamHI+PstI",
+    "exp": [
+     1330,
+     1220,
+     870,
+     580
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 5 fragments. On a circular plasmid, the num",
+    "nBands": 4,
+    "expBands": 4
+   },
+   {
+    "on": "EcoRI+BamHI+PstI",
+    "exp": [
+     1300,
+     1220,
+     870,
+     580,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 6 fragments. On a circular plasmid, the num",
+    "nBands": 4,
+    "expBands": 4
+   },
+   {
+    "on": "HindIII+PstI",
+    "exp": [
+     1450,
+     1360,
+     1190
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 4 fragments. On a circular plasmid, the num",
+    "nBands": 3,
+    "expBands": 3
+   },
+   {
+    "on": "EcoRI+HindIII+PstI",
+    "exp": [
+     1450,
+     1300,
+     1190,
+     60
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 5 fragments. On a circular plasmid, the num",
+    "nBands": 3,
+    "expBands": 3
+   },
+   {
+    "on": "BamHI+HindIII+PstI",
+    "exp": [
+     1330,
+     1190,
+     870,
+     580,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 6 fragments. On a circular plasmid, the num",
+    "nBands": 4,
+    "expBands": 4
+   },
+   {
+    "on": "EcoRI+BamHI+HindIII+PstI",
+    "exp": [
+     1300,
+     1190,
+     870,
+     580,
+     30,
+     30
+    ],
+    "sum": 4000,
+    "okRun": true,
+    "okExact": true,
+    "okVis": true,
+    "wrongCount": "Count You listed 7 fragments. On a circular plasmid, the num",
+    "nBands": 4,
+    "expBands": 4
+   }
+  ],
+  "enzymes": [
+   {
+    "n": "EcoRI",
+    "okTop": true,
+    "okBot": true,
+    "okEnd": true
+   },
+   {
+    "n": "BamHI",
+    "okTop": true,
+    "okBot": true,
+    "okEnd": true
+   },
+   {
+    "n": "HindIII",
+    "okTop": true,
+    "okBot": true,
+    "okEnd": true
+   },
+   {
+    "n": "PstI",
+    "okTop": true,
+    "okBot": true,
+    "okEnd": true
+   }
+  ],
+  "mystery": [
+   {
+    "label": "Map X: EcoRI at 1000, HindIII at 3000",
+    "right": false,
+    "msg": "Not this one. Map X predicts EcoRI: 5000; HindIII: 5000; both: 3000 + 2000 bp. Compare with the gel."
+   },
+   {
+    "label": "Map Y: EcoRI at 1000 and 2500, HindIII at 4000",
+    "right": true,
+    "msg": "Correct. EcoRI cuts twice (1,500 + 3,500), HindIII once (one 5,000 bp linear band), and the double digest gives 1,500 + "
+   },
+   {
+    "label": "Map Z: EcoRI at 1000, HindIII at 1500 and 3500",
+    "right": false,
+    "msg": "Correct. EcoRI cuts twice (1,500 + 3,500), HindIII once (one 5,000 bp linear band), and the double digest gives 1,500 + "
+   }
+  ],
+  "cloning": {
+   "EH": {
+    "n": 58,
+    "summary": "Ligation: The vector’s EcoRI and HindIII ends don’t match each other, so the empty vector can’t close on itself. The insert’s ends match the vector’s ends one way only.Result: Main product: recombinan",
+    "msgs": {
+     "Blue|Empty vector Blue:": 5,
+     "White|Recombinant White:": 53
+    }
+   },
+   "E": {
+    "n": 58,
+    "summary": "Ligation: Both vector ends are EcoRI ends, so the vector can close again without any insert, and the insert (EcoRI at both ends) can join in either orientation.Result: Products: empty vector, recombin",
+    "msgs": {
+     "Blue|Empty vector Blue:": 30,
+     "White|Insert backward Wh": 14,
+     "White|Recombinant White:": 14
+    }
+   },
+   "BH": {
+    "n": 0,
+    "summary": "Ligation: BamHI cuts pTEACH twice: once in the cloning site and once inside ampR (position 2,230). The insert has EcoRI and HindIII ends, so its EcoRI end can’t join a BamHI end.Result: No circle with",
+    "msgs": {}
+   }
+  },
+  "sanger": [
+   {
+    "gt": "AS",
+    "fb": "All 24 bases read correctly. At the double peak, A, T or W (the IUPAC code for A or T) all count.",
+    "gts": {
+     "AA": "Not quite. F",
+     "AS": "Correct. Ove",
+     "SS": "Not quite. F"
+    },
+    "gelRead": "CTGACTCCTGWGGAGAAGTCTGCC",
+    "exp": "CTGACTCCTGWGGAGAAGTCTGCC",
+    "gelMatches": true
+   },
+   {
+    "gt": "SS",
+    "fb": "All 24 bases read correctly.",
+    "gts": {
+     "AA": "Not quite. F",
+     "AS": "Not quite. F",
+     "SS": "Correct. Onl"
+    },
+    "gelRead": "CTGACTCCTGTGGAGAAGTCTGCC",
+    "exp": "CTGACTCCTGTGGAGAAGTCTGCC",
+    "gelMatches": true
+   },
+   {
+    "gt": "AA",
+    "fb": "All 24 bases read correctly.",
+    "gts": {
+     "AA": "Correct. Onl",
+     "AS": "Not quite. F",
+     "SS": "Not quite. F"
+    },
+    "gelRead": "CTGACTCCTGAGGAGAAGTCTGCC",
+    "exp": "CTGACTCCTGAGGAGAAGTCTGCC",
+    "gelMatches": true
+   }
+  ],
+  "sanger_codon_window": {
+   "READ": "CTGACTCCTGAGGAGAAGTCTGCC",
+   "codon3": "CTG",
+   "codon10": "GCC",
+   "het": 10
+  },
+  "crispr": {
+   "A": [
+    {
+     "pam": "AGG",
+     "strand": "bottom",
+     "cut": 21,
+     "distShown": 2,
+     "dist": 2,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "CGG",
+     "strand": "bottom",
+     "cut": 37,
+     "distShown": 18,
+     "dist": 18,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 42,
+     "distShown": 23,
+     "dist": 23,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 43,
+     "distShown": 24,
+     "dist": 24,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 44,
+     "distShown": 25,
+     "dist": 25,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "bottom",
+     "cut": 46,
+     "distShown": 27,
+     "dist": 27,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "bottom",
+     "cut": 47,
+     "distShown": 28,
+     "dist": 28,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 49,
+     "distShown": 30,
+     "dist": 30,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 58,
+     "distShown": 39,
+     "dist": 39,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 68,
+     "distShown": 49,
+     "dist": 49,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 71,
+     "distShown": 52,
+     "dist": 52,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 76,
+     "distShown": 57,
+     "dist": 57,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 82,
+     "distShown": 63,
+     "dist": 63,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 83,
+     "distShown": 64,
+     "dist": 64,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 87,
+     "distShown": 68,
+     "dist": 68,
+     "ok": true,
+     "hdr": "No change This allele is alrea",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    }
+   ],
+   "S": [
+    {
+     "pam": "AGG",
+     "strand": "bottom",
+     "cut": 21,
+     "distShown": 2,
+     "dist": 2,
+     "ok": true,
+     "hdr": "Corrected The donor carries GA",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "CGG",
+     "strand": "bottom",
+     "cut": 37,
+     "distShown": 18,
+     "dist": 18,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 42,
+     "distShown": 23,
+     "dist": 23,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 43,
+     "distShown": 24,
+     "dist": 24,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 44,
+     "distShown": 25,
+     "dist": 25,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "bottom",
+     "cut": 46,
+     "distShown": 27,
+     "dist": 27,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "bottom",
+     "cut": 47,
+     "distShown": 28,
+     "dist": 28,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 49,
+     "distShown": 30,
+     "dist": 30,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 58,
+     "distShown": 39,
+     "dist": 39,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 68,
+     "distShown": 49,
+     "dist": 49,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 71,
+     "distShown": 52,
+     "dist": 52,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 76,
+     "distShown": 57,
+     "dist": 57,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "TGG",
+     "strand": "top",
+     "cut": 82,
+     "distShown": 63,
+     "dist": 63,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "GGG",
+     "strand": "top",
+     "cut": 83,
+     "distShown": 64,
+     "dist": 64,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    },
+    {
+     "pam": "AGG",
+     "strand": "top",
+     "cut": 87,
+     "distShown": 68,
+     "dist": 68,
+     "ok": true,
+     "hdr": "Too far from the cut This cut ",
+     "claims2bp": false,
+     "nhej": [
+      "−1 deletion",
+      "+1 insertion",
+      "−2 deletion",
+      "+1 insertion",
+      "−3 deletion",
+      "−4 deletion"
+     ]
+    }
+   ],
+   "bad": 0
+  },
+  "mstII": {
+   "allThreeCorrectFor": [
+    "ASAASS"
+   ],
+   "expected": "ASAASS"
+  },
+  "quizKeys": [
+   {
+    "q": "A sample of double-stranded DNA is 30% adenine. What percentage is guanine?",
+    "key": "20%"
+   },
+   {
+    "q": "What makes the sugar in DNA \"deoxy\"?",
+    "key": "It lacks a hydroxyl group at C-2′"
+   },
+   {
+    "q": "A strand reads 5′-GATTC-3′. What is its complementary strand, written 5′→3′?",
+    "key": "5′-GAATC-3′"
+   },
+   {
+    "q": "About how many base pairs per turn does B-DNA have in solution?",
+    "key": "10.5"
+   },
+   {
+    "q": "Which form of DNA is a left-handed helix?",
+    "key": "Z-form"
+   },
+   {
+    "q": "Why do most sequence-specific DNA-binding proteins contact the major groove?",
+    "key": "More of each base’s edge is exposed there, in a pattern that differs for each base pair"
+   },
+   {
+    "q": "Two DNA samples are in the same buffer. One is 40% GC, the other 60% GC. Which has the higher tm?",
+    "key": "The 60% GC sample"
+   },
+   {
+    "q": "Why does A₂₆₀ rise when DNA melts?",
+    "key": "Unstacked bases absorb more UV light than stacked ones"
+   },
+   {
+    "q": "What happens to tm if you lower the Na⁺ concentration?",
+    "key": "tm decreases"
+   },
+   {
+    "q": "Why is Taq polymerase used in PCR?",
+    "key": "It stays active through repeated 95 °C denaturation steps"
+   },
+   {
+    "q": "Your gel shows the right band plus extra bands and a smear near 40 bp. What should you change first?",
+    "key": "Raise the annealing temperature"
+   },
+   {
+    "q": "Starting from one double-stranded target, about how many copies are there after 10 ideal cycles?",
+    "key": "1,024"
+   },
+   {
+    "q": "Which sequence could be a type II restriction site (the same 5′→3′ on both strands)?",
+    "key": "GAATTC"
+   },
+   {
+    "q": "Uncut plasmid DNA shows two bands. Why?",
+    "key": "It exists as compact supercoiled and relaxed nicked (open-circle) forms"
+   },
+   {
+    "q": "Toward which electrode does DNA move, and which fragments move farthest?",
+    "key": "Positive electrode; smallest fragments"
+   },
+   {
+    "q": "Why do white colonies on X-gal usually carry the insert?",
+    "key": "The insert interrupts lacZα, so no β-galactosidase forms to cleave X-gal"
+   },
+   {
+    "q": "Why are transformed cells plated on ampicillin?",
+    "key": "Only cells that took up a plasmid carrying ampR survive"
+   },
+   {
+    "q": "What is the main advantage of cutting with two different enzymes, such as EcoRI and HindIII?",
+    "key": "The insert enters in one orientation, and the empty vector can’t easily close on itself"
+   },
+   {
+    "q": "Why does a dideoxynucleotide (ddNTP) stop chain growth?",
+    "key": "It lacks the 3′-OH needed for the next phosphodiester bond"
+   },
+   {
+    "q": "In a capillary trace, the first peak to reach the detector comes from…",
+    "key": "the shortest fragment, so the base closest to the primer"
+   },
+   {
+    "q": "A diploid sample shows overlapping A and T peaks at one position, with clean single peaks elsewhere. This most likely means…",
+    "key": "the person is heterozygous at that position"
+   },
+   {
+    "q": "For S. pyogenes Cas9, what must sit right next to the target sequence?",
+    "key": "A 5′-NGG-3′ PAM immediately 3′ of the 20-nt target, on the same strand"
+   },
+   {
+    "q": "Where does Cas9 cut?",
+    "key": "About 3 bp upstream of the PAM, making a blunt double-strand break"
+   },
+   {
+    "q": "Why does NHEJ repair of a Cas9 cut often knock a gene out?",
+    "key": "It often adds or removes a few bases, shifting the reading frame"
+   }
+  ]
+ },
+ "faults": []
+}

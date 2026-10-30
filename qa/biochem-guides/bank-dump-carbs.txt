@@ -1,0 +1,2343 @@
+=== mono (857 distinct)
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Fructose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Mannose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Mannose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Fructose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Fructose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Fructose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Fructose / D-Galactose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Fructose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Mannose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Fructose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Fructose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Fructose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Mannose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Mannose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Fructose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Fructose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Fructose / D-Galactose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Mannose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Fructose / D-Galactose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Glucose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Mannose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Mannose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Ribose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Fructose / D-Galactose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Mannose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Mannose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Fructose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Glucose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Glucose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Fructose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Glucose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Fructose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Fructose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Ribose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Fructose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Glucose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Fructose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Fructose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Mannose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Ribose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Ribose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Ribose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Fructose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Fructose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Fructose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Galactose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Mannose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Fructose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Glucose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Fructose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Galactose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Glucose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Fructose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Galactose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Fructose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Galactose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Mannose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Fructose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Fructose / D-Galactose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Glucose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Glucose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Fructose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Arabinose / D-Fructose / D-Glucose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Glucose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Glucose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Glucose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Mannose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Galactose / D-Mannose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Ribose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Ribulose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Galactose / D-Glucose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Arabinose / D-Galactose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Ribulose  ||  wrong: D-Fructose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Glucose  ||  wrong: D-Arabinose / D-Mannose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Fructose / D-Glucose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Mannose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Mannose  ||  wrong: D-Arabinose / D-Fructose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Arabinose  ||  wrong: D-Fructose / D-Glucose / D-Mannose
+[0] Which sugar is this?
+    KEY: D-Fructose  ||  wrong: D-Arabinose / D-Galactose / D-Ribose
+[0] Which sugar is this?
+    KEY: D-Galactose  ||  wrong: D-Mannose / D-Ribose / D-Ribulose
+[0] Which sugar is this?
+    KEY: D-Ribose  ||  wrong: D-Arabinose / D-Galactose / D-Xylose
+[0] Which sugar is this?
+    KEY: D-Xylose  ||  wrong: D-Arabinose / D-Fructose / D-Glucose
+[1] How many stereoisomers are possible for a ketotetrose? Count both D and L forms.
+    KEY: 2 stereoisomers  (a=2, tol=0)
+[1] How many stereoisomers are possible for a ketohexose? Count both D and L forms.
+    KEY: 8 stereoisomers  (a=8, tol=0)
+[1] How many stereoisomers are possible for an aldopentose? Count both D and L forms.
+    KEY: 8 stereoisomers  (a=8, tol=0)
+[1] How many stereoisomers are possible for an aldohexose? Count both D and L forms.
+    KEY: 16 stereoisomers  (a=16, tol=0)
+[1] How many stereoisomers are possible for an aldotriose? Count both D and L forms.
+    KEY: 2 stereoisomers  (a=2, tol=0)
+[1] How many stereoisomers are possible for a ketopentose? Count both D and L forms.
+    KEY: 4 stereoisomers  (a=4, tol=0)
+[1] How many stereoisomers are possible for an aldotetrose? Count both D and L forms.
+    KEY: 4 stereoisomers  (a=4, tol=0)
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-talose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-idose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Glucose / D-Idose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-altrose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Galactose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Gulose / D-Idose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Glucose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Glucose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-galactose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Altrose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-4 epimer of D-galactose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Altrose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Altrose / D-Glucose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-talose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Altrose / D-Galactose / D-Talose
+[2] Which sugar is the C-3 epimer of D-glucose?
+    KEY: D-Allose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Altrose / D-Galactose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Idose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Gulose / D-Idose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Altrose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Galactose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-gulose?
+    KEY: D-Idose  ||  wrong: D-Galactose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-altrose?
+    KEY: D-Idose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Galactose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-talose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-idose?
+    KEY: D-Gulose  ||  wrong: D-Allose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-mannose?
+    KEY: D-Talose  ||  wrong: D-Allose / D-Glucose / D-Idose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Gulose / D-Idose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-gulose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-2 epimer of D-mannose?
+    KEY: D-Glucose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-4 epimer of D-allose?
+    KEY: D-Gulose  ||  wrong: D-Glucose / D-Mannose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Talose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Allose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Gulose / D-Talose
+[2] Which sugar is the C-2 epimer of D-altrose?
+    KEY: D-Allose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-4 epimer of D-idose?
+    KEY: D-Altrose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-4 epimer of D-glucose?
+    KEY: D-Galactose  ||  wrong: D-Gulose / D-Idose / D-Talose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Gulose / D-Mannose / D-Talose
+[2] Which sugar is the C-4 epimer of D-gulose?
+    KEY: D-Allose  ||  wrong: D-Galactose / D-Glucose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-allose?
+    KEY: D-Altrose  ||  wrong: D-Glucose / D-Gulose / D-Mannose
+[2] Which sugar is the C-3 epimer of D-allose?
+    KEY: D-Glucose  ||  wrong: D-Altrose / D-Galactose / D-Mannose
+[2] Which sugar is the C-2 epimer of D-glucose?
+    KEY: D-Mannose  ||  wrong: D-Allose / D-Altrose / D-Gulose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Glucose / D-Talose
+[2] Which sugar is the C-3 epimer of D-mannose?
+    KEY: D-Altrose  ||  wrong: D-Allose / D-Galactose / D-Glucose
+[2] Which sugar is the C-2 epimer of D-galactose?
+    KEY: D-Talose  ||  wrong: D-Glucose / D-Gulose / D-Idose
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Enantiomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-3
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Enantiomers / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Enantiomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Epimers at C-3 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-3
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-3 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-3 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Epimers at C-3
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-2
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Epimers at C-3
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-2
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Epimers at C-2 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Enantiomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Enantiomers / Epimers at C-3
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Epimers at C-2 / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Enantiomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Enantiomers / Epimers at C-2
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Epimers at C-3 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-3 / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Enantiomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Epimers at C-2 / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-mannose and L-mannose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-mannose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Epimers at C-4
+[3] How are D-mannose and D-galactose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Enantiomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and D-galactose related?
+    KEY: Epimers at C-4  ||  wrong: Anomers / Enantiomers / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Enantiomers / Epimers at C-4
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-3
+[3] How are D-glucose and D-talose related?
+    KEY: Stereoisomers that are neither epimers nor enantiomers  ||  wrong: Anomers / Enantiomers / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-3 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-glucose and D-allose related?
+    KEY: Epimers at C-3  ||  wrong: Anomers / Enantiomers / Epimers at C-2
+[3] How are D-glucose and L-glucose related?
+    KEY: Enantiomers  ||  wrong: Anomers / Epimers at C-2 / Epimers at C-4
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Epimers at C-4 / Stereoisomers that are neither epimers nor enantiomers
+[3] How are D-galactose and D-talose related?
+    KEY: Epimers at C-2  ||  wrong: Anomers / Enantiomers / Stereoisomers that are neither epimers nor enantiomers
+[4] What decides whether a sugar is D or L?
+    KEY: The configuration of the chiral carbon farthest from the carbonyl group  ||  wrong: The configuration of the carbon next to the carbonyl group / Whether it is an aldose or a ketose / Whether it rotates polarized light to the right or to the left
+[5] Which of these monosaccharides has no chiral carbon?
+    KEY: Dihydroxyacetone  ||  wrong: Erythrose / Glyceraldehyde / Ribulose
+[6] Which of these is a ketose?
+    KEY: Fructose  ||  wrong: Galactose / Glucose / Ribose
+[7] How many D-aldohexoses are there?
+    KEY: 8  (a=8, tol=0)
+[8] From which end of the chain are the carbons of a monosaccharide numbered?
+    KEY: From the end nearest the carbonyl group  ||  wrong: From the CH2OH end farthest from the carbonyl group / From the top of the page, however the molecule is drawn / From whichever end gives D the lower number
+[9] In a Fischer projection, which way do the horizontal bonds point?
+    KEY: Out of the page, toward the reader  ||  wrong: Behind the page, away from the reader / They lie in the plane of the page / Up for D sugars and down for L sugars
+[10] D-Glyceraldehyde can be reduced to glycerol. Why can glycerol not be called D or L?
+    KEY: Its middle carbon now carries two identical CH2OH groups, so it is no longer chiral.  ||  wrong: It forms a ring. / It has lost all of its hydroxyl groups. / Reduction turns it into a ketose.
+[11] D-Ribulose is the ketose that corresponds to which aldose?
+    KEY: D-Ribose  ||  wrong: D-Erythrose / D-Fructose / D-Xylose
+[12] Which sugar is found in RNA?
+    KEY: D-Ribose, an aldopentose  ||  wrong: 2-Deoxy-D-ribose, an aldopentose / D-Glucose, an aldohexose / D-Ribulose, a ketopentose
+[13] Two forms of the sweetener aspartame differ in configuration at one chiral center. What do they taste like?
+    KEY: One is sweet and the other is bitter.  ||  wrong: Both are equally sweet. / Neither has any taste. / One is sweet and the other is sour.
+[14] Enzymes that act on sugars usually prefer one stereoisomer over another. By about how much?
+    KEY: By three or more orders of magnitude  ||  wrong: By a factor of two / By about 10% / Not at all: stereoisomers are treated alike
+[15] Which statement about monosaccharides is true?
+    KEY: They dissolve freely in water but not in nonpolar solvents.  ||  wrong: They are colored liquids at room temperature. / They contain only one hydroxyl group. / They dissolve freely in nonpolar solvents but not in water.
+[16] Which of these sugars occurs in nature in its L form?
+    KEY: Arabinose  ||  wrong: Fructose / Glucose / Ribose
+
+=== ring (36 distinct)
+[0] Which sugar is drawn here?
+    KEY: α-D-Mannopyranose  ||  wrong: α-D-Glucopyranose / β-D-Glucopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: α-D-Galactopyranose  ||  wrong: α-D-Mannopyranose / β-D-Galactopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Glucopyranose  ||  wrong: α-D-Galactopyranose / α-D-Glucopyranose / β-D-Galactopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Mannopyranose  ||  wrong: α-D-Glucopyranose / α-D-Mannopyranose / β-D-Glucopyranose
+[0] Which sugar is drawn here?
+    KEY: α-D-Galactopyranose  ||  wrong: α-D-Glucopyranose / β-D-Galactopyranose / β-D-Glucopyranose
+[0] Which sugar is drawn here?
+    KEY: α-D-Glucopyranose  ||  wrong: α-D-Mannopyranose / β-D-Glucopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Glucopyranose  ||  wrong: α-D-Glucopyranose / α-D-Mannopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: α-D-Glucopyranose  ||  wrong: α-D-Galactopyranose / β-D-Galactopyranose / β-D-Glucopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Galactopyranose  ||  wrong: α-D-Galactopyranose / α-D-Glucopyranose / β-D-Glucopyranose
+[0] Which sugar is drawn here?
+    KEY: α-D-Mannopyranose  ||  wrong: α-D-Galactopyranose / β-D-Galactopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Galactopyranose  ||  wrong: α-D-Galactopyranose / α-D-Mannopyranose / β-D-Mannopyranose
+[0] Which sugar is drawn here?
+    KEY: β-D-Mannopyranose  ||  wrong: α-D-Galactopyranose / α-D-Mannopyranose / β-D-Galactopyranose
+[1] In the Haworth formula of D-mannose in its pyranose form, which way does the hydroxyl group on C-4 point?
+    KEY: Down, below the plane of the ring  ||  wrong: It depends on whether the sugar is the α or β anomer / Up, above the plane of the ring
+[1] In the Haworth formula of D-galactose in its pyranose form, which way does the hydroxyl group on C-4 point?
+    KEY: Up, above the plane of the ring  ||  wrong: Down, below the plane of the ring / It depends on whether the sugar is the α or β anomer
+[1] In the Haworth formula of D-galactose in its pyranose form, which way does the hydroxyl group on C-2 point?
+    KEY: Down, below the plane of the ring  ||  wrong: It depends on whether the sugar is the α or β anomer / Up, above the plane of the ring
+[1] In the Haworth formula of D-galactose in its pyranose form, which way does the hydroxyl group on C-3 point?
+    KEY: Up, above the plane of the ring  ||  wrong: Down, below the plane of the ring / It depends on whether the sugar is the α or β anomer
+[1] In the Haworth formula of D-glucose in its pyranose form, which way does the hydroxyl group on C-4 point?
+    KEY: Down, below the plane of the ring  ||  wrong: It depends on whether the sugar is the α or β anomer / Up, above the plane of the ring
+[1] In the Haworth formula of D-mannose in its pyranose form, which way does the hydroxyl group on C-2 point?
+    KEY: Up, above the plane of the ring  ||  wrong: Down, below the plane of the ring / It depends on whether the sugar is the α or β anomer
+[1] In the Haworth formula of D-mannose in its pyranose form, which way does the hydroxyl group on C-3 point?
+    KEY: Up, above the plane of the ring  ||  wrong: Down, below the plane of the ring / It depends on whether the sugar is the α or β anomer
+[1] In the Haworth formula of D-glucose in its pyranose form, which way does the hydroxyl group on C-3 point?
+    KEY: Up, above the plane of the ring  ||  wrong: Down, below the plane of the ring / It depends on whether the sugar is the α or β anomer
+[1] In the Haworth formula of D-glucose in its pyranose form, which way does the hydroxyl group on C-2 point?
+    KEY: Down, below the plane of the ring  ||  wrong: It depends on whether the sugar is the α or β anomer / Up, above the plane of the ring
+[2] What are anomers?
+    KEY: Isomers that differ only in configuration at the hemiacetal or hemiketal carbon  ||  wrong: An aldose and a ketose with the same formula / Isomers that differ in configuration at any one carbon / Mirror images of each other
+[3] In β-D-glucopyranose, where is the hydroxyl group on C-1?
+    KEY: On the same side of the ring as C-6  ||  wrong: In the plane of the ring / On C-5 instead / On the opposite side of the ring from C-6
+[4] A solution of pure α-D-glucose is left to stand. What does it contain at equilibrium?
+    KEY: About one-third α and two-thirds β, with traces of the linear and furanose forms  ||  wrong: About two-thirds α and one-third β / Equal amounts of α and β / Only the α anomer
+[5] Which bond must break to change α-D-glucose into β-D-glucose?
+    KEY: The bond between C-1 and the ring oxygen  ||  wrong: A bond at C-2 / None: it is a change of conformation / The bond between C-5 and C-6
+[6] Which bond must break to change one chair form of β-D-glucopyranose into the other?
+    KEY: None: the chairs are conformations  ||  wrong: A bond at C-2 / The bond between C-1 and its hydroxyl group / The bond between C-1 and the ring oxygen
+[7] To change D-glucose into D-mannose, a bond must be broken at which carbon?
+    KEY: C-2  ||  wrong: C-1 / C-4 / No bond: they are conformers
+[8] Which hydroxyl group adds to the carbonyl carbon when D-glucose forms a pyranose ring?
+    KEY: The one on C-5  ||  wrong: The one on C-2 / The one on C-4 / The one on C-6
+[9] Which carbon is the anomeric carbon of fructose?
+    KEY: C-2  ||  wrong: C-1 / C-5 / C-6
+[10] The open-chain form of D-glucose has four chiral carbons. How many does α-D-glucopyranose have?
+    KEY: 5 chiral carbons  (a=5, tol=0)
+[11] What does a Haworth formula get wrong about a pyranose ring?
+    KEY: It shows the ring as flat, but the ring is puckered into a chair.  ||  wrong: It cannot show α and β. / It puts the ring oxygen in the wrong place. / It shows the wrong number of ring atoms.
+[12] A pyranose ring has how many atoms in the ring, and how many of them are carbon?
+    KEY: Six atoms, five of them carbon  ||  wrong: Five atoms, all carbon / Five atoms, four of them carbon / Six atoms, all carbon
+[13] When an aldehyde reacts with one molecule of an alcohol, what is formed?
+    KEY: A hemiacetal  ||  wrong: A hemiketal / An acetal / An ester
+[14] In writing a Haworth formula for a D-hexopyranose, where does the ring oxygen go and which way are the carbons numbered?
+    KEY: Oxygen at the upper right; carbons numbered clockwise from the anomeric carbon  ||  wrong: Oxygen at the lower left; carbons numbered clockwise / Oxygen at the top center; carbons numbered from C-6 / Oxygen at the upper right; carbons numbered counterclockwise
+[15] Solutions of pure α-D-glucose (+112°) and pure β-D-glucose (+19°) both end up reading +52°. Why?
+    KEY: Mutarotation turns each into the same equilibrium mixture of anomers.  ||  wrong: Both anomers are destroyed. / The glucose is converted to fructose. / The two anomers have the same rotation after all.
+[16] According to the Color Atlas, about what fraction of glucose molecules in neutral solution are in the open-chain form?
+    KEY: Less than 0.1%  ||  wrong: About 10% / About 99% / About one-third
+
+=== deriv (29 distinct)
+[0] Is D-fructose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is D-galactose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is N-acetyl-D-glucosamine a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is D-ribose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is methyl α-D-glucoside a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is D-gluconate a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is D-glyceraldehyde a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is sucrose a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is D-glucose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is lactose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is trehalose a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is maltose a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[1] What kind of sugar acid is formed when glucose is oxidized at C-1, the aldehyde carbon?
+    KEY: An aldonic acid, such as gluconic acid  ||  wrong: A sialic acid, such as N-acetylneuraminic acid / A sugar alcohol, such as sorbitol / A uronic acid, such as glucuronic acid
+[1] What kind of sugar acid is formed when glucose is oxidized at C-6, the carbon farthest from the carbonyl group?
+    KEY: A uronic acid, such as glucuronic acid  ||  wrong: A sialic acid, such as N-acetylneuraminic acid / A sugar alcohol, such as sorbitol / An aldonic acid, such as gluconic acid
+[2] In the test for reducing sugars, what happens to the copper?
+    KEY: Cu2+ is reduced to Cu+, which forms a brick-red precipitate.  ||  wrong: Copper metal dissolves. / Cu+ is oxidized to Cu2+, which turns the solution blue. / Nothing: copper is only a catalyst.
+[3] Glucose is almost entirely in ring form in solution. Why does it still react as a reducing sugar?
+    KEY: The ring forms are in equilibrium with the linear form, which has a free aldehyde group.  ||  wrong: Cu2+ breaks the bond between C-1 and C-2. / The hydroxyl on C-6 is oxidized. / The ring oxygen is oxidized.
+[4] Fructose is a ketose. Why is it a reducing sugar?
+    KEY: It can rearrange (tautomerize) to an aldehyde.  ||  wrong: It is not a reducing sugar. / Its hydroxyl groups are oxidized. / Ketones are oxidized by Cu2+ as easily as aldehydes.
+[5] At which carbon is the hydroxyl group replaced in glucosamine?
+    KEY: C-2  ||  wrong: C-1 / C-4 / C-6
+[6] L-Fucose is a deoxy sugar. Which hexose is it derived from, and where is the oxygen missing?
+    KEY: L-Galactose, at C-6  ||  wrong: D-Glucose, at C-2 / D-Ribose, at C-2 / L-Mannose, at C-6
+[7] What is a lactone?
+    KEY: A stable internal ester formed by an aldonic or uronic acid  ||  wrong: A disaccharide found in milk / A sugar in which C-6 is a methyl group / A sugar with an amino group
+[8] How does the oxidation state of C-1 in gluconolactone compare with that in β-D-glucose?
+    KEY: It is more oxidized: a carboxylic acid derivative in the lactone, an aldehyde derivative in glucose.  ||  wrong: C-1 is not part of the lactone. / It is more reduced in the lactone. / It is the same in both.
+[9] Why does phosphorylating a sugar keep it inside the cell?
+    KEY: Most cells have no plasma membrane transporters for phosphorylated sugars.  ||  wrong: Phosphorylated sugars are too large to diffuse in water. / The phosphate binds the sugar covalently to the membrane. / The phosphate makes the sugar insoluble.
+[10] Which statement about N-acetylneuraminic acid is correct?
+    KEY: It is a nine-carbon acidic sugar derived from N-acetylmannosamine.  ||  wrong: It is a disaccharide. / It is a neutral deoxy sugar. / It is a six-carbon amino sugar derived from glucose.
+[11] What are the products of the glucose oxidase reaction used in blood glucose test strips?
+    KEY: D-Glucono-δ-lactone and H2O2  ||  wrong: D-Glucuronate and H2O / D-Sorbitol and O2 / Glucose 6-phosphate and ADP
+[12] What does the HbA1c value tell a physician?
+    KEY: The average blood glucose concentration over the past weeks  ||  wrong: The amount of insulin in the blood / The blood glucose concentration at the moment the sample was taken / The number of erythrocytes
+[13] How is glycation different from glycosylation?
+    KEY: Glycation is nonenzymatic. Glycosylation is the enzymatic transfer of a sugar to a protein.  ||  wrong: Glycation adds glucose, glycosylation adds galactose. / Glycation happens only in erythrocytes. / They are two names for the same process.
+[14] A patient who is definitely not diabetic has a lower-than-normal HbA1c. Which explanation fits best?
+    KEY: The patient’s erythrocytes have a shorter than normal lifetime.  ||  wrong: The patient has too much hemoglobin. / The patient makes too much glucose oxidase. / The patient’s blood glucose is too high.
+[15] About what percentage of hemoglobin is HbA1c in a person without diabetes?
+    KEY: About 5%  ||  wrong: About 0.05% / About 13% / About 50%
+[16] According to the Color Atlas, what is formed when the carbonyl group at C-1 of glucose is reduced?
+    KEY: Sorbitol, a sugar alcohol  ||  wrong: Gluconic acid / Glucosamine / Glucuronic acid
+
+=== di (36 distinct)
+[0] Is Glc(α1↔2β)Fru a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is Man(α1→6)Man a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Man(α1→2)Man a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Glc(β1→4)Glc a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Gal(β1→3)Gal a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Glc(α1→4)Glc a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Glc(β1→6)Glc a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Glc(α1→6)Glc a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[0] Is Glc(α1↔1α)Glc a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[0] Is Gal(β1→4)Glc a reducing sugar?
+    KEY: Yes  ||  wrong: No
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of galactose, in the β configuration, is joined to C-4 of glucose.
+    KEY: Gal(β1→4)Glc  ||  wrong: Gal(α1→4)Glc / Gal(β1→6)Glc / Glc(β1→4)Gal
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of glucose, in the β configuration, is joined to C-4 of glucose.
+    KEY: Glc(β1→4)Glc  ||  wrong: Glc(α1→4)Glc / Glc(β1→4)Gal / Glc(β1→6)Glc
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of mannose, in the α configuration, is joined to C-6 of mannose.
+    KEY: Man(α1→6)Man  ||  wrong: Man(α1→4)Man / Man(α1→6)Glc / Man(β1→6)Man
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of glucose, in the α configuration, is joined to C-4 of glucose.
+    KEY: Glc(α1→4)Glc  ||  wrong: Glc(α1→4)Gal / Glc(α1→6)Glc / Glc(β1→4)Glc
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of glucose, in the α configuration, is joined to C-6 of glucose.
+    KEY: Glc(α1→6)Glc  ||  wrong: Glc(α1→4)Glc / Glc(α1→6)Gal / Glc(β1→6)Glc
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of galactose, in the β configuration, is joined to C-3 of galactose.
+    KEY: Gal(β1→3)Gal  ||  wrong: Gal(α1→3)Gal / Gal(β1→3)Glc / Gal(β1→4)Gal
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of glucose, in the β configuration, is joined to C-6 of glucose.
+    KEY: Glc(β1→6)Glc  ||  wrong: Glc(α1→6)Glc / Glc(β1→4)Glc / Glc(β1→6)Gal
+[1] Which abbreviated name describes this disaccharide? The anomeric carbon of mannose, in the α configuration, is joined to C-2 of mannose.
+    KEY: Man(α1→2)Man  ||  wrong: Man(α1→2)Glc / Man(α1→4)Man / Man(β1→2)Man
+[2] What does complete hydrolysis of sucrose give?
+    KEY: D-Glucose and D-fructose  ||  wrong: D-Galactose and D-fructose / D-Galactose and D-glucose / Two molecules of D-glucose
+[2] What does complete hydrolysis of lactose give?
+    KEY: D-Galactose and D-glucose  ||  wrong: D-Galactose and D-fructose / D-Glucose and D-fructose / Two molecules of D-glucose
+[2] What does complete hydrolysis of trehalose give?
+    KEY: Two molecules of D-glucose  ||  wrong: D-Galactose and D-fructose / D-Galactose and D-glucose / D-Glucose and D-fructose
+[2] What does complete hydrolysis of maltose give?
+    KEY: Two molecules of D-glucose  ||  wrong: D-Galactose and D-fructose / D-Galactose and D-glucose / D-Glucose and D-fructose
+[3] Which conditions hydrolyze glycosidic bonds readily?
+    KEY: Boiling with dilute acid  ||  wrong: Boiling with dilute base / Standing in water at neutral pH / Treatment with Cu2+
+[4] Why is sucrose not a reducing sugar?
+    KEY: The anomeric carbons of both glucose and fructose are in the glycosidic bond.  ||  wrong: Fructose is a ketose. / Its glycosidic bond is β. / Sucrose is too large to react.
+[5] Lactose exists in two anomeric forms, but sucrose does not. Why?
+    KEY: Lactose has a free anomeric carbon on its glucose residue. Sucrose has none.  ||  wrong: Lactose contains galactose. / Sucrose is found only in plants. / Sucrose is not a sugar.
+[6] Gentiobiose is Glc(β1→6)Glc. Is it a reducing sugar, and does it undergo mutarotation?
+    KEY: Yes to both  ||  wrong: It is reducing but does not mutarotate / It mutarotates but is not reducing / No to both
+[7] Is the disaccharide GlcN(α1↔1α)Glc a reducing sugar?
+    KEY: No  ||  wrong: Yes
+[8] By convention, which end of an oligosaccharide is written on the left?
+    KEY: The nonreducing end  ||  wrong: The larger residue / The reducing end / The residue that comes first in the alphabet
+[9] What is the reducing end of an oligosaccharide or polysaccharide?
+    KEY: The end with a free anomeric carbon  ||  wrong: The end that carries a phosphate / The end where new glucose units are added / The end with a free hydroxyl group on C-4
+[10] Chemically, what kind of compound is formed when a hemiacetal reacts with an alcohol?
+    KEY: An acetal  ||  wrong: A hemiketal / An ester / An ether of a carboxylic acid
+[11] In lactose intolerance, what causes the watery stools?
+    KEY: Undigested lactose raises the osmolarity in the large intestine, which opposes the absorption of water.  ||  wrong: Galactose is toxic. / Lactase damages the wall of the intestine. / Lactose is absorbed too quickly.
+[12] Why is sucrose well suited to carrying sugar from the leaves to the rest of a plant?
+    KEY: It is nonreducing, so it is stable and resists oxidation.  ||  wrong: Animals cannot taste it. / It is a polysaccharide. / It is insoluble in water.
+[13] Where is trehalose a major sugar?
+    KEY: In the hemolymph of insects  ||  wrong: In human blood / In mammalian milk / In the cell walls of plants
+[14] How could you hydrolyze sucrose to invert sugar in a home kitchen, without an enzyme?
+    KEY: Heat it in water with a little acid, such as lemon juice or vinegar.  ||  wrong: Dissolve it in oil. / Freeze it. / Heat it in water with baking soda.
+[15] A chocolate maker wants a liquid, fructose-rich center but has to pour hot chocolate over a solid core. Which approach works?
+    KEY: Make the core from solid sucrose mixed with invertase, and let the enzyme liquefy it after coating.  ||  wrong: Add lactase to a core of lactose. / Use a core of cellulose. / Use a core of frozen fructose syrup and coat it very quickly.
+[16] Why is hydrolyzed sucrose called invert sugar?
+    KEY: The optical rotation of the solution changes from positive to negative.  ||  wrong: It tastes less sweet. / The anomeric carbon changes from α to β. / The molecule is turned upside down.
+
+=== poly (103 distinct)
+[0] A fragment of glycogen has 24 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 25 nonreducing ends  (a=25, tol=0)
+[0] A fragment of glycogen has 50 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 51 nonreducing ends  (a=51, tol=0)
+[0] A fragment of glycogen has 26 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 27 nonreducing ends  (a=27, tol=0)
+[0] A fragment of glycogen has 58 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 59 nonreducing ends  (a=59, tol=0)
+[0] A fragment of glycogen has 41 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 42 nonreducing ends  (a=42, tol=0)
+[0] A fragment of glycogen has 16 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 17 nonreducing ends  (a=17, tol=0)
+[0] A fragment of glycogen has 18 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 19 nonreducing ends  (a=19, tol=0)
+[0] A fragment of glycogen has 30 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 31 nonreducing ends  (a=31, tol=0)
+[0] A fragment of glycogen has 9 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 10 nonreducing ends  (a=10, tol=0)
+[0] A fragment of glycogen has 55 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 56 nonreducing ends  (a=56, tol=0)
+[0] A fragment of glycogen has 54 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 55 nonreducing ends  (a=55, tol=0)
+[0] A fragment of glycogen has 20 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 21 nonreducing ends  (a=21, tol=0)
+[0] A fragment of glycogen has 52 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 53 nonreducing ends  (a=53, tol=0)
+[0] A fragment of glycogen has 13 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 14 nonreducing ends  (a=14, tol=0)
+[0] A fragment of glycogen has 22 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 23 nonreducing ends  (a=23, tol=0)
+[0] A fragment of glycogen has 49 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 50 nonreducing ends  (a=50, tol=0)
+[0] A fragment of glycogen has 60 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 61 nonreducing ends  (a=61, tol=0)
+[0] A fragment of glycogen has 12 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 13 nonreducing ends  (a=13, tol=0)
+[0] A fragment of glycogen has 28 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 29 nonreducing ends  (a=29, tol=0)
+[0] A fragment of glycogen has 7 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 8 nonreducing ends  (a=8, tol=0)
+[0] A fragment of glycogen has 6 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 7 nonreducing ends  (a=7, tol=0)
+[0] A fragment of glycogen has 33 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 34 nonreducing ends  (a=34, tol=0)
+[0] A fragment of glycogen has 59 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 60 nonreducing ends  (a=60, tol=0)
+[0] A fragment of glycogen has 40 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 41 nonreducing ends  (a=41, tol=0)
+[0] A fragment of glycogen has 36 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 37 nonreducing ends  (a=37, tol=0)
+[0] A fragment of glycogen has 25 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 26 nonreducing ends  (a=26, tol=0)
+[0] A fragment of glycogen has 27 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 28 nonreducing ends  (a=28, tol=0)
+[0] A fragment of glycogen has 39 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 40 nonreducing ends  (a=40, tol=0)
+[0] A fragment of glycogen has 5 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 6 nonreducing ends  (a=6, tol=0)
+[0] A fragment of glycogen has 43 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 44 nonreducing ends  (a=44, tol=0)
+[0] A fragment of glycogen has 57 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 58 nonreducing ends  (a=58, tol=0)
+[0] A fragment of glycogen has 48 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 49 nonreducing ends  (a=49, tol=0)
+[0] A fragment of glycogen has 21 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 22 nonreducing ends  (a=22, tol=0)
+[0] A fragment of glycogen has 34 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 35 nonreducing ends  (a=35, tol=0)
+[0] A fragment of glycogen has 46 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 47 nonreducing ends  (a=47, tol=0)
+[0] A fragment of glycogen has 51 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 52 nonreducing ends  (a=52, tol=0)
+[0] A fragment of glycogen has 38 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 39 nonreducing ends  (a=39, tol=0)
+[0] A fragment of glycogen has 19 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 20 nonreducing ends  (a=20, tol=0)
+[0] A fragment of glycogen has 47 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 48 nonreducing ends  (a=48, tol=0)
+[0] A fragment of glycogen has 35 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 36 nonreducing ends  (a=36, tol=0)
+[0] A fragment of glycogen has 11 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 12 nonreducing ends  (a=12, tol=0)
+[0] A fragment of glycogen has 42 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 43 nonreducing ends  (a=43, tol=0)
+[0] A fragment of glycogen has 23 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 24 nonreducing ends  (a=24, tol=0)
+[0] A fragment of glycogen has 15 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 16 nonreducing ends  (a=16, tol=0)
+[0] A fragment of glycogen has 17 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 18 nonreducing ends  (a=18, tol=0)
+[0] A fragment of glycogen has 8 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 9 nonreducing ends  (a=9, tol=0)
+[0] A fragment of glycogen has 32 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 33 nonreducing ends  (a=33, tol=0)
+[0] A fragment of glycogen has 56 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 57 nonreducing ends  (a=57, tol=0)
+[0] A fragment of glycogen has 14 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 15 nonreducing ends  (a=15, tol=0)
+[0] A fragment of glycogen has 53 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 54 nonreducing ends  (a=54, tol=0)
+[0] A fragment of glycogen has 31 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 32 nonreducing ends  (a=32, tol=0)
+[0] A fragment of glycogen has 45 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 46 nonreducing ends  (a=46, tol=0)
+[0] A fragment of glycogen has 37 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 38 nonreducing ends  (a=38, tol=0)
+[0] A fragment of glycogen has 10 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 11 nonreducing ends  (a=11, tol=0)
+[0] A fragment of glycogen has 29 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 30 nonreducing ends  (a=30, tol=0)
+[0] A fragment of glycogen has 44 (α1→6) branch points. How many nonreducing ends does it have?
+    KEY: 45 nonreducing ends  (a=45, tol=0)
+[1] Suppose a bamboo stem grows 0.2 m per day. Bamboo stems are almost entirely cellulose fibers oriented in the direction of growth. Each glucose unit adds about 0.5 nm to the length of a cellulose chain. How many glucose residues per second must be added to one growing chain?
+    KEY: 4,600 residues per second  (a=4629.63, tol=139)
+[1] Suppose a bamboo stem grows 0.5 m per day. Bamboo stems are almost entirely cellulose fibers oriented in the direction of growth. Each glucose unit adds about 0.5 nm to the length of a cellulose chain. How many glucose residues per second must be added to one growing chain?
+    KEY: 11,600 residues per second  (a=11574.1, tol=347)
+[1] Suppose a bamboo stem grows 0.3 m per day, the rate Lehninger gives for optimal conditions. Bamboo stems are almost entirely cellulose fibers oriented in the direction of growth. Each glucose unit adds about 0.5 nm to the length of a cellulose chain. How many glucose residues per second must be added to one growing chain?
+    KEY: 6,900 residues per second  (a=6944.44, tol=208)
+[1] Suppose a bamboo stem grows 0.4 m per day. Bamboo stems are almost entirely cellulose fibers oriented in the direction of growth. Each glucose unit adds about 0.5 nm to the length of a cellulose chain. How many glucose residues per second must be added to one growing chain?
+    KEY: 9,300 residues per second  (a=9259.26, tol=278)
+[1] Suppose a bamboo stem grows 0.6 m per day. Bamboo stems are almost entirely cellulose fibers oriented in the direction of growth. Each glucose unit adds about 0.5 nm to the length of a cellulose chain. How many glucose residues per second must be added to one growing chain?
+    KEY: 13,900 residues per second  (a=13888.9, tol=417)
+[2] A cellulose molecule has Mr 200,000. Taking 162 as the mass of one glucose residue and 0.5 nm as its length along the chain, how long is the fully extended molecule, in nanometers?
+    KEY: 617 nm  (a=617.284, tol=18.5)
+[2] A cellulose molecule has Mr 100,000. Taking 162 as the mass of one glucose residue and 0.5 nm as its length along the chain, how long is the fully extended molecule, in nanometers?
+    KEY: 309 nm  (a=308.642, tol=9.26)
+[2] A cellulose molecule has Mr 400,000. Taking 162 as the mass of one glucose residue and 0.5 nm as its length along the chain, how long is the fully extended molecule, in nanometers?
+    KEY: 1,235 nm  (a=1234.57, tol=37)
+[2] A cellulose molecule has Mr 300,000. Taking 162 as the mass of one glucose residue and 0.5 nm as its length along the chain, how long is the fully extended molecule, in nanometers?
+    KEY: 926 nm  (a=925.926, tol=27.8)
+[3] A 324 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 15 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.6 %  (a=3.60577, tol=0.108)
+[3] A 486 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 22.5 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.6 %  (a=3.60577, tol=0.108)
+[3] A 486 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 26.2 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.2 %  (a=4.19872, tol=0.126)
+[3] A 324 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 16.6 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.0 %  (a=3.99038, tol=0.12)
+[3] A 324 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 15.8 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.8 %  (a=3.79808, tol=0.114)
+[3] A 258 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 13.3 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.0 %  (a=4.01498, tol=0.12)
+[3] A 258 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 12.6 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.8 %  (a=3.80367, tol=0.114)
+[3] A 258 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 11.9 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.6 %  (a=3.59235, tol=0.108)
+[3] A 405 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 21.8 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.2 %  (a=4.19231, tol=0.126)
+[3] A 324 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 14.1 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.4 %  (a=3.38942, tol=0.102)
+[3] A 324 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 17.5 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.2 %  (a=4.20673, tol=0.126)
+[3] A 405 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 19.8 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.8 %  (a=3.80769, tol=0.114)
+[3] A 486 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 21.2 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.4 %  (a=3.39744, tol=0.102)
+[3] A 405 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 17.7 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.4 %  (a=3.40385, tol=0.102)
+[3] A 486 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 23.7 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.8 %  (a=3.79808, tol=0.114)
+[3] A 486 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 25 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.0 %  (a=4.00641, tol=0.12)
+[3] A 258 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 13.9 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.2 %  (a=4.19611, tol=0.126)
+[3] A 405 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 18.7 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.6 %  (a=3.59615, tol=0.108)
+[3] A 405 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 20.8 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 4.0 %  (a=4, tol=0.12)
+[3] A 258 mg sample of amylopectin is exhaustively methylated and then hydrolyzed in acid. It yields 11.3 mg of 2,3-di-O-methylglucose. What percentage of the glucose residues were at (α1→6) branch points? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 3.4 %  (a=3.41123, tol=0.102)
+[4] Which glycosidic linkages join the glucose residues of glycogen?
+    KEY: (α1→4) in the chains and (α1→6) at the branch points  ||  wrong: (α1→4) only / (α1→6) in the chains and (α1→3) at the branch points / (β1→4) only
+[4] Which glycosidic linkages join the glucose residues of cellulose?
+    KEY: (β1→4) only  ||  wrong: (α1→4) in the chains and (α1→6) at the branch points / (α1→4) only / (α1→6) in the chains and (α1→3) at the branch points
+[4] Which glycosidic linkages join the glucose residues of amylose?
+    KEY: (α1→4) only  ||  wrong: (α1→4) in the chains and (α1→6) at the branch points / (α1→6) in the chains and (α1→3) at the branch points / (β1→4) only
+[4] Which glycosidic linkages join the glucose residues of dextran?
+    KEY: (α1→6) in the chains and (α1→3) at the branch points  ||  wrong: (α1→4) in the chains and (α1→6) at the branch points / (α1→4) only / (β1→4) only
+[5] How do glycogen and amylopectin differ?
+    KEY: Glycogen has branches every 8 to 12 residues, amylopectin every 24 to 30.  ||  wrong: Glycogen contains fructose. / Glycogen has β linkages, amylopectin α linkages. / Glycogen is unbranched.
+[6] Why does extensive branching help an animal that needs glucose quickly?
+    KEY: Degradative enzymes act at nonreducing ends, and branching provides many of them.  ||  wrong: Branch points are the only bonds enzymes can cut. / Branching makes glycogen dissolve as free glucose. / Branching raises the osmotic pressure.
+[7] Why do cells store glucose as glycogen and not as free glucose?
+    KEY: A polymer contributes very little to osmolarity, so the cell does not swell with water.  ||  wrong: Free glucose cannot be oxidized. / Free glucose is insoluble. / Glycogen can cross the plasma membrane and glucose cannot.
+[8] Cellulose and amylose are both unbranched polymers of D-glucose joined from C-1 to C-4. Why are their properties so different?
+    KEY: The linkage is β in cellulose and α in amylose, which makes one chain straight and the other helical.  ||  wrong: Amylose chains are much longer. / Cellulose contains L-glucose. / Cellulose contains nitrogen.
+[9] Glycogen disperses in hot water, but cotton cellulose does not dissolve at all. Which feature of cellulose explains this?
+    KEY: Its straight chains pack side by side with extensive hydrogen bonds between chains.  ||  wrong: It has a lower molecular weight. / It has no hydroxyl groups. / It has α1→6 branches.
+[10] How many glucose residues are there in one turn of the amylose helix?
+    KEY: Six  ||  wrong: Ten / Three / Two
+[11] Why does iodine turn starch blue?
+    KEY: Iodine ions fit inside the amylose helix.  ||  wrong: Iodine binds to cellulose impurities. / Iodine breaks the α1→6 bonds. / Iodine oxidizes the reducing end.
+[12] What is the only chemical difference between chitin and cellulose?
+    KEY: In chitin the hydroxyl group at C-2 is replaced by an acetylated amino group.  ||  wrong: Chitin has α linkages. / Chitin is branched. / Chitin is made of galactose.
+[13] Why do polysaccharides, unlike proteins, have no defined length?
+    KEY: They are made without a template, and the enzymes have no specific stopping point.  ||  wrong: Their length is set by the amount of water in the cell. / They are degraded as fast as they are made. / They are made on a template that varies in length.
+[14] Which bond does lysozyme hydrolyze?
+    KEY: The (β1→4) bond between N-acetylglucosamine and N-acetylmuramic acid in peptidoglycan  ||  wrong: The (α1→4) bond of amylose / The (α1→6) branch bond of glycogen / The peptide cross-links of peptidoglycan
+[15] Which of these is a heteropolysaccharide?
+    KEY: Peptidoglycan  ||  wrong: Cellulose / Chitin / Glycogen
+[16] Where in the human body is glycogen most concentrated?
+    KEY: In the liver, up to 7% of the wet weight  ||  wrong: In adipose tissue / In red blood cells / In the brain
+[17] According to the Color Atlas, how can a cow live on cellulose when its own enzymes cannot digest it?
+    KEY: Microorganisms living in its digestive tract break the cellulose down.  ||  wrong: It absorbs cellulose intact. / It converts cellulose to starch in the liver. / Its stomach acid hydrolyzes the β bonds.
+[18] The folding of a polysaccharide chain is described by two angles, ϕ and ψ. What do they measure?
+    KEY: Rotation about the two C—O bonds of each glycosidic linkage  ||  wrong: The angle between two branches / The angles inside each pyranose ring / The tilt of the hydroxyl groups
+
+=== gag (22 distinct)
+[0] How many negative charges does one repeating disaccharide of hyaluronan carry, as drawn in Lehninger Fig. 7-19? The unit is GlcA and GlcNAc.
+    KEY: 1 negative charge(s)  (a=1, tol=0)
+[0] How many negative charges does one repeating disaccharide of keratan sulfate carry, as drawn in Lehninger Fig. 7-19? The unit is Gal and GlcNAc 6S.
+    KEY: 1 negative charge(s)  (a=1, tol=0)
+[0] How many negative charges does one repeating disaccharide of heparin carry, as drawn in Lehninger Fig. 7-19? The unit is IdoA 2S and GlcNS 3S, 6S.
+    KEY: 5 negative charge(s)  (a=5, tol=0)
+[0] How many negative charges does one repeating disaccharide of chondroitin 4-sulfate carry, as drawn in Lehninger Fig. 7-19? The unit is GlcA and GalNAc 4S.
+    KEY: 2 negative charge(s)  (a=2, tol=0)
+[1] Which glycosaminoglycan does Lehninger describe in this way? It contributes to the tensile strength of cartilage, tendons, ligaments and the walls of the aorta.
+    KEY: Chondroitin sulfate  ||  wrong: Dermatan sulfate / Hyaluronan / Keratan sulfate
+[1] Which glycosaminoglycan does Lehninger describe in this way? It contributes to the pliability of skin.
+    KEY: Dermatan sulfate  ||  wrong: Chondroitin sulfate / Hyaluronan / Keratan sulfate
+[1] Which glycosaminoglycan does Lehninger describe in this way? It makes the synovial fluid of joints a lubricant and gives the vitreous humor of the eye its jellylike consistency.
+    KEY: Hyaluronan  ||  wrong: Chondroitin sulfate / Dermatan sulfate / Keratan sulfate
+[1] Which glycosaminoglycan does Lehninger describe in this way? It has no uronic acid and is found in the cornea and in horny structures such as hair, nails and hoofs.
+    KEY: Keratan sulfate  ||  wrong: Chondroitin sulfate / Dermatan sulfate / Hyaluronan
+[2] What do all glycosaminoglycans have in common?
+    KEY: They are unbranched polymers of a repeating disaccharide that contains an amino sugar.  ||  wrong: They are branched polymers of glucose. / They are found mainly in plants. / They are neutral and compact.
+[3] Why do glycosaminoglycans take up an extended, rodlike shape in solution?
+    KEY: Their many negative charges repel one another.  ||  wrong: They are cross-linked by peptides. / They are hydrophobic. / They form hydrogen-bonded helices like amylose.
+[4] Which glycosaminoglycan contains no uronic acid?
+    KEY: Keratan sulfate  ||  wrong: Chondroitin sulfate / Heparin / Hyaluronan
+[5] Which glycosaminoglycan is not sulfated and is not covalently attached to a core protein?
+    KEY: Hyaluronan  ||  wrong: Chondroitin sulfate / Dermatan sulfate / Heparan sulfate
+[6] L-Iduronate differs from D-glucuronate in configuration at which carbon?
+    KEY: C-5  ||  wrong: C-1 / C-2 / C-4
+[7] To which amino acid of the core protein is a glycosaminoglycan chain attached, and through what?
+    KEY: Ser, through a tetrasaccharide linker that ends in xylose  ||  wrong: Asn, through N-acetylglucosamine / Cys, through a disulfide bond / Lys, through a Schiff base
+[8] Heparin is used as a drug to prevent blood clotting. How does it work?
+    KEY: It binds antithrombin and greatly increases its ability to inhibit thrombin.  ||  wrong: It blocks the synthesis of platelets. / It hydrolyzes fibrin. / It removes Ca2+ from the blood.
+[9] Which amino acid residues of antithrombin are most likely to interact with heparin?
+    KEY: Arg and Lys  ||  wrong: Asp and Glu / Leu and Val / Ser and Thr
+[10] How is a syndecan held in the plasma membrane, and how is a glypican held?
+    KEY: A syndecan by a transmembrane domain, a glypican by a GPI anchor  ||  wrong: A syndecan by a GPI anchor, a glypican by a transmembrane domain / Both by GPI anchors / Neither is attached to the membrane
+[11] Fibroblast growth factor cannot act on its receptor until it has bound to the heparan sulfate of syndecan. What is the heparan sulfate acting as?
+    KEY: A coreceptor  ||  wrong: A second messenger / A transporter / An enzyme
+[12] What is a proteoglycan aggregate?
+    KEY: A hundred or more aggrecan molecules bound noncovalently to one molecule of hyaluronan  ||  wrong: A crystal of heparin / A glycoprotein with N-linked oligosaccharides / One core protein with one glycosaminoglycan chain
+[13] Matrix proteins such as fibronectin bind to integrins in the cell membrane through which sequence?
+    KEY: Arg–Gly–Asp (RGD)  ||  wrong: Asn–X–Ser / Lys–Asp–Glu–Leu / Ser–Gly–X–Gly
+[14] What causes the mucopolysaccharidoses, such as Hurler syndrome?
+    KEY: Defects in the enzymes that degrade glycosaminoglycans  ||  wrong: An excess of lysozyme / Defects in glycogen synthesis / Too little dietary carbohydrate
+[15] How do the sulfated glycosaminoglycans differ from hyaluronan in size?
+    KEY: They are generally much shorter.  ||  wrong: They are much longer. / They are single disaccharides. / They are the same length.
+
+=== glyco (23 distinct)
+[0] Does this describe glycoproteins or proteoglycans? They may contain N-linked glycosidic bonds.
+    KEY: Glycoproteins  ||  wrong: Proteoglycans
+[0] Does this describe glycoproteins or proteoglycans? Their carbohydrate is long, unbranched and carries many negative charges.
+    KEY: Proteoglycans  ||  wrong: Glycoproteins
+[0] Does this describe glycoproteins or proteoglycans? They are found in Golgi complexes, secretory granules and lysosomes.
+    KEY: Glycoproteins  ||  wrong: Proteoglycans
+[0] Does this describe glycoproteins or proteoglycans? Their oligosaccharides form highly specific sites for recognition and high-affinity binding by lectins.
+    KEY: Glycoproteins  ||  wrong: Proteoglycans
+[0] Does this describe glycoproteins or proteoglycans? Their carbohydrate is small, branched and structurally very diverse.
+    KEY: Glycoproteins  ||  wrong: Proteoglycans
+[0] Does this describe glycoproteins or proteoglycans? Their sugar chains are joined to Ser through a tetrasaccharide linker that begins with xylose.
+    KEY: Proteoglycans  ||  wrong: Glycoproteins
+[0] Does this describe glycoproteins or proteoglycans? Their carbohydrate is one or more sulfated glycosaminoglycan chains.
+    KEY: Proteoglycans  ||  wrong: Glycoproteins
+[0] Does this describe glycoproteins or proteoglycans? They include the heparan sulfate family.
+    KEY: Proteoglycans  ||  wrong: Glycoproteins
+[1] To which atom of which amino acid is an N-linked oligosaccharide attached?
+    KEY: The amide nitrogen of Asn  ||  wrong: The amide nitrogen of the peptide backbone / The hydroxyl oxygen of Ser or Thr / The ε-amino nitrogen of Lys
+[2] In the O-linked glycoprotein chains that Lehninger illustrates in Fig. 7-27, which sugar is attached directly to Ser or Thr?
+    KEY: N-Acetylgalactosamine  ||  wrong: Fucose / Glucose / N-Acetylglucosamine
+[3] According to the Color Atlas, what do all N-linked oligosaccharides share?
+    KEY: A core of two N-acetylglucosamine and three mannose residues  ||  wrong: A core of three glucose residues / A sulfate group on every sugar / A terminal fucose
+[4] The oligosaccharide first attached to a protein in the endoplasmic reticulum has the core (2 GlcNAc and 3 Man) plus six more mannose residues and three glucose residues. How many sugar residues is that in all?
+    KEY: 14 residues  (a=14, tol=0)
+[5] Put these stages in the making of a complex-type N-linked chain in order.
+    KEY: A 14-sugar oligosaccharide is attached to the protein  >  The three glucose residues are removed  >  The mannose residues outside the core are removed  >  Other sugars, often ending in sialic acid, are added
+[6] What gives a complex-type oligosaccharide its negative charge?
+    KEY: N-Acetylneuraminic acid at the outer ends  ||  wrong: Mannose in the core / N-Acetylglucosamine / The asparagine it is attached to
+[7] About what fraction of mammalian proteins are glycosylated?
+    KEY: About half  ||  wrong: About 1% / About 5% / Nearly all
+[8] What are mucins?
+    KEY: Glycoproteins with large numbers of O-linked oligosaccharide chains  ||  wrong: Lectins found in plant seeds / Lipids with a sialic acid head group / Sulfated glycosaminoglycans
+[9] Where in the cell are oligosaccharides added to proteins and then elaborated?
+    KEY: Added in the endoplasmic reticulum, elaborated in the Golgi complex  ||  wrong: Added in lysosomes, elaborated in mitochondria / Added in the nucleus, elaborated in the cytosol / Added outside the cell
+[10] Which is not an effect of attaching oligosaccharides to a protein?
+    KEY: It makes the protein more hydrophobic.  ||  wrong: It can force part of the protein into an extended shape. / It can label the protein for a particular destination. / It can protect the protein from proteases.
+[11] What distinguishes a ganglioside from other glycolipids?
+    KEY: Its oligosaccharide head group contains sialic acid.  ||  wrong: It has no lipid part. / It is attached to a protein. / It is found only in bacteria.
+[12] On which face of the plasma membrane are the oligosaccharides of glycolipids and glycoproteins found?
+    KEY: The outer face  ||  wrong: Both faces equally / Neither: they are inside the bilayer / The cytoplasmic face
+[13] Which part of a bacterial lipopolysaccharide is the endotoxin?
+    KEY: Lipid A  ||  wrong: The O-specific chain / The core oligosaccharide / The peptidoglycan
+[14] Which part of a lipopolysaccharide mainly determines the serotype of a bacterial strain?
+    KEY: The O-specific chain  ||  wrong: Lipid A / The fatty acids / The phosphate groups
+[15] What is glycomics?
+    KEY: The systematic characterization of all the carbohydrate components of a cell or tissue  ||  wrong: The measurement of blood glucose / The sequencing of genes for glycosidases / The study of glycogen metabolism
+
+=== code (26 distinct)
+[0] How many different linear peptides of 5 units can be made from the 20 common amino acids?
+    KEY: 3,200,000  (a=3200000, tol=0)
+[0] How many different linear oligonucleotides of 4 units can be made from the 4 common nucleotides?
+    KEY: 256  (a=256, tol=0)
+[0] How many different linear oligonucleotides of 6 units can be made from the 4 common nucleotides?
+    KEY: 4,096  (a=4096, tol=0)
+[0] How many different linear oligonucleotides of 5 units can be made from the 4 common nucleotides?
+    KEY: 1,024  (a=1024, tol=0)
+[0] How many different linear peptides of 3 units can be made from the 20 common amino acids?
+    KEY: 8,000  (a=8000, tol=0)
+[0] How many different linear peptides of 4 units can be made from the 20 common amino acids?
+    KEY: 160,000  (a=160000, tol=0)
+[0] How many different linear peptides of 6 units can be made from the 20 common amino acids?
+    KEY: 64,000,000  (a=64000000, tol=0)
+[0] How many different linear oligonucleotides of 3 units can be made from the 4 common nucleotides?
+    KEY: 64  (a=64, tol=0)
+[1] Which lectin fits this description? A lectin on hepatocytes that binds glycoproteins whose chains have lost their terminal sialic acid.
+    KEY: The asialoglycoprotein receptor  ||  wrong: Hemagglutinin (HA) / P-selectin / The mannose 6-phosphate receptor
+[1] Which lectin fits this description? A lectin of the trans Golgi complex that directs enzymes to the lysosome.
+    KEY: The mannose 6-phosphate receptor  ||  wrong: Hemagglutinin (HA) / P-selectin / The asialoglycoprotein receptor
+[1] Which lectin fits this description? A lectin on capillary endothelial cells that slows leukocytes so that they roll along the wall.
+    KEY: P-selectin  ||  wrong: Hemagglutinin (HA) / The asialoglycoprotein receptor / The mannose 6-phosphate receptor
+[1] Which lectin fits this description? The lectin of the influenza virus, which binds oligosaccharides on the host cell.
+    KEY: Hemagglutinin (HA)  ||  wrong: P-selectin / The asialoglycoprotein receptor / The mannose 6-phosphate receptor
+[2] What is a lectin?
+    KEY: A protein that binds a specific carbohydrate  ||  wrong: A lipid with a sugar head group / A sugar that binds a protein / An enzyme that hydrolyzes glycosidic bonds
+[3] Which structural feature is common in oligosaccharides but absent from nucleic acids and proteins?
+    KEY: Branching  ||  wrong: A repeating backbone / Chirality / Covalent bonds between units
+[4] Three different hexoses can be combined into a very large number of trisaccharides. Why so many?
+    KEY: Each bond can involve different carbons and can be α or β, and the chain can be linear or branched.  ||  wrong: Each hexose can be used only once. / Hexoses can be joined in only one way, but in any order. / Trisaccharides are unstable and rearrange.
+[5] What protects a newly made plasma glycoprotein from being taken up by the liver?
+    KEY: A terminal sialic acid on its oligosaccharide chains  ||  wrong: A lipid anchor / A terminal mannose 6-phosphate / Its small size
+[6] Red blood cells are treated with neuraminidase and returned to the animal. What happens to them?
+    KEY: They disappear from the bloodstream within a few hours.  ||  wrong: Nothing changes. / They circulate for much longer than normal. / They clump together and block capillaries.
+[7] In leukocyte homing, which interaction makes the cell roll along the capillary wall, and which makes it stop?
+    KEY: Selectins make it roll; an integrin makes it stop.  ||  wrong: An integrin makes it roll; selectins make it stop. / Hemagglutinin makes it roll; neuraminidase makes it stop. / Heparan sulfate does both.
+[8] What does the influenza virus use its neuraminidase (sialidase) for?
+    KEY: To cut newly made virus particles free from the host cell  ||  wrong: To attach to the host cell / To copy its genome / To enter the nucleus
+[9] How do oseltamivir (Tamiflu) and zanamivir (Relenza) work?
+    KEY: They are sugar analogs that competitively inhibit the viral neuraminidase.  ||  wrong: They are antibodies against the virus. / They block the hemagglutinin binding site on host cells. / They destroy the viral membrane.
+[10] What labels a newly made enzyme for delivery to the lysosome?
+    KEY: An oligosaccharide containing mannose 6-phosphate  ||  wrong: A GPI anchor / A heparan sulfate chain / A terminal sialic acid
+[11] Why does the mannose 6-phosphate receptor let go of its enzyme in the lysosome?
+    KEY: The lower pH of the lysosome reduces its affinity for mannose 6-phosphate.  ||  wrong: ATP is hydrolyzed. / The enzyme is cut in two. / The sugar is removed by neuraminidase.
+[12] The binding of one oligosaccharide to one carbohydrate-binding domain is sometimes only modest. How do lectins achieve strong binding?
+    KEY: Multivalency: several binding domains engage several oligosaccharides at once.  ||  wrong: They form covalent bonds with the sugar. / They hydrolyze the sugar. / They unfold on binding.
+[13] The less polar side of a sugar ring often lies against which kind of amino acid side chain in a lectin?
+    KEY: A nonpolar one, such as the indole ring of Trp  ||  wrong: A negatively charged one, such as Asp / A positively charged one, such as Lys / A small polar one, such as Ser
+[14] Ricin, the toxin of the castor bean, has a lectin subunit that binds terminal N-acetylgalactosamine residues on cells. What might work as an antidote?
+    KEY: A soluble sugar or analog that occupies the lectin’s binding site  ||  wrong: A drug that adds N-acetylgalactosamine to cell surfaces / An inhibitor of glycolysis / More castor bean extract
+[15] Which tetrasaccharide do several of the selectins involved in lymphocyte homing bind?
+    KEY: Sialyl Lewis x  ||  wrong: Maltotetraose / Mannose 6-phosphate / The proteoglycan linker
+
+=== lab (31 distinct)
+[0] Amylopectin is exhaustively methylated and then hydrolyzed in acid. What does an (α1→6) branch point become?
+    KEY: 2,3-Di-O-methylglucose  ||  wrong: 2,3,4,6-Tetra-O-methylglucose / 2,3,6-Tri-O-methylglucose / Glucose with no methyl groups
+[0] Amylopectin is exhaustively methylated and then hydrolyzed in acid. What does a residue within an (α1→4) chain become?
+    KEY: 2,3,6-Tri-O-methylglucose  ||  wrong: 2,3,4,6-Tetra-O-methylglucose / 2,3-Di-O-methylglucose / Glucose with no methyl groups
+[0] Amylopectin is exhaustively methylated and then hydrolyzed in acid. What does a nonreducing end become?
+    KEY: 2,3,4,6-Tetra-O-methylglucose  ||  wrong: 2,3,6-Tri-O-methylglucose / 2,3-Di-O-methylglucose / Glucose with no methyl groups
+[1] Which approach answers this question about an oligosaccharide? What is the overall monosaccharide composition?
+    KEY: Hydrolysis in strong acid, then chromatography of the monosaccharides  ||  wrong: Exhaustive methylation, then acid hydrolysis / Reaction with Cu2+ in alkaline solution / Stepwise removal of residues with exoglycosidases of known specificity
+[1] Which approach answers this question about an oligosaccharide? Which hydroxyl groups were in glycosidic bonds? Choose the classical chemical method.
+    KEY: Exhaustive methylation, then acid hydrolysis  ||  wrong: Hydrolysis in strong acid, then chromatography of the monosaccharides / Reaction with Cu2+ in alkaline solution / Stepwise removal of residues with exoglycosidases of known specificity
+[1] Which approach answers this question about an oligosaccharide? In what order are the residues joined?
+    KEY: Stepwise removal of residues with exoglycosidases of known specificity  ||  wrong: Exhaustive methylation, then acid hydrolysis / Hydrolysis in strong acid, then chromatography of the monosaccharides / Reaction with Cu2+ in alkaline solution
+[2] After methylation and hydrolysis, 405 mg of amylopectin gives 20.8 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 25 residues  (a=25, tol=1.25)
+[2] After methylation and hydrolysis, 258 mg of amylopectin gives 11.9 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 28 residues  (a=27.8369, tol=1.39)
+[2] After methylation and hydrolysis, 324 mg of amylopectin gives 16.6 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 25 residues  (a=25.0602, tol=1.25)
+[2] After methylation and hydrolysis, 405 mg of amylopectin gives 19.8 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 26 residues  (a=26.2626, tol=1.31)
+[2] After methylation and hydrolysis, 486 mg of amylopectin gives 25 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 25 residues  (a=24.96, tol=1.25)
+[2] After methylation and hydrolysis, 258 mg of amylopectin gives 12.6 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 26 residues  (a=26.2904, tol=1.31)
+[2] After methylation and hydrolysis, 405 mg of amylopectin gives 17.7 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 29 residues  (a=29.3785, tol=1.47)
+[2] After methylation and hydrolysis, 324 mg of amylopectin gives 15 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 28 residues  (a=27.7333, tol=1.39)
+[2] After methylation and hydrolysis, 405 mg of amylopectin gives 18.7 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 28 residues  (a=27.8075, tol=1.39)
+[2] After methylation and hydrolysis, 486 mg of amylopectin gives 22.5 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 28 residues  (a=27.7333, tol=1.39)
+[2] After methylation and hydrolysis, 258 mg of amylopectin gives 11.3 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 29 residues  (a=29.315, tol=1.47)
+[2] After methylation and hydrolysis, 486 mg of amylopectin gives 21.2 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 29 residues  (a=29.434, tol=1.47)
+[2] After methylation and hydrolysis, 324 mg of amylopectin gives 14.1 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 30 residues  (a=29.5035, tol=1.48)
+[2] After methylation and hydrolysis, 324 mg of amylopectin gives 15.8 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 26 residues  (a=26.3291, tol=1.32)
+[2] After methylation and hydrolysis, 486 mg of amylopectin gives 23.7 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 26 residues  (a=26.3291, tol=1.32)
+[2] After methylation and hydrolysis, 258 mg of amylopectin gives 13.3 mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.
+    KEY: 25 residues  (a=24.9067, tol=1.25)
+[3] In a methylation analysis, why does the amount of 2,3-di-O-methylglucose measure the number of branch points?
+    KEY: Only a branch-point residue has both C-4 and C-6 tied up in glycosidic bonds, leaving just C-2 and C-3 to be methylated.  ||  wrong: Branch points are not hydrolyzed by acid. / Methyl iodide reacts only at branch points. / Only branch points contain glucose.
+[4] Why do methyl ethers survive the acid hydrolysis step when glycosidic bonds do not?
+    KEY: Methyl ethers are stable in acid, and glycosidic bonds (acetals) are readily hydrolyzed by acid.  ||  wrong: Acid cannot reach the methyl groups. / Glycosidic bonds are stable in acid. / Methyl ethers are hydrolyzed first.
+[5] An enzyme removes one residue at a time from the end of a polysaccharide. What kind of enzyme is it?
+    KEY: An exoglycosidase  ||  wrong: A glycosyltransferase / A lectin / An endoglycosidase
+[6] An enzyme preparation degrades the O blood group antigen. Of the sugars in the antigen, only L-fucose, added in excess, blocks the reaction. What does that suggest?
+    KEY: The enzyme is an exoglycosidase that removes a terminal fucose.  ||  wrong: Fucose is not part of the antigen. / The enzyme does not act on carbohydrates. / The enzyme is an endoglycosidase that cuts in the middle of the chain.
+[7] From which end do exoglycosidases remove residues?
+    KEY: The nonreducing end or ends  ||  wrong: Either end at random / The middle of the chain / The reducing end
+[8] Why is determining the structure of an oligosaccharide harder than sequencing a protein?
+    KEY: Oligosaccharides can be branched and their units are joined by several kinds of linkage.  ||  wrong: Oligosaccharides are much larger than proteins. / Oligosaccharides contain no chiral centers. / Sugars cannot be separated by chromatography.
+[9] How can lectins be used to purify carbohydrates?
+    KEY: Attached to an insoluble support, they hold back the carbohydrates they recognize (affinity chromatography).  ||  wrong: They change the charge of the carbohydrate. / They hydrolyze unwanted carbohydrates. / They precipitate all proteins.
+[10] According to the Color Atlas, the optical rotation of a sugar solution depends on three things. Which is not one of them?
+    KEY: The pH of the solution  ||  wrong: Its concentration / The thickness of the layer of solution the light passes through / Which chiral compound is dissolved
+[11] Which two instrumental methods does oligosaccharide analysis rely on most heavily today?
+    KEY: Mass spectrometry and high-resolution NMR spectroscopy  ||  wrong: Polarimetry and titration / Ultracentrifugation and SDS gel electrophoresis / X-ray crystallography and electron microscopy

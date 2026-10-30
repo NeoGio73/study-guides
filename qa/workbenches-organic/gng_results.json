@@ -1,0 +1,872 @@
+{
+ "checks": {
+  "steps": {
+   "hk": {
+    "page": [
+     -16.7,
+     -33.4
+    ],
+    "leh": [
+     -16.7,
+     -33.4
+    ],
+    "ok": true
+   },
+   "pgi": {
+    "page": [
+     1.7,
+     null
+    ],
+    "leh": [
+     1.7
+    ],
+    "ok": true
+   },
+   "pfk": {
+    "page": [
+     -14.2,
+     -22.2
+    ],
+    "leh": [
+     -14.2,
+     -22.2
+    ],
+    "ok": true
+   },
+   "ald": {
+    "page": [
+     23.8,
+     null
+    ],
+    "leh": [
+     23.8
+    ],
+    "ok": true
+   },
+   "gapdh": {
+    "page": [
+     6.3,
+     null
+    ],
+    "leh": [
+     6.3
+    ],
+    "ok": true
+   },
+   "pgk": {
+    "page": [
+     -18.5,
+     null
+    ],
+    "leh": [
+     -18.5
+    ],
+    "ok": true
+   },
+   "pgm": {
+    "page": [
+     4.4,
+     null
+    ],
+    "leh": [
+     4.4
+    ],
+    "ok": true
+   },
+   "eno": {
+    "page": [
+     7.5,
+     null
+    ],
+    "leh": [
+     7.5
+    ],
+    "ok": true
+   },
+   "pk": {
+    "page": [
+     -31.4,
+     -16.7
+    ],
+    "leh": [
+     -31.4,
+     -16.7
+    ],
+    "ok": true
+   },
+   "fbp": {
+    "page": [
+     -16.3,
+     null
+    ],
+    "leh": [
+     -16.3
+    ],
+    "ok": true
+   },
+   "g6p": {
+    "page": [
+     -13.8,
+     null
+    ],
+    "leh": [
+     -13.8
+    ],
+    "ok": true
+   }
+  },
+  "mapInfo": [
+   "Both pathwaysPhosphohexose isomeraseGlucose 6-phosphate ⇌ fructose 6-phosphateRoleGlycolysis step 2LocationCytosolΔG′°+1.7 kJ/mol (glycolytic direction)ΔG in the cellclose to zero, so it runs either wayNear equilibrium in the cell, so it se",
+   "Both pathwaysAldolase and triose phosphate isomeraseFructose 1,6-bisphosphate ⇌ dihydroxyacetone phosphate + glyceraldehyde 3-phosphate; DHAP ⇌ glyceraldehyde 3-phosphateRoleGlycolysis steps 4 and 5LocationCytosolΔG′°+23.8 kJ/mol (glycolyti",
+   "Both pathwaysGlyceraldehyde 3-phosphate dehydrogenaseGlyceraldehyde 3-phosphate + Pi + NAD⁺ ⇌ 1,3-bisphosphoglycerate + NADH + H⁺RoleGlycolysis step 6LocationCytosolΔG′°+6.3 kJ/mol (glycolytic direction)ΔG in the cellclose to zero, so it ru",
+   "Both pathwaysPhosphoglycerate kinase1,3-Bisphosphoglycerate + ADP ⇌ 3-phosphoglycerate + ATPRoleGlycolysis step 7LocationCytosolΔG′°-18.5 kJ/mol (glycolytic direction)ΔG in the cellclose to zero, so it runs either wayReversible in the cell ",
+   "Both pathwaysPhosphoglycerate mutase3-Phosphoglycerate ⇌ 2-phosphoglycerateRoleGlycolysis step 8LocationCytosolΔG′°+4.4 kJ/mol (glycolytic direction)ΔG in the cellclose to zero, so it runs either wayNear equilibrium; serves both pathways.Cl",
+   "Both pathwaysEnolase2-Phosphoglycerate ⇌ phosphoenolpyruvate + H₂ORoleGlycolysis step 9LocationCytosolΔG′°+7.5 kJ/mol (glycolytic direction)ΔG in the cellclose to zero, so it runs either wayNear equilibrium; serves both pathways.Click anoth",
+   "Glycolysis onlyHexokinaseGlucose + ATP → glucose 6-phosphate + ADPRoleGlycolysis step 1LocationCytosolΔG′°-16.7 kJ/molΔG in the cell-33.4 kJ/mol (erythrocytes)Irreversible in the cell. Liver uses the isozyme hexokinase IV (glucokinase). Glu",
+   "Glycolysis onlyPhosphofructokinase-1 (PFK-1)Fructose 6-phosphate + ATP → fructose 1,6-bisphosphate + ADPRoleGlycolysis step 3LocationCytosolΔG′°-14.2 kJ/molΔG in the cell-22.2 kJ/mol (erythrocytes)The committed step of glycolysis. Activated",
+   "Glycolysis onlyPyruvate kinasePhosphoenolpyruvate + ADP → pyruvate + ATPRoleGlycolysis step 10LocationCytosolΔG′°-31.4 kJ/molΔG in the cell-16.7 kJ/mol (erythrocytes)The liver isozyme (L) is inhibited by ATP, acetyl-CoA, long-chain fatty ac",
+   "Gluconeogenesis onlyERGlucose 6-phosphataseGlucose 6-phosphate + H₂O → glucose + PiRoleBypass 3LocationLumen of the endoplasmic reticulum (liver, kidney)ΔG′°-13.8 kJ/molGlucose 6-phosphate enters the ER on a transporter (T1); glucose and Pi",
+   "Gluconeogenesis onlyFructose 1,6-bisphosphatase (FBPase-1)Fructose 1,6-bisphosphate + H₂O → fructose 6-phosphate + PiRoleBypass 2LocationCytosolΔG′°-16.3 kJ/molMg²⁺-dependent hydrolysis; no ATP is made. Inhibited by AMP and by fructose 2,6-",
+   "Gluconeogenesis onlyMitochondriaPyruvate carboxylasePyruvate + HCO₃⁻ + ATP → oxaloacetate + ADP + PiRoleBypass 1, first halfLocationMitochondrial matrixBypass 1 overallPyruvate → PEP: ΔG′° = +0.9 kJ/mol; ΔG ≈ −25 kJ/mol in the cellBiotin ca",
+   "Gluconeogenesis onlyMitochondriaPEP carboxykinase (PEPCK)Oxaloacetate + GTP ⇌ phosphoenolpyruvate + CO₂ + GDPRoleBypass 1, second halfLocationMitochondria and cytosol (both, in humans)Bypass 1 overallPyruvate → PEP: ΔG′° = +0.9 kJ/mol; ΔG ≈"
+  ],
+  "keq": [
+   {
+    "v": 31.4,
+    "out": "K′eq = 3.14 × 10⁻⁶",
+    "K": "0.00000314",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 3.14 × 10⁻⁶. To run forward, the cell ",
+    "bad": false
+   },
+   {
+    "v": 23.8,
+    "out": "K′eq = 6.74 × 10⁻⁵",
+    "K": "0.0000674",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 6.74 × 10⁻⁵. To run forward, the cell ",
+    "bad": false
+   },
+   {
+    "v": 0.9,
+    "out": "K′eq = 0.695",
+    "K": "0.695",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only 0.70. To run forward, the cell must keep pro",
+    "bad": false
+   },
+   {
+    "v": -16.3,
+    "out": "K′eq = 719",
+    "K": "719",
+    "txt": "At equilibrium products outnumber reactants by about 719 to 1, so the step runs forward easily.",
+    "bad": false
+   },
+   {
+    "v": -13.8,
+    "out": "K′eq = 262",
+    "K": "262",
+    "txt": "At equilibrium products outnumber reactants by about 262 to 1, so the step runs forward easily.",
+    "bad": false
+   },
+   {
+    "v": 0,
+    "out": "K′eq ≈ 1.0",
+    "K": "1.00",
+    "txt": "K′eq is close to 1: at equilibrium products and reactants are present in similar amounts, so the con",
+    "bad": false
+   },
+   {
+    "v": -0.0001,
+    "out": "K′eq ≈ 1.0",
+    "K": "1.00",
+    "txt": "K′eq is close to 1: at equilibrium products and reactants are present in similar amounts, so the con",
+    "bad": false
+   },
+   {
+    "v": 0.4,
+    "out": "K′eq ≈ 0.85",
+    "K": "0.851",
+    "txt": "K′eq is close to 1: at equilibrium products and reactants are present in similar amounts, so the con",
+    "bad": false
+   },
+   {
+    "v": 150,
+    "out": "K′eq = 5.12 × 10⁻²⁷",
+    "K": "5.12e-27",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 5.12 × 10⁻²⁷. To run forward, the cell",
+    "bad": false
+   },
+   {
+    "v": -150,
+    "out": "K′eq = 1.95 × 10²⁶",
+    "K": "1.95e+26",
+    "txt": "At equilibrium products outnumber reactants by about 2.0e+26 to 1, so the step runs forward easily.",
+    "bad": false
+   },
+   {
+    "v": 1000,
+    "out": "K′eq = 5.12 × 10⁻²⁷",
+    "K": "5.38e-176",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 5.12 × 10⁻²⁷. To run forward, the cell",
+    "bad": false
+   },
+   {
+    "v": -1000,
+    "out": "K′eq = 1.95 × 10²⁶",
+    "K": "1.86e+175",
+    "txt": "At equilibrium products outnumber reactants by about 2.0e+26 to 1, so the step runs forward easily. ",
+    "bad": false
+   },
+   {
+    "v": 1800,
+    "out": "K′eq = 5.12 × 10⁻²⁷",
+    "K": "3.28e-316",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 5.12 × 10⁻²⁷. To run forward, the cell",
+    "bad": false
+   },
+   {
+    "v": -1800,
+    "out": "K′eq = 1.95 × 10²⁶",
+    "K": "Infinity",
+    "txt": "At equilibrium products outnumber reactants by about 2.0e+26 to 1, so the step runs forward easily. ",
+    "bad": false
+   },
+   {
+    "v": 5000,
+    "out": "K′eq = 5.12 × 10⁻²⁷",
+    "K": "0.00",
+    "txt": "At equilibrium the ratio [products]/[reactants] is only about 5.12 × 10⁻²⁷. To run forward, the cell",
+    "bad": false
+   },
+   {
+    "v": -1000000000,
+    "out": "K′eq = 1.95 × 10²⁶",
+    "K": "Infinity",
+    "txt": "At equilibrium products outnumber reactants by about 2.0e+26 to 1, so the step runs forward easily. ",
+    "bad": false
+   }
+  ],
+  "dgCell": [
+   {
+    "lab": "Aldolase (ΔG′° +23.8)",
+    "page": [
+     "8.2e-5",
+     "-24.2 kJ",
+     "-0.4 kJ/mol"
+    ],
+    "indep": "-0.44",
+    "ok": true
+   },
+   {
+    "lab": "FBPase-1 (ΔG′° -16.3)",
+    "page": [
+     "4.5e-4",
+     "-19.9 kJ",
+     "-36.2 kJ/mol"
+    ],
+    "indep": "-36.15",
+    "ok": true
+   },
+   {
+    "lab": "Glucose 6-phosphatase (ΔG′° -13.8)",
+    "page": [
+     "6.0e-2",
+     "-7.2 kJ",
+     "-21.0 kJ/mol"
+    ],
+    "indep": "-21.04",
+    "ok": true
+   }
+  ],
+  "ledger": [
+   {
+    "s": "pyr",
+    "v": [
+     "−4",
+     "−2",
+     "−2",
+     "−6"
+    ],
+    "eq": "Overall: 2 Pyruvate + 4 ATP + 2 GTP + 2 NADH + 2 H⁺ + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi + 2 NAD⁺",
+    "ok": true
+   },
+   {
+    "s": "lac",
+    "v": [
+     "−4",
+     "−2",
+     "0",
+     "−6"
+    ],
+    "eq": "Overall: 2 Lactate + 4 ATP + 2 GTP + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi",
+    "ok": true
+   },
+   {
+    "s": "gol",
+    "v": [
+     "−2",
+     "0",
+     "+2",
+     "−2"
+    ],
+    "eq": "Overall: 2 Glycerol + 2 ATP + 2 NAD⁺ + 2 H₂O → glucose + 2 ADP + 2 Pi + 2 NADH + 2 H⁺",
+    "ok": true
+   }
+  ],
+  "ledgerEqCoeffs": [
+   {
+    "s": "pyr",
+    "eq": "Overall: 2 Pyruvate + 4 ATP + 2 GTP + 2 NADH + 2 H⁺ + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi + 2 NAD⁺"
+   },
+   {
+    "s": "lac",
+    "eq": "Overall: 2 Lactate + 4 ATP + 2 GTP + 4 H₂O → glucose + 4 ADP + 2 GDP + 6 Pi"
+   },
+   {
+    "s": "gol",
+    "eq": "Overall: 2 Glycerol + 2 ATP + 2 NAD⁺ + 2 H₂O → glucose + 2 ADP + 2 Pi + 2 NADH + 2 H⁺"
+   }
+  ],
+  "sources": [
+   [
+    0,
+    "Lactate",
+    "pcard right",
+    "Right. Makes glucose. Lactate dehydrogenase turns it into py"
+   ],
+   [
+    0,
+    "Palmitate",
+    "pcard right",
+    "Right. No net glucose. β-Oxidation gives 8 acetyl-CoA. Each "
+   ],
+   [
+    0,
+    "Alanine",
+    "pcard right",
+    "Right. Makes glucose. Transamination gives pyruvate. This is"
+   ],
+   [
+    0,
+    "Leucine",
+    "pcard right",
+    "Right. No net glucose. Exclusively ketogenic: its carbons en"
+   ],
+   [
+    0,
+    "Glycerol",
+    "pcard right",
+    "Right. Makes glucose. In the liver, glycerol kinase and glyc"
+   ],
+   [
+    0,
+    "Ethanol",
+    "pcard right",
+    "Right. No net glucose. Oxidized to acetaldehyde, then acetat"
+   ],
+   [
+    0,
+    "Aspartate",
+    "pcard right",
+    "Right. Makes glucose. Transamination gives oxaloacetate dire"
+   ],
+   [
+    0,
+    "Acetyl-CoA",
+    "pcard right",
+    "Right. No net glucose. Pyruvate dehydrogenase is irreversibl"
+   ],
+   [
+    0,
+    "Glutamate",
+    "pcard right",
+    "Right. Makes glucose. Becomes α-ketoglutarate, which the cit"
+   ],
+   [
+    0,
+    "Lysine",
+    "pcard right",
+    "Right. No net glucose. Exclusively ketogenic, like leucine: "
+   ],
+   [
+    0,
+    "Propionyl-CoA",
+    "pcard right",
+    "Right. Makes glucose. Carboxylated to methylmalonyl-CoA and "
+   ],
+   [
+    0,
+    "Acetoacetate",
+    "pcard right",
+    "Right. No net glucose. Used by extrahepatic tissues by conve"
+   ],
+   [
+    "score",
+    0,
+    "12 / 12|12"
+   ],
+   [
+    1,
+    "Lactate",
+    "pcard wrong",
+    "Not quite. Makes glucose. Lactate dehydrogenase turns it int"
+   ],
+   [
+    1,
+    "Palmitate",
+    "pcard wrong",
+    "Not quite. No net glucose. β-Oxidation gives 8 acetyl-CoA. E"
+   ],
+   [
+    1,
+    "Alanine",
+    "pcard wrong",
+    "Not quite. Makes glucose. Transamination gives pyruvate. Thi"
+   ],
+   [
+    1,
+    "Leucine",
+    "pcard wrong",
+    "Not quite. No net glucose. Exclusively ketogenic: its carbon"
+   ],
+   [
+    1,
+    "Glycerol",
+    "pcard wrong",
+    "Not quite. Makes glucose. In the liver, glycerol kinase and "
+   ],
+   [
+    1,
+    "Ethanol",
+    "pcard wrong",
+    "Not quite. No net glucose. Oxidized to acetaldehyde, then ac"
+   ],
+   [
+    1,
+    "Aspartate",
+    "pcard wrong",
+    "Not quite. Makes glucose. Transamination gives oxaloacetate "
+   ],
+   [
+    1,
+    "Acetyl-CoA",
+    "pcard wrong",
+    "Not quite. No net glucose. Pyruvate dehydrogenase is irrever"
+   ],
+   [
+    1,
+    "Glutamate",
+    "pcard wrong",
+    "Not quite. Makes glucose. Becomes α-ketoglutarate, which the"
+   ],
+   [
+    1,
+    "Lysine",
+    "pcard wrong",
+    "Not quite. No net glucose. Exclusively ketogenic, like leuci"
+   ],
+   [
+    1,
+    "Propionyl-CoA",
+    "pcard wrong",
+    "Not quite. Makes glucose. Carboxylated to methylmalonyl-CoA "
+   ],
+   [
+    1,
+    "Acetoacetate",
+    "pcard wrong",
+    "Not quite. No net glucose. Used by extrahepatic tissues by c"
+   ],
+   [
+    "score",
+    1,
+    "12 / 12|0"
+   ]
+  ],
+  "regulation": {
+   "n": 2000,
+   "viol": [],
+   "nviol": 0,
+   "msgs": {
+    "Opposing enzymes are about equally activ": 353,
+    "Both cycles point toward pyruvate. F2,6B": 308,
+    "Both cycles point toward glucose. Low F2": 552,
+    "The two cycles disagree. In the cell, ho": 787
+   },
+   "pres": [
+    [
+     "Fed liver",
+     {
+      "pfk": 56,
+      "fbp": 29,
+      "pk": 56,
+      "pc": 17,
+      "msg": "Both cycles point toward pyruvate. F2,6BP or AMP keeps PFK-1 on and FBPase-1 off, and F1,6BP feeds forward to pyruvate kinase: glycolysis.Substrate cycling (both directions at once): moderate."
+     }
+    ],
+    [
+     "Fasted liver",
+     {
+      "pfk": 5,
+      "fbp": 84,
+      "pk": 2,
+      "pc": 82,
+      "msg": "Both cycles point toward glucose. Low F2,6BP has released FBPase-1, and acetyl-CoA has switched on pyruvate carboxylase: this liver is making glucose.Substrate cycling (both directions at once): low."
+     }
+    ],
+    [
+     "Low energy charge",
+     {
+      "pfk": 70,
+      "fbp": 19,
+      "pk": 61,
+      "pc": 2,
+      "msg": "Both cycles point toward pyruvate. F2,6BP or AMP keeps PFK-1 on and FBPase-1 off, and F1,6BP feeds forward to pyruvate kinase: glycolysis.Substrate cycling (both directions at once): low."
+     }
+    ]
+   ]
+  },
+  "fasting": [
+   [
+    0,
+    [
+     85,
+     0,
+     15
+    ],
+    "fed"
+   ],
+   [
+    1,
+    [
+     50,
+     36,
+     14
+    ],
+    "fed"
+   ],
+   [
+    2,
+    [
+     32,
+     53,
+     14
+    ],
+    "fed"
+   ],
+   [
+    4,
+    [
+     15,
+     69,
+     16
+    ],
+    "fast"
+   ],
+   [
+    6,
+    [
+     7,
+     74,
+     19
+    ],
+    "fast"
+   ],
+   [
+    8,
+    [
+     4,
+     70,
+     26
+    ],
+    "fast"
+   ],
+   [
+    12,
+    [
+     1,
+     55,
+     44
+    ],
+    "fast"
+   ],
+   [
+    16,
+    [
+     0,
+     36,
+     63
+    ],
+    "fast"
+   ],
+   [
+    20,
+    [
+     0,
+     22,
+     78
+    ],
+    "fast"
+   ],
+   [
+    24,
+    [
+     0,
+     14,
+     86
+    ],
+    "fast"
+   ],
+   [
+    30,
+    [
+     0,
+     7,
+     93
+    ],
+    "fast"
+   ],
+   [
+    36,
+    [
+     0,
+     3,
+     97
+    ],
+    "fast"
+   ],
+   [
+    48,
+    [
+     0,
+     1,
+     99
+    ],
+    "fast"
+   ]
+  ],
+  "cycles": [
+   [
+    5,
+    "5 g (28 mmol)",
+    [
+     "0.06 mol",
+     "0.17 mol",
+     "0.11 mol"
+    ]
+   ],
+   [
+    30,
+    "30 g (167 mmol)",
+    [
+     "0.33 mol",
+     "1.00 mol",
+     "0.67 mol"
+    ]
+   ],
+   [
+    90,
+    "90 g (500 mmol)",
+    [
+     "1.00 mol",
+     "3.00 mol",
+     "2.00 mol"
+    ]
+   ],
+   [
+    100,
+    "100 g (555 mmol)",
+    [
+     "1.11 mol",
+     "3.33 mol",
+     "2.22 mol"
+    ]
+   ]
+  ],
+  "compartments": [
+   [
+    "pyr",
+    [
+     "Step 1 of 10 Alanine aminotransferaseAlanine + α-ketoglutarate → pyruvate + glutamate. The amino gro",
+     "Step 2 of 10 Into the mitochondrionPyruvate crosses the inner membrane on the mitochondrial pyruvate",
+     "Step 3 of 10 Pyruvate carboxylasePyruvate + HCO₃⁻ + ATP → oxaloacetate + ADP + Pi. Biotin carries th",
+     "Step 4 of 10 Mitochondrial malate dehydrogenaseOxaloacetate + NADH + H⁺ → malate + NAD⁺. There is no",
+     "Step 5 of 10 Malate leavesMalate crosses the inner membrane on the malate–α-ketoglutarate transporte",
+     "Step 6 of 10 Cytosolic malate dehydrogenaseMalate + NAD⁺ → oxaloacetate + NADH + H⁺. The reducing eq",
+     "Step 7 of 10 Cytosolic PEP carboxykinaseOxaloacetate + GTP → PEP + CO₂ + GDP.",
+     "Step 8 of 10 Back up the shared stepsPEP → 2-phosphoglycerate → 3-phosphoglycerate → 1,3-bisphosphog",
+     "Step 9 of 10 Glucose 6-phosphataseGlucose 6-phosphate enters the ER lumen on a transporter, and gluc",
+     "Step 10 of 10 To the bloodGlucose returns to the cytosol and leaves the hepatocyte through GLUT2."
+    ]
+   ],
+   [
+    "lac",
+    [
+     "Step 1 of 8 Lactate dehydrogenaseLactate + NAD⁺ → pyruvate + NADH + H⁺. This NADH stays in the cytos",
+     "Step 2 of 8 Into the mitochondrionPyruvate crosses the inner membrane on the mitochondrial pyruvate ",
+     "Step 3 of 8 Pyruvate carboxylasePyruvate + HCO₃⁻ + ATP → oxaloacetate + ADP + Pi. Biotin carries the",
+     "Step 4 of 8 Mitochondrial PEP carboxykinaseOxaloacetate + GTP → PEP + CO₂ + GDP, inside the matrix. ",
+     "Step 5 of 8 PEP leavesPEP crosses the inner membrane on an anion transporter.",
+     "Step 6 of 8 Back up the shared stepsPEP → 2-phosphoglycerate → 3-phosphoglycerate → 1,3-bisphosphogl",
+     "Step 7 of 8 Glucose 6-phosphataseGlucose 6-phosphate enters the ER lumen on a transporter, and gluco",
+     "Step 8 of 8 To the bloodGlucose returns to the cytosol and leaves the hepatocyte through GLUT2."
+    ]
+   ]
+  ],
+  "ethanol": [
+   [
+    -3.3,
+    [
+     "13 : 1",
+     "154%"
+    ]
+   ],
+   [
+    -3.1,
+    [
+     "20 : 1",
+     "100%"
+    ]
+   ],
+   [
+    -2.5,
+    [
+     "79 : 1",
+     "26%"
+    ]
+   ],
+   [
+    -2,
+    [
+     "251 : 1",
+     "8%"
+    ]
+   ]
+  ],
+  "ethanolIndep": {
+   "Keq": "25076",
+   "lpSober": "19.9"
+  },
+  "quizKeys": [
+   {
+    "st": "map",
+    "q": "Which glycolytic enzyme is not used in gluconeogenesis?",
+    "key": "Phosphofructokinase-1"
+   },
+   {
+    "st": "map",
+    "q": "Where is pyruvate carboxylase located?",
+    "key": "Mitochondrial matrix"
+   },
+   {
+    "st": "map",
+    "q": "Which tissue releases newly made glucose into the blood?",
+    "key": "Liver"
+   },
+   {
+    "st": "energy",
+    "q": "Aldolase has ΔG′° = +23.8 kJ/mol, yet it runs in both directions in the cell. Why?",
+    "key": "Its products are kept at low concentrations, so ΔG in the cell is close to zero"
+   },
+   {
+    "st": "energy",
+    "q": "What is ΔG′° for pyruvate kinase run in reverse?",
+    "key": "+31.4 kJ/mol"
+   },
+   {
+    "st": "energy",
+    "q": "Why don’t bypasses 2 and 3 need ATP?",
+    "key": "They are hydrolyses of phosphate esters, which are already favorable"
+   },
+   {
+    "st": "cell",
+    "q": "Starting from pyruvate, why does oxaloacetate leave the mitochondrion as malate?",
+    "key": "There is no oxaloacetate transporter, and malate also carries reducing equivalents for cytosolic NADH"
+   },
+   {
+    "st": "cell",
+    "q": "Starting from lactate, where is oxaloacetate converted to PEP?",
+    "key": "In the mitochondrion, by mitochondrial PEPCK"
+   },
+   {
+    "st": "cell",
+    "q": "Why can’t muscle glycogen raise blood glucose directly?",
+    "key": "Muscle lacks glucose 6-phosphatase"
+   },
+   {
+    "st": "sources",
+    "q": "Which of these can humans convert into net glucose?",
+    "key": "Glycerol"
+   },
+   {
+    "st": "sources",
+    "q": "Why can’t acetyl-CoA give net glucose in animals?",
+    "key": "Pyruvate dehydrogenase is irreversible, and the two acetyl carbons are lost as CO₂ in the citric acid cycle"
+   },
+   {
+    "st": "sources",
+    "q": "Which amino acid is exclusively ketogenic?",
+    "key": "Lysine"
+   },
+   {
+    "st": "ledger",
+    "q": "How many high-energy phosphates (ATP + GTP) does it take to make one glucose from 2 pyruvate?",
+    "key": "6"
+   },
+   {
+    "st": "ledger",
+    "q": "Which step of gluconeogenesis consumes NADH?",
+    "key": "Glyceraldehyde 3-phosphate dehydrogenase"
+   },
+   {
+    "st": "ledger",
+    "q": "Why is glycerol a cheaper precursor than lactate?",
+    "key": "It enters at DHAP, skipping the ATP- and GTP-consuming steps between pyruvate and 1,3-bisphosphoglycerate"
+   },
+   {
+    "st": "reg",
+    "q": "What does fructose 2,6-bisphosphate do in the liver?",
+    "key": "Activates PFK-1 and inhibits FBPase-1"
+   },
+   {
+    "st": "reg",
+    "q": "Acetyl-CoA builds up in the liver during fasting. What is the effect?",
+    "key": "It activates pyruvate carboxylase and inhibits pyruvate dehydrogenase"
+   },
+   {
+    "st": "reg",
+    "q": "What is a substrate (futile) cycle?",
+    "key": "Two opposing reactions running at the same time, with net hydrolysis of ATP"
+   },
+   {
+    "st": "fast",
+    "q": "How does glucagon lower fructose 2,6-bisphosphate in the liver?",
+    "key": "PKA phosphorylates PFK-2/FBPase-2, activating its phosphatase activity"
+   },
+   {
+    "st": "fast",
+    "q": "After about a day without food, most blood glucose comes from…",
+    "key": "gluconeogenesis"
+   },
+   {
+    "st": "fast",
+    "q": "Why does glucagon inactivate pyruvate kinase L?",
+    "key": "So PEP made by gluconeogenesis isn’t converted straight back to pyruvate"
+   },
+   {
+    "st": "cycles",
+    "q": "What is the net cost to the body of one turn of the Cori cycle?",
+    "key": "4 ATP equivalents"
+   },
+   {
+    "st": "cycles",
+    "q": "Besides carbon, what does the glucose–alanine cycle carry to the liver?",
+    "key": "Amino nitrogen, for urea synthesis"
+   },
+   {
+    "st": "cycles",
+    "q": "During a fast, where does the liver get the ATP to run gluconeogenesis?",
+    "key": "Oxidation of fatty acids"
+   }
+  ]
+ },
+ "faults": []
+}

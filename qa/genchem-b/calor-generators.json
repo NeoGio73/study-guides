@@ -1,0 +1,278 @@
+{
+ "PER": 2000,
+ "kinds": {
+  "heat": {
+   "m": {
+    "count": 2231,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 1.0194825376054401e-13,
+    "notes": {},
+    "samples": {
+     "DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": "A sample of gold (specific heat 0.129 J/(g·°C)) releases 616 J of heat, and its temperature changes from 71.1 °C to 35.7 °C. What is the mass of the sample? || ans 134.89248018219243 slip 133.75892992856055",
+     "same value: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": "A sample of aluminum (specific heat 0.897 J/(g·°C)) releases 4.23 kJ of heat, and its temperature changes from 78.0 °C to 39.0 °C. What is the mass of the sample? || ans 120.91587342423462 slip 120.91587342423462"
+    },
+    "slipsAccepted": {
+     "DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 3,
+     "same value: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 1
+    },
+    "slipNotFired": {}
+   },
+   "q": {
+    "count": 4708,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 1.0747148536756185e-13,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "c": {
+    "count": 2300,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 1.0617589460446375e-13,
+    "notes": {},
+    "samples": {
+     "same value: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": "A 33.3 g sample of an unknown metal releases 1.39 kJ of heat, and its temperature changes from 92.8 °C to 46.4 °C. What is the specific heat of the metal? || ans 0.899606503054779 slip 0.899606503054779",
+     "DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": "A 13.9 g sample of an unknown metal releases 189 J of heat, and its temperature changes from 60.7 °C to 30.4 °C. What is the specific heat of the metal? || ans 0.44874991096231925 slip 0.44727375993941687"
+    },
+    "slipsAccepted": {
+     "same value: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 2,
+     "DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.": 3
+    },
+    "slipNotFired": {}
+   },
+   "dT": {
+    "count": 2289,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "Tf": {
+    "count": 2221,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0,
+    "notes": {},
+    "samples": {
+     "DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.": "A 13.6 g sample of iron (specific heat 0.449 J/(g·°C)) at 77.3 °C releases 237 J of heat. What is its final temperature? || ans 38.4882614961352 slip 38.811738503864795"
+    },
+    "slipsAccepted": {
+     "DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.": 8
+    },
+    "slipNotFired": {}
+   },
+   "qk": {
+    "count": 2351,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 8.999670885936129e-14,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   }
+  },
+  "exchange": {
+   "c": {
+    "count": 4522,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 2.590767859061552e-13,
+    "notes": {},
+    "samples": {
+     "DIFFERENT value accepted: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the water.": "A 94.5 g piece of an unknown metal at 80.89 °C is dropped into 94.9 g of water at 18.29 °C in an insulated cup. The final temperature of the water and the metal is 23.54 °C. The specific heat of water is 4.184 J/(g·°C). || ans 2084.5734 slip 2075.7870000000003",
+     "DIFFERENT value accepted: It looks like the mass of the water was used. Divide by the mass of the metal.": "A 94.5 g piece of an unknown metal at 80.89 °C is dropped into 94.9 g of water at 18.29 °C in an insulated cup. The final temperature of the water and the metal is 23.54 °C. The specific heat of water is 4.184 J/(g·°C). || ans 0.38463779908941204 slip 0.38301656495204883",
+     "same value: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the water.": "A 105 g piece of an unknown metal at 97.96 °C is dropped into 105 g of water at 24.71 °C in an insulated cup. The final temperature of the water and the metal is 26.90 °C. The specific heat of water is 4.184 J/(g·°C). || ans 962.1107999999999 slip 962.1107999999999",
+     "same value: It looks like the mass of the water was used. Divide by the mass of the metal.": "A 105 g piece of an unknown metal at 97.96 °C is dropped into 105 g of water at 24.71 °C in an insulated cup. The final temperature of the water and the metal is 26.90 °C. The specific heat of water is 4.184 J/(g·°C). || ans 0.12894680551646495 slip 0.12894680551646495"
+    },
+    "slipsAccepted": {
+     "DIFFERENT value accepted: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the water.": 46,
+     "DIFFERENT value accepted: It looks like the mass of the water was used. Divide by the mass of the metal.": 46,
+     "same value: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the water.": 10,
+     "same value: It looks like the mass of the water was used. Divide by the mass of the metal.": 10
+    },
+    "slipNotFired": {}
+   },
+   "Tf": {
+    "count": 2378,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0.024688020352540908,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   }
+  },
+  "coffee": {
+   "neut": {
+    "count": 5100,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 1.7915476706913206e-13,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "diss": {
+    "count": 4117,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0.008911861687915903,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "predict": {
+    "count": 2283,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0.006151261787303735,
+    "notes": {},
+    "samples": {
+     "DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.": "9.64 g of ammonium nitrate (NH4NO3) is dissolved in 50.0 g of water at 24.87 °C in a coffee-cup calorimeter. The enthalpy of solution is +25.7 kJ/mol. What is the final temperature of the solution? Assume the solution has a specific heat of 4.184 J/(g·°C) and that no heat is lost to the cup. || ans 12.465657001178572 slip 12.404342998821429"
+    },
+    "slipsAccepted": {
+     "DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.": 7
+    },
+    "slipNotFired": {}
+   }
+  },
+  "thermo": {
+   "g2kJ": {
+    "count": 8102,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0.19841269841272105,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "kJ2g": {
+    "count": 4849,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0.19801980198021246,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   },
+   "mol2kJ": {
+    "count": 2383,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 0,
+    "notes": {},
+    "samples": {},
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   }
+  },
+  "hess": {
+   "hess": {
+    "count": 2300,
+    "exceptions": 0,
+    "displayedRejected": 0,
+    "displayedSig": 0,
+    "caretRejected": 0,
+    "trueRejected": 0,
+    "true3Rejected": 0,
+    "maxDevOverTol": 3.031649005909761e-12,
+    "notes": {
+     "target ΔH vs ΔHf data: 1NO+1O→1NO2 page -304.1, ΔHf-based -306.3": 185,
+     "given equation ΔH vs ΔHf data: 2O→1O2 page -495 ΔHf-based -498.4": 52,
+     "target ΔH vs ΔHf data: 2N2+5O2→2N2O5 page 28.4, ΔHf-based 22.6": 217,
+     "given equation ΔH vs ΔHf data: 2N2O5+2H2O→4HNO3 page -153.2 ΔHf-based -147.4": 16,
+     "given equation ΔH vs ΔHf data: 1N2O5+1H2O→2HNO3 page -76.6 ΔHf-based -73.7": 79,
+     "given equation ΔH vs ΔHf data: 2HNO3→1N2O5+1H2O page 76.6 ΔHf-based 73.7": 52,
+     "given equation ΔH vs ΔHf data: 1O2→2O page 495 ΔHf-based 498.4": 90,
+     "given equation ΔH vs ΔHf data: 1O→0.5O2 page -247.5 ΔHf-based -249.2": 25,
+     "given equation ΔH vs ΔHf data: 4HNO3→2N2O5+2H2O page 153.2 ΔHf-based 147.4": 26,
+     "given equation ΔH vs ΔHf data: 0.5O2→1O page 247.5 ΔHf-based 249.2": 18
+    },
+    "samples": {
+     "target ΔH vs ΔHf data: 1NO+1O→1NO2 page -304.1, ΔHf-based -306.3": "",
+     "given equation ΔH vs ΔHf data: 2O→1O2 page -495 ΔHf-based -498.4": "",
+     "target ΔH vs ΔHf data: 2N2+5O2→2N2O5 page 28.4, ΔHf-based 22.6": "",
+     "given equation ΔH vs ΔHf data: 2N2O5+2H2O→4HNO3 page -153.2 ΔHf-based -147.4": "",
+     "given equation ΔH vs ΔHf data: 1N2O5+1H2O→2HNO3 page -76.6 ΔHf-based -73.7": "",
+     "given equation ΔH vs ΔHf data: 2HNO3→1N2O5+1H2O page 76.6 ΔHf-based 73.7": "",
+     "given equation ΔH vs ΔHf data: 1O2→2O page 495 ΔHf-based 498.4": "",
+     "given equation ΔH vs ΔHf data: 1O→0.5O2 page -247.5 ΔHf-based -249.2": "",
+     "given equation ΔH vs ΔHf data: 4HNO3→2N2O5+2H2O page 153.2 ΔHf-based 147.4": "",
+     "given equation ΔH vs ΔHf data: 0.5O2→1O page 247.5 ΔHf-based 249.2": ""
+    },
+    "slipsAccepted": {},
+    "slipNotFired": {}
+   }
+  }
+ },
+ "pageErrors": []
+}

@@ -1,0 +1,16 @@
+heat      m        n=2231 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} SLIP-ACCEPTED {"DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.":3}
+heat      q        n=4708 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} 
+heat      c        n=2300 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} SLIP-ACCEPTED {"DIFFERENT value accepted: It looks like the final temperature was used. Use the change in temperature: ΔT = final − initial.":3}
+heat      dT       n=2289 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} 
+heat      Tf       n=2221 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} SLIP-ACCEPTED {"DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.":8}
+heat      qk       n=2351 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} 
+exchange  c        n=4522 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} SLIP-ACCEPTED {"DIFFERENT value accepted: It looks like the mass of the metal was used. The water is what you have the specific heat for: use the mass of the water.":46,"DIFFERENT value accepted: It looks like the mass of the water was used. Divide by the mass of the metal.":46}
+exchange  Tf       n=2378 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.025 {} 
+coffee    neut     n=5100 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} 
+coffee    diss     n=4117 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.009 {} 
+coffee    predict  n=2283 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.006 {} SLIP-ACCEPTED {"DIFFERENT value accepted: That is the size of the temperature change. The final temperature is the starting temperature plus the change.":7}
+thermo    g2kJ     n=8102 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.198 {} 
+thermo    kJ2g     n=4849 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.198 {} 
+thermo    mol2kJ   n=2383 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {} 
+hess      hess     n=2300 exc=0 shownRejected=0 caretRej=0 indepOutsideTol=0 maxDev/tol=0.000 {"target ΔH vs ΔHf data: 1NO+1O→1NO2 page -304.1, ΔHf-based -306.3":185,"given equation ΔH vs ΔHf data: 2O→1O2 page -495 ΔHf-based -498.4":52,"target ΔH vs ΔHf data: 2N2+5O2→2N2O5 page 28.4, ΔHf-based 22.6":217,"given equation ΔH vs ΔHf data: 2N2O5+2H2O→4HNO3 page -153.2 ΔHf-based -147.4":16,"given equation ΔH vs ΔHf data: 1N2O5+1H2O→2HNO3 page -76.6 ΔHf-based -73.7":79,"given equation ΔH vs ΔHf data: 2HNO3→1N2O5+1H2O page 76.6 ΔHf-based 73.7":52,"given equation ΔH vs ΔHf data: 1O2→2O page 495 ΔHf-based 498.4":90,"given equation ΔH vs ΔHf data: 1O→0.5O2 page -247.5 ΔHf-based -249.2":25,"given equation ΔH vs ΔHf data: 4HNO3→2N2O5+2H2O page 153.2 ΔHf-based 147.4":26,"given equation ΔH vs ΔHf data: 0.5O2→1O page 247.5 ΔHf-based 249.2":18} 
+page errors 0 []

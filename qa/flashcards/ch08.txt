@@ -1,0 +1,410 @@
+#c001 [redox 1] Term
+  F: In organic chemistry, what counts as a reduction? What symbol is used for it?
+  B: An increase in hydrogen content or a decrease in oxygen content. General symbol: [H].
+  N: Example: carboxylic acid → aldehyde → primary alcohol are both reductions.
+#c002 [redox 2] Term
+  F: What counts as an oxidation? What symbol is used for it?
+  B: An increase in oxygen content (or of any element more electronegative than carbon), or a decrease in hydrogen content. General symbol: [O].
+#c003 [redox 3] Concept
+  F: Arrange these from lowest to highest oxidation state.
+  SF: [aceticacid:acetic acid] "·" [ethane:ethane] "·" [acetaldehyde:acetaldehyde] "·" [ethanol:ethanol]
+  B: alkane < alcohol < aldehyde < carboxylic acid
+  SB: [ethane:ethane (nocap)] --[O] / --> [ethanol:ethanol (nocap)] --[O] / --> [acetaldehyde:acetaldehyde (nocap)] --[O] / --> [aceticacid:acetic acid (nocap)]
+  N: Each step to the right is an [O]; each step back to the left is an [H].
+#c004 [redox 4] Concept
+  F: Is this an oxidation or a reduction?
+  SF: [propene:propene] --H_2, Pt / --> [propane:propane]
+  B: Reduction. Two hydrogens are added and no oxygen. Catalytic hydrogenation is a reduction.
+#c005 [redox 5] Concept
+  F: Is this an oxidation or a reduction?
+  SF: [propene:propene] --(1) OsO_4 / (2) NaHSO_3, H_2O--> [propanediol:1,2-propanediol]
+  B: Oxidation. Two new C–O bonds form.
+#c006 [redox 6] Concept
+  F: Adding HBr to an alkene: oxidation, reduction, or neither?
+  SF: [propene:propene (nocap)] --HBr / --> [bromo2p:2-bromopropane (nocap)]
+  B: Neither, overall.
+  N: One carbon gains a C–H bond (reduced) while the other gains a C–Br bond (oxidized), so the overall oxidation level is unchanged.
+#c007 [hydrog 1] Reaction
+  F: Predict the product.
+  SF: [propene:propene] + "H_2" --Ni, Pd, or Pt / 25 °C--> ?
+  B: Propane — the unsaturated alkene becomes a saturated alkane.
+  SB: [propane:propane]
+#c008 [hydrog 2] Concept
+  F: Pt, Pd and Ni are heterogeneous hydrogenation catalysts. What does that mean, and how do they work?
+  B: They are finely divided, insoluble metals. H_2 and the alkene both adsorb onto the metal surface, and the two C–H bonds then form stepwise.
+#c009 [hydrog 3] Term
+  F: Define syn addition and anti addition.
+  B: Syn: both new groups add to the same face of the double bond.Anti: the two groups add to opposite faces.
+#c010 [hydrog 4] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [dmchene:1,2-dimethylcyclohexene] --H_2, Pt / --> ?
+  B: cis-1,2-Dimethylcyclohexane.
+  SB: [cisdmch:cis-1,2-dimethylcyclohexane]
+  N: Syn addition: both H atoms are delivered from the catalyst surface to the same face, so the two methyl groups end up on the same side of the ring.
+  3D: cisdmch cis-1,2-dimethylcyclohexane: both CH₃ groups on the same side None
+#c011 [hydrog 5] Concept
+  F: Why does partial hydrogenation of vegetable oil raise health concerns?
+  B: It turns liquid oils into solid cooking fats, but it also isomerizes some cis C=C bonds to trans. These “trans fats” have been associated with an increased risk of cardiovascular disease.
+#c012 [hx 1] Concept
+  F: In an electrophilic addition, what role does the alkene play in step 1, and what does it become in step 2?
+  B: Step 1: its loosely held π electrons make the alkene a nucleophile, which attacks H^+.Step 2: the resulting carbocation is an electrophile, attacked by the nucleophile X^–.
+#c013 [hx 2] Reaction
+  F: Predict the major product.
+  SF: [propene:propene] --HBr / --> ?
+  B: 2-Bromopropane (major). Only a little 1-bromopropane forms.
+  SB: [bromo2p:2-bromopropane]
+  N: H adds to the CH_2 end to give the more stable 2° carbocation; Br^– then bonds to that carbon.
+#c014 [hx 3] Term
+  F: State Markovnikov’s rule (classic version).
+  B: When HX adds to an alkene, the H adds to the double-bond carbon that already has more hydrogens, so X ends up on the more substituted carbon.
+#c015 [hx 4] Term
+  F: State the modern version of Markovnikov’s rule.
+  B: In the ionic addition of an unsymmetrical reagent to a double bond, the positive part of the reagent attaches to the carbon that produces the more stable carbocation intermediate.
+#c016 [hx 5] Term
+  F: What is a regioselective reaction?
+  B: A reaction that could give two or more constitutional isomers but actually gives only one, or mostly one.
+#c017 [hx 6] Concept
+  F: In HX addition, which step is rate-determining? How do the two steps compare energetically?
+  B: Step 1, forming the carbocation, is slow and highly endergonic: it is rate-determining. Step 2, capture by X^–, is fast and highly exergonic.
+#c018 [hx 7] Concept
+  F: Rank carbocation stability: methyl, 1°, 2°, 3°.
+  B: 3° > 2° > 1° > methyl
+  N: Alkyl groups donate electron density and help stabilize the positive charge.
+#c019 [hx 8] Concept
+  F: Why does the more stable carbocation also form faster?
+  B: The transition state for step 1 resembles the carbocation, so anything that stabilizes the carbocation also stabilizes that transition state. The 2° or 3° path has the lower ΔG^‡, so it wins.
+#c020 [hx 9] Reaction
+  F: Predict the major product.
+  SF: [isobutylene:2-methylpropene] --HBr / --> ?
+  B: tert-Butyl bromide.
+  SB: [tbubr:tert-butyl bromide]
+  N: Formed through the 3° carbocation. Isobutyl bromide, which would need a 1° carbocation, hardly forms.
+#c021 [hx 10] Reaction
+  F: Predict the major product.
+  SF: [mchex:1-methylcyclohexene] --HCl / --> ?
+  B: 1-Chloro-1-methylcyclohexane.
+  SB: [clmch:1-chloro-1-methylcyclohexane]
+  N: H adds to the ring CH carbon; Cl ends up on the 3° carbon.
+#c022 [hx 11] Reaction
+  F: Predict the major product. (Watch the reagents!)
+  SF: [propene:propene] --HBr / ROOR (peroxide)--> ?
+  B: 1-Bromopropane — anti-Markovnikov. Peroxides reverse the regioselectivity.
+  SB: [bromo1p:1-bromopropane]
+  N: With peroxides the reaction runs through radicals, not carbocations: a Br• atom adds first, to the CH_2 end, giving the more stable 2° radical, which then takes an H from HBr.
+#c023 [hx 12] Concept
+  F: Does the peroxide effect also work with HCl or HI?
+  B: No — only with HBr. For HCl and HI one of the radical chain steps is too unfavorable, so they still add the Markovnikov way.
+#c024 [hx 13] Reaction
+  F: The alkyl halide is treated with sodium ethoxide. What forms?
+  SF: [bromo2p:2-bromopropane] --NaOCH_2CH_3 / ethanol, heat--> ?
+  B: Mostly propene: the alkene comes back.
+  SB: [propene:propene]
+  N: The strong base removes H and Br from neighboring carbons (an elimination, E2). Elimination is the reverse of addition, and it is one way to prepare alkenes.
+#c025 [hydration 1] Reaction
+  F: Predict the product.
+  SF: [isobutylene:2-methylpropene] --H_2O, H_3O^+ / 25 °C--> ?
+  B: tert-Butyl alcohol: Markovnikov addition of water.
+  SB: [tbuoh:tert-butyl alcohol]
+  N: H adds to the CH_2; OH ends up on the 3° carbon.
+#c026 [hydration 2] Concept
+  F: After the alkene is protonated to the 3° carbocation, what are the next two steps of acid-catalyzed hydration?
+  B: (2) Water, acting as a nucleophile, attacks the carbocation to give a protonated alcohol (an oxonium ion).(3) Another water molecule removes the H^+, giving the alcohol and regenerating H_3O^+.
+  N: Step 1, forming the carbocation, is the slow, rate-determining step.
+#c027 [hydration 3] Concept
+  F: Acid-catalyzed hydration is the reverse of which reaction? How do you push it toward the alcohol?
+  B: It is the reverse of the acid-catalyzed dehydration of an alcohol. Dilute aqueous acid (lots of water) favors hydration; concentrated acid and heat favor dehydration.
+#c028 [hydration 4] Reaction
+  F: Predict the product.
+  SF: [mcpent:1-methylcyclopentene] --H_2O, H_3O^+ / --> ?
+  B: 1-Methylcyclopentanol (Markovnikov).
+  SB: [mcpentol:1-methylcyclopentanol]
+#c029 [rearr 1] Term
+  F: What is a 1,2-shift? Name the two common kinds.
+  B: A group moves, with its bonding electrons, from a carbon to the neighboring carbocation carbon.• Hydride shift (H:^–)• Methanide (methyl) shift (CH_3:^–)
+#c030 [rearr 2] Concept
+  F: Why do carbocations rearrange?
+  B: To become a more stable carbocation, for example 2° → 3°.
+#c031 [rearr 3] Reaction
+  F: Predict the major product.
+  SF: [dmbutene:3,3-dimethyl-1-butene] --HBr / --> ?
+  B: 2-Bromo-2,3-dimethylbutane.
+  SB: [brdmb:2-bromo-2,3-dimethylbutane]
+  N: A 2° carbocation forms first. A methyl shift from the neighboring carbon turns it into a 3° carbocation, which Br^– then captures.
+#c032 [rearr 4] Reaction
+  F: Predict the major product.
+  SF: [mbutene:3-methyl-1-butene] --HBr / --> ?
+  B: 2-Bromo-2-methylbutane.
+  SB: [brmb:2-bromo-2-methylbutane]
+  N: The 2° carbocation undergoes a hydride shift to give a 3° carbocation, which Br^– captures.
+#c033 [rearr 5] Reaction
+  F: Predict the major product.
+  SF: [dmbutene:3,3-dimethyl-1-butene] --H_3O^+ / --> ?
+  B: 2,3-Dimethyl-2-butanol.
+  SB: [dmb2ol:2,3-dimethyl-2-butanol]
+  N: Same methyl shift as with HBr. Hydration goes through a free carbocation too, so water captures the rearranged 3° cation.
+#c034 [rearr 6] Reaction
+  F: Predict the major product.
+  SF: [mbutene:3-methyl-1-butene] --H_3O^+ / --> ?
+  B: 2-Methyl-2-butanol.
+  SB: [mb2ol:2-methyl-2-butanol]
+  N: A hydride shift turns the 2° carbocation into a 3° one before water attacks.
+#c035 [rearr 7] Concept
+  F: How can you spot a reaction where a rearrangement is likely?
+  B: Draw the first carbocation. If the neighboring carbon is more substituted and carries an H or CH_3 that can move, expect a 1,2-shift to the more stable cation.
+  N: Typical case: a C=C right next to a branch point, as in 3-methyl-1-butene or 3,3-dimethyl-1-butene.
+#c036 [oxymerc 1] Reaction
+  F: Predict the product.
+  SF: [dmbutene:3,3-dimethyl-1-butene] --(1) Hg(OAc)_2, THF–H_2O / (2) NaBH_4, OH^–--> ?
+  B: 3,3-Dimethyl-2-butanol — Markovnikov, with no methyl shift.
+  SB: [dmb2ol33:3,3-dimethyl-2-butanol]
+  N: Compare: acid-catalyzed hydration of the same alkene rearranges to 2,3-dimethyl-2-butanol.
+#c037 [oxymerc 2] Concept
+  F: Why use oxymercuration–demercuration instead of acid-catalyzed hydration?
+  B: It gives the Markovnikov alcohol without carbocation rearrangements, under mild conditions.
+#c038 [oxymerc 3] Reagent
+  F: In oxymercuration–demercuration, what does step 2 (NaBH_4, OH^–) do?
+  B: Demercuration: NaBH_4 replaces the –HgOAc group with an H.
+#c039 [oxymerc 4] Concept ENRICH
+  F: Why doesn’t oxymercuration rearrange?
+  B: The alkene attacks ^+HgOAc to form a mercury-bridged carbocation (mercurinium ion). The positive charge is shared between Hg and the more substituted carbon: enough δ+ there to direct water to it (Markovnikov), but not enough for a free carbocation that could rearrange.
+#c040 [oxymerc 5] Reaction
+  F: Predict the product.
+  SF: [mchex:1-methylcyclohexene] --(1) Hg(OAc)_2, THF–H_2O / (2) NaBH_4, OH^–--> ?
+  B: 1-Methylcyclohexanol.
+  SB: [mchexol:1-methylcyclohexanol]
+#c041 [hydrob 1] Term
+  F: What does the name hydroboration tell you?
+  B: H and B (from BH_3) add across the C=C bond. A second step with H_2O_2 and HO^– then replaces the boron with OH.
+#c042 [hydrob 2] Reaction
+  F: Predict the product.
+  SF: [propene:propene] --(1) BH_3·THF / (2) H_2O_2, HO^–--> ?
+  B: 1-Propanol — anti-Markovnikov.
+  SB: [propanol:1-propanol]
+  N: The OH ends up on the less substituted carbon.
+#c043 [hydrob 3] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [mcpent:1-methylcyclopentene] --(1) BH_3·THF / (2) H_2O_2, HO^–--> ?
+  B: trans-2-Methylcyclopentanol (+ enantiomer).
+  SB: [tmcpol:trans-2-methylcyclopentanol] "+ enantiomer"
+  N: H and B add syn, with B on the less substituted carbon. Oxidation replaces B with OH with retention of configuration. Since the new H and OH are syn, the OH ends up trans to CH_3.
+  3D: tmcpol trans-2-methylcyclopentanol: OH and CH₃ on opposite faces None
+#c044 [hydrob 4] Concept
+  F: Summarize hydroboration–oxidation: regiochemistry, stereochemistry, rearrangements?
+  B: Anti-Markovnikov · syn addition of H and OH · no rearrangements (no carbocation forms).
+#c045 [hydrob 5] Concept
+  F: Why is BH_3 used as a complex with THF?
+  B: Free BH_3 exists as diborane, B_2H_6, a toxic gas. The oxygen of THF donates an electron pair to boron (a Lewis acid–base complex), giving the convenient reagent BH_3·THF.
+#c046 [hydrob 6] Concept ENRICH
+  F: Why does boron add to the less substituted carbon?
+  B: B and H add in one concerted, four-center step on the same face. Boron bonds to the less hindered carbon, and in the transition state a partial positive charge builds on the more substituted carbon, which receives the H.
+#c047 [hydrob 7] Reagent
+  F: Which reagents accomplish this conversion?
+  SF: [isobutylene:2-methylpropene] --? / --> [ibuoh:2-methyl-1-propanol]
+  B: (1) BH_3·THF  (2) H_2O_2, HO^–
+  N: OH on the less substituted carbon means anti-Markovnikov hydration: hydroboration–oxidation.
+#c048 [halogen 1] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [chex:cyclohexene] --Br_2 / CCl_4, –5 °C--> ?
+  B: trans-1,2-Dibromocyclohexane, as a racemic mixture.
+  SB: [tdbch:trans-1,2-dibromocyclohexane] "+ enantiomer"
+  N: Anti addition: the two Br atoms add to opposite faces.
+#c049 [halogen 2] Concept
+  F: Cl_2 and Br_2 add to alkenes. Why aren’t F_2 and I_2 used?
+  B: F_2 reacts with explosive violence. I_2 addition is endothermic: vicinal diiodides fall apart back to the alkene and I_2.
+#c050 [halogen 3] Term
+  F: Define vicinal and geminal.
+  B: Vicinal (vic): on neighboring carbons, as in a 1,2-dibromide.Geminal (gem): both on the same carbon.
+#c051 [halogen 4] Concept
+  F: Br_2 in CCl_4 is added to an unknown in the dark, and the red-brown color disappears quickly. What does that tell you?
+  B: An alkene (or alkyne) is present. Br_2 added to it, forming a colorless vic-dibromide.
+  N: Alkanes don’t react with bromine in the dark.
+#c052 [halogen 5] Concept
+  F: Br_2 is nonpolar. How does it react with an alkene? (two steps)
+  B: The approaching π electrons polarize Br_2.(1) The alkene attacks the near Br, displacing Br^– and forming a cyclic bromonium ion.(2) Br^– attacks one carbon from the back side (S_N2-like), opening the ring to give the vic-dibromide.
+#c053 [halogen 6] Concept
+  F: What is the evidence for a bromonium ion instead of an open carbocation?
+  B: The stereochemistry: only anti addition is seen; cyclic alkenes give only trans dibromides. An open carbocation could be attacked from either face, giving both cis and trans products.
+#c054 [halogen 7] Concept
+  F: Br^– can open the bromonium ion at either carbon. Are the two products identical?
+  SF: [cpent:cyclopentene] --Br_2 / --> "trans-1,2-dibromocyclopentane"
+  B: No — they are enantiomers, (1R,2R) and (1S,2S), formed in equal amounts: a racemic mixture.
+  SB: [tdbcp:(1R,2R)-1,2-dibromocyclopentane] "and" [tdbcp2:(1S,2S)-1,2-dibromocyclopentane]
+  N: Drag each model below and try to make them match. You can’t: they are non-superimposable mirror images.
+  3D: tdbcp_pair Drag each one. Can you make them match? ['(1R,2R)', '(1S,2S)']
+#c055 [halogen 8] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [tbutene:trans-2-butene] --Br_2 / CCl_4--> ?
+  B: meso-2,3-Dibromobutane (2R,3S).
+  SB: [mesodbb:meso-2,3-dibromobutane]
+  N: Anti addition to a trans alkene gives the meso compound. cis-2-Butene gives the racemic (2R,3R)/(2S,3S) pair instead.
+#c056 [halogen 9] Reaction
+  F: Predict the product.
+  SF: [propene:propene] --Cl_2 / CCl_4--> ?
+  B: 1,2-Dichloropropane, a vic-dichloride.
+  SB: [dcp:1,2-dichloropropane]
+#c057 [halohyd 1] Term
+  F: What is a halohydrin?
+  B: A compound with a halogen and an OH on neighboring carbons. It forms when X_2 adds to an alkene in water.
+  SB: [bromoethanol:2-bromoethanol]
+#c058 [halohyd 2] Concept
+  F: Halogenation in water gives mainly the halohydrin, not the dihalide. Why?
+  B: Water acts as the nucleophile that opens the halonium ion. It is present in large excess, so it outcompetes the X^– ions.
+#c059 [halohyd 3] Reaction
+  F: Predict the major product.
+  SF: [isobutylene:2-methylpropene] --Br_2, H_2O / --> ?
+  B: 1-Bromo-2-methyl-2-propanol.
+  SB: [bromohydrin:1-bromo-2-methyl-2-propanol]
+  N: OH goes on the more substituted carbon; Br goes on the CH_2.
+#c060 [halohyd 4] Concept
+  F: Unsymmetrical alkene + Br_2/H_2O: which carbon gets the OH, and why?
+  B: The more substituted carbon. In the bromonium ion it carries more of the δ+ charge, so water attacks there. The Br ends up on the carbon with more hydrogens (Markovnikov).
+#c061 [halohyd 5] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [cpent:cyclopentene] --Br_2, H_2O / --> ?
+  B: trans-2-Bromocyclopentanol (+ enantiomer).
+  SB: [tbcpol:trans-2-bromocyclopentanol] "+ enantiomer"
+  N: Anti addition: water opens the bromonium ion from the face opposite the Br.
+#c062 [epox 1] Term
+  F: What is an epoxide? What is another name for it?
+  B: A three-membered cyclic ether (a C–C–O ring). Epoxides are also called oxiranes.
+#c063 [epox 2] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [cbutene:cis-2-butene] --RCO_3H / (a peroxy acid)--> ?
+  B: cis-2,3-Dimethyloxirane (a meso compound).
+  SB: [cisepox:cis-2,3-dimethyloxirane]
+  N: Syn addition of O: a cis alkene gives a cis epoxide. A carboxylic acid (RCO_2H) is the by-product.
+  3D: cisepox cis-2,3-dimethyloxirane: both CH₃ groups on the same side of the ring None
+#c064 [epox 3] Concept
+  F: Describe the mechanism of epoxidation by a peroxy acid.
+  B: A single concerted step through a cyclic transition state. The peroxy acid transfers one O atom to the alkene, both C–O bonds form on the same face (syn), and a carboxylic acid is released.
+#c065 [epox 4] Reaction
+  F: Predict the product.
+  SF: [propene:propene] --(1) OsO_4, pyridine / (2) NaHSO_3, H_2O--> ?
+  B: 1,2-Propanediol (propylene glycol).
+  SB: [propanediol:1,2-propanediol]
+#c066 [epox 5] Reaction
+  F: Predict the product.
+  SF: [ethene:ethene] --KMnO_4, cold / OH^–, H_2O--> ?
+  B: 1,2-Ethanediol (ethylene glycol).
+  SB: [glycol:ethylene glycol (1,2-ethanediol)]
+#c067 [epox 6] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [cpent:cyclopentene] --KMnO_4, cold / OH^–, H_2O--> ?
+  B: cis-1,2-Cyclopentanediol — a meso compound.
+  SB: [cpdiol:cis-1,2-cyclopentanediol]
+  N: Syn dihydroxylation puts both OH groups on the same face. Rotate the model: a mirror plane cuts through the molecule, so it is achiral even with two stereocenters.
+  3D: cpdiol cis-1,2-cyclopentanediol (meso) None
+#c068 [epox 7] Term
+  F: What is a glycol?
+  B: A 1,2-diol (vicinal diol), such as ethylene glycol.
+#c069 [epox 8] Concept ENRICH
+  F: Why do OsO_4 and cold KMnO_4 give syn diols?
+  B: Both oxygens of the metal oxide add to the same face, forming a cyclic osmate or manganate ester. Cleaving the O–metal bonds leaves the C–O bonds intact, so the syn relationship is kept.
+#c070 [epox 9] Concept
+  F: Alkene + cold, dilute KMnO_4 vs. alkene + hot KMnO_4: what is the difference?
+  B: Cold, dilute, basic KMnO_4 stops at the syn 1,2-diol.Hot KMnO_4 goes further and cleaves the C=C into carbonyl compounds: acids, ketones or CO_2.
+#c071 [cleave 1] Concept
+  F: Hot KMnO_4 cleavage: what does each type of alkene carbon become?
+  B: =CH_2 (unsubstituted) → CO_2=CHR (monosubstituted) → carboxylic acid (a carboxylate until acid workup)=CR_2 (disubstituted) → ketone
+#c072 [cleave 2] Reaction
+  F: Predict the product(s).
+  SF: [butene2:2-butene] --(1) KMnO_4, OH^–, heat / (2) H_3O^+--> ?
+  B: Two molecules of acetic acid (from either cis- or trans-2-butene).
+  SB: "2 ×" [aceticacid:acetic acid]
+  N: Each =CH(CH_3) carbon becomes a carboxylate, then acetic acid after H_3O^+.
+#c073 [cleave 3] Reaction
+  F: Predict the product(s).
+  SF: [mbutene2:2-methyl-1-butene] --(1) KMnO_4, OH^–, heat / (2) H_3O^+--> ?
+  B: 2-Butanone + CO_2.
+  SB: [butanone:2-butanone] + [co2:CO₂]
+  N: The disubstituted carbon becomes a ketone; the =CH_2 carbon becomes CO_2.
+#c074 [cleave 4] Concept
+  F: How is KMnO_4 used as a test for alkenes?
+  B: If an alkene (or alkyne) is present, the purple color of permanganate disappears and a brown MnO_2 precipitate forms.
+#c075 [cleave 5] Puzzle
+  F: An unknown alkene, C_7H_12, gives only this product with hot KMnO_4. What is the alkene?
+  SF: "C_7H_12" --(1) KMnO_4, OH^–, heat / (2) H_3O^+--> [oxohept:6-oxoheptanoic acid]
+  B: 1-Methylcyclohexene.
+  SB: [mchex:1-methylcyclohexene]
+  N: A single product that keeps all 7 carbons means the C=C was in a ring. The ketone end came from the carbon bearing CH_3; the acid end came from the =CH– carbon.
+#c076 [cleave 6] Concept
+  F: Ozonolysis (O_3, then Zn/HOAc): what does each type of alkene carbon become?
+  B: =CH_2 → formaldehyde=CHR → aldehyde=CR_2 → ketone
+  N: Less oxidized than with hot KMnO_4: the aldehydes are not oxidized on to acids.
+#c077 [cleave 7] Reaction
+  F: Predict the products.
+  SF: [m2b:2-methyl-2-butene] --(1) O_3, CH_2Cl_2, –78 °C / (2) Zn / HOAc--> ?
+  B: Acetone + acetaldehyde.
+  SB: [acetone:acetone] + [acetaldehyde:acetaldehyde]
+#c078 [cleave 8] Reaction
+  F: Predict the products.
+  SF: [mbutene:3-methyl-1-butene] --(1) O_3, CH_2Cl_2, –78 °C / (2) Zn / HOAc--> ?
+  B: 2-Methylpropanal (isobutyraldehyde) + formaldehyde.
+  SB: [ibual:2-methylpropanal (isobutyraldehyde)] + [formald:formaldehyde]
+#c079 [cleave 9] Puzzle
+  F: An alkene, C_6H_12, gives acetone as the only product of ozonolysis. What is the alkene?
+  B: 2,3-Dimethyl-2-butene.
+  SB: [tme:2,3-dimethyl-2-butene]
+  N: Both carbons of the C=C are C(CH_3)_2, so each half becomes acetone.
+#c080 [cleave 10] Reagent
+  F: Which reagent gives these two products: O_3 then Zn/HOAc, or hot KMnO_4?
+  SF: [m2b:2-methyl-2-butene] --? / --> [acetone:acetone] + [acetaldehyde:acetaldehyde]
+  B: O_3, then Zn/HOAc.
+  N: Hot KMnO_4 would oxidize the acetaldehyde piece on to acetic acid.
+#c081 [cleave 11] Concept
+  F: How does ozone cleave a C=C bond?
+  B: O_3 adds across the double bond to form an unstable initial ozonide. It fragments, and the pieces recombine into an ozonide. Zn in acetic acid then converts the ozonide into the two carbonyl compounds.
+#c082 [carbene 1] Term
+  F: What is a carbene?
+  B: A neutral, divalent carbon: two bonds plus a lone pair (six valence electrons), for example :CH_2, methylene. Carbenes are highly reactive.
+#c083 [carbene 2] Concept
+  F: How is methylene (:CH_2) made from diazomethane?
+  SF: [diazomethane:diazomethane] --heat or light / --> ?
+  B: Heat or light splits diazomethane into :CH_2 and N_2. Loss of the very stable N_2 gas drives the reaction.
+#c084 [carbene 3] Reaction
+  F: Predict the product.
+  SF: [chex:cyclohexene] --CH_2N_2 / light--> ?
+  B: Bicyclo[4.1.0]heptane: a cyclopropane fused to the ring.
+  SB: [norcarane:bicyclo[4.1.0]heptane]
+  N: Carbenes add to C=C bonds to make cyclopropanes.
+#c085 [carbene 4] Concept
+  F: How is dichlorocarbene (:CCl_2) made?
+  SF: [chcl3:chloroform] --R–O^– K^+ / --> ?
+  B: A strong base (e.g., an alkoxide R–O^–K^+) removes H^+ from chloroform to give ^–:CCl_3, which then loses Cl^– to give :CCl_2.
+#c086 [carbene 5] Reaction
+  F: Predict the product. Show the stereochemistry.
+  SF: [tbutene:trans-2-butene] --CHCl_3 / KOC(CH_3)_3--> ?
+  B: trans-1,1-Dichloro-2,3-dimethylcyclopropane (+ enantiomer).
+  SB: [tdccp:trans-1,1-dichloro-2,3-dimethylcyclopropane] "+ enantiomer"
+  N: Carbene addition is stereospecific: groups that are trans in the alkene stay trans in the cyclopropane, and cis stays cis.
+  3D: tdccp trans-1,1-dichloro-2,3-dimethylcyclopropane None
+#c087 [carbene 6] Reaction
+  F: Predict the product. Name the reaction.
+  SF: [chex:cyclohexene] --CH_2I_2 / Zn(Cu)--> ?
+  B: Bicyclo[4.1.0]heptane, by the Simmons–Smith cyclopropane synthesis.
+  SB: [norcarane:bicyclo[4.1.0]heptane]
+#c088 [carbene 7] Term
+  F: What is a carbenoid? Give the Simmons–Smith example.
+  B: A carbene-like species that transfers a CH_2 to an alkene without being a free carbene.CH_2I_2 + Zn(Cu) → ICH_2ZnI
+#c089 [review 1] Big picture
+  F: Which alkene additions are anti?
+  B: X_2 addition (Br_2, Cl_2) and halohydrin formation (X_2/H_2O). Both go through a cyclic halonium ion.
+#c090 [review 2] Big picture
+  F: Which alkene additions are syn?
+  B: Catalytic hydrogenation · hydroboration–oxidation · epoxidation · OsO_4 or cold KMnO_4 dihydroxylation · carbene and Simmons–Smith cyclopropanation
+#c091 [review 3] Big picture
+  F: Which reactions can give rearranged products?
+  B: The ones with free carbocations: HX addition (no peroxides) and acid-catalyzed hydration.
+  N: Oxymercuration, hydroboration and X_2 addition do not rearrange.
+#c092 [review 4] Big picture
+  F: Which reactions give anti-Markovnikov products?
+  B: HBr with peroxides (ROOR) and hydroboration–oxidation.
+#c093 [review 5] Big picture
+  F: 3-Methyl-1-butene is hydrated three ways. Give each product.(a) H_3O^+ (b) Hg(OAc)_2, H_2O; then NaBH_4 (c) BH_3·THF; then H_2O_2, HO^–
+  SF: [mbutene:3-methyl-1-butene]
+  B: (a) rearranged · (b) Markovnikov · (c) anti-Markovnikov
+  SB: "(a)" [mb2ol:2-methyl-2-butanol] "(b)" [mb2ol3:3-methyl-2-butanol] "(c)" [mb1ol:3-methyl-1-butanol]
+  N: (a) A hydride shift gives the 3° alcohol. (b) Markovnikov with no shift. (c) OH on the end carbon.
+#c094 [review 6] Big picture
+  F: Which reagent would you choose to turn an alkene into…(1) a 1,2-diol? (2) aldehydes or ketones? (3) carboxylic acids or ketones?
+  B: (1) OsO_4 or cold, dilute KMnO_4(2) O_3, then Zn/HOAc(3) hot KMnO_4, then H_3O^+

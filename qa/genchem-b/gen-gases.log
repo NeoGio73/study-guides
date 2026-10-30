@@ -1,0 +1,185 @@
+pres[0] conv                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.014    
+pres[1] conv                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.014    
+pres[2] conv                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.014    
+pres[3] mano                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[4] mano                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[5] pres#5               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[6] mcHighest            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[7] pres#7               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[8] pres#8               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[9] pres#9               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[10] pres#10             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[11] pres#11             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[12] pres#12             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+pres[13] closed              n=2000 redrawn=0 MSG-DROPPED {"You combined the height with atmospheric pressure. The far side of a c":18} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[0] bV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[1] bP                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[2] bV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[3] bP                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[4] bMixed              n=2000 redrawn=33 MSG-DROPPED {"You multiplied by P₂/P₁. Pressure and volume move in opposite directio":8} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[5] bTank               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[6] mcFactor            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[7] boyle#7             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[8] boyle#8             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[9] boyle#9             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[10] mcSets             n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+boyle[11] boyle#11           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[0] cV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[1] cT                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[2] cV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[3] cT                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[4] c2k               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[5] k2c               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[6] ln2               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[7] cFactor           n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[8] charles#8         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[9] charles#9         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[10] charles#10       n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[11] charles#11       n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[12] charles#12       n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+charles[13] charles#13       n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[0] glP                   n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[1] glT                   n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[2] tire                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[3] avV                   n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[4] avAdd                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[5] stpV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.009    
+gay[6] stpN                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.009    
+gay[7] glP                   n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[8] mcSame                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[9] mcHeavier             n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[10] gay#10               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[11] gay#11               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[12] gay#12               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+gay[13] gay#13               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[0] combV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[1] combP                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[2] combT                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[3] toSTP                n=2000 redrawn=287 MSG-DROPPED {"Your pressure ratio is upside down. It should be P₁/P₂.":138} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[4] combV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[5] combFactor           n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[6] mcWhich              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[7] comb#7               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[8] comb#8               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+comb[9] comb#9               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+ideal[0] iP                  n=2000 redrawn=0 MSG-DROPPED {"You multiplied by V. Solving PV = nRT for P means dividing by V.":3} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+ideal[1] iV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+ideal[2] iN                  n=2000 redrawn=14 MSG-DROPPED {"Your fraction is upside down: n = PV ÷ RT.":4} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+ideal[3] iT                  n=2000 redrawn=15 MSG-DROPPED {"Your fraction is upside down: T = PV ÷ nR.":9} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.003    
+ideal[4] massV               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.034    
+ideal[5] massIn              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.034    
+ideal[6] iV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+ideal[7] iN                  n=2000 redrawn=12 MSG-DROPPED {"Your fraction is upside down: n = PV ÷ RT.":4} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+ideal[8] ideal#8             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+ideal[9] ideal#9             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+ideal[10] ideal#10           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+ideal[11] ideal#11           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+ideal[12] mcEffect           n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[0] dQ                   n=2000 redrawn=14 MSG-DROPPED {"Your fraction is upside down: d = PM ÷ RT.":3} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.097    
+dens[1] mFromD               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+dens[2] mFromMass            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+dens[3] stpD                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.108    
+dens[4] ident                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[5] dQ                   n=2000 redrawn=16 MSG-DROPPED {"Your fraction is upside down: d = PM ÷ RT.":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.097    
+dens[6] mFromMass            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+dens[7] mcDense              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[8] mcRise               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[9] dens#9               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[10] dens#10             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dens[11] dens#11             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[0] total              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[1] missing            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[2] fromX              n=2000 redrawn=105 MSG-DROPPED {"That is the partial pressure of oxygen. Use the moles of nitrogen on t":1,"That is the partial pressure of carbon dioxide. Use the moles of neon ":1,"That is the partial pressure of nitrogen. Use the moles of carbon diox":2,"That is the partial pressure of nitrogen. Use the moles of argon on to":1,"That is the partial pressure of carbon dioxide. Use the moles of heliu":1,"That is the partial pressure of carbon dioxide. Use the moles of nitro":1,"That is the partial pressure of carbon dioxide. Use the moles of oxyge":1,"That is the partial pressure of helium. Use the moles of argon on top ":1,"That is the partial pressure of helium. Use the moles of oxygen on top":1,"That is the partial pressure of neon. Use the moles of nitrogen on top":1,"That is the partial pressure of oxygen. Use the moles of helium on top":2,"That is the partial pressure of neon. Use the moles of carbon dioxide ":1,"That is the partial pressure of argon. Use the moles of nitrogen on to":1,"That is the partial pressure of oxygen. Use the moles of argon on top ":1,"That is the partial pressure of argon. Use the moles of helium on top ":2,"That is the partial pressure of nitrogen. Use the moles of neon on top":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[3] xFromP             n=2000 redrawn=45 MSG-DROPPED {"That is the mole fraction of oxygen.":1,"That is the mole fraction of helium.":5,"That is the mole fraction of argon.":4,"That is the mole fraction of carbon dioxide.":6,"That is the mole fraction of neon.":2} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[4] mixP               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+dalton[5] wetP               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.010    
+dalton[6] wetN               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.006    
+dalton[7] fromX              n=2000 redrawn=126 MSG-DROPPED {"That is the partial pressure of neon. Use the moles of oxygen on top o":1,"That is the partial pressure of oxygen. Use the moles of argon on top ":1,"That is the partial pressure of argon. Use the moles of carbon dioxide":1,"That is the partial pressure of oxygen. Use the moles of neon on top o":1,"That is the partial pressure of carbon dioxide. Use the moles of neon ":1,"That is the partial pressure of helium. Use the moles of argon on top ":2,"That is the partial pressure of helium. Use the moles of nitrogen on t":1,"That is the partial pressure of helium. Use the moles of carbon dioxid":1,"That is the partial pressure of argon. Use the moles of nitrogen on to":1,"That is the partial pressure of carbon dioxide. Use the moles of oxyge":1,"That is the partial pressure of argon. Use the moles of helium on top ":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[8] dalton#8           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[9] dalton#9           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[10] dalton#10         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[11] dalton#11         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[12] dalton#12         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+dalton[13] massX             n=2000 redrawn=72 MSG-DROPPED {"Multiply the total pressure by the mole fraction, not by the number of":10,"That is the partial pressure of neon.":2,"You used the masses to find the fraction. Partial pressure follows the":4,"That is the partial pressure of argon.":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.043    
+stoich[0] g2L                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+stoich[1] L2g                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+stoich[2] stp                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.018    
+stoich[3] vols               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[4] burn               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.001    
+stoich[5] g2L                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+stoich[6] L2g                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+stoich[7] vols               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[8] stoich#8           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[9] stoich#9           n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[10] stoich#10         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[11] stoich#11         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[12] stoich#12         n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+stoich[13] overWater         n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.012    
+kmt[0] speed                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.051    
+kmt[1] ratio                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.066    
+kmt[2] unknownM              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.022    
+kmt[3] time                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.066    
+kmt[4] speed                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.051    
+kmt[5] ratio                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.066    
+kmt[6] kmt#6                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[7] mcFastest             n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[8] kmt#8                 n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[9] kmt#9                 n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[10] kmt#10               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[11] kmt#11               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[12] kmt#12               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+kmt[13] kmt#13               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[0] vdw                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.006    
+real[1] vdw                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.006    
+real[2] real#2               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[3] real#3               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[4] real#4               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[5] mcStrong             n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[6] mcIdeal              n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[7] real#7               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[8] real#8               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[9] real#9               n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[10] real#10             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+real[11] real#11             n=1 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[0] whichEq               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[1] whichEq               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[2] whichEq               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[3] conv                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.014    
+mix[4] mano                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[5] bV                    n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[6] bP                    n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[7] bMixed                n=2000 redrawn=32 MSG-DROPPED {"You multiplied by P₂/P₁. Pressure and volume move in opposite directio":6} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[8] cV                    n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[9] cT                    n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[10] glP                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[11] glT                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[12] avV                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[13] stpV                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.009    
+mix[14] combV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[15] combP                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[16] combT                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[17] toSTP                n=2000 redrawn=300 MSG-DROPPED {"Your pressure ratio is upside down. It should be P₁/P₂.":131} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[18] iP                   n=2000 redrawn=0 MSG-DROPPED {"You multiplied by V. Solving PV = nRT for P means dividing by V.":2} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[19] iV                   n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[20] iN                   n=2000 redrawn=5  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[21] iT                   n=2000 redrawn=11 MSG-DROPPED {"Your fraction is upside down: T = PV ÷ nR.":8} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.003    
+mix[22] massV                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.034    
+mix[23] massIn               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.034    
+mix[24] dQ                   n=2000 redrawn=16 MSG-DROPPED {"Your fraction is upside down: d = PM ÷ RT.":3} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.097    
+mix[25] mFromD               n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[26] mFromMass            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[27] total                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[28] fromX                n=2000 redrawn=131 MSG-DROPPED {"That is the partial pressure of carbon dioxide. Use the moles of argon":1,"That is the partial pressure of argon. Use the moles of neon on top of":1,"That is the partial pressure of helium. Use the moles of neon on top o":1,"That is the partial pressure of oxygen. Use the moles of carbon dioxid":1,"That is the partial pressure of carbon dioxide. Use the moles of heliu":3,"That is the partial pressure of neon. Use the moles of argon on top of":3,"That is the partial pressure of oxygen. Use the moles of neon on top o":1,"That is the partial pressure of neon. Use the moles of oxygen on top o":1,"That is the partial pressure of argon. Use the moles of nitrogen on to":1,"That is the partial pressure of carbon dioxide. Use the moles of oxyge":2,"That is the partial pressure of argon. Use the moles of helium on top ":1,"That is the partial pressure of neon. Use the moles of nitrogen on top":1,"That is the partial pressure of nitrogen. Use the moles of neon on top":1,"That is the partial pressure of nitrogen. Use the moles of helium on t":1,"That is the partial pressure of oxygen. Use the moles of nitrogen on t":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[29] mixP                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.002    
+mix[30] wetN                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.006    
+mix[31] g2L                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+mix[32] L2g                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.007    
+mix[33] vols                 n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[34] speed                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.051    
+mix[35] ratio                n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.066    
+mix[36] unknownM             n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.022    
+mix[37] vdw                  n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.006    
+mix[38] closed               n=2000 redrawn=0 MSG-DROPPED {"You combined the height with atmospheric pressure. The far side of a c":15} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.000    
+mix[39] massX                n=2000 redrawn=78 MSG-DROPPED {"You used the masses to find the fraction. Partial pressure follows the":11,"Multiply the total pressure by the mole fraction, not by the number of":8,"That is the partial pressure of methane.":1,"That is the partial pressure of helium.":1,"That is the partial pressure of oxygen.":2,"That is the partial pressure of argon.":2,"That is the partial pressure of neon.":1,"That is the partial pressure of nitrogen.":1} err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.043    
+mix[40] overWater            n=2000 redrawn=0  err=0 showRej=0 trueRej=0 true3Rej=0 maxDev/tol=0.012    
+page errors: 0

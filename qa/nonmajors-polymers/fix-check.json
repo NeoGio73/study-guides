@@ -1,0 +1,238 @@
+[
+ {
+  "item": "1",
+  "what": "pH 13 [H+]: 0 rejected",
+  "pass": true,
+  "detail": "✗Not quite. Check the setup and try again."
+ },
+ {
+  "item": "1",
+  "what": "pH 13 [H+]: 1e-11 (100x) rejected",
+  "pass": true,
+  "detail": "✗Not quite. Check the setup and try again."
+ },
+ {
+  "item": "1",
+  "what": "pH 13 [H+]: displayed 1x10^-13 accepted",
+  "pass": true,
+  "detail": "✓Correct. 1 × 10−13 mol/L"
+ },
+ {
+  "item": "1",
+  "what": "pH 2 [OH-]: 1e-11 (10x) rejected",
+  "pass": true,
+  "detail": "✗Not quite. Check the setup and try again."
+ },
+ {
+  "item": "1",
+  "what": "pH 10.6 [H+]: 5e-11 (2x) rejected",
+  "pass": true,
+  "detail": "✗Not quite. Check the setup and try again."
+ },
+ {
+  "item": "8",
+  "what": "pH 4.9 [H+]: worked-solution bold 1.26x10^-5 accepted",
+  "pass": true,
+  "detail": "✓Correct. 1.26 × 10−5 mol/L | "
+ },
+ {
+  "item": "11",
+  "what": "pH 7: \"1 × 10^−7\" accepted",
+  "pass": true,
+  "detail": "✓Correct. 1 × 10−7 mol/L"
+ },
+ {
+  "item": "11",
+  "what": "pH 7: \"1×10−7\" accepted",
+  "pass": true,
+  "detail": "✓Correct. 1 × 10−7 mol/L"
+ },
+ {
+  "item": "11",
+  "what": "pH 7: \"1*10^-7\" accepted",
+  "pass": true,
+  "detail": "✓Correct. 1 × 10−7 mol/L"
+ },
+ {
+  "item": "11",
+  "what": "unparsed input returns null",
+  "pass": true,
+  "detail": "[null,null,null]"
+ },
+ {
+  "item": "11",
+  "what": "typed \"1e-7 mol\" asks for a number instead of grading a partial",
+  "pass": true,
+  "detail": "iEnter a number for [H+]."
+ },
+ {
+  "item": "31",
+  "what": "slider pH 13 shows 0.4% (0.1 M) NaOH",
+  "pass": true,
+  "detail": "Around pH 13.0: 0"
+ },
+ {
+  "item": "31",
+  "what": "\"times\" problem labels pH 13 as 0.4% (0.1 M) NaOH",
+  "pass": true,
+  "detail": "Solution A has pH 9 (baking soda solution) and solution B has pH 13 (0.4% (0.1 M) sodium hydroxide). How many times more"
+ },
+ {
+  "item": "41",
+  "what": "slider 6.9: \"1.3 times more\"",
+  "pass": true
+ },
+ {
+  "item": "41",
+  "what": "slider pH 0: [H+] label is 1 × 10^0, no 10−0",
+  "pass": true,
+  "detail": "SOLUTION IS | Acidic | [H+], MOL/L | 1 × 100 | [OH−], MOL/L | 1 × 10−14"
+ },
+ {
+  "item": "41",
+  "what": "classify pH 7.1 solution: \"about 1.3 times less\"",
+  "pass": true,
+  "detail": "(about 1.3 times less)"
+ },
+ {
+  "item": "31",
+  "what": "δ labels for C–S absent",
+  "pass": true,
+  "detail": "C–S"
+ },
+ {
+  "item": "31",
+  "what": "δ labels for C–H absent",
+  "pass": true,
+  "detail": "C–H"
+ },
+ {
+  "item": "31",
+  "what": "δ labels for O–H shown",
+  "pass": true,
+  "detail": "δ+H–Oδ−"
+ },
+ {
+  "item": "31",
+  "what": "δ labels for H–I absent",
+  "pass": true,
+  "detail": "H–I"
+ },
+ {
+  "item": "31",
+  "what": "δ labels for N–O shown",
+  "pass": true,
+  "detail": "δ+N–Oδ−"
+ },
+ {
+  "item": "2",
+  "what": "5 W x 1 h at $0.12: cost $0.006 (10x) rejected",
+  "pass": true,
+  "detail": "✗(b) Not quite. Check the setup and try again. | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+ },
+ {
+  "item": "2",
+  "what": "5 W x 1 h at $0.12: cost $0.00 rejected",
+  "pass": true,
+  "detail": "✗(b) Not quite. Check the setup and try again. | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+ },
+ {
+  "item": "2",
+  "what": "5 W x 1 h at $0.12: displayed $0.0006 accepted",
+  "pass": true,
+  "detail": "✓All parts correct. (a) 0.005 kWh; (b) $0.0006 | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+ },
+ {
+  "item": "2",
+  "what": "14 W x 6 h at $0.12: displayed $0.0101 accepted",
+  "pass": true,
+  "detail": "✓All parts correct. (a) 0.084 kWh; (b) $0.0101 | Energy: 0.014 kW × 6 h = 0.084 kWh Cost: 0.084"
+ },
+ {
+  "item": "9",
+  "what": "5 W x 0.5 h: worked-solution kWh 0.0025 accepted",
+  "pass": true,
+  "detail": "✓Correct. 0.0025 kWh | Energy: 0.005 kW × 0.5 h = 0.0025 kWh "
+ },
+ {
+  "item": "9",
+  "what": "no \"$0.00\" in 40,000 energy worked solutions",
+  "pass": true,
+  "detail": 0
+ },
+ {
+  "item": "32",
+  "what": "roadmap: fossil fuels about 80%",
+  "pass": true,
+  "detail": "supply about 80% of a modern society’s energy"
+ },
+ {
+  "item": "32",
+  "what": "fossil lede: about 80%",
+  "pass": true
+ },
+ {
+  "item": "32",
+  "what": "radiation key ideas: about half background",
+  "pass": true
+ },
+ {
+  "item": "32",
+  "what": "review quiz keys \"About 80%\" and \"About half\"",
+  "pass": true
+ },
+ {
+  "item": "32",
+  "what": "key terms: about half / about 80%",
+  "pass": true
+ },
+ {
+  "item": "32",
+  "what": "Curie discovered radium in 1898",
+  "pass": true
+ },
+ {
+  "item": "42",
+  "what": "Energy tab at 390 px: scrollWidth ≤ clientWidth",
+  "pass": true,
+  "detail": "390 / 390"
+ },
+ {
+  "item": "43",
+  "what": "ethylene drawn with labels (H2C=CH2), not a 31x4 bar",
+  "pass": true,
+  "detail": "{\"x\":219.578125,\"y\":3630.84375,\"width\":81,\"height\":16}"
+ },
+ {
+  "item": "43",
+  "what": "PVAc n clear of atom labels (A3 card)",
+  "pass": true,
+  "detail": "{\"n\":[96.4,20,7.5,16.2],\"overlapsAtomLabels\":0}"
+ },
+ {
+  "item": "43",
+  "what": "PVAc n clear of atom labels (practice)",
+  "pass": true,
+  "detail": "{\"n\":[96.4,19.5,7.5,16.8],\"overlapsAtomLabels\":0}"
+ },
+ {
+  "item": "33",
+  "what": "Teahupo’o: plane-beach caveat, no \"far into the plunging range\"",
+  "pass": true
+ },
+ {
+  "item": "43",
+  "what": "Ponce Inlet (New Smyrna Beach)",
+  "pass": true
+ },
+ {
+  "item": "43",
+  "what": "maleic → trans (fumarate) note",
+  "pass": true
+ },
+ {
+  "item": "43",
+  "what": "board lab label \"Rider + board + gear mass\"",
+  "pass": true
+ }
+]

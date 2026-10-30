@@ -1,0 +1,421 @@
+
+######## general-chemistry/mole-and-molar-mass-study-guide.html
+
+=== molar:molar
+Q: What is the molar mass of sulfur dioxide (SO2)? Give your answer to two decimal places.
+ANS: 64.06 g/mol
+GUIDED: Step 1: count the atoms of each element. Step 2: multiply by the atomic mass. ¶ S atoms×32.06 g/mol= g/mol ¶ O atoms×15.999 g/mol= g/mol ¶ Step 3: add the subtotals. ¶
+HINTS: Hint 1 ¶ The molar mass of a compound is the sum of the atomic masses of all the atoms in its formula. A subscript counts the atoms of the element just before it. ¶ || Hint 2: the atoms in one molecule ¶ 1 S, 2 O ¶ S? atoms×32.06 g/mol=? g/mol ¶ O? atoms×15.999 g/mol=? g/mol ¶
+SOLUTION: Worked solutionCount the atoms in one molecule of SO2: 1 S, 2 O. ¶ Multiply and add.S1 atom×32.06 g/mol=32.060 g/mol ¶ O2 atoms×15.999 g/mol=31.998 g/mol ¶ ¶ Molar mass = 32.060 + 31.998 = 64.06 g/mol ¶ ¶ One mole of SO2 has a mass of 64.06 g. ¶ ¶
+
+=== particles:n2N
+Q: How many atoms are in 0.130 mol of magnesium (Mg)?
+ANS: 7.83 × 1022 atoms Mg
+GUIDED: Your route ¶ mol Mg ¶ × Avogadro’s number ¶ atoms Mg ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 0.130 mol Mg× atoms Mg1 mol Mg=? atoms Mg ¶
+HINTS: Hint 1: your route ¶ mol Mg ¶ × Avogadro’s number ¶ atoms Mg ¶ ¶ One mole of anything contains 6.022 × 1023 particles. The number of atoms will be a very large number. ¶ || Hint 2: the setup ¶ 0.130 mol Mg×? atoms Mg1 mol Mg=? atoms Mg ¶
+SOLUTION: Worked solutionMoles to atoms. 0.130 mol Mg × (6.022 × 1023 atoms Mg ÷ 1 mol Mg) = 7.83 × 1022 atoms Mg ¶ The setup, with units canceled.0.130 mol Mg×6.022 × 1023 atoms Mg1 mol Mg=7.83 × 1022 atoms Mg ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== particles:N2n
+Q: A sample contains 2.38 × 1023 atoms of sodium (Na). How many moles is that?
+ANS: 0.395 mol Na
+GUIDED: Your route ¶ atoms Na ¶ ÷ Avogadro’s number ¶ mol Na ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 2.38 × 1023 atoms Na×1 mol Na atoms Na=? mol Na ¶
+HINTS: Hint 1: your route ¶ atoms Na ¶ ÷ Avogadro’s number ¶ mol Na ¶ ¶ It takes 6.022 × 1023 atoms to make one mole. The number of moles will be a much smaller number than the number of atoms. ¶ || Hint 2: the setup ¶ 2.38 × 1023 atoms Na×1 mol Na? atoms Na=? mol Na ¶
+SOLUTION: Worked solutionAtoms to moles. 2.38 × 1023 atoms Na × (1 mol Na ÷ 6.022 × 1023 atoms Na) = 0.395 mol Na ¶ The setup, with units canceled.2.38 × 1023 atoms Na×1 mol Na6.022 × 1023 atoms Na=0.395 mol Na ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== mass:n2g
+Q: What is the mass, in grams, of 0.0214 mol of carbon dioxide (CO2)?
+ANS: 0.942 g CO2
+GUIDED: Your route ¶ mol CO2 ¶ × molar mass ¶ g CO2 ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 0.0214 mol CO2× g CO21 mol CO2=? g CO2 ¶
+HINTS: Hint 1: your route ¶ mol CO2 ¶ × molar mass ¶ g CO2 ¶ ¶ The molar mass is the mass of one mole. Find the molar mass of CO2 first, then multiply. ¶ || Hint 2: the setup ¶ 0.0214 mol CO2×? g CO21 mol CO2=? g CO2 ¶
+SOLUTION: Worked solutionMolar mass. CO2: 12.011 + 2(15.999) = 44.01 g/mol ¶ Moles to grams. 0.0214 mol CO2 × (44.01 g CO2 ÷ 1 mol CO2) = 0.942 g CO2 ¶ The setup, with units canceled.0.0214 mol CO2×44.01 g CO21 mol CO2=0.942 g CO2 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== mass:g2n
+Q: How many moles are in 73.9 g of aluminum (Al)?
+ANS: 2.74 mol Al
+GUIDED: Your route ¶ g Al ¶ ÷ molar mass ¶ mol Al ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 73.9 g Al×1 mol Al g Al=? mol Al ¶
+HINTS: Hint 1: your route ¶ g Al ¶ ÷ molar mass ¶ mol Al ¶ ¶ The molar mass tells you how many grams are in one mole. Find the molar mass of Al first, then divide. ¶ || Hint 2: the setup ¶ 73.9 g Al×1 mol Al? g Al=? mol Al ¶
+SOLUTION: Worked solutionMolar mass. Al: 26.98 g/mol ¶ Grams to moles. 73.9 g Al × (1 mol Al ÷ 26.98 g Al) = 2.74 mol Al ¶ The setup, with units canceled.73.9 g Al×1 mol Al26.98 g Al=2.74 mol Al ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== twostep:N2g
+Q: What is the mass, in grams, of 2.96 × 1022 formula units of sodium carbonate (Na2CO3)?
+ANS: 5.21 g Na2CO3
+GUIDED: Your route ¶ formula units Na2CO3 ¶ ÷ Avogadro’s number ¶ mol Na2CO3 ¶ × molar mass ¶ g Na2CO3 ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 2.96 × 1022 formula units Na2CO3×1 mol Na2CO3 formula units Na2CO3× g Na2CO31 mol Na2CO3=? g Na2CO3 ¶
+HINTS: Hint 1: your route ¶ formula units Na2CO3 ¶ ÷ Avogadro’s number ¶ mol Na2CO3 ¶ × molar mass ¶ g Na2CO3 ¶ ¶ There is no direct path from formula units to grams. Go through moles: Avogadro’s number gets you to moles, and the molar mass gets you from moles to grams. ¶ || Hint 2: the setup ¶ 2.96 × 1022 formula units Na2CO3×1 mol Na2CO3? formula units Na2CO3×? g Na2CO31 mol Na2CO3=? g Na2CO3 ¶
+SOLUTION: Worked solutionMolar mass. Na2CO3: 2(22.990) + 12.011 + 3(15.999) = 105.99 g/mol ¶ Formula units to moles. 2.96 × 1022 formula units Na2CO3 × (1 mol Na2CO3 ÷ 6.022 × 1023 formula units Na2CO3) = 0.04915 mol Na2CO3 ¶ Moles to grams. 0.04915 mol Na2CO3 × (105.99 g Na2CO3 ÷ 1 mol Na2CO3) = 5.21 g Na2CO3 ¶ All in one line.2.96 × 1022 formula units Na2CO3×1 mol Na2CO36.022 × 1023 formula units Na2CO3×105.99 g Na2CO31 mol Na2CO3=5.21 g Na2CO3 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== twostep:g2N
+Q: How many atoms are in 13.2 g of mercury (Hg)?
+ANS: 3.96 × 1022 atoms Hg
+GUIDED: Your route ¶ g Hg ¶ ÷ molar mass ¶ mol Hg ¶ × Avogadro’s number ¶ atoms Hg ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 13.2 g Hg×1 mol Hg g Hg× atoms Hg1 mol Hg=? atoms Hg ¶
+HINTS: Hint 1: your route ¶ g Hg ¶ ÷ molar mass ¶ mol Hg ¶ × Avogadro’s number ¶ atoms Hg ¶ ¶ There is no direct path from grams to atoms. Go through moles: the molar mass gets you to moles, and Avogadro’s number gets you from moles to atoms. ¶ || Hint 2: the setup ¶ 13.2 g Hg×1 mol Hg? g Hg×? atoms Hg1 mol Hg=? atoms Hg ¶
+SOLUTION: Worked solutionMolar mass. Hg: 200.59 g/mol ¶ Grams to moles. 13.2 g Hg × (1 mol Hg ÷ 200.59 g Hg) = 0.06581 mol Hg ¶ Moles to atoms. 0.06581 mol Hg × (6.022 × 1023 atoms Hg ÷ 1 mol Hg) = 3.96 × 1022 atoms Hg ¶ All in one line.13.2 g Hg×1 mol Hg200.59 g Hg×6.022 × 1023 atoms Hg1 mol Hg=3.96 × 1022 atoms Hg ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== twostep:one
+Q: What is the mass, in grams, of one formula unit of ammonium nitrate (NH4NO3)? Give your answer to three significant figures.
+ANS: 1.33 × 10−22 g NH4NO3
+GUIDED: Your route ¶ 1 formula unit NH4NO3 ¶ ÷ Avogadro’s number ¶ mol NH4NO3 ¶ × molar mass ¶ g NH4NO3 ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 1 formula unit NH4NO3×1 mol NH4NO3 formula units NH4NO3× g NH4NO31 mol NH4NO3=? g NH4NO3 ¶
+HINTS: Hint 1: your route ¶ 1 formula unit NH4NO3 ¶ ÷ Avogadro’s number ¶ mol NH4NO3 ¶ × molar mass ¶ g NH4NO3 ¶ ¶ One mole of NH4NO3 has a mass equal to its molar mass, and it contains 6.022 × 1023 formula units. A single formula unit has a tiny mass, so expect a very small number. ¶ || Hint 2: the setup ¶ 1 formula unit NH4NO3×1 mol NH4NO3? formula units NH4NO3×? g NH4NO31 mol NH4NO3=? g NH4NO3 ¶
+SOLUTION: Worked solutionMolar mass. NH4NO3: 2(14.007) + 4(1.008) + 3(15.999) = 80.04 g/mol ¶ Formula units to moles. 1 formula unit NH4NO3 × (1 mol NH4NO3 ÷ 6.022 × 1023 formula units NH4NO3) = 1.661 × 10−24 mol NH4NO3 ¶ Moles to grams. 1.661 × 10−24 mol NH4NO3 × (80.04 g NH4NO3 ÷ 1 mol NH4NO3) = 1.33 × 10−22 g NH4NO3 ¶ All in one line.1 formula unit NH4NO3×1 mol NH4NO36.022 × 1023 formula units NH4NO3×80.04 g NH4NO31 mol NH4NO3=1.33 × 10−22 g NH4NO3 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The “1” is a counted number, so it is exact. The question asks for three significant figures. ¶ ¶
+
+=== inside:g2Ne
+Q: How many chlorine atoms are in 7.46 g of calcium chloride (CaCl2)?
+ANS: 8.10 × 1022 atoms Cl
+GUIDED: Your route ¶ g CaCl2 ¶ ÷ molar mass ¶ mol CaCl2 ¶ × atoms in the formula ¶ mol Cl ¶ × Avogadro’s number ¶ atoms Cl ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 7.46 g CaCl2×1 mol CaCl2 g CaCl2× mol Cl mol CaCl2× atoms Cl1 mol Cl=? atoms Cl ¶
+HINTS: Hint 1: your route ¶ g CaCl2 ¶ ÷ molar mass ¶ mol CaCl2 ¶ × atoms in the formula ¶ mol Cl ¶ × Avogadro’s number ¶ atoms Cl ¶ ¶ Three steps: grams of compound to moles of compound, then the formula to get moles of Cl atoms, then Avogadro’s number to get atoms. ¶ || Hint 2: the setup ¶ 7.46 g CaCl2×1 mol CaCl2? g CaCl2×? mol Cl? mol CaCl2×? atoms Cl1 mol Cl=? atoms Cl ¶
+SOLUTION: Worked solutionMolar mass. CaCl2: 40.078 + 2(35.45) = 110.98 g/mol ¶ Grams to moles. 7.46 g CaCl2 × (1 mol CaCl2 ÷ 110.98 g CaCl2) = 0.06722 mol CaCl2 ¶ Use the formula. 0.06722 mol CaCl2 × (2 mol Cl ÷ 1 mol CaCl2) = 0.1344 mol Cl ¶ Moles to atoms. 0.1344 mol Cl × (6.022 × 1023 atoms Cl ÷ 1 mol Cl) = 8.10 × 1022 atoms Cl ¶ All in one line.7.46 g CaCl2×1 mol CaCl2110.98 g CaCl2×2 mol Cl1 mol CaCl2×6.022 × 1023 atoms Cl1 mol Cl=8.10 × 1022 atoms Cl ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:g2ge
+Q: How many grams of nitrogen are in 215 g of ammonium phosphate ((NH4)3PO4)?
+ANS: 60.6 g N
+GUIDED: Your route ¶ g (NH4)3PO4 ¶ ÷ molar mass ¶ mol (NH4)3PO4 ¶ × atoms in the formula ¶ mol N ¶ × atomic mass ¶ g N ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 215 g (NH4)3PO4×1 mol (NH4)3PO4 g (NH4)3PO4× mol N mol (NH4)3PO4× g N1 mol N=? g N ¶
+HINTS: Hint 1: your route ¶ g (NH4)3PO4 ¶ ÷ molar mass ¶ mol (NH4)3PO4 ¶ × atoms in the formula ¶ mol N ¶ × atomic mass ¶ g N ¶ ¶ Grams of one substance cannot be turned directly into grams of another. Go to moles of the compound, use the formula to get moles of N, then use the atomic mass of N to get grams. ¶ || Hint 2: the setup ¶ 215 g (NH4)3PO4×1 mol (NH4)3PO4? g (NH4)3PO4×? mol N? mol (NH4)3PO4×? g N1 mol N=? g N ¶
+SOLUTION: Worked solutionMolar masses. (NH4)3PO4: 3(14.007) + 12(1.008) + 30.974 + 4(15.999) = 149.09 g/mol ¶ N: 14.01 g/mol ¶ Grams to moles. 215 g (NH4)3PO4 × (1 mol (NH4)3PO4 ÷ 149.09 g (NH4)3PO4) = 1.442 mol (NH4)3PO4 ¶ Use the formula. 1.442 mol (NH4)3PO4 × (3 mol N ÷ 1 mol (NH4)3PO4) = 4.326 mol N ¶ Moles to grams. 4.326 mol N × (14.01 g N ÷ 1 mol N) = 60.6 g N ¶ All in one line.215 g (NH4)3PO4×1 mol (NH4)3PO4149.09 g (NH4)3PO4×3 mol N1 mol (NH4)3PO4×14.01 g N1 mol N=60.6 g N ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:n2ne
+Q: How many moles of phosphorus atoms are in 0.404 mol of tetraphosphorus decoxide (P4O10)?
+ANS: 1.62 mol P
+GUIDED: Your route ¶ mol P4O10 ¶ × atoms in the formula ¶ mol P ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 0.404 mol P4O10× mol P mol P4O10=? mol P ¶
+HINTS: Hint 1: your route ¶ mol P4O10 ¶ × atoms in the formula ¶ mol P ¶ ¶ A formula is also a mole ratio. One molecule of P4O10 contains 4 P atoms, so one mole of P4O10 contains 4 mol of P atoms. ¶ || Hint 2: the setup ¶ 0.404 mol P4O10×? mol P? mol P4O10=? mol P ¶
+SOLUTION: Worked solutionUse the formula. 0.404 mol P4O10 × (4 mol P ÷ 1 mol P4O10) = 1.62 mol P ¶ The setup, with units canceled.0.404 mol P4O10×4 mol P1 mol P4O10=1.62 mol P ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:N2Ne
+Q: How many fluorine atoms are in 6.32 × 1023 molecules of sulfur hexafluoride (SF6)?
+ANS: 3.79 × 1024 atoms F
+GUIDED: Your route ¶ molecules SF6 ¶ × atoms in the formula ¶ atoms F ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 6.32 × 1023 molecules SF6× atoms F molecules SF6=? atoms F ¶
+HINTS: Hint 1: your route ¶ molecules SF6 ¶ × atoms in the formula ¶ atoms F ¶ ¶ No moles are needed here. Each molecule contains 6 F atoms, so count 6 for every molecule. ¶ || Hint 2: the setup ¶ 6.32 × 1023 molecules SF6×? atoms F? molecules SF6=? atoms F ¶
+SOLUTION: Worked solutionUse the formula. 6.32 × 1023 molecules SF6 × (6 atoms F ÷ 1 molecules SF6) = 3.79 × 1024 atoms F ¶ The setup, with units canceled.6.32 × 1023 molecules SF6×6 atoms F1 molecules SF6=3.79 × 1024 atoms F ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:total
+Q: How many atoms, of all kinds together, are in 0.0584 mol of ammonium sulfate ((NH4)2SO4)?
+ANS: 5.28 × 1023 atoms
+GUIDED: Your route ¶ mol (NH4)2SO4 ¶ × atoms per formula unit ¶ mol atoms ¶ × Avogadro’s number ¶ atoms ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 0.0584 mol (NH4)2SO4× mol atoms mol (NH4)2SO4× atoms1 mol atoms=? atoms ¶
+HINTS: Hint 1: your route ¶ mol (NH4)2SO4 ¶ × atoms per formula unit ¶ mol atoms ¶ × Avogadro’s number ¶ atoms ¶ ¶ Add up all the subscripts to find how many atoms are in one formula unit. Then one mole of (NH4)2SO4 contains that many moles of atoms. ¶ || Hint 2: the setup ¶ 0.0584 mol (NH4)2SO4×? mol atoms? mol (NH4)2SO4×? atoms1 mol atoms=? atoms ¶
+SOLUTION: Worked solutionUse the formula. 0.0584 mol (NH4)2SO4 × (15 mol atoms ÷ 1 mol (NH4)2SO4) = 0.8760 mol atoms ¶ Moles to atoms. 0.8760 mol atoms × (6.022 × 1023 atoms ÷ 1 mol atoms) = 5.28 × 1023 atoms ¶ All in one line.0.0584 mol (NH4)2SO4×15 mol atoms1 mol (NH4)2SO4×6.022 × 1023 atoms1 mol atoms=5.28 × 1023 atoms ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:ion
+Q: How many chloride ions (Cl⁻) are in 3.47 g of calcium chloride (CaCl2)?
+ANS: 3.77 × 1022 Cl⁻ ions
+GUIDED: Your route ¶ g CaCl2 ¶ ÷ molar mass ¶ mol CaCl2 ¶ × atoms in the formula ¶ mol Cl⁻ ¶ × Avogadro’s number ¶ Cl⁻ ions ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 3.47 g CaCl2×1 mol CaCl2 g CaCl2× mol Cl⁻ mol CaCl2× Cl⁻ ions1 mol Cl⁻=? Cl⁻ ions ¶
+HINTS: Hint 1: your route ¶ g CaCl2 ¶ ÷ molar mass ¶ mol CaCl2 ¶ × atoms in the formula ¶ mol Cl⁻ ¶ × Avogadro’s number ¶ Cl⁻ ions ¶ ¶ Three steps: grams of compound to moles of compound, then the formula to get moles of chloride ions, then Avogadro’s number to get the number of ions. ¶ || Hint 2: the setup ¶ 3.47 g CaCl2×1 mol CaCl2? g CaCl2×? mol Cl⁻? mol CaCl2×? Cl⁻ ions1 mol Cl⁻=? Cl⁻ ions ¶
+SOLUTION: Worked solutionMolar mass. CaCl2: 40.078 + 2(35.45) = 110.98 g/mol ¶ Grams to moles. 3.47 g CaCl2 × (1 mol CaCl2 ÷ 110.98 g CaCl2) = 0.03127 mol CaCl2 ¶ Use the formula. 0.03127 mol CaCl2 × (2 mol Cl⁻ ÷ 1 mol CaCl2) = 0.06253 mol Cl⁻ ¶ Moles to ions. 0.06253 mol Cl⁻ × (6.022 × 1023 Cl⁻ ions ÷ 1 mol Cl⁻) = 3.77 × 1022 Cl⁻ ions ¶ All in one line.3.47 g CaCl2×1 mol CaCl2110.98 g CaCl2×2 mol Cl⁻1 mol CaCl2×6.022 × 1023 Cl⁻ ions1 mol Cl⁻=3.77 × 1022 Cl⁻ ions ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:ge2g
+Q: What mass of potassium phosphate (K3PO4), in grams, contains 1.47 g of potassium?
+ANS: 2.66 g K3PO4
+GUIDED: Your route ¶ g K ¶ ÷ atomic mass ¶ mol K ¶ ÷ atoms in the formula ¶ mol K3PO4 ¶ × molar mass ¶ g K3PO4 ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 1.47 g K×1 mol K g K× mol K3PO4 mol K× g K3PO41 mol K3PO4=? g K3PO4 ¶
+HINTS: Hint 1: your route ¶ g K ¶ ÷ atomic mass ¶ mol K ¶ ÷ atoms in the formula ¶ mol K3PO4 ¶ × molar mass ¶ g K3PO4 ¶ ¶ This runs the usual route backward. Start with grams of K, go to moles of K, use the formula to get moles of the compound, then use the molar mass of the compound. ¶ || Hint 2: the setup ¶ 1.47 g K×1 mol K? g K×? mol K3PO4? mol K×? g K3PO41 mol K3PO4=? g K3PO4 ¶
+SOLUTION: Worked solutionMolar masses. K: 39.10 g/mol ¶ K3PO4: 3(39.098) + 30.974 + 4(15.999) = 212.26 g/mol ¶ Grams to moles. 1.47 g K × (1 mol K ÷ 39.10 g K) = 0.03760 mol K ¶ Use the formula. 0.03760 mol K × (1 mol K3PO4 ÷ 3 mol K) = 0.01253 mol K3PO4 ¶ Moles to grams. 0.01253 mol K3PO4 × (212.26 g K3PO4 ÷ 1 mol K3PO4) = 2.66 g K3PO4 ¶ All in one line.1.47 g K×1 mol K39.10 g K×1 mol K3PO43 mol K×212.26 g K3PO41 mol K3PO4=2.66 g K3PO4 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+=== inside:n2Ne
+Q: How many calcium atoms are in 0.958 mol of calcium phosphate (Ca3(PO4)2)?
+ANS: 1.73 × 1024 atoms Ca
+GUIDED: Your route ¶ mol Ca3(PO4)2 ¶ × atoms in the formula ¶ mol Ca ¶ × Avogadro’s number ¶ atoms Ca ¶ ¶ Fill in the blanks to finish the setup, then calculate. The units are arranged so that they cancel. ¶ 0.958 mol Ca3(PO4)2× mol Ca mol Ca3(PO4)2× atoms Ca1 mol Ca=? atoms Ca ¶
+HINTS: Hint 1: your route ¶ mol Ca3(PO4)2 ¶ × atoms in the formula ¶ mol Ca ¶ × Avogadro’s number ¶ atoms Ca ¶ ¶ Use the formula to go from moles of compound to moles of Ca atoms. Then Avogadro’s number turns moles of atoms into atoms. ¶ || Hint 2: the setup ¶ 0.958 mol Ca3(PO4)2×? mol Ca? mol Ca3(PO4)2×? atoms Ca1 mol Ca=? atoms Ca ¶
+SOLUTION: Worked solutionUse the formula. 0.958 mol Ca3(PO4)2 × (3 mol Ca ÷ 1 mol Ca3(PO4)2) = 2.874 mol Ca ¶ Moles to atoms. 2.874 mol Ca × (6.022 × 1023 atoms Ca ÷ 1 mol Ca) = 1.73 × 1024 atoms Ca ¶ All in one line.0.958 mol Ca3(PO4)2×3 mol Ca1 mol Ca3(PO4)2×6.022 × 1023 atoms Ca1 mol Ca=1.73 × 1024 atoms Ca ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the same as the measured value in the question. Counted numbers and the 1 in “1 mol” are exact. ¶ ¶
+
+######## general-chemistry/stoichiometry-study-guide.html
+
+=== molmol:mol>mol
+Q: How many moles of Fe2O3 must react to produce 0.461 mol of Fe?
+ANS: 0.231 mol Fe2O3
+GUIDED: Your route ¶ mol Fe ¶ × mole ratio ¶ mol Fe2O3 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 0.461 mol Fe× mol Fe2O3 mol Fe=? mol Fe2O3 ¶
+HINTS: Hint 1: your route ¶ mol Fe ¶ × mole ratio ¶ mol Fe2O3 ¶ ¶ || Hint 2: the setup ¶ 0.461 mol Fe×? mol Fe2O3? mol Fe=? mol Fe2O3 ¶
+SOLUTION: Worked solutionGiven and wanted. You have 0.461 mol Fe and want mol Fe2O3. ¶ Mole ratio. The balanced equation pairs 2 mol Fe with 1 mol Fe2O3. Put Fe2O3 on top so that mol Fe cancels. ¶ Calculate.0.461 mol Fe×1 mol Fe2O32 mol Fe=0.231 mol Fe2O3 ¶ ¶ ¶ ¶
+
+=== massmass:g>g
+Q: How many grams of Fe2O3 must react to produce 18.2 g of Fe?
+ANS: 26.0 g Fe2O3
+GUIDED: Your route ¶ g Fe ¶ ÷ molar mass ¶ mol Fe ¶ × mole ratio ¶ mol Fe2O3 ¶ × molar mass ¶ g Fe2O3 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 18.2 g Fe×1 mol Fe g Fe× mol Fe2O3 mol Fe× g Fe2O31 mol Fe2O3=? g Fe2O3 ¶
+HINTS: Hint 1: your route ¶ g Fe ¶ ÷ molar mass ¶ mol Fe ¶ × mole ratio ¶ mol Fe2O3 ¶ × molar mass ¶ g Fe2O3 ¶ ¶ || Hint 2: the setup ¶ 18.2 g Fe×1 mol Fe? g Fe×? mol Fe2O3? mol Fe×? g Fe2O31 mol Fe2O3=? g Fe2O3 ¶
+SOLUTION: Worked solutionMolar masses. Fe: 55.85 g/mol ¶ Fe2O3: 2(55.845) + 3(15.999) = 159.69 g/mol ¶ Grams to moles. 18.2 g Fe ÷ 55.85 g/mol = 0.3259 mol Fe ¶ Mole ratio. 0.3259 mol Fe × (1 mol Fe2O3 ÷ 2 mol Fe) = 0.1629 mol Fe2O3 ¶ Moles to grams. 0.1629 mol Fe2O3 × 159.69 g/mol = 26.0 g Fe2O3 ¶ All in one line.18.2 g Fe×1 mol Fe55.85 g Fe×1 mol Fe2O32 mol Fe×159.69 g Fe2O31 mol Fe2O3=26.0 g Fe2O3 ¶ ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== density:mL>g
+Q: How many grams of O2 are needed to react completely with 94.4 mL of liquid ethanol (C2H5OH, density 0.789 g/mL)?
+ANS: 155 g O2
+GUIDED: Your route ¶ mL C2H5OH ¶ × density ¶ g C2H5OH ¶ ÷ molar mass ¶ mol C2H5OH ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 94.4 mL C2H5OH× g C2H5OH1 mL C2H5OH×1 mol C2H5OH g C2H5OH× mol O2 mol C2H5OH× g O21 mol O2=? g O2 ¶
+HINTS: Hint 1: your route ¶ mL C2H5OH ¶ × density ¶ g C2H5OH ¶ ÷ molar mass ¶ mol C2H5OH ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ || Hint 2: the setup ¶ 94.4 mL C2H5OH×? g C2H5OH1 mL C2H5OH×1 mol C2H5OH? g C2H5OH×? mol O2? mol C2H5OH×? g O21 mol O2=? g O2 ¶
+SOLUTION: Worked solutionMolar masses. C2H5OH: 2(12.011) + 6(1.008) + 15.999 = 46.07 g/mol ¶ O2: 2(15.999) = 32.00 g/mol ¶ Volume to mass. 94.4 mL C2H5OH × 0.789 g/mL = 74.48 g C2H5OH ¶ Grams to moles. 74.48 g C2H5OH ÷ 46.07 g/mol = 1.617 mol C2H5OH ¶ Mole ratio. 1.617 mol C2H5OH × (3 mol O2 ÷ 1 mol C2H5OH) = 4.850 mol O2 ¶ Moles to grams. 4.850 mol O2 × 32.00 g/mol = 155 g O2 ¶ All in one line.94.4 mL C2H5OH×0.789 g C2H5OH1 mL C2H5OH×1 mol C2H5OH46.07 g C2H5OH×3 mol O21 mol C2H5OH×32.00 g O21 mol O2=155 g O2 ¶ ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== density:g>mL
+Q: How many milliliters of liquid benzene (C6H6, density 0.877 g/mL) are needed to react completely with 152 g of O2?
+ANS: 56.4 mL C6H6
+GUIDED: Your route ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol C6H6 ¶ × molar mass ¶ g C6H6 ¶ ÷ density ¶ mL C6H6 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 152 g O2×1 mol O2 g O2× mol C6H6 mol O2× g C6H61 mol C6H6×1 mL C6H6 g C6H6=? mL C6H6 ¶
+HINTS: Hint 1: your route ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol C6H6 ¶ × molar mass ¶ g C6H6 ¶ ÷ density ¶ mL C6H6 ¶ ¶ || Hint 2: the setup ¶ 152 g O2×1 mol O2? g O2×? mol C6H6? mol O2×? g C6H61 mol C6H6×1 mL C6H6? g C6H6=? mL C6H6 ¶
+SOLUTION: Worked solutionMolar masses. O2: 2(15.999) = 32.00 g/mol ¶ C6H6: 6(12.011) + 6(1.008) = 78.11 g/mol ¶ Grams to moles. 152 g O2 ÷ 32.00 g/mol = 4.750 mol O2 ¶ Mole ratio. 4.750 mol O2 × (2 mol C6H6 ÷ 15 mol O2) = 0.6333 mol C6H6 ¶ Moles to grams. 0.6333 mol C6H6 × 78.11 g/mol = 49.47 g C6H6 ¶ Mass to volume. 49.47 g C6H6 ÷ 0.877 g/mL = 56.4 mL C6H6 ¶ All in one line.152 g O2×1 mol O232.00 g O2×2 mol C6H615 mol O2×78.11 g C6H61 mol C6H6×1 mL C6H60.877 g C6H6=56.4 mL C6H6 ¶ ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== density:mL>mL
+Q: How many milliliters of liquid water (H2O, density 1.00 g/mL) can form from 41.2 mL of liquid octane (C8H18, density 0.703 g/mL)? Assume the other reactant is in excess.
+ANS: 41.1 mL H2O
+GUIDED: Your route ¶ mL C8H18 ¶ × density ¶ g C8H18 ¶ ÷ molar mass ¶ mol C8H18 ¶ × mole ratio ¶ mol H2O ¶ × molar mass ¶ g H2O ¶ ÷ density ¶ mL H2O ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 41.2 mL C8H18× g C8H181 mL C8H18×1 mol C8H18 g C8H18× mol H2O mol C8H18× g H2O1 mol H2O×1 mL H2O g H2O=? mL H2O ¶
+HINTS: Hint 1: your route ¶ mL C8H18 ¶ × density ¶ g C8H18 ¶ ÷ molar mass ¶ mol C8H18 ¶ × mole ratio ¶ mol H2O ¶ × molar mass ¶ g H2O ¶ ÷ density ¶ mL H2O ¶ ¶ || Hint 2: the setup ¶ 41.2 mL C8H18×? g C8H181 mL C8H18×1 mol C8H18? g C8H18×? mol H2O? mol C8H18×? g H2O1 mol H2O×1 mL H2O? g H2O=? mL H2O ¶
+SOLUTION: Worked solutionMolar masses. C8H18: 8(12.011) + 18(1.008) = 114.23 g/mol ¶ H2O: 2(1.008) + 15.999 = 18.02 g/mol ¶ Volume to mass. 41.2 mL C8H18 × 0.703 g/mL = 28.96 g C8H18 ¶ Grams to moles. 28.96 g C8H18 ÷ 114.23 g/mol = 0.2536 mol C8H18 ¶ Mole ratio. 0.2536 mol C8H18 × (18 mol H2O ÷ 2 mol C8H18) = 2.282 mol H2O ¶ Moles to grams. 2.282 mol H2O × 18.02 g/mol = 41.12 g H2O ¶ Mass to volume. 41.12 g H2O ÷ 1.00 g/mL = 41.1 mL H2O ¶ All in one line.41.2 mL C8H18×0.703 g C8H181 mL C8H18×1 mol C8H18114.23 g C8H18×18 mol H2O2 mol C8H18×18.02 g H2O1 mol H2O×1 mL H2O1.00 g H2O=41.1 mL H2O ¶ ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== limiting:
+Q: A reaction mixture contains 26.8 g of C3H8 and 127 g of O2.
+ANS: C3H8 is limiting ; 80.2 g CO2 ; 30 g O2 left over
+GUIDED: Take each reactant across the map on its own. Fill in the blanks. ¶ 26.8 g C3H8→ mol C3H8→ g CO2 ¶ 127 g O2→ mol O2→ g CO2 ¶ The smaller amount of CO2 is the theoretical yield, and the reactant that gives it is limiting. ¶ Left over = starting mass of the excess reactant − the mass of it that reacts. To find the mass that reacts, start from the limiting reactant. ¶
+HINTS: Hint 1 ¶ Work out how much CO2 each reactant could make on its own. Whichever makes less is the limiting reactant, and that smaller amount is the theoretical yield. ¶ || Hint 2: the setup ¶ 26.8 g C3H8→? mol C3H8→? g CO2 ¶ 127 g O2→? mol O2→? g CO2 ¶ Left over = starting mass of the excess reactant − the mass of it that reacts. To find the mass that reacts, start from the limiting reactant. ¶
+SOLUTION: Worked solutionMolar masses. C3H8: 3(12.011) + 8(1.008) = 44.10 g/mol ¶ O2: 2(15.999) = 32.00 g/mol ¶ CO2: 12.011 + 2(15.999) = 44.01 g/mol ¶ Product from each reactant. ¶ 26.8 g C3H8 ÷ 44.10 g/mol × (3 mol CO2 ÷ 1 mol C3H8) × 44.01 g/mol = 80.24 g CO2 ¶ 127 g O2 ÷ 32.00 g/mol × (3 mol CO2 ÷ 5 mol O2) × 44.01 g/mol = 104.8 g CO2 ¶ Limiting reactant. C3H8 makes less CO2, so C3H8 is limiting and O2 is in excess. Theoretical yield: 80.2 g CO2 ¶ Excess reactant used. 26.8 g C3H8 ÷ 44.10 g/mol × (5 mol O2 ÷ 1 mol C3H8) × 32.00 g/mol = 97.23 g O2 ¶ Excess left over. 127 g − 97.23 g = 30 g O2 ¶ ¶ For the subtraction, the answer keeps the same number of decimal places as the starting mass. ¶ ¶
+
+=== yield:pct
+Q: In the lab, 33.0 g of O2 reacts with an excess of the other reactant, and 21.1 g of CO2 is collected.
+ANS: 25.9 g CO2 ; 81.4%
+GUIDED: Step 1: theoretical yield. Fill in the blanks. ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol CO2 ¶ × molar mass ¶ g CO2 ¶ ¶ 33.0 g O2×1 mol O2 g O2× mol CO2 mol O2× g CO21 mol CO2=? g CO2 ¶ Step 2: percent yield ¶ percent yield=actual yieldtheoretical yield×100 ¶
+HINTS: Hint 1 ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol CO2 ¶ × molar mass ¶ g CO2 ¶ ¶ percent yield=actual yieldtheoretical yield×100 ¶ || Hint 2: the setup ¶ 33.0 g O2×1 mol O2? g O2×? mol CO2? mol O2×? g CO21 mol CO2=? g CO2 ¶
+SOLUTION: Worked solutionMolar masses. O2: 2(15.999) = 32.00 g/mol ¶ CO2: 12.011 + 2(15.999) = 44.01 g/mol ¶ Grams to moles. 33.0 g O2 ÷ 32.00 g/mol = 1.031 mol O2 ¶ Mole ratio. 1.031 mol O2 × (4 mol CO2 ÷ 7 mol O2) = 0.5893 mol CO2 ¶ Moles to grams. 0.5893 mol CO2 × 44.01 g/mol = 25.9 g CO2 ¶ Percent yield. 21.1 g ÷ 25.93 g × 100 = 81.4% ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== yield:reactant
+Q: A chemist needs to collect 21.2 g of H2O. Under typical conditions this reaction has a 87.4% yield. The other reactant is in excess.
+ANS: 24.3 g H2O ; 35.9 g O2
+GUIDED: Step 1: the theoretical yield has to be larger than what is collected ¶ theoretical yield=actual yield×100percent yield ¶ Step 2: work backward from the theoretical yield to the reactant. Fill in the blanks. ¶ g H2O ¶ ÷ molar mass ¶ mol H2O ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ theoretical yield, in g H2O×1 mol H2O g H2O× mol O2 mol H2O× g O21 mol O2=? g O2 ¶
+HINTS: Hint 1 ¶ theoretical yield=actual yield×100percent yield ¶ g H2O ¶ ÷ molar mass ¶ mol H2O ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ || Hint 2: the setup ¶ theoretical yield, in g H2O×1 mol H2O? g H2O×? mol O2? mol H2O×? g O21 mol O2=? g O2 ¶
+SOLUTION: Worked solutionTheoretical yield needed. 21.2 g ÷ (87.4 ÷ 100) = 24.3 g H2O ¶ Molar masses. H2O: 2(1.008) + 15.999 = 18.02 g/mol ¶ O2: 2(15.999) = 32.00 g/mol ¶ Grams to moles. 24.26 g H2O ÷ 18.02 g/mol = 1.346 mol H2O ¶ Mole ratio. 1.346 mol H2O × (5 mol O2 ÷ 6 mol H2O) = 1.122 mol O2 ¶ Moles to grams. 1.122 mol O2 × 32.00 g/mol = 35.9 g O2 ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== yield:actual
+Q: Under typical conditions this reaction has a 85.0% yield. 6.72 g of KClO3 reacts.
+ANS: 2.63 g O2 ; 2.24 g O2
+GUIDED: Step 1: theoretical yield. Fill in the blanks. ¶ g KClO3 ¶ ÷ molar mass ¶ mol KClO3 ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ 6.72 g KClO3×1 mol KClO3 g KClO3× mol O2 mol KClO3× g O21 mol O2=? g O2 ¶ Step 2: actual yield ¶ actual yield=theoretical yield×percent yield100 ¶
+HINTS: Hint 1 ¶ g KClO3 ¶ ÷ molar mass ¶ mol KClO3 ¶ × mole ratio ¶ mol O2 ¶ × molar mass ¶ g O2 ¶ ¶ actual yield=theoretical yield×percent yield100 ¶ || Hint 2: the setup ¶ 6.72 g KClO3×1 mol KClO3? g KClO3×? mol O2? mol KClO3×? g O21 mol O2=? g O2 ¶
+SOLUTION: Worked solutionMolar masses. KClO3: 39.098 + 35.45 + 3(15.999) = 122.55 g/mol ¶ O2: 2(15.999) = 32.00 g/mol ¶ Grams to moles. 6.72 g KClO3 ÷ 122.55 g/mol = 0.05483 mol KClO3 ¶ Mole ratio. 0.05483 mol KClO3 × (3 mol O2 ÷ 2 mol KClO3) = 0.08225 mol O2 ¶ Moles to grams. 0.08225 mol O2 × 32.00 g/mol = 2.63 g O2 ¶ Actual yield. 2.632 g × (85.0 ÷ 100) = 2.24 g O2 ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+=== capstone:
+Q: A student combines 50.4 mL of liquid silicon tetrachloride (SiCl4, density 1.48 g/mL) and 7.43 mL of liquid water (H2O, density 1.00 g/mL). After the reaction, 11.1 g of silicon dioxide (SiO2) is collected.
+ANS: H2O is limiting ; 12.4 g SiO2 ; 89.6%
+GUIDED: Take each reactant across the map on its own. Fill in the blanks. ¶ 50.4 mL SiCl4→ g→ mol SiCl4→ g SiO2 ¶ 7.43 mL H2O→ g→ mol H2O→ g SiO2 ¶ The smaller amount of SiO2 is the theoretical yield, and the reactant that gives it is limiting. ¶ percent yield=actual yieldtheoretical yield×100 ¶
+HINTS: Hint 1 ¶ Convert each liquid to grams with its density. Then work out how much SiO2 each reactant could make on its own. The smaller amount is the theoretical yield. ¶ || Hint 2: the setup ¶ 50.4 mL SiCl4→? g→? mol SiCl4→? g SiO2 ¶ 7.43 mL H2O→? g→? mol H2O→? g SiO2 ¶ percent yield=actual yieldtheoretical yield×100 ¶
+SOLUTION: Worked solutionMolar masses. SiCl4: 28.085 + 4(35.45) = 169.89 g/mol ¶ H2O: 2(1.008) + 15.999 = 18.02 g/mol ¶ SiO2: 28.085 + 2(15.999) = 60.08 g/mol ¶ Volume to mass. 50.4 mL SiCl4 × 1.48 g/mL = 74.59 g SiCl4 ¶ 7.43 mL H2O × 1.00 g/mL = 7.430 g H2O ¶ Product from each reactant. ¶ 74.59 g SiCl4 ÷ 169.89 g/mol × (1 mol SiO2 ÷ 1 mol SiCl4) × 60.08 g/mol = 26.38 g SiO2 ¶ 7.430 g H2O ÷ 18.02 g/mol × (1 mol SiO2 ÷ 2 mol H2O) × 60.08 g/mol = 12.39 g SiO2 ¶ Limiting reactant. H2O makes less SiO2, so H2O is limiting. Theoretical yield: 12.4 g SiO2 ¶ Percent yield. 11.1 g ÷ 12.39 g × 100 = 89.6% ¶ ¶ Keep extra digits through the middle steps. Round to 3 significant figures only at the end, because the given amounts have 3. ¶ ¶
+
+######## general-chemistry/solution-stoichiometry-study-guide.html
+
+=== molarity:Mg
+Q: A solution is made by dissolving 67.8 g of potassium bromide (KBr) in enough water to make 285 mL of solution. What is the molarity of the solution?
+ANS: 2.00 M KBr
+GUIDED: Step 1: grams to moles ¶ 67.8 g÷ g/mol= mol KBr ¶ Step 2: volume in liters ¶ 285 mL= L ¶ Step 3: divide moles by liters ¶ molarity (M)=moles of soluteliters of solution ¶
+HINTS: Hint 1 ¶ Molarity needs moles, and you are given grams. Convert grams to moles first, then divide by the liters of solution. ¶ molarity (M)=moles of soluteliters of solution ¶ || Hint 2: the steps ¶ Step 1: grams to moles ¶ 67.8 g÷? g/mol=? mol KBr ¶ Step 2: volume in liters ¶ 285 mL=? L ¶ Step 3: divide moles by liters ¶ molarity (M)=moles of soluteliters of solution ¶
+SOLUTION: Worked solutionMolar mass. KBr: 39.098 + 79.904 = 119.00 g/mol ¶ Grams to moles. 67.8 g ÷ 119.00 g/mol = 0.5697 mol KBr ¶ Volume in liters. 285 mL ÷ 1000 = 0.285 L ¶ Molarity. 0.5697 mol ÷ 0.285 L = 2.00 M KBr ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== molarity:g
+Q: How many grams of copper(II) sulfate (CuSO4) are needed to prepare 85.2 mL of 0.707 M CuSO4 solution?
+ANS: 9.61 g CuSO4
+GUIDED: Step 1: volume in liters ¶ 85.2 mL= L ¶ Step 2: moles needed = molarity × liters ¶ 0.707 mol/L×liters= mol CuSO4 ¶ Step 3: moles to grams ¶ moles× g/mol=? g CuSO4 ¶
+HINTS: Hint 1 ¶ Work out how many moles the finished solution must contain (molarity × liters). Then convert those moles to grams. ¶ || Hint 2: the steps ¶ Step 1: volume in liters ¶ 85.2 mL=? L ¶ Step 2: moles needed = molarity × liters ¶ 0.707 mol/L×liters=? mol CuSO4 ¶ Step 3: moles to grams ¶ moles×? g/mol=? g CuSO4 ¶
+SOLUTION: Worked solutionMolar mass. CuSO4: 63.546 + 32.06 + 4(15.999) = 159.60 g/mol ¶ Volume in liters. 85.2 mL ÷ 1000 = 0.0852 L ¶ Moles needed. 0.0852 L × 0.707 mol/L = 0.06024 mol CuSO4 ¶ Moles to grams. 0.06024 mol × 159.60 g/mol = 9.61 g CuSO4 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== molarity:mL
+Q: What volume, in milliliters, of 0.191 M KOH solution contains 0.529 g of KOH?
+ANS: 49.4 mL
+GUIDED: Step 1: grams to moles ¶ 0.529 g÷ g/mol= mol KOH ¶ Step 2: liters = moles ÷ molarity, then convert to milliliters ¶ liters=molesmolarity ¶
+HINTS: Hint 1 ¶ Convert the grams to moles. Then ask how many liters of a 0.191 mol/L solution hold that many moles: divide moles by molarity. ¶ || Hint 2: the steps ¶ Step 1: grams to moles ¶ 0.529 g÷? g/mol=? mol KOH ¶ Step 2: liters = moles ÷ molarity, then convert to milliliters ¶ liters=molesmolarity ¶
+SOLUTION: Worked solutionMolar mass. KOH: 39.098 + 15.999 + 1.008 = 56.11 g/mol ¶ Grams to moles. 0.529 g ÷ 56.11 g/mol = 0.009428 mol KOH ¶ Moles to liters. 0.009428 mol ÷ 0.191 mol/L = 0.04936 L ¶ Liters to milliliters. 0.04936 L × 1000 = 49.4 mL ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== molarity:Mmol
+Q: A solution contains 0.0197 mol of KNO3 in 100.0 mL of solution. What is the molarity of the solution?
+ANS: 0.197 M KNO3
+GUIDED: Step 1: volume in liters ¶ 100.0 mL= L ¶ Step 2: divide moles by liters ¶ molarity (M)=moles of soluteliters of solution ¶
+HINTS: Hint 1 ¶ Molarity is moles of solute divided by liters of solution. The volume here is in milliliters. ¶ molarity (M)=moles of soluteliters of solution ¶ || Hint 2: the steps ¶ Step 1: volume in liters ¶ 100.0 mL=? L ¶ Step 2: divide moles by liters ¶ molarity (M)=moles of soluteliters of solution ¶
+SOLUTION: Worked solutionVolume in liters. 100.0 mL ÷ 1000 = 0.1000 L ¶ Molarity. 0.0197 mol ÷ 0.1000 L = 0.197 M KNO3 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== molarity:mol
+Q: How many moles of AgNO3 are in 500.0 mL of 0.618 M AgNO3 solution?
+ANS: 0.309 mol AgNO3
+GUIDED: Step 1: volume in liters ¶ 500.0 mL= L ¶ Step 2: multiply molarity by liters ¶ moles=molarity×liters ¶
+HINTS: Hint 1 ¶ Molarity is a conversion factor: 0.618 M means 0.618 mol in every liter. Multiply the liters of solution by the molarity. ¶ || Hint 2: the steps ¶ Step 1: volume in liters ¶ 500.0 mL=? L ¶ Step 2: multiply molarity by liters ¶ moles=molarity×liters ¶
+SOLUTION: Worked solutionVolume in liters. 500.0 mL ÷ 1000 = 0.5000 L ¶ Moles. 0.5000 L × 0.618 mol/L = 0.309 mol AgNO3 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== dilution:V2
+Q: To what total volume, in milliliters, must 10.6 mL of 1.84 M HNO3 be diluted to make a 0.110 M solution?
+ANS: 177 mL
+GUIDED: Sort the numbers from the problem into the equation, then solve for the unknown. ¶ M1 × V1 = M2 × V2 ¶ M1 = MV1 = mLM2 = MV2 = ? mL ¶
+HINTS: Hint 1 ¶ Adding water does not change the moles of solute, so M1V1 = M2V2. The 1s are the concentrated stock. The 2s are the diluted solution. ¶ M1 = ? MV1 = ? mLM2 = ? MV2 = ? mL ¶ || Hint 2: rearranged ¶ V2 = M1 × V1 ÷ M2 ¶
+SOLUTION: Worked solutionSort the values.M1 = 1.84 MV1 = 10.6 mLM2 = 0.110 MV2 = ? mL ¶ ¶ Solve for V2. V2 = M1 × V1 ÷ M2 = 1.84 M × 10.6 mL ÷ 0.110 M = 177 mL ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== dilution:M2
+Q: 23.4 mL of 6.31 M NH3 is diluted with water to a total volume of 329 mL. What is the molarity of the diluted solution?
+ANS: 0.449 M NH3
+GUIDED: Sort the numbers from the problem into the equation, then solve for the unknown. ¶ M1 × V1 = M2 × V2 ¶ M1 = MV1 = mLM2 = ? MV2 = mL ¶
+HINTS: Hint 1 ¶ Adding water does not change the moles of solute, so M1V1 = M2V2. The 1s are the concentrated stock. The 2s are the diluted solution. ¶ M1 = ? MV1 = ? mLM2 = ? MV2 = ? mL ¶ || Hint 2: rearranged ¶ M2 = M1 × V1 ÷ V2 ¶
+SOLUTION: Worked solutionSort the values.M1 = 6.31 MV1 = 23.4 mLM2 = ? MV2 = 329 mL ¶ ¶ Solve for M2. M2 = M1 × V1 ÷ V2 = 6.31 M × 23.4 mL ÷ 329 mL = 0.449 M ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== dilution:V1
+Q: What volume, in milliliters, of 5.90 M NaCl stock solution is needed to prepare 182 mL of 1.77 M NaCl?
+ANS: 54.6 mL
+GUIDED: Sort the numbers from the problem into the equation, then solve for the unknown. ¶ M1 × V1 = M2 × V2 ¶ M1 = MV1 = ? mLM2 = MV2 = mL ¶
+HINTS: Hint 1 ¶ Adding water does not change the moles of solute, so M1V1 = M2V2. The 1s are the concentrated stock. The 2s are the diluted solution. ¶ M1 = ? MV1 = ? mLM2 = ? MV2 = ? mL ¶ || Hint 2: rearranged ¶ V1 = M2 × V2 ÷ M1 ¶
+SOLUTION: Worked solutionSort the values.M1 = 5.90 MV1 = ? mLM2 = 1.77 MV2 = 182 mL ¶ ¶ Solve for V1. V1 = M2 × V2 ÷ M1 = 1.77 M × 182 mL ÷ 5.90 M = 54.6 mL ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== dilution:water
+Q: How many milliliters of water must be added to 8.36 mL of 2.20 M KCl to make a 0.387 M solution? Assume the volumes add.
+ANS: 39.2 mL of water
+GUIDED: Sort the numbers from the problem into the equation, then solve for the unknown. ¶ M1 × V1 = M2 × V2 ¶ M1 = MV1 = mLM2 = MV2 = ? mL ¶
+HINTS: Hint 1 ¶ Adding water does not change the moles of solute, so M1V1 = M2V2. The 1s are the concentrated stock. The 2s are the diluted solution. ¶ M1 = ? MV1 = ? mLM2 = ? MV2 = ? mL ¶ || Hint 2: rearranged ¶ V2 = M1 × V1 ÷ M2, then water added = V2 − V1 ¶
+SOLUTION: Worked solutionSort the values.M1 = 2.20 MV1 = 8.36 mLM2 = 0.387 MV2 = ? mL ¶ ¶ Solve for V2. V2 = 2.20 M × 8.36 mL ÷ 0.387 M = 47.52 mL ¶ Water added. 47.52 mL − 8.36 mL = 39.2 mL ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solstoich:sol>mL
+Q: How many milliliters of 0.320 M CaCl2 are needed to react completely with 10.4 mL of 0.713 M AgNO3?
+ANS: 11.6 mL CaCl2
+GUIDED: Your route ¶ mL AgNO3 ¶ ÷ 1000 ¶ L AgNO3 ¶ × molarity ¶ mol AgNO3 ¶ × mole ratio ¶ mol CaCl2 ¶ ÷ molarity ¶ L CaCl2 ¶ × 1000 ¶ mL CaCl2 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 10.4 mL×1 L1000 mL× mol AgNO31 L× mol CaCl2 mol AgNO3×1 L mol CaCl2×1000 mL1 L=? mL CaCl2 ¶
+HINTS: Hint 1: your route ¶ mL AgNO3 ¶ ÷ 1000 ¶ L AgNO3 ¶ × molarity ¶ mol AgNO3 ¶ × mole ratio ¶ mol CaCl2 ¶ ÷ molarity ¶ L CaCl2 ¶ × 1000 ¶ mL CaCl2 ¶ ¶ || Hint 2: the setup ¶ 10.4 mL×1 L1000 mL×? mol AgNO31 L×? mol CaCl2? mol AgNO3×1 L? mol CaCl2×1000 mL1 L=? mL CaCl2 ¶
+SOLUTION: Worked solutionMilliliters to liters. 10.4 mL ÷ 1000 = 0.0104 L ¶ Liters to moles. 0.0104 L × 0.713 mol/L = 0.007415 mol AgNO3 ¶ Mole ratio. 0.007415 mol AgNO3 × (1 mol CaCl2 ÷ 2 mol AgNO3) = 0.003708 mol CaCl2 ¶ Moles to liters. 0.003708 mol CaCl2 ÷ 0.320 mol/L = 0.01159 L ¶ Liters to milliliters. 0.01159 L × 1000 = 11.6 mL CaCl2 ¶ All in one line.10.4 mL×1 L1000 mL×0.713 mol AgNO31 L×1 mol CaCl22 mol AgNO3×1 L0.320 mol CaCl2×1000 mL1 L=11.6 mL CaCl2 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solstoich:sol>g
+Q: How many grams of Mg(OH)2 are needed to react completely with 40.6 mL of 0.142 M HCl?
+ANS: 0.168 g Mg(OH)2
+GUIDED: Your route ¶ mL HCl ¶ ÷ 1000 ¶ L HCl ¶ × molarity ¶ mol HCl ¶ × mole ratio ¶ mol Mg(OH)2 ¶ × molar mass ¶ g Mg(OH)2 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 40.6 mL×1 L1000 mL× mol HCl1 L× mol Mg(OH)2 mol HCl× g Mg(OH)21 mol Mg(OH)2=? g Mg(OH)2 ¶
+HINTS: Hint 1: your route ¶ mL HCl ¶ ÷ 1000 ¶ L HCl ¶ × molarity ¶ mol HCl ¶ × mole ratio ¶ mol Mg(OH)2 ¶ × molar mass ¶ g Mg(OH)2 ¶ ¶ || Hint 2: the setup ¶ 40.6 mL×1 L1000 mL×? mol HCl1 L×? mol Mg(OH)2? mol HCl×? g Mg(OH)21 mol Mg(OH)2=? g Mg(OH)2 ¶
+SOLUTION: Worked solutionMolar mass. Mg(OH)2: 24.305 + 2(15.999) + 2(1.008) = 58.32 g/mol ¶ Milliliters to liters. 40.6 mL ÷ 1000 = 0.0406 L ¶ Liters to moles. 0.0406 L × 0.142 mol/L = 0.005765 mol HCl ¶ Mole ratio. 0.005765 mol HCl × (1 mol Mg(OH)2 ÷ 2 mol HCl) = 0.002883 mol Mg(OH)2 ¶ Moles to grams. 0.002883 mol Mg(OH)2 × 58.32 g/mol = 0.168 g Mg(OH)2 ¶ All in one line.40.6 mL×1 L1000 mL×0.142 mol HCl1 L×1 mol Mg(OH)22 mol HCl×58.32 g Mg(OH)21 mol Mg(OH)2=0.168 g Mg(OH)2 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solstoich:g>mL
+Q: How many milliliters of 0.182 M HCl are needed to react completely with 0.673 g of Mg?
+ANS: 304 mL HCl
+GUIDED: Your route ¶ g Mg ¶ ÷ molar mass ¶ mol Mg ¶ × mole ratio ¶ mol HCl ¶ ÷ molarity ¶ L HCl ¶ × 1000 ¶ mL HCl ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 0.673 g Mg×1 mol Mg g Mg× mol HCl mol Mg×1 L mol HCl×1000 mL1 L=? mL HCl ¶
+HINTS: Hint 1: your route ¶ g Mg ¶ ÷ molar mass ¶ mol Mg ¶ × mole ratio ¶ mol HCl ¶ ÷ molarity ¶ L HCl ¶ × 1000 ¶ mL HCl ¶ ¶ || Hint 2: the setup ¶ 0.673 g Mg×1 mol Mg? g Mg×? mol HCl? mol Mg×1 L? mol HCl×1000 mL1 L=? mL HCl ¶
+SOLUTION: Worked solutionMolar mass. Mg: 24.31 g/mol ¶ Grams to moles. 0.673 g Mg ÷ 24.31 g/mol = 0.02768 mol Mg ¶ Mole ratio. 0.02768 mol Mg × (2 mol HCl ÷ 1 mol Mg) = 0.05537 mol HCl ¶ Moles to liters. 0.05537 mol HCl ÷ 0.182 mol/L = 0.3042 L ¶ Liters to milliliters. 0.3042 L × 1000 = 304 mL HCl ¶ All in one line.0.673 g Mg×1 mol Mg24.31 g Mg×2 mol HCl1 mol Mg×1 L0.182 mol HCl×1000 mL1 L=304 mL HCl ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== mix:
+Q: A student mixes 53.8 mL of 0.198 M BaCl2 with 80.0 mL of 0.160 M Na2SO4. After filtering and drying, 1.41 g of BaSO4 is collected.
+ANS: BaCl2 is limiting ; 2.49 g BaSO4 ; 56.7%
+GUIDED: Take each solution to moles, then to grams of product. Fill in the blanks. ¶ 53.8 mL of 0.198 M BaCl2→ mol BaCl2→ g BaSO4 ¶ 80.0 mL of 0.160 M Na2SO4→ mol Na2SO4→ g BaSO4 ¶ The smaller amount of BaSO4 is the theoretical yield, and the reactant that gives it is limiting. ¶ percent yield=actual yieldtheoretical yield×100 ¶
+HINTS: Hint 1 ¶ For each solution, liters × molarity gives moles. Then work out how much BaSO4 each reactant could make on its own. The smaller amount is the theoretical yield. ¶ || Hint 2: the setup ¶ 53.8 mL of 0.198 M BaCl2→? mol BaCl2→? g BaSO4 ¶ 80.0 mL of 0.160 M Na2SO4→? mol Na2SO4→? g BaSO4 ¶ percent yield=actual yieldtheoretical yield×100 ¶
+SOLUTION: Worked solutionMolar mass. BaSO4: 137.33 + 32.06 + 4(15.999) = 233.39 g/mol ¶ Moles of each reactant. ¶ 0.0538 L × 0.198 mol/L = 0.01065 mol BaCl2 ¶ 0.0800 L × 0.160 mol/L = 0.01280 mol Na2SO4 ¶ Product from each reactant. ¶ 0.01065 mol BaCl2 × (1 mol BaSO4 ÷ 1 mol BaCl2) × 233.39 g/mol = 2.486 g BaSO4 ¶ 0.01280 mol Na2SO4 × (1 mol BaSO4 ÷ 1 mol Na2SO4) × 233.39 g/mol = 2.987 g BaSO4 ¶ Limiting reactant. BaCl2 makes less BaSO4, so BaCl2 is limiting. Theoretical yield: 2.49 g BaSO4 ¶ Percent yield. 1.41 g ÷ 2.486 g × 100 = 56.7% ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== titration:findM
+Q: A 10.00 mL sample of HCl solution is titrated with 0.2313 M NaOH. The equivalence point is reached after 24.90 mL of NaOH has been added. What is the molarity of the HCl solution?
+ANS: 0.5759 M HCl
+GUIDED: Your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol HCl ¶ ÷ liters of solution ¶ M HCl ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 24.90 mL×1 L1000 mL× mol NaOH1 L× mol HCl mol NaOH×1 L=? M HCl ¶
+HINTS: Hint 1: your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol HCl ¶ ÷ liters of solution ¶ M HCl ¶ ¶ || Hint 2: the setup ¶ 24.90 mL×1 L1000 mL×? mol NaOH1 L×? mol HCl? mol NaOH×1? L=? M HCl ¶
+SOLUTION: Worked solutionMilliliters to liters. 24.90 mL ÷ 1000 = 0.02490 L ¶ Liters to moles. 0.02490 L × 0.2313 mol/L = 0.0057594 mol NaOH ¶ Mole ratio. 0.0057594 mol NaOH × (1 mol HCl ÷ 1 mol NaOH) = 0.0057594 mol HCl ¶ Molarity. 0.0057594 mol HCl ÷ 0.01000 L = 0.5759 M HCl ¶ All in one line.24.90 mL×1 L1000 mL×0.2313 mol NaOH1 L×1 mol HCl1 mol NaOH×10.01000 L=0.5759 M HCl ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 4 significant figures, the fewest in the given data. ¶ ¶
+
+=== titration:khp
+Q: A 0.6687 g sample of KHP (KHC8H4O4) is dissolved in water and titrated with a NaOH solution. The equivalence point is reached after 35.34 mL of NaOH has been added. What is the molarity of the NaOH solution?
+ANS: 0.09265 M NaOH
+GUIDED: Your route ¶ g KHC8H4O4 ¶ ÷ molar mass ¶ mol KHC8H4O4 ¶ × mole ratio ¶ mol NaOH ¶ ÷ liters of solution ¶ M NaOH ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 0.6687 g KHC8H4O4×1 mol KHC8H4O4 g KHC8H4O4× mol NaOH mol KHC8H4O4×1 L=? M NaOH ¶
+HINTS: Hint 1: your route ¶ g KHC8H4O4 ¶ ÷ molar mass ¶ mol KHC8H4O4 ¶ × mole ratio ¶ mol NaOH ¶ ÷ liters of solution ¶ M NaOH ¶ ¶ || Hint 2: the setup ¶ 0.6687 g KHC8H4O4×1 mol KHC8H4O4? g KHC8H4O4×? mol NaOH? mol KHC8H4O4×1? L=? M NaOH ¶
+SOLUTION: Worked solutionMolar mass. KHC8H4O4: 39.098 + 5(1.008) + 8(12.011) + 4(15.999) = 204.22 g/mol ¶ Grams to moles. 0.6687 g KHC8H4O4 ÷ 204.22 g/mol = 0.0032744 mol KHC8H4O4 ¶ Mole ratio. 0.0032744 mol KHC8H4O4 × (1 mol NaOH ÷ 1 mol KHC8H4O4) = 0.0032744 mol NaOH ¶ Molarity. 0.0032744 mol NaOH ÷ 0.03534 L = 0.09265 M NaOH ¶ All in one line.0.6687 g KHC8H4O4×1 mol KHC8H4O4204.22 g KHC8H4O4×1 mol NaOH1 mol KHC8H4O4×10.03534 L=0.09265 M NaOH ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 4 significant figures, the fewest in the given data. ¶ ¶
+
+=== titration:findV
+Q: What volume, in milliliters, of 0.2654 M KOH is needed to reach the equivalence point in the titration of 10.00 mL of 0.2188 M H2SO4?
+ANS: 16.49 mL KOH
+GUIDED: Your route ¶ mL H2SO4 ¶ ÷ 1000 ¶ L H2SO4 ¶ × molarity ¶ mol H2SO4 ¶ × mole ratio ¶ mol KOH ¶ ÷ molarity ¶ L KOH ¶ × 1000 ¶ mL KOH ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 10.00 mL×1 L1000 mL× mol H2SO41 L× mol KOH mol H2SO4×1 L mol KOH×1000 mL1 L=? mL KOH ¶
+HINTS: Hint 1: your route ¶ mL H2SO4 ¶ ÷ 1000 ¶ L H2SO4 ¶ × molarity ¶ mol H2SO4 ¶ × mole ratio ¶ mol KOH ¶ ÷ molarity ¶ L KOH ¶ × 1000 ¶ mL KOH ¶ ¶ || Hint 2: the setup ¶ 10.00 mL×1 L1000 mL×? mol H2SO41 L×? mol KOH? mol H2SO4×1 L? mol KOH×1000 mL1 L=? mL KOH ¶
+SOLUTION: Worked solutionMilliliters to liters. 10.00 mL ÷ 1000 = 0.01000 L ¶ Liters to moles. 0.01000 L × 0.2188 mol/L = 0.0021880 mol H2SO4 ¶ Mole ratio. 0.0021880 mol H2SO4 × (2 mol KOH ÷ 1 mol H2SO4) = 0.0043760 mol KOH ¶ Moles to liters. 0.0043760 mol KOH ÷ 0.2654 mol/L = 0.016488 L ¶ Liters to milliliters. 0.016488 L × 1000 = 16.49 mL KOH ¶ All in one line.10.00 mL×1 L1000 mL×0.2188 mol H2SO41 L×2 mol KOH1 mol H2SO4×1 L0.2654 mol KOH×1000 mL1 L=16.49 mL KOH ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 4 significant figures, the fewest in the given data. ¶ ¶
+
+=== titration:sample
+Q: A sample of an impure solid containing oxalic acid (H2C2O4) is titrated with 0.1544 M NaOH. The equivalence point is reached after 38.02 mL of NaOH has been added. How many grams of H2C2O4 were in the sample?
+ANS: 0.2643 g H2C2O4
+GUIDED: Your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol H2C2O4 ¶ × molar mass ¶ g H2C2O4 ¶ ¶ Fill in the blanks to finish the setup, then calculate. ¶ 38.02 mL×1 L1000 mL× mol NaOH1 L× mol H2C2O4 mol NaOH× g H2C2O41 mol H2C2O4=? g H2C2O4 ¶
+HINTS: Hint 1: your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol H2C2O4 ¶ × molar mass ¶ g H2C2O4 ¶ ¶ || Hint 2: the setup ¶ 38.02 mL×1 L1000 mL×? mol NaOH1 L×? mol H2C2O4? mol NaOH×? g H2C2O41 mol H2C2O4=? g H2C2O4 ¶
+SOLUTION: Worked solutionMolar mass. H2C2O4: 2(1.008) + 2(12.011) + 4(15.999) = 90.03 g/mol ¶ Milliliters to liters. 38.02 mL ÷ 1000 = 0.03802 L ¶ Liters to moles. 0.03802 L × 0.1544 mol/L = 0.0058703 mol NaOH ¶ Mole ratio. 0.0058703 mol NaOH × (1 mol H2C2O4 ÷ 2 mol NaOH) = 0.0029351 mol H2C2O4 ¶ Moles to grams. 0.0029351 mol H2C2O4 × 90.03 g/mol = 0.2643 g H2C2O4 ¶ All in one line.38.02 mL×1 L1000 mL×0.1544 mol NaOH1 L×1 mol H2C2O42 mol NaOH×90.03 g H2C2O41 mol H2C2O4=0.2643 g H2C2O4 ¶ ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 4 significant figures, the fewest in the given data. ¶ ¶
+
+######## general-chemistry/solutions-and-gases-study-guide.html
+
+=== gaslaw:Vg
+Q: What volume, in liters, does 2.42 g of oxygen (O2) occupy at 63.3 °C and 662 mmHg?
+ANS: 2.40 L
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ Here n comes from the mass: moles = grams ÷ molar mass. ¶ P = atmV = ? Ln = molT = K ¶ Then solve for the unknown ¶ V=n × R × TP ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ V=n × R × TP ¶ || Hint 2: the values ¶ Here n comes from the mass: moles = grams ÷ molar mass. ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionMolar mass. O2: 2(15.999) = 32.00 g/mol ¶ Grams to moles. 2.42 g ÷ 32.00 g/mol = 0.07562 mol O2 ¶ Convert the units. T = 63.3 °C + 273.15 = 336.45 K ¶ P = 662 mmHg ÷ 760 = 0.8711 atm ¶ Solve for V. V = nRT ÷ P = (0.07562 mol × 0.08206 × 336.45 K) ÷ 0.8711 atm = 2.40 L ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:T
+Q: A 9.45 L container holds 0.328 mol of hydrogen (H2) at a pressure of 789 mmHg. What is the temperature of the gas, in kelvins?
+ANS: 364 K
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = Ln = molT = ? K ¶ Then solve for the unknown ¶ T=P × Vn × R ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ T=P × Vn × R ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionConvert the units. P = 789 mmHg ÷ 760 = 1.038 atm ¶ Solve for T. T = PV ÷ nR = (1.038 atm × 9.45 L) ÷ (0.328 mol × 0.08206) = 364 K ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:V
+Q: What volume, in liters, does 2.52 mol of ammonia (NH3) occupy at 83.7 °C and 3.01 atm?
+ANS: 24.5 L
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = ? Ln = molT = K ¶ Then solve for the unknown ¶ V=n × R × TP ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ V=n × R × TP ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionConvert the units. T = 83.7 °C + 273.15 = 356.85 K ¶ Solve for V. V = nRT ÷ P = (2.52 mol × 0.08206 × 356.85 K) ÷ 3.01 atm = 24.5 L ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:n
+Q: How many moles of neon (Ne) are in a 849 mL container at 94.2 °C and 2.33 atm?
+ANS: 0.0656 mol Ne
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = Ln = ? molT = K ¶ Then solve for the unknown ¶ n=P × VR × T ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ n=P × VR × T ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionConvert the units. T = 94.2 °C + 273.15 = 367.35 K ¶ V = 849 mL ÷ 1000 = 0.849 L ¶ Solve for n. n = PV ÷ RT = (2.33 atm × 0.849 L) ÷ (0.08206 × 367.35 K) = 0.0656 mol Ne ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:MM
+Q: A 83.3 g sample of an unknown gas occupies 19.2 L at 15.1 °C and 2.57 atm. What is the molar mass of the gas?
+ANS: 39.9 g/mol
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = Ln = ? molT = K ¶ Then solve for the unknown ¶ n=P × VR × T ¶ molar mass=gramsmoles ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ n=P × VR × T ¶ molar mass=gramsmoles ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionConvert the units. T = 15.1 °C + 273.15 = 288.25 K ¶ Moles. n = PV ÷ RT = (2.57 atm × 19.2 L) ÷ (0.08206 × 288.25 K) = 2.086 mol ¶ Molar mass. 83.3 g ÷ 2.086 mol = 39.9 g/mol ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:g
+Q: What mass, in grams, of methane (CH4) is in a 848 mL container at 104.1 °C and 103 kPa?
+ANS: 0.447 g CH4
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = Ln = ? molT = K ¶ Then solve for the unknown ¶ n=P × VR × T ¶ mass=n×molar mass ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ n=P × VR × T ¶ mass=n×molar mass ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionMolar mass. CH4: 12.011 + 4(1.008) = 16.04 g/mol ¶ Convert the units. T = 104.1 °C + 273.15 = 377.25 K ¶ P = 103 kPa ÷ 101.325 = 1.017 atm ¶ V = 848 mL ÷ 1000 = 0.848 L ¶ Moles. n = PV ÷ RT = (1.017 atm × 0.848 L) ÷ (0.08206 × 377.25 K) = 0.02785 mol CH4 ¶ Moles to grams. 0.02785 mol × 16.04 g/mol = 0.447 g CH4 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gaslaw:P
+Q: A 211 mL container holds 0.00644 mol of hydrogen (H2) at 78.2 °C. What is the pressure in the container, in atm?
+ANS: 0.880 atm
+GUIDED: Sort the values into PV = nRT. Convert each one first: pressure in atm, volume in liters, temperature in kelvins. ¶ P × V = n × R × Twith R = 0.08206 L·atm/(mol·K) ¶ P = ? atmV = Ln = molT = K ¶ Then solve for the unknown ¶ P=n × R × TV ¶
+HINTS: Hint 1 ¶ Use PV = nRT with R = 0.08206 L·atm/(mol·K). The units have to match R: atm, liters and kelvins. ¶ P=n × R × TV ¶ || Hint 2: the values ¶ P = ? atmV = ? Ln = ? molT = ? K ¶
+SOLUTION: Worked solutionConvert the units. T = 78.2 °C + 273.15 = 351.35 K ¶ V = 211 mL ÷ 1000 = 0.211 L ¶ Solve for P. P = nRT ÷ V = (0.00644 mol × 0.08206 × 351.35 K) ÷ 0.211 L = 0.880 atm ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gasstoich:gas>gasV
+Q: How many liters of NH3 gas, measured at the same temperature and pressure, can form from 1.87 L of H2 gas at 97.2 °C and 1.76 atm? Assume the other reactant is in excess.
+ANS: 1.25 L NH3
+GUIDED: Your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol NH3 ¶ V = nRT ÷ P ¶ L NH3 ¶ ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = LT = Kn = mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2× mol NH3 mol H2=? mol NH3 ¶ Step 3: volume of NH3 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = mol NH3T = KP = atm ¶
+HINTS: Hint 1: your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol NH3 ¶ V = nRT ÷ P ¶ L NH3 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = ? atmV = ? LT = ? Kn = ? mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2×? mol NH3? mol H2=? mol NH3 ¶ Step 3: volume of NH3 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = ? mol NH3T = ? KP = ? atm ¶
+SOLUTION: Worked solutionConvert the units for H2. T = 97.2 °C + 273.15 = 370.35 K ¶ Moles of H2. n = PV ÷ RT = (1.76 atm × 1.87 L) ÷ (0.08206 × 370.35 K) = 0.1083 mol H2 ¶ Mole ratio. 0.1083 mol H2 × (2 mol NH3 ÷ 3 mol H2) = 0.07220 mol NH3 ¶ Same conditions. NH3 is measured at the same temperature and pressure: 370.35 K and 1.76 atm. ¶ Volume of NH3. V = nRT ÷ P = (0.07220 mol × 0.08206 × 370.35 K) ÷ 1.76 atm = 1.25 L NH3 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gasstoich:g>gasV
+Q: How many liters of SO2 gas, measured at 116.5 °C and 688 mmHg, are needed to react completely with 15.3 g of O2?
+ANS: 33.8 L SO2
+GUIDED: Your route ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol SO2 ¶ V = nRT ÷ P ¶ L SO2 ¶ ¶ Step 1: from O2 to moles of SO2 ¶ 15.3 g O2×1 mol O2 g O2× mol SO2 mol O2=? mol SO2 ¶ Step 2: volume of SO2 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = mol SO2T = KP = atm ¶
+HINTS: Hint 1: your route ¶ g O2 ¶ ÷ molar mass ¶ mol O2 ¶ × mole ratio ¶ mol SO2 ¶ V = nRT ÷ P ¶ L SO2 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: from O2 to moles of SO2 ¶ 15.3 g O2×1 mol O2? g O2×? mol SO2? mol O2=? mol SO2 ¶ Step 2: volume of SO2 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = ? mol SO2T = ? KP = ? atm ¶
+SOLUTION: Worked solutionMolar mass. O2: 2(15.999) = 32.00 g/mol ¶ Grams to moles. 15.3 g O2 ÷ 32.00 g/mol = 0.4781 mol O2 ¶ Mole ratio. 0.4781 mol O2 × (2 mol SO2 ÷ 1 mol O2) = 0.9563 mol SO2 ¶ Convert the units for SO2. T = 116.5 °C + 273.15 = 389.65 K ¶ P = 688 mmHg ÷ 760 = 0.9053 atm ¶ Volume of SO2. V = nRT ÷ P = (0.9563 mol × 0.08206 × 389.65 K) ÷ 0.9053 atm = 33.8 L SO2 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gasstoich:gas>g
+Q: How many grams of SO3 can form from 539 mL of O2 gas at STP (0 °C and 1.00 atm)? Assume the other reactant is in excess.
+ANS: 3.85 g SO3
+GUIDED: Your route ¶ P, V, T of O2 ¶ n = PV ÷ RT ¶ mol O2 ¶ × mole ratio ¶ mol SO3 ¶ × molar mass ¶ g SO3 ¶ ¶ Step 1: moles of O2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = LT = Kn = mol O2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol O2× mol SO3 mol O2× g SO31 mol SO3=? g SO3 ¶
+HINTS: Hint 1: your route ¶ P, V, T of O2 ¶ n = PV ÷ RT ¶ mol O2 ¶ × mole ratio ¶ mol SO3 ¶ × molar mass ¶ g SO3 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: moles of O2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = ? atmV = ? LT = ? Kn = ? mol O2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol O2×? mol SO3? mol O2×? g SO31 mol SO3=? g SO3 ¶
+SOLUTION: Worked solutionMolar mass. SO3: 32.06 + 3(15.999) = 80.06 g/mol ¶ Convert the units for O2. T = 0.0 °C + 273.15 = 273.15 K ¶ V = 539 mL ÷ 1000 = 0.539 L ¶ Moles of O2. n = PV ÷ RT = (1.00 atm × 0.539 L) ÷ (0.08206 × 273.15 K) = 0.02405 mol O2 ¶ Mole ratio. 0.02405 mol O2 × (2 mol SO3 ÷ 1 mol O2) = 0.04809 mol SO3 ¶ Moles to grams. 0.04809 mol SO3 × 80.06 g/mol = 3.85 g SO3 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== gasstoich:g>gasP
+Q: What pressure, in atm, does the O2 gas reach if 19.4 g of KClO3 reacts completely and the gas is collected in a 3.83 L container at 37.0 °C?
+ANS: 1.58 atm
+GUIDED: Your route ¶ g KClO3 ¶ ÷ molar mass ¶ mol KClO3 ¶ × mole ratio ¶ mol O2 ¶ P = nRT ÷ V ¶ atm O2 ¶ ¶ Step 1: from KClO3 to moles of O2 ¶ 19.4 g KClO3×1 mol KClO3 g KClO3× mol O2 mol KClO3=? mol O2 ¶ Step 2: pressure of O2 from the ideal gas law. Convert the units first. ¶ P=n × R × TVwith R = 0.08206 L·atm/(mol·K) ¶ n = mol O2T = KV = L ¶
+HINTS: Hint 1: your route ¶ g KClO3 ¶ ÷ molar mass ¶ mol KClO3 ¶ × mole ratio ¶ mol O2 ¶ P = nRT ÷ V ¶ atm O2 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: from KClO3 to moles of O2 ¶ 19.4 g KClO3×1 mol KClO3? g KClO3×? mol O2? mol KClO3=? mol O2 ¶ Step 2: pressure of O2 from the ideal gas law. Convert the units first. ¶ P=n × R × TVwith R = 0.08206 L·atm/(mol·K) ¶ n = ? mol O2T = ? KV = ? L ¶
+SOLUTION: Worked solutionMolar mass. KClO3: 39.098 + 35.45 + 3(15.999) = 122.55 g/mol ¶ Grams to moles. 19.4 g KClO3 ÷ 122.55 g/mol = 0.1583 mol KClO3 ¶ Mole ratio. 0.1583 mol KClO3 × (3 mol O2 ÷ 2 mol KClO3) = 0.2375 mol O2 ¶ Convert the units for O2. T = 37.0 °C + 273.15 = 310.15 K ¶ Pressure of O2. P = nRT ÷ V = (0.2375 mol × 0.08206 × 310.15 K) ÷ 3.83 L = 1.58 atm ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solgas:gasmL
+Q: How many milliliters of 0.230 M H2SO4 must react to produce 428 mL of H2 gas at 21.1 °C and 788 mmHg? Assume the other reactant is in excess.
+ANS: 79.9 mL H2SO4
+GUIDED: Your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol H2SO4 ¶ ÷ molarity ¶ L H2SO4 ¶ × 1000 ¶ mL H2SO4 ¶ ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = LT = Kn = mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2× mol H2SO4 mol H2×1 L mol H2SO4×1000 mL1 L=? mL H2SO4 ¶
+HINTS: Hint 1: your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol H2SO4 ¶ ÷ molarity ¶ L H2SO4 ¶ × 1000 ¶ mL H2SO4 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = ? atmV = ? LT = ? Kn = ? mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2×? mol H2SO4? mol H2×1 L? mol H2SO4×1000 mL1 L=? mL H2SO4 ¶
+SOLUTION: Worked solutionConvert the units for H2. T = 21.1 °C + 273.15 = 294.25 K ¶ P = 788 mmHg ÷ 760 = 1.037 atm ¶ V = 428 mL ÷ 1000 = 0.428 L ¶ Moles of H2. n = PV ÷ RT = (1.037 atm × 0.428 L) ÷ (0.08206 × 294.25 K) = 0.01838 mol H2 ¶ Mole ratio. 0.01838 mol H2 × (1 mol H2SO4 ÷ 1 mol H2) = 0.01838 mol H2SO4 ¶ Moles to liters. 0.01838 mol H2SO4 ÷ 0.230 mol/L = 0.07991 L ¶ Liters to milliliters. 0.07991 L × 1000 = 79.9 mL H2SO4 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solgas:solV
+Q: How many liters of NH3 gas, measured at 34.8 °C and 761 mmHg, can form from 59.7 mL of 0.986 M NaOH? Assume the other reactant is in excess.
+ANS: 1.49 L NH3
+GUIDED: Your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol NH3 ¶ V = nRT ÷ P ¶ L NH3 ¶ ¶ Step 1: from NaOH to moles of NH3 ¶ 59.7 mL×1 L1000 mL× mol NaOH1 L× mol NH3 mol NaOH=? mol NH3 ¶ Step 2: volume of NH3 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = mol NH3T = KP = atm ¶
+HINTS: Hint 1: your route ¶ mL NaOH ¶ ÷ 1000 ¶ L NaOH ¶ × molarity ¶ mol NaOH ¶ × mole ratio ¶ mol NH3 ¶ V = nRT ÷ P ¶ L NH3 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: from NaOH to moles of NH3 ¶ 59.7 mL×1 L1000 mL×? mol NaOH1 L×? mol NH3? mol NaOH=? mol NH3 ¶ Step 2: volume of NH3 from the ideal gas law. Convert the units first. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ n = ? mol NH3T = ? KP = ? atm ¶
+SOLUTION: Worked solutionMilliliters to liters. 59.7 mL ÷ 1000 = 0.0597 L ¶ Liters to moles. 0.0597 L × 0.986 mol/L = 0.05886 mol NaOH ¶ Mole ratio. 0.05886 mol NaOH × (1 mol NH3 ÷ 1 mol NaOH) = 0.05886 mol NH3 ¶ Convert the units for NH3. T = 34.8 °C + 273.15 = 307.95 K ¶ P = 761 mmHg ÷ 760 = 1.001 atm ¶ Volume of NH3. V = nRT ÷ P = (0.05886 mol × 0.08206 × 307.95 K) ÷ 1.001 atm = 1.49 L NH3 ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solgas:gasM
+Q: When 30.6 mL of a HCl solution reacts completely with an excess of the other reactant, 318 mL of H2 gas is collected at 24.8 °C and 752 mmHg. What is the molarity of the HCl solution?
+ANS: 0.841 M HCl
+GUIDED: Your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol HCl ¶ ÷ liters of solution ¶ M HCl ¶ ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = atmV = LT = Kn = mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2× mol HCl mol H2×1 L=? M HCl ¶
+HINTS: Hint 1: your route ¶ P, V, T of H2 ¶ n = PV ÷ RT ¶ mol H2 ¶ × mole ratio ¶ mol HCl ¶ ÷ liters of solution ¶ M HCl ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: moles of H2 from the ideal gas law. Convert the units first. ¶ n=P × VR × Twith R = 0.08206 L·atm/(mol·K) ¶ P = ? atmV = ? LT = ? Kn = ? mol H2 ¶ Step 2: mole ratio, starting from the n you just found ¶ n mol H2×? mol HCl? mol H2×1? L=? M HCl ¶
+SOLUTION: Worked solutionConvert the units for H2. T = 24.8 °C + 273.15 = 297.95 K ¶ P = 752 mmHg ÷ 760 = 0.9895 atm ¶ V = 318 mL ÷ 1000 = 0.318 L ¶ Moles of H2. n = PV ÷ RT = (0.9895 atm × 0.318 L) ÷ (0.08206 × 297.95 K) = 0.01287 mol H2 ¶ Mole ratio. 0.01287 mol H2 × (2 mol HCl ÷ 1 mol H2) = 0.02574 mol HCl ¶ Molarity. 0.02574 mol HCl ÷ 0.0306 L = 0.841 M HCl ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== solgas:solP
+Q: What pressure, in atm, does the H2 gas reach if 56.7 mL of 0.637 M H2SO4 reacts completely and the gas is collected in a 2.40 L container at 26.9 °C? Assume the other reactant is in excess.
+ANS: 0.371 atm
+GUIDED: Your route ¶ mL H2SO4 ¶ ÷ 1000 ¶ L H2SO4 ¶ × molarity ¶ mol H2SO4 ¶ × mole ratio ¶ mol H2 ¶ P = nRT ÷ V ¶ atm H2 ¶ ¶ Step 1: from H2SO4 to moles of H2 ¶ 56.7 mL×1 L1000 mL× mol H2SO41 L× mol H2 mol H2SO4=? mol H2 ¶ Step 2: pressure of H2 from the ideal gas law. Convert the units first. ¶ P=n × R × TVwith R = 0.08206 L·atm/(mol·K) ¶ n = mol H2T = KV = L ¶
+HINTS: Hint 1: your route ¶ mL H2SO4 ¶ ÷ 1000 ¶ L H2SO4 ¶ × molarity ¶ mol H2SO4 ¶ × mole ratio ¶ mol H2 ¶ P = nRT ÷ V ¶ atm H2 ¶ ¶ For the gas, use PV = nRT with R = 0.08206 L·atm/(mol·K). Pressure must be in atm, volume in liters, and temperature in kelvins. ¶ || Hint 2: the setup ¶ Step 1: from H2SO4 to moles of H2 ¶ 56.7 mL×1 L1000 mL×? mol H2SO41 L×? mol H2? mol H2SO4=? mol H2 ¶ Step 2: pressure of H2 from the ideal gas law. Convert the units first. ¶ P=n × R × TVwith R = 0.08206 L·atm/(mol·K) ¶ n = ? mol H2T = ? KV = ? L ¶
+SOLUTION: Worked solutionMilliliters to liters. 56.7 mL ÷ 1000 = 0.0567 L ¶ Liters to moles. 0.0567 L × 0.637 mol/L = 0.03612 mol H2SO4 ¶ Mole ratio. 0.03612 mol H2SO4 × (1 mol H2 ÷ 1 mol H2SO4) = 0.03612 mol H2 ¶ Convert the units for H2. T = 26.9 °C + 273.15 = 300.05 K ¶ Pressure of H2. P = nRT ÷ V = (0.03612 mol × 0.08206 × 300.05 K) ÷ 2.40 L = 0.371 atm ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶
+
+=== capstone:
+Q: A student adds 0.719 g of CaCO3 to 30.6 mL of 0.314 M HCl. The CO2 gas is collected at 29.7 °C and 786 mmHg, and its volume is 0.0652 L.
+ANS: HCl is limiting ; 0.115 L CO2 ; 56.5%
+GUIDED: Take each reactant to moles, then to moles of gas. Fill in the blanks. ¶ 0.719 g CaCO3→ mol CaCO3→ mol CO2 ¶ 30.6 mL of 0.314 M HCl→ mol HCl→ mol CO2 ¶ The smaller amount of CO2 is the theoretical yield in moles. Turn it into liters. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ T = KP = atm ¶ percent yield=actual volumetheoretical volume×100 ¶
+HINTS: Hint 1 ¶ Find the moles of each reactant: grams ÷ molar mass for the solid, liters × molarity for the solution. Then work out how many moles of CO2 each could make. The smaller amount is the theoretical yield, and V = nRT ÷ P turns it into liters. ¶ || Hint 2: the setup ¶ 0.719 g CaCO3→? mol CaCO3→? mol CO2 ¶ 30.6 mL of 0.314 M HCl→? mol HCl→? mol CO2 ¶ The smaller amount of CO2 is the theoretical yield in moles. Turn it into liters. ¶ V=n × R × TPwith R = 0.08206 L·atm/(mol·K) ¶ T = ? KP = ? atm ¶ percent yield=actual volumetheoretical volume×100 ¶
+SOLUTION: Worked solutionMolar mass. CaCO3: 40.078 + 12.011 + 3(15.999) = 100.09 g/mol ¶ Moles of each reactant. ¶ 0.719 g ÷ 100.09 g/mol = 0.007184 mol CaCO3 ¶ 0.0306 L × 0.314 mol/L = 0.009608 mol HCl ¶ Moles of gas from each reactant. ¶ 0.007184 mol CaCO3 × (1 mol CO2 ÷ 1 mol CaCO3) = 0.007184 mol CO2 ¶ 0.009608 mol HCl × (1 mol CO2 ÷ 2 mol HCl) = 0.004804 mol CO2 ¶ Limiting reactant. HCl makes less CO2, so HCl is limiting. Theoretical yield: 0.004804 mol CO2 ¶ Convert the units. T = 29.7 °C + 273.15 = 302.85 K ¶ P = 786 mmHg ÷ 760 = 1.034 atm ¶ Theoretical volume. V = nRT ÷ P = (0.004804 mol × 0.08206 × 302.85 K) ÷ 1.034 atm = 0.115 L CO2 ¶ Percent yield. 0.0652 L ÷ 0.1154 L × 100 = 56.5% ¶ ¶ Keep extra digits through the middle steps and round only at the end. The answer gets 3 significant figures, the fewest in the given data. ¶ ¶

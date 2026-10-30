@@ -1,0 +1,257 @@
+{
+ "carbs": [
+  {
+   "id": "mono",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 358,
+    "num": 42
+   }
+  },
+  {
+   "id": "ring",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 380,
+    "num": 20
+   }
+  },
+  {
+   "id": "deriv",
+   "asked": 400,
+   "ok": 386,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 400
+   }
+  },
+  {
+   "id": "di",
+   "asked": 400,
+   "ok": 382,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 400
+   }
+  },
+  {
+   "id": "poly",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 324,
+    "num": 76
+   }
+  },
+  {
+   "id": "gag",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 378,
+    "num": 22
+   }
+  },
+  {
+   "id": "glyco",
+   "asked": 400,
+   "ok": 393,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 352,
+    "order": 26,
+    "num": 22
+   }
+  },
+  {
+   "id": "code",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 377,
+    "num": 23
+   }
+  },
+  {
+   "id": "lab",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 370,
+    "num": 30
+   }
+  }
+ ],
+ "carbs_errors": [],
+ "lipids": [
+  {
+   "id": "fa",
+   "asked": 400,
+   "ok": 392,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "fa": 22,
+    "order": 65,
+    "mc": 277,
+    "num": 36
+   }
+  },
+  {
+   "id": "ml",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 381,
+    "num": 19
+   }
+  },
+  {
+   "id": "sig",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 364,
+    "num": 16,
+    "order": 20
+   }
+  },
+  {
+   "id": "lab",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 302,
+    "order": 66,
+    "num": 32
+   }
+  },
+  {
+   "id": "mem",
+   "asked": 400,
+   "ok": 368,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 379,
+    "num": 21
+   }
+  },
+  {
+   "id": "dig",
+   "asked": 400,
+   "ok": 383,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 322,
+    "order": 54,
+    "num": 24
+   }
+  },
+  {
+   "id": "box",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "num": 66,
+    "mc": 287,
+    "order": 47
+   }
+  },
+  {
+   "id": "ket",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 335,
+    "order": 34,
+    "num": 31
+   }
+  },
+  {
+   "id": "fas",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 312,
+    "num": 68,
+    "order": 20
+   }
+  },
+  {
+   "id": "cls",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 322,
+    "num": 57,
+    "order": 21
+   }
+  },
+  {
+   "id": "cho",
+   "asked": 400,
+   "ok": 400,
+   "failures": [],
+   "wrongAccepted": [],
+   "showAnswerBad": [],
+   "kinds": {
+    "mc": 320,
+    "num": 44,
+    "order": 36
+   }
+  }
+ ],
+ "lipids_errors": []
+}

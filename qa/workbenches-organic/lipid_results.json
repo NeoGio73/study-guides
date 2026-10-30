@@ -1,0 +1,482 @@
+{
+ "checks": {
+  "build": {
+   "combos": 1170,
+   "bad": 0,
+   "challengesDone": 7,
+   "challengeTotal": 7
+  },
+  "PAcharge": [
+   {
+    "c": [
+     "gly",
+     "myr",
+     "myr",
+     "P",
+     null
+    ],
+    "q": "−1",
+    "note": {
+     "Linkages": "2 esters, phosphomonoester",
+     "Tails": "myristate 14:0myristate 14:0",
+     "In water": "A bilayer (closes into a liposome)"
+    }
+   }
+  ],
+  "tagStates": [],
+  "cutHitTest": [
+   [
+    "popc",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "popc",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "popc",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "popc",
+    "pD",
+    "D",
+    "ok"
+   ],
+   [
+    "sapc",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "sapc",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "sapc",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "sapc",
+    "pD",
+    "D",
+    "ok"
+   ],
+   [
+    "dppc",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "dppc",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "dppc",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "dppc",
+    "pD",
+    "D",
+    "ok"
+   ],
+   [
+    "sops",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "sops",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "sops",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "sops",
+    "pD",
+    "D",
+    "ok"
+   ],
+   [
+    "pope",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "pope",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "pope",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "pope",
+    "pD",
+    "D",
+    "ok"
+   ],
+   [
+    "popg",
+    "acylO",
+    "A1",
+    "ok"
+   ],
+   [
+    "popg",
+    "acylO",
+    "A2",
+    "ok"
+   ],
+   [
+    "popg",
+    "pC",
+    "C",
+    "ok"
+   ],
+   [
+    "popg",
+    "pD",
+    "D",
+    "ok"
+   ]
+  ],
+  "cut": {
+   "rounds": 2000,
+   "bad": 0,
+   "sameEnzymeTwiceInARow": 15,
+   "enzymeCounts": {
+    "Phospholipase D": 492,
+    "Phospholipase C": 506,
+    "Phospholipase A₂": 507,
+    "Phospholipase A₁": 495
+   },
+   "finalScore": "1000 of 2000 enzymes found on the first try",
+   "sampleWrong": [
+    "✕Not that bond|acylO|A1",
+    "✕Not that bond|cc|",
+    "✕Not that bond|cc|",
+    "✕Not that bond|cc|",
+    "✕Not that bond|cc|",
+    "✕Not that bond|cc|"
+   ],
+   "samplePA": [
+    [
+     "Phosphatidic acid",
+     "1-palmitoyl-2-oleoyl-sn-glycero-3-phosphate, net charge −1"
+    ],
+    [
+     "Choline",
+     "choline, net charge +1"
+    ]
+   ]
+  },
+  "fluidity": {
+   "states": 4914,
+   "bad": 0,
+   "ex": [],
+   "spansByChol": [
+    [
+     100,
+     78.9,
+     54.5,
+     33.3,
+     16.6
+    ],
+    [
+     100,
+     80.6,
+     57.4,
+     35.2,
+     17.4
+    ],
+    [
+     99.9,
+     70,
+     46.1,
+     28.6,
+     14.6
+    ],
+    [
+     100,
+     73.1,
+     48.4,
+     29.8,
+     15.1
+    ],
+    [
+     79.6,
+     48,
+     34.4,
+     22.9,
+     12.3
+    ],
+    [
+     100,
+     78.9,
+     54.5,
+     33.3,
+     16.6
+    ]
+   ],
+   "at37NoChol": {
+    "DPPC (16:0/16:0), Tm ≈ 41 °C": 13.9652,
+    "DMPC (14:0/14:0), Tm ≈ 24 °C": 99.7293,
+    "DSPC (18:0/18:0), Tm ≈ 55 °C": 0.0279614,
+    "POPC (16:0/18:1), Tm ≈ −2 °C": 100,
+    "DOPC (18:1/18:1), Tm ≈ −17 °C": 100,
+    "Sphingomyelin (N-palmitoyl), Tm ≈ 41 °C": 13.9652
+   },
+   "phasesAt37chol30": [
+    [
+     "DPPC (16:0/16:0), Tm ≈ 41 °C",
+     "Liquid-ordered"
+    ],
+    [
+     "DMPC (14:0/14:0), Tm ≈ 24 °C",
+     "Liquid-ordered"
+    ],
+    [
+     "DSPC (18:0/18:0), Tm ≈ 55 °C",
+     "Liquid-ordered"
+    ],
+    [
+     "POPC (16:0/18:1), Tm ≈ −2 °C",
+     "Fluid (liquid-disordered)"
+    ],
+    [
+     "DOPC (18:1/18:1), Tm ≈ −17 °C",
+     "Fluid (liquid-disordered)"
+    ],
+    [
+     "Sphingomyelin (N-palmitoyl), Tm ≈ 41 °C",
+     "Liquid-ordered"
+    ]
+   ]
+  },
+  "water": [
+   {
+    "lab": "Sodium palmitate (a soap)",
+    "guess": "micelle",
+    "right": true,
+    "txt": "Your prediction was right. One tail and a relatively large polar head give each molecule a"
+   },
+   {
+    "lab": "Sodium oleate",
+    "guess": "micelle",
+    "right": true,
+    "txt": "Your prediction was right. One tail and a relatively large polar head give each molecule a"
+   },
+   {
+    "lab": "1-Palmitoyl-lysophosphatidylcholine",
+    "guess": "micelle",
+    "right": true,
+    "txt": "Your prediction was right. One tail and a relatively large polar head give each molecule a"
+   },
+   {
+    "lab": "POPC",
+    "guess": "micelle",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Sphingomyelin (N-palmitoyl)",
+    "guess": "micelle",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Triolein",
+    "guess": "micelle",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Ceramide (N-palmitoyl)",
+    "guess": "micelle",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Phosphocholine",
+    "guess": "micelle",
+    "right": false,
+    "txt": "Not what you predicted. With no hydrophobic tail there is nothing to hide from water, so t"
+   },
+   {
+    "lab": "Sodium palmitate (a soap)",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "Sodium oleate",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "1-Palmitoyl-lysophosphatidylcholine",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "POPC",
+    "guess": "bilayer",
+    "right": true,
+    "txt": "Your prediction was right. Two tails and a head of about the same cross-section give a cyl"
+   },
+   {
+    "lab": "Sphingomyelin (N-palmitoyl)",
+    "guess": "bilayer",
+    "right": true,
+    "txt": "Your prediction was right. Two tails and a head of about the same cross-section give a cyl"
+   },
+   {
+    "lab": "Triolein",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Ceramide (N-palmitoyl)",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Phosphocholine",
+    "guess": "bilayer",
+    "right": false,
+    "txt": "Not what you predicted. With no hydrophobic tail there is nothing to hide from water, so t"
+   },
+   {
+    "lab": "Sodium palmitate (a soap)",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "Sodium oleate",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "1-Palmitoyl-lysophosphatidylcholine",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "POPC",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Sphingomyelin (N-palmitoyl)",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Triolein",
+    "guess": "oil",
+    "right": true,
+    "txt": "Your prediction was right. With no polar head (or one too small to shield the tails), noth"
+   },
+   {
+    "lab": "Ceramide (N-palmitoyl)",
+    "guess": "oil",
+    "right": true,
+    "txt": "Your prediction was right. With no polar head (or one too small to shield the tails), noth"
+   },
+   {
+    "lab": "Phosphocholine",
+    "guess": "oil",
+    "right": false,
+    "txt": "Not what you predicted. With no hydrophobic tail there is nothing to hide from water, so t"
+   },
+   {
+    "lab": "Sodium palmitate (a soap)",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "Sodium oleate",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "1-Palmitoyl-lysophosphatidylcholine",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. One tail and a relatively large polar head give each molecule a we"
+   },
+   {
+    "lab": "POPC",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Sphingomyelin (N-palmitoyl)",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. Two tails and a head of about the same cross-section give a cylind"
+   },
+   {
+    "lab": "Triolein",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Ceramide (N-palmitoyl)",
+    "guess": "dissolve",
+    "right": false,
+    "txt": "Not what you predicted. With no polar head (or one too small to shield the tails), nothing"
+   },
+   {
+    "lab": "Phosphocholine",
+    "guess": "dissolve",
+    "right": true,
+    "txt": "Your prediction was right. With no hydrophobic tail there is nothing to hide from water, s"
+   }
+  ]
+ },
+ "faults": []
+}

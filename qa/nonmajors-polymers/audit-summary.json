@@ -1,0 +1,1262 @@
+{
+ "generated": "2026-10-30T14:17:15.118Z",
+ "files": {
+  "smoke": "smoke-results.json",
+  "generators": "generator-results.json",
+  "polymers": "polymers-results.json",
+  "structures": [
+   "structures-1.png",
+   "structures-2.png",
+   "structures-3.png",
+   "structures-4.png",
+   "structures-5.png"
+  ]
+ },
+ "smoke": {
+  "ph@1280": {
+   "counts": {
+    "tabs": 9,
+    "buttonsClicked": 518,
+    "slidersMoved": 1,
+    "selectsTried": 9,
+    "textInputsTried": 3
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  },
+  "ph@390": {
+   "counts": {
+    "tabs": 9,
+    "buttonsClicked": 518,
+    "slidersMoved": 1,
+    "selectsTried": 9,
+    "textInputsTried": 3
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  },
+  "nuc@1280": {
+   "counts": {
+    "tabs": 11,
+    "buttonsClicked": 310,
+    "slidersMoved": 3,
+    "selectsTried": 5,
+    "textInputsTried": 2
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  },
+  "nuc@390": {
+   "counts": {
+    "tabs": 11,
+    "buttonsClicked": 310,
+    "slidersMoved": 3,
+    "selectsTried": 5,
+    "textInputsTried": 2
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  },
+  "poly@1280": {
+   "counts": {
+    "tabs": 0,
+    "buttonsClicked": 71,
+    "slidersMoved": 25,
+    "selectsTried": 1,
+    "textInputsTried": 0
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  },
+  "poly@390": {
+   "counts": {
+    "tabs": 0,
+    "buttonsClicked": 71,
+    "slidersMoved": 25,
+    "selectsTried": 1,
+    "textInputsTried": 0
+   },
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badText": 0,
+   "overflow": []
+  }
+ },
+ "generators": {
+  "ph": {
+   "settings": {
+    "GEN_N": 20000,
+    "UI_N": 2000,
+    "seed": 20261030,
+    "viewport": "390x844"
+   },
+   "pageErrors": [],
+   "perType": {
+    "bond": {
+     "calls": 20000,
+     "typeCount": {
+      "bond": 20000
+     },
+     "ms": 934,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "bond": 2000
+       },
+       "ms": 9272
+      },
+      "hint": {
+       "typeCount": {
+        "bond": 2000
+       },
+       "ms": 8840
+      },
+      "solo": {
+       "typeCount": {
+        "bond": 2000
+       },
+       "ms": 6775
+      }
+     }
+    },
+    "conc": {
+     "calls": 140651,
+     "typeCount": {
+      "moles": 20092,
+      "pct2ppm": 20224,
+      "molarity": 20109,
+      "pctmass": 20025,
+      "limit": 20097,
+      "mg2ppb": 20000,
+      "ppm2mg": 20104
+     },
+     "ms": 22146,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "pct2ppm": 2000,
+        "molarity": 2000,
+        "pctmass": 2000,
+        "limit": 2000,
+        "mg2ppb": 2000,
+        "ppm2mg": 2000,
+        "moles": 2000
+       },
+       "ms": 698262
+      },
+      "hint": {
+       "typeCount": {
+        "pct2ppm": 2000,
+        "molarity": 2000,
+        "pctmass": 2000,
+        "limit": 2000,
+        "mg2ppb": 2000,
+        "ppm2mg": 2000,
+        "moles": 2000
+       },
+       "ms": 269547
+      },
+      "solo": {
+       "typeCount": {
+        "pct2ppm": 2000,
+        "molarity": 2000,
+        "pctmass": 2000,
+        "limit": 2000,
+        "mg2ppb": 2000,
+        "ppm2mg": 2000,
+        "moles": 2000
+       },
+       "ms": 137551
+      }
+     }
+    },
+    "neut": {
+     "calls": 20000,
+     "typeCount": {
+      "neut": 20000
+     },
+     "ms": 891,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "neut": 2000
+       },
+       "ms": 6447
+      },
+      "hint": {
+       "typeCount": {
+        "neut": 2000
+       },
+       "ms": 6138
+      },
+      "solo": {
+       "typeCount": {
+        "neut": 2000
+       },
+       "ms": 5185
+      }
+     }
+    },
+    "ph": {
+     "calls": 141109,
+     "typeCount": {
+      "calcH": 20171,
+      "toOH": 20356,
+      "times": 20125,
+      "class": 20019,
+      "toPH": 20163,
+      "toH": 20000,
+      "calc": 20275
+     },
+     "ms": 2050,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "toOH": 2000,
+        "times": 2000,
+        "class": 2000,
+        "calcH": 2000,
+        "toPH": 2000,
+        "toH": 2000,
+        "calc": 2000
+       },
+       "ms": 201252
+      },
+      "hint": {
+       "typeCount": {
+        "toOH": 2000,
+        "times": 2000,
+        "class": 2000,
+        "calcH": 2000,
+        "toPH": 2000,
+        "toH": 2000,
+        "calc": 2000
+       },
+       "ms": 254559
+      },
+      "solo": {
+       "typeCount": {
+        "toOH": 2000,
+        "times": 2000,
+        "class": 2000,
+        "calcH": 2000,
+        "toPH": 2000,
+        "toH": 2000,
+        "calc": 2000
+       },
+       "ms": 168585
+      }
+     }
+    }
+   },
+   "faults": {},
+   "notes": {
+    "bond: class changes with revised Pauling values": {
+     "n": 2572,
+     "examples": [
+      "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+      "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent",
+      "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+      "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent",
+      "N–O: course ΔEN 0.5 → Polar covalent; revised ΔEN 0.40 → Nonpolar covalent",
+      "H–I: course ΔEN 0.4 → Nonpolar covalent; revised ΔEN 0.46 → Polar covalent"
+     ]
+    }
+   },
+   "parseVariants": [
+    {
+     "typed": "1x10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1×10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 × 10^−7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1×10−7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 x 10-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1e-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1.3x10^-5",
+     "parsed": 0.000013,
+     "ok": true
+    },
+    {
+     "typed": "−183",
+     "parsed": -183,
+     "ok": true
+    },
+    {
+     "typed": "$0.45",
+     "parsed": 0.45,
+     "ok": true
+    },
+    {
+     "typed": "7,600",
+     "parsed": 7600,
+     "ok": true
+    },
+    {
+     "typed": "1/8",
+     "parsed": 0.125,
+     "ok": true
+    },
+    {
+     "typed": "0.0000001",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1*10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1·10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1E-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 × 10^0",
+     "parsed": 1,
+     "ok": true
+    },
+    {
+     "typed": "3.125%",
+     "parsed": 3.125,
+     "ok": true
+    },
+    {
+     "typed": "2.5 mg",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "abc",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "1×10^",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "1.2.3",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "",
+     "parsed": null,
+     "ok": true
+    }
+   ],
+   "phTimesLabels": {
+    "0": "4% hydrochloric acid",
+    "1": "stomach acid",
+    "2": "lemon juice",
+    "3": "cola",
+    "4": "tomato juice",
+    "5": "black coffee",
+    "6": "milk",
+    "7": "pure water",
+    "8": "seawater",
+    "9": "baking soda solution",
+    "10": "milk of magnesia",
+    "11": "household ammonia",
+    "12": "washing soda",
+    "13": "0.4% (0.1 M) sodium hydroxide",
+    "14": "1 M sodium hydroxide"
+   },
+   "halfIso": {}
+  },
+  "nuc": {
+   "settings": {
+    "GEN_N": 20000,
+    "UI_N": 2000,
+    "seed": 20261030,
+    "viewport": "390x844"
+   },
+   "pageErrors": [],
+   "perType": {
+    "nuc": {
+     "calls": 100633,
+     "typeCount": {
+      "bombard": 20467,
+      "product": 40145,
+      "particle": 20000,
+      "parent": 20021
+     },
+     "ms": 1824,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "product": 2000,
+        "particle": 2000,
+        "parent": 2000,
+        "bombard": 2000
+       },
+       "ms": 71677
+      },
+      "hint": {
+       "typeCount": {
+        "product": 2000,
+        "particle": 2000,
+        "parent": 2000,
+        "bombard": 2000
+       },
+       "ms": 88147
+      },
+      "solo": {
+       "typeCount": {
+        "product": 2000,
+        "particle": 2000,
+        "parent": 2000,
+        "bombard": 2000
+       },
+       "ms": 61783
+      }
+     }
+    },
+    "half": {
+     "calls": 140471,
+     "typeCount": {
+      "percent": 20035,
+      "howlong": 20120,
+      "count": 20282,
+      "remain": 39842,
+      "date": 20000,
+      "findhalf": 20192
+     },
+     "ms": 8115,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "howlong": 2000,
+        "count": 2000,
+        "remain": 2000,
+        "percent": 2000,
+        "date": 2000,
+        "findhalf": 2000
+       },
+       "ms": 129438
+      },
+      "hint": {
+       "typeCount": {
+        "howlong": 2000,
+        "count": 2000,
+        "remain": 2000,
+        "percent": 2000,
+        "date": 2000,
+        "findhalf": 2000
+       },
+       "ms": 139530
+      },
+      "solo": {
+       "typeCount": {
+        "howlong": 2000,
+        "count": 2000,
+        "remain": 2000,
+        "percent": 2000,
+        "date": 2000,
+        "findhalf": 2000
+       },
+       "ms": 95007
+      }
+     }
+    },
+    "energy": {
+     "calls": 142072,
+     "typeCount": {
+      "time": 20259,
+      "power": 20428,
+      "bond": 20379,
+      "joules": 20341,
+      "cost": 20396,
+      "calories": 20000,
+      "kwh": 20269
+     },
+     "ms": 13322,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "power": 2000,
+        "bond": 2000,
+        "joules": 2000,
+        "time": 2000,
+        "cost": 2000,
+        "calories": 2000,
+        "kwh": 2000
+       },
+       "ms": 169571
+      },
+      "hint": {
+       "typeCount": {
+        "power": 2000,
+        "bond": 2000,
+        "joules": 2000,
+        "time": 2000,
+        "cost": 2000,
+        "calories": 2000,
+        "kwh": 2000
+       },
+       "ms": 220788
+      },
+      "solo": {
+       "typeCount": {
+        "power": 2000,
+        "bond": 2000,
+        "joules": 2000,
+        "time": 2000,
+        "cost": 2000,
+        "calories": 2000,
+        "kwh": 2000
+       },
+       "ms": 154952
+      }
+     }
+    },
+    "fuel": {
+     "calls": 100424,
+     "typeCount": {
+      "octane": 20066,
+      "co2": 20000,
+      "carbon": 20090,
+      "years": 20094,
+      "share": 20174
+     },
+     "ms": 6645,
+     "ui": {
+      "guided": {
+       "typeCount": {
+        "co2": 2000,
+        "carbon": 2000,
+        "years": 2000,
+        "share": 2000,
+        "octane": 2000
+       },
+       "ms": 76680
+      },
+      "hint": {
+       "typeCount": {
+        "co2": 2000,
+        "carbon": 2000,
+        "years": 2000,
+        "share": 2000,
+        "octane": 2000
+       },
+       "ms": 81056
+      },
+      "solo": {
+       "typeCount": {
+        "co2": 2000,
+        "carbon": 2000,
+        "years": 2000,
+        "share": 2000,
+        "octane": 2000
+       },
+       "ms": 74177
+      }
+     }
+    }
+   },
+   "faults": {},
+   "notes": {},
+   "parseVariants": [
+    {
+     "typed": "1x10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1×10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 × 10^−7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1×10−7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 x 10-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1e-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1.3x10^-5",
+     "parsed": 0.000013,
+     "ok": true
+    },
+    {
+     "typed": "−183",
+     "parsed": -183,
+     "ok": true
+    },
+    {
+     "typed": "$0.45",
+     "parsed": 0.45,
+     "ok": true
+    },
+    {
+     "typed": "7,600",
+     "parsed": 7600,
+     "ok": true
+    },
+    {
+     "typed": "1/8",
+     "parsed": 0.125,
+     "ok": true
+    },
+    {
+     "typed": "0.0000001",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1*10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1·10^-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1E-7",
+     "parsed": 1e-7,
+     "ok": true
+    },
+    {
+     "typed": "1 × 10^0",
+     "parsed": 1,
+     "ok": true
+    },
+    {
+     "typed": "3.125%",
+     "parsed": 3.125,
+     "ok": true
+    },
+    {
+     "typed": "2.5 mg",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "abc",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "1×10^",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "1.2.3",
+     "parsed": null,
+     "ok": true
+    },
+    {
+     "typed": "",
+     "parsed": null,
+     "ok": true
+    }
+   ],
+   "phTimesLabels": {},
+   "halfIso": {
+    "Strontium-90": "28.5 years",
+    "Phosphorus-32": "14.3 days",
+    "Cobalt-60": "5.271 years",
+    "Iodine-131": "8.04 days",
+    "Technetium-99m": "6 hours",
+    "Tritium (hydrogen-3)": "12.26 years",
+    "Carbon-14": "5730 years"
+   }
+  }
+ },
+ "polymers": {
+  "labs": {
+   "swell": {
+    "combos": 18,
+    "mismatches": 0,
+    "examples": []
+   },
+   "wind": {
+    "combos": 25,
+    "mismatches": 0,
+    "examples": []
+   },
+   "brk": {
+    "combos": 80,
+    "mismatches": 0,
+    "examples": []
+   },
+   "board": {
+    "combos": 768,
+    "mismatches": 0,
+    "examples": []
+   },
+   "fin": {
+    "combos": 405,
+    "mismatches": 0,
+    "examples": []
+   },
+   "tide": {
+    "combos": 135,
+    "mismatches": 0,
+    "examples": []
+   },
+   "caro": {
+    "combos": 25,
+    "mismatches": 0,
+    "examples": []
+   },
+   "suit": {
+    "combos": 30,
+    "mismatches": 0,
+    "examples": []
+   }
+  },
+  "labNotes": [
+   {
+    "lab": "wind",
+    "at": "30 mph, fetch 190→200 mi",
+    "H": "3.8 m · 12 ft → 3.9 m · 13 ft",
+    "T": "10.0 s → 10.5 s",
+    "jumpPct": "5.0"
+   },
+   {
+    "lab": "breaker / Teahupoo text",
+    "claim": "1:1 bottom gives ξ0 far into the plunging range (0.5–3.3)",
+    "computed": [
+     {
+      "H0": 2,
+      "T": 14,
+      "xi": 12.4,
+      "xi_1to3": 4.1
+     },
+     {
+      "H0": 3,
+      "T": 16,
+      "xi": 11.5,
+      "xi_1to3": 3.8
+     },
+     {
+      "H0": 4,
+      "T": 18,
+      "xi": 11.2,
+      "xi_1to3": 3.7
+     },
+     {
+      "H0": 1.2,
+      "T": 11,
+      "xi": 12.5,
+      "xi_1to3": 4.2
+     }
+    ],
+    "sliderMinSlope": "1:5"
+   }
+  ],
+  "practiceChecks": 40,
+  "practiceNotCorrect": [],
+  "pageErrors": []
+ },
+ "contentFindings": [
+  {
+   "guide": "polarity-to-ph",
+   "where": "pH scale: PH_EXAMPLES and genPH EX",
+   "severity": "wrong science",
+   "issue": "\"4% sodium hydroxide\" is placed at pH 13. 4% NaOH is about 1.0 M (41 g/L), so pH ≈ 14; the page itself pairs 4% HCl with 1 M HCl at pH 0.",
+   "fix": "Label pH 13 as \"0.4% (0.1 M) sodium hydroxide\", or move 4% NaOH to pH 14."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "Solutions: EPA table, \"limit\" problems",
+   "severity": "doubtful",
+   "issue": "Lead 0.015 mg/L and copper 1.3 mg/L are action levels under the Lead and Copper Rule, not maximum contaminant levels (lead MCLG is zero); the 2024 LCRI lowers the lead action level to 0.010 mg/L.",
+   "fix": "Call them \"action levels\" and note the 0.010 mg/L update."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "Polarity explorer (paintEN)",
+   "severity": "wrong science (display)",
+   "issue": "Two different elements with equal electronegativity (C–S, P–H, N–Cl, C–I, S–I) are drawn with δ+ and δ− labels while the text says ΔEN = 0.0, nonpolar.",
+   "fix": "Only draw δ labels when d > 0.4 (or at least when d > 0)."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "Bond practice, H–I",
+   "severity": "doubtful",
+   "issue": "With the course values H–I gives ΔEN 0.4 → \"nonpolar covalent\"; with current Pauling values (2.20, 2.66) ΔEN = 0.46 → polar, and HI has a measurable dipole (0.44 D).",
+   "fix": "Drop H–I from BOND_PAIRS or accept it as a borderline case."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "pH slider / class problems, litmus",
+   "severity": "doubtful",
+   "issue": "Blue litmus is said to turn red for any pH below 6.95 (e.g. 6.9). Litmus changes over roughly pH 4.5–8.3, so near-neutral solutions give no clear change.",
+   "fix": "Say \"turns red in clearly acidic solutions (below about 5)\"."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "IMF water cards",
+   "severity": "doubtful",
+   "issue": "\"about four times that of rock or metal\": water 4.18 vs iron 0.449 (9×), copper 0.385 (11×), rock ≈0.8 (5×).",
+   "fix": "\"5 to 10 times\"."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "Solutions note, key term \"Hard water\"; EPA iron note",
+   "severity": "doubtful",
+   "issue": "Hardness is defined by Ca2+ and Mg2+; iron is not usually counted as a hardness ion.",
+   "fix": "Drop iron from the hardness definition."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "EPA fluoride note",
+   "severity": "doubtful (dated)",
+   "issue": "\"about 0.7–1.0 ppm\" — the U.S. PHS recommendation since 2015 is 0.7 mg/L.",
+   "fix": "\"about 0.7 ppm\"."
+  },
+  {
+   "guide": "polarity-to-ph",
+   "where": "pH class solution and slider",
+   "severity": "cosmetic",
+   "issue": "At pH 6.9 or 7.1 the text says \"about 1 times more/less\" hydrogen ion (10^0.1 = 1.26 rounded to 0 decimals). \"10−0\" appears for pH 0 and 14.",
+   "fix": "Use 2 significant figures; write pH 0 as \"1 mol/L\"."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Fossil fuels: MAPINFO, lede, review quiz (answer \"More than 90%\"), key term",
+   "severity": "wrong science",
+   "issue": "Fossil fuels supplied nearly 83% of U.S. energy in 2023 (EIA), about 80% worldwide, not \"more than 90%\". The review quiz marks \"More than 90%\" correct.",
+   "fix": "Use \"about 80%\" and change the quiz key."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Radiation: ideas text, review quiz, key term \"Background radiation\"",
+   "severity": "wrong science / internal contradiction",
+   "issue": "\"About three-fourths ... is natural background\" and \"CT scans alone are about a quarter\" contradict the page’s own Figure 11.1 data (NCRP 160: background 50%, medical 48%). The review quiz keys \"Three-fourths\".",
+   "fix": "Say \"about half\" (NCRP 160) and re-key the quiz."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "DECAYS note for Ra-226",
+   "severity": "wrong fact",
+   "issue": "\"Marie Curie isolated radium in 1898\": radium was discovered in 1898; it was isolated as RaCl2 in 1902 and as the metal in 1910.",
+   "fix": "\"discovered radium in 1898\"."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "RADTYPES beta",
+   "severity": "doubtful",
+   "issue": "Beta \"can penetrate a few centimeters of skin and tissue\": typical ranges are a few millimetres (about 1 cm at most for energetic betas).",
+   "fix": "\"a few millimetres of tissue\"."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Manhattan Project paragraph",
+   "severity": "doubtful",
+   "issue": "\"Launched in 1939\": the 1939 Einstein–Szilárd letter led to the Uranium Committee; the Manhattan Project (Manhattan Engineer District) began in 1942.",
+   "fix": "\"Begun in 1942, after physicists warned Roosevelt in 1939\"."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Electricity bars \"2017\" and \"2003\"",
+   "severity": "doubtful (mislabeled year)",
+   "issue": "The \"2017\" values (gas 33.8, coal 30.4, nuclear 19.7, hydro 6.5, wind 5.5) are EIA 2016 figures; EIA gives gas 32% and coal 30% for 2017. The \"2003\" values (coal 45, gas 23, petroleum 1) look like about 2009; in 2003 coal was about half. Both are a decade old (2024: gas ≈43%, coal ≈15%).",
+   "fix": "Relabel or update from EIA Electric Power Annual."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Reactor fuel 2.5–3.5% U-235 (several places); US 104 plants; France 73%",
+   "severity": "dated",
+   "issue": "Current LWR fuel is about 3–5% U-235; the U.S. has 94 reactors; France ≈65% in 2023.",
+   "fix": "Update or add \"(2012 data)\"."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "MED table Na-24",
+   "severity": "wrong value (minor)",
+   "issue": "Sodium-24 half-life listed 14.66 h; NNDC gives 14.96 h. Other older textbook values: Pu-238 86 y (87.7), Sr-90 28.5 y (28.8), H-3 12.26 y (12.32), U-238 4.51 (4.47) billion y.",
+   "fix": "14.96 h; optionally update the others."
+  },
+  {
+   "guide": "nuclear-and-energy",
+   "where": "Binding energy; uses",
+   "severity": "doubtful (minor)",
+   "issue": "\"Iron has the most tightly bound nucleus\" (Ni-62 has the highest binding energy per nucleon); \"every element heavier than uranium exists only because of artificial transmutation\" (trace Np and Pu occur naturally).",
+   "fix": "\"iron and nickel\"; \"nearly all\"."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "C3 Teahupo’o text",
+   "severity": "wrong science / internal contradiction",
+   "issue": "\"In the breaker lab, a 1:1 bottom gives an Iribarren number far into the plunging range\": ξ0 = 1/√(H0/L0) ≈ 11–12 for H0 2–4 m, T 14–18 s, which is \"surging\" (> 3.3) by the page’s own table; even the 1:3 slope gives 3.7–4.2. The lab’s steepest slope is 1:5, so it cannot be tried.",
+   "fix": "Say the Iribarren classes were fitted for plane beaches; a reef that rises abruptly from deep water is outside that range and plunges anyway."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "Wetsuit lab note; seasons timeline",
+   "severity": "doubtful",
+   "issue": "Daytona Beach \"averages about 68 °F in winter\", \"high 60s\" in winter: monthly means are about 65 °F in January–February (61–69 °F range), 68 °F is the December mean; NOAA’s nearshore guide lists cooler.",
+   "fix": "\"low to mid 60s °F in January–February\"."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "Wind lab (wind())",
+   "severity": "model inconsistency (low)",
+   "issue": "Fetch-limited fits are the SPM constants (0.0016, 0.286) but the fully developed cap uses 0.21 and 7.7; at 30 mph the peak period jumps 10.0 → 10.5 s (5%) between 190 and 200 mi of fetch.",
+   "fix": "Use one set: SPM fully developed gH/U² = 0.2433 and gT/U = 8.134 make both curves continuous."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "A3 Polyisobutylene (butyl rubber)",
+   "severity": "doubtful (label)",
+   "issue": "Butyl rubber is the isobutylene–isoprene copolymer (IIR); PIB homopolymer cannot be sulfur-vulcanized.",
+   "fix": "\"Polyisobutylene (with ~2% isoprene: butyl rubber)\"."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "A7 Unsaturated polyester structure",
+   "severity": "clarity",
+   "issue": "Drawn as the trans (fumarate) C=C although the monomer shown is maleic anhydride (cis). Correct for the cured resin (maleate isomerizes during polyesterification) but unexplained.",
+   "fix": "Add \"(the cis maleate isomerizes to trans fumarate as it polymerizes)\"."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "C3 sandbars text",
+   "severity": "doubtful (wording)",
+   "issue": "\"Ponce and New Smyrna inlets\": Ponce de León Inlet is the inlet at New Smyrna Beach; they are one inlet.",
+   "fix": "\"Ponce Inlet (New Smyrna Beach)\"."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "A3 ethylene structure",
+   "severity": "cosmetic",
+   "issue": "The ethylene SVG renders 31 × 4 px and looks like a minus sign (bare double bond, no atom labels). PVAc’s subscript n overlaps the acetate oxygen.",
+   "fix": "Draw H2C=CH2 with explicit carbons; nudge n."
+  },
+  {
+   "guide": "polymers-surf-zone",
+   "where": "Board lab",
+   "severity": "clarity",
+   "issue": "Submerged volume uses only the \"Rider + gear mass\" slider; the board’s own mass is left out unless counted as gear (practice problem 9 adds it).",
+   "fix": "Label \"Rider + board + gear\"."
+  }
+ ],
+ "afterFixes": {
+  "fixCheck": [
+   {
+    "item": "1",
+    "what": "pH 13 [H+]: 0 rejected",
+    "pass": true,
+    "detail": "✗Not quite. Check the setup and try again."
+   },
+   {
+    "item": "1",
+    "what": "pH 13 [H+]: 1e-11 (100x) rejected",
+    "pass": true,
+    "detail": "✗Not quite. Check the setup and try again."
+   },
+   {
+    "item": "1",
+    "what": "pH 13 [H+]: displayed 1x10^-13 accepted",
+    "pass": true,
+    "detail": "✓Correct. 1 × 10−13 mol/L"
+   },
+   {
+    "item": "1",
+    "what": "pH 2 [OH-]: 1e-11 (10x) rejected",
+    "pass": true,
+    "detail": "✗Not quite. Check the setup and try again."
+   },
+   {
+    "item": "1",
+    "what": "pH 10.6 [H+]: 5e-11 (2x) rejected",
+    "pass": true,
+    "detail": "✗Not quite. Check the setup and try again."
+   },
+   {
+    "item": "8",
+    "what": "pH 4.9 [H+]: worked-solution bold 1.26x10^-5 accepted",
+    "pass": true,
+    "detail": "✓Correct. 1.26 × 10−5 mol/L | "
+   },
+   {
+    "item": "11",
+    "what": "pH 7: \"1 × 10^−7\" accepted",
+    "pass": true,
+    "detail": "✓Correct. 1 × 10−7 mol/L"
+   },
+   {
+    "item": "11",
+    "what": "pH 7: \"1×10−7\" accepted",
+    "pass": true,
+    "detail": "✓Correct. 1 × 10−7 mol/L"
+   },
+   {
+    "item": "11",
+    "what": "pH 7: \"1*10^-7\" accepted",
+    "pass": true,
+    "detail": "✓Correct. 1 × 10−7 mol/L"
+   },
+   {
+    "item": "11",
+    "what": "unparsed input returns null",
+    "pass": true,
+    "detail": "[null,null,null]"
+   },
+   {
+    "item": "11",
+    "what": "typed \"1e-7 mol\" asks for a number instead of grading a partial",
+    "pass": true,
+    "detail": "iEnter a number for [H+]."
+   },
+   {
+    "item": "31",
+    "what": "slider pH 13 shows 0.4% (0.1 M) NaOH",
+    "pass": true,
+    "detail": "Around pH 13.0: 0"
+   },
+   {
+    "item": "31",
+    "what": "\"times\" problem labels pH 13 as 0.4% (0.1 M) NaOH",
+    "pass": true,
+    "detail": "Solution A has pH 9 (baking soda solution) and solution B has pH 13 (0.4% (0.1 M) sodium hydroxide). How many times more"
+   },
+   {
+    "item": "41",
+    "what": "slider 6.9: \"1.3 times more\"",
+    "pass": true
+   },
+   {
+    "item": "41",
+    "what": "slider pH 0: [H+] label is 1 × 10^0, no 10−0",
+    "pass": true,
+    "detail": "SOLUTION IS | Acidic | [H+], MOL/L | 1 × 100 | [OH−], MOL/L | 1 × 10−14"
+   },
+   {
+    "item": "41",
+    "what": "classify pH 7.1 solution: \"about 1.3 times less\"",
+    "pass": true,
+    "detail": "(about 1.3 times less)"
+   },
+   {
+    "item": "31",
+    "what": "δ labels for C–S absent",
+    "pass": true,
+    "detail": "C–S"
+   },
+   {
+    "item": "31",
+    "what": "δ labels for C–H absent",
+    "pass": true,
+    "detail": "C–H"
+   },
+   {
+    "item": "31",
+    "what": "δ labels for O–H shown",
+    "pass": true,
+    "detail": "δ+H–Oδ−"
+   },
+   {
+    "item": "31",
+    "what": "δ labels for H–I absent",
+    "pass": true,
+    "detail": "H–I"
+   },
+   {
+    "item": "31",
+    "what": "δ labels for N–O shown",
+    "pass": true,
+    "detail": "δ+N–Oδ−"
+   },
+   {
+    "item": "2",
+    "what": "5 W x 1 h at $0.12: cost $0.006 (10x) rejected",
+    "pass": true,
+    "detail": "✗(b) Not quite. Check the setup and try again. | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+   },
+   {
+    "item": "2",
+    "what": "5 W x 1 h at $0.12: cost $0.00 rejected",
+    "pass": true,
+    "detail": "✗(b) Not quite. Check the setup and try again. | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+   },
+   {
+    "item": "2",
+    "what": "5 W x 1 h at $0.12: displayed $0.0006 accepted",
+    "pass": true,
+    "detail": "✓All parts correct. (a) 0.005 kWh; (b) $0.0006 | Energy: 0.005 kW × 1 h = 0.005 kWh Cost: 0.005"
+   },
+   {
+    "item": "2",
+    "what": "14 W x 6 h at $0.12: displayed $0.0101 accepted",
+    "pass": true,
+    "detail": "✓All parts correct. (a) 0.084 kWh; (b) $0.0101 | Energy: 0.014 kW × 6 h = 0.084 kWh Cost: 0.084"
+   },
+   {
+    "item": "9",
+    "what": "5 W x 0.5 h: worked-solution kWh 0.0025 accepted",
+    "pass": true,
+    "detail": "✓Correct. 0.0025 kWh | Energy: 0.005 kW × 0.5 h = 0.0025 kWh "
+   },
+   {
+    "item": "9",
+    "what": "no \"$0.00\" in 40,000 energy worked solutions",
+    "pass": true,
+    "detail": 0
+   },
+   {
+    "item": "32",
+    "what": "roadmap: fossil fuels about 80%",
+    "pass": true,
+    "detail": "supply about 80% of a modern society’s energy"
+   },
+   {
+    "item": "32",
+    "what": "fossil lede: about 80%",
+    "pass": true
+   },
+   {
+    "item": "32",
+    "what": "radiation key ideas: about half background",
+    "pass": true
+   },
+   {
+    "item": "32",
+    "what": "review quiz keys \"About 80%\" and \"About half\"",
+    "pass": true
+   },
+   {
+    "item": "32",
+    "what": "key terms: about half / about 80%",
+    "pass": true
+   },
+   {
+    "item": "32",
+    "what": "Curie discovered radium in 1898",
+    "pass": true
+   },
+   {
+    "item": "42",
+    "what": "Energy tab at 390 px: scrollWidth ≤ clientWidth",
+    "pass": true,
+    "detail": "390 / 390"
+   },
+   {
+    "item": "43",
+    "what": "ethylene drawn with labels (H2C=CH2), not a 31x4 bar",
+    "pass": true,
+    "detail": "{\"x\":219.578125,\"y\":3630.84375,\"width\":81,\"height\":16}"
+   },
+   {
+    "item": "43",
+    "what": "PVAc n clear of atom labels (A3 card)",
+    "pass": true,
+    "detail": "{\"n\":[96.4,20,7.5,16.2],\"overlapsAtomLabels\":0}"
+   },
+   {
+    "item": "43",
+    "what": "PVAc n clear of atom labels (practice)",
+    "pass": true,
+    "detail": "{\"n\":[96.4,19.5,7.5,16.8],\"overlapsAtomLabels\":0}"
+   },
+   {
+    "item": "33",
+    "what": "Teahupo’o: plane-beach caveat, no \"far into the plunging range\"",
+    "pass": true
+   },
+   {
+    "item": "43",
+    "what": "Ponce Inlet (New Smyrna Beach)",
+    "pass": true
+   },
+   {
+    "item": "43",
+    "what": "maleic → trans (fumarate) note",
+    "pass": true
+   },
+   {
+    "item": "43",
+    "what": "board lab label \"Rider + board + gear mass\"",
+    "pass": true
+   }
+  ],
+  "fixedItems": [
+   "1 near() floor",
+   "2 cost floor",
+   "8 calcH solution",
+   "9 kWh solution",
+   "11 parseNum",
+   "31 NaOH label + delta labels",
+   "32 fossil 80% / background half / Curie",
+   "33 Teahupoo",
+   "41 wording",
+   "42 select width",
+   "43 polymers cosmetic + labels"
+  ],
+  "notFixed": [
+   "litmus range, lead/copper action levels, H–I class, specific heat x4, iron hardness, fluoride 0.7 (pH guide)",
+   "beta range, Manhattan 1939, electricity-bar years, reactor/plant data, Na-24 and older half-lives, iron/Ni-62 (nuclear guide)",
+   "Daytona winter water temperature, wind-lab period jump, butyl rubber label (polymers guide)"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+aceticacid	acetic acid	CC(=O)O	
+acetophenone	acetophenone	CC(=O)c1ccccc1	
+bromoethane	bromoethane	CCBr	
+bromohexene	2-bromo-1-hexene	C=C(Br)CCCC	
+bromopentane2	2-bromopentane	CCCC(C)Br	
+butane	butane	CCCC	
+butylbenzene	butylbenzene	CCCCc1ccccc1	
+butyne1	1-butyne	C#CCC	
+butyne2	2-butyne	CC#CC	
+chxenol	cyclohex-1-en-1-ol (enol)	OC1=CCCCC1	
+chxone	cyclohexanone	O=C1CCCCC1	
+cisbutene	cis-2-butene	C/C=C\C	
+cishexene3	cis-3-hexene	CC/C=C\CC	
+cyhexbutyne	1-cyclohexyl-1-butyne	CCC#CC1CCCCC1	
+dbb	1,2-dibromobutane	CCC(Br)CBr	
+dcp	1,2-dichloropropane	CC(Cl)CCl	
+dibromohexane	2,2-dibromohexane	CCCCC(C)(Br)Br	
+dmh	2,5-dimethyl-3-hexyne	CC(C)C#CC(C)C	
+dpa	diphenylacetylene	C(#Cc1ccccc1)c1ccccc1	
+dpbutene	trans-1,4-diphenyl-2-butene	C(=C\Cc1ccccc1)/Cc1ccccc1	
+dpbutyne	1,4-diphenyl-2-butyne	C(#CCc1ccccc1)Cc1ccccc1	
+dpentene	(Z)-2,3-dideuterio-2-pentene	*/C(C)=C(\*)CC	UNK atoms [2, 4]
+edbb	(E)-2,3-dibromo-2-butene	C/C(Br)=C(/C)Br	
+enyne	(but-1-en-3-ynyl)benzene	C#C/C=C/c1ccccc1	
+ethyne	ethyne (acetylene)	C#C	
+ethynylchex	cyclohexylacetylene	C#CC1CCCCC1	
+gemdcl	(1,1-dichloroethyl)cyclohexane	CC(Cl)(Cl)C1CCCCC1	
+heptanone2	2-heptanone	CCCCCC(C)=O	
+heptyne1	1-heptyne	C#CCCCCC	
+hexanal	hexanal	CCCCCC=O	
+hexanol3	3-hexanol	CCCC(O)CC	
+hexanone2	2-hexanone	CCCCC(C)=O	
+hexenol	hex-1-en-2-ol (an enol)	C=C(O)CCCC	
+hexyne1	1-hexyne	C#CCCCC	
+hexyne3	3-hexyne	CCC#CCC	
+mb1yne	3-methyl-1-butyne	C#CC(C)C	
+mheptene	trans-6-methyl-3-heptene	CC/C=C/CC(C)C	
+mheptyne	6-methyl-3-heptyne	CCC#CCC(C)C	
+mp2	4-methyl-2-pentyne	CC#CC(C)C	
+mpentane	2-methylpentane	CCCC(C)C	
+mpentyne1	4-methyl-1-pentyne	C#CCC(C)C	
+octyne4	4-octyne	CCCC#CCCC	
+pentene1	1-pentene	C=CCCC	
+pentyne1	1-pentyne	C#CCCC	
+pentyne2	2-pentyne	CC#CCC	
+phac	phenylacetylene	C#Cc1ccccc1	
+phacald	phenylacetaldehyde	O=CCc1ccccc1	
+phpropyne	3-phenyl-1-propyne	C#CCc1ccccc1	
+propanoic	propanoic acid	CCC(=O)O	
+propene	propene	C=CC	
+propyne	propyne	C#CC	
+propynide	sodium propynide	*.*#CC	UNK atoms [2, 3]
+stilbdibr	1,2-dibromo-1,2-diphenylethane	BrC(c1ccccc1)C(Br)c1ccccc1	
+tetrabr	2,2,3,3-tetrabromobutane	CC(Br)(Br)C(C)(Br)Br	
+transbutene	trans-2-butene	C/C=C/C	
+transoctene	trans-4-octene	CCC/C=C/CCC	

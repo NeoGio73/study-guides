@@ -1,0 +1,609 @@
+{
+ "generated": "2026-10-30T13:33:17.780Z",
+ "guides": {
+  "general-chemistry/mole-and-molar-mass-study-guide.html": {
+   "problems": {
+    "molar": 10000,
+    "particles": 10000,
+    "mass": 10000,
+    "twostep": 10000,
+    "inside": 10000,
+    "mixed": 10000
+   },
+   "checksTotal": 2966141,
+   "checksByType": {
+    "bad-token scan": 938811,
+    "zero-quantity scan": 938811,
+    "solution shows the displayed answer": 60000,
+    "answer finite": 60000,
+    "displayed answer accepted": 120000,
+    "slip message reachable": 246481,
+    "no \"1 molecules\"/\"1 formula units\"": 60000,
+    "name matches formula": 60000,
+    "my 2-decimal value accepted": 11023,
+    "guided blank accepted": 285187,
+    "independent recompute": 60000,
+    "named slip": 74823,
+    "CH3COOH hint": 628,
+    "displayed digits agree with the page’s own listed data": 48977,
+    "ion route says ions": 1400
+   },
+   "faults": {},
+   "slipShadowingPairs": 0,
+   "slipShadowingInstances": 0
+  },
+  "general-chemistry/stoichiometry-study-guide.html": {
+   "problems": {
+    "molmol": 10000,
+    "massmass": 10000,
+    "density": 10000,
+    "limiting": 10000,
+    "yield": 10000,
+    "capstone": 10000
+   },
+   "checksTotal": 4225131,
+   "checksByType": {
+    "bad-token scan": 1146157,
+    "zero-quantity scan": 1146157,
+    "solution shows the displayed answer": 90000,
+    "answer finite": 90000,
+    "displayed answer accepted": 180000,
+    "slip message reachable": 426157,
+    "equation balanced and matches my coefficients": 60000,
+    "given value shown in question": 118008,
+    "question wording vs roles": 30000,
+    "independent recompute": 30000,
+    "displayed digits vs independent value": 90000,
+    "guided blank accepted": 337177,
+    "named slip": 301785,
+    "density value vs CRC": 23820,
+    "choice answer accepted": 20000,
+    "limiting reactant": 20000,
+    "independent recompute (theoretical yield)": 28008,
+    "physical sanity": 25870,
+    "independent recompute (leftover)": 10000,
+    "amount reacting not accepted as leftover": 10000,
+    "leftover decimals": 10000,
+    "wrong-choice message": 10000,
+    "independent recompute (actual yield)": 4130,
+    "independent recompute (theoretical yield needed)": 1992,
+    "independent recompute (reactant mass)": 1992,
+    "independent recompute (percent yield)": 13878
+   },
+   "faults": {
+    "named-slip-wrong-message: coefficient inside molar mass": {
+     "n": 84,
+     "bySection": {
+      "density:mL>mL": 84
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.708",
+      "status": "wrong",
+      "shown": "You applied the mole ratio directly to milliliters. Coefficients compare moles, not volumes of liquids.",
+      "expected": "counted twice",
+      "ex": {
+       "question": "How many milliliters of liquid octane (C8H18, density 0.703 g/mL) must react to produce 6.36 mL of liquid water (H2O, density 1.00 g/mL)?",
+       "eq": "2 C8H18 + 25 O2 -> 16 CO2 + 18 H2O",
+       "show": [
+        "6.37 mL C8H18"
+       ]
+      }
+     }
+    },
+    "displayed-last-digit-off: leftover": {
+     "n": 20,
+     "bySection": {
+      "limiting": 20
+     },
+     "detail": "Displayed answer is off in its last digit compared with the value from the listed atomic masses (page rounds molar masses to 2 decimals before using them)",
+     "example": {
+      "mine": "12.863",
+      "shown": "12.8 g Mg left over",
+      "ex": {
+       "question": "A reaction mixture contains 84.7 g of Mg and 27.6 g of N2.",
+       "eq": "3 Mg + N2 -> Mg3N2",
+       "show": [
+        "N2 is limiting",
+        "99.5 g Mg3N2",
+        "12.8 g Mg left over"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: ratio upside down": {
+     "n": 1,
+     "bySection": {
+      "limiting": 1
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "132",
+      "status": "wrong",
+      "shown": "Do not add the two amounts. Only the limiting reactant decides how much product forms, so use the smaller amount.",
+      "expected": "upside down",
+      "ex": {
+       "question": "A reaction mixture contains 50.3 g of Fe and 17.7 g of O2.",
+       "eq": "4 Fe + 3 O2 -> 2 Fe2O3",
+       "show": [
+        "O2 is limiting",
+        "58.9 g Fe2O3",
+        "9.1 g Fe left over"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: mL used as grams": {
+     "n": 1,
+     "bySection": {
+      "capstone": 1
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "12.3",
+      "status": "wrong",
+      "shown": "That is the amount the other reactant could make, but it would run out of its partner first. The reactant that makes less product limits the reaction, so the smaller amount is the theoretical yield.",
+      "expected": "as if it were grams",
+      "ex": {
+       "question": "A student combines 8.99 mL of liquid methanol (CH3OH, density 0.791 g/mL) and 13.3 g of oxygen (O2). After the reaction, 9.18 g of carbon dioxide (CO2) is collected.",
+       "eq": "2 CH3OH + 3 O2 -> 2 CO2 + 4 H2O",
+       "show": [
+        "CH3OH is limiting",
+        "9.77 g CO2",
+        "94.0%"
+       ]
+      }
+     }
+    }
+   },
+   "slipShadowingPairs": 77,
+   "slipShadowingInstances": 8683
+  },
+  "general-chemistry/solution-stoichiometry-study-guide.html": {
+   "problems": {
+    "molarity": 10000,
+    "dilution": 10000,
+    "solstoich": 10000,
+    "mix": 10000,
+    "titration": 10000,
+    "lab": 10000
+   },
+   "checksTotal": 5947421,
+   "checksByType": {
+    "bad-token scan": 1683768,
+    "zero-quantity scan": 1683768,
+    "solution shows the displayed answer": 160000,
+    "answer finite": 160000,
+    "displayed answer accepted": 320000,
+    "slip message reachable": 613768,
+    "guided blank accepted": 234084,
+    "name matches formula": 10000,
+    "concentration below solubility": 69690,
+    "independent recompute": 40000,
+    "displayed digits vs independent value": 160000,
+    "named slip": 395506,
+    "physical sanity": 20000,
+    "dilution blank message with three wrong blanks": 10000,
+    "equation balanced and matches my coefficients": 30000,
+    "given value shown in question": 85022,
+    "container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 20000,
+    "choice answer accepted": 10000,
+    "limiting reactant": 10000,
+    "independent recompute (theoretical yield)": 10000,
+    "independent recompute (percent yield)": 10000,
+    "wrong-choice message": 10000,
+    "titration graded to 4 sf": 10000,
+    "KHP molar mass": 1815,
+    "ratio": 10000,
+    "true molarity": 10000,
+    "endpoint reachable with one-drop steps": 10000,
+    "buret capacity": 10000,
+    "independent recompute (volume delivered)": 50000,
+    "independent recompute (acid molarity)": 50000,
+    "molarity sf": 50000
+   },
+   "faults": {
+    "named-slip-wrong-message: stopped at moles": {
+     "n": 2,
+     "bySection": {
+      "molarity:Mg": 2
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.404",
+      "status": "wrong",
+      "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+      "expected": "That is the moles",
+      "ex": {
+       "question": "A solution is made by dissolving 40.8 g of potassium nitrate (KNO3) in enough water to make 164 mL of solution. What is the molarity of the solution?",
+       "eq": null,
+       "show": [
+        "2.46 M KNO3"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: multiplied by molarity": {
+     "n": 1,
+     "bySection": {
+      "solstoich:g>mL": 1
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "10.3",
+      "status": "wrong",
+      "shown": "That is the result with the mole ratio upside down. Put mol HCl on top so that mol Mg(OH)2 cancels: 2 mol HCl over 1 mol Mg(OH)2.",
+      "expected": "you multiplied",
+      "ex": {
+       "question": "How many milliliters of 0.503 M HCl are needed to react completely with 0.599 g of Mg(OH)2?",
+       "eq": "Mg(OH)2 + 2 HCl -> MgCl2 + 2 H2O",
+       "show": [
+        "40.8 mL HCl"
+       ]
+      }
+     }
+    }
+   },
+   "slipShadowingPairs": 53,
+   "slipShadowingInstances": 5777
+  },
+  "general-chemistry/solutions-and-gases-study-guide.html": {
+   "problems": {
+    "molarity": 10000,
+    "dilution": 10000,
+    "solstoich": 10000,
+    "mix": 10000,
+    "gaslaw": 10000,
+    "gasstoich": 10000,
+    "solgas": 10000,
+    "capstone": 10000
+   },
+   "checksTotal": 5304610,
+   "checksByType": {
+    "bad-token scan": 1416984,
+    "zero-quantity scan": 1416984,
+    "solution shows the displayed answer": 100000,
+    "answer finite": 100000,
+    "displayed answer accepted": 200000,
+    "slip message reachable": 476984,
+    "guided blank accepted": 561025,
+    "name matches formula": 20000,
+    "concentration below solubility": 72785,
+    "independent recompute": 60000,
+    "displayed digits vs independent value": 100000,
+    "named slip": 391852,
+    "physical sanity": 31427,
+    "dilution blank message with three wrong blanks": 10000,
+    "equation balanced and matches my coefficients": 50000,
+    "given value shown in question": 123160,
+    "container pressure at most 5 atm; SO2 at most 1.5 atm; SO3 never a measured gas": 30000,
+    "choice answer accepted": 20000,
+    "limiting reactant": 20000,
+    "independent recompute (theoretical yield)": 10000,
+    "independent recompute (percent yield)": 20000,
+    "wrong-choice message": 10000,
+    "gas would not condense": 41935,
+    "unknown gas molar mass matches the gas": 1474,
+    "independent recompute (theoretical volume)": 10000,
+    "collected volume gets the actual-yield message": 10000
+   },
+   "faults": {
+    "named-slip-wrong-message: stopped at moles": {
+     "n": 1,
+     "bySection": {
+      "molarity:Mg": 1
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.564",
+      "status": "wrong",
+      "shown": "The fraction is upside down. Molarity is moles on top, liters on the bottom.",
+      "expected": "That is the moles",
+      "ex": {
+       "question": "A solution is made by dissolving 95.8 g of silver nitrate (AgNO3) in enough water to make 315 mL of solution. What is the molarity of the solution?",
+       "eq": null,
+       "show": [
+        "1.79 M AgNO3"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: multiplied by molarity": {
+     "n": 5,
+     "bySection": {
+      "solstoich:sol>mL": 2,
+      "solstoich:g>mL": 3
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "21.9",
+      "status": "wrong",
+      "shown": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+      "expected": "you multiplied",
+      "ex": {
+       "question": "How many milliliters of 1.04 M AgNO3 are needed to react completely with 10.9 mL of 0.964 M CaCl2?",
+       "eq": "2 AgNO3 + CaCl2 -> 2 AgCl + Ca(NO3)2",
+       "show": [
+        "20.2 mL AgNO3"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: mL": {
+     "n": 5,
+     "bySection": {
+      "gaslaw:MM": 5
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.0399",
+      "status": "wrong",
+      "shown": "That is the moles of gas. Molar mass = grams ÷ moles.",
+      "expected": "left in milliliters",
+      "ex": {
+       "question": "A 1.60 g sample of an unknown gas occupies 525 mL at 95.5 °C and 2.31 atm. What is the molar mass of the gas?",
+       "eq": null,
+       "show": [
+        "39.9 g/mol"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: °C": {
+     "n": 2,
+     "bySection": {
+      "gaslaw:MM": 2
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.669",
+      "status": "wrong",
+      "shown": "That is the moles of gas. Molar mass = grams ÷ moles.",
+      "expected": "left in °C",
+      "ex": {
+       "question": "A 10.7 g sample of an unknown gas occupies 15.5 L at 11.9 °C and 766 mmHg. What is the molar mass of the gas?",
+       "eq": null,
+       "show": [
+        "16.0 g/mol"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: 22.4 L/mol for wanted gas": {
+     "n": 13,
+     "bySection": {
+      "solgas:solV": 13
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "0.576",
+      "status": "wrong",
+      "shown": "To get moles from a solution, multiply the liters by the molarity. It looks like the volume was divided by the molarity.",
+      "expected": "only applies at STP",
+      "ex": {
+       "question": "How many liters of H2 gas, measured at 24.5 °C and 95.0 kPa, can form from 47.6 mL of 1.08 M HCl? Assume the other reactant is in excess.",
+       "eq": "Mg + 2 HCl -> MgCl2 + H2",
+       "show": [
+        "0.670 L H2"
+       ]
+      }
+     }
+    },
+    "named-slip-wrong-message: 22.4 L/mol": {
+     "n": 5,
+     "bySection": {
+      "capstone": 5
+     },
+     "detail": "Independently computed slip does not get its specific message",
+     "example": {
+      "typed": "1.12",
+      "status": "wrong",
+      "shown": "That is the actual volume collected. The theoretical yield comes from the limiting reactant.",
+      "expected": "only applies at STP",
+      "ex": {
+       "question": "A student adds 5.87 g of NaHCO3 to 35.3 mL of 1.41 M HCl. The CO2 gas is collected at 15.2 °C and 741 mmHg, and its volume is 1.13 L.",
+       "eq": "NaHCO3 + HCl -> NaCl + H2O + CO2",
+       "show": [
+        "HCl is limiting",
+        "1.21 L CO2",
+        "93.5%"
+       ]
+      }
+     }
+    }
+   },
+   "slipShadowingPairs": 110,
+   "slipShadowingInstances": 5658
+  }
+ },
+ "uiGrade": {
+  "problems": 4560,
+  "accepted": 4560,
+  "slipChecks": 2249,
+  "slipMismatches": 30,
+  "blankChecks": 5571,
+  "blankFails": 0
+ },
+ "smoke": [
+  {
+   "page": "mole-and-molar-mass-study-guide.html",
+   "view": "desktop",
+   "clicks": 537,
+   "problems": 72,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "stoichiometry-study-guide.html",
+   "view": "desktop",
+   "clicks": 537,
+   "problems": 72,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "solution-stoichiometry-study-guide.html",
+   "view": "desktop",
+   "clicks": 656,
+   "problems": 63,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "solutions-and-gases-study-guide.html",
+   "view": "desktop",
+   "clicks": 715,
+   "problems": 96,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "mole-and-molar-mass-study-guide.html",
+   "view": "phone",
+   "clicks": 537,
+   "problems": 72,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "stoichiometry-study-guide.html",
+   "view": "phone",
+   "clicks": 537,
+   "problems": 72,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "solution-stoichiometry-study-guide.html",
+   "view": "phone",
+   "clicks": 660,
+   "problems": 63,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  },
+  {
+   "page": "solutions-and-gases-study-guide.html",
+   "view": "phone",
+   "clicks": 715,
+   "problems": 96,
+   "pageErrors": 0,
+   "consoleErrors": 0,
+   "badTokenHits": 0,
+   "overflow": 0,
+   "notes": []
+  }
+ ],
+ "boundaryRng": [
+  {
+   "guide": "general-chemistry/mole-and-molar-mass-study-guide.html (boundary RNG)",
+   "problems": {
+    "molar": 3000,
+    "particles": 3000,
+    "mass": 3000,
+    "twostep": 3000,
+    "inside": 3000,
+    "mixed": 3000
+   },
+   "faults": 0
+  },
+  {
+   "guide": "general-chemistry/stoichiometry-study-guide.html (boundary RNG)",
+   "problems": {
+    "molmol": 3000,
+    "massmass": 3000,
+    "density": 3000,
+    "limiting": 3000,
+    "yield": 3000,
+    "capstone": 3000
+   },
+   "faults": 0
+  },
+  {
+   "guide": "general-chemistry/solution-stoichiometry-study-guide.html (boundary RNG)",
+   "problems": {
+    "molarity": 3000,
+    "dilution": 3000,
+    "solstoich": 3000,
+    "mix": 3000,
+    "titration": 3000,
+    "lab": 3000
+   },
+   "faults": 0
+  },
+  {
+   "guide": "general-chemistry/solutions-and-gases-study-guide.html (boundary RNG)",
+   "problems": {
+    "molarity": 3000,
+    "dilution": 3000,
+    "solstoich": 3000,
+    "mix": 3000,
+    "gaslaw": 3000,
+    "gasstoich": 3000,
+    "solgas": 3000,
+    "capstone": 3000
+   },
+   "faults": 0
+  }
+ ],
+ "content": {
+  "counts": {
+   "mole": {
+    "atomicMasses": 27,
+    "reactions": 0,
+    "names": 63,
+    "densities": 0
+   },
+   "stoich": {
+    "atomicMasses": 16,
+    "reactions": 38,
+    "names": 27,
+    "densities": 14
+   },
+   "solstoich": {
+    "atomicMasses": 21,
+    "reactions": 27,
+    "names": 16,
+    "densities": 0
+   },
+   "solgas": {
+    "atomicMasses": 25,
+    "reactions": 51,
+    "names": 26,
+    "densities": 0
+   }
+  },
+  "examplesChecked": 17,
+  "notes": [
+   {
+    "guide": "solgas",
+    "what": "atomic mass differs from IUPAC abridged value",
+    "detail": {
+     "e": "Ar",
+     "page": "39.948",
+     "iupac": 39.95
+    }
+   }
+  ]
+ }
+}

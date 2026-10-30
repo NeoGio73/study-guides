@@ -1,0 +1,231 @@
+{
+ "RUNS": 2000,
+ "model": {
+  "metal": {
+   "runs": 2000,
+   "maxEnergyImbalance": 1.9847590522385262e-15,
+   "displayedRejected": 0,
+   "indepMismatch": 0,
+   "misidentified": 0,
+   "resultLow": 2000,
+   "overSolubility": 0,
+   "msOver10": 0,
+   "sigLess3": 0,
+   "examples": {},
+   "peakShortfallMedianPct": 3.2740055863161976,
+   "peakShortfallMaxPct": 3.3590206989064564,
+   "errPctMedian": -3.545845089598021,
+   "errPctRange": [
+    -3.757791817035059,
+    -3.20116295731743
+   ]
+  },
+  "neut": {
+   "runs": 2000,
+   "maxEnergyImbalance": 2.394853841895078e-15,
+   "displayedRejected": 0,
+   "indepMismatch": 0,
+   "misidentified": 0,
+   "resultLow": 2000,
+   "overSolubility": 0,
+   "msOver10": 0,
+   "sigLess3": 0,
+   "examples": {},
+   "peakShortfallMedianPct": 1.7618334863273022,
+   "peakShortfallMaxPct": 1.7618334863275242,
+   "errPctMedian": 1.7734767025089404,
+   "errPctRange": [
+    1.473548387096712,
+    1.9234408602150612
+   ]
+  },
+  "salt": {
+   "runs": 2000,
+   "maxEnergyImbalance": 3.9772361709352615e-15,
+   "displayedRejected": 0,
+   "indepMismatch": 0,
+   "misidentified": 0,
+   "resultLow": 2000,
+   "overSolubility": 0,
+   "msOver10": 0,
+   "sigLess3": 0,
+   "examples": {},
+   "peakShortfallMedianPct": 2.8245320637370175,
+   "peakShortfallMaxPct": 2.824532063738383,
+   "errPctMedian": 2.7380414997733125,
+   "errPctRange": [
+    -3.131634636762884,
+    2.9298101352828185
+   ]
+  }
+ },
+ "faults": [],
+ "notes": [],
+ "ui": [
+  {
+   "exp": "metal",
+   "when": "peak",
+   "steps": [
+    "Weigh the metal",
+    "Add 50.0 mL",
+    "Heat the metal",
+    "Start recording",
+    "Transfer the metal"
+   ],
+   "notebook": {
+    "Mass of metal": "51.39 g",
+    "Mass of water": "49.86 g",
+    "Temperature of the boiling water bath (starting temperature of the metal)": "99.30 °C",
+    "Starting temperature of the water": "21.51 °C",
+    "Final temperature": "28.97 °C"
+   },
+   "typed": [
+    "1.56e+3",
+    "0.431",
+    "iron"
+   ],
+   "feedback": "✓Your calculations are correct. (a) 1.56 × 103 J; (b) 0.431 J/(g·°C); (c) ironThe sample was iron, with an accepted specific heat of 0.449 J/(g·°C). Your result is off by 4.1%.You recorded the temperature right at its highest point. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 4.1
+  },
+  {
+   "exp": "metal",
+   "when": "early",
+   "steps": [
+    "Weigh the metal",
+    "Add 50.0 mL",
+    "Heat the metal",
+    "Start recording",
+    "Transfer the metal"
+   ],
+   "notebook": {
+    "Mass of metal": "69.73 g",
+    "Mass of water": "49.93 g",
+    "Temperature of the boiling water bath (starting temperature of the metal)": "99.39 °C",
+    "Starting temperature of the water": "23.38 °C",
+    "Final temperature": "25.92 °C"
+   },
+   "typed": [
+    "531",
+    "0.104",
+    "lead"
+   ],
+   "feedback": "✓Your calculations are correct. (a) 531 J; (b) 0.104 J/(g·°C); (c) leadThe sample was copper, with an accepted specific heat of 0.385 J/(g·°C). Your result is off by 73.1%. Your data point to lead, which is a reasonable conclusion from your numbers, but the measurement was off far enough to change the identification.You recorded while the temperature was still rising, about 5.84 °C short of where it ended up. Waiting until the reading levels off gives a better result. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 73.1
+  },
+  {
+   "exp": "neut",
+   "when": "peak",
+   "steps": [
+    "Measure 25.0 mL",
+    "Measure 25.0 mL",
+    "Start recording",
+    "Pour in the base"
+   ],
+   "notebook": {
+    "HNO3 solution, 1.00 M": "25.0 mL",
+    "KOH solution, 1.00 M": "25.0 mL",
+    "Starting temperature (both solutions)": "23.71 °C",
+    "Final temperature": "30.22 °C"
+   },
+   "typed": [
+    "1.36e+3",
+    "0.0250",
+    "-54.5"
+   ],
+   "feedback": "✓Your calculations are correct. (a) 1.36 × 103 J; (b) 0.0250 mol; (c) −54.5 kJ/molThe accepted value for a strong acid and a strong base is −55.8 kJ/mol. Your result is off by 2.4%.You recorded the temperature right at its highest point. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 2.4
+  },
+  {
+   "exp": "neut",
+   "when": "early",
+   "steps": [
+    "Measure 25.0 mL",
+    "Measure 25.0 mL",
+    "Start recording",
+    "Pour in the base"
+   ],
+   "notebook": {
+    "HCl solution, 1.00 M": "25.0 mL",
+    "NaOH solution, 1.00 M": "25.0 mL",
+    "Starting temperature (both solutions)": "24.05 °C",
+    "Final temperature": "27.71 °C"
+   },
+   "typed": [
+    "766",
+    "0.0250",
+    "-30.6"
+   ],
+   "feedback": "✓Your calculations are correct. (a) 766 J; (b) 0.0250 mol; (c) −30.6 kJ/molThe accepted value for a strong acid and a strong base is −55.8 kJ/mol. Your result is off by 45.1%.You recorded while the temperature was still rising, about 2.89 °C short of where it ended up. Waiting until the reading levels off gives a better result. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 45.1
+  },
+  {
+   "exp": "salt",
+   "when": "peak",
+   "steps": [
+    "Add 50.0 mL",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Use 8.46 g",
+    "Start recording",
+    "Add the solid"
+   ],
+   "notebook": {
+    "Mass of water": "49.81 g",
+    "Mass of ammonium nitrate": "8.46 g",
+    "Starting temperature": "22.57 °C",
+    "Final temperature": "11.78 °C"
+   },
+   "typed": [
+    "-2.63e+3",
+    "0.106",
+    "24.9"
+   ],
+   "feedback": "✓Your calculations are correct. (a) −2.63 × 103 J; (b) 0.106 mol; (c) +24.9 kJ/molThe accepted enthalpy of solution of ammonium nitrate is +25.7 kJ/mol. Your result is off by 3.2%.You recorded the temperature right at its lowest point. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 3.2
+  },
+  {
+   "exp": "salt",
+   "when": "early",
+   "steps": [
+    "Add 50.0 mL",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Add a scoop",
+    "Use 8.22 g",
+    "Start recording",
+    "Add the solid"
+   ],
+   "notebook": {
+    "Mass of water": "49.82 g",
+    "Mass of sodium hydroxide": "8.22 g",
+    "Starting temperature": "23.88 °C",
+    "Final temperature": "37.37 °C"
+   },
+   "typed": [
+    "3.28e+3",
+    "0.206",
+    "-15.9"
+   ],
+   "feedback": "✓Your calculations are correct. (a) 3.28 × 103 J; (b) 0.206 mol; (c) −15.9 kJ/molThe accepted enthalpy of solution of sodium hydroxide is −44.5 kJ/mol. Your result is off by 64.2%.You recorded while the temperature was still rising, about 23.10 °C short of where it ended up. Waiting until the reading levels off gives a better result. Even with perfect technique, a coffee cup lets a little heat escape, so results come out slightly small.",
+   "errors": [],
+   "ok": true,
+   "percentShown": 64.2
+  }
+ ]
+}

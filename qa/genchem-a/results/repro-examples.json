@@ -1,0 +1,26 @@
+{
+ "P-blank gaslaw": {
+  "problemsWithPBlank": 4302,
+  "rejected3sf": 0,
+  "pct": 0,
+  "ex": null
+ },
+ "P-blank capstone": {
+  "problemsWithPBlank": 5000,
+  "rejected3sf": 0,
+  "pct": 0,
+  "ex": null
+ },
+ "leftover accepts amount reacting": {
+  "n": 20000,
+  "accepted": 0,
+  "pct": 0,
+  "ex": null
+ },
+ "gas capstone actual-volume slip gets 22.4 message": {
+  "n": 5000,
+  "count": 0,
+  "pct": 0,
+  "ex": null
+ }
+}

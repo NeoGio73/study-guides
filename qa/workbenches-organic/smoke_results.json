@@ -1,0 +1,468 @@
+[
+ {
+  "page": "biochemistry/lipid-workbench.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "build": {
+    "clicks": 15,
+    "sliders": 0,
+    "checks": 1,
+    "selects": 0
+   },
+   "cut": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 6
+   },
+   "water": {
+    "clicks": 2,
+    "sliders": 6,
+    "checks": 0,
+    "selects": 16
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "biochemistry/lipid-workbench.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "build": {
+    "clicks": 15,
+    "sliders": 0,
+    "checks": 1,
+    "selects": 0
+   },
+   "cut": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 6
+   },
+   "water": {
+    "clicks": 2,
+    "sliders": 6,
+    "checks": 0,
+    "selects": 16
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "biochemistry/dna-workbench.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Jet net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "strand": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "helix": {
+    "clicks": 5,
+    "sliders": 0,
+    "checks": 2,
+    "selects": 0
+   },
+   "melt": {
+    "clicks": 5,
+    "sliders": 9,
+    "checks": 0,
+    "selects": 0
+   },
+   "pcr": {
+    "clicks": 4,
+    "sliders": 12,
+    "checks": 1,
+    "selects": 0
+   },
+   "digest": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 4,
+    "selects": 0
+   },
+   "clone": {
+    "clicks": 7,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "sanger": {
+    "clicks": 13,
+    "sliders": 0,
+    "checks": 1,
+    "selects": 0
+   },
+   "crispr": {
+    "clicks": 24,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "cases": {
+    "clicks": 8,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 12
+   }
+  },
+  "log": [
+   "click fail helix: elementHandle.click: Timeout 1500ms exceeded.",
+   "click fail helix: elementHandle.click: Timeout 1500ms exceeded."
+  ]
+ },
+ {
+  "page": "biochemistry/dna-workbench.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Jet net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "strand": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "helix": {
+    "clicks": 8,
+    "sliders": 0,
+    "checks": 2,
+    "selects": 0
+   },
+   "melt": {
+    "clicks": 5,
+    "sliders": 9,
+    "checks": 0,
+    "selects": 0
+   },
+   "pcr": {
+    "clicks": 4,
+    "sliders": 12,
+    "checks": 1,
+    "selects": 0
+   },
+   "digest": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 4,
+    "selects": 0
+   },
+   "clone": {
+    "clicks": 7,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "sanger": {
+    "clicks": 13,
+    "sliders": 0,
+    "checks": 1,
+    "selects": 0
+   },
+   "crispr": {
+    "clicks": 24,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "cases": {
+    "clicks": 8,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 12
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "biochemistry/gluconeogenesis-workbench.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Jet net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "map": {
+    "clicks": 21,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "energy": {
+    "clicks": 16,
+    "sliders": 9,
+    "checks": 0,
+    "selects": 0
+   },
+   "cell": {
+    "clicks": 10,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "sources": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "ledger": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "reg": {
+    "clicks": 8,
+    "sliders": 12,
+    "checks": 1,
+    "selects": 0
+   },
+   "fast": {
+    "clicks": 7,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   },
+   "cycles": {
+    "clicks": 7,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   },
+   "cases": {
+    "clicks": 9,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "biochemistry/gluconeogenesis-workbench.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Jet net::ERR_TUNNEL_CONNECTION_FAILED"
+  ],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "map": {
+    "clicks": 21,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "energy": {
+    "clicks": 16,
+    "sliders": 9,
+    "checks": 0,
+    "selects": 0
+   },
+   "cell": {
+    "clicks": 10,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "sources": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "ledger": {
+    "clicks": 9,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   },
+   "reg": {
+    "clicks": 8,
+    "sliders": 12,
+    "checks": 1,
+    "selects": 0
+   },
+   "fast": {
+    "clicks": 7,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   },
+   "cycles": {
+    "clicks": 7,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   },
+   "cases": {
+    "clicks": 9,
+    "sliders": 3,
+    "checks": 0,
+    "selects": 0
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "organic-chemistry/chair-lab.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 12,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 17
+   }
+  },
+  "log": [
+   "click fail page: elementHandle.click: Timeout 1500ms exceeded.",
+   "click fail page: elementHandle.click: Timeout 1500ms exceeded."
+  ]
+ },
+ {
+  "page": "organic-chemistry/chair-lab.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 3,
+    "selects": 17
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "organic-chemistry/stereochemistry-lab.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 2,
+    "selects": 27
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "organic-chemistry/stereochemistry-lab.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 14,
+    "sliders": 0,
+    "checks": 2,
+    "selects": 27
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "organic-chemistry/stereochemistry-practice.html",
+  "viewport": "1280x900",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 28,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   }
+  },
+  "log": []
+ },
+ {
+  "page": "organic-chemistry/stereochemistry-practice.html",
+  "viewport": "390x844",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "offsite": [],
+  "textHits": [],
+  "overflow": [],
+  "counts": {
+   "page": {
+    "clicks": 28,
+    "sliders": 0,
+    "checks": 0,
+    "selects": 0
+   }
+  },
+  "log": []
+ }
+]
