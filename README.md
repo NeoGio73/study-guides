@@ -1,6 +1,6 @@
 # Interactive Chemistry Study Guides
 
-Nineteen interactive study guides, workbenches, practice pages and flashcard decks for four college chemistry courses: General Chemistry I, chemistry for non-science majors, Organic Chemistry I, and biochemistry. Each one is a single web page that runs in any current browser, with nothing to install and no account to create.
+Twenty interactive study guides, workbenches, practice pages and flashcard decks for four college chemistry courses: General Chemistry I, chemistry for non-science majors, Organic Chemistry I, and biochemistry. Each one is a single web page that runs in any current browser, with nothing to install and no account to create.
 
 In the calculation guides the numbers change every time, so a section can be practiced as often as you like, and most offer three levels of help: *Guided setup*, *Hints if I ask*, and *On my own*. Nothing in the guides is graded or sent anywhere. The workbenches and flashcard decks remember your place in your own browser only.
 
@@ -41,6 +41,7 @@ The guides were built by John Picione with a generative AI coding assistant, and
 | --- | --- |
 | [Carbohydrates](biochemistry/carbohydrates-study-guide.html) | Monosaccharides · Rings, anomers and mutarotation · Sugar derivatives and reducing sugars · Glycosidic bonds and disaccharides · Polysaccharides · Glycosaminoglycans and proteoglycans · Glycoproteins, glycolipids and lipopolysaccharides · The sugar code · Working with carbohydrates |
 | [Lipids](biochemistry/lipids-study-guide.html) | Fatty acids and fats · Membrane lipids · Lipids as signals, cofactors and pigments · Working with lipids · Biological membranes · Digestion, mobilization and transport of fats · β oxidation · Ketone bodies · Fatty acid synthesis · Making triacylglycerols and membrane lipids · Cholesterol |
+| [Glycolysis](biochemistry/glycolysis-study-guide.html) | Roadmap · The pathway in order · Enzymes and reaction types · Structures · Mechanisms · Energy accounting · Free energy · Regulation · Fates of pyruvate · Pathway lab |
 | [Lipid Workbench](biochemistry/lipid-workbench.html) | Build storage and membrane lipids · Cut them with phospholipases · Watch them assemble in water · Challenges |
 | [DNA Workbench](biochemistry/dna-workbench.html) | Strand builder · Double helix · Melting · PCR · Restriction digest and gel · Cloning · Sanger sequencing · CRISPR–Cas9 · Applications casebook |
 | [Gluconeogenesis Workbench](biochemistry/gluconeogenesis-workbench.html) | Pathway map · Why bypass? · Compartments · What can become glucose? · Energy ledger · Reciprocal regulation · Fed vs. fasted · Cori and glucose–alanine cycles · Applications casebook |
