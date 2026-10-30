@@ -40,9 +40,17 @@ The guides were built by John Picione with a generative AI coding assistant, and
 | [DNA Workbench](biochemistry/dna-workbench.html) | Strand builder · Double helix · Melting · PCR · Restriction digest and gel · Cloning · Sanger sequencing · CRISPR–Cas9 · Applications casebook |
 | [Gluconeogenesis Workbench](biochemistry/gluconeogenesis-workbench.html) | Pathway map · Why bypass? · Compartments · What can become glucose? · Energy ledger · Reciprocal regulation · Fed vs. fasted · Cori and glucose–alanine cycles · Applications casebook |
 
+## The first experiment: a guide built in a game engine
+
+| Guide | Sections |
+| --- | --- |
+| [Substitution and Elimination (Unity)](organic-chemistry/substitution-elimination-unity/) | Overview · S<sub>N</sub>2 · S<sub>N</sub>1 · E2 · E1 · Solvents and reagents · Decision tool · Practice |
+
+Organic Chemistry I, following McMurry, *Organic Chemistry*, Chapter 11. This was the first guide, built in September 2026 in the Unity game engine while the same workflow was being used for virtual laboratories. It works, with 3D models of backside attack and anti-periplanar elimination, but it is kept here mainly as a record of why the later guides are plain web pages: it downloads about 35 MB and needs WebGL 2, its text is drawn into the game canvas (so it cannot be selected, searched, or read by a screen reader), and changing one word means rebuilding it in the Unity editor.
+
 ## For instructors
 
-- **Each guide is one HTML file** with its styles and code inside it. Link it from any learning management system, or open it in a text editor and change it. Most load nothing from other sites; the polymers guide and two of the workbenches load their fonts from Google Fonts.
+- **Each guide is one HTML file** with its styles and code inside it (except the Unity experiment above, a compiled WebGL build). Link it from any learning management system, or open it in a text editor and change it. Most load nothing from other sites; the polymers guide and two of the workbenches load their fonts from Google Fonts.
 - **Sources.** The biochemistry pages follow Lehninger *Principles of Biochemistry* for names and values; the carbohydrates and lipids guides also draw on the *Color Atlas of Biochemistry*. The polymers guide follows OpenStax *Organic Chemistry* (chapter 31 and section 8.10), and its structures were drawn with [RDKit](https://www.rdkit.org/).
 - **Credits in the polymers guide.** Photographs: Mavericks by Shalom Jacobovitz ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)) and Teahupo'o by Olivier Dugornay / Ifremer ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), both resized. The Mavericks bathymetry map is from the U.S. Geological Survey with the CSUMB Seafloor Mapping Lab. The guide links to two wave games that live in another repository.
 - **Other copies.** Each guide also lives in its own course's repository, where the course links to it. This repository is the complete set, and it will be tagged at the version described in the paper.
