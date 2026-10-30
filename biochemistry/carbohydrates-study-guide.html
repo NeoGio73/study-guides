@@ -342,6 +342,8 @@ const rint = (a, b) => a + Math.floor(RNG() * (b - a + 1));
 const pick = arr => arr[Math.floor(RNG() * arr.length)];
 function shuffle(arr){ const a = arr.slice(); for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(RNG() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 const sample = (arr, n) => shuffle(arr).slice(0, n);
+// a sugar name inside a sentence: D-Glucose -> D-glucose, Methyl ... -> methyl ..., N-Acetyl-... -> N-acetyl-...
+const lcName = s => /^[DL]-/.test(s) ? s.replace(/^([DL]-)(\w)/, (m, p, l) => p + l.toLowerCase()) : s.replace(/^N-Acetyl/, 'N-acetyl').replace(/^[A-Z](?=[a-z])/, m => m.toLowerCase());
 const fmt = (x, dp) => Number(x).toLocaleString('en-US', {minimumFractionDigits: dp || 0, maximumFractionDigits: dp == null ? 1 : dp});
 const minus = s => String(s).replace(/-/g, '−');
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
@@ -606,9 +608,11 @@ function disKnown(D){
 function disSVG(D){
   const A = RES[D.a], B = RES[D.b], nonred = D.to === 'anom';
   const W = 440, H = 206, ay = 106, ax = 110, bx = 320;
-  const ringPts = (R, x, y, mir, dir) => { const m = mir ? -1 : 1;
-    if(R.ring === 'pyr') return {4: [x - 50 * m, y], 5: [x - 24 * m, y - 26], O: [x + 24 * m, y - 26], 1: [x + 50 * m, y], 2: [x + 24 * m, y + 26], 3: [x - 24 * m, y + 26], 6: [x - 24 * m, y - 54]};
-    return {O: [x, y - 30], 2: [x + 46 * m, y - 4], 3: [x + 28 * m, y + 28], 4: [x - 28 * m, y + 28], 5: [x - 46 * m, y - 4], 6: [x - 46 * m, y - 34], 1: [x + 46 * m, y - 4 - (dir || 1) * 28]}; };
+  // rot: the ring is turned 180 degrees in the plane of the page (left-right and up-down both reversed), as a
+  // second residue joined through its anomeric carbon is drawn. A left-right mirror alone would show the L sugar.
+  const ringPts = (R, x, y, rot, dir) => { const m = rot ? -1 : 1;
+    if(R.ring === 'pyr') return {4: [x - 50 * m, y], 5: [x - 24 * m, y - 26 * m], O: [x + 24 * m, y - 26 * m], 1: [x + 50 * m, y], 2: [x + 24 * m, y + 26 * m], 3: [x - 24 * m, y + 26 * m], 6: [x - 24 * m, y - 54 * m]};
+    return {O: [x, y - 30 * m], 2: [x + 46 * m, y - 4 * m], 3: [x + 28 * m, y + 28 * m], 4: [x - 28 * m, y + 28 * m], 5: [x - 46 * m, y - 4 * m], 6: [x - 46 * m, y - 34 * m], 1: [x + 46 * m, y - m * (4 + (dir || 1) * 28)]}; };
   const order = R => R.ring === 'pyr' ? ['4', '5', 'O', '1', '2', '3'] : ['O', '2', '3', '4', '5'];
   const drawRing = (R, P, key, hl) => { let s = ''; const o = order(R);
     o.forEach((k, i) => { const a = P[k], b = P[o[(i + 1) % o.length]]; s += '<line x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '" style="stroke:var(--b-line)" stroke-width="2"/>'; });
@@ -629,15 +633,18 @@ function disSVG(D){
   // acceptor carbon on B
   const tKey = nonred ? String(B.anom) : String(D.to), b1 = PB[tKey];
   let bDir;
-  if(nonred) bDir = D.bn === 'a' ? 1 : -1;
+  if(nonred) bDir = D.bn === 'a' ? -1 : 1;           // the turned ring: alpha now points up, beta down
   else if(tKey === '6' || tKey === '1') bDir = -1;
-  else if(tKey === '4' && B.ring === 'pyr') bDir = B.cfg[2] === 'R' ? 1 : -1;
+  // C-2 to C-4: right in the Fischer projection means down in the Haworth formula
+  else if(B.ring === 'pyr' && +tKey >= 2 && +tKey <= 4) bDir = B.cfg[+tKey - 2] === 'R' ? 1 : -1;
   else bDir = 1;
-  const pB = [b1[0], b1[1] + bDir * 26];
+  // a group pointing up from C-2 or C-3 lies over the ring, so its bond is drawn short and reached from the side
+  const inside = !nonred && bDir < 0 && (tKey === '2' || tKey === '3');
+  const pB = [b1[0], b1[1] + bDir * (inside ? 12 : 26)];
   const mx = (ax + bx) / 2 - (nonred ? 0 : 6);
   let path;
-  if(aDir === bDir && Math.abs(pA[1] - pB[1]) < 3) path = [a1, pA, pB, b1];
-  else if(aDir === bDir) { const yl = aDir > 0 ? Math.max(pA[1], pB[1]) + 8 : Math.min(pA[1], pB[1]) - 8; path = [a1, [pA[0], yl], [pB[0], yl], b1]; }
+  if(!inside && aDir === bDir && Math.abs(pA[1] - pB[1]) < 3) path = [a1, pA, pB, b1];
+  else if(!inside && aDir === bDir) { const yl = aDir > 0 ? Math.max(pA[1], pB[1]) + 8 : Math.min(pA[1], pB[1]) - 8; path = [a1, [pA[0], yl], [pB[0], yl], b1]; }
   else path = [a1, pA, [mx, pA[1]], [mx, pB[1]], pB, b1];
   s += '<polyline points="' + path.map(p => p[0] + ',' + p[1]).join(' ') + '" fill="none" style="stroke:var(--a-line)" stroke-width="2.6" stroke-linejoin="round"/>';
   // the bridging oxygen sits in the middle of the path
@@ -647,7 +654,10 @@ function disSVG(D){
   s += '<circle cx="' + ox + '" cy="' + oy + '" r="9" style="fill:var(--bg);stroke:var(--a-line)" stroke-width="1.6"/><text x="' + ox + '" y="' + (oy + 4.5) + '" text-anchor="middle" font-size="12" font-weight="700" style="fill:var(--a-ink)">O</text>';
   // carbon numbers at the two linked carbons
   s += lbl(a1[0] + 16, a1[1] - aDir * 12 + 4, A.anom + GREEK[D.an], false, 'var(--a-ink)').replace('font-size="10"', 'font-size="11" font-weight="700"');
-  s += lbl(b1[0] - (nonred ? 16 : (tKey === '4' ? 12 : -12)), b1[1] - bDir * (nonred ? 12 : 10) + 4, nonred ? B.anom + GREEK[D.bn] : tKey, false, 'var(--a-ink)').replace('font-size="10"', 'font-size="11" font-weight="700"');
+  // C-2 and C-3 sit on the lower edge of the ring: their numbers go below the ring, clear of the bond
+  const bl = nonred ? [b1[0] - 16, b1[1] - bDir * 12 + 4] : tKey === '4' ? [b1[0] - 12, b1[1] - bDir * 10 + 4] : tKey === '6' ? [b1[0] + 12, b1[1] - bDir * 10 + 4]
+    : inside ? [b1[0], b1[1] + 16] : [b1[0] - 12, b1[1] + 14];
+  s += lbl(bl[0], bl[1], nonred ? B.anom + GREEK[D.bn] : tKey, false, 'var(--a-ink)').replace('font-size="10"', 'font-size="11" font-weight="700"');
   // free anomeric carbon of B when it is not in the bond
   if(!nonred){ const f = PB[String(B.anom)]; s += '<line x1="' + f[0] + '" y1="' + (f[1] + 7) + '" x2="' + f[0] + '" y2="' + (f[1] + 24) + '" stroke="currentColor" stroke-width="1.5"/><text x="' + f[0] + '" y="' + (f[1] + 37) + '" text-anchor="middle" font-size="11.5" font-weight="700" style="fill:var(--a-ink)">OH</text>' +
     '<text x="' + (W - 6) + '" y="' + (H - 6) + '" text-anchor="end" font-size="10" style="fill:var(--muted)">free anomeric carbon: reducing end</text>'; }
@@ -1098,7 +1108,7 @@ SECTIONS.push({id:'mono', n:1, label:'Monosaccharides', title:'Monosaccharides: 
       {id:'facts', title:'Key facts', tag:'Know', html: facts([
         ['What a carbohydrate is', [
           '<b>An aldehyde or ketone with at least two hydroxyl groups</b>, or a substance that yields such compounds on hydrolysis. Many have the empirical formula (CH<sub>2</sub>O)<sub>n</sub>.',
-          'Three size classes: <b>monosaccharides</b> (one unit), <b>oligosaccharides</b> (short chains; the disaccharides are the most abundant) and <b>polysaccharides</b> (more than 10 units).',
+          'Three size classes: <b>monosaccharides</b> (one unit), <b>oligosaccharides</b> (short chains; the disaccharides are the most abundant) and <b>polysaccharides</b> (more than 20 or so units).',
           'Monosaccharides are colorless, crystalline solids, freely soluble in water and insoluble in nonpolar solvents. Most taste sweet.',
           'Photosynthesis converts more than 100 billion metric tons of CO<sub>2</sub> and H<sub>2</sub>O into cellulose and other plant products each year.']],
         ['Naming by structure', [
@@ -1111,7 +1121,7 @@ SECTIONS.push({id:'mono', n:1, label:'Monosaccharides', title:'Monosaccharides: 
           '<b>D or L</b> is decided by the chiral carbon farthest from the carbonyl group. Hydroxyl on the right in the Fischer projection, as in D-glyceraldehyde, means D.',
           '<b>Epimers</b> differ in configuration at exactly one carbon. D-Mannose is the C-2 epimer of D-glucose, and D-galactose is the C-4 epimer.',
           '<b>Enantiomers</b> are mirror images: every chiral center is reversed.',
-          'Most hexoses in living organisms are D isomers. L-Arabinose and a few sugar derivatives are exceptions.']],
+          'Most of the hexoses of living organisms are D isomers. Exceptions among other sugars include the pentose L-arabinose and a few sugar derivatives, such as L-fucose.']],
         ['Reading a Fischer projection', [
           'Horizontal bonds point out of the page toward you. Vertical bonds point behind the page.',
           'The carbonyl carbon is drawn at or near the top.',
@@ -1167,9 +1177,9 @@ SECTIONS.push({id:'mono', n:1, label:'Monosaccharides', title:'Monosaccharides: 
       $('#cmp-draw').innerHTML = '<div style="text-align:center">' + fischerSVG('aldo', S.ca, {hi: r.at, noNum: true}) + '<div class="small"><b>' + a + '</b></div></div><div style="text-align:center">' + fischerSVG('aldo', S.cb, {hi: r.at}) + '<div class="small"><b>' + b + '</b></div></div>';
       const list = 'C-' + r.at.join(', C-').replace(/, (C-\d)$/, ' and $1');
       $('#cmp-out').innerHTML = r.rel === 'same' ? '<h4>The same sugar</h4><p>Choose two different sugars.</p>'
-        : r.rel === 'epimers' ? '<h4>Epimers</h4><p>' + a + ' and ' + b + ' differ in configuration at one carbon only, ' + list + '. Two sugars like this are called epimers.</p>' + (r.at[0] === 5 ? '<p>Here the carbon that differs is C-5, the one that decides D or L, so one sugar is D and the other is L.</p>' : '')
-        : r.rel === 'enantiomers' ? '<h4>Enantiomers</h4><p>Every chiral carbon is reversed, so ' + a + ' and ' + b + ' are mirror images of each other. Enantiomers share one name and differ only in D or L.</p>'
-        : '<h4>Diastereomers, but not epimers</h4><p>' + a + ' and ' + b + ' differ at ' + r.at.length + ' carbons (' + list + '). They are stereoisomers that are not mirror images. The word epimer is kept for pairs that differ at exactly one carbon.</p>'; };
+        : r.rel === 'epimers' ? '<h4>Epimers</h4><p>' + a + ' and ' + lcName(b) + ' differ in configuration at one carbon only, ' + list + '. Two sugars like this are called epimers.</p>' + (r.at[0] === 5 ? '<p>Here the carbon that differs is C-5, the one that decides D or L, so one sugar is D and the other is L.</p>' : '')
+        : r.rel === 'enantiomers' ? '<h4>Enantiomers</h4><p>Every chiral carbon is reversed, so ' + lcName(a) + ' and ' + lcName(b) + ' are mirror images of each other. Enantiomers share one name and differ only in D or L.</p>'
+        : '<h4>Diastereomers, but not epimers</h4><p>' + a + ' and ' + lcName(b) + ' differ at ' + r.at.length + ' carbons (' + list + '). They are stereoisomers that are not mirror images. The word epimer is kept for pairs that differ at exactly one carbon.</p>'; };
     $('#compare').addEventListener('click', e => { const a = e.target.closest('#cmp-a .chip'), b = e.target.closest('#cmp-b .chip'); if(a){ S.ca = a.dataset.v; drawCmp(); } else if(b){ S.cb = b.dataset.v; drawCmp(); } });
     draw(); drawFam(); drawCmp(); mountAllQuizzes();
   }});
@@ -1188,13 +1198,13 @@ SECTIONS.push({id:'mono', n:1, label:'Monosaccharides', title:'Monosaccharides: 
         hint:'Count the chiral carbons first. The carbonyl carbon and the CH<sub>2</sub>OH carbons are not chiral.', traps:[[Math.pow(2, s[1] - 1), 'That is only the D half of the family. Count the L forms too.'], [Math.pow(2, nc), 'Not every carbon is chiral. Leave out the carbonyl carbon and any CH<sub>2</sub>OH carbon.']],
         why:(/^[aeiou]/.test(cls) ? 'An ' : 'A ') + cls + ' has ' + nc + ' carbons, of which ' + s[1] + (s[1] === 1 ? ' is' : ' are') + ' chiral. 2<sup>' + s[1] + '</sup> = ' + Math.pow(2, s[1]) + ', half of them D and half L.'}; },
     () => { const a = pick(hexD), c = pick([2, 3, 4]), b = epimerAt('aldo', a, c), A = sugarName('aldo', a).full, B = sugarName('aldo', b).full;
-      return {k:'mc', q:'Which sugar is the C-' + c + ' epimer of ' + A + '?', fig: figOf('aldo', a, {label: A}), c: B, w: sample(hexD.filter(x => x !== a && x !== b), 3).map(x => sugarName('aldo', x).full),
-        hint:'Move only the hydroxyl group on C-' + c + ' to the other side, then name what you get. The D-aldohexose family is shown in the section above.', why:'Reversing only C-' + c + ' of ' + A + ' gives ' + B + '.'}; },
+      return {k:'mc', q:'Which sugar is the C-' + c + ' epimer of ' + lcName(A) + '?', fig: figOf('aldo', a, {label: A}), c: B, w: sample(hexD.filter(x => x !== a && x !== b), 3).map(x => sugarName('aldo', x).full),
+        hint:'Move only the hydroxyl group on C-' + c + ' to the other side, then name what you get. The D-aldohexose family is shown in the section above.', why:'Reversing only C-' + c + ' of ' + lcName(A) + ' gives ' + lcName(B) + '.'}; },
     () => { const pr = pick([['RLRR', 'LLRR'], ['RLRR', 'RLLR'], ['RLRR', 'LRLL'], ['LLRR', 'RLLR'], ['RLRR', 'RRRR'], ['RLLR', 'LLLR'], ['LLRR', 'RRLL'], ['RLRR', 'LLLR']]), r = relate('aldo', pr[0], pr[1]);
       const A = sugarName('aldo', pr[0]).full, B = sugarName('aldo', pr[1]).full;
       const c = r.rel === 'epimers' ? 'Epimers at C-' + r.at[0] : r.rel === 'enantiomers' ? 'Enantiomers' : 'Stereoisomers that are neither epimers nor enantiomers';
       const all = ['Epimers at C-2', 'Epimers at C-3', 'Epimers at C-4', 'Enantiomers', 'Stereoisomers that are neither epimers nor enantiomers', 'Anomers'];
-      return {k:'mc', q:'How are ' + A + ' and ' + B + ' related?', fig:'<div style="display:flex;justify-content:center;gap:8px">' + fischerSVG('aldo', pr[0], {noNum: true}) + fischerSVG('aldo', pr[1], {}) + '</div>', c: c,
+      return {k:'mc', q:'How are ' + lcName(A) + ' and ' + lcName(B) + ' related?', fig:'<div style="display:flex;justify-content:center;gap:8px">' + fischerSVG('aldo', pr[0], {noNum: true}) + fischerSVG('aldo', pr[1], {}) + '</div>', c: c,
         w: sample(all.filter(x => x !== c), 3), hint:'Compare the two projections carbon by carbon and count the differences.',
         why: r.rel === 'epimers' ? 'They differ only at C-' + r.at[0] + '.' : r.rel === 'enantiomers' ? 'Every chiral carbon is reversed, so they are mirror images.' : 'They differ at C-' + r.at.join(' and C-') + '. Epimers differ at exactly one carbon, and enantiomers at all of them.'}; },
     {k:'mc', q:'What decides whether a sugar is D or L?', c:'The configuration of the chiral carbon farthest from the carbonyl group', w:['The configuration of the carbon next to the carbonyl group','Whether it rotates polarized light to the right or to the left','Whether it is an aldose or a ketose'],
@@ -1231,7 +1241,7 @@ const RING_SUGARS = {
   ribose:    {label: 'D-Ribose', kind: 'aldo', cfg: 'RRR', ring: 'fur'}
 };
 // rotation and composition during mutarotation; end points from the Color Atlas, p. 36
-const MUTA = {a: 112, b: 19, eq: 52, tau: 10, eqBeta: 62};
+const MUTA = {a: 112, b: 19, eq: 52, tau: 10, eqBeta: 64};
 const mutaRot = (start, t) => MUTA.eq + (MUTA[start] - MUTA.eq) * Math.exp(-t / MUTA.tau);
 const mutaBeta = (start, t) => MUTA.eqBeta + ((start === 'b' ? 100 : 0) - MUTA.eqBeta) * Math.exp(-t / MUTA.tau);
 function mutaChart(start, t){
@@ -1273,7 +1283,7 @@ SECTIONS.push({id:'ring', n:2, label:'Rings and anomers', title:'Rings, anomers 
             '<div class="grid2" style="margin-top:8px"><div><div class="stat"><div><span>Reading</span><b id="muta-rot"></b></div><div><span>α anomer</span><b id="muta-a"></b></div><div><span>β anomer</span><b id="muta-b"></b></div></div>' +
             '<div id="muta-bar" style="display:flex;height:16px;border-radius:8px;overflow:hidden;border:1px solid var(--line);gap:2px;background:var(--bg)"></div><ul class="legend"><li><span class="sw s1"></span>α</li><li><span class="sw s2"></span>β</li></ul></div>' +
             '<div class="detail" style="margin-top:0" id="muta-out" aria-live="polite"></div></div>' +
-            '<p class="small" style="margin:10px 0 0">The starting values, the end point of +52° and the 38% to 62% mixture are from the Color Atlas, p. 36. Lehninger gives the mixture as about one-third α and two-thirds β. The speed of the change shown here is only illustrative.</p></div>'},
+            '<p class="small" style="margin:10px 0 0">The starting values and the end point of +52° are from the Color Atlas, p. 36. The mixture shown, about 36% α and 64% β, is the one those three readings imply; Lehninger gives it as about one-third α and two-thirds β. The speed of the change shown here is only illustrative.</p></div>'},
       {id:'chair', title:'The ring is not flat', tag:'Explore', sub:'A Haworth formula draws the pyranose ring as a flat hexagon. The real ring is puckered into a chair, and each substituent points either along the ring axis (axial) or out to the side (equatorial).',
        html:'<div class="panel"><div class="row"><span class="lab">Anomer</span>' + segHTML('ca', [['a', 'α-D-Glucopyranose'], ['b', 'β-D-Glucopyranose']], ringState.chAn, 'Anomer') + '</div>' +
             '<div class="row gap"><span class="lab">Chair</span>' + segHTML('cf', [['4C1', 'The more stable chair'], ['1C4', 'The other chair']], ringState.chForm, 'Chair form') + '</div>' +
@@ -1525,7 +1535,7 @@ function lvl(n, hot){ return '<span class="lvl' + (hot ? ' hot' : '') + '" aria-
   const keys = Object.keys(REDTEST);
   const ox = [['C-1, the aldehyde carbon', 'An aldonic acid, such as gluconic acid'], ['C-6, the carbon farthest from the carbonyl group', 'A uronic acid, such as glucuronic acid']];
   BANK.deriv = [
-    () => { const k = pick(keys), T = REDTEST[k]; return {k:'mc', q:'Is ' + (/^[DN]-/.test(T[0]) || /^Methyl/.test(T[0]) ? T[0] : T[0].toLowerCase()) + ' a reducing sugar?', c: T[1] ? 'Yes' : 'No', w:[T[1] ? 'No' : 'Yes'],
+    () => { const k = pick(keys), T = REDTEST[k]; return {k:'mc', q:'Is ' + lcName(T[0]) + ' a reducing sugar?', c: T[1] ? 'Yes' : 'No', w:[T[1] ? 'No' : 'Yes'],
       hint:'Ask whether the compound has, or can form, a free aldehyde group.', why: T[2]}; },
     () => { const o = pick(ox); return {k:'mc', q:'What kind of sugar acid is formed when glucose is oxidized at ' + o[0] + '?', c: o[1], w:[ox.find(x => x !== o)[1], 'A sialic acid, such as N-acetylneuraminic acid', 'A sugar alcohol, such as sorbitol'],
       why:'Oxidation of C-1 gives an aldonic acid. Oxidation of C-6 gives a uronic acid. Both are named as carboxylates at pH 7: gluconate, glucuronate.'}; },
@@ -2386,7 +2396,7 @@ SECTIONS.push({id:'lab', n:9, label:'Working with carbohydrates', title:'Working
     () => { const p = pick(prods); return {k:'mc', q:'Amylopectin is exhaustively methylated and then hydrolyzed in acid. What does ' + p[0] + ' become?', c: p[1], w: prods.filter(x => x !== p).map(x => x[1]).concat(['Glucose with no methyl groups']),
       hint:'Any hydroxyl group that was in a glycosidic bond could not be methylated.', why:'Nonreducing ends are free at C-2, C-3, C-4 and C-6. Chain residues are free at C-2, C-3 and C-6. Branch points are free only at C-2 and C-3.'}; },
     () => { const m = pick(meth); return {k:'mc', q:'Which approach answers this question about an oligosaccharide? ' + m[0], c: m[1], w: meth.filter(x => x !== m).map(x => x[1]).concat(['Reaction with Cu<sup>2+</sup> in alkaline solution']), why:'Acid hydrolysis gives composition, methylation analysis gives linkage positions, and exoglycosidases give sequence. NMR and mass spectrometry can give all of this on small samples.'}; },
-    () => { const mg = pick([258, 324, 405, 486]), pct = pick([3, 4, 5, 6]), di = Math.round(mg / 162 * pct / 100 * 208 * 10) / 10, R = branchPercent(mg, di);
+    () => { const mg = pick([258, 324, 405, 486]), pct = pick([3.4, 3.6, 3.8, 4]), di = Math.round(mg / 162 * pct / 100 * 208 * 10) / 10, R = branchPercent(mg, di);
       return {k:'num', q:'After methylation and hydrolysis, ' + mg + ' mg of amylopectin gives ' + di + ' mg of 2,3-di-O-methylglucose. On average, one residue in how many is a branch point? Use 162 g/mol for a glucose residue and 208 g/mol for 2,3-di-O-methylglucose.', a: 100 / R.pct, rel: 0.05, unit:'residues', dp: 0,
         hint:'Find the moles of residues and the moles of branch points, then divide the first by the second.', setup:['Residues: ' + mg + ' ÷ 162 mmol.', 'Branch points: ' + di + ' ÷ 208 mmol.', 'Residues per branch point = the first ÷ the second.'],
         why: fmt(R.residues, 2) + ' mmol of residues ÷ ' + fmt(R.branch, 4) + ' mmol of branch points = about ' + fmt(100 / R.pct, 0) + '. That is ' + fmt(R.pct, 1) + '% of residues (Lehninger Problem 27).'}; },
