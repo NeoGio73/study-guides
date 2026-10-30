@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T14:17:15.118Z",
+ "generated": "2026-10-30T16:02:06.621Z",
  "files": {
   "smoke": "smoke-results.json",
   "generators": "generator-results.json",
@@ -16,7 +16,7 @@
   "ph@1280": {
    "counts": {
     "tabs": 9,
-    "buttonsClicked": 518,
+    "buttonsClicked": 519,
     "slidersMoved": 1,
     "selectsTried": 9,
     "textInputsTried": 3
@@ -29,7 +29,7 @@
   "ph@390": {
    "counts": {
     "tabs": 9,
-    "buttonsClicked": 518,
+    "buttonsClicked": 519,
     "slidersMoved": 1,
     "selectsTried": 9,
     "textInputsTried": 3
@@ -107,25 +107,25 @@
      "typeCount": {
       "bond": 20000
      },
-     "ms": 934,
+     "ms": 460,
      "ui": {
       "guided": {
        "typeCount": {
         "bond": 2000
        },
-       "ms": 9272
+       "ms": 6923
       },
       "hint": {
        "typeCount": {
         "bond": 2000
        },
-       "ms": 8840
+       "ms": 6969
       },
       "solo": {
        "typeCount": {
         "bond": 2000
        },
-       "ms": 6775
+       "ms": 6619
       }
      }
     },
@@ -140,7 +140,7 @@
       "mg2ppb": 20000,
       "ppm2mg": 20104
      },
-     "ms": 22146,
+     "ms": 10426,
      "ui": {
       "guided": {
        "typeCount": {
@@ -152,7 +152,7 @@
         "ppm2mg": 2000,
         "moles": 2000
        },
-       "ms": 698262
+       "ms": 190882
       },
       "hint": {
        "typeCount": {
@@ -164,7 +164,7 @@
         "ppm2mg": 2000,
         "moles": 2000
        },
-       "ms": 269547
+       "ms": 211540
       },
       "solo": {
        "typeCount": {
@@ -176,7 +176,7 @@
         "ppm2mg": 2000,
         "moles": 2000
        },
-       "ms": 137551
+       "ms": 165951
       }
      }
     },
@@ -185,25 +185,25 @@
      "typeCount": {
       "neut": 20000
      },
-     "ms": 891,
+     "ms": 1518,
      "ui": {
       "guided": {
        "typeCount": {
         "neut": 2000
        },
-       "ms": 6447
+       "ms": 8828
       },
       "hint": {
        "typeCount": {
         "neut": 2000
        },
-       "ms": 6138
+       "ms": 7921
       },
       "solo": {
        "typeCount": {
         "neut": 2000
        },
-       "ms": 5185
+       "ms": 6434
       }
      }
     },
@@ -218,7 +218,7 @@
       "toH": 20000,
       "calc": 20275
      },
-     "ms": 2050,
+     "ms": 3777,
      "ui": {
       "guided": {
        "typeCount": {
@@ -230,7 +230,7 @@
         "toH": 2000,
         "calc": 2000
        },
-       "ms": 201252
+       "ms": 222181
       },
       "hint": {
        "typeCount": {
@@ -242,7 +242,7 @@
         "toH": 2000,
         "calc": 2000
        },
-       "ms": 254559
+       "ms": 250938
       },
       "solo": {
        "typeCount": {
@@ -254,7 +254,7 @@
         "toH": 2000,
         "calc": 2000
        },
-       "ms": 168585
+       "ms": 186933
       }
      }
     }
@@ -426,7 +426,7 @@
       "particle": 20000,
       "parent": 20021
      },
-     "ms": 1824,
+     "ms": 2948,
      "ui": {
       "guided": {
        "typeCount": {
@@ -435,7 +435,7 @@
         "parent": 2000,
         "bombard": 2000
        },
-       "ms": 71677
+       "ms": 90002
       },
       "hint": {
        "typeCount": {
@@ -444,7 +444,7 @@
         "parent": 2000,
         "bombard": 2000
        },
-       "ms": 88147
+       "ms": 94975
       },
       "solo": {
        "typeCount": {
@@ -453,7 +453,7 @@
         "parent": 2000,
         "bombard": 2000
        },
-       "ms": 61783
+       "ms": 73369
       }
      }
     },
@@ -467,7 +467,7 @@
       "date": 20000,
       "findhalf": 20192
      },
-     "ms": 8115,
+     "ms": 12622,
      "ui": {
       "guided": {
        "typeCount": {
@@ -478,7 +478,7 @@
         "date": 2000,
         "findhalf": 2000
        },
-       "ms": 129438
+       "ms": 116245
       },
       "hint": {
        "typeCount": {
@@ -489,7 +489,7 @@
         "date": 2000,
         "findhalf": 2000
        },
-       "ms": 139530
+       "ms": 130366
       },
       "solo": {
        "typeCount": {
@@ -500,7 +500,7 @@
         "date": 2000,
         "findhalf": 2000
        },
-       "ms": 95007
+       "ms": 104154
       }
      }
     },
@@ -515,7 +515,7 @@
       "calories": 20000,
       "kwh": 20269
      },
-     "ms": 13322,
+     "ms": 19536,
      "ui": {
       "guided": {
        "typeCount": {
@@ -527,7 +527,7 @@
         "calories": 2000,
         "kwh": 2000
        },
-       "ms": 169571
+       "ms": 184217
       },
       "hint": {
        "typeCount": {
@@ -539,7 +539,7 @@
         "calories": 2000,
         "kwh": 2000
        },
-       "ms": 220788
+       "ms": 231011
       },
       "solo": {
        "typeCount": {
@@ -551,7 +551,7 @@
         "calories": 2000,
         "kwh": 2000
        },
-       "ms": 154952
+       "ms": 161591
       }
      }
     },
@@ -564,7 +564,7 @@
       "years": 20094,
       "share": 20174
      },
-     "ms": 6645,
+     "ms": 11160,
      "ui": {
       "guided": {
        "typeCount": {
@@ -574,7 +574,7 @@
         "share": 2000,
         "octane": 2000
        },
-       "ms": 76680
+       "ms": 97115
       },
       "hint": {
        "typeCount": {
@@ -584,7 +584,7 @@
         "share": 2000,
         "octane": 2000
        },
-       "ms": 81056
+       "ms": 101026
       },
       "solo": {
        "typeCount": {
@@ -594,7 +594,7 @@
         "share": 2000,
         "octane": 2000
        },
-       "ms": 74177
+       "ms": 83902
       }
      }
     }
@@ -720,7 +720,7 @@
    ],
    "phTimesLabels": {},
    "halfIso": {
-    "Strontium-90": "28.5 years",
+    "Strontium-90": "28.8 years",
     "Phosphorus-32": "14.3 days",
     "Cobalt-60": "5.271 years",
     "Iodine-131": "8.04 days",
@@ -1129,6 +1129,73 @@
     "detail": "δ+N–Oδ−"
    },
    {
+    "item": "R2",
+    "what": "lead shown as EPA action level, LCRI 0.010 by 2027",
+    "pass": true,
+    "detail": "MG/L = PPM 0.02 PPB (ΜG/L) 20 PERCENT 0.000002% EPA ACTION LEVEL FOR LEAD 0.015 mg/L ✗ Above the action level. 0.02 ppm is 1.333 times the action level of 0.015"
+   },
+   {
+    "item": "R2",
+    "what": "arsenic still a limit (MCL)",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "copper shown as action level",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "fluoride 0.7 mg/L since 2015",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "hardness = Ca2+ and Mg2+ only",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "specific heat: five times rock, nine times iron",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "explorer H–I: nonpolar per course table + 0.46 note",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "practice H–I solution carries the 0.46 note",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "litmus at pH 3: blue turns red",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "litmus at pH 6.9: partway (purple)",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "litmus at pH 8: partway (purple)",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "litmus at pH 9: red turns blue",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "classify problems: litmus key follows 4.5–8.3 range",
+    "pass": true,
+    "detail": "{\"ok\":8565}"
+   },
+   {
     "item": "2",
     "what": "5 W x 1 h at $0.12: cost $0.006 (10x) rejected",
     "pass": true,
@@ -1196,6 +1263,52 @@
     "pass": true
    },
    {
+    "item": "R2",
+    "what": "beta: a few millimeters of tissue",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "Manhattan Project begun in 1942",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "chart: 2005 vs 2025 with EIA sources",
+    "pass": true,
+    "detail": "Percentages of U.S. electric power generation by source, 2005 versus 2025 (U.S. Energy Information Administration: Monthly Energy Review Table 7.2a for 2005; “Electricity in the U.S.,” utility-scale generation, for 2025)."
+   },
+   {
+    "item": "R2",
+    "what": "share problem uses 2025 EIA shares",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "reactor fuel about 3–5% everywhere",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "US 94 reactors at 54 plants; France about two-thirds",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "half-lives Na-24 14.96 h, Pu-238 87.7 y, Sr-90 28.8 y",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "iron-56 and nickel-62 most tightly bound",
+    "pass": true
+   },
+   {
+    "item": "R2",
+    "what": "transuranium: traces of Np and Pu noted, no \"every element\"",
+    "pass": true
+   },
+   {
     "item": "42",
     "what": "Energy tab at 390 px: scrollWidth ≤ clientWidth",
     "pass": true,
@@ -1253,10 +1366,13 @@
    "42 select width",
    "43 polymers cosmetic + labels"
   ],
+  "round2Fixed": [
+   "pH guide: lead/copper action levels (LCRI 0.010 mg/L by 2027), H–I 0.46 note, litmus 4.5–8.3, specific heat 5x rock / 9x iron, hardness Ca2+/Mg2+, fluoride 0.7 mg/L",
+   "nuclear guide: beta mm, Manhattan 1942, chart EIA 2005 vs 2025, 3–5% U-235, 94 reactors at 54 plants, France two-thirds, Na-24 14.96 h, Pu-238 87.7 y, Sr-90 28.8 y, Fe-56/Ni-62, traces of Np and Pu"
+  ],
   "notFixed": [
-   "litmus range, lead/copper action levels, H–I class, specific heat x4, iron hardness, fluoride 0.7 (pH guide)",
-   "beta range, Manhattan 1939, electricity-bar years, reactor/plant data, Na-24 and older half-lives, iron/Ni-62 (nuclear guide)",
-   "Daytona winter water temperature, wind-lab period jump, butyl rubber label (polymers guide)"
+   "nuclear guide: older tritium (12.26 y) and U-238 (4.51 billion y) values; Ukraine/Sweden/Korea/China figures attributed to Table 15.7",
+   "polymers guide: Daytona winter water temperature, wind-lab period jump, butyl rubber label"
   ]
  }
 }

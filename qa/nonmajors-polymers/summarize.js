@@ -45,7 +45,8 @@ const out = {
   contentFindings: content,
   afterFixes: { fixCheck: fs.existsSync(path.join(__dirname, 'fix-check.json')) ? rd('fix-check.json') : null,
     fixedItems: ['1 near() floor', '2 cost floor', '8 calcH solution', '9 kWh solution', '11 parseNum', '31 NaOH label + delta labels', '32 fossil 80% / background half / Curie', '33 Teahupoo', '41 wording', '42 select width', '43 polymers cosmetic + labels'],
-    notFixed: ['litmus range, lead/copper action levels, H–I class, specific heat x4, iron hardness, fluoride 0.7 (pH guide)', 'beta range, Manhattan 1939, electricity-bar years, reactor/plant data, Na-24 and older half-lives, iron/Ni-62 (nuclear guide)', 'Daytona winter water temperature, wind-lab period jump, butyl rubber label (polymers guide)'] },
+    round2Fixed: ['pH guide: lead/copper action levels (LCRI 0.010 mg/L by 2027), H–I 0.46 note, litmus 4.5–8.3, specific heat 5x rock / 9x iron, hardness Ca2+/Mg2+, fluoride 0.7 mg/L', 'nuclear guide: beta mm, Manhattan 1942, chart EIA 2005 vs 2025, 3–5% U-235, 94 reactors at 54 plants, France two-thirds, Na-24 14.96 h, Pu-238 87.7 y, Sr-90 28.8 y, Fe-56/Ni-62, traces of Np and Pu'],
+    notFixed: ['nuclear guide: older tritium (12.26 y) and U-238 (4.51 billion y) values; Ukraine/Sweden/Korea/China figures attributed to Table 15.7', 'polymers guide: Daytona winter water temperature, wind-lab period jump, butyl rubber label'] },
 };
 fs.writeFileSync(path.join(__dirname, 'audit-summary.json'), JSON.stringify(out, null, 1));
 console.log('wrote audit-summary.json');

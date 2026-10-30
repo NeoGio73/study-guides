@@ -12,25 +12,25 @@
     "typeCount": {
      "bond": 20000
     },
-    "ms": 934,
+    "ms": 460,
     "ui": {
      "guided": {
       "typeCount": {
        "bond": 2000
       },
-      "ms": 9272
+      "ms": 6923
      },
      "hint": {
       "typeCount": {
        "bond": 2000
       },
-      "ms": 8840
+      "ms": 6969
      },
      "solo": {
       "typeCount": {
        "bond": 2000
       },
-      "ms": 6775
+      "ms": 6619
      }
     }
    },
@@ -45,7 +45,7 @@
      "mg2ppb": 20000,
      "ppm2mg": 20104
     },
-    "ms": 22146,
+    "ms": 10426,
     "ui": {
      "guided": {
       "typeCount": {
@@ -57,7 +57,7 @@
        "ppm2mg": 2000,
        "moles": 2000
       },
-      "ms": 698262
+      "ms": 190882
      },
      "hint": {
       "typeCount": {
@@ -69,7 +69,7 @@
        "ppm2mg": 2000,
        "moles": 2000
       },
-      "ms": 269547
+      "ms": 211540
      },
      "solo": {
       "typeCount": {
@@ -81,7 +81,7 @@
        "ppm2mg": 2000,
        "moles": 2000
       },
-      "ms": 137551
+      "ms": 165951
      }
     }
    },
@@ -90,25 +90,25 @@
     "typeCount": {
      "neut": 20000
     },
-    "ms": 891,
+    "ms": 1518,
     "ui": {
      "guided": {
       "typeCount": {
        "neut": 2000
       },
-      "ms": 6447
+      "ms": 8828
      },
      "hint": {
       "typeCount": {
        "neut": 2000
       },
-      "ms": 6138
+      "ms": 7921
      },
      "solo": {
       "typeCount": {
        "neut": 2000
       },
-      "ms": 5185
+      "ms": 6434
      }
     }
    },
@@ -123,7 +123,7 @@
      "toH": 20000,
      "calc": 20275
     },
-    "ms": 2050,
+    "ms": 3777,
     "ui": {
      "guided": {
       "typeCount": {
@@ -135,7 +135,7 @@
        "toH": 2000,
        "calc": 2000
       },
-      "ms": 201252
+      "ms": 222181
      },
      "hint": {
       "typeCount": {
@@ -147,7 +147,7 @@
        "toH": 2000,
        "calc": 2000
       },
-      "ms": 254559
+      "ms": 250938
      },
      "solo": {
       "typeCount": {
@@ -159,7 +159,7 @@
        "toH": 2000,
        "calc": 2000
       },
-      "ms": 168585
+      "ms": 186933
      }
     }
    }
@@ -393,7 +393,7 @@
    {
     "gen": "bond",
     "phase": "gen",
-    "secs": 1.047
+    "secs": 0.492
    },
    {
     "gen": "bond",
@@ -401,7 +401,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 9.305
+    "secs": 6.952
    },
    {
     "gen": "bond",
@@ -409,7 +409,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 8.898
+    "secs": 6.989
    },
    {
     "gen": "bond",
@@ -417,12 +417,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 6.797
+    "secs": 6.684
    },
    {
     "gen": "conc",
     "phase": "gen",
-    "secs": 22.185
+    "secs": 10.483
    },
    {
     "gen": "conc",
@@ -430,7 +430,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 698.29
+    "secs": 190.941
    },
    {
     "gen": "conc",
@@ -438,7 +438,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 269.584
+    "secs": 211.572
    },
    {
     "gen": "conc",
@@ -446,12 +446,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 137.571
+    "secs": 165.987
    },
    {
     "gen": "neut",
     "phase": "gen",
-    "secs": 0.911
+    "secs": 1.548
    },
    {
     "gen": "neut",
@@ -459,7 +459,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 6.467
+    "secs": 8.855
    },
    {
     "gen": "neut",
@@ -467,7 +467,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 6.157
+    "secs": 7.94
    },
    {
     "gen": "neut",
@@ -475,12 +475,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 5.198
+    "secs": 6.457
    },
    {
     "gen": "ph",
     "phase": "gen",
-    "secs": 2.071
+    "secs": 3.801
    },
    {
     "gen": "ph",
@@ -488,7 +488,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 201.269
+    "secs": 222.205
    },
    {
     "gen": "ph",
@@ -496,7 +496,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 254.58
+    "secs": 250.962
    },
    {
     "gen": "ph",
@@ -504,7 +504,7 @@
     "modes": [
      "solo"
     ],
-    "secs": 168.602
+    "secs": 186.962
    }
   ],
   "pageErrors": []
@@ -519,7 +519,7 @@
      "particle": 20000,
      "parent": 20021
     },
-    "ms": 1824,
+    "ms": 2948,
     "ui": {
      "guided": {
       "typeCount": {
@@ -528,7 +528,7 @@
        "parent": 2000,
        "bombard": 2000
       },
-      "ms": 71677
+      "ms": 90002
      },
      "hint": {
       "typeCount": {
@@ -537,7 +537,7 @@
        "parent": 2000,
        "bombard": 2000
       },
-      "ms": 88147
+      "ms": 94975
      },
      "solo": {
       "typeCount": {
@@ -546,7 +546,7 @@
        "parent": 2000,
        "bombard": 2000
       },
-      "ms": 61783
+      "ms": 73369
      }
     }
    },
@@ -560,7 +560,7 @@
      "date": 20000,
      "findhalf": 20192
     },
-    "ms": 8115,
+    "ms": 12622,
     "ui": {
      "guided": {
       "typeCount": {
@@ -571,7 +571,7 @@
        "date": 2000,
        "findhalf": 2000
       },
-      "ms": 129438
+      "ms": 116245
      },
      "hint": {
       "typeCount": {
@@ -582,7 +582,7 @@
        "date": 2000,
        "findhalf": 2000
       },
-      "ms": 139530
+      "ms": 130366
      },
      "solo": {
       "typeCount": {
@@ -593,7 +593,7 @@
        "date": 2000,
        "findhalf": 2000
       },
-      "ms": 95007
+      "ms": 104154
      }
     }
    },
@@ -608,7 +608,7 @@
      "calories": 20000,
      "kwh": 20269
     },
-    "ms": 13322,
+    "ms": 19536,
     "ui": {
      "guided": {
       "typeCount": {
@@ -620,7 +620,7 @@
        "calories": 2000,
        "kwh": 2000
       },
-      "ms": 169571
+      "ms": 184217
      },
      "hint": {
       "typeCount": {
@@ -632,7 +632,7 @@
        "calories": 2000,
        "kwh": 2000
       },
-      "ms": 220788
+      "ms": 231011
      },
      "solo": {
       "typeCount": {
@@ -644,7 +644,7 @@
        "calories": 2000,
        "kwh": 2000
       },
-      "ms": 154952
+      "ms": 161591
      }
     }
    },
@@ -657,7 +657,7 @@
      "years": 20094,
      "share": 20174
     },
-    "ms": 6645,
+    "ms": 11160,
     "ui": {
      "guided": {
       "typeCount": {
@@ -667,7 +667,7 @@
        "share": 2000,
        "octane": 2000
       },
-      "ms": 76680
+      "ms": 97115
      },
      "hint": {
       "typeCount": {
@@ -677,7 +677,7 @@
        "share": 2000,
        "octane": 2000
       },
-      "ms": 81056
+      "ms": 101026
      },
      "solo": {
       "typeCount": {
@@ -687,7 +687,7 @@
        "share": 2000,
        "octane": 2000
       },
-      "ms": 74177
+      "ms": 83902
      }
     }
    }
@@ -795,7 +795,7 @@
   "extras": {
    "phTimesLabels": {},
    "halfIso": {
-    "Strontium-90": "28.5 years",
+    "Strontium-90": "28.8 years",
     "Phosphorus-32": "14.3 days",
     "Cobalt-60": "5.271 years",
     "Iodine-131": "8.04 days",
@@ -925,7 +925,7 @@
    {
     "gen": "nuc",
     "phase": "gen",
-    "secs": 1.841
+    "secs": 2.969
    },
    {
     "gen": "nuc",
@@ -933,7 +933,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 71.693
+    "secs": 90.032
    },
    {
     "gen": "nuc",
@@ -941,7 +941,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 88.164
+    "secs": 94.995
    },
    {
     "gen": "nuc",
@@ -949,12 +949,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 61.802
+    "secs": 73.378
    },
    {
     "gen": "half",
     "phase": "gen",
-    "secs": 8.145
+    "secs": 12.65
    },
    {
     "gen": "half",
@@ -962,7 +962,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 129.455
+    "secs": 116.277
    },
    {
     "gen": "half",
@@ -970,7 +970,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 139.548
+    "secs": 130.388
    },
    {
     "gen": "half",
@@ -978,12 +978,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 95.031
+    "secs": 104.17
    },
    {
     "gen": "energy",
     "phase": "gen",
-    "secs": 13.338
+    "secs": 19.557
    },
    {
     "gen": "energy",
@@ -991,7 +991,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 169.596
+    "secs": 184.248
    },
    {
     "gen": "energy",
@@ -999,7 +999,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 220.805
+    "secs": 231.03
    },
    {
     "gen": "energy",
@@ -1007,12 +1007,12 @@
     "modes": [
      "solo"
     ],
-    "secs": 154.975
+    "secs": 161.643
    },
    {
     "gen": "fuel",
     "phase": "gen",
-    "secs": 6.659
+    "secs": 11.184
    },
    {
     "gen": "fuel",
@@ -1020,7 +1020,7 @@
     "modes": [
      "guided"
     ],
-    "secs": 76.697
+    "secs": 97.136
    },
    {
     "gen": "fuel",
@@ -1028,7 +1028,7 @@
     "modes": [
      "hint"
     ],
-    "secs": 81.073
+    "secs": 101.05
    },
    {
     "gen": "fuel",
@@ -1036,7 +1036,7 @@
     "modes": [
      "solo"
     ],
-    "secs": 74.197
+    "secs": 83.922
    }
   ],
   "pageErrors": []

@@ -125,6 +125,73 @@
   "detail": "δ+N–Oδ−"
  },
  {
+  "item": "R2",
+  "what": "lead shown as EPA action level, LCRI 0.010 by 2027",
+  "pass": true,
+  "detail": "MG/L = PPM 0.02 PPB (ΜG/L) 20 PERCENT 0.000002% EPA ACTION LEVEL FOR LEAD 0.015 mg/L ✗ Above the action level. 0.02 ppm is 1.333 times the action level of 0.015"
+ },
+ {
+  "item": "R2",
+  "what": "arsenic still a limit (MCL)",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "copper shown as action level",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "fluoride 0.7 mg/L since 2015",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "hardness = Ca2+ and Mg2+ only",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "specific heat: five times rock, nine times iron",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "explorer H–I: nonpolar per course table + 0.46 note",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "practice H–I solution carries the 0.46 note",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "litmus at pH 3: blue turns red",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "litmus at pH 6.9: partway (purple)",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "litmus at pH 8: partway (purple)",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "litmus at pH 9: red turns blue",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "classify problems: litmus key follows 4.5–8.3 range",
+  "pass": true,
+  "detail": "{\"ok\":8565}"
+ },
+ {
   "item": "2",
   "what": "5 W x 1 h at $0.12: cost $0.006 (10x) rejected",
   "pass": true,
@@ -189,6 +256,52 @@
  {
   "item": "32",
   "what": "Curie discovered radium in 1898",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "beta: a few millimeters of tissue",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "Manhattan Project begun in 1942",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "chart: 2005 vs 2025 with EIA sources",
+  "pass": true,
+  "detail": "Percentages of U.S. electric power generation by source, 2005 versus 2025 (U.S. Energy Information Administration: Monthly Energy Review Table 7.2a for 2005; “Electricity in the U.S.,” utility-scale generation, for 2025)."
+ },
+ {
+  "item": "R2",
+  "what": "share problem uses 2025 EIA shares",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "reactor fuel about 3–5% everywhere",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "US 94 reactors at 54 plants; France about two-thirds",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "half-lives Na-24 14.96 h, Pu-238 87.7 y, Sr-90 28.8 y",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "iron-56 and nickel-62 most tightly bound",
+  "pass": true
+ },
+ {
+  "item": "R2",
+  "what": "transuranium: traces of Np and Pu noted, no \"every element\"",
   "pass": true
  },
  {

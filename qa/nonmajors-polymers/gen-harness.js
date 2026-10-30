@@ -113,7 +113,7 @@
     if ((m = q.match(/has pH (\d+)\. What is its hydrogen-ion/))) return { type: 'toH', mine: { parts: [Math.pow(10, -m[1])], blanks: { e: String(-m[1]) } } };
     if ((m = q.match(/has pH (\d+)\. What is its hydroxide/))) return { type: 'toOH', mine: { parts: [Math.pow(10, -(14 - m[1]))], blanks: { p: String(14 - m[1]) } } };
     if ((m = q.match(/Solution A has pH (\d+) \((.*?)\) and solution B has pH (\d+) \((.*?)\)/))) return { type: 'times', mine: { parts: [Math.pow(10, m[3] - m[1])], blanks: { d: String(m[3] - m[1]) } }, extra: { labels: [[+m[1], m[2]], [+m[3], m[4]]] } };
-    if ((m = q.match(/^A solution has pH ([\d.]+)\.$/))) { const p = +m[1]; const c = p < 7 ? 'Acidic' : p > 7 ? 'Basic (alkaline)' : 'Neutral'; const w = p < 7 ? 'more hydrogen ion' : p > 7 ? 'less hydrogen ion' : 'the same hydrogen ion'; const l = p < 7 ? 'turns red' : 'stays blue'; return { type: 'class', mine: { parts: [{ pick: o => o === c }, { pick: o => o === w }, { pick: o => o === l }], blanks: { s: Math.abs(p - 7).toFixed(1) } } }; }
+    if ((m = q.match(/^A solution has pH ([\d.]+)\.$/))) { const p = +m[1]; const c = p < 7 ? 'Acidic' : p > 7 ? 'Basic (alkaline)' : 'Neutral'; const w = p < 7 ? 'more hydrogen ion' : p > 7 ? 'less hydrogen ion' : 'the same hydrogen ion'; const l = p < 4.5 ? 'turns red' : p <= 8.3 ? 'turns purple (partway)' : 'stays blue'; return { type: 'class', mine: { parts: [{ pick: o => o === c }, { pick: o => o === w }, { pick: o => o === l }], blanks: { s: Math.abs(p - 7).toFixed(1) } } }; }
     if ((m = q.match(/\[H\+\] = ([\d.]+) × 10−(\d+) mol\/L\. What is its pH, to two decimal/))) return { type: 'calc', mine: { parts: [-Math.log10(+m[1] * Math.pow(10, -m[2]))], blanks: { lg: Math.log10(+m[1]).toFixed(2) } } };
     if ((m = q.match(/has pH ([\d.]+)\. What is \[H\+\] in mol\/L/))) { const p = +m[1]; const n = Math.ceil(p); return { type: 'calcH', mine: { parts: [Math.pow(10, -p)], blanks: { m: Math.pow(10, n - p).toFixed(2) } } }; }
     return { type: 'UNCLASSIFIED' };
@@ -198,7 +198,7 @@
   C.fuel = (P) => {
     const q = strip(P.q), ctx = strip(P.ctx || ''); let m;
     if ((m = q.match(/reserves: ([\d.,]+) .*?\. Consumption: ([\d.,]+) /))) { const R0 = +m[1].replace(/,/g, ''), Cn = +m[2].replace(/,/g, ''); return { type: 'years', mine: { parts: [R0 / Cn], blanks: { c: String(Cn) } } }; }
-    if ((m = q.match(/generated ([\d,]+) million kWh/))) { const pc = +ctx.match(/In \d+, ([\d.]+)%/)[1]; return { type: 'share', mine: { parts: [+m[1].replace(/,/g, '') * pc / 100], blanks: { d: String(pc / 100) } } }; }
+    if ((m = q.match(/generated ([\d,]+) million kWh/))) { const pc = +ctx.match(/In \d+, (?:about )?([\d.]+)%/)[1]; return { type: 'share', mine: { parts: [+m[1].replace(/,/g, '') * pc / 100], blanks: { d: String(pc / 100) } } }; }
     if ((m = q.match(/Burning ([\d,]+) kg of carbon/))) return { type: 'co2', mine: { parts: [+m[1].replace(/,/g, '') * (M_C + 2 * M_O) / M_C], blanks: { r: '3.67' } } };
     if ((m = q.match(/tons of carbon are in (\d+) tons?/))) { const pc = +ctx.match(/about (\d+)% carbon/)[1]; return { type: 'carbon', mine: { parts: [+m[1] * pc / 100], blanks: { d: String(pc / 100) } } }; }
     if ((m = q.match(/To make (\d+) mL .* for (\d+)-octane/))) return { type: 'octane', mine: { parts: [+m[1] * +m[2] / 100], blanks: { d: String(+m[2] / 100) } } };
